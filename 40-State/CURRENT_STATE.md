@@ -1,6 +1,6 @@
 ---
 last_verified: 2026-08-18
-verified_by: Codex P0 implementation pass
+verified_by: Codex zero-cost handoff review
 status: active — P0 local study slice implemented
 ---
 
@@ -16,7 +16,8 @@ status: active — P0 local study slice implemented
 - Cloudflare is the intended deployment target. No Pages project, Worker, D1/Supabase project, credentials, or production deployment exists yet; the target is recorded as a constraint only.
 - A runnable React/TypeScript/Vite P0 now exists with a local adapter, 12 explicitly project-owned fixture cards, open-ended study flow, FSRS adapter, bounded repair queue, map/list view, progress view, and PWA shell.
 - The production persistence path is selected as Supabase Auth/Postgres/RLS, while `60-Decisions/ADR-0006-persistence-path.md` keeps the current local adapter reversible and explicitly non-production.
-- Focused tests pass 7/7, production build passes, cumulative smoke gates pass 6/6, runtime dependency audit is clean, and preview served `/`, the manifest, and service worker with HTTP 200.
+- The owner-set deployment budget is USD 0/month: Cloudflare Pages Free + Supabase Free; no paid upgrade or add-on is authorized.
+- Focused tests pass 7/7, production build passes, cumulative smoke gates pass 8/8, the P0 dependency audit evidence is clean, and preview served `/`, the manifest, and service worker with HTTP 200. The later advisory-endpoint recheck was inconclusive and remains recorded separately.
 
 ## Blockers
 

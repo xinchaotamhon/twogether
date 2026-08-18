@@ -94,6 +94,21 @@
       "invariant": "Captured source provenance survives handoff while raw private conversation remains outside project memory",
       "owner": "hiep",
       "evidence": "50-Evidence/source-capture-and-backend-review-2026-08-18.md"
+    },
+    {
+      "id": "deployment.free-tier-contract",
+      "description": "The owner-authorized v1 deployment remains zero-cost and paid upgrades remain disabled",
+      "tier": "smoke",
+      "command": ["{python}", "-c", "from pathlib import Path; a=Path('60-Decisions/ADR-0007-backend-choice-mongodb-vs-supabase.md').read_text(encoding='utf-8'); h=Path('80-Handoffs/NEXT_AI_PROMPT.md').read_text(encoding='utf-8'); assert 'monthly_budget_usd: 0' in a and 'paid_upgrade_authorized: false' in a; assert 'zero-cost personal deployment' in h and 'Do not spend money' in h"],
+      "cwd": ".",
+      "timeout_seconds": 10,
+      "expected_exit_code": 0,
+      "required": true,
+      "enabled": true,
+      "introduced_by": "owner-zero-cost-requirement",
+      "invariant": "No AI may convert the personal pilot into a paid deployment without a new explicit owner decision",
+      "owner": "hiep",
+      "evidence": "50-Evidence/free-tier-deployment-review-2026-08-18.md"
     }
   ]
 }

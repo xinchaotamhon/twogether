@@ -12,6 +12,8 @@ The stack keeps the app small: a static frontend, one data/authorization boundar
 
 As of ADR-0007, Supabase is selected for v1 persistence. MongoDB is not selected because it would add a server-side auth/authorization boundary and its older Atlas App Services/Data API path is end-of-life; revisit only if a future workload justifies the extra operational surface.
 
+The owner-set v1 infrastructure budget is USD 0/month. Target Cloudflare Pages Free + Supabase Free and the free `*.pages.dev` address. Paid plans, add-ons, custom-domain purchases, paid messaging, and silent overage upgrades are outside authorization; recheck time-sensitive free quotas before provisioning.
+
 ## Cloudflare deployment target
 
 Cloudflare is the intended hosting target, but deployment is a later owner-approved step. The frontend must be a reproducible build that can be published to Cloudflare Pages; Pages supports framework/static builds, preview deployments, and server-side Pages Functions when a small API is needed ([Pages static deployment](https://developers.cloudflare.com/pages/framework-guides/deploy-anything/), [Pages Functions](https://developers.cloudflare.com/pages/functions/)).

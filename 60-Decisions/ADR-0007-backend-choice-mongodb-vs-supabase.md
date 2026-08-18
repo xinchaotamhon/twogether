@@ -3,6 +3,8 @@ status: accepted-for-v1
 date: 2026-08-18
 decision_owner: hiep
 scope: production persistence and account boundary
+monthly_budget_usd: 0
+paid_upgrade_authorized: false
 ---
 
 # ADR-0007: Supabase over MongoDB for v1
@@ -30,11 +32,15 @@ Keep the managed-data path: Cloudflare Pages frontend plus Supabase Auth/Postgre
 
 ## Cost and authorization
 
-No remote project, secret, or data binding is created by this decision. Owner approval is required before creating a Supabase project, adding secrets, or writing learner data. Verify current Supabase plan limits and region before provisioning.
+The v1 infrastructure budget is **USD 0 per month**. Use Cloudflare Pages Free plus one Supabase Free project, keep the free `*.pages.dev` address, and do not enable a paid custom domain, Supabase Pro/add-on, paid SMTP/SMS, or another metered service without a new explicit owner decision.
+
+The free-tier facts checked on 2026-08-18 are sufficient for the two-learner pilot: Supabase Free documents two free projects, 500 MB database per project, 50,000 MAU, 5 GB egress, and 1 GB file storage; free projects may pause after one week of inactivity. Cloudflare documents free/unlimited static asset requests and up to 100,000 Workers/Pages Function requests per day if Functions are later needed. These quotas are time-sensitive and must be rechecked before deployment.
+
+No remote project, secret, payment method, or data binding is created by this decision. Owner approval is required before creating production resources, adding secrets, writing learner data, or accepting any non-zero charge. If a free quota is reached, prefer a visible temporary service restriction and export/cleanup plan over silently upgrading.
 
 ## Gate
 
-Before production: migrations apply from a clean database; two real accounts pass positive and cross-account negative RLS tests; review writes are idempotent; preview and production are isolated; service-role credentials are absent from the build; `/health`, PWA, CSP/CORS, and rollback checks pass with the existing smoke gates.
+Before production: migrations apply from a clean database; two real accounts pass positive and cross-account negative RLS tests; review writes are idempotent; preview and production are isolated; service-role credentials are absent from the build; `/health`, PWA, CSP/CORS, rollback, current free-tier quota review, and the zero-cost contract pass with the existing smoke gates.
 
 ## Rollback
 
@@ -46,3 +52,5 @@ Keep the local adapter and return to the pre-remote checkpoint if the Supabase i
 - Supabase frontend security: <https://supabase.com/docs/guides/database/secure-data>
 - MongoDB Atlas authorization: <https://www.mongodb.com/docs/atlas/architecture/current/auth/>
 - MongoDB App Services/Data API end-of-life notice: <https://www.mongodb.com/docs/atlas/app-services/data-api/generated-endpoints/>
+- Supabase pricing/billing: <https://supabase.com/pricing>, <https://supabase.com/docs/guides/platform/billing-on-supabase>
+- Cloudflare Pages/Functions pricing: <https://developers.cloudflare.com/pages/functions/pricing/>
