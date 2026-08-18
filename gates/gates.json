@@ -66,6 +66,34 @@
       "enabled": true,
       "introduced_by": "content-authoring-contract",
       "invariant": "Published cards are traceable and source-derived claims are not fabricated"
+    },
+    {
+      "id": "app.p0-artifact-contract",
+      "description": "Runnable P0 app, PWA shell, accessibility hooks, and no-secret artifact checks pass",
+      "tier": "smoke",
+      "command": ["{python}", "tools/check_app_artifact.py", "."],
+      "cwd": ".",
+      "timeout_seconds": 20,
+      "expected_exit_code": 0,
+      "required": true,
+      "enabled": true,
+      "introduced_by": "p0-study-slice",
+      "invariant": "The local artifact keeps shared content traceable, private data out of the shell cache, and accessibility behavior explicit"
+    },
+    {
+      "id": "content.owner-source-capture",
+      "description": "Owner-pasted source manifests and derived draft cards are traceable without storing raw private chat",
+      "tier": "smoke",
+      "command": ["{python}", "-c", "import json; from pathlib import Path; m=json.loads(Path('content/sources/source_manifest.json').read_text(encoding='utf-8')); d=json.loads(Path('content/drafts/claude-owner-source-drafts-v1.json').read_text(encoding='utf-8')); assert m.get('schema_version')==1 and len(m.get('captures',[]))==2; assert all(len(c.get('sha256',''))==64 and c.get('raw_capture')=='outside_repository' for c in m['captures']); assert d.get('status')=='draft' and len(d.get('cards',[]))==10; assert all(c.get('status')=='draft' and c.get('source_refs') for c in d['cards']); assert all(Path(p).is_file() for p in ['content/sources/claude-english-owner-capture-2026-08-18.md','content/sources/claude-react-owner-capture-2026-08-18.md'])"],
+      "cwd": ".",
+      "timeout_seconds": 10,
+      "expected_exit_code": 0,
+      "required": true,
+      "enabled": true,
+      "introduced_by": "owner-source-capture",
+      "invariant": "Captured source provenance survives handoff while raw private conversation remains outside project memory",
+      "owner": "hiep",
+      "evidence": "50-Evidence/source-capture-and-backend-review-2026-08-18.md"
     }
   ]
 }

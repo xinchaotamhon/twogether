@@ -1,6 +1,6 @@
 ---
 last_verified: 2026-08-18
-verified_by: Codex inception pass
+verified_by: Codex P0 implementation pass
 status: active
 ---
 
@@ -10,21 +10,18 @@ You are continuing the Twogether project. Read `START_HERE.md` and its entire re
 
 ## Known baseline
 
-- The repository contains project memory and contracts but no application implementation yet.
-- The two Claude source URLs are recorded in `docs/CLAUDE_SOURCE_STATUS.md`; their content was not captured in this runtime. If you can access them, capture provenance first. If not, ask the owner to paste/export them. Do not invent the missing four-group English taxonomy or principle layer.
-- The recommended P0 is a phone-first React/TypeScript PWA with two allowlisted accounts, shared card/map content, RLS-isolated learner state, open-ended recall, FSRS-6, and a bounded repair queue. The exact package versions and backend credentials are not selected.
+- The repository now contains a runnable local P0 implementation; the pre-code checkpoint is `2ed4510`, and the implementation evidence is `50-Evidence/p0-implementation-2026-08-18.md`.
+- The direct Claude URLs remain blocked, but the owner-pasted captures were read and hashed. Derived summaries are under `content/sources/`, and the 10-card source draft bundle is under `content/drafts/claude-owner-source-drafts-v1.json`. Do not promote drafts or invent the unresolved fifth English pillar; preserve the public-vs-internal React distinction.
+- The P0 artifact is a phone-first React/TypeScript PWA with two local allowlisted demo learners, shared fixture card/map content, a learner-scoped local adapter, open-ended recall, `ts-fsrs@5.4.1`, and a bounded repair queue. Production persistence is selected as Supabase Auth/Postgres/RLS in ADR-0006, but credentials and the backend project do not exist.
 
 ## Execute this bounded next task
 
-1. Re-read `docs/PRODUCT_SPEC.md`, `docs/LEARNING_ALGORITHM.md`, `docs/KNOWLEDGE_GRAPH.md`, `docs/ARCHITECTURE.md`, and `docs/CONTENT_AUTHORING.md`.
-2. Establish a clean Git checkpoint and record the baseline command/output in `50-Evidence/` before adding dependencies.
-3. If source capture is available, import it as immutable provenance and create only `draft` cards first. Otherwise use a tiny project-owned fixture with clearly labeled placeholder concepts; do not present it as Claude-derived.
-4. Scaffold the smallest runnable app: login for the two allowlisted users, one shared node, a handful of reviewed fixture cards, study flow, review-event persistence, and a map/list view.
-5. Implement the scheduler adapter behind a pure interface. Pin `ts-fsrs`, map `Nhớ` to `Good` and `Quên` to `Again`, and write deterministic tests for new/learning/review/lapse, repair cap, timezone, and duplicate-event behavior.
-6. Enforce RLS and test both positive and cross-account negative cases. Never trust a learner ID sent by the browser.
-7. Add PWA manifest/service-worker shell support and keyboard/focus/reduced-motion gates. Defer push notifications behind a disabled feature flag.
-8. Make the app deployable to Cloudflare without deploying it yet: choose exactly one backend path (Supabase Auth/Postgres/RLS or Cloudflare Pages Functions/Workers + D1), keep the data-adapter boundary, add preview/production environment separation, and ensure no secret or private API response enters the static build or service-worker cache. Add `/health`, CSP/CORS, no-secret, manifest, and cross-account deployment smoke checks. Keep Git-connected reproducible configuration; do not use an untracked direct upload as the only release source.
-9. Run `python tools/run_gates.py --tier smoke` and focused tests on the same artifact. Preserve failures; update `40-State`, `50-Evidence`, and this handoff only when the facts change.
+1. Re-read `docs/PRODUCT_SPEC.md`, `docs/LEARNING_ALGORITHM.md`, `docs/KNOWLEDGE_GRAPH.md`, `docs/ARCHITECTURE.md`, `docs/CONTENT_AUTHORING.md`, ADR-0006, and ADR-0007.
+2. Human-review `content/drafts/claude-owner-source-drafts-v1.json`; keep the current 12 project-owned fixture cards until reviewed cards are accepted.
+3. Connect Supabase behind the existing data-adapter boundary: allowlisted auth, schema migrations, RLS positive/negative tests, idempotent review writes, preview isolation, and `/health`. Do not create production bindings without owner approval.
+4. Add browser-level keyboard/focus/reveal-order/map-list parity tests and a real installability check; keep existing 7/7 focused tests and 6/6 cumulative gates required.
+5. Replace fixture cards only through the immutable source → draft → Human review workflow.
+6. Run a seven-day pilot with Hiệp and Hoàng before adding gamification or push.
 
 ## Do not do yet
 
@@ -37,4 +34,4 @@ You are continuing the Twogether project. Read `START_HERE.md` and its entire re
 
 ## Definition of done for P0
 
-The app runs locally, both accounts are isolated, a learner must attempt before seeing an answer, FSRS transitions and repair are covered by tests, content is provenance-aware, the map has a keyboard-accessible alternative, the PWA shell installs/caches safely, cumulative gates pass, and a rollback point plus evidence path are recorded. A green test run does not prove that the two learners actually learned; schedule the seven-day Human pilot next.
+The local P0 runs, both demo learners are isolated by the local adapter, a learner must attempt before seeing an answer, FSRS transitions and repair are covered by tests, content is provenance-aware, the map has a keyboard-accessible alternative, the PWA shell serves and caches only shell assets, cumulative gates pass, and a rollback point plus evidence path are recorded. Server RLS, browser interaction gates, Claude source capture, Cloudflare deployment, and the seven-day Human pilot are still required; a green test run does not prove that the two learners actually learned.

@@ -1,4 +1,16 @@
 {
   "schema_version": 1,
-  "resources": []
+  "resources": [
+    {
+      "id": "method.ts-fsrs",
+      "source": "https://github.com/open-spaced-repetition/ts-fsrs",
+      "identity": "ts-fsrs@5.4.1",
+      "license": "MIT",
+      "scope": "P0 browser scheduler adapter",
+      "status": "adopted_for_p0",
+      "task_gate": "src/scheduler.test.ts plus cumulative smoke gates",
+      "rollback": "replace the adapter behind src/scheduler.ts without deleting review events",
+      "evidence": "50-Evidence/p0-implementation-2026-08-18.md"
+    }
+  ]
 }

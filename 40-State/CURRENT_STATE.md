@@ -1,7 +1,7 @@
 ---
 last_verified: 2026-08-18
-verified_by: Codex read-only inception pass
-status: active
+verified_by: Codex P0 implementation pass
+status: active — P0 local study slice implemented
 ---
 
 # Current State
@@ -14,18 +14,22 @@ status: active
 - FSRS-6 with an initial 0.90 desired retention and a bounded repair loop is the recorded recommendation.
 - Vault discovery found UI/accessibility pointers, but none is adopted or field-proven.
 - Cloudflare is the intended deployment target. No Pages project, Worker, D1/Supabase project, credentials, or production deployment exists yet; the target is recorded as a constraint only.
+- A runnable React/TypeScript/Vite P0 now exists with a local adapter, 12 explicitly project-owned fixture cards, open-ended study flow, FSRS adapter, bounded repair queue, map/list view, progress view, and PWA shell.
+- The production persistence path is selected as Supabase Auth/Postgres/RLS, while `60-Decisions/ADR-0006-persistence-path.md` keeps the current local adapter reversible and explicitly non-production.
+- Focused tests pass 7/7, production build passes, cumulative smoke gates pass 6/6, runtime dependency audit is clean, and preview served `/`, the manifest, and service worker with HTTP 200.
 
 ## Blockers
 
-- The two Claude share conversations were not captured because the current runtime hit Cloudflare verification. Their contents must be imported or pasted before source-derived card generation.
-- No stack dependency, backend project, account, deployment, or notification service is installed or authorized.
+- The direct Claude share URLs remain blocked, but the owner supplied and Codex read two hashed pasted-text captures. Derived summaries live under `content/sources/`; 10 source-derived cards are draft-only and are not in the P0 runtime.
+- React/Vite/ts-fsrs dependencies are installed locally, but no backend project, account, deployment, or notification service is installed or authorized.
+- No browser-level keyboard/focus interaction gate or real Supabase RLS test exists yet; static accessibility hooks and local adapter tests are not evidence of server authorization.
 
 ## Unknowns
 
-- Exact source taxonomy, learner current level, daily time budget, and desired English/principle ordering.
+- Exact fifth English pillar (the pasted segment mentions five but enumerates four), learner current level, daily time budget, and desired English/React ordering.
 - Whether both learners want shared editing or an owner/reviewer role.
 - Which offline depth is worth the sync complexity after the first real week.
 
 ## Evidence
 
-See `50-Evidence/EVIDENCE_INDEX.md` for Vault query IDs, source status, and web references. This state is not a product-value verdict; a real study week is still required.
+See `50-Evidence/EVIDENCE_INDEX.md` and `50-Evidence/p0-implementation-2026-08-18.md` for source status, gate receipts, build/test output, and preview checks. This state is not a product-value verdict; a real study week is still required.

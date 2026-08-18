@@ -7,14 +7,16 @@
 
 ## Observed status on 2026-08-18
 
-The current runtime could fetch the public share shell and inspect the frontend’s public route, but Claude’s snapshot API and browser page returned a Cloudflare “security verification” challenge. No conversation text was captured or validated. Therefore:
+The direct share URLs remain blocked to the unauthenticated runtime by a Cloudflare “security verification” challenge. On 2026-08-18 the owner supplied two pasted-text attachments, which were read and hashed locally. Therefore the **source content is now captured by owner paste**, but the public URLs themselves were not re-opened successfully.
 
-- the number or names of English groups are **unknown**;
-- the principle categories and wording are **unknown**;
-- no flashcard in this repository may claim to be derived from either conversation yet.
+The immutable raw attachments remain outside this repository. Only hashes and derived, non-verbatim summaries are stored under `content/sources/`. Therefore:
 
-This is a bounded access failure, not evidence that the links are invalid or that the content is absent.
+- the English capture explicitly gives four study blocks and mentions ongoing real input, while an earlier “five pillars” phrase is not resolved by the pasted segment;
+- the React capture contains a principle ladder from state snapshots to reconciliation, purity, and Hook constraints;
+- source-derived cards exist only as `draft` in `content/drafts/claude-owner-source-drafts-v1.json`; current P0 fixture cards remain project-owned.
+
+The direct-link block is still a bounded access failure, not evidence that the links are invalid or that the content is absent. The owner-pasted captures remove the source-content blocker for draft authoring while preserving provenance.
 
 ## Safe next capture
 
-Ask the owner to paste/export the two conversations, or let a future authorized AI with an authenticated browser capture them. Save each immutable capture outside the stable routing documents with source URL, capture date, access condition, hash, and transformation note. Then derive cards through `CONTENT_AUTHORING.md`, keep uncertain claims in `review`, and record which source sentence supports each published card.
+Keep the owner attachments immutable outside project memory, preserve their hashes, and derive cards through `CONTENT_AUTHORING.md`. Keep uncertain claims in `review`, distinguish public React contracts from implementation explanations, and record which source ID supports each published card. The two derived summaries and draft bundle are the current transformation record.

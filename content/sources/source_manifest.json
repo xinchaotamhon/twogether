@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "captures": [
+    {
+      "source_id": "claude-owner-paste:english-2026-08-18",
+      "source_url": "https://claude.ai/share/8e79b1b8-3472-43ae-8a63-6d0b1690e39b",
+      "attachment_id": "49e3ef48-1e18-43a5-9362-a25f7bafd6fe",
+      "sha256": "9361901e173589bf8de726ecf9cf9ccfc58c5e025bb2851c119c53b9950764da",
+      "bytes": 7666,
+      "raw_capture": "outside_repository",
+      "derived_summary": "content/sources/claude-english-owner-capture-2026-08-18.md"
+    },
+    {
+      "source_id": "claude-owner-paste:react-2026-08-18",
+      "source_url": "https://claude.ai/share/f9fa0c78-8c2f-4df1-9836-31958a093e62",
+      "attachment_id": "9350eb77-811c-4007-a38e-bce1ef437b0b",
+      "sha256": "3b10d1df1491e0eabab13b9be6c3ec9fa3f442a57338d32b0425174600618245",
+      "bytes": 10826,
+      "raw_capture": "outside_repository",
+      "derived_summary": "content/sources/claude-react-owner-capture-2026-08-18.md"
+    }
+  ]
+}

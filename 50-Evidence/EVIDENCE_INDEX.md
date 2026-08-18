@@ -20,5 +20,17 @@
 - Cloudflare Pages static deployment and preview builds: <https://developers.cloudflare.com/pages/framework-guides/deploy-anything/>
 - Cloudflare Pages Functions for server-side routes/auth: <https://developers.cloudflare.com/pages/functions/>
 - Wrangler configuration as Worker deployment source of truth: <https://developers.cloudflare.com/workers/wrangler/configuration/>
+- React state snapshots and render purity: <https://react.dev/learn/state-as-a-snapshot>, <https://react.dev/learn/keeping-components-pure>
+- React state identity/keys and Hook call-order rules: <https://react.dev/learn/preserving-and-resetting-state>, <https://react.dev/reference/rules/rules-of-hooks>
+- Supabase Auth/RLS/security: <https://supabase.com/docs/guides/auth>, <https://supabase.com/docs/guides/database/postgres/row-level-security>, <https://supabase.com/docs/guides/database/secure-data>
+- MongoDB Atlas authorization and App Services/Data API end-of-life: <https://www.mongodb.com/docs/atlas/architecture/current/auth/>, <https://www.mongodb.com/docs/atlas/app-services/data-api/generated-endpoints/>
 
 Raw logs and future screenshots belong under dated evidence subfolders; do not replace this index with a chat summary.
+
+## P0 implementation evidence — 2026-08-18
+
+- `50-Evidence/p0-implementation-2026-08-18.md` records the local P0 artifact, focused test/build/audit results, preview HTTP checks, and known limits.
+- Smoke gate receipts: `20260818T113106Z-9f60086f` (baseline) and `20260818T115414Z-97ae183e` (P0 artifact, 6/6 pass).
+- `10-Resources/RESOURCE_ADOPTIONS.json` records `ts-fsrs@5.4.1` as adopted for the P0 scheduler adapter after focused gates; field retention/transfer value remains unproven.
+- Owner-pasted source attachment hashes: English `9361901e173589bf8de726ecf9cf9ccfc58c5e025bb2851c119c53b9950764da` and React `3b10d1df1491e0eabab13b9be6c3ec9fa3f442a57338d32b0425174600618245`; machine-readable provenance is `content/sources/source_manifest.json`, with derived summaries and draft cards under `content/sources/` and `content/drafts/`.
+- `50-Evidence/source-capture-and-backend-review-2026-08-18.md` records the source transformation, Supabase-vs-MongoDB decision, current verification commands, and the npm advisory endpoint limitation.

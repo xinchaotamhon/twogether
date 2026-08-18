@@ -4,11 +4,13 @@
 
 - React + TypeScript + Vite (phone-first SPA/PWA).
 - `ts-fsrs` for browser scheduling; pin the exact version in the lockfile after a focused scheduler test.
-- Supabase Auth + Postgres with Row Level Security (RLS) for the two accounts, shared content, and per-learner state. This is a proposal, not an installed dependency or a deployment decision.
+- Supabase Auth + Postgres with Row Level Security (RLS) for the two accounts, shared content, and per-learner state. It is selected for v1 by ADR-0007, but is not yet connected or provisioned.
 - Service worker and web app manifest for installability and shell caching.
 - Playwright or equivalent browser tests only after the app has a runnable baseline; do not add a test framework solely for appearance claims.
 
 The stack keeps the app small: a static frontend, one data/authorization boundary, and a deterministic scheduling module. A different backend is acceptable only if it preserves the same contracts and rollback path.
+
+As of ADR-0007, Supabase is selected for v1 persistence. MongoDB is not selected because it would add a server-side auth/authorization boundary and its older Atlas App Services/Data API path is end-of-life; revisit only if a future workload justifies the extra operational surface.
 
 ## Cloudflare deployment target
 

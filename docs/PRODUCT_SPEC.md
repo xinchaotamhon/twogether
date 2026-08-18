@@ -4,7 +4,7 @@
 
 Hiệp and Hoàng should build durable English understanding from first principles, then expand into branches. A successful first slice lets either learner answer a fresh prompt in their own words, explain why, identify a boundary or counterexample, and apply the idea to a new situation more reliably after a week—not merely finish a lesson or recognize a choice.
 
-The second Claude source is intended to supply a principle layer. Its exact content is currently unavailable to this runtime; see `CLAUDE_SOURCE_STATUS.md`. Do not invent its categories.
+The owner-pasted Claude captures now supply two draft source layers: English foundations and React principles. Their direct share URLs remain inaccessible to this runtime, so the app must use the hashed owner captures and keep derived cards in `draft`/`review` until Human approval. See `docs/CLAUDE_SOURCE_STATUS.md`.
 
 ## MVP scope
 

@@ -1,0 +1,11 @@
+{
+    "schema_version": 1,
+    "commit": "",
+    "indexed_at": "2026-08-18T11:58:58Z",
+    "project": "D-mydata-my-project-twogether",
+    "nodes": 416,
+    "edges": 505,
+    "original_size": 1572864,
+    "compressed_size": 197151,
+    "compression_level": 9
+}

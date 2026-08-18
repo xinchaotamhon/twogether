@@ -42,4 +42,4 @@ For a principle, prefer a four-card bundle: state it, explain its mechanism, ide
 
 ## Importing external material
 
-Capture the source separately, hash it, and write a transformation note. Do not paste an entire external conversation into `START_HERE.md`. The two Claude links are not yet captured; see `CLAUDE_SOURCE_STATUS.md`.
+Capture the source separately, hash it, and write a transformation note. Do not paste an entire external conversation into `START_HERE.md` or project Markdown. Owner-pasted captures for English and React are summarized under `content/sources/`; their derived cards remain in `content/drafts/` until Human review. See `CLAUDE_SOURCE_STATUS.md`.

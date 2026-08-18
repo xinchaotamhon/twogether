@@ -1,0 +1,48 @@
+---
+status: accepted-for-v1
+date: 2026-08-18
+decision_owner: hiep
+scope: production persistence and account boundary
+---
+
+# ADR-0007: Supabase over MongoDB for v1
+
+## Context
+
+The P0 already has a local adapter. Production needs exactly two allowlisted learners, shared card/map content, learner-private FSRS state and notes, append-only review events, idempotent writes, and database-enforced isolation. The frontend is intended for Cloudflare Pages, so the database must not require credentials in the browser.
+
+## Decision
+
+Keep the managed-data path: Cloudflare Pages frontend plus Supabase Auth/Postgres/RLS. Do not switch v1 to MongoDB. The existing adapter boundary remains, so a later backend change is possible before substantial learner history exists.
+
+## Why
+
+- Supabase Auth and Postgres RLS directly model the core boundary: shared rows are readable by both learners while private rows are filtered by the authenticated identity. Supabase documents combining Auth JWTs with RLS policies and explicitly warns that service-role keys bypass RLS and must stay server-side.
+- The app's data is relational at its security boundary: users, shared nodes, prerequisite edges, cards, revisions, learner-card states, and review events need constraints, joins, unique idempotency keys, and migrations. PostgreSQL gives these primitives without a custom authorization service.
+- MongoDB Atlas can store this data, but the supported design would require a Worker or other server API to own authentication, sessions, document-level authorization, migrations, and idempotency. MongoDB's older Atlas App Services/Data API route is documented as end-of-life, so it is not a safe v1 foundation for a new app.
+
+## Assumptions, objections, and alternatives
+
+- Assumption: two learners and moderate card/event volume do not require MongoDB's document model or sync capabilities.
+- Objection: Supabase is a vendor dependency and its hosted plan/cost must be checked before production; keep exports and an adapter boundary.
+- Alternative: Workers + D1 remains viable if owner prefers Cloudflare-only infrastructure, but it moves password hashing, session security, RLS-equivalent checks, migrations, and backup responsibility into project code.
+- Alternative: MongoDB Atlas becomes reasonable only if a future requirement demonstrates document-heavy workloads and the project is willing to operate a dedicated API/auth boundary; this is out of v1.
+
+## Cost and authorization
+
+No remote project, secret, or data binding is created by this decision. Owner approval is required before creating a Supabase project, adding secrets, or writing learner data. Verify current Supabase plan limits and region before provisioning.
+
+## Gate
+
+Before production: migrations apply from a clean database; two real accounts pass positive and cross-account negative RLS tests; review writes are idempotent; preview and production are isolated; service-role credentials are absent from the build; `/health`, PWA, CSP/CORS, and rollback checks pass with the existing smoke gates.
+
+## Rollback
+
+Keep the local adapter and return to the pre-remote checkpoint if the Supabase integration is unsafe. Preserve review-event contracts and never delete learner history to change providers.
+
+## Evidence
+
+- Supabase RLS and Auth: <https://supabase.com/docs/guides/database/postgres/row-level-security>, <https://supabase.com/docs/guides/auth>
+- Supabase frontend security: <https://supabase.com/docs/guides/database/secure-data>
+- MongoDB Atlas authorization: <https://www.mongodb.com/docs/atlas/architecture/current/auth/>
+- MongoDB App Services/Data API end-of-life notice: <https://www.mongodb.com/docs/atlas/app-services/data-api/generated-endpoints/>

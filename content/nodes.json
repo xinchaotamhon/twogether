@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "nodes": [
+    {
+      "id": "english-fixture-root",
+      "kind": "root",
+      "title": "English foundations",
+      "purpose": "Một bản đồ nhỏ để thử cách học từ nguyên lý.",
+      "status": "fixture",
+      "source_refs": ["project-fixture:placeholder-english-v1"],
+      "maintainer": "hiep"
+    },
+    {
+      "id": "english-fixture-recall",
+      "kind": "trunk",
+      "title": "Recall before recognition",
+      "purpose": "Gọi ý ra trước, sau đó mới nhìn lời giải.",
+      "status": "fixture",
+      "source_refs": ["project-fixture:placeholder-english-v1"],
+      "maintainer": "hiep"
+    },
+    {
+      "id": "english-fixture-mechanism",
+      "kind": "branch",
+      "title": "Mechanism & boundaries",
+      "purpose": "Không chỉ nhớ câu; hiểu vì sao và khi nào nó không còn đúng.",
+      "status": "fixture",
+      "source_refs": ["project-fixture:placeholder-english-v1"],
+      "maintainer": "hiep"
+    },
+    {
+      "id": "english-fixture-transfer",
+      "kind": "leaf",
+      "title": "Transfer to a fresh example",
+      "purpose": "Đưa ý tưởng sang một tình huống mới.",
+      "status": "fixture",
+      "source_refs": ["project-fixture:placeholder-english-v1"],
+      "maintainer": "hiep"
+    }
+  ],
+  "edges": [
+    { "from": "english-fixture-root", "to": "english-fixture-recall", "type": "part_of" },
+    { "from": "english-fixture-recall", "to": "english-fixture-mechanism", "type": "prerequisite" },
+    { "from": "english-fixture-mechanism", "to": "english-fixture-transfer", "type": "prerequisite" }
+  ]
+}
