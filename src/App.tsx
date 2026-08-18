@@ -68,7 +68,7 @@ function LoginView({ onChoose }: { onChoose: (learnerId: LearnerId) => void }) {
         <p className="login-lede">Một câu hỏi mở. Một lần tự gọi ý. Một bước nhỏ đủ thật để ngày mai vẫn còn ở đó.</p>
         <div className="learner-picker" aria-label="Chọn tài khoản học">
           {LEARNERS.map((learner) => (
-            <button className={`learner-choice ${learner.tone}`} key={learner.id} onClick={() => onChoose(learner.id)}>
+            <button data-testid={`learner-choice-${learner.id}`} className={`learner-choice ${learner.tone}`} key={learner.id} onClick={() => onChoose(learner.id)}>
               <span className="avatar avatar-large">{learner.initial}</span>
               <span className="learner-choice-copy"><strong>{learner.name}</strong><small>Không gian học riêng</small></span>
               <span className="arrow" aria-hidden="true">↗</span>
@@ -268,7 +268,7 @@ function StudyView({
     <>
       <section className="study-intro">
         <div><span className="eyebrow">PHIÊN CỦA {learnerName.toUpperCase()}</span><h1>Chậm một nhịp,<br /><em>nhớ thêm một chút.</em></h1></div>
-        <div className="study-progress" aria-label={`${progress}% phiên học`}><span>{String(Math.min(dueCount, completedReviews)).padStart(2, "0")}</span><i>/ {String(Math.max(dueCount, 1)).padStart(2, "0")}</i><small>đã gọi ý</small></div>
+        <div data-testid="study-progress" className="study-progress" aria-label={`${progress}% phiên học`}><span>{String(Math.min(dueCount, completedReviews)).padStart(2, "0")}</span><i>/ {String(Math.max(dueCount, 1)).padStart(2, "0")}</i><small>đã gọi ý</small></div>
       </section>
       <div className="progress-track" aria-hidden="true"><span style={{ width: `${progress}%` }} /></div>
       <section className="study-layout">
@@ -276,7 +276,7 @@ function StudyView({
           <span className="side-note-number">01</span>
           <span className="side-note-copy">Gọi ý<br />trước phản hồi</span>
         </div>
-        <article className={`study-card surface ${revealed ? "is-revealed" : ""}`} aria-labelledby="card-prompt">
+        <article data-testid="study-card" className={`study-card surface ${revealed ? "is-revealed" : ""}`} aria-labelledby="card-prompt">
           <div className="card-meta"><span className="card-type">{cardTypeLabels[currentCard.card_type]}</span><span className="card-node">English foundations <span aria-hidden="true">·</span> fixture nội bộ</span></div>
           <div className="card-question"><span className="question-mark" aria-hidden="true">?</span><h2 id="card-prompt">{currentCard.prompt}</h2></div>
           {!revealed ? (
@@ -287,7 +287,7 @@ function StudyView({
               {hintVisible && <p className="hint-copy" role="note">Gợi ý: hãy trả lời bằng chức năng của ý tưởng, không chỉ bằng tên gọi.</p>}
             </div>
           ) : (
-            <div className="reveal-panel" aria-live="polite">
+            <div data-testid="reveal-panel" className="reveal-panel" aria-live="polite">
               <div className="answer-block"><span className="section-label">LỜI GIẢI NGẮN</span><p className="model-answer">{currentCard.model_answer}</p></div>
               <div className="explanation-grid"><div><span className="section-label">VÌ SAO</span><p>{currentCard.explanation}</p></div><div className="misconception"><span className="section-label">DỄ NHẦM</span><p>{currentCard.misconception}</p></div></div>
               <div className="transfer-block"><span className="section-label">THỬ CHUYỂN SANG TÌNH HUỐNG MỚI</span><p>{currentCard.transfer_prompt}</p></div>
@@ -336,11 +336,11 @@ function ProgressView({ cards, snapshot, learnerName }: { cards: Card[]; snapsho
 }
 
 function Stat({ value, label, detail, tone }: { value: string; label: string; detail: string; tone: string }) {
-  return <div className={`stat-card surface ${tone}`}><strong>{value}</strong><span>{label}</span><small>{detail}</small></div>;
+  return <div data-testid={`stat-${tone}`} className={`stat-card surface ${tone}`}><strong>{value}</strong><span>{label}</span><small>{detail}</small></div>;
 }
 
 function BottomNav({ view, setView }: { view: View; setView: (view: View) => void }) {
-  return <nav className="bottom-nav" aria-label="Điều hướng chính"><button className={view === "study" ? "active" : ""} onClick={() => setView("study")}><span aria-hidden="true">◌</span><small>Học</small></button><button className={view === "map" ? "active" : ""} onClick={() => setView("map")}><span aria-hidden="true">⌘</span><small>Bản đồ</small></button><button className={view === "progress" ? "active" : ""} onClick={() => setView("progress")}><span aria-hidden="true">◒</span><small>Tiến độ</small></button></nav>;
+  return <nav className="bottom-nav" aria-label="Điều hướng chính"><button data-testid="nav-study" className={view === "study" ? "active" : ""} onClick={() => setView("study")}><span aria-hidden="true">◌</span><small>Học</small></button><button data-testid="nav-map" className={view === "map" ? "active" : ""} onClick={() => setView("map")}><span aria-hidden="true">⌘</span><small>Bản đồ</small></button><button data-testid="nav-progress" className={view === "progress" ? "active" : ""} onClick={() => setView("progress")}><span aria-hidden="true">◒</span><small>Tiến độ</small></button></nav>;
 }
 
 export default App;

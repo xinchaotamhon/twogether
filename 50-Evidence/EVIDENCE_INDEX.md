@@ -35,3 +35,6 @@ Raw logs and future screenshots belong under dated evidence subfolders; do not r
 - Owner-pasted source attachment hashes: English `9361901e173589bf8de726ecf9cf9ccfc58c5e025bb2851c119c53b9950764da` and React `3b10d1df1491e0eabab13b9be6c3ec9fa3f442a57338d32b0425174600618245`; machine-readable provenance is `content/sources/source_manifest.json`, with derived summaries and draft cards under `content/sources/` and `content/drafts/`.
 - `50-Evidence/source-capture-and-backend-review-2026-08-18.md` records the source transformation, Supabase-vs-MongoDB decision, current verification commands, and the npm advisory endpoint limitation.
 - `50-Evidence/free-tier-deployment-review-2026-08-18.md` records the owner-set USD 0/month constraint, official free-tier limits checked on 2026-08-18, authorization boundary, and rollback.
+- `50-Evidence/draft-review-2026-08-18.md` records the Codex AI pre-review of the 10 owner-source draft cards; Human approval is still pending and no draft was promoted.
+- `50-Evidence/browser-gate-2026-08-18.md` records the Playwright/Chrome production-preview contract: 4/4 pass; cumulative smoke receipt `20260818T160750Z-dc5f8f07` passed 10/10 after adding the core curriculum contract.
+- `50-Evidence/core-curriculum-2026-08-18.md` records the 20 English + 10 React principle-ladder starter cards; all remain draft pending Human review.

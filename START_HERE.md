@@ -40,4 +40,4 @@ Routine continuation is self-contained here; the Vault is only needed to discove
 
 ## When adding a flashcard
 
-Read `docs/CONTENT_AUTHORING.md`, place the card in the content source format, assign a concept node and prerequisites, include a model answer plus a boundary or transfer cue, and run the content/schema gates. Do not invent missing source material. Preserve provenance and mark uncertain claims for Human review.
+Read `docs/CONTENT_AUTHORING.md`. For the current principle-first curriculum, also read `content/sources/core-curriculum-synthesis-v1.md`, `content/drafts/core-curriculum-drafts-v1.json`, and `80-Handoffs/PROMPT_FOR_LUNA_CORE_CONTENT.md`. Place each card in the content source format, assign a concept node and prerequisites, include a model answer plus a boundary or transfer cue, and run the content/schema gates. Do not invent missing source material. Preserve provenance and mark uncertain claims for Human review; the core starter is 20 English + 10 React draft cards, not an exhaustive claim about either subject.

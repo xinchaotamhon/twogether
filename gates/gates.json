@@ -96,6 +96,21 @@
       "evidence": "50-Evidence/source-capture-and-backend-review-2026-08-18.md"
     },
     {
+      "id": "content.core-curriculum-contract",
+      "description": "Core principle-ladder draft bundle has exactly 20 English and 10 React cards and remains unpublished",
+      "tier": "smoke",
+      "command": ["{python}", "tools/check_core_curriculum.py"],
+      "cwd": ".",
+      "timeout_seconds": 20,
+      "expected_exit_code": 0,
+      "required": true,
+      "enabled": true,
+      "introduced_by": "core-curriculum-draft-bundle",
+      "invariant": "A provenance-aware principle ladder can be continued by another AI without publishing unreviewed cards",
+      "owner": "hiep",
+      "evidence": "50-Evidence/core-curriculum-2026-08-18.md"
+    },
+    {
       "id": "deployment.free-tier-contract",
       "description": "The owner-authorized v1 deployment remains zero-cost and paid upgrades remain disabled",
       "tier": "smoke",
@@ -109,6 +124,21 @@
       "invariant": "No AI may convert the personal pilot into a paid deployment without a new explicit owner decision",
       "owner": "hiep",
       "evidence": "50-Evidence/free-tier-deployment-review-2026-08-18.md"
+    },
+    {
+      "id": "browser.p0-contract",
+      "description": "Production preview passes answer-before-reveal, keyboard focus, learner isolation, map parity, and PWA shell checks",
+      "tier": "smoke",
+      "command": ["node", "tools/run_browser_gate.mjs"],
+      "cwd": ".",
+      "timeout_seconds": 180,
+      "expected_exit_code": 0,
+      "required": true,
+      "enabled": true,
+      "introduced_by": "browser-p0-contract",
+      "invariant": "The built artifact preserves the critical learner path and installable shell in a real browser",
+      "owner": "hiep",
+      "evidence": "50-Evidence/browser-gate-2026-08-18.md"
     }
   ]
 }
