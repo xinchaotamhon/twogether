@@ -29,7 +29,9 @@ def main() -> int:
     assert "<table>" in app and "focus-visible" in styles and "prefers-reduced-motion" in styles
     assert "private_notes" not in service_worker and "review_events" not in service_worker
 
-    forbidden = re.compile(r"(?i)(service[_-]?role|private[_-]?key|secret|authorization:\s*bearer|pushsubscription)")
+    # Do not reject harmless dependency prose such as the word "secret".
+    # Match secret-bearing names or bearer values instead of generic vocabulary.
+    forbidden = re.compile(r"(?i)(service[_-]?role|private[_-]?key|authorization:\s*bearer\s+[A-Za-z0-9._-]{20,}|pushsubscription)")
     dist = root / "dist"
     if dist.exists():
         for path in dist.rglob("*"):

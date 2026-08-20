@@ -5,6 +5,7 @@
 - React + TypeScript + Vite (phone-first SPA/PWA).
 - `ts-fsrs` for browser scheduling; pin the exact version in the lockfile after a focused scheduler test.
 - Supabase Auth + Postgres with Row Level Security (RLS) for the two accounts, shared content, and per-learner state. It is selected for v1 by ADR-0007, but is not yet connected or provisioned.
+- The repository now includes an optional Supabase browser adapter. It activates only when the two Vite variables are present; otherwise the local adapter remains the reversible default. See ADR-0008 and `supabase/README.md`.
 - Service worker and web app manifest for installability and shell caching.
 - Playwright or equivalent browser tests only after the app has a runnable baseline; do not add a test framework solely for appearance claims.
 

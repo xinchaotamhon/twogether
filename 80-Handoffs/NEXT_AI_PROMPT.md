@@ -1,6 +1,6 @@
 ---
-last_verified: 2026-08-18
-verified_by: Codex smoke 10/10 and browser 4/4 pass
+last_verified: 2026-08-20
+verified_by: Codex Supabase foundation implementation; owner provisioning pending
 status: active
 ---
 
@@ -15,12 +15,13 @@ You are continuing the Twogether project. Read `START_HERE.md` and its entire re
 - A bounded principle-ladder starter is now in `content/drafts/core-curriculum-drafts-v1.json`: exactly 20 English cards and 10 React cards, all `draft`, attached to a DAG. The rationale is `content/sources/core-curriculum-synthesis-v1.md`, the review evidence is `50-Evidence/core-curriculum-2026-08-18.md`, and the continuation prompt for Luna is `80-Handoffs/PROMPT_FOR_LUNA_CORE_CONTENT.md`. This is a generative backbone, not an exhaustive inventory of every English or React fact.
 - The P0 artifact is a phone-first React/TypeScript PWA with two local allowlisted demo learners, shared fixture card/map content, a learner-scoped local adapter, open-ended recall, `ts-fsrs@5.4.1`, and a bounded repair queue. Production persistence is selected as Supabase Auth/Postgres/RLS in ADR-0006, but credentials and the backend project do not exist.
 - The owner requires a zero-cost personal deployment: Cloudflare Pages Free + Supabase Free, using `*.pages.dev`. `monthly_budget_usd: 0` and `paid_upgrade_authorized: false` are durable constraints in ADR-0007. Do not enable Pro, paid add-ons, custom-domain purchases, paid SMTP/SMS/push, or any metered service without a new explicit owner decision.
+- Supabase foundation code is now in `supabase/migrations/202608200001_initial.sql`, `supabase/seed.sql`, `src/supabaseClient.ts`, and `src/supabaseAdapter.ts`; setup and rollback are in `supabase/README.md`, with evidence in `50-Evidence/supabase-foundation-2026-08-20.md`. Final cumulative smoke run `20260820T160059Z-7e8c38d1` passes 11/11. No project, Auth user, email, password, or key was created in this workspace.
 
 ## Execute this bounded next task
 
 1. Human-review the 30-card core starter and the 10-card owner-source bundle; record accept/revise/reject per card in dated evidence. Keep the current 12 project-owned fixture cards until reviewed cards are accepted.
 2. Ask Hiệp for learner level and daily time budget before expanding branches; use the ladder principle → mechanism → boundary → transfer.
-3. Connect Supabase Free behind the existing data-adapter boundary: allowlisted auth, schema migrations, RLS positive/negative tests, idempotent review writes, preview isolation, and `/health`. Recheck current Free quotas immediately before provisioning. Do not add a payment method, accept a paid upgrade, or create production bindings without owner approval.
+3. Owner-provision Supabase Free using `supabase/README.md`: apply the migration, create exactly two Auth users, insert real email mappings in the console, run `supabase/seed.sql`, set only the public URL/publishable key in environment variables, then execute positive/negative RLS tests, idempotent review, stale-state conflict, preview isolation, and `/health`. Do not add a payment method, accept a paid upgrade, or put credentials in Git/chat.
 4. After Human approval, replace fixture cards only through the immutable source → draft → Human review workflow.
 5. Run a seven-day pilot with Hiệp and Hoàng before adding gamification or push.
 

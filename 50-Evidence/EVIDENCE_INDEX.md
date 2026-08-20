@@ -38,3 +38,4 @@ Raw logs and future screenshots belong under dated evidence subfolders; do not r
 - `50-Evidence/draft-review-2026-08-18.md` records the Codex AI pre-review of the 10 owner-source draft cards; Human approval is still pending and no draft was promoted.
 - `50-Evidence/browser-gate-2026-08-18.md` records the Playwright/Chrome production-preview contract: 4/4 pass; cumulative smoke receipt `20260818T160750Z-dc5f8f07` passed 10/10 after adding the core curriculum contract.
 - `50-Evidence/core-curriculum-2026-08-18.md` records the 20 English + 10 React principle-ladder starter cards; all remain draft pending Human review.
+- `50-Evidence/supabase-foundation-2026-08-20.md` records the migration/RLS/client boundary, owner-only provisioning gate, and final cumulative smoke run `20260820T160059Z-7e8c38d1` (11/11); no project or credentials were created here.

@@ -1,6 +1,6 @@
 ---
-last_verified: 2026-08-18
-verified_by: Codex smoke 10/10 and browser 4/4 pass
+last_verified: 2026-08-20
+verified_by: Codex Supabase foundation implementation; owner provisioning pending
 status: active — P0 local study slice implemented
 ---
 
@@ -26,12 +26,14 @@ status: active — P0 local study slice implemented
 - React/Vite/ts-fsrs dependencies are installed locally, but no backend project, account, deployment, or notification service is installed or authorized.
 - No real Supabase RLS test exists yet; local adapter and browser checks are not evidence of server authorization.
 - The 40 draft cards (30 core starter + 10 owner-source drafts) have not received Human accept/revise/reject decisions and are not published to the runtime.
+- Supabase schema/RLS migration, fixture-only seed, optional browser adapter, and contract gate now exist locally; final cumulative smoke run `20260820T160059Z-7e8c38d1` passes 11/11. No remote project, Auth user, or credential has been created.
 
 ## Unknowns
 
 - Exact fifth English pillar (the pasted segment mentions five but enumerates four), learner current level, daily time budget, and desired English/React ordering.
 - Whether both learners want shared editing or an owner/reviewer role.
 - Which offline depth is worth the sync complexity after the first real week.
+- Real Supabase project URL/key, two learner emails, and owner-run RLS results are still unknown.
 
 ## Evidence
 

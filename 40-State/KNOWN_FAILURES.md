@@ -34,3 +34,11 @@ status: active
 - Workaround: invoke the bundled CLI explicitly through `C:\Program Files\nodejs\node.exe` and `C:\Program Files\nodejs\node_modules\npm\bin\npm-cli.js`.
 - Disposition: contained; do not change global user configuration from the project. Cloudflare's clean build environment should use its own npm installation.
 - Evidence: `50-Evidence/source-capture-and-backend-review-2026-08-18.md`.
+
+## GATE-001 — Generic secret scan rejected Supabase dependency prose
+
+- Symptom: the first post-Supabase smoke run failed `app.p0-artifact-contract` because the bundled dependency contained the ordinary word “secret”.
+- Impact: the artifact gate was too broad and produced a false failure; no credential was found in the bundle.
+- Root cause: the scan treated generic vocabulary as a secret indicator instead of matching secret-bearing names or bearer values.
+- Disposition: fixed by narrowing the regex in `tools/check_app_artifact.py`; the next cumulative run passed 11/11.
+- Regression gate: `app.p0-artifact-contract` remains required and now checks the narrower, actionable patterns.

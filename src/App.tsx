@@ -1,5 +1,7 @@
-import { useMemo, useState } from "react";
-import { createLocalDataAdapter, hashCardState, localDataAdapter } from "./dataAdapter";
+import { useEffect, useMemo, useState, type FormEvent } from "react";
+import { hashCardState, localDataAdapter, type DataAdapter } from "./dataAdapter";
+import { createSupabaseDataAdapter, type SupabaseDataAdapter } from "./supabaseAdapter";
+import { createSupabaseBrowserClient } from "./supabaseClient";
 import { REPAIR_CAP, enqueueRepair, removeRepairItem, takeNextCardId, type RepairItem } from "./studyPolicy";
 import { stateName } from "./scheduler";
 import type {
@@ -39,6 +41,13 @@ function dueIds(cards: Card[], snapshot: LearnerSnapshot, now = new Date()): str
 }
 
 function App() {
+  const supabaseClient = useMemo(() => createSupabaseBrowserClient(), []);
+  if (supabaseClient) return <SupabaseApp client={supabaseClient} />;
+
+  return <LocalApp />;
+}
+
+function LocalApp() {
   const [learnerId, setLearnerId] = useState<LearnerId | null>(() => {
     const stored = window.localStorage.getItem("twogether.active-learner");
     return stored === "hiep" || stored === "hoang" ? stored : null;
@@ -51,6 +60,120 @@ function App() {
 
   if (!learnerId) return <LoginView onChoose={chooseLearner} />;
   return <LearningApp learnerId={learnerId} onLogout={() => setLearnerId(null)} />;
+}
+
+function SupabaseApp({ client }: { client: NonNullable<ReturnType<typeof createSupabaseBrowserClient>> }) {
+  const [learnerId, setLearnerId] = useState<LearnerId | null>(null);
+  const [adapter, setAdapter] = useState<SupabaseDataAdapter | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+
+  const hydrateSession = async () => {
+    setLoading(true);
+    setError(null);
+    const { data: sessionData, error: sessionError } = await client.auth.getSession();
+    if (sessionError) {
+      setError("Không đọc được phiên đăng nhập. Hãy thử lại.");
+      setLoading(false);
+      return;
+    }
+    if (!sessionData.session) {
+      setLearnerId(null);
+      setAdapter(null);
+      setLoading(false);
+      return;
+    }
+
+    const { data: remoteLearnerId, error: learnerError } = await client.rpc("current_learner_id");
+    if (learnerError || (remoteLearnerId !== "hiep" && remoteLearnerId !== "hoang")) {
+      await client.auth.signOut();
+      setLearnerId(null);
+      setAdapter(null);
+      setError("Tài khoản này chưa được allowlist cho Twogether.");
+      setLoading(false);
+      return;
+    }
+
+    try {
+      const nextAdapter = createSupabaseDataAdapter(client, remoteLearnerId);
+      await nextAdapter.initialize();
+      setAdapter(nextAdapter);
+      setLearnerId(remoteLearnerId);
+    } catch {
+      setAdapter(null);
+      setLearnerId(null);
+      setError("Đã đăng nhập nhưng chưa tải được dữ liệu học. Kiểm tra migration và seed Supabase.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    void hydrateSession();
+    const { data } = client.auth.onAuthStateChange((event) => {
+      if (event === "SIGNED_OUT") {
+        setLearnerId(null);
+        setAdapter(null);
+      }
+    });
+    return () => data.subscription.unsubscribe();
+  }, [client]);
+
+  const signIn = async (email: string, password: string) => {
+    setError(null);
+    const { error: signInError } = await client.auth.signInWithPassword({ email, password });
+    if (signInError) {
+      setError("Email hoặc mật khẩu chưa đúng, hoặc tài khoản chưa được tạo.");
+      return;
+    }
+    await hydrateSession();
+  };
+
+  const signOut = async () => {
+    await client.auth.signOut();
+    setLearnerId(null);
+    setAdapter(null);
+  };
+
+  if (loading) return <main className="login-shell"><section className="login-panel"><div className="eyebrow">TWogether · SUPABASE</div><h1>Đang mở không gian học…</h1><p className="login-lede">Đang kiểm tra phiên đăng nhập và tải lịch học riêng của bạn.</p></section></main>;
+  if (learnerId && adapter) return <LearningApp adapter={adapter} learnerId={learnerId} onLogout={signOut} />;
+  return <SupabaseLoginView onSubmit={signIn} error={error} />;
+}
+
+function SupabaseLoginView({ onSubmit, error }: { onSubmit: (email: string, password: string) => Promise<void>; error: string | null }) {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [submitting, setSubmitting] = useState(false);
+
+  const submit = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setSubmitting(true);
+    try {
+      await onSubmit(email.trim(), password);
+    } finally {
+      setSubmitting(false);
+    }
+  };
+
+  return (
+    <main className="login-shell">
+      <div className="login-orbit orbit-one" />
+      <div className="login-orbit orbit-two" />
+      <section className="login-panel" aria-labelledby="supabase-welcome-title">
+        <div className="brand-lockup"><span className="brand-word">twogether<span>.</span></span><span className="brand-note">learn for keeps</span></div>
+        <div className="eyebrow">PRIVATE LEARNING STUDIO · PRODUCTION LOGIN</div>
+        <h1 id="supabase-welcome-title">Đăng nhập để<br /><em>học cùng nhau.</em></h1>
+        <p className="login-lede">Mỗi người dùng email riêng. Lịch học và tiến độ chỉ thuộc về đúng tài khoản đó.</p>
+        <form className="supabase-login-form" onSubmit={submit}>
+          <label>Email<input data-testid="supabase-email" type="email" autoComplete="username" value={email} onChange={(event) => setEmail(event.target.value)} required /></label>
+          <label>Mật khẩu<input data-testid="supabase-password" type="password" autoComplete="current-password" value={password} onChange={(event) => setPassword(event.target.value)} required /></label>
+          <button className="button button-dark" type="submit" disabled={submitting}>{submitting ? "Đang đăng nhập…" : "Đăng nhập ↗"}</button>
+        </form>
+        {error && <p className="login-error" role="alert">{error}</p>}
+        <p className="preview-note"><span className="status-dot" /> Production mode chỉ bật khi bạn cấu hình Supabase; không lưu mật khẩu trong app.</p>
+      </section>
+    </main>
+  );
 }
 
 function LoginView({ onChoose }: { onChoose: (learnerId: LearnerId) => void }) {
@@ -81,8 +204,7 @@ function LoginView({ onChoose }: { onChoose: (learnerId: LearnerId) => void }) {
   );
 }
 
-function LearningApp({ learnerId, onLogout }: { learnerId: LearnerId; onLogout: () => void }) {
-  const adapter = localDataAdapter;
+function LearningApp({ learnerId, onLogout, adapter = localDataAdapter }: { learnerId: LearnerId; onLogout: () => void; adapter?: DataAdapter & Partial<Pick<SupabaseDataAdapter, "recordReviewAsync">> }) {
   const cards = useMemo(() => adapter.listCards(), [adapter]);
   const nodes = useMemo(() => adapter.listNodes(), [adapter]);
   const edges = useMemo(() => adapter.listEdges(), [adapter]);
@@ -99,6 +221,7 @@ function LearningApp({ learnerId, onLogout }: { learnerId: LearnerId; onLogout: 
   const [hintVisible, setHintVisible] = useState(false);
   const [lastInterval, setLastInterval] = useState<string | null>(null);
   const [message, setMessage] = useState<string | null>(null);
+  const [savingReview, setSavingReview] = useState(false);
 
   const learner = LEARNERS.find((item) => item.id === learnerId)!;
   const currentCard = cards.find((card) => card.id === currentCardId) ?? null;
@@ -133,34 +256,42 @@ function LearningApp({ learnerId, onLogout }: { learnerId: LearnerId; onLogout: 
     setRevealed(true);
   };
 
-  const handleGrade = (rating: ReviewRating) => {
-    if (!currentCard || !currentState || !revealed) return;
-    const result = adapter.recordReview({
-      sessionLearnerId: learnerId,
-      requestedLearnerId: learnerId,
-      cardId: currentCard.id,
-      rating,
-      attemptKind,
-      occurredAt: new Date(),
-      idempotencyKey: `${learnerId}-${currentCard.id}-${Date.now()}`,
-      oldStateHash: hashCardState(currentState),
-    });
-    setSnapshot(result.snapshot);
-    setLastInterval(result.intervalLabel);
-    setMessage(rating === "Good" ? `Đã ghi Nhớ · xem lại ${result.intervalLabel}` : "Đã ghi Quên · card sẽ quay lại sau vài card khác");
-    const nextCompleted = completedReviews + 1;
-    setCompletedReviews(nextCompleted);
-    const existing = repairQueue.find((item) => item.cardId === currentCard.id);
-    let nextRepairQueue: RepairItem[];
-    if (rating === "Good") {
-      nextRepairQueue = removeRepairItem(repairQueue, currentCard.id);
-    } else if (existing && existing.appearances >= REPAIR_CAP) {
-      nextRepairQueue = removeRepairItem(repairQueue, currentCard.id);
-      setMessage("Card này đã thử đủ 3 lần trong phiên · tạm dừng để não nghỉ");
-    } else {
-      nextRepairQueue = enqueueRepair(repairQueue, currentCard.id, nextCompleted);
+  const handleGrade = async (rating: ReviewRating) => {
+    if (!currentCard || !currentState || !revealed || savingReview) return;
+    setSavingReview(true);
+    try {
+      const input = {
+        sessionLearnerId: learnerId,
+        requestedLearnerId: learnerId,
+        cardId: currentCard.id,
+        rating,
+        attemptKind,
+        occurredAt: new Date(),
+        idempotencyKey: `${learnerId}-${currentCard.id}-${Date.now()}`,
+        oldStateHash: hashCardState(currentState),
+      };
+      const result = adapter.recordReviewAsync ? await adapter.recordReviewAsync(input) : adapter.recordReview(input);
+      setSnapshot(result.snapshot);
+      setLastInterval(result.intervalLabel);
+      setMessage(rating === "Good" ? `Đã ghi Nhớ · xem lại ${result.intervalLabel}` : "Đã ghi Quên · card sẽ quay lại sau vài card khác");
+      const nextCompleted = completedReviews + 1;
+      setCompletedReviews(nextCompleted);
+      const existing = repairQueue.find((item) => item.cardId === currentCard.id);
+      let nextRepairQueue: RepairItem[];
+      if (rating === "Good") {
+        nextRepairQueue = removeRepairItem(repairQueue, currentCard.id);
+      } else if (existing && existing.appearances >= REPAIR_CAP) {
+        nextRepairQueue = removeRepairItem(repairQueue, currentCard.id);
+        setMessage("Card này đã thử đủ 3 lần trong phiên · tạm dừng để não nghỉ");
+      } else {
+        nextRepairQueue = enqueueRepair(repairQueue, currentCard.id, nextCompleted);
+      }
+      advanceAfterReview(nextRepairQueue, nextCompleted);
+    } catch (error) {
+      setMessage(error instanceof Error ? `Chưa ghi được: ${error.message}` : "Chưa ghi được lượt học; hãy thử lại");
+    } finally {
+      setSavingReview(false);
     }
-    advanceAfterReview(nextRepairQueue, nextCompleted);
   };
 
   const shellProps = { learner, learnerId, onLogout, view, setView };
@@ -191,6 +322,7 @@ function LearningApp({ learnerId, onLogout }: { learnerId: LearnerId; onLogout: 
             restartSession={restartSession}
             message={message}
             lastInterval={lastInterval}
+            savingReview={savingReview}
           />
         )}
         {view === "map" && <MapView nodes={nodes} edges={edges} cards={cards} snapshot={snapshot} />}
@@ -232,6 +364,7 @@ function StudyView({
   restartSession,
   message,
   lastInterval,
+  savingReview,
 }: {
   learnerName: string;
   dueCount: number;
@@ -250,6 +383,7 @@ function StudyView({
   restartSession: () => void;
   message: string | null;
   lastInterval: string | null;
+  savingReview: boolean;
 }) {
   if (!currentCard) {
     return (
@@ -291,7 +425,7 @@ function StudyView({
               <div className="answer-block"><span className="section-label">LỜI GIẢI NGẮN</span><p className="model-answer">{currentCard.model_answer}</p></div>
               <div className="explanation-grid"><div><span className="section-label">VÌ SAO</span><p>{currentCard.explanation}</p></div><div className="misconception"><span className="section-label">DỄ NHẦM</span><p>{currentCard.misconception}</p></div></div>
               <div className="transfer-block"><span className="section-label">THỬ CHUYỂN SANG TÌNH HUỐNG MỚI</span><p>{currentCard.transfer_prompt}</p></div>
-              <div className="grade-actions"><button className="button button-forgot" onClick={() => handleGrade("Again")}><span className="grade-icon">↺</span><span><strong>Quên</strong><small>Cần gặp lại sau vài card</small></span></button><button className="button button-remember" onClick={() => handleGrade("Good")}><span className="grade-icon">✦</span><span><strong>Nhớ</strong><small>{lastInterval ?? "Đưa vào lịch FSRS"}</small></span></button></div>
+              <div className="grade-actions"><button className="button button-forgot" disabled={savingReview} onClick={() => handleGrade("Again")}><span className="grade-icon">↺</span><span><strong>Quên</strong><small>Cần gặp lại sau vài card</small></span></button><button className="button button-remember" disabled={savingReview} onClick={() => handleGrade("Good")}><span className="grade-icon">✦</span><span><strong>Nhớ</strong><small>{savingReview ? "Đang ghi…" : lastInterval ?? "Đưa vào lịch FSRS"}</small></span></button></div>
             </div>
           )}
           <footer className="card-footer"><span>{currentState ? stateName(currentState.fsrs.state) : "new"} · {remainingCount} card còn trong phiên</span>{repairQueue.length > 0 && <span className="repair-badge">↺ {repairQueue.length} đang củng cố</span>}</footer>

@@ -126,6 +126,21 @@
       "evidence": "50-Evidence/free-tier-deployment-review-2026-08-18.md"
     },
     {
+      "id": "backend.supabase-contract",
+      "description": "Supabase migration, RLS ownership boundary, idempotent review RPC, and browser env secret hygiene are present",
+      "tier": "smoke",
+      "command": ["node", "tools/check_supabase_contract.mjs"],
+      "cwd": ".",
+      "timeout_seconds": 20,
+      "expected_exit_code": 0,
+      "required": true,
+      "enabled": true,
+      "introduced_by": "supabase-foundation-2026-08-20",
+      "invariant": "Remote persistence can be provisioned without weakening learner isolation or committing secrets",
+      "owner": "hiep",
+      "evidence": "50-Evidence/supabase-foundation-2026-08-20.md"
+    },
+    {
       "id": "browser.p0-contract",
       "description": "Production preview passes answer-before-reveal, keyboard focus, learner isolation, map parity, and PWA shell checks",
       "tier": "smoke",
