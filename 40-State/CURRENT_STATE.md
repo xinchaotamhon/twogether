@@ -18,7 +18,7 @@ status: active — P0 local study slice implemented
 - The active P0 persistence path is the local adapter with a simple Hiệp/Hoàng profile picker. Supabase Auth/Postgres/RLS remains a future sync option only; the current app does not show email login even when `.env.local` exists.
 - The owner-set deployment budget is USD 0/month: Cloudflare Pages Free + Supabase Free; no paid upgrade or add-on is authorized.
 - A provenance-aware principle-ladder starter exists outside the runtime: 20 English cards + 10 React cards, 12 DAG nodes, all `draft`; see `content/drafts/core-curriculum-drafts-v1.json` and `50-Evidence/core-curriculum-2026-08-18.md`.
-- Focused tests pass 7/7, production build passes, Playwright browser checks pass 4/4, and cumulative smoke run `20260818T160750Z-dc5f8f07` passes 10/10, including the core-curriculum contract. The production preview serves `/`, the manifest, and service worker. Dependency install reported 0 vulnerabilities; a later advisory-endpoint recheck remains recorded separately.
+- Focused tests pass 7/7, production build passes, Playwright browser checks pass 5/5, and final cumulative smoke run `20260821T073210Z-58819645` passes 11/11, including the profile-picker regression and core-curriculum contract. The production preview serves `/`, the manifest, and service worker. Dependency install reported 0 vulnerabilities; a later advisory-endpoint recheck remains recorded separately.
 
 ## Blockers
 
@@ -26,7 +26,7 @@ status: active — P0 local study slice implemented
 - React/Vite/ts-fsrs dependencies are installed locally, but no backend project, account, deployment, or notification service is installed or authorized.
 - No real Supabase RLS test exists yet; local adapter and browser checks are not evidence of server authorization. This is acceptable for the current profile-only P0 because remote sync is not active.
 - The 40 draft cards (30 core starter + 10 owner-source drafts) have not received Human accept/revise/reject decisions and are not published to the runtime.
-- Supabase schema/RLS migration, fixture-only seed, optional browser adapter, and contract gate now exist locally; final cumulative smoke run `20260820T160059Z-7e8c38d1` passes 11/11. No remote project, Auth user, or credential has been created.
+- Supabase schema/RLS migration, fixture-only seed, future adapter, and contract gate now exist locally; final cumulative smoke run `20260821T073210Z-58819645` passes 11/11. No remote project, Auth user, or credential has been created.
 
 ## Unknowns
 
