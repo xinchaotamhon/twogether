@@ -5,6 +5,12 @@ test.describe("Twogether P0 browser contract", () => {
     await page.goto("/");
   });
 
+  test("uses the simple learner picker even when Supabase env values exist", async ({ page }) => {
+    await expect(page.getByTestId("learner-choice-hiep")).toBeVisible();
+    await expect(page.getByTestId("learner-choice-hoang")).toBeVisible();
+    await expect(page.getByTestId("supabase-email")).toHaveCount(0);
+    await expect(page.getByTestId("supabase-password")).toHaveCount(0);
+  });
   test("requires an attempt before revealing the answer and keeps focus keyboardable", async ({ page }) => {
     await page.getByTestId("learner-choice-hiep").click();
     await expect(page.getByTestId("study-card")).toBeVisible();

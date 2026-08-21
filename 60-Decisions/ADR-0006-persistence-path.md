@@ -41,3 +41,7 @@ Remove the local adapter integration and return to Git checkpoint `2ed4510`; pre
 ## Evidence
 
 `50-Evidence/baseline-2026-08-18.md` records the pre-implementation checkpoint and green foundation gates.
+
+## Owner clarification — 2026-08-21
+
+For the active P0, Hiệp explicitly chose a shared-device profile picker instead of login: opening the app presents **Hiệp** and **Hoàng**, with no email, password, or PIN. The local adapter remains the active runtime and keeps each profile's review state in a separate learner scope. The Supabase Auth/Postgres/RLS path described above is retained as a reversible future-sync boundary, but `.env.local` must not force the current app into an email-login screen. Re-enabling remote review synchronization requires a new identity decision and real RLS evidence.

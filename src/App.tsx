@@ -1,7 +1,6 @@
-import { useEffect, useMemo, useState, type FormEvent } from "react";
+import { useMemo, useState } from "react";
 import { hashCardState, localDataAdapter, type DataAdapter } from "./dataAdapter";
-import { createSupabaseDataAdapter, type SupabaseDataAdapter } from "./supabaseAdapter";
-import { createSupabaseBrowserClient } from "./supabaseClient";
+import type { SupabaseDataAdapter } from "./supabaseAdapter";
 import { REPAIR_CAP, enqueueRepair, removeRepairItem, takeNextCardId, type RepairItem } from "./studyPolicy";
 import { stateName } from "./scheduler";
 import type {
@@ -41,9 +40,8 @@ function dueIds(cards: Card[], snapshot: LearnerSnapshot, now = new Date()): str
 }
 
 function App() {
-  const supabaseClient = useMemo(() => createSupabaseBrowserClient(), []);
-  if (supabaseClient) return <SupabaseApp client={supabaseClient} />;
-
+  // Shared-device mode: choosing Hiệp or Hoàng is the complete entry flow.
+  // No email, password, PIN, or Supabase Auth screen is required.
   return <LocalApp />;
 }
 
@@ -60,120 +58,6 @@ function LocalApp() {
 
   if (!learnerId) return <LoginView onChoose={chooseLearner} />;
   return <LearningApp learnerId={learnerId} onLogout={() => setLearnerId(null)} />;
-}
-
-function SupabaseApp({ client }: { client: NonNullable<ReturnType<typeof createSupabaseBrowserClient>> }) {
-  const [learnerId, setLearnerId] = useState<LearnerId | null>(null);
-  const [adapter, setAdapter] = useState<SupabaseDataAdapter | null>(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
-
-  const hydrateSession = async () => {
-    setLoading(true);
-    setError(null);
-    const { data: sessionData, error: sessionError } = await client.auth.getSession();
-    if (sessionError) {
-      setError("Không đọc được phiên đăng nhập. Hãy thử lại.");
-      setLoading(false);
-      return;
-    }
-    if (!sessionData.session) {
-      setLearnerId(null);
-      setAdapter(null);
-      setLoading(false);
-      return;
-    }
-
-    const { data: remoteLearnerId, error: learnerError } = await client.rpc("current_learner_id");
-    if (learnerError || (remoteLearnerId !== "hiep" && remoteLearnerId !== "hoang")) {
-      await client.auth.signOut();
-      setLearnerId(null);
-      setAdapter(null);
-      setError("Tài khoản này chưa được allowlist cho Twogether.");
-      setLoading(false);
-      return;
-    }
-
-    try {
-      const nextAdapter = createSupabaseDataAdapter(client, remoteLearnerId);
-      await nextAdapter.initialize();
-      setAdapter(nextAdapter);
-      setLearnerId(remoteLearnerId);
-    } catch {
-      setAdapter(null);
-      setLearnerId(null);
-      setError("Đã đăng nhập nhưng chưa tải được dữ liệu học. Kiểm tra migration và seed Supabase.");
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  useEffect(() => {
-    void hydrateSession();
-    const { data } = client.auth.onAuthStateChange((event) => {
-      if (event === "SIGNED_OUT") {
-        setLearnerId(null);
-        setAdapter(null);
-      }
-    });
-    return () => data.subscription.unsubscribe();
-  }, [client]);
-
-  const signIn = async (email: string, password: string) => {
-    setError(null);
-    const { error: signInError } = await client.auth.signInWithPassword({ email, password });
-    if (signInError) {
-      setError("Email hoặc mật khẩu chưa đúng, hoặc tài khoản chưa được tạo.");
-      return;
-    }
-    await hydrateSession();
-  };
-
-  const signOut = async () => {
-    await client.auth.signOut();
-    setLearnerId(null);
-    setAdapter(null);
-  };
-
-  if (loading) return <main className="login-shell"><section className="login-panel"><div className="eyebrow">TWogether · SUPABASE</div><h1>Đang mở không gian học…</h1><p className="login-lede">Đang kiểm tra phiên đăng nhập và tải lịch học riêng của bạn.</p></section></main>;
-  if (learnerId && adapter) return <LearningApp adapter={adapter} learnerId={learnerId} onLogout={signOut} />;
-  return <SupabaseLoginView onSubmit={signIn} error={error} />;
-}
-
-function SupabaseLoginView({ onSubmit, error }: { onSubmit: (email: string, password: string) => Promise<void>; error: string | null }) {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [submitting, setSubmitting] = useState(false);
-
-  const submit = async (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    setSubmitting(true);
-    try {
-      await onSubmit(email.trim(), password);
-    } finally {
-      setSubmitting(false);
-    }
-  };
-
-  return (
-    <main className="login-shell">
-      <div className="login-orbit orbit-one" />
-      <div className="login-orbit orbit-two" />
-      <section className="login-panel" aria-labelledby="supabase-welcome-title">
-        <div className="brand-lockup"><span className="brand-word">twogether<span>.</span></span><span className="brand-note">learn for keeps</span></div>
-        <div className="eyebrow">PRIVATE LEARNING STUDIO · PRODUCTION LOGIN</div>
-        <h1 id="supabase-welcome-title">Đăng nhập để<br /><em>học cùng nhau.</em></h1>
-        <p className="login-lede">Mỗi người dùng email riêng. Lịch học và tiến độ chỉ thuộc về đúng tài khoản đó.</p>
-        <form className="supabase-login-form" onSubmit={submit}>
-          <label>Email<input data-testid="supabase-email" type="email" autoComplete="username" value={email} onChange={(event) => setEmail(event.target.value)} required /></label>
-          <label>Mật khẩu<input data-testid="supabase-password" type="password" autoComplete="current-password" value={password} onChange={(event) => setPassword(event.target.value)} required /></label>
-          <button className="button button-dark" type="submit" disabled={submitting}>{submitting ? "Đang đăng nhập…" : "Đăng nhập ↗"}</button>
-        </form>
-        {error && <p className="login-error" role="alert">{error}</p>}
-        <p className="preview-note"><span className="status-dot" /> Production mode chỉ bật khi bạn cấu hình Supabase; không lưu mật khẩu trong app.</p>
-      </section>
-    </main>
-  );
 }
 
 function LoginView({ onChoose }: { onChoose: (learnerId: LearnerId) => void }) {

@@ -11,9 +11,13 @@ npm run dev
 
 Choose either learner on the first screen. The local preview stores each learner's review history under a separate browser key. It is not production authentication or server synchronization.
 
-## Optional Supabase mode
+## Two learner profiles
 
-The app automatically uses the Supabase Auth/Postgres adapter only when both `VITE_SUPABASE_URL` and `VITE_SUPABASE_ANON_KEY` are configured. Provisioning, migration, allowlisting, fixture seed, RLS checks, and rollback are documented in `supabase/README.md`. Never commit a service-role key or learner password.
+The app always opens with a simple learner picker: choose **Hiệp** or **Hoàng** and start studying. There is no email, password, PIN, or login screen in the current P0. Review history remains separate inside the browser for the selected profile. Cloudflare can host this static PWA without a backend.
+
+## Supabase (optional future sync)
+
+The Supabase schema, RLS policies, seed, and adapter are kept as a future sync path, but `.env.local` does not turn on a login screen. Do not create Auth users or add learner emails for the current profile-only P0. If cloud synchronization is requested later, record a separate product decision for the identity flow before enabling remote review state. Never commit a service-role key or learner password.
 
 ## Gates
 
