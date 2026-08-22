@@ -16,14 +16,6 @@ import { LEARNERS } from "./types";
 
 type View = "study" | "map" | "progress";
 
-const cardTypeLabels: Record<Card["card_type"], string> = {
-  core_recall: "Gọi ý",
-  mechanism: "Cơ chế",
-  contrast: "Phân biệt",
-  boundary: "Ranh giới",
-  application: "Ứng dụng",
-  production: "Tự tạo",
-};
 
 function dueIds(cards: Card[], snapshot: LearnerSnapshot, now = new Date()): string[] {
   return cards
@@ -110,6 +102,7 @@ function LearningApp({ learnerId, onLogout, adapter = localDataAdapter }: { lear
   const learner = LEARNERS.find((item) => item.id === learnerId)!;
   const currentCard = cards.find((card) => card.id === currentCardId) ?? null;
   const currentState = currentCard ? snapshot.cardStates[currentCard.id] : null;
+  const currentCardNodeTitle = currentCard ? nodes.find((node) => node.id === currentCard.node_id)?.title ?? "Nội dung" : "Nội dung";
   const dueCount = dueIds(cards, snapshot).length;
 
   const restartSession = () => {
@@ -178,22 +171,19 @@ function LearningApp({ learnerId, onLogout, adapter = localDataAdapter }: { lear
     }
   };
 
-  const shellProps = { learner, learnerId, onLogout, view, setView };
   return (
     <div className="app-shell">
-      <AppHeader {...shellProps} />
+      <AppHeader learner={learner} onLogout={onLogout} />
       <main className="main-content">
         <div className="topline">
-          <div><span className="eyebrow">THỨ HAI · 18 THÁNG 8</span><span className="sync-pill"><span className="status-dot" /> local · riêng tư</span></div>
+          <div><span className="eyebrow">THỨ HAI · 18 THÁNG 8</span></div>
           <span className="offline-note">Thông báo đẩy đang tắt</span>
         </div>
         {view === "study" && (
           <StudyView
-            learnerName={learner.name}
             dueCount={dueCount}
             currentCard={currentCard}
-            currentState={currentState}
-            remainingCount={remainingIds.length + repairQueue.length}
+            cardNodeTitle={currentCardNodeTitle}
             repairQueue={repairQueue}
             completedReviews={completedReviews}
             revealed={revealed}
@@ -217,25 +207,21 @@ function LearningApp({ learnerId, onLogout, adapter = localDataAdapter }: { lear
   );
 }
 
-function AppHeader({ learner, onLogout }: { learner: (typeof LEARNERS)[number]; learnerId: LearnerId; onLogout: () => void; view: View; setView: (view: View) => void }) {
+function AppHeader({ learner, onLogout }: { learner: (typeof LEARNERS)[number]; onLogout: () => void }) {
   return (
     <header className="app-header">
       <div className="brand-lockup compact"><span className="brand-word">twogether<span>.</span></span><span className="brand-note">learn for keeps</span></div>
       <div className="header-user">
-        <span className={`avatar avatar-small ${learner.tone}`}>{learner.initial}</span>
-        <span className="header-user-name">{learner.name}</span>
-        <button className="text-button" onClick={onLogout}>Đổi người</button>
+        <button className={`avatar avatar-small ${learner.tone} learner-switch`} onClick={onLogout} aria-label="Mở bộ chọn hồ sơ" title="Mở bộ chọn hồ sơ">{learner.initial}</button>
       </div>
     </header>
   );
 }
 
 function StudyView({
-  learnerName,
   dueCount,
   currentCard,
-  currentState,
-  remainingCount,
+  cardNodeTitle,
   repairQueue,
   completedReviews,
   revealed,
@@ -250,11 +236,9 @@ function StudyView({
   lastInterval,
   savingReview,
 }: {
-  learnerName: string;
   dueCount: number;
   currentCard: Card | null;
-  currentState: LearnerSnapshot["cardStates"][string] | null;
-  remainingCount: number;
+  cardNodeTitle: string;
   repairQueue: RepairItem[];
   completedReviews: number;
   revealed: boolean;
@@ -285,7 +269,7 @@ function StudyView({
   return (
     <>
       <section className="study-intro">
-        <div><span className="eyebrow">PHIÊN CỦA {learnerName.toUpperCase()}</span><h1>Chậm một nhịp,<br /><em>nhớ thêm một chút.</em></h1></div>
+        <div><h1>Chậm một nhịp,<br /><em>nhớ thêm một chút.</em></h1></div>
         <div data-testid="study-progress" className="study-progress" aria-label={`${progress}% phiên học`}><span>{String(Math.min(dueCount, completedReviews)).padStart(2, "0")}</span><i>/ {String(Math.max(dueCount, 1)).padStart(2, "0")}</i><small>đã gọi ý</small></div>
       </section>
       <div className="progress-track" aria-hidden="true"><span style={{ width: `${progress}%` }} /></div>
@@ -295,12 +279,11 @@ function StudyView({
           <span className="side-note-copy">Gọi ý<br />trước phản hồi</span>
         </div>
         <article data-testid="study-card" className={`study-card surface ${revealed ? "is-revealed" : ""}`} aria-labelledby="card-prompt">
-          <div className="card-meta"><span className="card-type">{cardTypeLabels[currentCard.card_type]}</span><span className="card-node">English foundations <span aria-hidden="true">·</span> fixture nội bộ</span></div>
+          <div className="card-meta"><span className="card-node">{cardNodeTitle}</span></div>
           <div className="card-question"><span className="question-mark" aria-hidden="true">?</span><h2 id="card-prompt">{currentCard.prompt}</h2></div>
           {!revealed ? (
             <div className="attempt-panel">
-              <p>Hãy nhớ thầm, nói ra, hoặc viết riêng câu trả lời. App chỉ lưu việc bạn đã thử.</p>
-              <textarea value={attemptText} onChange={(event) => setAttemptText(event.target.value)} placeholder="Viết riêng nếu điều đó giúp bạn gọi ý…" aria-label="Câu trả lời riêng, không được lưu" rows={3} />
+              <textarea value={attemptText} onChange={(event) => setAttemptText(event.target.value)} placeholder="Viết thứ gì đó vào đây" aria-label="Câu trả lời riêng, không được lưu" rows={3} />
               <div className="attempt-actions"><button className="hint-button" onClick={() => setHintVisible(!hintVisible)} aria-expanded={hintVisible}>{hintVisible ? "Ẩn gợi ý" : "Gợi ý nhỏ"}<span aria-hidden="true">⌁</span></button><button className="button button-dark" onClick={handleAttempt}>Đã thử — xem đáp án <span aria-hidden="true">↗</span></button></div>
               {hintVisible && <p className="hint-copy" role="note">Gợi ý: hãy trả lời bằng chức năng của ý tưởng, không chỉ bằng tên gọi.</p>}
             </div>
@@ -312,37 +295,107 @@ function StudyView({
               <div className="grade-actions"><button className="button button-forgot" disabled={savingReview} onClick={() => handleGrade("Again")}><span className="grade-icon">↺</span><span><strong>Quên</strong><small>Cần gặp lại sau vài card</small></span></button><button className="button button-remember" disabled={savingReview} onClick={() => handleGrade("Good")}><span className="grade-icon">✦</span><span><strong>Nhớ</strong><small>{savingReview ? "Đang ghi…" : lastInterval ?? "Đưa vào lịch FSRS"}</small></span></button></div>
             </div>
           )}
-          <footer className="card-footer"><span>{currentState ? stateName(currentState.fsrs.state) : "new"} · {remainingCount} card còn trong phiên</span>{repairQueue.length > 0 && <span className="repair-badge">↺ {repairQueue.length} đang củng cố</span>}</footer>
+          {repairQueue.length > 0 && <footer className="card-footer"><span className="repair-badge">↺ {repairQueue.length} đang củng cố</span></footer>}
         </article>
       </section>
       {message && <p className="toast" role="status">{message}</p>}
     </>
   );
 }
+type DisplayNodeKind = ConceptNode["kind"] | "universal";
+type DisplayNode = Pick<ConceptNode, "id" | "title" | "purpose" | "status"> & {
+  kind: DisplayNodeKind;
+  virtual?: boolean;
+};
+
+const UNIVERSAL_ROOT: DisplayNode = {
+  id: "twogether-universal-root",
+  kind: "universal",
+  title: "Bản chất chung",
+  purpose: "Mọi nhánh bắt đầu từ nguyên lý, đi qua cơ chế, ranh giới rồi chuyển sang tình huống mới.",
+  status: "framework",
+  virtual: true,
+};
+
+const treeKindLabels: Record<DisplayNodeKind, string> = {
+  universal: "Gốc chung",
+  root: "Bộ kiến thức",
+  trunk: "Thân",
+  branch: "Cành",
+  leaf: "Lá",
+};
 
 function MapView({ nodes, edges, cards, snapshot }: { nodes: ConceptNode[]; edges: ConceptEdge[]; cards: Card[]; snapshot: LearnerSnapshot }) {
+  const displayNodes: DisplayNode[] = [UNIVERSAL_ROOT, ...nodes];
+  const [selectedNodeId, setSelectedNodeId] = useState(UNIVERSAL_ROOT.id);
+  const labelFor = (id: string) => displayNodes.find((node) => node.id === id)?.title ?? id;
   const progressForNode = (nodeId: string) => {
-    const nodeCards = cards.filter((card) => card.node_id === nodeId);
+    const nodeCards = nodeId === UNIVERSAL_ROOT.id ? cards : cards.filter((card) => card.node_id === nodeId);
     const stable = nodeCards.filter((card) => snapshot.cardStates[card.id]?.fsrs.stability > 2).length;
     return { count: nodeCards.length, stable, percent: nodeCards.length ? Math.round((stable / nodeCards.length) * 100) : 0 };
   };
-  const labelFor = (id: string) => nodes.find((node) => node.id === id)?.title ?? id;
+  const layers: Array<{ kind: DisplayNodeKind; label: string; nodes: DisplayNode[] }> = [
+    { kind: "universal", label: "Gốc chung", nodes: [UNIVERSAL_ROOT] },
+    { kind: "root", label: "Bộ kiến thức", nodes: nodes.filter((node) => node.kind === "root") },
+    { kind: "trunk", label: "Thân nguyên lý", nodes: nodes.filter((node) => node.kind === "trunk") },
+    { kind: "branch", label: "Cành cơ chế", nodes: nodes.filter((node) => node.kind === "branch") },
+    { kind: "leaf", label: "Lá chuyển giao", nodes: nodes.filter((node) => node.kind === "leaf") },
+  ].filter((layer) => layer.nodes.length > 0) as Array<{ kind: DisplayNodeKind; label: string; nodes: DisplayNode[] }>;
+  const selectedNode = displayNodes.find((node) => node.id === selectedNodeId) ?? UNIVERSAL_ROOT;
+  const selectedProgress = progressForNode(selectedNode.id);
+  const selectedPrerequisites = edges
+    .filter((edge) => edge.to === selectedNode.id && edge.type === "prerequisite")
+    .map((edge) => labelFor(edge.from));
+
+  const selectNode = (nodeId: string) => setSelectedNodeId(nodeId);
+
   return (
     <section className="map-page">
-      <div className="page-heading"><div><span className="eyebrow">KNOWLEDGE MAP · DAG</span><h1>Một bản đồ để<br /><em>biết mình đang ở đâu.</em></h1></div><span className="map-legend"><i className="legend-dot" /> shared content<br /><i className="legend-ring" /> private progress</span></div>
-      <p className="page-lede">Đây là một lối đi gợi ý, không phải chiếc cây hoàn hảo của tiếng Anh. Một nền tảng có thể nâng đỡ nhiều nhánh.</p>
-      <div className="map-canvas surface">
-        <div className="map-line line-a" /><div className="map-line line-b" /><div className="map-line line-c" />
-        {nodes.map((node, index) => {
-          const progress = progressForNode(node.id);
-          return <div className={`map-node map-node-${index} ${node.kind}`} key={node.id}><span className="node-kind">{node.kind}</span><div className="node-title">{node.title}</div><p>{node.purpose}</p><div className="node-progress"><span style={{ width: `${progress.percent}%` }} /><small>{progress.stable}/{progress.count} bền hơn</small></div></div>;
-        })}
+      <div className="page-heading"><div><h1>Một gốc để nhớ lâu,<br /><em>nhiều cành để đi xa.</em></h1></div></div>
+      <p className="tree-hint">Chạm hoặc rê vào một nhánh để xem nó đang giúp bạn hiểu điều gì.</p>
+      <div className="knowledge-tree surface" role="tree" aria-label="Cây kiến thức từ gốc chung đến các nhánh">
+        {layers.map((layer, layerIndex) => (
+          <div className={`tree-layer tree-layer-${layer.kind}`} key={layer.kind} role="group" aria-label={layer.label}>
+            {layerIndex > 0 && <span className="tree-connector" aria-hidden="true" />}
+            <span className="tree-layer-label">{layer.label}</span>
+            <div className="tree-layer-nodes">
+              {layer.nodes.map((node) => {
+                const progress = progressForNode(node.id);
+                const isSelected = selectedNode.id === node.id;
+                return (
+                  <button
+                    type="button"
+                    role="treeitem"
+                    aria-level={layerIndex + 1}
+                    aria-selected={isSelected}
+                    data-testid={`tree-node-${node.id}`}
+                    className={`tree-node ${node.kind} ${isSelected ? "is-selected" : ""}`}
+                    key={node.id}
+                    onMouseEnter={() => selectNode(node.id)}
+                    onFocus={() => selectNode(node.id)}
+                    onClick={() => selectNode(node.id)}
+                  >
+                    <span className="node-kind">{treeKindLabels[node.kind]}</span>
+                    <strong className="tree-node-title">{node.title}</strong>
+                    <span className="tree-node-progress">{progress.stable}/{progress.count} card bền hơn</span>
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+        ))}
       </div>
-      <details className="accessible-map surface"><summary>Danh sách map cho bàn phím và trình đọc màn hình</summary><div className="table-wrap"><table><caption>Concept map và prerequisite</caption><thead><tr><th>Node</th><th>Loại</th><th>Mục đích</th><th>Trạng thái</th></tr></thead><tbody>{nodes.map((node) => { const p = progressForNode(node.id); return <tr key={node.id}><th scope="row">{node.title}</th><td>{node.kind}</td><td>{node.purpose}</td><td>{p.stable}/{p.count} card có stability &gt; 2</td></tr>; })}</tbody></table></div><div className="edge-list"><span className="section-label">CÁC NỐI PREREQUISITE</span>{edges.filter((edge) => edge.type === "prerequisite").map((edge) => <span key={`${edge.from}-${edge.to}`}>{labelFor(edge.from)} <b>→</b> {labelFor(edge.to)}</span>)}</div></details>
+      <section className="tree-detail surface" aria-live="polite" data-testid="tree-detail">
+        <div className="tree-detail-heading"><span className="node-kind">{treeKindLabels[selectedNode.kind]}</span><span className="tree-detail-percent">{selectedProgress.percent}% bền hơn</span></div>
+        <h2 data-testid="tree-detail-title">{selectedNode.title}</h2>
+        <p>{selectedNode.purpose}</p>
+        <div className="tree-detail-stats"><span>{selectedProgress.count} card trong nhánh</span><span>{selectedProgress.stable} card đang bền</span></div>
+        {selectedPrerequisites.length > 0 && <p className="tree-prerequisites"><strong>Học sau:</strong> {selectedPrerequisites.join(", ")}</p>}
+      </section>
+      <details className="accessible-map surface"><summary>Danh sách map cho bàn phím và trình đọc màn hình</summary><div className="table-wrap"><table><caption>Concept map và prerequisite</caption><thead><tr><th>Node</th><th>Loại</th><th>Mục đích</th><th>Trạng thái</th></tr></thead><tbody>{displayNodes.map((node) => { const p = progressForNode(node.id); return <tr key={node.id}><th scope="row">{node.title}</th><td>{treeKindLabels[node.kind]}</td><td>{node.purpose}</td><td>{p.stable}/{p.count} card có stability &gt; 2</td></tr>; })}</tbody></table></div><div className="edge-list"><span className="section-label">CÁC NỐI PREREQUISITE</span>{edges.filter((edge) => edge.type === "prerequisite").map((edge) => <span key={`${edge.from}-${edge.to}`}>{labelFor(edge.from)} <b>→</b> {labelFor(edge.to)}</span>)}</div></details>
     </section>
   );
 }
-
 function ProgressView({ cards, snapshot, learnerName }: { cards: Card[]; snapshot: LearnerSnapshot; learnerName: string }) {
   const reviewed = snapshot.reviewEvents.length;
   const remembered = snapshot.reviewEvents.filter((event) => event.rating === "Good").length;

@@ -14,6 +14,12 @@ test.describe("Twogether P0 browser contract", () => {
   test("requires an attempt before revealing the answer and keeps focus keyboardable", async ({ page }) => {
     await page.getByTestId("learner-choice-hiep").click();
     await expect(page.getByTestId("study-card")).toBeVisible();
+    await expect(page.locator(".card-type")).toHaveCount(0);
+    await expect(page.getByText("local · riêng tư")).toHaveCount(0);
+    await expect(page.getByText(/PHIÊN CỦA/)).toHaveCount(0);
+    await expect(page.getByText("fixture nội bộ")).toHaveCount(0);
+    await expect(page.getByPlaceholder("Viết thứ gì đó vào đây")).toBeVisible();
+    await expect(page.getByText(/card còn trong phiên/)).toHaveCount(0);
     await expect(page.getByTestId("reveal-panel")).toHaveCount(0);
 
     const attempt = page.getByRole("button", { name: /Đã thử/ });
@@ -29,7 +35,7 @@ test.describe("Twogether P0 browser contract", () => {
     await page.getByTestId("learner-choice-hiep").click();
     await page.getByRole("button", { name: /Đã thử/ }).click();
     await page.getByRole("button", { name: /Nhớ/ }).click();
-    await page.getByRole("button", { name: "Đổi người" }).click();
+    await page.getByRole("button", { name: "Mở bộ chọn hồ sơ" }).click();
     await page.getByTestId("learner-choice-hoang").click();
 
     await expect(page.getByTestId("study-progress").locator("i")).toHaveText("/ 12");
@@ -44,6 +50,14 @@ test.describe("Twogether P0 browser contract", () => {
     await expect(accessibleMap.locator("table")).toBeVisible();
     await expect(accessibleMap.locator("tbody th").first()).toBeVisible();
     await expect(page.getByText("English foundations").first()).toBeVisible();
+    await expect(page.getByText("KNOWLEDGE MAP · DAG")).toHaveCount(0);
+    await expect(page.getByText("shared content")).toHaveCount(0);
+    await expect(page.getByText("Đây là một lối đi gợi ý, không phải chiếc cây hoàn hảo của tiếng Anh.")).toHaveCount(0);
+    await expect(page.getByTestId("tree-node-twogether-universal-root")).toBeVisible();
+    await page.getByTestId("tree-node-english-fixture-mechanism").hover();
+    await expect(page.getByTestId("tree-detail-title")).toHaveText("Mechanism & boundaries");
+    await page.getByTestId("tree-node-english-fixture-transfer").click();
+    await expect(page.getByTestId("tree-detail-title")).toHaveText("Transfer to a fresh example");
   });
 
   test("serves an installable shell without private data in the service worker", async ({ page, request }) => {

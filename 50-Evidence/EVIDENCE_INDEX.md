@@ -39,3 +39,11 @@ Raw logs and future screenshots belong under dated evidence subfolders; do not r
 - `50-Evidence/browser-gate-2026-08-18.md` records the Playwright/Chrome production-preview contract: 4/4 pass; cumulative smoke receipt `20260818T160750Z-dc5f8f07` passed 10/10 after adding the core curriculum contract.
 - `50-Evidence/core-curriculum-2026-08-18.md` records the 20 English + 10 React principle-ladder starter cards; all remain draft pending Human review.
 - `50-Evidence/supabase-foundation-2026-08-20.md` records the migration/RLS/client boundary, owner-only provisioning gate, and final cumulative smoke run `20260820T160059Z-7e8c38d1` (11/11); no project or credentials were created here.
+
+## UI refinement evidence — 2026-08-22
+
+- src/App.tsx removes implementation-facing study labels and implements the virtual universal root plus hover/focus/tap branch detail.
+- src/styles.css adds the phone-first tree layers, selected-node state, horizontal mobile branch scrolling, and detail panel styling.
+- e2e/p0.spec.ts locks the removed copy, the new textarea placeholder, universal-root visibility, branch selection, and the accessible table parity.
+- Unit tests and production build passed before the final cumulative smoke receipt is recorded below.
+- Cumulative receipt: 20260822T091307Z-7d00f9e9 passed 11/11, including the updated 5-test browser contract.

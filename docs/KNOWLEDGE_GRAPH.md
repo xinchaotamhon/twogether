@@ -39,3 +39,9 @@ principle -> mechanism -> boundary/counterexample -> novel transfer
 - A prerequisite is considered durable only when its due cards have healthy predicted recall and at least one transfer card has been attempted; exact thresholds are configuration, not universal truth.
 - Never hide the full map behind a game lock. Show why a branch is recommended and allow deliberate preview.
 - Render the active path on mobile as a vertical map; provide a keyboard-accessible list/table alternative for the same graph.
+
+## Universal-root tree presentation (P0)
+
+The data model remains a DAG: a concept may have several legitimate prerequisites, and the exact edge list is still available in the accessible table. The runtime map adds a virtual UI-only root named “Bản chất chung” so English, React, and future domains can appear as first-level branches of one memory framework without inventing a false database parent.
+
+Actual nodes are grouped by their existing kind into bộ kiến thức, thân nguyên lý, cành cơ chế, and lá chuyển giao. Hovering, focusing, or tapping a node selects it and reveals its purpose, card count, stability summary, and prerequisite labels. The virtual root aggregates the whole collection and is a navigation aid, not a published learning card or an ontological claim.

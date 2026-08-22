@@ -1,6 +1,6 @@
 ---
-last_verified: 2026-08-21
-verified_by: Codex profile-picker simplification; remote sync remains optional
+last_verified: 2026-08-22
+verified_by: Codex study-copy and interactive-tree refinement; remote sync remains optional
 status: active — P0 local study slice implemented
 ---
 
@@ -15,10 +15,12 @@ status: active — P0 local study slice implemented
 - Vault discovery found UI/accessibility pointers, but none is adopted or field-proven.
 - Cloudflare is the intended deployment target. No Pages project, Worker, D1/Supabase project, credentials, or production deployment exists yet; the target is recorded as a constraint only.
 - A runnable React/TypeScript/Vite P0 now exists with a local adapter, 12 explicitly project-owned fixture cards, open-ended study flow, FSRS adapter, bounded repair queue, map/list view, progress view, and PWA shell.
+- The study screen now keeps only learning-critical copy: the learner switch is avatar-only, the local/fixture/session labels are hidden, and the private attempt textarea says “Viết thứ gì đó vào đây”.
+- The map presentation now adds a virtual “Bản chất chung” root, lays domain nodes out as trunk/branch/leaf layers, and shows selected-branch details on hover, focus, or tap while preserving the exact prerequisite DAG and accessible table.
 - The active P0 persistence path is the local adapter with a simple Hiệp/Hoàng profile picker. Supabase Auth/Postgres/RLS remains a future sync option only; the current app does not show email login even when `.env.local` exists.
 - The owner-set deployment budget is USD 0/month: Cloudflare Pages Free + Supabase Free; no paid upgrade or add-on is authorized.
 - A provenance-aware principle-ladder starter exists outside the runtime: 20 English cards + 10 React cards, 12 DAG nodes, all `draft`; see `content/drafts/core-curriculum-drafts-v1.json` and `50-Evidence/core-curriculum-2026-08-18.md`.
-- Focused tests pass 7/7, production build passes, Playwright browser checks pass 5/5, and final cumulative smoke run `20260821T073210Z-58819645` passes 11/11, including the profile-picker regression and core-curriculum contract. The production preview serves `/`, the manifest, and service worker. Dependency install reported 0 vulnerabilities; a later advisory-endpoint recheck remains recorded separately.
+- Focused tests pass 7/7, production build passes, Playwright browser checks pass 5/5, and final cumulative smoke run `20260822T091307Z-7d00f9e9` passes 11/11, including the profile-picker regression and core-curriculum contract. The production preview serves `/`, the manifest, and service worker. Dependency install reported 0 vulnerabilities; a later advisory-endpoint recheck remains recorded separately.
 
 ## Blockers
 
@@ -26,7 +28,7 @@ status: active — P0 local study slice implemented
 - React/Vite/ts-fsrs dependencies are installed locally, but no backend project, account, deployment, or notification service is installed or authorized.
 - No real Supabase RLS test exists yet; local adapter and browser checks are not evidence of server authorization. This is acceptable for the current profile-only P0 because remote sync is not active.
 - The 40 draft cards (30 core starter + 10 owner-source drafts) have not received Human accept/revise/reject decisions and are not published to the runtime.
-- Supabase schema/RLS migration, fixture-only seed, future adapter, and contract gate now exist locally; final cumulative smoke run `20260821T073210Z-58819645` passes 11/11. No remote project, Auth user, or credential has been created.
+- Supabase schema/RLS migration, fixture-only seed, future adapter, and contract gate now exist locally; final cumulative smoke run `20260822T091307Z-7d00f9e9` passes 11/11. No remote project, Auth user, or credential has been created.
 
 ## Unknowns
 
