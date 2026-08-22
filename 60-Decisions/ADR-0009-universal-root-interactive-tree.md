@@ -34,3 +34,9 @@ Keep the exact DAG edges and the keyboard-accessible table. The virtual root agg
 The browser contract must assert that the removed study/map copy stays absent, the universal root is visible, hover/focus/tap changes the detail panel, and the accessible table remains available. Run focused unit tests, the production build, the Playwright gate, and the cumulative smoke suite.
 
 Rollback is a normal revert of the implementation and this ADR; the previous map presentation remains recoverable from the prior commit. No user data is deleted by this decision.
+
+## Human visual review amendment — 2026-08-22
+
+The first implementation rendered one card per kind in a sparse vertical stack. Hiệp rejected that result because it read as unrelated cards rather than a tree. Keep the virtual-root/DAG decision, but use a centered SVG-backed graph stage: a node’s x-position is derived from its layer and sibling count, connectors are drawn from the actual UI tree edges, and the node card reports aggregate descendant progress so a domain root does not misleadingly show 0/0 when its children contain cards.
+
+The local CLOVER pathfinding image was used only as a conceptual reference for visible routes and connected nodes. It is not copied into the product. No repository, diagram package, or runtime dependency was downloaded.

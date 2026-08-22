@@ -307,6 +307,8 @@ type DisplayNode = Pick<ConceptNode, "id" | "title" | "purpose" | "status"> & {
   kind: DisplayNodeKind;
   virtual?: boolean;
 };
+type TreePosition = { x: number; y: number };
+type TreeEdge = { from: string; to: string; type: string; virtual?: boolean };
 
 const UNIVERSAL_ROOT: DisplayNode = {
   id: "twogether-universal-root",
@@ -325,15 +327,15 @@ const treeKindLabels: Record<DisplayNodeKind, string> = {
   leaf: "Lá",
 };
 
+const TREE_VIEWBOX_WIDTH = 1000;
+const TREE_NODE_HEIGHT = 146;
+const TREE_ROW_GAP = 172;
+const TREE_TOP = 28;
+
 function MapView({ nodes, edges, cards, snapshot }: { nodes: ConceptNode[]; edges: ConceptEdge[]; cards: Card[]; snapshot: LearnerSnapshot }) {
   const displayNodes: DisplayNode[] = [UNIVERSAL_ROOT, ...nodes];
   const [selectedNodeId, setSelectedNodeId] = useState(UNIVERSAL_ROOT.id);
   const labelFor = (id: string) => displayNodes.find((node) => node.id === id)?.title ?? id;
-  const progressForNode = (nodeId: string) => {
-    const nodeCards = nodeId === UNIVERSAL_ROOT.id ? cards : cards.filter((card) => card.node_id === nodeId);
-    const stable = nodeCards.filter((card) => snapshot.cardStates[card.id]?.fsrs.stability > 2).length;
-    return { count: nodeCards.length, stable, percent: nodeCards.length ? Math.round((stable / nodeCards.length) * 100) : 0 };
-  };
   const layers: Array<{ kind: DisplayNodeKind; label: string; nodes: DisplayNode[] }> = [
     { kind: "universal", label: "Gốc chung", nodes: [UNIVERSAL_ROOT] },
     { kind: "root", label: "Bộ kiến thức", nodes: nodes.filter((node) => node.kind === "root") },
@@ -341,58 +343,142 @@ function MapView({ nodes, edges, cards, snapshot }: { nodes: ConceptNode[]; edge
     { kind: "branch", label: "Cành cơ chế", nodes: nodes.filter((node) => node.kind === "branch") },
     { kind: "leaf", label: "Lá chuyển giao", nodes: nodes.filter((node) => node.kind === "leaf") },
   ].filter((layer) => layer.nodes.length > 0) as Array<{ kind: DisplayNodeKind; label: string; nodes: DisplayNode[] }>;
+  const treeEdges: TreeEdge[] = [
+    ...nodes
+      .filter((node) => node.kind === "root")
+      .map((node) => ({ from: UNIVERSAL_ROOT.id, to: node.id, type: "part_of", virtual: true })),
+    ...edges
+      .filter((edge) => edge.type === "part_of" || edge.type === "prerequisite")
+      .map((edge) => ({ from: edge.from, to: edge.to, type: edge.type })),
+  ];
+  const maxLayerNodes = Math.max(...layers.map((layer) => layer.nodes.length), 1);
+  const stageWide = maxLayerNodes > 2;
+  const nodePositions = new Map<string, TreePosition>();
+  layers.forEach((layer, layerIndex) => {
+    const count = layer.nodes.length;
+    const spread = count === 1 ? 0 : Math.min(780, Math.max(300, (count - 1) * 230));
+    const startX = (TREE_VIEWBOX_WIDTH - spread) / 2;
+    layer.nodes.forEach((node, nodeIndex) => {
+      const x = count === 1 ? TREE_VIEWBOX_WIDTH / 2 : startX + nodeIndex * (spread / (count - 1));
+      nodePositions.set(node.id, { x, y: TREE_TOP + layerIndex * TREE_ROW_GAP });
+    });
+  });
+  const stageHeight = TREE_TOP + Math.max(layers.length - 1, 0) * TREE_ROW_GAP + TREE_NODE_HEIGHT + 44;
+  const childrenById = new Map<string, string[]>();
+  treeEdges.forEach((edge) => {
+    const children = childrenById.get(edge.from) ?? [];
+    children.push(edge.to);
+    childrenById.set(edge.from, children);
+  });
+  const descendantIds = (nodeId: string) => {
+    const visited = new Set<string>();
+    const pending = [nodeId];
+    while (pending.length > 0) {
+      const current = pending.shift();
+      if (!current || visited.has(current)) continue;
+      visited.add(current);
+      pending.push(...(childrenById.get(current) ?? []));
+    }
+    return visited;
+  };
+  const progressForNode = (nodeId: string) => {
+    const ids = descendantIds(nodeId);
+    const nodeCards = cards.filter((card) => ids.has(card.node_id));
+    const stable = nodeCards.filter((card) => snapshot.cardStates[card.id]?.fsrs.stability > 2).length;
+    return { count: nodeCards.length, stable, percent: nodeCards.length ? Math.round((stable / nodeCards.length) * 100) : 0 };
+  };
   const selectedNode = displayNodes.find((node) => node.id === selectedNodeId) ?? UNIVERSAL_ROOT;
   const selectedProgress = progressForNode(selectedNode.id);
   const selectedPrerequisites = edges
     .filter((edge) => edge.to === selectedNode.id && edge.type === "prerequisite")
     .map((edge) => labelFor(edge.from));
-
+  const mapProgress = progressForNode(UNIVERSAL_ROOT.id);
   const selectNode = (nodeId: string) => setSelectedNodeId(nodeId);
+  const edgePath = (edge: TreeEdge) => {
+    const from = nodePositions.get(edge.from);
+    const to = nodePositions.get(edge.to);
+    if (!from || !to) return "";
+    const startY = from.y + TREE_NODE_HEIGHT;
+    const endY = to.y;
+    const bend = Math.max(26, (endY - startY) * 0.45);
+    return "M " + from.x + " " + startY + " C " + from.x + " " + (startY + bend) + ", " + to.x + " " + (endY - bend) + ", " + to.x + " " + endY;
+  };
 
   return (
     <section className="map-page">
-      <div className="page-heading"><div><h1>Một gốc để nhớ lâu,<br /><em>nhiều cành để đi xa.</em></h1></div></div>
-      <p className="tree-hint">Chạm hoặc rê vào một nhánh để xem nó đang giúp bạn hiểu điều gì.</p>
-      <div className="knowledge-tree surface" role="tree" aria-label="Cây kiến thức từ gốc chung đến các nhánh">
-        {layers.map((layer, layerIndex) => (
-          <div className={`tree-layer tree-layer-${layer.kind}`} key={layer.kind} role="group" aria-label={layer.label}>
-            {layerIndex > 0 && <span className="tree-connector" aria-hidden="true" />}
-            <span className="tree-layer-label">{layer.label}</span>
-            <div className="tree-layer-nodes">
-              {layer.nodes.map((node) => {
-                const progress = progressForNode(node.id);
-                const isSelected = selectedNode.id === node.id;
-                return (
-                  <button
-                    type="button"
-                    role="treeitem"
-                    aria-level={layerIndex + 1}
-                    aria-selected={isSelected}
-                    data-testid={`tree-node-${node.id}`}
-                    className={`tree-node ${node.kind} ${isSelected ? "is-selected" : ""}`}
-                    key={node.id}
-                    onMouseEnter={() => selectNode(node.id)}
-                    onFocus={() => selectNode(node.id)}
-                    onClick={() => selectNode(node.id)}
-                  >
-                    <span className="node-kind">{treeKindLabels[node.kind]}</span>
-                    <strong className="tree-node-title">{node.title}</strong>
-                    <span className="tree-node-progress">{progress.stable}/{progress.count} card bền hơn</span>
-                  </button>
-                );
+      <div className="page-heading map-heading">
+        <div>
+          <h1>Một gốc để nhớ lâu,<br /><em>nhiều cành để đi xa.</em></h1>
+          <p className="map-subtitle">Mỗi nút mở ra một lớp hiểu khác nhau. Đi từ nguyên lý, qua cơ chế, rồi tự mình chuyển sang tình huống mới.</p>
+        </div>
+        <div className="map-summary" aria-label="Tóm tắt bản đồ">
+          <div><strong>{displayNodes.length - 1}</strong><span>nhánh</span></div>
+          <div><strong>{mapProgress.count}</strong><span>card trong cây</span></div>
+        </div>
+      </div>
+      <div className="map-controls">
+        <span className="map-instruction"><i aria-hidden="true" /> Chạm hoặc rê vào một nút để xem nhánh.</span>
+        <span className="map-progress-caption">{mapProgress.stable}/{mapProgress.count} card đang bền</span>
+      </div>
+      <div className="knowledge-tree surface" data-testid="knowledge-tree">
+        <div className="tree-viewport">
+          <div
+            className={"tree-stage" + (stageWide ? " is-wide" : "")}
+            role="tree"
+            aria-label="Cây kiến thức từ gốc chung đến các nhánh"
+            data-testid="tree-map"
+            style={{ height: stageHeight }}
+          >
+            <svg className="tree-links" viewBox={"0 0 " + TREE_VIEWBOX_WIDTH + " " + stageHeight} aria-hidden="true" preserveAspectRatio="none">
+              <title>Đường nối giữa các lớp kiến thức</title>
+              {treeEdges.filter((edge) => nodePositions.has(edge.from) && nodePositions.has(edge.to)).map((edge, index) => {
+                const active = edge.from === selectedNode.id || edge.to === selectedNode.id;
+                return <path key={edge.from + "-" + edge.to + "-" + index} data-testid="tree-link" className={"tree-link " + edge.type + (active ? " is-active" : "")} d={edgePath(edge)} />;
               })}
-            </div>
+            </svg>
+            {layers.map((layer, layerIndex) => layer.nodes.map((node) => {
+              const position = nodePositions.get(node.id);
+              if (!position) return null;
+              const progress = progressForNode(node.id);
+              const isSelected = selectedNode.id === node.id;
+              const progressLabel = progress.count > 0 ? progress.stable + "/" + progress.count + " card bền hơn" : "Chưa có card trực tiếp";
+              return (
+                <button
+                  type="button"
+                  role="treeitem"
+                  aria-level={layerIndex + 1}
+                  aria-selected={isSelected}
+                  aria-label={node.title + ". " + progressLabel}
+                  data-testid={"tree-node-" + node.id}
+                  className={"tree-node " + node.kind + (isSelected ? " is-selected" : "")}
+                  style={{ left: (position.x / TREE_VIEWBOX_WIDTH) * 100 + "%", top: position.y }}
+                  key={node.id}
+                  onMouseEnter={() => selectNode(node.id)}
+                  onFocus={() => selectNode(node.id)}
+                  onClick={() => selectNode(node.id)}
+                >
+                  <span className="node-kind">{treeKindLabels[node.kind]}</span>
+                  <strong className="tree-node-title">{node.title}</strong>
+                  <span className="tree-node-meter" aria-hidden="true"><i style={{ width: progress.percent + "%" }} /></span>
+                  <span className="tree-node-progress">{progressLabel}</span>
+                </button>
+              );
+            }))}
           </div>
-        ))}
+        </div>
+        <div className="tree-legend" aria-label="Chú thích các đường nối">
+          <span><i className="legend-line-solid" aria-hidden="true" /> thuộc về</span>
+          <span><i className="legend-line-dashed" aria-hidden="true" /> prerequisite</span>
+        </div>
       </div>
       <section className="tree-detail surface" aria-live="polite" data-testid="tree-detail">
-        <div className="tree-detail-heading"><span className="node-kind">{treeKindLabels[selectedNode.kind]}</span><span className="tree-detail-percent">{selectedProgress.percent}% bền hơn</span></div>
+        <div className="tree-detail-heading"><div><span className="tree-detail-label">ĐANG XEM</span><span className="node-kind">{treeKindLabels[selectedNode.kind]}</span></div><span className="tree-detail-percent">{selectedProgress.percent}% bền hơn</span></div>
         <h2 data-testid="tree-detail-title">{selectedNode.title}</h2>
         <p>{selectedNode.purpose}</p>
         <div className="tree-detail-stats"><span>{selectedProgress.count} card trong nhánh</span><span>{selectedProgress.stable} card đang bền</span></div>
         {selectedPrerequisites.length > 0 && <p className="tree-prerequisites"><strong>Học sau:</strong> {selectedPrerequisites.join(", ")}</p>}
       </section>
-      <details className="accessible-map surface"><summary>Danh sách map cho bàn phím và trình đọc màn hình</summary><div className="table-wrap"><table><caption>Concept map và prerequisite</caption><thead><tr><th>Node</th><th>Loại</th><th>Mục đích</th><th>Trạng thái</th></tr></thead><tbody>{displayNodes.map((node) => { const p = progressForNode(node.id); return <tr key={node.id}><th scope="row">{node.title}</th><td>{treeKindLabels[node.kind]}</td><td>{node.purpose}</td><td>{p.stable}/{p.count} card có stability &gt; 2</td></tr>; })}</tbody></table></div><div className="edge-list"><span className="section-label">CÁC NỐI PREREQUISITE</span>{edges.filter((edge) => edge.type === "prerequisite").map((edge) => <span key={`${edge.from}-${edge.to}`}>{labelFor(edge.from)} <b>→</b> {labelFor(edge.to)}</span>)}</div></details>
+      <details className="accessible-map surface"><summary>Danh sách map cho bàn phím và trình đọc màn hình</summary><div className="table-wrap"><table><caption>Concept map và prerequisite</caption><thead><tr><th>Node</th><th>Loại</th><th>Mục đích</th><th>Trạng thái</th></tr></thead><tbody>{displayNodes.map((node) => { const p = progressForNode(node.id); return <tr key={node.id}><th scope="row">{node.title}</th><td>{treeKindLabels[node.kind]}</td><td>{node.purpose}</td><td>{p.stable}/{p.count} card có stability &gt; 2</td></tr>; })}</tbody></table></div><div className="edge-list"><span className="section-label">CÁC NỐI PREREQUISITE</span>{edges.filter((edge) => edge.type === "prerequisite").map((edge) => <span key={edge.from + "-" + edge.to}>{labelFor(edge.from)} <b>→</b> {labelFor(edge.to)}</span>)}</div></details>
     </section>
   );
 }

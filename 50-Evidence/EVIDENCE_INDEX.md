@@ -46,4 +46,13 @@ Raw logs and future screenshots belong under dated evidence subfolders; do not r
 - src/styles.css adds the phone-first tree layers, selected-node state, horizontal mobile branch scrolling, and detail panel styling.
 - e2e/p0.spec.ts locks the removed copy, the new textarea placeholder, universal-root visibility, branch selection, and the accessible table parity.
 - Unit tests and production build passed before the final cumulative smoke receipt is recorded below.
-- Cumulative receipt: 20260822T091307Z-7d00f9e9 passed 11/11, including the updated 5-test browser contract.
+- Cumulative receipt: 20260822T094710Z-43bdbf75 passed 11/11, including the updated 5-test browser contract.
+
+## Human visual review and graph refinement — 2026-08-22
+
+- Human screenshot review rejected the first sparse, left-aligned layer-card layout.
+- The replacement in src/App.tsx uses a UI-only universal root, descendant progress aggregation, an SVG-backed graph stage, solid part_of links, dashed prerequisite links, and keyboard/tap/hover selection.
+- The replacement in src/styles.css keeps the existing Twogether paper/coral/blue visual language while giving the map a centered hierarchy, progress meters, compact legend, and mobile overflow behavior.
+- A local CLOVER pathfinding image was inspected as conceptual inspiration only; no repository, image asset, diagram library, or dependency was added.
+- e2e/p0.spec.ts now asserts the graph stage and four connector paths for the current fixture in addition to branch selection and accessible table parity.
+- Final cumulative receipt: 20260822T094710Z-43bdbf75 passed 11/11, including the updated graph connector contract.

@@ -54,6 +54,9 @@ test.describe("Twogether P0 browser contract", () => {
     await expect(page.getByText("shared content")).toHaveCount(0);
     await expect(page.getByText("Đây là một lối đi gợi ý, không phải chiếc cây hoàn hảo của tiếng Anh.")).toHaveCount(0);
     await expect(page.getByTestId("tree-node-twogether-universal-root")).toBeVisible();
+    await expect(page.getByTestId("tree-map")).toBeVisible();
+    await expect(page.getByTestId("tree-link")).toHaveCount(4);
+    await expect(page.getByTestId("tree-node-english-fixture-root")).toContainText("0/12 card bền hơn");
     await page.getByTestId("tree-node-english-fixture-mechanism").hover();
     await expect(page.getByTestId("tree-detail-title")).toHaveText("Mechanism & boundaries");
     await page.getByTestId("tree-node-english-fixture-transfer").click();
