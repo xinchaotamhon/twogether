@@ -10,6 +10,8 @@ After selecting Hiệp or Hoàng, the learner chooses any deck in the deck shelf
 
 The `Tiến độ` view shows the streak and opens `Thẻ`. The authoring view can create/edit a draft, publish it with an explicit local-human action, archive it without deleting history, and import/export an AI packet. The packet is content-only: it never carries learner progress, private notes, or review events.
 
+The same view exposes English Generative Core v1 as ten review-only slices of eight cards. Those static cards are deliberately absent from `COLLECTION_FIXTURES`, `listCollections`, the due queue, FSRS state, and streak qualification. “Đưa vào chỉnh sửa” only fills the existing local editor; no curriculum card enters study until a Human explicitly saves/reviews/publishes a local revision.
+
 The map is a presentation of the global DAG. A draft node may attach to an existing node with `part_of` or `prerequisite`; prerequisite cycles are rejected before the addition is stored. Node position is not domain truth, and the accessible table lists the same graph for keyboard and screen-reader users.
 
 ## P1 boundary

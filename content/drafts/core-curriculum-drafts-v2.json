@@ -1,0 +1,2458 @@
+{
+  "schema_version": 2,
+  "status": "draft",
+  "generated_at": "2026-08-25",
+  "curriculum_id": "english-generative-core-v1",
+  "source_refs": [
+    "claude-owner-paste:english-2026-08-25",
+    "english-core-sources:v1",
+    "core-synthesis:english-generative-core-v1",
+    "claude-owner-paste:react-2026-08-18"
+  ],
+  "nodes": [
+    {
+      "id": "core-en-module-01",
+      "kind": "trunk",
+      "title": "Meaning → Clause",
+      "purpose": "Từ ý định và sự việc đến mệnh đề có cấu trúc để tự sinh câu.",
+      "status": "draft",
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1"
+      ],
+      "maintainer": "hiep"
+    },
+    {
+      "id": "core-en-module-02",
+      "kind": "branch",
+      "title": "Verb Architecture",
+      "purpose": "Verb hữu hạn, verb từ vựng và hệ trợ động từ be/do/have/modal.",
+      "status": "draft",
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1"
+      ],
+      "maintainer": "hiep"
+    },
+    {
+      "id": "core-en-module-03",
+      "kind": "branch",
+      "title": "Negation & Questions",
+      "purpose": "Cách mệnh đề đổi thành phủ định và câu hỏi bằng do-support, be hoặc modal.",
+      "status": "draft",
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1"
+      ],
+      "maintainer": "hiep"
+    },
+    {
+      "id": "core-en-module-04",
+      "kind": "branch",
+      "title": "Time, Aspect & Modality",
+      "purpose": "Tách tense, aspect, modality và futurity constructions thành các cơ chế có thể suy ra.",
+      "status": "draft",
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1"
+      ],
+      "maintainer": "hiep"
+    },
+    {
+      "id": "core-en-module-05",
+      "kind": "branch",
+      "title": "Noun & Reference",
+      "purpose": "Cấu trúc noun phrase, countability, determiner và cách người nói xác định đối tượng.",
+      "status": "draft",
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1"
+      ],
+      "maintainer": "hiep"
+    },
+    {
+      "id": "core-en-module-06",
+      "kind": "branch",
+      "title": "Expanding the Clause",
+      "purpose": "Bổ sung complement, modifier, coordination, subordination và relative clause.",
+      "status": "draft",
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1"
+      ],
+      "maintainer": "hiep"
+    },
+    {
+      "id": "core-en-module-07",
+      "kind": "branch",
+      "title": "Information Flow",
+      "purpose": "Tổ chức given/new information, focus, active/passive và discourse context.",
+      "status": "draft",
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1"
+      ],
+      "maintainer": "hiep"
+    },
+    {
+      "id": "core-en-module-08",
+      "kind": "branch",
+      "title": "Sound & Listening",
+      "purpose": "Nhận diện âm, prominence, reduction, linking, segmentation và intonation.",
+      "status": "draft",
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1"
+      ],
+      "maintainer": "hiep"
+    },
+    {
+      "id": "core-en-module-09",
+      "kind": "branch",
+      "title": "Lexicon as a Network",
+      "purpose": "Từ tần suất cao, word family, collocation và continuum của phrasal verb.",
+      "status": "draft",
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1"
+      ],
+      "maintainer": "hiep"
+    },
+    {
+      "id": "core-en-module-10",
+      "kind": "leaf",
+      "title": "Integration & Production",
+      "purpose": "Tích hợp gọi ý, biến đổi, nghe, nói và chuyển giao sang tình huống mới.",
+      "status": "draft",
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1"
+      ],
+      "maintainer": "hiep"
+    },
+    {
+      "id": "core-react-root",
+      "kind": "root",
+      "title": "React generative core",
+      "purpose": "Nguyên lý snapshot và các cơ chế render suy ra từ đó.",
+      "status": "draft",
+      "source_refs": [
+        "core-synthesis:english-react-principle-ladder-v1",
+        "claude-owner-paste:react-2026-08-18"
+      ],
+      "maintainer": "hiep"
+    },
+    {
+      "id": "core-react-snapshot",
+      "kind": "trunk",
+      "title": "State as snapshot",
+      "purpose": "Mỗi render tính UI từ snapshot state/props riêng.",
+      "status": "draft",
+      "source_refs": [
+        "core-synthesis:english-react-principle-ladder-v1",
+        "claude-owner-paste:react-2026-08-18"
+      ],
+      "maintainer": "hiep"
+    },
+    {
+      "id": "core-react-identity",
+      "kind": "branch",
+      "title": "Identity and reconciliation",
+      "purpose": "Type, key và vị trí quyết định giữ hay tạo lại state.",
+      "status": "draft",
+      "source_refs": [
+        "core-synthesis:english-react-principle-ladder-v1",
+        "claude-owner-paste:react-2026-08-18"
+      ],
+      "maintainer": "hiep"
+    },
+    {
+      "id": "core-react-purity",
+      "kind": "branch",
+      "title": "Pure render and effects",
+      "purpose": "Render có thể chạy lại; side effect phải có ranh giới rõ.",
+      "status": "draft",
+      "source_refs": [
+        "core-synthesis:english-react-principle-ladder-v1",
+        "claude-owner-paste:react-2026-08-18"
+      ],
+      "maintainer": "hiep"
+    },
+    {
+      "id": "core-react-hooks",
+      "kind": "leaf",
+      "title": "Hook call order",
+      "purpose": "Hook ở top level để mapping stateful logic ổn định.",
+      "status": "draft",
+      "source_refs": [
+        "core-synthesis:english-react-principle-ladder-v1",
+        "claude-owner-paste:react-2026-08-18"
+      ],
+      "maintainer": "hiep"
+    }
+  ],
+  "edges": [
+    {
+      "from": "core-en-module-01",
+      "to": "core-en-module-02",
+      "type": "prerequisite"
+    },
+    {
+      "from": "core-en-module-02",
+      "to": "core-en-module-03",
+      "type": "prerequisite"
+    },
+    {
+      "from": "core-en-module-02",
+      "to": "core-en-module-04",
+      "type": "prerequisite"
+    },
+    {
+      "from": "core-en-module-01",
+      "to": "core-en-module-05",
+      "type": "prerequisite"
+    },
+    {
+      "from": "core-en-module-01",
+      "to": "core-en-module-06",
+      "type": "part_of"
+    },
+    {
+      "from": "core-en-module-05",
+      "to": "core-en-module-06",
+      "type": "prerequisite"
+    },
+    {
+      "from": "core-en-module-01",
+      "to": "core-en-module-07",
+      "type": "prerequisite"
+    },
+    {
+      "from": "core-en-module-07",
+      "to": "core-en-module-08",
+      "type": "prerequisite"
+    },
+    {
+      "from": "core-en-module-06",
+      "to": "core-en-module-09",
+      "type": "prerequisite"
+    },
+    {
+      "from": "core-en-module-08",
+      "to": "core-en-module-09",
+      "type": "prerequisite"
+    },
+    {
+      "from": "core-en-module-04",
+      "to": "core-en-module-10",
+      "type": "prerequisite"
+    },
+    {
+      "from": "core-en-module-08",
+      "to": "core-en-module-10",
+      "type": "prerequisite"
+    },
+    {
+      "from": "core-en-module-09",
+      "to": "core-en-module-10",
+      "type": "prerequisite"
+    },
+    {
+      "from": "core-react-root",
+      "to": "core-react-snapshot",
+      "type": "part_of"
+    },
+    {
+      "from": "core-react-snapshot",
+      "to": "core-react-identity",
+      "type": "prerequisite"
+    },
+    {
+      "from": "core-react-snapshot",
+      "to": "core-react-purity",
+      "type": "prerequisite"
+    },
+    {
+      "from": "core-react-purity",
+      "to": "core-react-hooks",
+      "type": "prerequisite"
+    }
+  ],
+  "collections": [
+    {
+      "id": "collection-english-core-01",
+      "track": "english",
+      "node_id": "core-en-module-01",
+      "title": "Meaning → Clause",
+      "card_ids": [
+        "core-en-01",
+        "core-en-02",
+        "core-en-03",
+        "core-en-04",
+        "core-en-05",
+        "core-en-06",
+        "core-en-07",
+        "core-en-08"
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "collection-english-core-02",
+      "track": "english",
+      "node_id": "core-en-module-02",
+      "title": "Verb Architecture",
+      "card_ids": [
+        "core-en-09",
+        "core-en-10",
+        "core-en-11",
+        "core-en-12",
+        "core-en-13",
+        "core-en-14",
+        "core-en-15",
+        "core-en-16"
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "collection-english-core-03",
+      "track": "english",
+      "node_id": "core-en-module-03",
+      "title": "Negation & Questions",
+      "card_ids": [
+        "core-en-17",
+        "core-en-18",
+        "core-en-19",
+        "core-en-20",
+        "core-en-21",
+        "core-en-22",
+        "core-en-23",
+        "core-en-24"
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "collection-english-core-04",
+      "track": "english",
+      "node_id": "core-en-module-04",
+      "title": "Time, Aspect & Modality",
+      "card_ids": [
+        "core-en-25",
+        "core-en-26",
+        "core-en-27",
+        "core-en-28",
+        "core-en-29",
+        "core-en-30",
+        "core-en-31",
+        "core-en-32"
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "collection-english-core-05",
+      "track": "english",
+      "node_id": "core-en-module-05",
+      "title": "Noun & Reference",
+      "card_ids": [
+        "core-en-33",
+        "core-en-34",
+        "core-en-35",
+        "core-en-36",
+        "core-en-37",
+        "core-en-38",
+        "core-en-39",
+        "core-en-40"
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "collection-english-core-06",
+      "track": "english",
+      "node_id": "core-en-module-06",
+      "title": "Expanding the Clause",
+      "card_ids": [
+        "core-en-41",
+        "core-en-42",
+        "core-en-43",
+        "core-en-44",
+        "core-en-45",
+        "core-en-46",
+        "core-en-47",
+        "core-en-48"
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "collection-english-core-07",
+      "track": "english",
+      "node_id": "core-en-module-07",
+      "title": "Information Flow",
+      "card_ids": [
+        "core-en-49",
+        "core-en-50",
+        "core-en-51",
+        "core-en-52",
+        "core-en-53",
+        "core-en-54",
+        "core-en-55",
+        "core-en-56"
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "collection-english-core-08",
+      "track": "english",
+      "node_id": "core-en-module-08",
+      "title": "Sound & Listening",
+      "card_ids": [
+        "core-en-57",
+        "core-en-58",
+        "core-en-59",
+        "core-en-60",
+        "core-en-61",
+        "core-en-62",
+        "core-en-63",
+        "core-en-64"
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "collection-english-core-09",
+      "track": "english",
+      "node_id": "core-en-module-09",
+      "title": "Lexicon as a Network",
+      "card_ids": [
+        "core-en-65",
+        "core-en-66",
+        "core-en-67",
+        "core-en-68",
+        "core-en-69",
+        "core-en-70",
+        "core-en-71",
+        "core-en-72"
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "collection-english-core-10",
+      "track": "english",
+      "node_id": "core-en-module-10",
+      "title": "Integration & Production",
+      "card_ids": [
+        "core-en-73",
+        "core-en-74",
+        "core-en-75",
+        "core-en-76",
+        "core-en-77",
+        "core-en-78",
+        "core-en-79",
+        "core-en-80"
+      ],
+      "status": "draft"
+    }
+  ],
+  "cards": [
+    {
+      "id": "core-en-01",
+      "track": "english",
+      "node_id": "core-en-module-01",
+      "card_type": "core_recall",
+      "prompt": "Khi muốn nói một điều bằng tiếng Anh, vì sao cần biến ý định thành một mệnh đề thay vì ghép các từ dịch rời? Hãy minh hoạ bằng ‘The child opened the door.’",
+      "model_answer": "Mệnh đề tổ chức một sự việc quanh các vai trò như subject và predicate: trong câu này the child là subject, opened là verb trung tâm và the door là object.",
+      "explanation": "Cấu trúc vai trò cho người nghe biết ai làm gì với cái gì; từ đó có thể sinh nhiều câu mới thay vì nhớ một chuỗi dịch cố định.",
+      "misconception": "Chỉ cần đủ từ vựng là câu tự đúng, không cần cấu trúc vai trò.",
+      "transfer_prompt": "Từ ý ‘một người bạn gửi email’, tạo một mệnh đề và chỉ ra các vai trò.",
+      "prerequisite_node_ids": [],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1"
+      ],
+      "status": "draft",
+      "author": "codex",
+      "reviewer": null
+    },
+    {
+      "id": "core-en-02",
+      "track": "english",
+      "node_id": "core-en-module-01",
+      "card_type": "mechanism",
+      "prompt": "Trong ‘Maya seems tired’, vì sao seems vẫn là verb dù không chỉ một hành động nhìn thấy được?",
+      "model_answer": "Verb có thể làm trung tâm của sự kiện, hành động hoặc trạng thái; seems liên kết Maya với trạng thái tired.",
+      "explanation": "Nhận diện verb theo công việc trong mệnh đề giúp ta không đồng nhất verb với chuyển động vật lý.",
+      "misconception": "Một từ chỉ là verb khi nó mô tả hành động có thể quan sát.",
+      "transfer_prompt": "Viết một câu dùng ‘know’ hoặc ‘belong’ và giải thích trạng thái mà verb đó tổ chức.",
+      "prerequisite_node_ids": [
+        "core-en-module-01"
+      ],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1"
+      ],
+      "status": "draft",
+      "author": "codex",
+      "reviewer": null
+    },
+    {
+      "id": "core-en-03",
+      "track": "english",
+      "node_id": "core-en-module-01",
+      "card_type": "mechanism",
+      "prompt": "Trong ‘The dog chased the cat’, trật tự từ giúp người nghe suy ra ai làm gì như thế nào?",
+      "model_answer": "Khuôn S-V-O mặc định đặt the dog trước verb nên là subject, the cat sau verb nên là object; vị trí là tín hiệu vai trò mạnh.",
+      "explanation": "Tiếng Anh dựa nhiều vào word order và function words để đóng gói quan hệ trong câu.",
+      "misconception": "Chỉ cần dịch từng từ sang tiếng Anh là quan hệ vai trò vẫn giữ nguyên.",
+      "transfer_prompt": "Đổi vị trí hai noun trong câu và mô tả nghĩa mới hoặc sự bất tự nhiên tạo ra.",
+      "prerequisite_node_ids": [
+        "core-en-module-01"
+      ],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1"
+      ],
+      "status": "draft",
+      "author": "codex",
+      "reviewer": null
+    },
+    {
+      "id": "core-en-04",
+      "track": "english",
+      "node_id": "core-en-module-01",
+      "card_type": "contrast",
+      "prompt": "Phân biệt ‘the quiet room’ với ‘The room is quiet’: điều gì khiến một cái là noun phrase còn cái kia là mệnh đề?",
+      "model_answer": "The quiet room chỉ gọi tên một đối tượng; The room is quiet có subject, verb is và predicate mô tả một trạng thái.",
+      "explanation": "Phân biệt cụm danh từ với mệnh đề ngăn việc coi mọi nhóm từ là câu.",
+      "misconception": "Một cụm có adjective là đã nói được một sự việc hoàn chỉnh.",
+      "transfer_prompt": "Biến ‘a very old bridge’ thành một câu có thể đúng hoặc sai về cây cầu.",
+      "prerequisite_node_ids": [
+        "core-en-module-01"
+      ],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1"
+      ],
+      "status": "draft",
+      "author": "codex",
+      "reviewer": null
+    },
+    {
+      "id": "core-en-05",
+      "track": "english",
+      "node_id": "core-en-module-01",
+      "card_type": "boundary",
+      "prompt": "Vì sao S-V-O là khuôn mặc định hữu ích nhưng không phải luật tuyệt đối của mọi câu tiếng Anh?",
+      "model_answer": "Nhiều câu dùng S-V-O, nhưng câu hỏi, bị động, copular clause và cấu trúc không có object thay đổi bề mặt; nguyên lý là nhận diện vai trò, không ép mọi câu vào một khuôn.",
+      "explanation": "Một mô hình sinh tốt phải chỉ rõ phạm vi áp dụng và những cơ chế khác có thể tái tổ chức câu.",
+      "misconception": "Mọi câu đúng đều phải có đủ subject, verb và object theo đúng thứ tự.",
+      "transfer_prompt": "So sánh ‘The window broke’ và ‘The window was broken’; câu nào có object và vì sao?",
+      "prerequisite_node_ids": [
+        "core-en-module-01"
+      ],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1"
+      ],
+      "status": "draft",
+      "author": "codex",
+      "reviewer": null
+    },
+    {
+      "id": "core-en-06",
+      "track": "english",
+      "node_id": "core-en-module-01",
+      "card_type": "application",
+      "prompt": "Hãy phân tích cấu trúc của câu mới ‘The small robot moved the box carefully’ mà không dịch từng từ.",
+      "model_answer": "The small robot là subject noun phrase, moved là verb, the box là object noun phrase, carefully là adjunct chỉ cách thức.",
+      "explanation": "Bắt đầu từ trung tâm mệnh đề rồi mở rộng ra các thành phần giúp suy luận nhanh hơn từ bản dịch tuyến tính.",
+      "misconception": "Carefully là object vì nó đứng sau verb.",
+      "transfer_prompt": "Tạo một câu khác có subject, verb, object và adjunct chỉ thời gian.",
+      "prerequisite_node_ids": [
+        "core-en-module-01"
+      ],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1"
+      ],
+      "status": "draft",
+      "author": "codex",
+      "reviewer": null
+    },
+    {
+      "id": "core-en-07",
+      "track": "english",
+      "node_id": "core-en-module-01",
+      "card_type": "production",
+      "prompt": "Tự nói hoặc viết một câu tiếng Anh về việc bạn vừa làm; hãy chỉ ra subject, finite verb và phần bổ nghĩa.",
+      "model_answer": "Một câu hợp lệ phải có mệnh đề rõ; ví dụ ‘I finished my notes’ có I là subject, finished là finite verb và my notes là object.",
+      "explanation": "Tự tạo câu kiểm tra việc nguyên lý đã chuyển thành thao tác, không chỉ nhận ra đáp án có sẵn.",
+      "misconception": "Chỉ cần nói một noun hoặc một verb riêng lẻ là đã thực hành tạo câu.",
+      "transfer_prompt": "Giữ cùng ý nhưng đổi subject và thời điểm để tạo câu thứ hai.",
+      "prerequisite_node_ids": [
+        "core-en-module-01"
+      ],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1"
+      ],
+      "status": "draft",
+      "author": "codex",
+      "reviewer": null
+    },
+    {
+      "id": "core-en-08",
+      "track": "english",
+      "node_id": "core-en-module-01",
+      "card_type": "production",
+      "prompt": "Hãy giải thích bằng lời của bạn vì sao ‘The cat sleeps’ là câu, còn ‘under the table’ chỉ là một mảnh; sau đó tạo một câu mới từ mảnh đó.",
+      "model_answer": "The cat sleeps có subject và predicate với finite verb; under the table chỉ là prepositional phrase. Có thể tạo ‘The cat sleeps under the table.’",
+      "explanation": "Giải thích rồi chuyển mảnh vào cấu trúc mới kiểm tra cả nhận diện lẫn thao tác xây câu.",
+      "misconception": "Cụm giới từ tự nó luôn là một câu vì có nghĩa rõ.",
+      "transfer_prompt": "Lấy một prepositional phrase khác và gắn nó vào một mệnh đề mới mà không làm mất trung tâm câu.",
+      "prerequisite_node_ids": [
+        "core-en-module-01"
+      ],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1"
+      ],
+      "status": "draft",
+      "author": "codex",
+      "reviewer": null
+    },
+    {
+      "id": "core-en-09",
+      "track": "english",
+      "node_id": "core-en-module-02",
+      "card_type": "core_recall",
+      "prompt": "Finite verb khác lexical verb ở điểm nào? Hãy dùng ‘She walks’ để minh hoạ.",
+      "model_answer": "Finite verb là thành phần mang tense/agreement trong mệnh đề; trong ‘She walks’, walks vừa là lexical verb vừa là finite form.",
+      "explanation": "Tách công việc ngữ pháp của finite khỏi nghĩa từ vựng giúp hiểu vì sao auxiliary có thể mang dấu hiệu còn verb chính trở về base form.",
+      "misconception": "Finite verb nghĩa là verb diễn tả hành động hữu hạn về thời lượng.",
+      "transfer_prompt": "Chỉ ra finite verb trong ‘She has walked home’ và phần lexical meaning nằm ở đâu.",
+      "prerequisite_node_ids": [
+        "core-en-module-01"
+      ],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1"
+      ],
+      "status": "draft",
+      "author": "codex",
+      "reviewer": null
+    },
+    {
+      "id": "core-en-10",
+      "track": "english",
+      "node_id": "core-en-module-02",
+      "card_type": "mechanism",
+      "prompt": "Ba từ ‘be’, ‘do’ và ‘have’ có thể làm những công việc ngữ pháp nào trong ‘They are working’, ‘Do they work?’ và ‘They have finished’?",
+      "model_answer": "Be hỗ trợ progressive, do hỗ trợ câu hỏi khi không có auxiliary khác, have hỗ trợ perfect; mỗi từ cũng có thể là lexical verb mang nghĩa riêng.",
+      "explanation": "Học auxiliary theo chức năng tạo ra nhiều cấu trúc từ một vài cơ chế chung.",
+      "misconception": "Be, do, have luôn là ba dạng bất quy tắc phải học thuộc mà không có hệ thống.",
+      "transfer_prompt": "Phân biệt have trong ‘They have finished’ và ‘They have a car’.",
+      "prerequisite_node_ids": [
+        "core-en-module-02"
+      ],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1"
+      ],
+      "status": "draft",
+      "author": "codex",
+      "reviewer": null
+    },
+    {
+      "id": "core-en-11",
+      "track": "english",
+      "node_id": "core-en-module-02",
+      "card_type": "mechanism",
+      "prompt": "Trong ‘She walks’ và ‘She is walking’, thành phần nào mang thông tin hữu hạn và phần còn lại làm công việc gì?",
+      "model_answer": "Ở ‘She walks’, walks là finite lexical verb; ở ‘She is walking’, is là finite auxiliary còn walking là non-finite -ing form.",
+      "explanation": "Một mệnh đề thường cần một finite carrier; auxiliary có thể nhận gánh nặng ngữ pháp để verb lexical biểu thị aspect.",
+      "misconception": "Mọi verb xuất hiện trong câu đều cùng lúc mang tense.",
+      "transfer_prompt": "Phân tích ‘She has been working’ theo finite carrier và các form còn lại.",
+      "prerequisite_node_ids": [
+        "core-en-module-02"
+      ],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1"
+      ],
+      "status": "draft",
+      "author": "codex",
+      "reviewer": null
+    },
+    {
+      "id": "core-en-12",
+      "track": "english",
+      "node_id": "core-en-module-02",
+      "card_type": "contrast",
+      "prompt": "Phân biệt ‘I have a car’ với ‘I have finished’: vì sao cùng một từ nhưng một câu không phải perfect?",
+      "model_answer": "Trong ‘I have a car’, have là lexical verb nghĩa sở hữu; trong ‘I have finished’, have là auxiliary mở cấu trúc perfect với past participle finished.",
+      "explanation": "Hình thức bề mặt chưa đủ; phải xét vai trò của từ trong cấu trúc và thành phần theo sau.",
+      "misconception": "Hễ thấy have trước một noun hoặc verb là perfect.",
+      "transfer_prompt": "Tạo hai câu mới với ‘have’, một lexical và một auxiliary, rồi giải thích dấu hiệu nhận biết.",
+      "prerequisite_node_ids": [
+        "core-en-module-02"
+      ],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1"
+      ],
+      "status": "draft",
+      "author": "codex",
+      "reviewer": null
+    },
+    {
+      "id": "core-en-13",
+      "track": "english",
+      "node_id": "core-en-module-02",
+      "card_type": "boundary",
+      "prompt": "Vì sao công thức ‘thêm -s cho ngôi thứ ba số ít’ không mô tả đầy đủ mọi verb hiện tại đơn?",
+      "model_answer": "Đó là quy tắc productive cho nhiều lexical verb, nhưng be và have có dạng riêng; cần nhận diện lexicalized irregular forms thay vì áp dụng -s máy móc.",
+      "explanation": "Gốc là cơ chế agreement, còn bề mặt của một số verb là dữ liệu ngoại lệ cần tích lũy.",
+      "misconception": "Biết quy tắc -s là chia đúng mọi verb.",
+      "transfer_prompt": "So sánh go→goes với have→has và nói rõ đâu là spelling pattern, đâu là irregular form.",
+      "prerequisite_node_ids": [
+        "core-en-module-02"
+      ],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1"
+      ],
+      "status": "draft",
+      "author": "codex",
+      "reviewer": null
+    },
+    {
+      "id": "core-en-14",
+      "track": "english",
+      "node_id": "core-en-module-02",
+      "card_type": "application",
+      "prompt": "Hãy biến ‘She works here’ thành câu hỏi và phủ định, giải thích verb nào mang tense trong mỗi câu.",
+      "model_answer": "‘Does she work here?’ và ‘She does not work here.’ Do/does là finite auxiliary; work trở về base form.",
+      "explanation": "Do-support cho thấy tense/agreement chuyển sang auxiliary khi cấu trúc cần đảo hoặc phủ định.",
+      "misconception": "Giữ ‘works’ sau does vì subject vẫn là she.",
+      "transfer_prompt": "Áp dụng cùng cơ chế với ‘He watches TV’.",
+      "prerequisite_node_ids": [
+        "core-en-module-02"
+      ],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1"
+      ],
+      "status": "draft",
+      "author": "codex",
+      "reviewer": null
+    },
+    {
+      "id": "core-en-15",
+      "track": "english",
+      "node_id": "core-en-module-02",
+      "card_type": "production",
+      "prompt": "Tự tạo một cặp câu dùng cùng lexical verb: một câu có auxiliary và một câu không có auxiliary; giải thích vai trò của finite carrier.",
+      "model_answer": "Ví dụ ‘They have left’ có have là auxiliary và left mang lexical meaning; ‘They leave early’ có leave vừa lexical vừa finite.",
+      "explanation": "Tự dựng cặp đối chiếu buộc người học vận dụng kiến trúc verb thay vì lặp định nghĩa.",
+      "misconception": "Một lexical verb không bao giờ có thể là finite verb.",
+      "transfer_prompt": "Đổi cặp trên sang một verb khác và giữ nguyên sự khác nhau về kiến trúc.",
+      "prerequisite_node_ids": [
+        "core-en-module-02"
+      ],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1"
+      ],
+      "status": "draft",
+      "author": "codex",
+      "reviewer": null
+    },
+    {
+      "id": "core-en-16",
+      "track": "english",
+      "node_id": "core-en-module-02",
+      "card_type": "production",
+      "prompt": "Giải thích cho một người mới học vì sao học ‘be/do/have’ theo công việc sẽ sinh được nhiều câu hơn học từng bảng chia riêng.",
+      "model_answer": "Vì mỗi auxiliary mang một loại thông tin và tái xuất hiện trong nhiều tense/aspect/câu hỏi/phủ định; biết chức năng giúp suy ra câu mới, rồi mới học các dạng bất quy tắc.",
+      "explanation": "Đây là cách biến một nhóm nhỏ cơ chế thành đòn bẩy cho nhiều cành sử dụng.",
+      "misconception": "Học thuộc càng nhiều bảng động từ càng chứng minh đã hiểu hệ thống.",
+      "transfer_prompt": "Chọn một auxiliary và nêu ba cấu trúc khác nhau mà nó có thể tham gia.",
+      "prerequisite_node_ids": [
+        "core-en-module-02"
+      ],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1"
+      ],
+      "status": "draft",
+      "author": "codex",
+      "reviewer": null
+    },
+    {
+      "id": "core-en-17",
+      "track": "english",
+      "node_id": "core-en-module-03",
+      "card_type": "core_recall",
+      "prompt": "Câu hỏi yes/no tiếng Anh thường làm thay đổi trật tự mệnh đề và finite verb như thế nào? Hãy dùng ‘You are ready.’",
+      "model_answer": "Finite be đi trước subject: ‘Are you ready?’; cấu trúc với be không cần thêm do.",
+      "explanation": "Inversion biến cấu trúc trần thuật thành câu hỏi bằng cách đưa finite be hoặc một auxiliary lên trước subject.",
+      "misconception": "Chỉ cần thêm dấu hỏi hoặc do vào đầu mọi câu.",
+      "transfer_prompt": "Đổi ‘They can swim’ thành câu hỏi và chỉ ra carrier.",
+      "prerequisite_node_ids": [
+        "core-en-module-02"
+      ],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1"
+      ],
+      "status": "draft",
+      "author": "codex",
+      "reviewer": null
+    },
+    {
+      "id": "core-en-18",
+      "track": "english",
+      "node_id": "core-en-module-03",
+      "card_type": "mechanism",
+      "prompt": "Vì sao ‘She likes tea’ trở thành ‘Does she like tea?’ thay vì ‘Does she likes tea?’",
+      "model_answer": "Does là finite auxiliary mang present agreement; lexical verb sau auxiliary dùng base form like.",
+      "explanation": "Một mệnh đề chỉ cần một finite carrier trong cấu trúc này; do-support chuyển gánh nặng hình thái khỏi lexical verb.",
+      "misconception": "-s phải xuất hiện trên mọi verb đi với subject she.",
+      "transfer_prompt": "Giải thích ‘Did she like tea?’ theo cùng cơ chế nhưng với past.",
+      "prerequisite_node_ids": [
+        "core-en-module-03"
+      ],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1"
+      ],
+      "status": "draft",
+      "author": "codex",
+      "reviewer": null
+    },
+    {
+      "id": "core-en-19",
+      "track": "english",
+      "node_id": "core-en-module-03",
+      "card_type": "mechanism",
+      "prompt": "Trong ‘I do not understand’, do đang mang ý nghĩa ‘làm’ hay đang làm công việc ngữ pháp?",
+      "model_answer": "Do là auxiliary hỗ trợ negation; lexical verb understand mang nghĩa chính, nên do ở đây không có nghĩa ‘làm’.",
+      "explanation": "Một hình thức có thể là lexical verb hoặc grammatical auxiliary; vai trò được xác định bởi cấu trúc.",
+      "misconception": "Do trong mọi câu đều có nghĩa là làm.",
+      "transfer_prompt": "So sánh ‘I do my homework’ với ‘I do not understand’.",
+      "prerequisite_node_ids": [
+        "core-en-module-03"
+      ],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1"
+      ],
+      "status": "draft",
+      "author": "codex",
+      "reviewer": null
+    },
+    {
+      "id": "core-en-20",
+      "track": "english",
+      "node_id": "core-en-module-03",
+      "card_type": "contrast",
+      "prompt": "Phân biệt cách phủ định ‘She is ready’, ‘She has left’ và ‘She works here’: vì sao không dùng cùng một công thức?",
+      "model_answer": "Finite be và auxiliary have nhận not trực tiếp; với lexical work không có auxiliary phù hợp nên dùng does not.",
+      "explanation": "Chọn cơ chế phủ định bắt đầu từ việc tìm finite be hoặc auxiliary đã có; chỉ dùng do-support khi cấu trúc cần một carrier.",
+      "misconception": "Mọi câu phủ định đều phải dùng do not.",
+      "transfer_prompt": "Viết phủ định cho ‘They can help’ và ‘They help’ rồi giải thích khác nhau.",
+      "prerequisite_node_ids": [
+        "core-en-module-03"
+      ],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1"
+      ],
+      "status": "draft",
+      "author": "codex",
+      "reviewer": null
+    },
+    {
+      "id": "core-en-21",
+      "track": "english",
+      "node_id": "core-en-module-03",
+      "card_type": "boundary",
+      "prompt": "Vì sao không thể áp dụng do-support giống nhau cho mọi câu hỏi, đặc biệt với ‘Who broke the window?’",
+      "model_answer": "Wh-question hỏi chính subject có thể không cần đảo hoặc do-support; cấu trúc phụ thuộc thành phần được hỏi và auxiliary đang có.",
+      "explanation": "Quy tắc question formation có điều kiện; không nên biến một mẫu phổ biến thành công thức tuyệt đối.",
+      "misconception": "Mọi câu hỏi đều phải bắt đầu bằng do/does/did.",
+      "transfer_prompt": "So sánh ‘Who called you?’ với ‘Who did you call?’ và xác định object/subject được hỏi.",
+      "prerequisite_node_ids": [
+        "core-en-module-03"
+      ],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1"
+      ],
+      "status": "draft",
+      "author": "codex",
+      "reviewer": null
+    },
+    {
+      "id": "core-en-22",
+      "track": "english",
+      "node_id": "core-en-module-03",
+      "card_type": "application",
+      "prompt": "Hãy biến ‘They have finished the work’ thành câu hỏi và phủ định mà không làm mất cấu trúc perfect.",
+      "model_answer": "‘Have they finished the work?’ và ‘They have not finished the work.’ Have là auxiliary finite nên đảo hoặc nhận not; finished giữ nguyên.",
+      "explanation": "Khi auxiliary đã có, không thêm do; thao tác giữ nguyên phần lexical/aspectual phía sau.",
+      "misconception": "Dùng ‘Do they have finished...?’ vì nghĩ mọi câu hỏi cần do.",
+      "transfer_prompt": "Làm tương tự với ‘She has been waiting’.",
+      "prerequisite_node_ids": [
+        "core-en-module-03"
+      ],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1"
+      ],
+      "status": "draft",
+      "author": "codex",
+      "reviewer": null
+    },
+    {
+      "id": "core-en-23",
+      "track": "english",
+      "node_id": "core-en-module-03",
+      "card_type": "production",
+      "prompt": "Tự tạo một câu khẳng định, câu hỏi và câu phủ định về lịch học của bạn; nói rõ auxiliary nào đang mang finite information.",
+      "model_answer": "Ví dụ ‘I study at night’, ‘Do I study at night?’, ‘I do not study at night’; do/does là carrier trong hai câu biến đổi.",
+      "explanation": "Ba dạng liên tiếp kiểm tra cơ chế biến đổi mệnh đề và khả năng tự kiểm lỗi.",
+      "misconception": "Chỉ cần đổi dấu câu là tạo được câu hỏi tiếng Anh.",
+      "transfer_prompt": "Lặp lại với một câu dùng be hoặc modal để thấy khi nào do biến mất.",
+      "prerequisite_node_ids": [
+        "core-en-module-03"
+      ],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1"
+      ],
+      "status": "draft",
+      "author": "codex",
+      "reviewer": null
+    },
+    {
+      "id": "core-en-24",
+      "track": "english",
+      "node_id": "core-en-module-03",
+      "card_type": "production",
+      "prompt": "Giải thích bằng ví dụ mới vì sao câu hỏi tiếng Anh là thao tác trên cấu trúc chứ không phải chỉ đặt ‘what/why’ ở đầu.",
+      "model_answer": "Câu hỏi phải xác định thành phần cần lấy thông tin và tổ chức auxiliary/inversion phù hợp; ví dụ ‘Where did she go?’ dùng did + base go.",
+      "explanation": "Tự giải thích cơ chế giúp phân biệt wh-word, vị trí được hỏi và finite carrier.",
+      "misconception": "Thêm wh-word vào đầu bất kỳ câu nào là đủ.",
+      "transfer_prompt": "Tạo một wh-question hỏi subject và một câu hỏi hỏi object, rồi chỉ ra khác biệt.",
+      "prerequisite_node_ids": [
+        "core-en-module-03"
+      ],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1"
+      ],
+      "status": "draft",
+      "author": "codex",
+      "reviewer": null
+    },
+    {
+      "id": "core-en-25",
+      "track": "english",
+      "node_id": "core-en-module-04",
+      "card_type": "core_recall",
+      "prompt": "Tense, aspect và modality trả lời ba câu hỏi khác nhau nào? Hãy dùng một ví dụ ngắn.",
+      "model_answer": "Tense định vị hoặc nhìn sự việc qua present/past form; aspect chọn cách nhìn bên trong hay nhìn lại sự việc; modality biểu thị khả năng, nghĩa vụ hoặc thái độ. Ví dụ ‘She may be working’ có may là modality và be working là progressive aspect.",
+      "explanation": "Tách ba hệ thống giúp người học chọn cấu trúc theo ý nghĩa thay vì coi mọi tổ hợp là một ‘thì’ riêng phải học thuộc.",
+      "misconception": "Mọi chuỗi auxiliary + verb đều là một tense độc lập.",
+      "transfer_prompt": "Phân tích ‘They must have left’ thành tense, aspect và modality.",
+      "prerequisite_node_ids": [
+        "core-en-module-02"
+      ],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1"
+      ],
+      "status": "draft",
+      "author": "codex",
+      "reviewer": null
+    },
+    {
+      "id": "core-en-26",
+      "track": "english",
+      "node_id": "core-en-module-04",
+      "card_type": "mechanism",
+      "prompt": "Vì sao present form và past form không đơn giản tương ứng với ‘bây giờ’ và ‘đã qua’ trong mọi câu?",
+      "model_answer": "Chúng là hình thức ngữ pháp có nhiều cách dùng: present có thể nói thói quen hoặc lịch; past có thể kể quá khứ nhưng cũng biểu thị độ xa, giả định hoặc lịch sự.",
+      "explanation": "Hình thức tense góp phần định vị, nhưng nghĩa thời gian cuối cùng còn phụ thuộc loại sự việc, ngữ cảnh và cấu trúc khác.",
+      "misconception": "Thấy past form là sự việc chắc chắn đã xảy ra trong quá khứ.",
+      "transfer_prompt": "Giải thích past form trong ‘If I knew the answer, I would tell you.’",
+      "prerequisite_node_ids": [
+        "core-en-module-04"
+      ],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1"
+      ],
+      "status": "draft",
+      "author": "codex",
+      "reviewer": null
+    },
+    {
+      "id": "core-en-27",
+      "track": "english",
+      "node_id": "core-en-module-04",
+      "card_type": "mechanism",
+      "prompt": "Progressive và perfect thay đổi góc nhìn sự việc như thế nào trong ‘She worked’, ‘She was working’ và ‘She had worked’?",
+      "model_answer": "Worked kể sự việc bằng past; was working nhìn vào diễn tiến quanh một mốc quá khứ; had worked nhìn sự việc như đã có trước một mốc quá khứ khác.",
+      "explanation": "Aspect không đổi bản thân sự việc; nó chọn cách người nói đóng khung quan hệ bên trong hoặc quan hệ với một mốc tham chiếu.",
+      "misconception": "Progressive luôn nghĩa là hành động kéo dài, perfect luôn nghĩa là hành động vừa kết thúc.",
+      "transfer_prompt": "Chọn một ngữ cảnh trong đó ‘I read’, ‘I was reading’ và ‘I had read’ tạo ba cách nhìn khác nhau.",
+      "prerequisite_node_ids": [
+        "core-en-module-04"
+      ],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1"
+      ],
+      "status": "draft",
+      "author": "codex",
+      "reviewer": null
+    },
+    {
+      "id": "core-en-28",
+      "track": "english",
+      "node_id": "core-en-module-04",
+      "card_type": "contrast",
+      "prompt": "So sánh ‘I will call’, ‘I am going to call’ và ‘I am calling her tonight’: chúng khác nhau ở loại tín hiệu nào?",
+      "model_answer": "Will thường trình bày dự đoán hoặc quyết định theo ngữ cảnh; be going to thường gắn với ý định hay bằng chứng hiện tại; present progressive có thể diễn đạt một sắp xếp đã được tổ chức.",
+      "explanation": "Tiếng Anh biểu đạt tương lai bằng nhiều construction và modal meaning, không chỉ bằng một đuôi future tense duy nhất.",
+      "misconception": "Ba câu hoàn toàn đồng nghĩa và có thể thay nhau ở mọi ngữ cảnh.",
+      "transfer_prompt": "Bạn đã đặt lịch với bác sĩ vào thứ Sáu: chọn construction tự nhiên và nói vì sao.",
+      "prerequisite_node_ids": [
+        "core-en-module-04"
+      ],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1"
+      ],
+      "status": "draft",
+      "author": "codex",
+      "reviewer": null
+    },
+    {
+      "id": "core-en-29",
+      "track": "english",
+      "node_id": "core-en-module-04",
+      "card_type": "boundary",
+      "prompt": "Vì sao bảng ‘3 thời điểm × 4 dạng = 12 thì’ hữu ích để ôn mẫu nhưng nguy hiểm nếu coi là bản chất tiếng Anh?",
+      "model_answer": "Bảng giúp nhìn một số tổ hợp form, nhưng trộn tense với aspect và cách diễn đạt tương lai; nó không dự đoán đầy đủ nghĩa theo ngữ cảnh, modality hay các cách dùng phi thời gian của past form.",
+      "explanation": "Mô hình học tập tốt phải cho phép suy luận và chỉ rõ chỗ mô hình dừng lại.",
+      "misconception": "Bỏ hoàn toàn bảng mẫu thì mới hiểu ngôn ngữ theo nguyên lý.",
+      "transfer_prompt": "Lấy một ô trong bảng và mô tả riêng tense form, aspect và ý nghĩa do ngữ cảnh tạo ra.",
+      "prerequisite_node_ids": [
+        "core-en-module-04"
+      ],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1"
+      ],
+      "status": "draft",
+      "author": "codex",
+      "reviewer": null
+    },
+    {
+      "id": "core-en-30",
+      "track": "english",
+      "node_id": "core-en-module-04",
+      "card_type": "application",
+      "prompt": "Phân tích ‘She may have been waiting for an hour’: mỗi thành phần đóng góp điều gì?",
+      "model_answer": "May biểu thị khả năng; have + participle tạo perfect; been + waiting tạo progressive; toàn chuỗi nhìn một diễn tiến đã kéo tới mốc tham chiếu với độ chắc chắn hạn chế.",
+      "explanation": "Đọc auxiliary từ trái sang phải theo tầng chức năng giúp xử lý tổ hợp dài mà không cần đặt tên một ‘thì’ mới.",
+      "misconception": "Mọi auxiliary trong chuỗi cùng mang một nghĩa thời gian giống nhau.",
+      "transfer_prompt": "Phân tích ‘They must have forgotten’ theo cùng cách.",
+      "prerequisite_node_ids": [
+        "core-en-module-02",
+        "core-en-module-04"
+      ],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1"
+      ],
+      "status": "draft",
+      "author": "codex",
+      "reviewer": null
+    },
+    {
+      "id": "core-en-31",
+      "track": "english",
+      "node_id": "core-en-module-04",
+      "card_type": "production",
+      "prompt": "Tạo ba câu về cùng việc ‘học tiếng Anh’: một thói quen, một diễn tiến ngay lúc nói và một kinh nghiệm tính đến hiện tại.",
+      "model_answer": "Ví dụ: ‘I study English every day’, ‘I am studying English now’, và ‘I have studied English for two years’; mỗi câu chọn form/aspect theo góc nhìn cần nói.",
+      "explanation": "Giữ cùng nội dung từ vựng nhưng đổi góc nhìn buộc người học nối form với ý định giao tiếp.",
+      "misconception": "Chỉ cần thay trạng từ thời gian, verb form nào cũng được.",
+      "transfer_prompt": "Đổi cả ba câu sang một subject khác và kiểm tra finite carrier.",
+      "prerequisite_node_ids": [
+        "core-en-module-04"
+      ],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1"
+      ],
+      "status": "draft",
+      "author": "codex",
+      "reviewer": null
+    },
+    {
+      "id": "core-en-32",
+      "track": "english",
+      "node_id": "core-en-module-04",
+      "card_type": "production",
+      "prompt": "Hãy giải thích cho người mới vì sao ‘Could you open the window?’ dùng past-form could nhưng không kể chuyện quá khứ.",
+      "model_answer": "Could ở đây tạo độ xa về thái độ, khiến lời yêu cầu bớt trực diện; past morphology có thể biểu thị remoteness chứ không chỉ past time.",
+      "explanation": "Một nguyên lý về remoteness giải thích được cả giả định và một số cách nói lịch sự.",
+      "misconception": "Could luôn là quá khứ của can và chỉ dùng cho khả năng đã mất.",
+      "transfer_prompt": "Tạo một cặp yêu cầu với can/could và mô tả khác biệt về sắc thái, không gán một câu là luôn lịch sự hơn trong mọi ngữ cảnh.",
+      "prerequisite_node_ids": [
+        "core-en-module-04"
+      ],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1"
+      ],
+      "status": "draft",
+      "author": "codex",
+      "reviewer": null
+    },
+    {
+      "id": "core-en-33",
+      "track": "english",
+      "node_id": "core-en-module-05",
+      "card_type": "core_recall",
+      "prompt": "Noun phrase làm công việc gì ngoài việc ‘chứa một danh từ’? Hãy phân tích ‘those two old books on the shelf’.",
+      "model_answer": "Noun phrase giúp người nói dựng và xác định một đối tượng; books là head, those/two giới hạn reference, old mô tả, và on the shelf thu hẹp đối tượng.",
+      "explanation": "Học noun phrase như một hệ thống reference giải thích vì sao người nghe biết ta đang nói tới cái nào, bao nhiêu và thuộc loại gì.",
+      "misconception": "Chỉ noun head quyết định toàn bộ nghĩa; các từ xung quanh là trang trí.",
+      "transfer_prompt": "Tạo một noun phrase có head ‘student’ và ít nhất hai lớp thông tin để người nghe nhận đúng người.",
+      "prerequisite_node_ids": [
+        "core-en-module-01"
+      ],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1"
+      ],
+      "status": "draft",
+      "author": "codex",
+      "reviewer": null
+    },
+    {
+      "id": "core-en-34",
+      "track": "english",
+      "node_id": "core-en-module-05",
+      "card_type": "mechanism",
+      "prompt": "Head và dependent trong noun phrase phân chia công việc thế nào trong ‘a surprisingly useful idea’?",
+      "model_answer": "Idea là head, quyết định cụm thuộc loại noun phrase; a thiết lập kiểu reference, useful phân loại/mô tả idea, surprisingly bổ nghĩa mức độ cho useful.",
+      "explanation": "Tìm head trước giúp phân tích các cụm dài theo quan hệ thay vì đọc từng từ như một chuỗi ngang.",
+      "misconception": "Từ đầu tiên của noun phrase luôn là head.",
+      "transfer_prompt": "Tìm head và các dependent trong ‘the three messages from Hoàng’.",
+      "prerequisite_node_ids": [
+        "core-en-module-05"
+      ],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1"
+      ],
+      "status": "draft",
+      "author": "codex",
+      "reviewer": null
+    },
+    {
+      "id": "core-en-35",
+      "track": "english",
+      "node_id": "core-en-module-05",
+      "card_type": "mechanism",
+      "prompt": "Countability là nhãn cố định của từ hay cách đóng gói nghĩa trong ngữ cảnh? Dùng ‘chicken’ làm ví dụ.",
+      "model_answer": "Nhiều noun có thể được conceptualize theo hai cách: ‘a chicken’ là một cá thể đếm được, còn ‘some chicken’ có thể là vật chất/thức ăn không đếm theo đơn vị đó.",
+      "explanation": "Countability tương tác với nghĩa đang chọn, vì vậy phải học pattern của từng sense chứ không dán một nhãn vĩnh viễn lên spelling.",
+      "misconception": "Một noun đã được liệt kê uncountable thì không bao giờ đi với a/an.",
+      "transfer_prompt": "Giải thích hai cách đóng gói ‘paper’ trong ‘a paper’ và ‘some paper’.",
+      "prerequisite_node_ids": [
+        "core-en-module-05"
+      ],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1"
+      ],
+      "status": "draft",
+      "author": "codex",
+      "reviewer": null
+    },
+    {
+      "id": "core-en-36",
+      "track": "english",
+      "node_id": "core-en-module-05",
+      "card_type": "contrast",
+      "prompt": "Đối chiếu ‘I saw a dog’ và ‘The dog followed me’: vì sao article đổi dù vẫn là một con chó?",
+      "model_answer": "A giới thiệu một cá thể chưa được xác định chung; the cho biết người nói kỳ vọng người nghe nhận diện được cá thể đã được đưa vào discourse.",
+      "explanation": "Article đánh dấu trạng thái reference giữa người nói, người nghe và ngữ cảnh, không đơn giản là dịch ‘một’ và ‘cái’.",
+      "misconception": "The chỉ dùng cho vật duy nhất trên thế giới, còn a luôn nghĩa đúng số lượng một.",
+      "transfer_prompt": "Viết hai câu giới thiệu rồi nhắc lại một cuốn sách bằng a/the.",
+      "prerequisite_node_ids": [
+        "core-en-module-05",
+        "core-en-module-07"
+      ],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1"
+      ],
+      "status": "draft",
+      "author": "codex",
+      "reviewer": null
+    },
+    {
+      "id": "core-en-37",
+      "track": "english",
+      "node_id": "core-en-module-05",
+      "card_type": "boundary",
+      "prompt": "Vì sao không thể dùng một quy tắc ‘noun số ít có a, noun số nhiều không article’ cho mọi reference?",
+      "model_answer": "Proper names, mass nouns, generic reference và ngữ cảnh nhận diện tạo nhiều pattern khác; article phụ thuộc countability, number, definiteness và loại meaning.",
+      "explanation": "Ranh giới này ngăn việc sửa article bằng một công thức bề mặt mà bỏ qua ý người nói.",
+      "misconception": "Zero article chỉ là bỏ quên article chứ không mang thông tin.",
+      "transfer_prompt": "So sánh generic meaning trong ‘Dogs are social animals’ với một nhóm cụ thể trong ‘The dogs are outside’.",
+      "prerequisite_node_ids": [
+        "core-en-module-05"
+      ],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1"
+      ],
+      "status": "draft",
+      "author": "codex",
+      "reviewer": null
+    },
+    {
+      "id": "core-en-38",
+      "track": "english",
+      "node_id": "core-en-module-05",
+      "card_type": "application",
+      "prompt": "Chọn và giải thích determiner trong ngữ cảnh: bạn cần một ít thông tin nhưng chưa biết chính xác thông tin nào.",
+      "model_answer": "Có thể hỏi ‘Do you have any information?’ hoặc nói ‘I need some information’; information được đóng gói như mass noun và some/any phụ thuộc loại mệnh đề cùng kỳ vọng ngữ cảnh.",
+      "explanation": "Chọn determiner từ meaning/reference trước giúp tránh ghép máy móc theo bản dịch tiếng Việt.",
+      "misconception": "Any chỉ đi trong câu phủ định, some chỉ đi trong câu khẳng định.",
+      "transfer_prompt": "Tạo một lời mời tự nhiên dùng some và một câu hỏi trung tính dùng any.",
+      "prerequisite_node_ids": [
+        "core-en-module-03",
+        "core-en-module-05"
+      ],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1"
+      ],
+      "status": "draft",
+      "author": "codex",
+      "reviewer": null
+    },
+    {
+      "id": "core-en-39",
+      "track": "english",
+      "node_id": "core-en-module-05",
+      "card_type": "production",
+      "prompt": "Tự sửa và giải thích câu ‘I bought book yesterday’ theo hai ý định khác nhau.",
+      "model_answer": "Nếu giới thiệu một cuốn bất kỳ: ‘I bought a book yesterday.’ Nếu cả hai đã biết cuốn nào: ‘I bought the book yesterday.’ Article phải khớp reference dự định.",
+      "explanation": "Đưa ra hai bản sửa chứng minh rằng lỗi article không thể tách khỏi ngữ cảnh người nói-người nghe.",
+      "misconception": "Chỉ có một đáp án article đúng cho mọi câu đứng riêng.",
+      "transfer_prompt": "Làm tương tự với ‘Please close door’ trong hai bối cảnh khác nhau.",
+      "prerequisite_node_ids": [
+        "core-en-module-05"
+      ],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1"
+      ],
+      "status": "draft",
+      "author": "codex",
+      "reviewer": null
+    },
+    {
+      "id": "core-en-40",
+      "track": "english",
+      "node_id": "core-en-module-05",
+      "card_type": "production",
+      "prompt": "Tạo hai câu liên tiếp giới thiệu một người rồi nhắc lại người đó mà không gây mơ hồ.",
+      "model_answer": "Ví dụ ‘A woman entered the room. She was carrying a blue folder.’ Noun phrase đầu thiết lập referent; pronoun sau duy trì reference khi ngữ cảnh đủ rõ.",
+      "explanation": "Reference chạy xuyên discourse, nên lựa chọn noun phrase/pronoun phải giúp người nghe theo dõi cùng một thực thể.",
+      "misconception": "Pronoun luôn rõ vì nó thay thế noun đã xuất hiện gần nhất.",
+      "transfer_prompt": "Thêm một người thứ hai rồi sửa câu nhắc lại để loại bỏ mơ hồ của ‘she/he/they’.",
+      "prerequisite_node_ids": [
+        "core-en-module-05",
+        "core-en-module-07"
+      ],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1"
+      ],
+      "status": "draft",
+      "author": "codex",
+      "reviewer": null
+    },
+    {
+      "id": "core-en-41",
+      "track": "english",
+      "node_id": "core-en-module-06",
+      "card_type": "core_recall",
+      "prompt": "Complement và adjunct khác nhau ở quan hệ với head như thế nào? Dùng ‘put the keys on the table yesterday’.",
+      "model_answer": "The keys và on the table hoàn thiện pattern nghĩa do put lựa chọn; yesterday thêm hoàn cảnh thời gian tương đối tự do nên là adjunct.",
+      "explanation": "Phân biệt thành phần được head cấp phép với thông tin bổ sung giúp tự sinh và chẩn đoán câu thiếu.",
+      "misconception": "Mọi cụm đứng sau verb đều là object hoặc adjunct tùy độ dài.",
+      "transfer_prompt": "Phân tích ‘She depends on her team completely’ theo complement và adjunct.",
+      "prerequisite_node_ids": [
+        "core-en-module-01",
+        "core-en-module-05"
+      ],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1"
+      ],
+      "status": "draft",
+      "author": "codex",
+      "reviewer": null
+    },
+    {
+      "id": "core-en-42",
+      "track": "english",
+      "node_id": "core-en-module-06",
+      "card_type": "mechanism",
+      "prompt": "Vì sao biết nghĩa của verb vẫn chưa đủ để biết câu cần những complement nào?",
+      "model_answer": "Mỗi sense của verb đi với một valency pattern: sleep thường không cần object, give thường mở vai người cho-vật cho-người nhận, depend thường chọn on-phrase.",
+      "explanation": "Học verb cùng pattern giúp sinh câu và tránh bê nguyên cấu trúc của từ gần nghĩa hoặc của tiếng Việt.",
+      "misconception": "Mọi verb có thể nhận object nếu người nghe đoán được.",
+      "transfer_prompt": "So sánh pattern của ‘say’ và ‘tell’ trong một thông điệp giống nhau.",
+      "prerequisite_node_ids": [
+        "core-en-module-02",
+        "core-en-module-06"
+      ],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1"
+      ],
+      "status": "draft",
+      "author": "codex",
+      "reviewer": null
+    },
+    {
+      "id": "core-en-43",
+      "track": "english",
+      "node_id": "core-en-module-06",
+      "card_type": "mechanism",
+      "prompt": "Subordination cho phép một clause làm thành phần trong clause lớn hơn ra sao trong ‘I know that she left’?",
+      "model_answer": "That she left là subordinate clause làm complement của know; clause lớn đóng gói một mệnh đề như nội dung của việc biết.",
+      "explanation": "Cơ chế nhúng giúp từ các clause nhỏ tạo suy nghĩ phức tạp mà vẫn giữ quan hệ chính-phụ rõ.",
+      "misconception": "Câu dài chỉ là nhiều câu ngắn nối bằng and.",
+      "transfer_prompt": "Nhúng ‘the train is late’ sau một verb chỉ niềm tin hoặc phát hiện.",
+      "prerequisite_node_ids": [
+        "core-en-module-01",
+        "core-en-module-06"
+      ],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1"
+      ],
+      "status": "draft",
+      "author": "codex",
+      "reviewer": null
+    },
+    {
+      "id": "core-en-44",
+      "track": "english",
+      "node_id": "core-en-module-06",
+      "card_type": "contrast",
+      "prompt": "Đối chiếu coordination và subordination trong ‘I stayed, and it rained’ với ‘I stayed because it rained’.",
+      "model_answer": "And đặt hai clause ở quan hệ phối hợp khá ngang hàng; because biến lý do thành subordinate clause phụ thuộc vào mệnh đề chính.",
+      "explanation": "Connector không chỉ nối câu; nó mã hóa loại quan hệ logic mà người nói muốn người nghe xây dựng.",
+      "misconception": "And, because và although chỉ khác phong cách, không đổi quan hệ nghĩa.",
+      "transfer_prompt": "Diễn đạt cùng hai sự việc bằng although rồi mô tả quan hệ mới.",
+      "prerequisite_node_ids": [
+        "core-en-module-06"
+      ],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1"
+      ],
+      "status": "draft",
+      "author": "codex",
+      "reviewer": null
+    },
+    {
+      "id": "core-en-45",
+      "track": "english",
+      "node_id": "core-en-module-06",
+      "card_type": "boundary",
+      "prompt": "Vì sao relative clause có dấu phẩy và không dấu phẩy không thể luôn thay nhau?",
+      "model_answer": "Integrated relative có thể giúp xác định referent, như ‘students who practised’; supplementary relative thêm thông tin bên lề về referent đã xác định và thường được ngăn bằng dấu phẩy/intonation.",
+      "explanation": "Khác biệt là cách relative clause tham gia reference, không chỉ là quy tắc chấm câu trang trí.",
+      "misconception": "Hễ có which thì luôn dùng dấu phẩy, hễ có that thì nghĩa không đổi.",
+      "transfer_prompt": "So sánh nghĩa của ‘My brothers who live abroad...’ và ‘My brothers, who live abroad,...’ trong một gia đình có nhiều anh em.",
+      "prerequisite_node_ids": [
+        "core-en-module-05",
+        "core-en-module-06"
+      ],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1"
+      ],
+      "status": "draft",
+      "author": "codex",
+      "reviewer": null
+    },
+    {
+      "id": "core-en-46",
+      "track": "english",
+      "node_id": "core-en-module-06",
+      "card_type": "application",
+      "prompt": "Mở rộng clause ‘The child found the key’ bằng một modifier trong noun phrase, một adjunct và một subordinate clause mà vẫn giữ trung tâm rõ.",
+      "model_answer": "Ví dụ ‘The tired child found the missing key under the sofa after everyone had left.’ Trung tâm vẫn là child–found–key; các lớp thêm nhận diện, nơi chốn và quan hệ thời gian.",
+      "explanation": "Mở rộng theo tầng quanh head giúp câu giàu thông tin mà không mất cấu trúc lõi.",
+      "misconception": "Câu càng nhiều modifier càng chính xác và càng hay.",
+      "transfer_prompt": "Bỏ từng lớp khỏi câu mẫu và nói lớp nào là lõi, lớp nào có thể bỏ theo mục đích.",
+      "prerequisite_node_ids": [
+        "core-en-module-05",
+        "core-en-module-06"
+      ],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1"
+      ],
+      "status": "draft",
+      "author": "codex",
+      "reviewer": null
+    },
+    {
+      "id": "core-en-47",
+      "track": "english",
+      "node_id": "core-en-module-06",
+      "card_type": "production",
+      "prompt": "Kết hợp ba ý ‘Hoàng opened the file. The file was corrupted. He called me.’ thành một câu có quan hệ rõ, không chỉ dùng and hai lần.",
+      "model_answer": "Một khả năng: ‘When Hoàng opened the corrupted file, he called me.’ Cách ghép phải thể hiện đúng quan hệ thời gian/nguyên nhân dự định; nếu chưa biết nguyên nhân thì không nên tự thêm because.",
+      "explanation": "Production tốt đòi hỏi chọn quan hệ logic trước rồi mới chọn coordination, subordination hay modification.",
+      "misconception": "Kết hợp câu cho phép tự suy ra mọi quan hệ hợp lý giữa các sự việc.",
+      "transfer_prompt": "Viết một bản khác giữ ba ý nhưng nhấn mạnh việc file bị hỏng.",
+      "prerequisite_node_ids": [
+        "core-en-module-06",
+        "core-en-module-07"
+      ],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1"
+      ],
+      "status": "draft",
+      "author": "codex",
+      "reviewer": null
+    },
+    {
+      "id": "core-en-48",
+      "track": "english",
+      "node_id": "core-en-module-06",
+      "card_type": "production",
+      "prompt": "Tự tạo một câu phức rồi rút nó về clause lõi; giải thích mỗi phần mở rộng phục vụ người nghe ra sao.",
+      "model_answer": "Đáp án đạt yêu cầu phải chỉ ra clause lõi có head/roles rõ và gắn từng complement, modifier hoặc adjunct với một chức năng nghĩa cụ thể.",
+      "explanation": "Thao tác mở rộng rồi rút gọn kiểm tra người học còn thấy cấu trúc sinh bên dưới câu dài.",
+      "misconception": "Phân tích được tên thành phần là đủ, không cần biết thông tin nào đang giúp người nghe.",
+      "transfer_prompt": "Đổi hoặc bỏ một phần mở rộng và mô tả chính xác nghĩa/reference thay đổi.",
+      "prerequisite_node_ids": [
+        "core-en-module-06"
+      ],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1"
+      ],
+      "status": "draft",
+      "author": "codex",
+      "reviewer": null
+    },
+    {
+      "id": "core-en-49",
+      "track": "english",
+      "node_id": "core-en-module-07",
+      "card_type": "core_recall",
+      "prompt": "Nguyên lý given → new giúp người nói tổ chức câu cho người nghe như thế nào?",
+      "model_answer": "Người nói thường neo câu vào thông tin đang hoạt động hoặc dễ nhận diện, rồi đưa phần mới hay trọng tâm sau; đây là xu hướng discourse chứ không phải thứ tự bất biến.",
+      "explanation": "Tổ chức thông tin giải thích vì sao nhiều câu đều đúng ngữ pháp nhưng chỉ một câu nối tự nhiên với câu hỏi hoặc ngữ cảnh trước.",
+      "misconception": "Given luôn phải là subject và new luôn phải là object cuối câu.",
+      "transfer_prompt": "Sau câu ‘I bought a lamp’, chọn cách mở câu tiếp theo để nói thêm về chiếc đèn.",
+      "prerequisite_node_ids": [
+        "core-en-module-01",
+        "core-en-module-05"
+      ],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1"
+      ],
+      "status": "draft",
+      "author": "codex",
+      "reviewer": null
+    },
+    {
+      "id": "core-en-50",
+      "track": "english",
+      "node_id": "core-en-module-07",
+      "card_type": "mechanism",
+      "prompt": "Câu hỏi trước đó quyết định focus của câu trả lời thế nào trong ‘Mai bought the red book’?",
+      "model_answer": "Nếu hỏi ‘Who bought it?’, focus là Mai; nếu hỏi ‘What did Mai buy?’, focus là the red book. Cùng word order có thể mang focus khác qua context và prominence.",
+      "explanation": "Focus là quan hệ giữa utterance và alternatives trong discourse, không chỉ là từ cuối câu.",
+      "misconception": "Từ được nhấn hoặc đứng cuối luôn chứa thông tin hoàn toàn mới.",
+      "transfer_prompt": "Đặt hai câu hỏi khác nhau để cùng câu trả lời trên trả lời tự nhiên với focus khác.",
+      "prerequisite_node_ids": [
+        "core-en-module-07",
+        "core-en-module-08"
+      ],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1"
+      ],
+      "status": "draft",
+      "author": "codex",
+      "reviewer": null
+    },
+    {
+      "id": "core-en-51",
+      "track": "english",
+      "node_id": "core-en-module-07",
+      "card_type": "mechanism",
+      "prompt": "Active và passive thay đổi cách đóng gói cùng một sự việc ra sao trong ‘A storm damaged the roof’ / ‘The roof was damaged by a storm’?",
+      "model_answer": "Active đặt tác nhân a storm làm subject; passive đưa patient the roof lên subject và có thể giữ hoặc bỏ tác nhân, nên thay đổi điểm xuất phát và luồng thông tin.",
+      "explanation": "Passive là lựa chọn về clause structure và discourse perspective, không đơn giản là đổi từ cho trang trọng.",
+      "misconception": "Passive luôn che giấu người chịu trách nhiệm và không dùng trong văn nói.",
+      "transfer_prompt": "Chọn active hoặc passive để tiếp câu ‘Let me tell you what happened to the roof’ và giải thích.",
+      "prerequisite_node_ids": [
+        "core-en-module-02",
+        "core-en-module-07"
+      ],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1"
+      ],
+      "status": "draft",
+      "author": "codex",
+      "reviewer": null
+    },
+    {
+      "id": "core-en-52",
+      "track": "english",
+      "node_id": "core-en-module-07",
+      "card_type": "contrast",
+      "prompt": "Đối chiếu ‘Lan solved the problem’ và ‘It was Lan who solved the problem’: cleft thêm điều gì ngoài độ dài?",
+      "model_answer": "Cleft cấu trúc hóa Lan thành focus đối chiếu, thường bác bỏ hoặc chọn giữa alternatives; câu thường chỉ kể sự việc nếu không có ngữ cảnh nhấn tương ứng.",
+      "explanation": "Các construction khác nhau cho phép người nói điều khiển focus mà không đổi các participant chính.",
+      "misconception": "Cleft là cách viết trang trọng hơn và dùng lúc nào cũng hay hơn.",
+      "transfer_prompt": "Tạo một ngữ cảnh trong đó cleft sửa một hiểu lầm về người giải bài.",
+      "prerequisite_node_ids": [
+        "core-en-module-07"
+      ],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1"
+      ],
+      "status": "draft",
+      "author": "codex",
+      "reviewer": null
+    },
+    {
+      "id": "core-en-53",
+      "track": "english",
+      "node_id": "core-en-module-07",
+      "card_type": "boundary",
+      "prompt": "Vì sao không thể dùng ‘đưa thông tin mới xuống cuối’ như một luật cứng?",
+      "model_answer": "Focus còn được đánh dấu bằng prominence, construction và context; câu hỏi, heavy constituents, style hoặc contrast có thể tạo trật tự khác mà vẫn tự nhiên.",
+      "explanation": "Given/new là công cụ dự đoán và chỉnh discourse, không thay thế cú pháp hay ngữ cảnh thực.",
+      "misconception": "Bất kỳ câu nào có new information ở đầu đều sai hoặc khó hiểu.",
+      "transfer_prompt": "Tìm một lời đáp ngắn như ‘A DOG bit me’ trong đó phần mới/đối chiếu xuất hiện sớm và giải thích ngữ cảnh.",
+      "prerequisite_node_ids": [
+        "core-en-module-07",
+        "core-en-module-08"
+      ],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1"
+      ],
+      "status": "draft",
+      "author": "codex",
+      "reviewer": null
+    },
+    {
+      "id": "core-en-54",
+      "track": "english",
+      "node_id": "core-en-module-07",
+      "card_type": "application",
+      "prompt": "Sắp xếp lại hai câu ‘A strange package arrived. A courier left it at the door’ để kể tiếp sau chủ đề ‘the package’.",
+      "model_answer": "Có thể dùng ‘A strange package arrived. It had been left at the door by a courier.’ Pronoun/passive giữ the package làm điểm neo; lựa chọn cuối cùng phụ thuộc timeline dự định.",
+      "explanation": "Reference, voice và tense/aspect phối hợp để giữ mạch, không có một phép đổi riêng lẻ giải quyết mọi discourse.",
+      "misconception": "Dùng passive luôn làm đoạn văn mạch lạc hơn active.",
+      "transfer_prompt": "Viết một bản active tự nhiên nếu câu trước đang nói về courier.",
+      "prerequisite_node_ids": [
+        "core-en-module-04",
+        "core-en-module-05",
+        "core-en-module-07"
+      ],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1"
+      ],
+      "status": "draft",
+      "author": "codex",
+      "reviewer": null
+    },
+    {
+      "id": "core-en-55",
+      "track": "english",
+      "node_id": "core-en-module-07",
+      "card_type": "production",
+      "prompt": "Trả lời câu ‘Why did Hiệp leave early?’ bằng một câu có focus đúng, rồi đổi câu trả lời cho câu hỏi ‘Who left early?’.",
+      "model_answer": "Cho why: ‘He left early because he felt ill’ đặt lý do làm thông tin cần cung cấp. Cho who: ‘HIỆP left early’ đặt người làm contrastive focus; chữ hoa chỉ mô phỏng prominence.",
+      "explanation": "Tạo câu từ câu hỏi giao tiếp giúp người học nối grammar, order và spoken focus.",
+      "misconception": "Một câu trả lời ngữ pháp đúng sẽ phù hợp như nhau với mọi câu hỏi.",
+      "transfer_prompt": "Thu âm hoặc đọc hai câu với prominence khác nhau và kiểm tra phần nào người nghe dự đoán là mới.",
+      "prerequisite_node_ids": [
+        "core-en-module-07",
+        "core-en-module-08"
+      ],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1"
+      ],
+      "status": "draft",
+      "author": "codex",
+      "reviewer": null
+    },
+    {
+      "id": "core-en-56",
+      "track": "english",
+      "node_id": "core-en-module-07",
+      "card_type": "production",
+      "prompt": "Viết ba câu về một vật mới, duy trì reference và đưa mỗi câu thêm đúng một lớp thông tin mới.",
+      "model_answer": "Một đoạn đạt yêu cầu giới thiệu referent bằng noun phrase, nhắc lại rõ bằng pronoun/definite phrase, rồi sắp thông tin mới để người đọc không phải đoán referent thay đổi.",
+      "explanation": "Bài production tích hợp article, pronoun, voice và given/new thành mạch discourse thay vì học từng quy tắc rời.",
+      "misconception": "Lặp cùng noun đầy đủ ở đầu mọi câu luôn là cách rõ nhất.",
+      "transfer_prompt": "Thêm một referent cạnh tranh và sửa các biểu thức nhắc lại để vẫn không mơ hồ.",
+      "prerequisite_node_ids": [
+        "core-en-module-05",
+        "core-en-module-07"
+      ],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1"
+      ],
+      "status": "draft",
+      "author": "codex",
+      "reviewer": null
+    },
+    {
+      "id": "core-en-57",
+      "track": "english",
+      "node_id": "core-en-module-08",
+      "card_type": "core_recall",
+      "prompt": "Vì sao nghe tiếng Anh không thể chỉ là nhận từng từ có khoảng trắng như trên trang giấy?",
+      "model_answer": "Lời nói là dòng âm liên tục được tổ chức thành syllable, prominence và phrase; âm có thể yếu, nối hoặc biến đổi, nên người nghe phải suy ra ranh giới từ nhờ cả tín hiệu âm lẫn ngữ cảnh.",
+      "explanation": "Listening là bài toán segmentation và dự đoán cấu trúc/meaning, không chỉ tra từ đã phát âm ở dạng từ điển.",
+      "misconception": "Người bản ngữ luôn phát âm thiếu chữ nên chỉ cần quen tốc độ nhanh.",
+      "transfer_prompt": "Nghe hoặc tự nói ‘Can you send it?’ và đánh dấu nơi bạn dự đoán ranh giới từ dù âm nối liền.",
+      "prerequisite_node_ids": [
+        "core-en-module-07"
+      ],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1"
+      ],
+      "status": "draft",
+      "author": "codex",
+      "reviewer": null
+    },
+    {
+      "id": "core-en-58",
+      "track": "english",
+      "node_id": "core-en-module-08",
+      "card_type": "mechanism",
+      "prompt": "Prominence giúp người nghe tìm thông tin quan trọng thế nào trong ‘I wanted the BLUE one’?",
+      "model_answer": "Syllable nổi bật ở BLUE thu hẹp alternatives và báo contrast/focus; các từ chức năng xung quanh có thể ít nổi hơn nhưng vẫn mang cấu trúc.",
+      "explanation": "Nghe trọng âm câu theo ý nghĩa giúp tìm focus thay vì cố nghe mọi âm với trọng lượng ngang nhau.",
+      "misconception": "Content word luôn được nhấn, function word luôn không được nhấn.",
+      "transfer_prompt": "Đổi prominence sang I hoặc wanted và tạo ngữ cảnh làm mỗi cách đọc hợp lý.",
+      "prerequisite_node_ids": [
+        "core-en-module-07",
+        "core-en-module-08"
+      ],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1"
+      ],
+      "status": "draft",
+      "author": "codex",
+      "reviewer": null
+    },
+    {
+      "id": "core-en-59",
+      "track": "english",
+      "node_id": "core-en-module-08",
+      "card_type": "mechanism",
+      "prompt": "Weak form và schwa xuất hiện do cơ chế nào, và vì sao chúng làm từ quen trở nên khó nhận?",
+      "model_answer": "Trong syllable không nổi bật, vowel có thể trung hòa về schwa và function word rút gọn; từ vẫn được nhận nhờ rhythm, phrase và context chứ không giữ nguyên dạng citation rõ từng âm.",
+      "explanation": "Học cặp strong/weak trong utterance thật nối spelling với biến thiên có điều kiện.",
+      "misconception": "Schwa là cách phát âm cẩu thả cần tránh hoàn toàn khi nói.",
+      "transfer_prompt": "So sánh ‘I CAN do it’ với ‘I can DO it’ và mô tả can thay đổi theo prominence.",
+      "prerequisite_node_ids": [
+        "core-en-module-08"
+      ],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1"
+      ],
+      "status": "draft",
+      "author": "codex",
+      "reviewer": null
+    },
+    {
+      "id": "core-en-60",
+      "track": "english",
+      "node_id": "core-en-module-08",
+      "card_type": "contrast",
+      "prompt": "Phân biệt lỗi segment với lỗi prominence/intonation: vì sao phát âm đúng từng phụ âm-nguyên âm vẫn có thể khó hiểu?",
+      "model_answer": "Segment là đơn vị âm như /p/ hay vowel; prominence và intonation tổ chức chúng thành focus, grouping và thái độ. Cả hai tầng đều góp phần nhận diện, nhưng vấn đề ở một tầng không tự chứng minh tầng kia sai.",
+      "explanation": "Chẩn đoán theo tầng giúp chọn bài sửa: minimal contrast cho segment, chunk/focus practice cho prosody.",
+      "misconception": "Chỉ cần IPA chính xác từng từ là câu tự nhiên và dễ nghe.",
+      "transfer_prompt": "Nói cùng chuỗi ‘You finished’ như lời xác nhận và như câu hỏi ngạc nhiên; điều gì đổi ngoài segment?",
+      "prerequisite_node_ids": [
+        "core-en-module-08"
+      ],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1"
+      ],
+      "status": "draft",
+      "author": "codex",
+      "reviewer": null
+    },
+    {
+      "id": "core-en-61",
+      "track": "english",
+      "node_id": "core-en-module-08",
+      "card_type": "boundary",
+      "prompt": "Vì sao nhãn ‘stress-timed English’ chỉ nên dùng như heuristic, không như nhịp máy cố định?",
+      "model_answer": "Ngôn ngữ và người nói thay đổi về timing; prominence, syllable structure, reduction và tốc độ cùng tạo nhịp. Không có quy tắc mọi khoảng giữa stress phải bằng nhau.",
+      "explanation": "Ranh giới này giữ giá trị thực hành của prominence/reduction mà không biến một phân loại rhythm thành định luật.",
+      "misconception": "Muốn nói tự nhiên phải ép mọi stressed syllable cách nhau đúng cùng số mili-giây.",
+      "transfer_prompt": "Đọc một câu chậm rồi nhanh nhưng giữ focus; quan sát phần nào co giãn mà meaning vẫn rõ.",
+      "prerequisite_node_ids": [
+        "core-en-module-08"
+      ],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1"
+      ],
+      "status": "draft",
+      "author": "codex",
+      "reviewer": null
+    },
+    {
+      "id": "core-en-62",
+      "track": "english",
+      "node_id": "core-en-module-08",
+      "card_type": "application",
+      "prompt": "Khi nghe ‘Could you send it again?’, hãy dùng structure và prominence để khôi phục từ thay vì tua từng âm như thế nào?",
+      "model_answer": "Dự đoán đây là request có modal + subject + base verb + object; tìm syllable nổi bật như SEND/AGAIN, rồi dùng các weak chunks quanh chúng để kiểm tra giả thuyết.",
+      "explanation": "Top-down prediction và bottom-up sound evidence phải kiểm tra lẫn nhau; đoán cấu trúc không có nghĩa bỏ qua tín hiệu âm.",
+      "misconception": "Biết ngữ pháp cho phép điền bất kỳ từ nào hợp nghĩa dù âm thanh không khớp.",
+      "transfer_prompt": "Thay send bằng một verb khác, tự nói nhanh tự nhiên rồi chép lại sau một lần nghe bản ghi.",
+      "prerequisite_node_ids": [
+        "core-en-module-03",
+        "core-en-module-08"
+      ],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1"
+      ],
+      "status": "draft",
+      "author": "codex",
+      "reviewer": null
+    },
+    {
+      "id": "core-en-63",
+      "track": "english",
+      "node_id": "core-en-module-08",
+      "card_type": "production",
+      "prompt": "Chọn một câu ngắn, nghe rồi shadow theo chunk; bạn phải tự kiểm ba thứ gì ngoài ‘giống giọng’?",
+      "model_answer": "Kiểm ranh giới thought group, vị trí prominence và các weak/linking transitions; sau đó nói lại với meaning riêng thay vì bắt chước âm vô thức.",
+      "explanation": "Shadowing có mục tiêu nối perception với production, còn sao chép accent bề mặt không bảo đảm hiểu hay transfer.",
+      "misconception": "Shadow càng nhanh và càng giống người bản ngữ thì càng học tốt.",
+      "transfer_prompt": "Giữ cấu trúc nhịp nhưng đổi một content word và đặt prominence mới phù hợp với meaning.",
+      "prerequisite_node_ids": [
+        "core-en-module-08"
+      ],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1"
+      ],
+      "status": "draft",
+      "author": "codex",
+      "reviewer": null
+    },
+    {
+      "id": "core-en-64",
+      "track": "english",
+      "node_id": "core-en-module-08",
+      "card_type": "production",
+      "prompt": "Sau khi nghe sai một câu, hãy tạo quy trình chẩn đoán thay vì chỉ nghe lại vô hạn.",
+      "model_answer": "Xác định sai ở từ vựng/cấu trúc, segmentation, segment, weak form hay prominence; kiểm transcript sau một lần tự đoán, nghe đoạn ngắn, rồi tự sản xuất một câu tương tự.",
+      "explanation": "Một vòng có giả thuyết và transfer biến lỗi nghe thành dữ liệu học có thể tái dùng.",
+      "misconception": "Nghe lặp đủ nhiều tự động sửa mọi loại lỗi mà không cần biết sai ở đâu.",
+      "transfer_prompt": "Lấy một câu bạn từng nghe nhầm, phân loại lỗi và thiết kế một ví dụ mới để kiểm tra cùng cơ chế.",
+      "prerequisite_node_ids": [
+        "core-en-module-08"
+      ],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1"
+      ],
+      "status": "draft",
+      "author": "codex",
+      "reviewer": null
+    },
+    {
+      "id": "core-en-65",
+      "track": "english",
+      "node_id": "core-en-module-09",
+      "card_type": "core_recall",
+      "prompt": "Vì sao lexicon nên được học như mạng lưới form–meaning–use thay vì danh sách từ dịch một-một?",
+      "model_answer": "Một lexical item nối nhiều sense, word family, collocation, register và construction; biết các liên kết giúp dự đoán và sản xuất, còn bản dịch đơn chỉ cho một điểm truy cập.",
+      "explanation": "Mạng lưới cho kiến thức mới bám vào node cũ và vẫn giữ chỗ cho ngoại lệ/convention.",
+      "misconception": "Mỗi từ tiếng Anh có đúng một nghĩa tiếng Việt cốt lõi dùng được ở mọi câu.",
+      "transfer_prompt": "Vẽ mạng nhỏ quanh ‘run’ gồm một sense, một pattern ngữ pháp và hai collocation khác nhau.",
+      "prerequisite_node_ids": [
+        "core-en-module-06",
+        "core-en-module-08"
+      ],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1"
+      ],
+      "status": "draft",
+      "author": "codex",
+      "reviewer": null
+    },
+    {
+      "id": "core-en-66",
+      "track": "english",
+      "node_id": "core-en-module-09",
+      "card_type": "mechanism",
+      "prompt": "Tần suất cao giúp ưu tiên học từ như thế nào mà không biến con số 800–1000 thành lời hứa hiểu 80% mọi tiếng Anh?",
+      "model_answer": "Frequency giúp chọn item có khả năng tái xuất hiện cao, nhưng coverage thay đổi theo loại văn bản/lời nói, cách đếm word family và kiến thức multiword; không thể suy mức hiểu bằng phép cộng phần trăm máy móc.",
+      "explanation": "Ưu tiên tần suất là chiến lược phân bổ công sức, không phải ngưỡng ma thuật bảo đảm comprehension.",
+      "misconception": "Học xong một danh sách nghìn từ là đủ nghe đọc tự nhiên mà không cần context hay chunks.",
+      "transfer_prompt": "Chọn năm từ/chunk từ một đoạn bạn thật sự dùng, kết hợp tần suất với mục tiêu cá nhân để xếp thứ tự học.",
+      "prerequisite_node_ids": [
+        "core-en-module-09"
+      ],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1"
+      ],
+      "status": "draft",
+      "author": "codex",
+      "reviewer": null
+    },
+    {
+      "id": "core-en-67",
+      "track": "english",
+      "node_id": "core-en-module-09",
+      "card_type": "mechanism",
+      "prompt": "Word family và morphology giúp suy nghĩa mới ra sao, và tại sao vẫn phải kiểm tra usage?",
+      "model_answer": "Prefix/suffix và base tạo giả thuyết về form/category/meaning, như teach→teacher; nhưng sense, stress, spelling và mức thông dụng có thể lexicalized nên cần kiểm tra corpus/dictionary đáng tin.",
+      "explanation": "Morphology nén nhiều từ quanh một pattern nhưng không xóa convention.",
+      "misconception": "Biết nghĩa prefix/suffix cho phép tự tạo bất kỳ từ nào và chắc chắn người khác dùng.",
+      "transfer_prompt": "Từ ‘possible’, suy hai thành viên family rồi kiểm tra category và cách dùng trong câu.",
+      "prerequisite_node_ids": [
+        "core-en-module-09"
+      ],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1"
+      ],
+      "status": "draft",
+      "author": "codex",
+      "reviewer": null
+    },
+    {
+      "id": "core-en-68",
+      "track": "english",
+      "node_id": "core-en-module-09",
+      "card_type": "contrast",
+      "prompt": "Đối chiếu phrasal verb compositional và idiomatic bằng ‘walk out’ với ‘figure out’.",
+      "model_answer": "Walk out có thể suy khá trực tiếp từ motion + out; figure out có meaning conventional ‘hiểu/tìm ra’ khó cộng nghĩa từng phần. Nhiều phrasal verb nằm giữa hai cực và có extension theo hình ảnh không gian.",
+      "explanation": "Dùng continuum giúp khai thác pattern khi có thể mà vẫn lưu những meaning phải học như chunk.",
+      "misconception": "Mọi particle có một nghĩa cố định nên mọi phrasal verb đều suy được hoàn toàn.",
+      "transfer_prompt": "Đặt ‘take off’ vào hai context và phân loại mức compositional của từng sense.",
+      "prerequisite_node_ids": [
+        "core-en-module-09"
+      ],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1"
+      ],
+      "status": "draft",
+      "author": "codex",
+      "reviewer": null
+    },
+    {
+      "id": "core-en-69",
+      "track": "english",
+      "node_id": "core-en-module-09",
+      "card_type": "boundary",
+      "prompt": "Vì sao hiểu nghĩa từng từ chưa bảo đảm tạo collocation tự nhiên như ‘make a decision’?",
+      "model_answer": "Collocation là preference/convention về các từ thường đi cùng trong một sense/register; logic có thể gợi ý nhưng cộng đồng sử dụng quyết định pattern được chấp nhận và mức tự nhiên.",
+      "explanation": "Nguyên lý semantic giúp đoán, còn input/corpus và retrieval xác nhận conventional combination.",
+      "misconception": "Mọi tổ hợp đồng nghĩa đúng ngữ pháp đều tự nhiên như nhau.",
+      "transfer_prompt": "So sánh ‘make a decision’ với một tổ hợp dịch sát từ tiếng Việt và nêu cách kiểm chứng thay vì chỉ tin trực giác.",
+      "prerequisite_node_ids": [
+        "core-en-module-09"
+      ],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1"
+      ],
+      "status": "draft",
+      "author": "codex",
+      "reviewer": null
+    },
+    {
+      "id": "core-en-70",
+      "track": "english",
+      "node_id": "core-en-module-09",
+      "card_type": "application",
+      "prompt": "Bạn gặp chunk mới ‘take responsibility for’. Hãy phân tích và lưu nó thế nào để có thể tự dùng lại?",
+      "model_answer": "Lưu meaning trung tâm, pattern take + responsibility + for + noun/-ing, một ví dụ thật, contrast gần và một câu tự tạo; review bằng cách gọi cả chunk từ ý định.",
+      "explanation": "Học node word cùng slot và context tạo khả năng biến đổi tốt hơn thuộc một câu đóng kín.",
+      "misconception": "Chỉ cần ghi bản dịch ‘chịu trách nhiệm’ là đã biết cách dùng.",
+      "transfer_prompt": "Tạo hai câu thay phần sau for và đổi tense của take mà vẫn giữ pattern.",
+      "prerequisite_node_ids": [
+        "core-en-module-06",
+        "core-en-module-09"
+      ],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1"
+      ],
+      "status": "draft",
+      "author": "codex",
+      "reviewer": null
+    },
+    {
+      "id": "core-en-71",
+      "track": "english",
+      "node_id": "core-en-module-09",
+      "card_type": "production",
+      "prompt": "Tạo một semantic network nhỏ cho từ ‘break’ để tránh học các nghĩa như những mục hoàn toàn rời.",
+      "model_answer": "Một mạng đạt yêu cầu có prototype gây vật mất tính toàn vẹn, extension như break a rule/break the news, các pattern/collocation, và đánh dấu sense nào conventional cần ví dụ riêng.",
+      "explanation": "Tự xây liên kết khuyến khích suy đoán có kiểm soát và nhớ nhờ quan hệ, không giả rằng mọi extension tất yếu.",
+      "misconception": "Tìm được một hình ảnh gốc nghĩa là có thể suy chính xác mọi idiom chứa từ đó.",
+      "transfer_prompt": "Dùng một context mới để dự đoán sense của break, sau đó nêu bằng chứng cần kiểm tra.",
+      "prerequisite_node_ids": [
+        "core-en-module-09"
+      ],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1"
+      ],
+      "status": "draft",
+      "author": "codex",
+      "reviewer": null
+    },
+    {
+      "id": "core-en-72",
+      "track": "english",
+      "node_id": "core-en-module-09",
+      "card_type": "production",
+      "prompt": "Chọn một collocation từ input thật và thiết kế ba lần retrieval có transfer thay vì chép lại ba lần.",
+      "model_answer": "Lần một gọi chunk từ meaning; lần hai điền node word trong context mới; lần ba tự nói câu phù hợp register. Các lần được giãn cách và phản hồi bằng nguồn đáng tin.",
+      "explanation": "Spacing kết hợp variation giúp nhớ form–meaning connection và kiểm tra khả năng dùng ngoài câu gốc.",
+      "misconception": "Cùng nhìn lại đáp án nhiều lần tạo retrieval mạnh như tự gọi từ trí nhớ.",
+      "transfer_prompt": "Đổi subject, tense và object của chunk nhưng giữ collocational constraint cốt lõi.",
+      "prerequisite_node_ids": [
+        "core-en-module-09"
+      ],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1"
+      ],
+      "status": "draft",
+      "author": "codex",
+      "reviewer": null
+    },
+    {
+      "id": "core-en-73",
+      "track": "english",
+      "node_id": "core-en-module-10",
+      "card_type": "core_recall",
+      "prompt": "Một quy trình tự sinh câu từ ý định đến lời nói có thể đi qua những tầng nào?",
+      "model_answer": "Chọn meaning/quan hệ, dựng clause roles và verb architecture, chọn tense-aspect-modality/reference, tổ chức information flow, lấy lexical chunks, rồi đóng gói thành sound/prosody và kiểm phản hồi.",
+      "explanation": "Các tầng liên kết thành hệ thống sinh; thứ tự có thể lặp lại chứ không phải dây chuyền cứng.",
+      "misconception": "Muốn nói nhanh phải bỏ qua cấu trúc và dịch trực tiếp câu tiếng Việt trong đầu.",
+      "transfer_prompt": "Từ ý ‘Hoàng có thể đã quên chìa khóa’, đi qua từng tầng để tạo một câu và nêu lựa chọn của bạn.",
+      "prerequisite_node_ids": [
+        "core-en-module-04",
+        "core-en-module-08",
+        "core-en-module-09"
+      ],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1"
+      ],
+      "status": "draft",
+      "author": "codex",
+      "reviewer": null
+    },
+    {
+      "id": "core-en-74",
+      "track": "english",
+      "node_id": "core-en-module-10",
+      "card_type": "mechanism",
+      "prompt": "Làm sao dùng một clause lõi để tạo ‘ma trận biến đổi’ mà vẫn hiểu mỗi thay đổi?",
+      "model_answer": "Giữ roles/lexical event ổn định rồi lần lượt đổi polarity, question, tense/aspect/modality, voice, reference hoặc focus; sau mỗi đổi phải nói meaning/discourse effect thay vì chỉ đổi form.",
+      "explanation": "Một clause sinh nhiều nhánh cho phép thấy cơ chế dùng lại và ranh giới tương tác giữa chúng.",
+      "misconception": "Biến đổi càng nhiều dạng càng tốt dù câu không có context sử dụng.",
+      "transfer_prompt": "Từ ‘The team solved the problem’, tạo question, passive và modal-perfect, giải thích từng lớp.",
+      "prerequisite_node_ids": [
+        "core-en-module-03",
+        "core-en-module-04",
+        "core-en-module-07"
+      ],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1"
+      ],
+      "status": "draft",
+      "author": "codex",
+      "reviewer": null
+    },
+    {
+      "id": "core-en-75",
+      "track": "english",
+      "node_id": "core-en-module-10",
+      "card_type": "mechanism",
+      "prompt": "Vòng nghe–đoán–kiểm–nói lại biến input thành kiến thức sản xuất như thế nào?",
+      "model_answer": "Người học dự đoán structure/meaning, nghe để kiểm evidence, xem transcript/feedback sau nỗ lực, chẩn đoán gap, rồi tự tạo utterance cùng cơ chế trong context mới.",
+      "explanation": "Vòng này nối retrieval, perception và transfer; chỉ tiêu thụ input không tự bảo đảm khả năng tự nói.",
+      "misconception": "Hiểu được video nghĩa là các cấu trúc trong đó tự động chuyển sang active vocabulary.",
+      "transfer_prompt": "Chọn một câu input thật và ghi rõ giả thuyết ban đầu, lỗi, bằng chứng sửa và câu transfer.",
+      "prerequisite_node_ids": [
+        "core-en-module-08",
+        "core-en-module-09",
+        "core-en-module-10"
+      ],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1"
+      ],
+      "status": "draft",
+      "author": "codex",
+      "reviewer": null
+    },
+    {
+      "id": "core-en-76",
+      "track": "english",
+      "node_id": "core-en-module-10",
+      "card_type": "contrast",
+      "prompt": "Phân biệt ‘đúng ngữ pháp’ với ‘phù hợp giao tiếp’ bằng một lời yêu cầu.",
+      "model_answer": "‘Give me the report’ có thể đúng cấu trúc nhưng mức trực tiếp có thể không hợp quan hệ/ngữ cảnh; ‘Could you send me the report?’ đóng gói stance khác. Appropriateness phụ thuộc người nghe, mục tiêu, register và văn hóa cụ thể.",
+      "explanation": "Generative grammar tạo lựa chọn; discourse/pragmatics giúp chọn lựa phù hợp, không có một câu lịch sự tuyệt đối.",
+      "misconception": "Câu càng dài và dùng could càng luôn lịch sự hơn.",
+      "transfer_prompt": "Tạo cùng yêu cầu cho bạn thân và cho khách hàng, giải thích form nào đổi và vì sao.",
+      "prerequisite_node_ids": [
+        "core-en-module-04",
+        "core-en-module-07",
+        "core-en-module-10"
+      ],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1"
+      ],
+      "status": "draft",
+      "author": "codex",
+      "reviewer": null
+    },
+    {
+      "id": "core-en-77",
+      "track": "english",
+      "node_id": "core-en-module-10",
+      "card_type": "boundary",
+      "prompt": "English Generative Core không thể thay thế những loại học nào, dù đã nắm chắc 80 thẻ?",
+      "model_answer": "Nó không thay input đa dạng, pronunciation feedback, lexical convention, genre/register, interaction, văn hóa hay trải nghiệm giao tiếp. Core là khung để gắn và suy kiến thức mới, không phải toàn bộ ngôn ngữ.",
+      "explanation": "Nêu ranh giới ngăn ‘học từ gốc’ biến thành trì hoãn tiếp xúc thật hoặc niềm tin rằng mọi usage đều suy được.",
+      "misconception": "Hiểu nguyên lý rồi thì không cần ghi nhớ chunks, ngoại lệ hoặc luyện với người thật.",
+      "transfer_prompt": "Chọn một gap chỉ input/feedback thật mới sửa được và thiết kế cách thu bằng chứng trong tuần.",
+      "prerequisite_node_ids": [
+        "core-en-module-10"
+      ],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1"
+      ],
+      "status": "draft",
+      "author": "codex",
+      "reviewer": null
+    },
+    {
+      "id": "core-en-78",
+      "track": "english",
+      "node_id": "core-en-module-10",
+      "card_type": "application",
+      "prompt": "Gặp câu lạ ‘The proposal might have been rejected’, bạn phân tích từ gốc thế nào trước khi tra dịch?",
+      "model_answer": "Tìm clause roles: proposal là subject/patient; might là modality; have + participle là perfect; be + participle là passive; rejected mang event meaning. Sau đó dùng context để chốt thời điểm và độ chắc chắn.",
+      "explanation": "Phân lớp cấu trúc thu hẹp meaning và chỉ rõ phần nào còn cần context/vocabulary.",
+      "misconception": "Phân tích grammar cho phép biết chắc toàn bộ ý định người nói mà không cần discourse.",
+      "transfer_prompt": "Thay rejected bằng một verb mới rồi đổi câu sang active, giữ mức độ chắc chắn tương đương.",
+      "prerequisite_node_ids": [
+        "core-en-module-04",
+        "core-en-module-06",
+        "core-en-module-07"
+      ],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1"
+      ],
+      "status": "draft",
+      "author": "codex",
+      "reviewer": null
+    },
+    {
+      "id": "core-en-79",
+      "track": "english",
+      "node_id": "core-en-module-10",
+      "card_type": "production",
+      "prompt": "Tự nói 45 giây về một việc đã xảy ra và kế hoạch tiếp theo; tiêu chí tự kiểm nào phản ánh hiểu biết hơn đếm lỗi đơn lẻ?",
+      "model_answer": "Kiểm clause có roles rõ, tense/aspect/modality khớp timeline, reference theo dõi được, chunks đủ tự nhiên, prominence giúp focus, và người nghe hiểu mục tiêu; ghi một lỗi ưu tiên để sửa rồi nói lại.",
+      "explanation": "Production có tiêu chí tầng giúp phản hồi hữu hạn và lặp có mục đích, không đòi hoàn hảo ngay lần đầu.",
+      "misconception": "Chỉ số tốt nhất là nói không dừng và không có bất kỳ lỗi ngữ pháp nào.",
+      "transfer_prompt": "Nói lại cùng nội dung cho một người nghe khác và điều chỉnh reference/register/focus.",
+      "prerequisite_node_ids": [
+        "core-en-module-07",
+        "core-en-module-08",
+        "core-en-module-09",
+        "core-en-module-10"
+      ],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1"
+      ],
+      "status": "draft",
+      "author": "codex",
+      "reviewer": null
+    },
+    {
+      "id": "core-en-80",
+      "track": "english",
+      "node_id": "core-en-module-10",
+      "card_type": "production",
+      "prompt": "Hãy dạy lại một nguyên lý trong bộ này và chỉ ra ít nhất ba nhánh kiến thức sinh từ nó cùng một ranh giới.",
+      "model_answer": "Đáp án đạt yêu cầu phát biểu principle bằng lời riêng, nối cơ chế tới ba ứng dụng/nhánh, đưa ví dụ mới, rồi nêu trường hợp cần convention, context hoặc nguồn khác thay vì suy máy móc.",
+      "explanation": "Teach-back tích hợp recall, mechanism, transfer và epistemic boundary—đúng mục tiêu học một hiểu nhiều.",
+      "misconception": "Kể lại càng nhiều thuật ngữ trong thẻ càng chứng minh hiểu sâu.",
+      "transfer_prompt": "Dùng nguyên lý vừa dạy để phân tích một câu/input bạn chưa từng thấy trong bộ thẻ.",
+      "prerequisite_node_ids": [
+        "core-en-module-10"
+      ],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1"
+      ],
+      "status": "draft",
+      "author": "codex",
+      "reviewer": null
+    },
+    {
+      "id": "core-react-01",
+      "track": "react",
+      "node_id": "core-react-snapshot",
+      "card_type": "core_recall",
+      "prompt": "Nếu phải giữ lại một nguyên lý sinh ra nhiều cơ chế của React, bạn sẽ phát biểu thế nào?",
+      "model_answer": "Mỗi render nhận một snapshot state/props và tính ra một mô tả UI mới; component không đồng bộ DOM bằng chuỗi mutation thủ công.",
+      "explanation": "Snapshot là điểm xuất phát để suy ra setter, closure, reconciliation, purity và Hook constraints.",
+      "misconception": "Virtual DOM tự nó là nguyên lý gốc của React.",
+      "transfer_prompt": "Mô tả snapshot trước và sau khi một nút thay đổi state mà không viết các bước mutate DOM.",
+      "prerequisite_node_ids": [],
+      "source_refs": [
+        "claude-owner-paste:react-2026-08-18",
+        "core-synthesis:english-react-principle-ladder-v1",
+        "https://react.dev/learn/state-as-a-snapshot"
+      ],
+      "status": "draft",
+      "author": "codex",
+      "reviewer": null
+    },
+    {
+      "id": "core-react-02",
+      "track": "react",
+      "node_id": "core-react-snapshot",
+      "card_type": "mechanism",
+      "prompt": "Vì sao sau setCount(count + 1), code ngay sau đó trong cùng handler vẫn đọc count cũ?",
+      "model_answer": "Handler đang giữ closure của snapshot render hiện tại. Setter yêu cầu render tiếp theo chứ không mutate biến count trong closure hiện tại, nên code còn lại vẫn thấy giá trị cũ.",
+      "explanation": "Đây là snapshot semantics, không nên rút gọn thành câu ‘React luôn async’.",
+      "misconception": "State là biến mutable nhưng React cố tình trì hoãn việc ghi nó.",
+      "transfer_prompt": "Dự đoán kết quả của ba lần setCount(count + 1) và ba lần setCount(c => c + 1) trong cùng handler.",
+      "prerequisite_node_ids": [
+        "core-react-snapshot"
+      ],
+      "source_refs": [
+        "core-synthesis:english-react-principle-ladder-v1",
+        "https://react.dev/learn/state-as-a-snapshot"
+      ],
+      "status": "draft",
+      "author": "codex",
+      "reviewer": null
+    },
+    {
+      "id": "core-react-03",
+      "track": "react",
+      "node_id": "core-react-purity",
+      "card_type": "core_recall",
+      "prompt": "Một component React pure phải giữ hai invariant nào trong render?",
+      "model_answer": "Cùng inputs thì trả cùng JSX, và render không mutate props/state/context hay gây side effect không kiểm soát. Component chỉ tính UI từ dữ liệu được nhận.",
+      "explanation": "Purity cho phép React chạy lại, dừng hoặc tối ưu render mà không để lại tác dụng phụ dở dang.",
+      "misconception": "Pure nghĩa là component không được gọi bất kỳ hàm nào hoặc không được có event handler.",
+      "transfer_prompt": "Giải thích vì sao gọi Date.now trong render có thể gây vấn đề.",
+      "prerequisite_node_ids": [
+        "core-react-snapshot"
+      ],
+      "source_refs": [
+        "core-synthesis:english-react-principle-ladder-v1",
+        "https://react.dev/learn/keeping-components-pure"
+      ],
+      "status": "draft",
+      "author": "codex",
+      "reviewer": null
+    },
+    {
+      "id": "core-react-04",
+      "track": "react",
+      "node_id": "core-react-purity",
+      "card_type": "boundary",
+      "prompt": "Side effect nên nằm ở đâu, và vì sao không nên đẩy mọi thứ vào useEffect?",
+      "model_answer": "Tương tác do người dùng thường nằm ở event handler; đồng bộ với hệ thống ngoài có thể cần effect. Không phải mọi phép tính dẫn xuất đều cần effect, vì render hoặc event handler thường đủ và tránh thêm một vòng render.",
+      "explanation": "Ranh giới đúng là giữa pure calculation và kết nối với external system, không phải ‘API call = useEffect’ một cách máy móc.",
+      "misconception": "Hễ có dữ liệu thay đổi là phải dùng useEffect để cập nhật state khác.",
+      "transfer_prompt": "Phân loại việc lọc một danh sách từ props và việc subscribe WebSocket: cái nào là render, cái nào là effect?",
+      "prerequisite_node_ids": [
+        "core-react-purity"
+      ],
+      "source_refs": [
+        "core-synthesis:english-react-principle-ladder-v1",
+        "https://react.dev/learn/keeping-components-pure"
+      ],
+      "status": "draft",
+      "author": "codex",
+      "reviewer": null
+    },
+    {
+      "id": "core-react-05",
+      "track": "react",
+      "node_id": "core-react-identity",
+      "card_type": "mechanism",
+      "prompt": "Nếu mỗi render tạo element object mới, vì sao React cần reconciliation?",
+      "model_answer": "React cần quyết định phần nào trong mô tả mới tương ứng với phần đang tồn tại để chỉ commit thay đổi cần thiết và giữ state đúng vị trí. Reconciliation dùng heuristic về type, key và cấu trúc.",
+      "explanation": "Đây là áp lực hiệu năng và identity nảy sinh từ mô hình derive UI từ snapshot.",
+      "misconception": "Component phải tự gọi reconciliation để React biết cập nhật.",
+      "transfer_prompt": "Mô tả điều gì có thể xảy ra nếu reorder list mà không có key ổn định.",
+      "prerequisite_node_ids": [
+        "core-react-snapshot"
+      ],
+      "source_refs": [
+        "claude-owner-paste:react-2026-08-18",
+        "core-synthesis:english-react-principle-ladder-v1"
+      ],
+      "status": "draft",
+      "author": "codex",
+      "reviewer": null
+    },
+    {
+      "id": "core-react-06",
+      "track": "react",
+      "node_id": "core-react-identity",
+      "card_type": "mechanism",
+      "prompt": "key trong list không chỉ để React bớt cảnh báo; nó biểu đạt thông tin identity nào?",
+      "model_answer": "Key cho React biết item nào là cùng một entity qua các lần render. Nhờ identity ổn định, React có thể giữ state của item khi vị trí thay đổi thay vì gán state theo index.",
+      "explanation": "Key là dữ liệu identity cho heuristic, không phải số thứ tự trang trí.",
+      "misconception": "Chỉ cần dùng index làm key vì index luôn tồn tại.",
+      "transfer_prompt": "Chọn key cho danh sách todo có thể reorder và giải thích vì sao id tốt hơn index.",
+      "prerequisite_node_ids": [
+        "core-react-identity"
+      ],
+      "source_refs": [
+        "claude-owner-paste:react-2026-08-18",
+        "https://react.dev/learn/preserving-and-resetting-state"
+      ],
+      "status": "draft",
+      "author": "codex",
+      "reviewer": null
+    },
+    {
+      "id": "core-react-07",
+      "track": "react",
+      "node_id": "core-react-identity",
+      "card_type": "boundary",
+      "prompt": "Khi nào React reset state của một component dù JSX nhìn có vẻ cùng vị trí?",
+      "model_answer": "State gắn với vị trí trong render tree, nhưng type hoặc key là một phần identity. Đổi type hoặc key có thể khiến React coi đó là component khác và tạo state mới.",
+      "explanation": "Hiểu identity giúp giải thích cả việc state được giữ và việc chủ động reset bằng key.",
+      "misconception": "Props đổi thì React luôn reset toàn bộ state của component.",
+      "transfer_prompt": "Dùng key khác nhau để reset một form khi người dùng chuyển sang hồ sơ khác.",
+      "prerequisite_node_ids": [
+        "core-react-identity"
+      ],
+      "source_refs": [
+        "core-synthesis:english-react-principle-ladder-v1",
+        "https://react.dev/learn/preserving-and-resetting-state"
+      ],
+      "status": "draft",
+      "author": "codex",
+      "reviewer": null
+    },
+    {
+      "id": "core-react-08",
+      "track": "react",
+      "node_id": "core-react-hooks",
+      "card_type": "mechanism",
+      "prompt": "Rules of Hooks bảo vệ invariant nào, thay vì chỉ là style guide?",
+      "model_answer": "React cần thứ tự và vị trí gọi Hook ổn định để gắn logic stateful với component qua các render. Vì vậy Hook phải gọi ở top level của component hoặc custom Hook, không trong if, loop hay nested function.",
+      "explanation": "Mô hình linked list là cách giải thích implementation; invariant public là call order ổn định.",
+      "misconception": "Chỉ cần tên hàm bắt đầu bằng use là có thể gọi Hook ở bất kỳ đâu.",
+      "transfer_prompt": "Chuyển một useEffect đang nằm trong if về dạng hợp lệ mà vẫn giữ điều kiện chạy.",
+      "prerequisite_node_ids": [
+        "core-react-purity"
+      ],
+      "source_refs": [
+        "claude-owner-paste:react-2026-08-18",
+        "https://react.dev/reference/rules/rules-of-hooks"
+      ],
+      "status": "draft",
+      "author": "codex",
+      "reviewer": null
+    },
+    {
+      "id": "core-react-09",
+      "track": "react",
+      "node_id": "core-react-snapshot",
+      "card_type": "application",
+      "prompt": "Khi một event cần cập nhật state nhiều lần dựa trên giá trị mới nhất, vì sao functional updater là dạng an toàn hơn?",
+      "model_answer": "Functional updater nhận snapshot state mới nhất do React đưa vào từng update, nên các update có thể xếp chuỗi mà không đọc đi đọc lại cùng một closure cũ.",
+      "explanation": "Dạng updater làm rõ rằng update là phép biến đổi state, không phải lệnh mutate biến hiện tại.",
+      "misconception": "Functional updater làm React cập nhật đồng bộ ngay lập tức.",
+      "transfer_prompt": "Viết logic tăng điểm ba lần trong một click bằng functional updater và dự đoán kết quả.",
+      "prerequisite_node_ids": [
+        "core-react-snapshot"
+      ],
+      "source_refs": [
+        "core-synthesis:english-react-principle-ladder-v1",
+        "https://react.dev/learn/state-as-a-snapshot"
+      ],
+      "status": "draft",
+      "author": "codex",
+      "reviewer": null
+    },
+    {
+      "id": "core-react-10",
+      "track": "react",
+      "node_id": "core-react-identity",
+      "card_type": "boundary",
+      "prompt": "Fiber nên được học như nguyên lý công khai hay cơ chế triển khai?",
+      "model_answer": "Fiber nên được học như cơ chế triển khai để chia nhỏ, ưu tiên và có thể điều phối công việc render. Nguyên lý bền hơn là render có thể được chạy lại/điều phối, vì vậy component phải pure.",
+      "explanation": "Tách public contract khỏi internals giúp kiến thức không phụ thuộc một phiên bản React cụ thể.",
+      "misconception": "Phải biết cấu trúc Fiber thì mới viết component React đúng.",
+      "transfer_prompt": "Khi đọc một tính năng React mới, hãy phân loại điều đó là public invariant hay implementation detail và nêu bằng chứng.",
+      "prerequisite_node_ids": [
+        "core-react-snapshot",
+        "core-react-purity"
+      ],
+      "source_refs": [
+        "claude-owner-paste:react-2026-08-18",
+        "core-synthesis:english-react-principle-ladder-v1"
+      ],
+      "status": "draft",
+      "author": "codex",
+      "reviewer": null
+    }
+  ]
+}

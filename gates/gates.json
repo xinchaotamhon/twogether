@@ -84,7 +84,7 @@
       "id": "content.owner-source-capture",
       "description": "Owner-pasted source manifests and derived draft cards are traceable without storing raw private chat",
       "tier": "smoke",
-      "command": ["{python}", "-c", "import json; from pathlib import Path; m=json.loads(Path('content/sources/source_manifest.json').read_text(encoding='utf-8')); d=json.loads(Path('content/drafts/claude-owner-source-drafts-v1.json').read_text(encoding='utf-8')); assert m.get('schema_version')==1 and len(m.get('captures',[]))==2; assert all(len(c.get('sha256',''))==64 and c.get('raw_capture')=='outside_repository' for c in m['captures']); assert d.get('status')=='draft' and len(d.get('cards',[]))==10; assert all(c.get('status')=='draft' and c.get('source_refs') for c in d['cards']); assert all(Path(p).is_file() for p in ['content/sources/claude-english-owner-capture-2026-08-18.md','content/sources/claude-react-owner-capture-2026-08-18.md'])"],
+      "command": ["{python}", "-c", "import json; from pathlib import Path; m=json.loads(Path('content/sources/source_manifest.json').read_text(encoding='utf-8')); d=json.loads(Path('content/drafts/claude-owner-source-drafts-v1.json').read_text(encoding='utf-8')); assert m.get('schema_version')==1 and len(m.get('captures',[]))==3; assert all(len(c.get('sha256',''))==64 and c.get('raw_capture')=='outside_repository' for c in m['captures']); assert d.get('status')=='draft' and len(d.get('cards',[]))==10; assert all(c.get('status')=='draft' and c.get('source_refs') for c in d['cards']); assert all(Path(p).is_file() for p in ['content/sources/claude-english-owner-capture-2026-08-18.md','content/sources/claude-react-owner-capture-2026-08-18.md','content/sources/claude-english-owner-capture-2026-08-25.md'])"],
       "cwd": ".",
       "timeout_seconds": 10,
       "expected_exit_code": 0,
@@ -97,18 +97,18 @@
     },
     {
       "id": "content.core-curriculum-contract",
-      "description": "Core principle-ladder draft bundle has exactly 20 English and 10 React cards and remains unpublished",
+      "description": "English Generative Core v1 has exactly 80 English and 10 unchanged React cards and remains unpublished",
       "tier": "smoke",
-      "command": ["{python}", "tools/check_core_curriculum.py"],
+      "command": ["{python}", "tools/check_english_core_v1.py"],
       "cwd": ".",
       "timeout_seconds": 20,
       "expected_exit_code": 0,
       "required": true,
       "enabled": true,
       "introduced_by": "core-curriculum-draft-bundle",
-      "invariant": "A provenance-aware principle ladder can be continued by another AI without publishing unreviewed cards",
+      "invariant": "Ten provenance-aware English review modules can be continued without changing React or publishing unreviewed cards",
       "owner": "hiep",
-      "evidence": "50-Evidence/core-curriculum-2026-08-18.md"
+      "evidence": "50-Evidence/english-generative-core-v1-2026-08-25.md"
     },
     {
       "id": "deployment.free-tier-contract",

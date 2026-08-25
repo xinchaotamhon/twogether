@@ -56,3 +56,9 @@ Raw logs and future screenshots belong under dated evidence subfolders; do not r
 - A local CLOVER pathfinding image was inspected as conceptual inspiration only; no repository, image asset, diagram library, or dependency was added.
 - e2e/p0.spec.ts now asserts the graph stage and four connector paths for the current fixture in addition to branch selection and accessible table parity.
 - Final cumulative receipt: 20260822T094710Z-43bdbf75 passed 11/11, including the updated graph connector contract.
+
+## English Generative Core v1 — 2026-08-25
+
+- `50-Evidence/english-generative-core-v1-2026-08-25.md` records owner authorization, the fuller English capture hash, the 80-English + 10-unchanged-React contract, content qualifications, review-only UI boundary, focused tests, cumulative receipt, Human gate, and rollback.
+- `60-Decisions/ADR-0011-english-generative-core-v1.md` owns the ten-module decision and explicitly keeps Supabase, identity, scheduling, streak, notification, deployment, and publication behavior outside scope.
+- The active content path is `content/drafts/core-curriculum-drafts-v2.json`; the v1 packet and old Luna prompt are retained as superseded history.

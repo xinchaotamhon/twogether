@@ -1,13 +1,12 @@
 ---
-last_verified: 2026-08-20
-verified_by: Codex zero-cost handoff review
+last_verified: 2026-08-25
+verified_by: Codex English Generative Core v1 implementation
 status: active
 ---
 
 # Next Actions
 
-1. **Human-review the 30-card core plus 10 owner-source drafts** — use `50-Evidence/core-curriculum-2026-08-18.md`, `50-Evidence/draft-review-2026-08-18.md`, and the Luna prompt to record accept/revise/reject, learner level, and daily time budget before importing any draft into the runtime; rollback: delete only derived drafts and retain the external raw attachment hashes.
-2. **Run the new core-curriculum contract and cumulative smoke suite** — keep the exact 20 English + 10 React count, provenance, draft status, and DAG invariant; gate: `content.core-curriculum-contract` plus every older required gate.
-3. **Owner-provision the selected Supabase Free path** — the migration, fixture-only seed, optional client, and contract gate are ready in `supabase/`; create the project and two Auth users, insert the two real email mappings only in Supabase, set Vite/Cloudflare variables, then run positive/negative RLS tests, idempotent review, conflict, and `/health` checks; gate: ADR-0007, ADR-0008, zero-cost contract, and architecture deployment checklist; rollback: unset the two Vite variables and return to the local adapter. No payment or upgrade is authorized.
-4. **Replace fixture cards through provenance workflow** — after Human sign-off, derive approved cards/nodes, update the runtime source, and keep unresolved claims in `review`; gate: provenance, content/schema, browser, and all cumulative smoke gates.
-5. **Run a real seven-day pilot** — Hiệp and Hoàng record retention, transfer attempts, workload, and friction; gate: Human-observable pilot report; rollback: disable optional gamification/notifications without deleting learning history.
+1. **Human-review English Core v1 one module at a time** — in `Thẻ`, choose one of ten modules, inspect its eight prompts/model answers/boundaries, and record accept/revise/reject. Do not bulk-publish all 80 merely because the structural/content gate is green.
+2. **Promote only accepted local revisions** — “Đưa vào chỉnh sửa” fills the CRUD editor; Human correction and explicit publication are still required. Preserve the derived v2 packet as provenance and never rewrite learner history when a card changes.
+3. **Run a seven-day pilot after the first useful module is published** — Hiệp and Hoàng record recall honesty, transfer quality, workload, and confusing wording. Expand branches only from observed gaps.
+4. **Keep remote sync optional** — the active product remains the profile-only local adapter. If the owner later requests multi-device sync, make a new identity/privacy decision and run real two-account RLS tests. No payment, email login, PIN, deployment, or Supabase activation is authorized by this curriculum change.

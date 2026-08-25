@@ -1,12 +1,14 @@
 ---
 source_id: core-synthesis:english-react-principle-ladder-v1
 created_at: 2026-08-18
-status: draft_derived_curriculum
+status: superseded
 author: codex
 reviewer: null
 ---
 
 # Core curriculum synthesis v1
+
+> Superseded on 2026-08-25 by `core-curriculum-synthesis-v2.md`. This predecessor remains for provenance; do not use its 20-English-card scope as the current contract.
 
 This is a project-owned curriculum synthesis, not a raw Claude capture and not a claim that it contains every fact in English or React. It uses the two owner-pasted Claude captures as the conceptual spine, then adds a small number of standard prerequisite concepts so a learner can move from principle to mechanism, boundary, and transfer.
 

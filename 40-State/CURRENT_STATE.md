@@ -1,6 +1,6 @@
 ---
-last_verified: 2026-08-22
-verified_by: Codex SVG graph visual refinement after Human review; remote sync remains optional
+last_verified: 2026-08-25
+verified_by: Codex English Generative Core v1 implementation; remote sync remains optional
 status: active — P0 local study slice implemented
 ---
 
@@ -20,24 +20,25 @@ status: active — P0 local study slice implemented
 - Human visual review rejected the first stacked layer-card rendering as too sparse and card-like. The current map uses a real SVG graph stage with curved/typed connectors, centered nodes, aggregate descendant progress, a compact legend, and a mobile-safe scroll treatment; no new dependency or asset was added.
 - The active P0 persistence path is the local adapter with a simple Hiệp/Hoàng profile picker. Supabase Auth/Postgres/RLS remains a future sync option only; the current app does not show email login even when `.env.local` exists.
 - The owner-set deployment budget is USD 0/month: Cloudflare Pages Free + Supabase Free; no paid upgrade or add-on is authorized.
-- A provenance-aware principle-ladder starter exists outside the runtime: 20 English cards + 10 React cards, 12 DAG nodes, all `draft`; see `content/drafts/core-curriculum-drafts-v1.json` and `50-Evidence/core-curriculum-2026-08-18.md`.
-- Focused tests pass 7/7, production build passes, Playwright browser checks pass 5/5, and final cumulative smoke run `20260822T094710Z-43bdbf75` passes 11/11, including the profile-picker regression and core-curriculum contract. The production preview serves `/`, the manifest, and service worker. Dependency install reported 0 vulnerabilities; a later advisory-endpoint recheck remains recorded separately.
+- English Generative Core v1 now exists as `content/drafts/core-curriculum-drafts-v2.json`: exactly 80 English draft cards in ten modules of eight, plus the 10 React draft cards preserved unchanged as JSON values from v1. Academic/owner-source qualifications are under `content/sources/`; ADR-0011 owns the decision.
+- The `Thẻ` view exposes one eight-card English module at a time for review/editing. Static curriculum drafts are absent from published collections, due selection, FSRS learner state, and streak qualification. They are not study content until a Human explicitly revises/reviews/publishes a local copy.
+- Focused curriculum validation, 18/18 unit tests, production build, and 9/9 Playwright/Chrome checks pass on the current artifact. The final cumulative receipt is owned by `50-Evidence/english-generative-core-v1-2026-08-25.md`.
 
 ## Blockers
 
-- The direct Claude share URLs remain blocked, but the owner supplied and Codex read two hashed pasted-text captures. Derived summaries live under `content/sources/`; 10 source-derived cards are draft-only and are not in the P0 runtime.
+- The direct Claude share URLs remain unverified, but the owner supplied and Codex read three hashed captures: English and React on 2026-08-18 plus a fuller English capture on 2026-08-25. Raw bytes remain outside Git; derived summaries live under `content/sources/`.
 - React/Vite/ts-fsrs dependencies are installed locally, but no backend project, account, deployment, or notification service is installed or authorized.
 - No real Supabase RLS test exists yet; local adapter and browser checks are not evidence of server authorization. This is acceptable for the current profile-only P0 because remote sync is not active.
-- The 40 draft cards (30 core starter + 10 owner-source drafts) have not received Human accept/revise/reject decisions and are not published to the runtime.
+- The active 90-card curriculum packet has not received Human accept/revise/reject decisions. Structural validation and AI content review are not Human approval.
 - Supabase schema/RLS migration, fixture-only seed, future adapter, and contract gate now exist locally; final cumulative smoke run `20260822T094710Z-43bdbf75` passes 11/11. No remote project, Auth user, or credential has been created.
 
 ## Unknowns
 
-- Exact fifth English pillar (the pasted segment mentions five but enumerates four), learner current level, daily time budget, and desired English/React ordering.
+- Learner current level, daily time budget, preferred English module order, and which examples need simplification after real use.
 - Whether both learners want shared editing or an owner/reviewer role.
 - Which offline depth is worth the sync complexity after the first real week.
 - Remote sync is not part of the active P0. A future identity choice and owner-run RLS results are intentionally deferred.
 
 ## Evidence
 
-See `50-Evidence/EVIDENCE_INDEX.md` and `50-Evidence/p0-implementation-2026-08-18.md` for source status, gate receipts, build/test output, and preview checks. This state is not a product-value verdict; a real study week is still required.
+See `50-Evidence/EVIDENCE_INDEX.md`, `50-Evidence/p0-implementation-2026-08-18.md`, and `50-Evidence/english-generative-core-v1-2026-08-25.md`. Green gates prove packet/app invariants, not that Hiệp or Hoàng learned; Human module review and a real study week are still required.

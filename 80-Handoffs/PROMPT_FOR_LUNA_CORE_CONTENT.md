@@ -1,4 +1,6 @@
-# Prompt for Luna — core curriculum expansion
+# Superseded prompt for Luna — core curriculum expansion
+
+Status: superseded on 2026-08-25 by `content/drafts/core-curriculum-drafts-v2.json` and `ADR-0011`. Do not execute the old 20-English-card expansion task. Continue from `START_HERE.md`, review the active ten modules one at a time, and keep all 80 English + 10 React cards draft until Human decisions are recorded.
 
 You are continuing the Twogether project. Read `START_HERE.md` and its entire read order before editing. The owner is Hiệp; the second learner is Hoàng.
 
