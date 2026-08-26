@@ -14,17 +14,18 @@ This file is stable navigation. Do not put current test totals, temporary blocke
 6. [Knowledge graph](docs/KNOWLEDGE_GRAPH.md)
 7. [Architecture](docs/ARCHITECTURE.md)
 8. [Card authoring contract](docs/CONTENT_AUTHORING.md)
-9. [Claude source status](docs/CLAUDE_SOURCE_STATUS.md)
-10. [Adopted resources](10-Resources/RESOURCE_ADOPTIONS.json)
-11. [Resource workflow](10-Resources/README.md)
-12. [Current state](40-State/CURRENT_STATE.md)
-13. [Known failures](40-State/KNOWN_FAILURES.md)
-14. [Resource candidates](40-State/RESOURCE_CANDIDATES.json)
-15. [Next actions](40-State/NEXT_ACTIONS.md)
-16. [Evidence index](50-Evidence/EVIDENCE_INDEX.md)
-17. [Gate registry](gates/gates.json)
-18. [ADR template](60-Decisions/ADR_TEMPLATE.md)
-19. [Next AI handoff](80-Handoffs/NEXT_AI_PROMPT.md)
+9. [Curriculum expansion roadmap](docs/CURRICULUM_EXPANSION_ROADMAP.md)
+10. [Claude source status](docs/CLAUDE_SOURCE_STATUS.md)
+11. [Adopted resources](10-Resources/RESOURCE_ADOPTIONS.json)
+12. [Resource workflow](10-Resources/README.md)
+13. [Current state](40-State/CURRENT_STATE.md)
+14. [Known failures](40-State/KNOWN_FAILURES.md)
+15. [Resource candidates](40-State/RESOURCE_CANDIDATES.json)
+16. [Next actions](40-State/NEXT_ACTIONS.md)
+17. [Evidence index](50-Evidence/EVIDENCE_INDEX.md)
+18. [Gate registry](gates/gates.json)
+19. [ADR template](60-Decisions/ADR_TEMPLATE.md)
+20. [Next AI handoff](80-Handoffs/NEXT_AI_PROMPT.md)
 
 Routine continuation is self-contained here; the Vault is only needed to discover or adopt a new resource or deliberately upgrade the owner standard. If sources conflict, prefer reproducible runtime evidence, current code/schema, accepted decisions, then current state; treat chat and memory as leads.
 
@@ -40,4 +41,4 @@ Routine continuation is self-contained here; the Vault is only needed to discove
 
 ## When adding a flashcard
 
-Read `docs/CONTENT_AUTHORING.md`. The active principle-first packet is `content/drafts/core-curriculum-drafts-v2.json`; its rationale and evidence map are `content/sources/core-curriculum-synthesis-v2.md` and `content/sources/english-generative-core-sources-v1.md`. It contains 80 English drafts in ten eight-card review modules plus the 10 unchanged React drafts from v1. The predecessor packet remains history, not the active authoring target. Place each card at a concept node with prerequisites, model answer, misconception, boundary/transfer cue, provenance, and Human-review status; then run `tools/check_english_core_v1.py` and all cumulative gates. Never treat AI generation or in-app visibility as publication.
+Read `docs/CONTENT_AUTHORING.md` and `docs/CURRICULUM_EXPANSION_ROADMAP.md`. The immutable source packet is `content/drafts/core-curriculum-drafts-v2.json`; Hiệp’s exact 80-card English approval is under `content/reviews/`, and `src/approvedCurriculum.ts` derives the published runtime without mutating source. The ten React cards remain draft history. Place every new card at one or more legitimate DAG prerequisites with model answer, misconception, boundary/transfer cue, provenance, and Human-review status; then run `tools/check_published_english_core.py` plus all cumulative gates. AI generation and in-app visibility are never publication.

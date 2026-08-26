@@ -1,12 +1,21 @@
 import { COLLECTION_FIXTURES } from "./collections";
+import { APPROVED_CONTENT_VERSION, LEGACY_FIXTURE_COLLECTION_IDS } from "./approvedCurriculum";
 import type { Card, LearnerId } from "./types";
 import type { CardCollection, CollectionRunPlan, DailyQualification, CardDraft, RevisionRecord } from "./featureTypes";
 import { recordDailyQualification } from "./streak";
 
-const STORAGE_KEY = "twogether.workspace.p0.v1";
+export const WORKSPACE_STORAGE_KEY = "twogether.workspace.p0.v1";
 type StorageLike = Pick<Storage, "getItem" | "setItem" | "removeItem">;
 export interface WorkspaceRun { plan: CollectionRunPlan; attempts: { cardId: string; attemptConfirmed: boolean }[]; status: "active" | "qualified" | "ended_incomplete" }
-export interface WorkspaceStore { version: 1; collections: CardCollection[]; dailyQualifications: DailyQualification[]; runs: Record<string, WorkspaceRun>; cards: CardDraft[]; revisions: RevisionRecord[] }
+export interface WorkspaceStore {
+  version: 2;
+  contentVersion: string;
+  collections: CardCollection[];
+  dailyQualifications: DailyQualification[];
+  runs: Record<string, WorkspaceRun>;
+  cards: CardDraft[];
+  revisions: RevisionRecord[];
+}
 
 function clone<T>(value: T): T { return JSON.parse(JSON.stringify(value)) as T; }
 function defaultStorage(): StorageLike {
@@ -18,17 +27,48 @@ export function createWorkspaceMemoryStorage(): StorageLike {
   const data = new Map<string, string>();
   return { getItem: (key) => data.get(key) ?? null, setItem: (key, value) => data.set(key, value), removeItem: (key) => data.delete(key) };
 }
-function freshWorkspace(): WorkspaceStore { return { version: 1, collections: COLLECTION_FIXTURES.map((collection) => clone(collection)), dailyQualifications: [], runs: {}, cards: [], revisions: [] }; }
+function freshWorkspace(): WorkspaceStore {
+  return {
+    version: 2,
+    contentVersion: APPROVED_CONTENT_VERSION,
+    collections: COLLECTION_FIXTURES.map((collection) => clone(collection)),
+    dailyQualifications: [],
+    runs: {},
+    cards: [],
+    revisions: [],
+  };
+}
+function migrateWorkspace(value: unknown): WorkspaceStore | null {
+  if (!value || typeof value !== "object") return null;
+  const parsed = value as Partial<WorkspaceStore> & { version?: number };
+  if (!Array.isArray(parsed.collections) || !Array.isArray(parsed.dailyQualifications) || !parsed.runs || !Array.isArray(parsed.cards) || !Array.isArray(parsed.revisions)) return null;
+  const currentIds = new Set(COLLECTION_FIXTURES.map((collection) => collection.id));
+  const learnerCollections = parsed.collections.filter((collection) =>
+    !LEGACY_FIXTURE_COLLECTION_IDS.has(collection.id) && !currentIds.has(collection.id),
+  );
+  return {
+    version: 2,
+    contentVersion: APPROVED_CONTENT_VERSION,
+    collections: [...COLLECTION_FIXTURES.map((collection) => clone(collection)), ...clone(learnerCollections)],
+    dailyQualifications: clone(parsed.dailyQualifications),
+    runs: clone(parsed.runs),
+    cards: clone(parsed.cards),
+    revisions: clone(parsed.revisions),
+  };
+}
 export function readWorkspace(storage: StorageLike = defaultStorage()): WorkspaceStore {
-  const raw = storage.getItem(STORAGE_KEY);
+  const raw = storage.getItem(WORKSPACE_STORAGE_KEY);
   if (!raw) return freshWorkspace();
   try {
-    const parsed = JSON.parse(raw) as Partial<WorkspaceStore>;
-    if (parsed.version === 1 && Array.isArray(parsed.collections) && Array.isArray(parsed.dailyQualifications) && parsed.runs && Array.isArray(parsed.cards) && Array.isArray(parsed.revisions)) return parsed as WorkspaceStore;
+    const migrated = migrateWorkspace(JSON.parse(raw));
+    if (migrated) {
+      storage.setItem(WORKSPACE_STORAGE_KEY, JSON.stringify(migrated));
+      return migrated;
+    }
   } catch { /* recover with a clean workspace without touching review history */ }
   return freshWorkspace();
 }
-export function writeWorkspace(workspace: WorkspaceStore, storage: StorageLike = defaultStorage()): void { storage.setItem(STORAGE_KEY, JSON.stringify(workspace)); }
+export function writeWorkspace(workspace: WorkspaceStore, storage: StorageLike = defaultStorage()): void { storage.setItem(WORKSPACE_STORAGE_KEY, JSON.stringify(workspace)); }
 export function listCollections(storage: StorageLike = defaultStorage()): CardCollection[] { return clone(readWorkspace(storage).collections.filter((collection) => collection.status !== "archived")); }
 export function getWorkspaceCards(baseCards: readonly Card[], storage: StorageLike = defaultStorage()): Card[] {
   const workspace = readWorkspace(storage);

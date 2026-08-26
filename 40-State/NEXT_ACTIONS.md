@@ -1,12 +1,15 @@
 ---
-last_verified: 2026-08-25
-verified_by: Codex English Generative Core v1 implementation
+last_verified: 2026-08-26
+verified_by: Codex owner-approved English Core publication
 status: active
 ---
 
 # Next Actions
 
-1. **Human-review English Core v1 one module at a time** — in `Thẻ`, choose one of ten modules, inspect its eight prompts/model answers/boundaries, and record accept/revise/reject. Do not bulk-publish all 80 merely because the structural/content gate is green.
-2. **Promote only accepted local revisions** — “Đưa vào chỉnh sửa” fills the CRUD editor; Human correction and explicit publication are still required. Preserve the derived v2 packet as provenance and never rewrite learner history when a card changes.
-3. **Run a seven-day pilot after the first useful module is published** — Hiệp and Hoàng record recall honesty, transfer quality, workload, and confusing wording. Expand branches only from observed gaps.
-4. **Keep remote sync optional** — the active product remains the profile-only local adapter. If the owner later requests multi-device sync, make a new identity/privacy decision and run real two-account RLS tests. No payment, email login, PIN, deployment, or Supabase activation is authorized by this curriculum change.
+1. **Deploy and verify migration on the existing browser** — after the pushed build reaches Cloudflare, open the app normally. It must show ten English Core decks of eight without clearing localStorage; old streak/run/local-card history must remain.
+2. **Run a seven-day English Core pilot** — Hiệp and Hoàng complete any one deck per day for streak qualification and record confusing prompts, dishonest self-grades, weak transfer, or excessive workload.
+3. **Choose one bounded English branch from observed need** — likely `Comparison as a Scale v1` (12–16 cards), `English Sound & Word Form v1`, or a small high-frequency lexicon batch. Read `docs/CURRICULUM_EXPANSION_ROADMAP.md`; do not publish an AI-generated branch without a new Human approval manifest.
+4. **Keep remote sync a separate decision** — localStorage is browser-local. If multi-device progress becomes important, write an ADR for one-time pairing/recovery, export/rollback, real RLS, conflict policy, and zero-cost quota behavior before activating Supabase.
+5. **Build React only after the English pilot is stable** — use the existing ten React drafts as source history and expand them into a separate React Generative Core trunk based on official React principles. Do not mix English review state with React content publication.
+
+Do not spend money, request notification permission, erase local history, or weaken learner isolation to accelerate any step.

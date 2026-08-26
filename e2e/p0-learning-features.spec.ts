@@ -1,13 +1,15 @@
 import { expect, test } from "@playwright/test";
 
 test.describe("Twogether local learning features", () => {
-  test("lets a learner choose a deck without changing the other deck's scope", async ({ page }) => {
+  test("lets a learner choose one of ten compact English Core decks", async ({ page }) => {
     await page.goto("/");
     await page.getByTestId("learner-choice-hiep").click();
-    await expect(page.getByTestId("collection-english-foundations")).toBeVisible();
-    await expect(page.getByTestId("study-progress").locator("i")).toHaveText("/ 12");
-    await page.getByTestId("collection-english-mechanism-lab").click();
-    await expect(page.getByTestId("study-progress").locator("i")).toHaveText("/ 06");
+    await expect(page.getByTestId("collection-collection-english-core-01")).toBeVisible();
+    await expect(page.getByTestId("collection-collection-english-core-10")).toBeVisible();
+    await expect(page.getByTestId("collection-english-foundations")).toHaveCount(0);
+    await expect(page.getByTestId("study-progress").locator("i")).toHaveText("/ 08");
+    await page.getByTestId("collection-collection-english-core-02").click();
+    await expect(page.getByTestId("study-progress").locator("i")).toHaveText("/ 08");
   });
 
   test("opens the local authoring view and keeps new content as draft", async ({ page }) => {

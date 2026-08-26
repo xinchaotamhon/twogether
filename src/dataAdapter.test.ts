@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
-import { AuthorizationError, createLocalDataAdapter, createMemoryStorage, hashCardState } from "./dataAdapter";
+import { AuthorizationError, LOCAL_DATA_STORAGE_KEY, createLocalDataAdapter, createMemoryStorage, hashCardState } from "./dataAdapter";
+import { createInitialFsrsCard } from "./scheduler";
 
 describe("local development data adapter", () => {
   it("keeps learner state isolated and rejects cross-account access", () => {
@@ -10,6 +11,7 @@ describe("local development data adapter", () => {
     const hoang = adapter.readLearner("hoang", "hoang");
     expect(hiep.reviewEvents).toHaveLength(0);
     expect(hoang.reviewEvents).toHaveLength(0);
+    expect(Object.keys(hiep.cardStates)).toHaveLength(80);
   });
 
   it("makes a duplicate review write idempotent", () => {
@@ -31,5 +33,21 @@ describe("local development data adapter", () => {
 
     expect(first.event.id).toBe(second.event.id);
     expect(adapter.readLearner("hiep", "hiep").reviewEvents).toHaveLength(1);
+  });
+
+  it("migrates v1 state without deleting fixture history", () => {
+    const storage = createMemoryStorage();
+    const oldState = { learnerId: "hiep", cardId: "fixture-recall-01", fsrs: createInitialFsrsCard(), reviewCount: 3, lastRating: "Good", lastReviewedAt: "2026-08-25T08:00:00.000Z" };
+    const oldEvent = { id: "old-event", idempotencyKey: "old-key", learnerId: "hiep", cardId: "fixture-recall-01", oldStateHash: "old", newStateHash: "new", rating: "Good", attemptKind: "mental", occurredAt: "2026-08-25T08:00:00.000Z", appVersion: "0.1.0-local" };
+    storage.setItem(LOCAL_DATA_STORAGE_KEY, JSON.stringify({ version: 1, learners: {
+      hiep: { learnerId: "hiep", cardStates: { "fixture-recall-01": oldState }, reviewEvents: [oldEvent], dailyGoalMinutes: 20 },
+      hoang: { learnerId: "hoang", cardStates: {}, reviewEvents: [], dailyGoalMinutes: 15 },
+    } }));
+
+    const snapshot = createLocalDataAdapter(storage).readLearner("hiep", "hiep");
+    expect(snapshot.cardStates["fixture-recall-01"].reviewCount).toBe(3);
+    expect(snapshot.reviewEvents).toHaveLength(1);
+    expect(snapshot.dailyGoalMinutes).toBe(20);
+    expect(Object.keys(snapshot.cardStates)).toHaveLength(81);
   });
 });

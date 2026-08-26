@@ -1,33 +1,9 @@
 import type { Card, ConceptEdge, LearnerId, LearnerSnapshot } from "./types";
 import type { CardCollection, CollectionRunPlan, RunAttempt } from "./featureTypes";
+import { APPROVED_ENGLISH_COLLECTIONS } from "./approvedCurriculum";
 
-/** The first local collections deliberately reuse cards; content is not duplicated per deck. */
-export const COLLECTION_FIXTURES: readonly CardCollection[] = [
-  {
-    id: "english-foundations",
-    title: "English foundations",
-    description: "Từ chức năng của từ đến cơ chế tạo câu và chuyển giao.",
-    rootNodeId: "english-fixture-root",
-    status: "published",
-    cardIds: [
-      "fixture-recall-01", "fixture-recall-02", "fixture-recall-03",
-      "fixture-mechanism-01", "fixture-mechanism-02", "fixture-mechanism-03",
-      "fixture-transfer-01", "fixture-transfer-02", "fixture-transfer-03",
-      "fixture-foundation-01", "fixture-foundation-02", "fixture-foundation-03",
-    ],
-  },
-  {
-    id: "english-mechanism-lab",
-    title: "English · mechanism lab",
-    description: "Một lượt ngắn để luyện vì sao, boundary và chuyển sang ví dụ mới.",
-    rootNodeId: "english-fixture-mechanism",
-    status: "published",
-    cardIds: [
-      "fixture-recall-02", "fixture-recall-03", "fixture-mechanism-01",
-      "fixture-mechanism-02", "fixture-mechanism-03", "fixture-transfer-01",
-    ],
-  },
-];
+/** Built-in collections are content-versioned; learner-created collections live in localWorkspace. */
+export const COLLECTION_FIXTURES: readonly CardCollection[] = APPROVED_ENGLISH_COLLECTIONS;
 
 export function cardsInCollection(cards: readonly Card[], collection: CardCollection): Card[] {
   const allowed = new Set(collection.cardIds);

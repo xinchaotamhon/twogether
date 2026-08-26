@@ -44,6 +44,8 @@ For a principle, prefer a four-card bundle: state it, explain its mechanism, ide
 
 Capture the source separately, hash it, and write a transformation note. Do not paste an entire external conversation into `START_HERE.md` or project Markdown. Owner-pasted captures for English and React are summarized under `content/sources/`; their derived cards remain in `content/drafts/` until Human review. See `CLAUDE_SOURCE_STATUS.md`.
 
-## Active English review packet
+## Active English publication
 
-`content/drafts/core-curriculum-drafts-v2.json` is the active English Generative Core v1 packet. It has ten ordered modules of eight cards, using `core_recall → mechanism → mechanism → contrast → boundary → application → production → production`. All 80 English cards and 10 preserved React cards are `draft`. `src/curriculumDrafts.ts` exposes English modules to the in-app review library only; it must not add their IDs to a published collection, create FSRS state, or qualify streaks. A Human may copy a card into the existing editor, revise it, and explicitly publish later; that local revision is separate from the immutable derived packet.
+`content/drafts/core-curriculum-drafts-v2.json` remains the immutable English Generative Core v1 source packet. Hiệp approved the exact 80 English IDs on 2026-08-26 in `content/reviews/english-generative-core-v1-owner-approval-2026-08-26.json`; `src/approvedCurriculum.ts` derives ten published collections of eight with reviewer `hiep`. The ten React cards remain draft history.
+
+Editing an approved runtime card must create a new local draft revision. Do not rewrite the source packet, delete its published version, reset FSRS state, or erase review events. Future pronunciation, vocabulary, comparison, React, or other-subject branches follow `docs/CURRICULUM_EXPANSION_ROADMAP.md` and require their own bounded Human approval.

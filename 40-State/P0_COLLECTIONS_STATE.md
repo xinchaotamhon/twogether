@@ -1,16 +1,17 @@
-# P0 collections and authoring state
+---
+last_verified: 2026-08-26
+verified_by: Codex English Core publication migration
+status: active
+---
 
-Verified: 2026-08-22
+# Collections and Authoring State
 
-The local pilot now has two published fixture collections (`English foundations` and `English · mechanism lab`) with shared card membership, a persisted run plan per learner/deck, timezone-aware daily qualification, and a derived streak. The study queue is scoped to the selected deck; a run requires an attempt for every unique required card and keeps the existing bounded repair loop.
+The active local shelf has ten published English Generative Core v1 collections, each containing eight unique owner-approved cards. Completing the required attempt for every unique due card in any one selected collection may qualify that learner’s local day/streak once.
 
-The `Thẻ` view supports local draft/edit/archive, explicit local-human publish, and versioned `twogether.card-packet.v1` import/export. Imported AI content is draft-only and retains source references. The map supports adding a draft branch with `part_of` or `prerequisite`; the prerequisite helper rejects cycles and the accessible table remains the parity view.
+`content/drafts/core-curriculum-drafts-v2.json` remains immutable provenance. The exact approved IDs are recorded in the 2026-08-26 owner manifest and derived into runtime by `src/approvedCurriculum.ts`; editing a published card creates a local draft revision.
 
-Known P0 limits:
+Workspace version 2 replaces the two legacy fixture collection definitions with the canonical ten while preserving daily qualifications, completed/active runs, learner-created collections, local card drafts, and revisions. Learner data version 2 adds states for the 80 new cards without deleting fixture card states or review events.
 
-- Profile selection is not production authentication.
-- Local authoring is not server authorization; Supabase CRUD/RLS and multi-device sync are P1.
-- The fixture content remains the owner-reviewed baseline; newly authored or AI-imported cards remain draft until explicitly published.
-- Notifications remain disabled until opt-in and a tested HTTPS delivery path.
+The 12 fixture cards are therefore historical data only: they are not visible on the shelf, due queue, or map, but an old review event/run can still be audited.
 
-Next handoff: read `60-Decisions/ADR-0010-local-collections-streak-authoring.md`, `docs/COLLECTIONS_AND_AUTHORING.md`, and `50-Evidence/p0-collections-streak-authoring-2026-08-22.md` before changing deck semantics, streak policy, or content workflow.
+localStorage remains browser-local. Multi-device sync is a future Supabase/identity decision, not part of this collection publication.

@@ -38,7 +38,7 @@ test.describe("Twogether P0 browser contract", () => {
     await page.getByRole("button", { name: "Mở bộ chọn hồ sơ" }).click();
     await page.getByTestId("learner-choice-hoang").click();
 
-    await expect(page.getByTestId("study-progress").locator("i")).toHaveText("/ 12");
+    await expect(page.getByTestId("study-progress").locator("i")).toHaveText("/ 08");
     await expect(page.getByTestId("study-card")).toBeVisible();
   });
 
@@ -49,18 +49,18 @@ test.describe("Twogether P0 browser contract", () => {
     await accessibleMap.locator("summary").click();
     await expect(accessibleMap.locator("table")).toBeVisible();
     await expect(accessibleMap.locator("tbody th").first()).toBeVisible();
-    await expect(page.getByText("English foundations").first()).toBeVisible();
+    await expect(page.getByText("Meaning → Clause").first()).toBeVisible();
     await expect(page.getByText("KNOWLEDGE MAP · DAG")).toHaveCount(0);
     await expect(page.getByText("shared content")).toHaveCount(0);
     await expect(page.getByText("Đây là một lối đi gợi ý, không phải chiếc cây hoàn hảo của tiếng Anh.")).toHaveCount(0);
-    await expect(page.getByTestId("tree-node-twogether-universal-root")).toBeVisible();
+    await expect(page.getByTestId("tree-node-twogether-universal-root")).toContainText("0/80 card bền hơn");
     await expect(page.getByTestId("tree-map")).toBeVisible();
-    await expect(page.getByTestId("tree-link")).toHaveCount(4);
-    await expect(page.getByTestId("tree-node-english-fixture-root")).toContainText("0/12 card bền hơn");
-    await page.getByTestId("tree-node-english-fixture-mechanism").hover();
-    await expect(page.getByTestId("tree-detail-title")).toHaveText("Mechanism & boundaries");
-    await page.getByTestId("tree-node-english-fixture-transfer").click();
-    await expect(page.getByTestId("tree-detail-title")).toHaveText("Transfer to a fresh example");
+    await expect(page.getByTestId("tree-link")).toHaveCount(14);
+    await expect(page.getByTestId("tree-node-core-en-module-01")).toContainText("0/80 card bền hơn");
+    await page.getByTestId("tree-node-core-en-module-02").hover();
+    await expect(page.getByTestId("tree-detail-title")).toHaveText("Verb Architecture");
+    await page.getByTestId("tree-node-core-en-module-10").click();
+    await expect(page.getByTestId("tree-detail-title")).toHaveText("Integration & Production");
   });
 
   test("serves an installable shell without private data in the service worker", async ({ page, request }) => {
@@ -74,6 +74,7 @@ test.describe("Twogether P0 browser contract", () => {
     const serviceWorkerResponse = await request.get("/sw.js");
     const serviceWorker = await serviceWorkerResponse.text();
     expect(serviceWorkerResponse.ok()).toBe(true);
+    expect(serviceWorker).toContain("twogether-shell-v2");
     expect(serviceWorker).not.toContain("private_notes");
     expect(serviceWorker).not.toContain("review_events");
 

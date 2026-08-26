@@ -62,3 +62,9 @@ Raw logs and future screenshots belong under dated evidence subfolders; do not r
 - `50-Evidence/english-generative-core-v1-2026-08-25.md` records owner authorization, the fuller English capture hash, the 80-English + 10-unchanged-React contract, content qualifications, review-only UI boundary, focused tests, cumulative receipt, Human gate, and rollback.
 - `60-Decisions/ADR-0011-english-generative-core-v1.md` owns the ten-module decision and explicitly keeps Supabase, identity, scheduling, streak, notification, deployment, and publication behavior outside scope.
 - The active content path is `content/drafts/core-curriculum-drafts-v2.json`; the v1 packet and old Luna prompt are retained as superseded history.
+
+## Owner-approved English Core publication — 2026-08-26
+
+- `50-Evidence/english-core-published-migration-2026-08-26.md` records Hiệp's exact 80-card approval, ten published decks, v1→v2 localStorage migrations, hidden legacy fixtures with preserved history, PWA cache bump, dynamic DAG layout, focused checks, rollback, and cross-browser boundary.
+- `content/reviews/english-generative-core-v1-owner-approval-2026-08-26.json` is the machine-readable Human approval manifest; ADR-0012 owns the publication/migration decision.
+- Final cumulative receipt `20260826T012122Z-c82afaf6` passed 11/11, including the exact publication checker and 10-test Chrome contract.

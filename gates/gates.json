@@ -97,18 +97,18 @@
     },
     {
       "id": "content.core-curriculum-contract",
-      "description": "English Generative Core v1 has exactly 80 English and 10 unchanged React cards and remains unpublished",
+      "description": "English Core v1 keeps immutable draft provenance while publishing exactly the 80 owner-approved cards in ten decks",
       "tier": "smoke",
-      "command": ["{python}", "tools/check_english_core_v1.py"],
+      "command": ["{python}", "tools/check_published_english_core.py"],
       "cwd": ".",
       "timeout_seconds": 20,
       "expected_exit_code": 0,
       "required": true,
       "enabled": true,
-      "introduced_by": "core-curriculum-draft-bundle",
-      "invariant": "Ten provenance-aware English review modules can be continued without changing React or publishing unreviewed cards",
+      "introduced_by": "owner-approved-english-core-publication",
+      "invariant": "Only exact Human-approved English IDs enter runtime and browser migrations preserve learner history",
       "owner": "hiep",
-      "evidence": "50-Evidence/english-generative-core-v1-2026-08-25.md"
+      "evidence": "50-Evidence/english-core-published-migration-2026-08-26.md"
     },
     {
       "id": "deployment.free-tier-contract",
@@ -142,7 +142,7 @@
     },
     {
       "id": "browser.p0-contract",
-      "description": "Production preview passes answer-before-reveal, keyboard focus, learner isolation, map parity, and PWA shell checks",
+      "description": "Production preview passes learning, learner isolation, v1→v2 migration, dynamic DAG/map parity, and PWA cache checks",
       "tier": "smoke",
       "command": ["node", "tools/run_browser_gate.mjs"],
       "cwd": ".",
@@ -151,9 +151,9 @@
       "required": true,
       "enabled": true,
       "introduced_by": "browser-p0-contract",
-      "invariant": "The built artifact preserves the critical learner path and installable shell in a real browser",
+      "invariant": "Existing browsers gain the approved content without losing history and the critical learner path remains accessible",
       "owner": "hiep",
-      "evidence": "50-Evidence/browser-gate-2026-08-18.md"
+      "evidence": "50-Evidence/english-core-published-migration-2026-08-26.md"
     }
   ]
 }

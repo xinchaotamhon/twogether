@@ -1,5 +1,9 @@
-import cardFixture from "../content/cards.json";
-import nodeFixture from "../content/nodes.json";
+import {
+  APPROVED_CONTENT_VERSION,
+  APPROVED_ENGLISH_CARDS,
+  APPROVED_ENGLISH_EDGES,
+  APPROVED_ENGLISH_NODES,
+} from "./approvedCurriculum";
 import { applyRating, createInitialFsrsCard } from "./scheduler";
 import type {
   AttemptKind,
@@ -13,11 +17,16 @@ import type {
   ReviewRating,
 } from "./types";
 
-const STORAGE_KEY = "twogether.local.p0.v1";
-const APP_VERSION = "0.1.0-local";
+export const LOCAL_DATA_STORAGE_KEY = "twogether.local.p0.v1";
+const APP_VERSION = "0.2.0-local";
 
 type StorageLike = Pick<Storage, "getItem" | "setItem" | "removeItem">;
-type LocalStore = { version: 1; learners: Record<LearnerId, LearnerSnapshot> };
+type LocalStore = {
+  version: 2;
+  contentVersion: string;
+  learners: Record<LearnerId, LearnerSnapshot>;
+};
+type StoredLearners = { learners?: Partial<Record<LearnerId, unknown>> };
 
 export class AuthorizationError extends Error {
   constructor(message = "Learner scope does not match the active session") {
@@ -57,10 +66,6 @@ export interface DataAdapter {
   readLearner(requestedLearnerId: LearnerId, sessionLearnerId: LearnerId): LearnerSnapshot;
   recordReview(input: RecordReviewInput): RecordReviewResult;
   clearLocalData(): void;
-}
-
-function isLearner(value: string): value is LearnerId {
-  return value === "hiep" || value === "hoang";
 }
 
 function clone<T>(value: T): T {
@@ -112,7 +117,8 @@ function emptyLearner(learnerId: LearnerId, cards: Card[]): LearnerSnapshot {
 
 function defaultStore(cards: Card[]): LocalStore {
   return {
-    version: 1,
+    version: 2,
+    contentVersion: APPROVED_CONTENT_VERSION,
     learners: {
       hiep: emptyLearner("hiep", cards),
       hoang: emptyLearner("hoang", cards),
@@ -120,40 +126,71 @@ function defaultStore(cards: Card[]): LocalStore {
   };
 }
 
-function validStore(value: unknown): value is LocalStore {
-  if (!value || typeof value !== "object") return false;
-  const candidate = value as Partial<LocalStore>;
-  const learners = candidate.learners as Record<string, unknown> | undefined;
-  return candidate.version === 1
-    && !!learners
-    && Object.prototype.hasOwnProperty.call(learners, "hiep")
-    && Object.prototype.hasOwnProperty.call(learners, "hoang");
+function migrateLearner(value: unknown, learnerId: LearnerId, cards: Card[]): LearnerSnapshot {
+  const candidate = value && typeof value === "object" ? value as Partial<LearnerSnapshot> : {};
+  const existingStates: Record<string, LearnerCardState> = candidate.cardStates && typeof candidate.cardStates === "object"
+    ? clone(candidate.cardStates)
+    : {};
+  for (const card of cards) {
+    if (!existingStates[card.id]) {
+      existingStates[card.id] = {
+        learnerId,
+        cardId: card.id,
+        fsrs: createInitialFsrsCard(),
+        reviewCount: 0,
+      };
+    }
+  }
+  return {
+    learnerId,
+    cardStates: existingStates,
+    reviewEvents: Array.isArray(candidate.reviewEvents) ? clone(candidate.reviewEvents) : [],
+    dailyGoalMinutes: typeof candidate.dailyGoalMinutes === "number" ? candidate.dailyGoalMinutes : 15,
+  };
+}
+
+function migrateStore(value: unknown, cards: Card[]): LocalStore | null {
+  if (!value || typeof value !== "object") return null;
+  const learners = (value as StoredLearners).learners;
+  if (!learners || !learners.hiep || !learners.hoang) return null;
+  return {
+    version: 2,
+    contentVersion: APPROVED_CONTENT_VERSION,
+    learners: {
+      hiep: migrateLearner(learners.hiep, "hiep", cards),
+      hoang: migrateLearner(learners.hoang, "hoang", cards),
+    },
+  };
 }
 
 export function createLocalDataAdapter(storage: StorageLike = defaultStorage()): DataAdapter {
-  const cards = (cardFixture as { cards: Card[] }).cards;
-  const nodes = (nodeFixture as { nodes: ConceptNode[] }).nodes;
-  const edges = (nodeFixture as { edges: ConceptEdge[] }).edges;
+  const cards = APPROVED_ENGLISH_CARDS;
+  const nodes = APPROVED_ENGLISH_NODES;
+  const edges = APPROVED_ENGLISH_EDGES;
 
   const load = (): LocalStore => {
-    const raw = storage.getItem(STORAGE_KEY);
+    const raw = storage.getItem(LOCAL_DATA_STORAGE_KEY);
     if (!raw) {
       const fresh = defaultStore(cards);
-      storage.setItem(STORAGE_KEY, JSON.stringify(fresh));
+      storage.setItem(LOCAL_DATA_STORAGE_KEY, JSON.stringify(fresh));
       return fresh;
     }
     try {
       const parsed: unknown = JSON.parse(raw);
-      if (validStore(parsed)) return parsed;
+      const migrated = migrateStore(parsed, cards);
+      if (migrated) {
+        storage.setItem(LOCAL_DATA_STORAGE_KEY, JSON.stringify(migrated));
+        return migrated;
+      }
     } catch {
-      // A malformed local cache is disposable demo state; start from the fixture.
+      // A malformed local cache is disposable; review history cannot be recovered from invalid JSON.
     }
     const fresh = defaultStore(cards);
-    storage.setItem(STORAGE_KEY, JSON.stringify(fresh));
+    storage.setItem(LOCAL_DATA_STORAGE_KEY, JSON.stringify(fresh));
     return fresh;
   };
 
-  const save = (store: LocalStore): void => storage.setItem(STORAGE_KEY, JSON.stringify(store));
+  const save = (store: LocalStore): void => storage.setItem(LOCAL_DATA_STORAGE_KEY, JSON.stringify(store));
 
   return {
     listCards: () => clone(cards),
@@ -170,7 +207,6 @@ export function createLocalDataAdapter(storage: StorageLike = defaultStorage()):
       const learner = store.learners[input.sessionLearnerId];
       const duplicate = learner.reviewEvents.find((event) => event.idempotencyKey === input.idempotencyKey);
       if (duplicate) {
-        const state = learner.cardStates[input.cardId];
         return { event: clone(duplicate), snapshot: clone(learner), intervalLabel: "đã ghi trước đó" };
       }
       const current = learner.cardStates[input.cardId];
@@ -200,7 +236,7 @@ export function createLocalDataAdapter(storage: StorageLike = defaultStorage()):
       save(store);
       return { event: clone(event), snapshot: clone(learner), intervalLabel: next.intervalLabel };
     },
-    clearLocalData: () => storage.removeItem(STORAGE_KEY),
+    clearLocalData: () => storage.removeItem(LOCAL_DATA_STORAGE_KEY),
   };
 }
 
