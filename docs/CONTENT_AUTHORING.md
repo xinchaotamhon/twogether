@@ -16,6 +16,9 @@ Write a prompt that demands an answer, not recognition. Avoid â€œWhich of theseâ
   "explanation": "Why the answer works.",
   "misconception": "The most likely wrong-but-plausible idea.",
   "transfer_prompt": "Apply the idea to a new situation.",
+  "scaffold_prompt": "Optional question that clarifies what the main prompt asks.",
+  "scaffold_answer": "Optional explanation of the requested operation, not the main answer.",
+  "glossary_refs": ["stable-term-id"],
   "prerequisite_node_ids": [],
   "source_refs": ["source-id-or-url"],
   "status": "draft",
@@ -26,6 +29,8 @@ Write a prompt that demands an answer, not recognition. Avoid â€œWhich of theseâ
 
 `card_type` is one of `core_recall`, `mechanism`, `contrast`, `boundary`, `application`, or `production`. `status` is `draft`, `review`, `published`, or `archived`. A published card needs a source reference and Human review for claims that are not purely project-local.
 
+`scaffold_prompt` and `scaffold_answer` are optional but must appear together. They help the learner understand the task without revealing `model_answer`; opening them never counts as an attempt and never changes FSRS. `glossary_refs` contains stable IDs from the structured glossary, not prose copied into every card. New glossary entries need a Vietnamese meaning, explanation, example, why-it-matters note, provenance, and review status.
+
 ## Authoring checklist
 
 - Can the learner attempt without seeing choices?
@@ -35,6 +40,8 @@ Write a prompt that demands an answer, not recognition. Avoid â€œWhich of theseâ
 - Is the card appropriate for the nodeâ€™s prerequisites?
 - Are English examples natural, concise, and not dependent on a private context?
 - Is the source/license/provenance recorded and the uncertainty visible?
+- If support is present, can the learner read both scaffold answers and still need to retrieve the main answer?
+- Do all glossary IDs resolve to structured terms instead of unexplained jargon?
 
 ## Principle cards
 
@@ -49,3 +56,5 @@ Capture the source separately, hash it, and write a transformation note. Do not 
 `content/drafts/core-curriculum-drafts-v2.json` remains the immutable English Generative Core v1 source packet. Hiá»‡p approved the exact 80 English IDs on 2026-08-26 in `content/reviews/english-generative-core-v1-owner-approval-2026-08-26.json`; `src/approvedCurriculum.ts` derives ten published collections of eight with reviewer `hiep`. The ten React cards remain draft history.
 
 Editing an approved runtime card must create a new local draft revision. Do not rewrite the source packet, delete its published version, reset FSRS state, or erase review events. Future pronunciation, vocabulary, comparison, React, or other-subject branches follow `docs/CURRICULUM_EXPANSION_ROADMAP.md` and require their own bounded Human approval.
+
+`content/drafts/english-core-support-v1.json` is a separate AI-authored support packet for the 80 approved cards. Its `ai_draft_unreviewed` status is intentional: the app exposes an explicit local preview switch, but visibility or preview is not Human publication approval.

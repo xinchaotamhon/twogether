@@ -30,6 +30,56 @@
       "value_hypothesis": "A compact a11y checklist may reduce repeated interaction defects when paired with browser and Human tests.",
       "unknowns": ["React/Next examples need adaptation", "checklist is not conformance proof"],
       "next_gate": "keyboard/focus/semantic browser tests plus Human review"
+    },
+    {
+      "id": "reference.skola",
+      "source": "https://github.com/h16nning/skola",
+      "license": "AGPL-3.0 observed in cloned repository",
+      "scope": "Flashcard sync-status and study UX reference",
+      "status": "evaluated_not_adopted",
+      "value_hypothesis": "Explicit offline/upload/download states may help a future sync UI.",
+      "unknowns": ["AGPL obligations conflict with copying into a differently licensed hosted app", "no reusable knowledge-DAG viewport"],
+      "next_gate": "Use behavior-level inspiration only; do not copy code or assets"
+    },
+    {
+      "id": "reference.zettlecards",
+      "source": "https://github.com/martinwinther/ZettleCards",
+      "license": "no repository license observed on 2026-08-31",
+      "scope": "Clickable glossary and authoring guidance reference",
+      "status": "evaluated_not_adopted",
+      "value_hypothesis": "Linked explanations and accessibility tests inform Twogether's project-owned glossary UI.",
+      "unknowns": ["copyright permission is absent", "no DAG zoom/pan implementation"],
+      "next_gate": "Keep only independently implemented interaction ideas"
+    },
+    {
+      "id": "reference.linguist-card",
+      "source": "https://github.com/Aoumiusi/app-pwa-englishword",
+      "license": "no repository license observed on 2026-08-31",
+      "scope": "Future vocabulary/IPA card-field reference",
+      "status": "evaluated_not_adopted",
+      "value_hypothesis": "Word, IPA, meaning, example, and example translation form a useful future lexical branch schema.",
+      "unknowns": ["copyright permission is absent", "schema needs provenance and Human review boundaries"],
+      "next_gate": "Design a project-owned lexical packet after the seven-day pilot"
+    },
+    {
+      "id": "reference.paulgreg-flashcard",
+      "source": "https://github.com/paulgreg/flashcard",
+      "license": "MIT",
+      "scope": "Offline-first queue reference",
+      "status": "evaluated_not_adopted",
+      "value_hypothesis": "A visible retry queue may inform future IndexedDB outbox UX.",
+      "unknowns": ["architecture lacks Twogether's learner RLS and FSRS boundaries", "shared content and private progress are not separated for this use case"],
+      "next_gate": "Adopt no code; evaluate outbox behavior only with ADR-0015 gates"
+    },
+    {
+      "id": "reference.flashcardlearning",
+      "source": "https://github.com/jKrieger/FlashCardLearning",
+      "license": "unknown; supplied repository URL returned 404 on 2026-08-31",
+      "scope": "Requested PWA flashcard reference",
+      "status": "unavailable_not_evaluated",
+      "value_hypothesis": "Unknown until an accessible repository identity is supplied.",
+      "unknowns": ["repository identity", "license", "code and behavior"],
+      "next_gate": "Revisit only with a working exact URL or archived source"
     }
   ]
 }

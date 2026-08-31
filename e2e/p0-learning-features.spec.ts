@@ -17,7 +17,7 @@ test.describe("Twogether local learning features", () => {
     await page.getByTestId("learner-choice-hoang").click();
     await page.getByTestId("nav-cards").click();
     await page.getByRole("button", { name: /Card mới/ }).click();
-    await page.getByLabel("Câu hỏi").fill("Vì sao một nguyên lý cần có boundary?");
+    await page.getByRole("textbox", { name: "Câu hỏi", exact: true }).fill("Vì sao một nguyên lý cần có boundary?");
     await page.getByLabel("Lời giải ngắn").fill("Để biết khi nào không nên áp dụng máy móc.");
     await page.getByRole("button", { name: "Lưu bản nháp" }).click();
     await expect(page.getByText("Đã lưu bản nháp")).toBeVisible();
@@ -31,5 +31,28 @@ test.describe("Twogether local learning features", () => {
     await page.getByLabel("Tên nhánh").fill("Component boundaries");
     await page.getByRole("button", { name: "Thêm nhánh draft" }).click();
     await expect(page.getByText(/Đã thêm nhánh/)).toBeVisible();
+  });
+
+  test("keeps AI support opt-in and separates the secondary answer from the main reveal", async ({ page }) => {
+    await page.goto("/");
+    await page.getByTestId("learner-choice-hiep").click();
+    await page.getByTestId("nav-cards").click();
+    await expect(page.getByText("80 câu phụ và glossary đang chờ bạn duyệt.")).toBeVisible();
+    await page.getByRole("button", { name: "Dùng thử lớp hỗ trợ" }).click();
+    await page.getByTestId("nav-study").click();
+
+    await page.getByRole("button", { name: "Chưa hiểu câu hỏi?" }).click();
+    await expect(page.getByText("CÂU HỎI PHỤ", { exact: true })).toBeVisible();
+    await expect(page.getByTestId("reveal-panel")).toHaveCount(0);
+    await page.getByText("Xem lời giải câu phụ").click();
+    await expect(page.getByTestId("scaffold-answer")).toBeVisible();
+    await expect(page.getByTestId("reveal-panel")).toHaveCount(0);
+
+    await page.locator(".glossary-chip").first().click();
+    await expect(page.getByTestId("glossary-dialog")).toBeVisible();
+    await expect(page.getByTestId("glossary-dialog")).toContainText("VÌ SAO CẦN BIẾT");
+    await page.getByRole("button", { name: "Đóng giải thích thuật ngữ" }).click();
+    await page.getByRole("button", { name: /Đã thử/ }).click();
+    await expect(page.getByTestId("reveal-panel")).toBeVisible();
   });
 });

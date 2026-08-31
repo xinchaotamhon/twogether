@@ -24,6 +24,14 @@ describe("streak qualification", () => {
       { learnerId: "hiep", localDate: "2026-08-19", timezone: "Asia/Ho_Chi_Minh", collectionId: "a", runId: "b", qualifiedAt: "2026-08-19T01:00:00Z" },
       { learnerId: "hiep", localDate: "2026-08-22", timezone: "Asia/Ho_Chi_Minh", collectionId: "a", runId: "c", qualifiedAt: "2026-08-22T01:00:00Z" },
     ];
-    expect(deriveStreak(qualifications, "hiep")).toEqual({ currentDays: 1, bestDays: 2, lastQualifiedDate: "2026-08-22" });
+    expect(deriveStreak(qualifications, "hiep", new Date("2026-08-22T12:00:00Z"))).toEqual({ currentDays: 1, bestDays: 2, lastQualifiedDate: "2026-08-22" });
+  });
+
+  it("does not present an old completed run as a current streak", () => {
+    const qualifications: DailyQualification[] = [
+      { learnerId: "hiep", localDate: "2026-08-18", timezone: "Asia/Ho_Chi_Minh", collectionId: "a", runId: "a", qualifiedAt: "2026-08-18T01:00:00Z" },
+      { learnerId: "hiep", localDate: "2026-08-19", timezone: "Asia/Ho_Chi_Minh", collectionId: "a", runId: "b", qualifiedAt: "2026-08-19T01:00:00Z" },
+    ];
+    expect(deriveStreak(qualifications, "hiep", new Date("2026-08-31T12:00:00Z"))).toEqual({ currentDays: 0, bestDays: 2, lastQualifiedDate: "2026-08-19" });
   });
 });

@@ -17,7 +17,7 @@ test("shows English Core v1 as ten owner-approved study slices", async ({ page }
   await expect(page.getByTestId("draft-card-core-en-25")).toContainText("Tense, aspect và modality");
 
   await page.getByTestId("draft-card-core-en-25").getByRole("button", { name: "Đưa vào chỉnh sửa" }).click();
-  await expect(page.getByLabel("Câu hỏi")).toHaveValue(/Tense, aspect và modality/);
+  await expect(page.getByRole("textbox", { name: "Câu hỏi", exact: true })).toHaveValue(/Tense, aspect và modality/);
 
   await page.getByTestId("nav-study").click();
   await expect(page.getByTestId("collection-collection-english-core-01")).toBeVisible();

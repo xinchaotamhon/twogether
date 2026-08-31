@@ -68,3 +68,9 @@ Raw logs and future screenshots belong under dated evidence subfolders; do not r
 - `50-Evidence/english-core-published-migration-2026-08-26.md` records Hiệp's exact 80-card approval, ten published decks, v1→v2 localStorage migrations, hidden legacy fixtures with preserved history, PWA cache bump, dynamic DAG layout, focused checks, rollback, and cross-browser boundary.
 - `content/reviews/english-generative-core-v1-owner-approval-2026-08-26.json` is the machine-readable Human approval manifest; ADR-0012 owns the publication/migration decision.
 - Final cumulative receipt `20260826T012122Z-c82afaf6` passed 11/11, including the exact publication checker and 10-test Chrome contract.
+
+## Learning support, zoomable map, and sync design — 2026-08-31
+
+- `50-Evidence/learning-support-map-and-sync-review-2026-08-31.md` records the 80-record AI-draft support overlay, 25-term structured glossary, React Flow map viewport, stale-streak correction, external repo/license review, and the still-proposed cross-device pairing design.
+- ADR-0013 accepts the scaffold/glossary shell while keeping exact support wording unreviewed; ADR-0014 accepts the lazy `@xyflow/react@12.11.5` renderer; ADR-0015 keeps remote pairing/RLS/streak activation behind a separate Human identity choice.
+- Final cumulative receipt `20260831T154931Z-083172f9` passed 12/12; 25/25 unit tests, 11/11 Chrome tests, production build, and dependency audit also passed.

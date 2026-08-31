@@ -10,9 +10,11 @@ After selecting Hiệp or Hoàng, the learner chooses any deck in the deck shelf
 
 The `Tiến độ` view shows the streak and opens `Thẻ`. The authoring view can create/edit a draft, publish it with an explicit local-human action, archive it without deleting history, and import/export an AI packet. The packet is content-only: it never carries learner progress, private notes, or review events.
 
-The same view exposes English Generative Core v1 as ten review-only slices of eight cards. Those static cards are deliberately absent from `COLLECTION_FIXTURES`, `listCollections`, the due queue, FSRS state, and streak qualification. “Đưa vào chỉnh sửa” only fills the existing local editor; no curriculum card enters study until a Human explicitly saves/reviews/publishes a local revision.
+The same view exposes English Generative Core v1 as ten approved slices of eight cards. Those exact 80 cards are the active due queue and participate in FSRS and honest streak qualification; the old 12 fixtures remain hidden without deleting their history. “Đưa vào chỉnh sửa” creates a local draft revision and never mutates the immutable approved packet or resets review state.
 
-The map is a presentation of the global DAG. A draft node may attach to an existing node with `part_of` or `prerequisite`; prerequisite cycles are rejected before the addition is stored. Node position is not domain truth, and the accessible table lists the same graph for keyboard and screen-reader users.
+The library also exposes the separate 80-record support packet as an explicit browser-local preview. Preview overlays optional `scaffold_prompt`, `scaffold_answer`, and `glossary_refs` during study and preserves them in CRUD/import/export. It does not promote `ai_draft_unreviewed` support to Human-approved content and does not affect the scheduler.
+
+The map is a presentation of the global DAG. A draft node may attach to an existing node with `part_of` or `prerequisite`; prerequisite cycles are rejected before the addition is stored. The lazy React Flow viewport provides pan/zoom/fit without owning node position as domain truth, and the accessible table lists the same graph for keyboard and screen-reader users.
 
 ## P1 boundary
 

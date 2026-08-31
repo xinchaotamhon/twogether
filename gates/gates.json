@@ -111,6 +111,21 @@
       "evidence": "50-Evidence/english-core-published-migration-2026-08-26.md"
     },
     {
+      "id": "content.learning-support-contract",
+      "description": "English support remains exact, opt-in, provenance-bearing, glossary-resolved, and separate from main-answer reveal",
+      "tier": "smoke",
+      "command": ["{python}", "tools/check_learning_support.py"],
+      "cwd": ".",
+      "timeout_seconds": 20,
+      "expected_exit_code": 0,
+      "required": true,
+      "enabled": true,
+      "introduced_by": "learning-support-2026-08-31",
+      "invariant": "AI scaffold content cannot silently become approved or bypass attempt-before-main-reveal",
+      "owner": "hiep",
+      "evidence": "50-Evidence/learning-support-map-and-sync-review-2026-08-31.md"
+    },
+    {
       "id": "deployment.free-tier-contract",
       "description": "The owner-authorized v1 deployment remains zero-cost and paid upgrades remain disabled",
       "tier": "smoke",

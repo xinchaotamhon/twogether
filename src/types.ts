@@ -19,6 +19,9 @@ export interface Card {
   explanation: string;
   misconception: string;
   transfer_prompt: string;
+  scaffold_prompt?: string;
+  scaffold_answer?: string;
+  glossary_refs?: string[];
   prerequisite_node_ids: string[];
   source_refs: string[];
   status: CardStatus;

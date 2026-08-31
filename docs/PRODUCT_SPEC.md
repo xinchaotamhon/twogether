@@ -10,7 +10,7 @@ The owner-pasted Claude captures now supply two draft source layers: English fou
 
 - Two allowlisted accounts: Hiệp and Hoàng.
 - Shared concept map and card content; isolated review state, streak, settings, and private notes.
-- Open-ended prompt → learner attempt → reveal model answer/explanation → `Nhớ` or `Quên`.
+- Open-ended prompt → optional card-specific scaffold/glossary → learner attempt → reveal model answer/explanation → `Nhớ` or `Quên`.
 - FSRS-6 scheduling with a same-session repair loop for `Quên`.
 - Add/edit/archive cards with provenance, concept node, prerequisites, card type, model answer, misconception, and transfer cue.
 - Map view showing trunk, branches, prerequisites, due cards, and durable mastery.
@@ -30,7 +30,7 @@ The owner-pasted Claude captures now supply two draft source layers: English fou
 ## Study loop
 
 1. Select a due card from the learner’s queue, prioritizing overdue reviews before new cards.
-2. Show only the prompt, concept breadcrumb, and optional bounded hint.
+2. Show the prompt and concept breadcrumb. If the learner is blocked by the wording, allow an optional card-specific secondary question, its separate answer, and clickable glossary terms; none may reveal the main answer or count as an attempt.
 3. Require an attempt action (`Đã thử`) before reveal. The attempt may be mental, spoken, typed, or written privately; the app records only the attempt kind by default.
 4. Reveal a concise model answer, why it works, a common misconception, and an example or counterexample.
 5. Learner presses `Nhớ` or `Quên`.

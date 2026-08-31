@@ -1,0 +1,65 @@
+.support-review { margin: 18px 7% 22px; padding: 24px 26px; display: flex; align-items: center; justify-content: space-between; gap: 24px; border-color: #d9b46b; background: linear-gradient(120deg, rgba(250, 232, 187, .58), rgba(251, 248, 242, .96)); }
+.support-review h2 { margin: 6px 0; font: 600 25px 'Playfair Display', Georgia, serif; }
+.support-review p { margin: 0; max-width: 660px; color: var(--muted); line-height: 1.55; }
+.draft-support-preview { margin: 12px 0; padding: 12px 14px; border-left: 2px solid var(--gold); background: rgba(250, 232, 187, .28); }
+.draft-support-preview p { margin: 5px 0 7px; color: var(--ink); font-size: 13px; line-height: 1.5; }
+.draft-support-preview small { color: var(--muted); font: 9px 'DM Mono', monospace; }
+
+.scaffold-help { margin-bottom: 13px; }
+.scaffold-panel { margin-top: 8px; padding: 16px 17px; border: 1px solid #e2c97e; background: linear-gradient(135deg, rgba(250, 232, 187, .45), rgba(251, 248, 242, .95)); color: var(--ink); }
+.scaffold-panel > p { margin: 7px 0 10px; color: var(--ink); font-size: 14px; line-height: 1.55; }
+.scaffold-panel details { border-top: 1px solid rgba(178, 145, 70, .35); padding-top: 10px; }
+.scaffold-panel summary { cursor: pointer; color: #7c5b1d; font: 10px 'DM Mono', monospace; text-transform: uppercase; letter-spacing: .08em; }
+.scaffold-panel details p { margin: 10px 0 0; color: #5d503d; font-size: 13px; line-height: 1.55; }
+.attempt-reminder { color: var(--muted); font-size: 12px; }
+
+.glossary-help { margin: 13px 0 17px; }
+.glossary-chips { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 8px; }
+.glossary-chip { border: 1px solid #9ebfbd; border-radius: 999px; background: rgba(217, 231, 230, .52); color: #315b59; padding: 7px 10px; font: 10px 'DM Mono', monospace; cursor: pointer; }
+.glossary-chip span { display: inline-grid; place-items: center; width: 15px; height: 15px; margin-left: 6px; border-radius: 50%; background: #6f9997; color: white; font-size: 9px; }
+.glossary-chip:hover, .glossary-chip:focus-visible { border-color: var(--ink); background: rgba(217, 231, 230, .92); }
+.glossary-backdrop { position: fixed; z-index: 80; inset: 0; display: grid; place-items: center; padding: 20px; background: rgba(27, 24, 20, .48); backdrop-filter: blur(3px); }
+.glossary-dialog { position: relative; width: min(520px, 100%); max-height: min(720px, 88vh); overflow: auto; padding: 30px; border: 1px solid var(--line); background: var(--card); box-shadow: 0 28px 80px rgba(24, 20, 15, .28); }
+.glossary-dialog h2 { margin: 8px 0 14px; font: italic 600 38px 'Playfair Display', Georgia, serif; }
+.glossary-dialog > p { color: var(--ink); font-size: 16px; line-height: 1.65; }
+.glossary-close { position: absolute; right: 14px; top: 12px; width: 36px; height: 36px; border: 1px solid var(--line); border-radius: 50%; background: transparent; color: var(--ink); font-size: 24px; cursor: pointer; }
+.glossary-example, .glossary-why { margin-top: 17px; padding-top: 14px; border-top: 1px solid var(--line); }
+.glossary-example p, .glossary-why p { margin: 7px 0 0; line-height: 1.55; }
+
+.map-loading { margin: 70px 7%; padding: 50px; text-align: center; color: var(--muted); }
+.knowledge-flow { margin: 0 7% 18px; overflow: hidden; padding: 0; background: radial-gradient(circle at 13% 12%, rgba(247, 216, 202, .72), transparent 27%), radial-gradient(circle at 88% 86%, rgba(217, 231, 230, .68), transparent 30%), var(--card); }
+.knowledge-flow-canvas { height: min(72vh, 760px); min-height: 560px; }
+.knowledge-flow .react-flow__renderer { cursor: grab; }
+.knowledge-flow .react-flow__renderer:active { cursor: grabbing; }
+.knowledge-flow .react-flow__node { width: 224px; border-radius: 4px; }
+.knowledge-flow .react-flow__node:focus-visible { outline: 3px solid rgba(239, 109, 77, .38); outline-offset: 5px; }
+.flow-knowledge-node { min-height: 146px; display: flex; flex-direction: column; align-items: flex-start; padding: 18px; border: 1px solid var(--line); border-radius: 4px; background: rgba(251, 248, 242, .97); color: var(--ink); box-shadow: 0 12px 30px rgba(56, 47, 34, .1); transition: border-color .2s ease, box-shadow .2s ease, background .2s ease; }
+.knowledge-handle { width: 1px !important; height: 1px !important; min-width: 1px !important; min-height: 1px !important; border: 0 !important; background: transparent !important; pointer-events: none !important; }
+.flow-knowledge-node.universal { border-color: var(--coral); background: linear-gradient(135deg, rgba(247, 216, 202, .92), rgba(251, 248, 242, .98)); }
+.flow-knowledge-node.root { border-color: var(--coral); }
+.flow-knowledge-node.trunk { border-color: #96b9b7; }
+.flow-knowledge-node.branch { border-color: #d9b46b; }
+.flow-knowledge-node.leaf { border-color: #b7a4d0; }
+.flow-knowledge-node.is-selected { border-color: var(--ink); box-shadow: 0 18px 42px rgba(56, 47, 34, .18); background: #fffdf8; }
+.flow-knowledge-node strong { margin: 9px 0 16px; font: 600 19px 'Playfair Display', Georgia, serif; line-height: 1.12; letter-spacing: -.025em; }
+.flow-knowledge-node .tree-node-meter { margin-top: auto; }
+.flow-knowledge-edge { stroke: #b3a99c; stroke-width: 2; }
+.flow-knowledge-edge.prerequisite { stroke: #6f9997; stroke-dasharray: 7 6; }
+.knowledge-flow .react-flow__controls { overflow: hidden; border: 1px solid var(--line); border-radius: 5px; box-shadow: 0 8px 24px rgba(56, 47, 34, .13); }
+.knowledge-flow .react-flow__controls-button { width: 34px; height: 34px; border-bottom-color: var(--line); background: var(--card); }
+.knowledge-flow .react-flow__minimap { border: 1px solid var(--line); border-radius: 4px; background: rgba(251, 248, 242, .9); }
+.knowledge-flow .react-flow__attribution { background: rgba(251, 248, 242, .76); color: var(--muted); font-size: 8px; }
+
+@media (max-width: 820px) {
+  .support-review, .knowledge-flow, .map-loading { margin-left: 0; margin-right: 0; }
+  .support-review { align-items: stretch; flex-direction: column; padding: 20px; }
+  .knowledge-flow-canvas { height: 62vh; min-height: 500px; }
+}
+
+@media (max-width: 560px) {
+  .glossary-backdrop { align-items: end; padding: 0; }
+  .glossary-dialog { width: 100%; max-height: 82vh; border-radius: 18px 18px 0 0; padding: 27px 21px 30px; }
+  .glossary-dialog h2 { font-size: 34px; }
+  .knowledge-flow-canvas { height: 58vh; min-height: 460px; }
+  .knowledge-flow .react-flow__minimap { width: 105px; height: 72px; }
+}

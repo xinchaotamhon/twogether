@@ -6,6 +6,8 @@ dist/
 .supabase/
 .vercel/
 coverage/
+__pycache__/
+*.py[cod]
 playwright-report/
 test-results/
 50-Evidence/gate-logs/

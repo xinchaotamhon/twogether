@@ -42,3 +42,20 @@ status: active
 - Root cause: the scan treated generic vocabulary as a secret indicator instead of matching secret-bearing names or bearer values.
 - Disposition: fixed by narrowing the regex in `tools/check_app_artifact.py`; the next cumulative run passed 11/11.
 - Regression gate: `app.p0-artifact-contract` remains required and now checks the narrower, actionable patterns.
+
+## R-004 — Browser-local history does not synchronize
+
+- Risk: a learner opening Twogether in a different browser/device sees different review history and streak.
+- Control: keep the UI truthful; do not claim sync from `.env.local`. ADR-0015 proposes one-time device pairing, RLS membership, idempotent event outbox, and server-derived streak.
+- Required choice: one learner per browser/OS profile, or add a PIN/passkey/login factor for a shared browser.
+
+## R-005 — AI scaffold wording is not Human-approved
+
+- Risk: a secondary answer may accidentally reveal the main retrieval target or a glossary definition may be misleading.
+- Control: all 80 records retain `ai_draft_unreviewed`; preview is explicit and browser-local, while card IDs, main answers, and FSRS remain unchanged.
+- Revisit trigger: Hiệp approves the exact packet or reports revisions from real study.
+
+## EXT-001 — One requested reference repository is unavailable
+
+- Symptom: `https://github.com/jKrieger/FlashCardLearning` returned 404 on 2026-08-31.
+- Control: no claims, code, or license assumptions were taken from it. Revisit only with an exact accessible repository identity.

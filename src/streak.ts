@@ -27,7 +27,7 @@ function dayNumber(value: string): number {
   return Date.UTC(year, month - 1, day) / 86_400_000;
 }
 
-export function deriveStreak(qualifications: readonly DailyQualification[], learnerId: LearnerId): StreakProjection {
+export function deriveStreak(qualifications: readonly DailyQualification[], learnerId: LearnerId, now = new Date(), timezone = "Asia/Ho_Chi_Minh"): StreakProjection {
   const dates = [...new Set(qualifications.filter((event) => event.learnerId === learnerId).map((event) => event.localDate))].sort();
   if (!dates.length) return { currentDays: 0, bestDays: 0, lastQualifiedDate: null };
   let bestDays = 1;
@@ -36,5 +36,8 @@ export function deriveStreak(qualifications: readonly DailyQualification[], lear
     run = dayNumber(dates[index]) === dayNumber(dates[index - 1]) + 1 ? run + 1 : 1;
     bestDays = Math.max(bestDays, run);
   }
-  return { currentDays: run, bestDays, lastQualifiedDate: dates[dates.length - 1] };
+  const lastQualifiedDate = dates[dates.length - 1];
+  const today = localDateAt(now, timezone);
+  const daysSinceLastQualification = dayNumber(today) - dayNumber(lastQualifiedDate);
+  return { currentDays: daysSinceLastQualification >= 0 && daysSinceLastQualification <= 1 ? run : 0, bestDays, lastQualifiedDate };
 }

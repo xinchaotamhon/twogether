@@ -5,7 +5,8 @@
 - React + TypeScript + Vite (phone-first SPA/PWA).
 - `ts-fsrs` for browser scheduling; pin the exact version in the lockfile after a focused scheduler test.
 - Supabase Auth + Postgres with Row Level Security (RLS) for the two accounts, shared content, and per-learner state. It is selected for v1 by ADR-0007, but is not yet connected or provisioned.
-- The repository now includes an optional Supabase browser adapter. It activates only when the two Vite variables are present; otherwise the local adapter remains the reversible default. See ADR-0008 and `supabase/README.md`.
+- The repository includes a Supabase browser adapter and additive schema foundations, but the runtime deliberately remains local even when the two public Vite values exist. Cross-device activation requires the pairing/RLS decision and gates in ADR-0015; local storage remains the reversible authority.
+- `@xyflow/react@12.11.5` is lazy-loaded only in the map view. It owns pan/zoom/fit/minimap interaction, while project code still owns the DAG, layout, progress projection, cycle rules, and accessible table (ADR-0014).
 - Service worker and web app manifest for installability and shell caching.
 - Playwright or equivalent browser tests only after the app has a runnable baseline; do not add a test framework solely for appearance claims.
 
@@ -52,7 +53,7 @@ flowchart LR
 
 Shared tables: `profiles` (allowlisted identity), `concept_nodes`, `concept_edges`, `cards`, `card_sources`, `card_revisions`.
 
-Per-learner tables: `learner_card_states`, `review_events`, `study_sessions`, `streaks`, `learner_preferences`, `private_notes`.
+Per-learner tables: `learner_card_states`, `review_events`, `study_sessions`, `daily_qualifications`, derived streak projection, `learner_preferences`, `private_notes`. The current remote foundation has not yet implemented this authoritative event-derived streak design.
 
 Every review event has a client-generated idempotency key, learner ID from the authenticated session, card ID, old state hash, new state, rating, attempt kind, occurred-at timestamp, and app version. The server rejects a learner ID supplied by the client that differs from the session.
 
@@ -66,7 +67,7 @@ Every review event has a client-generated idempotency key, learner ID from the a
 
 ## Offline and synchronization
 
-MVP offline means the app shell, cached published cards, and the current study queue remain usable when the network drops. Writes are queued locally with the idempotency key and visible sync status. The server is authoritative for shared content and accepted review events; conflicts are surfaced, not silently overwritten. Full offline multi-device merge is a later gate, not an implied feature of “PWA”.
+The current release is local-first: the shell, content, reviews, runs, and streak survive reloads in the same browser but do not follow the learner to another browser. The proposed synced MVP keeps an IndexedDB outbox with stable idempotency keys and visible sync status, while the server becomes authoritative for accepted review/qualification events. Conflicts are surfaced, not silently overwritten. Full offline multi-device merge is a later gate, not an implied feature of “PWA”.
 
 ## Notifications (Phase 2)
 

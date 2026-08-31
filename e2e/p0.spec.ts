@@ -56,6 +56,9 @@ test.describe("Twogether P0 browser contract", () => {
     await expect(page.getByTestId("tree-node-twogether-universal-root")).toContainText("0/80 card bền hơn");
     await expect(page.getByTestId("tree-map")).toBeVisible();
     await expect(page.getByTestId("tree-link")).toHaveCount(14);
+    await expect(page.getByRole("button", { name: "Zoom In" })).toBeVisible();
+    await expect(page.getByRole("button", { name: "Zoom Out" })).toBeVisible();
+    await expect(page.getByRole("button", { name: "Fit View" })).toBeVisible();
     await expect(page.getByTestId("tree-node-core-en-module-01")).toContainText("0/80 card bền hơn");
     await page.getByTestId("tree-node-core-en-module-02").hover();
     await expect(page.getByTestId("tree-detail-title")).toHaveText("Verb Architecture");

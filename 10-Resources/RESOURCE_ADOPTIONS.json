@@ -11,6 +11,17 @@
       "task_gate": "src/scheduler.test.ts plus cumulative smoke gates",
       "rollback": "replace the adapter behind src/scheduler.ts without deleting review events",
       "evidence": "50-Evidence/p0-implementation-2026-08-18.md"
+    },
+    {
+      "id": "ui.xyflow-react-map-viewport",
+      "source": "https://github.com/xyflow/xyflow",
+      "identity": "@xyflow/react@12.11.5",
+      "license": "MIT",
+      "scope": "Lazy-loaded read-only DAG viewport with pan, zoom, fit controls, and minimap",
+      "status": "adopted_for_p0",
+      "task_gate": "src/KnowledgeMap.tsx plus Playwright map parity and responsive Human visual check",
+      "rollback": "Remove the renderer dependency and restore the project-owned static/SVG presentation; keep all nodes, edges, cards, and learner history",
+      "evidence": "50-Evidence/learning-support-map-and-sync-review-2026-08-31.md"
     }
   ]
 }

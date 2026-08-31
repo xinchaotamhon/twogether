@@ -19,4 +19,12 @@ describe("AI card packet contract", () => {
     const invalid = { ...packet, sources: [{ ...packet.sources[0], raw_private_content_included: true }], cards: [card, card] };
     expect(validateCardPacket(invalid).valid).toBe(false);
   });
+
+  it("round-trips optional scaffold and glossary fields without publishing them", () => {
+    const supported = { ...card, scaffold_prompt: "Câu hỏi đang yêu cầu thao tác gì?", scaffold_answer: "Hãy phân tích vai trò trước khi gọi tên.", glossary_refs: ["finite-verb", "clause"] };
+    const packet = exportCardPacket(metadata, [supported]);
+    const imported = importPacketAsDraft(packet);
+    expect(imported[0]).toMatchObject({ scaffold_prompt: supported.scaffold_prompt, scaffold_answer: supported.scaffold_answer, glossary_refs: supported.glossary_refs, status: "draft", reviewer: null });
+    expect(validateCardPacket({ ...packet, cards: [{ ...supported, scaffold_answer: undefined }] }).valid).toBe(false);
+  });
 });

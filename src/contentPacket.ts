@@ -48,6 +48,10 @@ export function validateCardPacket(value: unknown): PacketValidation {
       if (!isString(card.node_id)) errors.push(`cards[${index}].node_id thiếu`);
       if (!CARD_TYPES.includes(card.card_type as CardType)) errors.push(`cards[${index}].card_type không hợp lệ`);
       for (const key of ["prompt", "model_answer", "explanation", "misconception", "transfer_prompt", "author"] as const) if (!isString(card[key])) errors.push(`cards[${index}].${key} thiếu`);
+      const hasScaffoldPrompt = card.scaffold_prompt !== undefined;
+      const hasScaffoldAnswer = card.scaffold_answer !== undefined;
+      if (hasScaffoldPrompt !== hasScaffoldAnswer || (hasScaffoldPrompt && (!isString(card.scaffold_prompt) || !isString(card.scaffold_answer)))) errors.push(`cards[${index}] phải có đủ scaffold_prompt và scaffold_answer`);
+      if (card.glossary_refs !== undefined && (!Array.isArray(card.glossary_refs) || !card.glossary_refs.every(isString))) errors.push(`cards[${index}].glossary_refs không hợp lệ`);
       if (!Array.isArray(card.prerequisite_node_ids) || !card.prerequisite_node_ids.every(isString)) errors.push(`cards[${index}].prerequisite_node_ids không hợp lệ`);
       if (!Array.isArray(card.source_refs) || card.source_refs.length === 0 || !card.source_refs.every(isString)) errors.push(`cards[${index}].source_refs thiếu`);
     });
@@ -59,9 +63,9 @@ export function importPacketAsDraft(value: unknown): Card[] {
   const validation = validateCardPacket(value);
   if (!validation.valid) throw new Error(`Packet không hợp lệ: ${validation.errors.join("; ")}`);
   const packet = value as CardPacket;
-  return packet.cards.map((card) => ({ ...card, prerequisite_node_ids: [...card.prerequisite_node_ids], source_refs: [...card.source_refs], status: "draft" as const, reviewer: null }));
+  return packet.cards.map((card) => ({ ...card, glossary_refs: card.glossary_refs ? [...card.glossary_refs] : undefined, prerequisite_node_ids: [...card.prerequisite_node_ids], source_refs: [...card.source_refs], status: "draft" as const, reviewer: null }));
 }
 
 export function exportCardPacket(metadata: Omit<CardPacket, "schema_version" | "cards">, cards: readonly Card[]): CardPacket {
-  return { ...metadata, schema_version: CARD_PACKET_SCHEMA, cards: cards.map((card) => ({ ...card, prerequisite_node_ids: [...card.prerequisite_node_ids], source_refs: [...card.source_refs] })) };
+  return { ...metadata, schema_version: CARD_PACKET_SCHEMA, cards: cards.map((card) => ({ ...card, glossary_refs: card.glossary_refs ? [...card.glossary_refs] : undefined, prerequisite_node_ids: [...card.prerequisite_node_ids], source_refs: [...card.source_refs] })) };
 }
