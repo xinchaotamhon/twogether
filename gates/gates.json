@@ -108,7 +108,7 @@
       "introduced_by": "owner-approved-english-core-publication",
       "invariant": "Only exact Human-approved English IDs enter runtime and browser migrations preserve learner history",
       "owner": "hiep",
-      "evidence": "50-Evidence/english-core-published-migration-2026-08-26.md"
+      "evidence": "50-Evidence/beginner-core-map-home-2026-09-01.md"
     },
     {
       "id": "content.learning-support-contract",
@@ -139,6 +139,21 @@
       "invariant": "No AI coursebook card is silently approved and every card stays anchored to English Core with page provenance",
       "owner": "hiep",
       "evidence": "50-Evidence/empower-a2-coursebook-review-2026-09-01.md"
+    },
+    {
+      "id": "content.personal-style-contract",
+      "description": "Beginner Core revision follows Hiệp/Hoàng style, variable collection size, valid prerequisites and paired transfer routing",
+      "tier": "smoke",
+      "command": ["{python}", "tools/check_beginner_core_revision.py"],
+      "cwd": ".",
+      "timeout_seconds": 20,
+      "expected_exit_code": 0,
+      "required": true,
+      "enabled": true,
+      "introduced_by": "beginner-core-map-home-2026-09-01",
+      "invariant": "A new learner can enter Core without source-chat knowledge and transfer answers cannot appear detached from their prompts",
+      "owner": "hiep",
+      "evidence": "50-Evidence/beginner-core-map-home-2026-09-01.md"
     },
     {
       "id": "deployment.free-tier-contract",

@@ -37,6 +37,7 @@ export function CoursebookReviewPanel({
 }: {
   onChanged: () => void;
 }) {
+  const [expanded, setExpanded] = useState(false);
   const [flagged, setFlagged] = useState<Set<string>>(readFlags);
   const [deck, setDeck] = useState("all");
   const [notice, setNotice] = useState<string | null>(null);
@@ -86,7 +87,7 @@ export function CoursebookReviewPanel({
   };
 
   return (
-    <details className="coursebook-review surface" open>
+    <details className="coursebook-review surface" onToggle={(event) => setExpanded(event.currentTarget.open)}>
       <summary>
         <span>
           <span className="eyebrow">SÁCH ĐANG HỌC · AI DRAFT</span>
@@ -94,7 +95,7 @@ export function CoursebookReviewPanel({
         </span>
         <span>{flagged.size} cần sửa/bỏ</span>
       </summary>
-      <div className="coursebook-review-intro">
+      {expanded && <><div className="coursebook-review-intro">
         <p>
           Ba agent đã xem đủ 176/176 trang. Đây là nhánh học lâu dài nối vào
           English Core và đi theo FSRS; kỳ thi chỉ giúp ưu tiên phần cần học
@@ -160,7 +161,7 @@ export function CoursebookReviewPanel({
         <p className="toast" role="status">
           {notice}
         </p>
-      )}
+      )}</>}
     </details>
   );
 }

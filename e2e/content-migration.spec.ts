@@ -19,6 +19,7 @@ test("migrates a legacy browser shelf without deleting streak, runs, or local co
   });
 
   await page.goto("/");
+  await page.getByTestId("nav-study").click();
   await expect(page.getByTestId("collection-collection-english-core-01")).toBeVisible();
   await expect(page.getByTestId("collection-english-foundations")).toHaveCount(0);
   await expect(page.getByText("So sánh của tôi")).toBeVisible();

@@ -2,6 +2,7 @@ import { spawn, spawnSync } from "node:child_process";
 import { setTimeout as wait } from "node:timers/promises";
 import { fileURLToPath } from "node:url";
 import path from "node:path";
+import net from "node:net";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const node = process.execPath;
@@ -15,7 +16,18 @@ const playwrightCli = path.join(
   "test",
   "cli.js",
 );
-const previewUrl = "http://127.0.0.1:4173/";
+async function reserveFreePort() {
+  return await new Promise((resolve, reject) => {
+    const server = net.createServer();
+    server.unref();
+    server.on("error", reject);
+    server.listen(0, "127.0.0.1", () => {
+      const address = server.address();
+      const port = typeof address === "object" && address ? address.port : 4173;
+      server.close(() => resolve(port));
+    });
+  });
+}
 
 function runBuild() {
   const result = spawnSync(node, [npmCli, "run", "build"], {
@@ -27,7 +39,7 @@ function runBuild() {
   if (result.status !== 0) process.exit(result.status ?? 1);
 }
 
-async function waitForPreview() {
+async function waitForPreview(previewUrl) {
   for (let attempt = 0; attempt < 60; attempt += 1) {
     try {
       const response = await fetch(previewUrl);
@@ -41,9 +53,11 @@ async function waitForPreview() {
 }
 
 runBuild();
+const previewPort = await reserveFreePort();
+const previewUrl = `http://127.0.0.1:${previewPort}/`;
 const preview = spawn(
   node,
-  [viteCli, "preview", "--host", "127.0.0.1", "--port", "4173"],
+  [viteCli, "preview", "--host", "127.0.0.1", "--port", String(previewPort), "--strictPort"],
   {
     cwd: root,
     stdio: "inherit",
@@ -52,12 +66,12 @@ const preview = spawn(
 );
 
 try {
-  await waitForPreview();
+  await waitForPreview(previewUrl);
   const result = spawnSync(node, [playwrightCli, "test"], {
     cwd: root,
     stdio: "inherit",
     windowsHide: true,
-    env: { ...process.env, TWOGATHER_EXTERNAL_SERVER: "1" },
+    env: { ...process.env, TWOGATHER_EXTERNAL_SERVER: "1", TWOGATHER_BASE_URL: previewUrl },
   });
   process.exitCode = result.status ?? 1;
 } finally {

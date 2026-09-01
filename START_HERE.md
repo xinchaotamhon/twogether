@@ -14,18 +14,19 @@ This file is stable navigation. Do not put current test totals, temporary blocke
 6. [Knowledge graph](docs/KNOWLEDGE_GRAPH.md)
 7. [Architecture](docs/ARCHITECTURE.md)
 8. [Card authoring contract](docs/CONTENT_AUTHORING.md)
-9. [Curriculum expansion roadmap](docs/CURRICULUM_EXPANSION_ROADMAP.md)
-10. [Claude source status](docs/CLAUDE_SOURCE_STATUS.md)
-11. [Adopted resources](10-Resources/RESOURCE_ADOPTIONS.json)
-12. [Resource workflow](10-Resources/README.md)
-13. [Current state](40-State/CURRENT_STATE.md)
-14. [Known failures](40-State/KNOWN_FAILURES.md)
-15. [Resource candidates](40-State/RESOURCE_CANDIDATES.json)
-16. [Next actions](40-State/NEXT_ACTIONS.md)
-17. [Evidence index](50-Evidence/EVIDENCE_INDEX.md)
-18. [Gate registry](gates/gates.json)
-19. [ADR template](60-Decisions/ADR_TEMPLATE.md)
-20. [Next AI handoff](80-Handoffs/NEXT_AI_PROMPT.md)
+9. [Content style for Hiệp and Hoàng](docs/CONTENT_STYLE_HIEP_HOANG.md)
+10. [Curriculum expansion roadmap](docs/CURRICULUM_EXPANSION_ROADMAP.md)
+11. [Claude source status](docs/CLAUDE_SOURCE_STATUS.md)
+12. [Adopted resources](10-Resources/RESOURCE_ADOPTIONS.json)
+13. [Resource workflow](10-Resources/README.md)
+14. [Current state](40-State/CURRENT_STATE.md)
+15. [Known failures](40-State/KNOWN_FAILURES.md)
+16. [Resource candidates](40-State/RESOURCE_CANDIDATES.json)
+17. [Next actions](40-State/NEXT_ACTIONS.md)
+18. [Evidence index](50-Evidence/EVIDENCE_INDEX.md)
+19. [Gate registry](gates/gates.json)
+20. [ADR template](60-Decisions/ADR_TEMPLATE.md)
+21. [Next AI handoff](80-Handoffs/NEXT_AI_PROMPT.md)
 
 Routine continuation is self-contained here; the Vault is only needed to discover or adopt a new resource or deliberately upgrade the owner standard. If sources conflict, prefer reproducible runtime evidence, current code/schema, accepted decisions, then current state; treat chat and memory as leads.
 
@@ -41,4 +42,4 @@ Routine continuation is self-contained here; the Vault is only needed to discove
 
 ## When adding a flashcard
 
-Read `docs/CONTENT_AUTHORING.md` and `docs/CURRICULUM_EXPANSION_ROADMAP.md`. The immutable source packet is `content/drafts/core-curriculum-drafts-v2.json`; Hiệp’s exact 80-card English approval is under `content/reviews/`, and `src/approvedCurriculum.ts` derives the published runtime without mutating source. The optional `content/drafts/english-core-support-v1.json` packet remains AI-draft even when locally previewed. The ten React cards remain draft history. Place every new card at one or more legitimate DAG prerequisites with model answer, misconception, boundary/transfer cue, provenance, and Human-review status; then run the focused content/support checks plus all cumulative gates. AI generation and in-app visibility are never publication.
+Read `docs/CONTENT_AUTHORING.md`, `docs/CONTENT_STYLE_HIEP_HOANG.md` and `docs/CURRICULUM_EXPANSION_ROADMAP.md`. The immutable source packet is `content/drafts/core-curriculum-drafts-v2.json`; Hiệp’s exact 80-card English approval is under `content/reviews/`, and `src/approvedCurriculum.ts` derives the published runtime without mutating source. `content/drafts/english-core-beginner-revision-v2.json` is a separate 89-card second-review packet, not a replacement authority until Hiệp approves/applies it. The support packet remains AI-authored provenance even when used to improve local explanations. The ten React cards remain draft history. Place every new card at one or more legitimate DAG prerequisites with model answer, misconception, boundary/transfer cue, provenance, and Human-review status; then run the focused content/support checks plus all cumulative gates. AI generation, fresh-agent critique and in-app visibility are never publication.

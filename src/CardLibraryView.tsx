@@ -8,17 +8,23 @@ import { exportCardPacket, importPacketAsDraft } from "./contentPacket";
 import { archiveCard, publishCardDraft, saveCardDraft } from "./localWorkspace";
 import { supportForCard } from "./cardSupport";
 import { CoursebookReviewPanel } from "./CoursebookReviewPanel";
-import type { Card, ConceptNode } from "./types";
+import { EnglishCoreRevisionPanel } from "./EnglishCoreRevisionPanel";
+import { GraphBranchAuthoring } from "./GraphBranchAuthoring";
+import type { Card, ConceptEdge, ConceptNode, LearnerId } from "./types";
 
 interface CardLibraryViewProps {
   cards: Card[];
   nodes: ConceptNode[];
+  edges: ConceptEdge[];
+  learnerId: LearnerId;
   onChanged: () => void;
 }
 
 export function CardLibraryView({
   cards,
   nodes,
+  edges,
+  learnerId,
   onChanged,
 }: CardLibraryViewProps) {
   const [editing, setEditing] = useState<Card | null>(null);
@@ -151,7 +157,9 @@ export function CardLibraryView({
           Xoá vùng packet
         </button>
       </div>
+      <EnglishCoreRevisionPanel onChanged={onChanged} />
       <CoursebookReviewPanel onChanged={onChanged} />
+      <GraphBranchAuthoring nodes={nodes} edges={edges} learnerId={learnerId} onChanged={onChanged} />
       <section
         className="support-review surface"
         aria-labelledby="support-review-title"
@@ -174,13 +182,15 @@ export function CardLibraryView({
         <div className="draft-core-heading">
           <div>
             <span className="eyebrow">CURRICULUM · ĐÃ DUYỆT</span>
-            <h2 id="english-core-title">English Core v1 · 80 thẻ đang học</h2>
+            <h2 id="english-core-title">English Core v1 · bản đang học</h2>
             <p>
               Mười bộ nguyên lý đang nằm trong lịch học. Chỉnh một thẻ sẽ tạo
               bản nháp mới, không làm mất bản đã duyệt hay lịch sử ôn.
             </p>
           </div>
-          <span className="draft-core-count">10 bộ · 8 thẻ/bộ</span>
+          <span className="draft-core-count">
+            {ENGLISH_CORE_DRAFT_COLLECTIONS.length} bộ · số thẻ theo nội dung
+          </span>
         </div>
         <div
           className="draft-collection-tabs"
@@ -214,7 +224,7 @@ export function CardLibraryView({
                 <h3>{selectedCollection.title}</h3>
                 <p>{selectedCollection.description}</p>
               </div>
-              <span>{coreCards.length}/8 thẻ</span>
+              <span>{coreCards.length} thẻ</span>
             </div>
             <div className="draft-card-grid">
               {coreCards.map((card, index) => (
@@ -229,8 +239,16 @@ export function CardLibraryView({
                   </div>
                   <h4>{card.prompt}</h4>
                   <div className="draft-support-preview">
-                    <span className="section-label">LỜI GIẢI CHUYỂN GIAO</span>
-                    <p>{card.transfer_answer ?? "Chưa có lời giải mẫu."}</p>
+                    <span className="section-label">
+                      THỬ CHUYỂN SANG TÌNH HUỐNG MỚI
+                    </span>
+                    <p className="draft-transfer-prompt">
+                      {card.transfer_prompt}
+                    </p>
+                    <span className="section-label">MỘT LỜI GIẢI GỢI Ý</span>
+                    <p data-testid={`transfer-preview-answer-${card.id}`}>
+                      {card.transfer_answer ?? "Chưa có lời giải mẫu."}
+                    </p>
                     <small>
                       {card.glossary_refs?.join(" · ") ||
                         "Không có thuật ngữ gắn kèm"}

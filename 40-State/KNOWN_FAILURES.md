@@ -1,6 +1,6 @@
 ---
-last_verified: 2026-08-18
-verified_by: Codex read-only inception pass
+last_verified: 2026-09-01
+verified_by: Codex beginner-core/map-home implementation
 status: active
 ---
 
@@ -59,3 +59,18 @@ status: active
 
 - Symptom: `https://github.com/jKrieger/FlashCardLearning` returned 404 on 2026-08-31.
 - Control: no claims, code, or license assumptions were taken from it. Revisit only with an exact accessible repository identity.
+
+## CONTENT-001 — Transfer answer appeared unrelated in the card library
+
+- Symptom: the library displayed `transfer_answer` directly below the main `prompt` while omitting `transfer_prompt`; examples such as “My friend sent an email” looked like wrong answers to a different sentence.
+- Impact: Human review cannot judge answer alignment and a learner may distrust otherwise correct material.
+- Root cause: the preview routed only the transfer answer, not its owning prompt.
+- Disposition: fixed by rendering the transfer prompt and answer as one inseparable region in both the study support and library review surfaces.
+- Regression gates: `content.personal-style-contract` and `browser.p0-contract`.
+
+## CONTENT-002 — Approved Core is not yet beginner-self-contained
+
+- Symptom: many cards lead with several technical labels, some model answers are rubrics rather than worked examples, and many card records include their own node as a prerequisite.
+- Impact: Hoàng may be unable to learn the material without first reading the source discussion; self-prerequisites do not create a real learning bridge.
+- Disposition: contained. Published v1 is preserved; the 89-card versioned beginner revision, bridge cards and durable style contract are ready for second Human approval.
+- Regression gate: `content.personal-style-contract`. Remaining Human gate: review/flag/apply in `Thẻ`.

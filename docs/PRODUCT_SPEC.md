@@ -14,7 +14,7 @@ The owner-pasted Claude captures now supply two draft source layers: English fou
 - FSRS-6 scheduling with a same-session repair loop for `Quên`.
 - Add/edit/archive cards with provenance, concept node, prerequisites, card type, model answer, misconception, and transfer cue.
 - Map view showing trunk, branches, prerequisites, due cards, and durable mastery.
-- Home view with today’s due queue, a calm progress signal, and a personal or cooperative goal.
+- Home view led by the full-screen knowledge map, with today’s due/focus collections, a calm progress signal, and a personal or cooperative goal.
 - Installable PWA shell, responsive phone-first UI, offline read-only shell and safe local queue for the current session.
 
 ## Explicit non-goals for MVP

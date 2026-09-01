@@ -47,3 +47,7 @@ The data model remains a DAG: a concept may have several legitimate prerequisite
 Actual nodes are grouped by their existing kind into bộ kiến thức, thân nguyên lý, cành cơ chế, and lá chuyển giao, then projected into deterministic centered layers. A lazy-loaded React Flow viewport renders the projection with drag-to-pan, wheel/pinch zoom, `+`/`−`/fit controls, and a minimap; cards cannot be dragged, connected, or deleted on the canvas. Solid links show `part_of`; dashed links show `prerequisite`. Hovering, focusing, or tapping a node selects it and reveals its purpose, aggregate descendant card count, stability summary, and prerequisite labels.
 
 React Flow is presentation only. Stable node/edge IDs, multi-parent relations, cycle rejection, progress calculation, and the exact accessible table remain project-owned. The virtual root aggregates the whole collection and is never persisted as a published node or learning card. A heavier automatic layout engine is deferred until a 40–100 node gate demonstrates real overlap or crossing problems.
+
+## Map-first home and upward growth
+
+The default home projection places the virtual universal root at the bottom and lets domain roots grow upward. `part_of` edges form the readable visual skeleton; `prerequisite` edges remain dashed learning-order overlays and do not silently become taxonomy parents. Selecting several collections creates a learner-private focus list, while every study run still belongs to one real collection. The number of cards in a collection is not fixed.

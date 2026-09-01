@@ -1,0 +1,3045 @@
+{
+  "schema_version": 1,
+  "packet_id": "english-core-beginner-revision-v2",
+  "status": "review",
+  "curriculum_id": "english-generative-core-beginner-v2",
+  "derived_from": {
+    "source_packet": "content/drafts/core-curriculum-drafts-v2.json",
+    "published_version": "english-generative-core-v1-owner-approved-2026-08-26"
+  },
+  "provenance": {
+    "requested_by": "hiep",
+    "requested_at": "2026-09-01",
+    "created_by": [
+      "codex",
+      "fresh-novice-auditor-01-40",
+      "fresh-novice-auditor-41-80"
+    ],
+    "review_status": "awaiting_owner_second_review",
+    "content_contract": "docs/CONTENT_STYLE_HIEP_HOANG.md",
+    "note": "Revision preserves stable IDs for replacements, removes self-node prerequisites, teaches in plain language before labels, and pairs each transfer answer with its exact transfer prompt. Nine new bridge cards make modules 02–10 teachable before their denser cards; collection sizes are therefore variable."
+  },
+  "collections": [
+    {
+      "id": "collection-english-core-01",
+      "track": "english",
+      "node_id": "core-en-module-01",
+      "title": "Meaning → Clause",
+      "card_ids": [
+        "core-en-01",
+        "core-en-02",
+        "core-en-03",
+        "core-en-04",
+        "core-en-05",
+        "core-en-06",
+        "core-en-07",
+        "core-en-08"
+      ],
+      "status": "review"
+    },
+    {
+      "id": "collection-english-core-02",
+      "track": "english",
+      "node_id": "core-en-module-02",
+      "title": "Verb Architecture",
+      "card_ids": [
+        "core-en-bridge-02",
+        "core-en-09",
+        "core-en-10",
+        "core-en-11",
+        "core-en-12",
+        "core-en-13",
+        "core-en-14",
+        "core-en-15",
+        "core-en-16"
+      ],
+      "status": "review"
+    },
+    {
+      "id": "collection-english-core-03",
+      "track": "english",
+      "node_id": "core-en-module-03",
+      "title": "Negation & Questions",
+      "card_ids": [
+        "core-en-bridge-03",
+        "core-en-17",
+        "core-en-18",
+        "core-en-19",
+        "core-en-20",
+        "core-en-21",
+        "core-en-22",
+        "core-en-23",
+        "core-en-24"
+      ],
+      "status": "review"
+    },
+    {
+      "id": "collection-english-core-04",
+      "track": "english",
+      "node_id": "core-en-module-04",
+      "title": "Time, Aspect & Modality",
+      "card_ids": [
+        "core-en-bridge-04",
+        "core-en-25",
+        "core-en-26",
+        "core-en-27",
+        "core-en-28",
+        "core-en-29",
+        "core-en-30",
+        "core-en-31",
+        "core-en-32"
+      ],
+      "status": "review"
+    },
+    {
+      "id": "collection-english-core-05",
+      "track": "english",
+      "node_id": "core-en-module-05",
+      "title": "Noun & Reference",
+      "card_ids": [
+        "core-en-bridge-05",
+        "core-en-33",
+        "core-en-34",
+        "core-en-35",
+        "core-en-36",
+        "core-en-37",
+        "core-en-38",
+        "core-en-39",
+        "core-en-40"
+      ],
+      "status": "review"
+    },
+    {
+      "id": "collection-english-core-06",
+      "track": "english",
+      "node_id": "core-en-module-06",
+      "title": "Expanding the Clause",
+      "card_ids": [
+        "core-en-bridge-06",
+        "core-en-41",
+        "core-en-42",
+        "core-en-43",
+        "core-en-44",
+        "core-en-45",
+        "core-en-46",
+        "core-en-47",
+        "core-en-48"
+      ],
+      "status": "review"
+    },
+    {
+      "id": "collection-english-core-07",
+      "track": "english",
+      "node_id": "core-en-module-07",
+      "title": "Information Flow",
+      "card_ids": [
+        "core-en-bridge-07",
+        "core-en-49",
+        "core-en-50",
+        "core-en-51",
+        "core-en-52",
+        "core-en-53",
+        "core-en-54",
+        "core-en-55",
+        "core-en-56"
+      ],
+      "status": "review"
+    },
+    {
+      "id": "collection-english-core-08",
+      "track": "english",
+      "node_id": "core-en-module-08",
+      "title": "Sound & Listening",
+      "card_ids": [
+        "core-en-bridge-08",
+        "core-en-57",
+        "core-en-58",
+        "core-en-59",
+        "core-en-60",
+        "core-en-61",
+        "core-en-62",
+        "core-en-63",
+        "core-en-64"
+      ],
+      "status": "review"
+    },
+    {
+      "id": "collection-english-core-09",
+      "track": "english",
+      "node_id": "core-en-module-09",
+      "title": "Lexicon as a Network",
+      "card_ids": [
+        "core-en-bridge-09",
+        "core-en-65",
+        "core-en-66",
+        "core-en-67",
+        "core-en-68",
+        "core-en-69",
+        "core-en-70",
+        "core-en-71",
+        "core-en-72"
+      ],
+      "status": "review"
+    },
+    {
+      "id": "collection-english-core-10",
+      "track": "english",
+      "node_id": "core-en-module-10",
+      "title": "Integration & Production",
+      "card_ids": [
+        "core-en-bridge-10",
+        "core-en-73",
+        "core-en-74",
+        "core-en-75",
+        "core-en-76",
+        "core-en-77",
+        "core-en-78",
+        "core-en-79",
+        "core-en-80"
+      ],
+      "status": "review"
+    }
+  ],
+  "cards": [
+    {
+      "id": "core-en-01",
+      "track": "english",
+      "node_id": "core-en-module-01",
+      "card_type": "core_recall",
+      "prompt": "Khi muốn nói ‘đứa trẻ mở cửa’, vì sao cần cho người nghe biết ai làm gì với cái gì thay vì chỉ ghép các từ dịch rời? Hãy dùng câu ‘The child opened the door’ để minh hoạ.",
+      "model_answer": "Một câu cần xếp sự việc thành các vai trò rõ ràng: ‘The child’ là người làm, ‘opened’ là việc xảy ra, và ‘the door’ là thứ chịu tác động. Nhóm từ tổ chức trọn một sự việc như vậy gọi là mệnh đề (clause).",
+      "explanation": "Khi nắm được khung ai–làm gì–với cái gì, ta có thể tự tạo nhiều câu mới mà không phải dịch từng từ theo một mẫu cố định.",
+      "misconception": "Chỉ cần biết đủ từ vựng là câu sẽ tự đúng; trật tự và vai trò của các từ không quan trọng.",
+      "transfer_prompt": "Từ ý ‘một người bạn gửi email’, hãy tạo một câu tiếng Anh và chỉ ra người làm, việc xảy ra và thứ được gửi.",
+      "prerequisite_node_ids": [],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1",
+        "human-feedback:hiep-2026-09-01",
+        "fresh-novice-audit:2026-09-01"
+      ],
+      "status": "review",
+      "author": "codex+fresh-reviewers",
+      "reviewer": null,
+      "transfer_answer": "‘My friend sent an email.’ My friend là người làm (subject), sent là việc xảy ra (verb), và an email là thứ được gửi (object).",
+      "glossary_refs": [
+        "clause",
+        "subject",
+        "predicate",
+        "object"
+      ],
+      "revision_of": "core-en-01",
+      "revision_reason": "beginner_self_contained_and_transfer_alignment"
+    },
+    {
+      "id": "core-en-02",
+      "track": "english",
+      "node_id": "core-en-module-01",
+      "card_type": "mechanism",
+      "prompt": "Một động từ có nhất thiết phải chỉ một hành động nhìn thấy được không? Trong ‘Maya seems tired’, từ nào nối Maya với trạng thái mệt và nó đang làm công việc gì?",
+      "model_answer": "Không. Động từ (verb) có thể tổ chức một hành động hoặc một trạng thái. Trong ‘Maya seems tired’, ‘seems’ nối Maya với thông tin ‘tired’, tức trạng thái mệt; nó vẫn là verb dù không mô tả chuyển động nhìn thấy được.",
+      "explanation": "Nhận diện verb theo công việc tổ chức sự việc hoặc trạng thái giúp ta không nhầm rằng verb lúc nào cũng phải là một chuyển động.",
+      "misconception": "Một từ chỉ là verb khi nó mô tả hành động có thể nhìn thấy như chạy, mở hoặc đánh.",
+      "transfer_prompt": "Viết một câu dùng ‘know’ hoặc ‘belong’ và giải thích verb đó đang tổ chức trạng thái hay quan hệ gì.",
+      "prerequisite_node_ids": [],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1",
+        "human-feedback:hiep-2026-09-01",
+        "fresh-novice-audit:2026-09-01"
+      ],
+      "status": "review",
+      "author": "codex+fresh-reviewers",
+      "reviewer": null,
+      "transfer_answer": "‘This bag belongs to Hoàng.’ ‘Belongs’ không chỉ một hành động nhìn thấy; nó tổ chức quan hệ sở hữu giữa chiếc túi và Hoàng.",
+      "glossary_refs": [
+        "clause",
+        "lexical-verb",
+        "predicate"
+      ],
+      "revision_of": "core-en-02",
+      "revision_reason": "beginner_self_contained_and_transfer_alignment"
+    },
+    {
+      "id": "core-en-03",
+      "track": "english",
+      "node_id": "core-en-module-01",
+      "card_type": "mechanism",
+      "prompt": "Trong ‘The dog chased the cat’, làm sao vị trí của hai cụm tên giúp ta biết ai đuổi ai? Điều gì xảy ra nếu đổi chỗ hai cụm tên?",
+      "model_answer": "Trong mẫu quen thuộc, cụm đứng trước verb thường là bên thực hiện: ‘the dog’ là subject. Cụm đứng sau verb thường là bên nhận tác động: ‘the cat’ là object. Đổi thành ‘The cat chased the dog’ thì nghĩa và hai vai trò đổi theo.",
+      "explanation": "Tiếng Anh dùng trật tự từ như một tín hiệu mạnh để người nghe khôi phục quan hệ trong câu; đây là khuôn mặc định hữu ích nhưng không phải mọi câu đều có đúng khuôn này.",
+      "misconception": "Dịch từng từ theo thứ tự tiếng Việt luôn giữ nguyên ai làm và ai nhận tác động trong tiếng Anh.",
+      "transfer_prompt": "Đổi vị trí hai cụm tên trong ‘The dog chased the cat’ và mô tả nghĩa mới hoặc vì sao trật tự mới không tự nhiên.",
+      "prerequisite_node_ids": [],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1",
+        "human-feedback:hiep-2026-09-01",
+        "fresh-novice-audit:2026-09-01"
+      ],
+      "status": "review",
+      "author": "codex+fresh-reviewers",
+      "reviewer": null,
+      "transfer_answer": "‘The cat chased the dog’ làm con mèo thành bên đuổi và con chó thành bên bị đuổi. ‘Chased the dog the cat’ không tự nhiên vì phá trật tự mà tiếng Anh thường dùng để báo hiệu vai trò.",
+      "glossary_refs": [
+        "clause",
+        "subject",
+        "object"
+      ],
+      "revision_of": "core-en-03",
+      "revision_reason": "beginner_self_contained_and_transfer_alignment"
+    },
+    {
+      "id": "core-en-04",
+      "track": "english",
+      "node_id": "core-en-module-01",
+      "card_type": "contrast",
+      "prompt": "‘the quiet room’ chỉ gọi tên một căn phòng, còn ‘The room is quiet’ nói một điều về căn phòng. Vì sao hai nhóm từ này làm hai công việc khác nhau?",
+      "model_answer": "‘The quiet room’ là một cụm danh từ (noun phrase): nó gọi tên một đối tượng. ‘The room is quiet’ là một mệnh đề (clause): nó có một đối tượng và một phần nói điều gì về đối tượng đó, nên có thể được xem là đúng hoặc sai.",
+      "explanation": "Phân biệt nhóm dùng để gọi tên với nhóm tổ chức một nhận định giúp ta biết khi nào mình đã tạo được câu hoàn chỉnh.",
+      "misconception": "Một nhóm có danh từ và tính từ luôn là một câu hoàn chỉnh.",
+      "transfer_prompt": "Biến ‘a very old bridge’ thành một câu có thể đúng hoặc sai về cây cầu.",
+      "prerequisite_node_ids": [],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1",
+        "human-feedback:hiep-2026-09-01",
+        "fresh-novice-audit:2026-09-01"
+      ],
+      "status": "review",
+      "author": "codex+fresh-reviewers",
+      "reviewer": null,
+      "transfer_answer": "‘The bridge is very old.’ ‘A very old bridge’ chỉ gọi tên một cây cầu; câu mới có ‘the bridge’ làm subject và ‘is very old’ nói một điều có thể kiểm chứng về nó.",
+      "glossary_refs": [
+        "noun-phrase",
+        "clause",
+        "predicate"
+      ],
+      "revision_of": "core-en-04",
+      "revision_reason": "beginner_self_contained_and_transfer_alignment"
+    },
+    {
+      "id": "core-en-05",
+      "track": "english",
+      "node_id": "core-en-module-01",
+      "card_type": "boundary",
+      "prompt": "Vì sao mẫu ‘ai–verb–thứ chịu tác động’ hữu ích nhưng không phải luật bắt buộc cho mọi câu tiếng Anh? Hãy so sánh ‘The window broke’ và ‘The window was broken’.",
+      "model_answer": "Mẫu quen thuộc giúp ta đoán vai trò nhanh, nhưng tiếng Anh còn có câu hỏi, câu với ‘be’, câu không có object và câu bị động. ‘The window broke’ chỉ nói cửa sổ xảy ra việc vỡ, không có object. ‘The window was broken’ đặt cửa sổ ở vị trí đầu như thứ chịu tác động; người gây ra việc đó có thể thêm sau ‘by’.",
+      "explanation": "Một nguyên lý tốt phải nói rõ phạm vi của nó. Ta nhận diện vai trò và cơ chế của câu thay vì ép mọi câu vào một trật tự duy nhất.",
+      "misconception": "Câu đúng nào cũng phải có đủ subject, verb và object theo cùng một thứ tự.",
+      "transfer_prompt": "So sánh ‘The window broke’ và ‘The window was broken’: câu nào có object và vì sao?",
+      "prerequisite_node_ids": [],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1",
+        "human-feedback:hiep-2026-09-01",
+        "fresh-novice-audit:2026-09-01"
+      ],
+      "status": "review",
+      "author": "codex+fresh-reviewers",
+      "reviewer": null,
+      "transfer_answer": "Cả hai câu đều không có object đứng sau verb. Ở ‘The window broke’, cửa sổ là subject của việc xảy ra. Ở ‘The window was broken’, cửa sổ vẫn là subject trên bề mặt nhưng là thứ chịu tác động trong câu bị động; tác nhân có thể thêm bằng ‘by someone’.",
+      "glossary_refs": [
+        "clause",
+        "subject",
+        "object",
+        "auxiliary"
+      ],
+      "revision_of": "core-en-05",
+      "revision_reason": "beginner_self_contained_and_transfer_alignment"
+    },
+    {
+      "id": "core-en-06",
+      "track": "english",
+      "node_id": "core-en-module-01",
+      "card_type": "application",
+      "prompt": "Hãy phân tích ‘The small robot moved the box carefully’ mà không dịch từng từ: ai hoặc vật nào làm việc, việc gì xảy ra, tác động tới cái gì, và thông tin thêm là gì?",
+      "model_answer": "‘The small robot’ là người/vật làm việc (subject noun phrase), ‘moved’ là verb, ‘the box’ là thứ chịu tác động (object noun phrase), còn ‘carefully’ cho biết cách thức và là thông tin thêm (adjunct).",
+      "explanation": "Bắt đầu từ trung tâm sự việc rồi mở ra các lớp thông tin giúp ta hiểu nhanh hơn và có thể phân tích câu mới.",
+      "misconception": "Mọi cụm đứng sau verb đều là thứ chịu tác động; vì vậy ‘carefully’ cũng là object.",
+      "transfer_prompt": "Tạo một câu khác có người/vật làm việc, một verb, một thứ chịu tác động và thông tin thêm về thời gian.",
+      "prerequisite_node_ids": [],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1",
+        "human-feedback:hiep-2026-09-01",
+        "fresh-novice-audit:2026-09-01"
+      ],
+      "status": "review",
+      "author": "codex+fresh-reviewers",
+      "reviewer": null,
+      "transfer_answer": "‘My sister finished the report yesterday.’ My sister là người làm, finished là việc xảy ra, the report là thứ chịu tác động, và yesterday là thông tin thêm về thời gian.",
+      "glossary_refs": [
+        "clause",
+        "subject",
+        "object",
+        "adjunct",
+        "noun-phrase"
+      ],
+      "revision_of": "core-en-06",
+      "revision_reason": "beginner_self_contained_and_transfer_alignment"
+    },
+    {
+      "id": "core-en-07",
+      "track": "english",
+      "node_id": "core-en-module-01",
+      "card_type": "production",
+      "prompt": "Hãy tự nói hoặc viết một câu tiếng Anh về một việc bạn vừa làm. Câu của bạn cần có người/vật làm việc, một verb có dấu hiệu thời gian, và phần bổ sung nếu cần; sau đó chỉ ra từng phần.",
+      "model_answer": "Ví dụ: ‘I finished my notes.’ ‘I’ là người làm (subject), ‘finished’ là verb mang dấu hiệu của việc đã xảy ra (finite verb), và ‘my notes’ là phần nói việc gì được hoàn thành. Câu của bạn không cần giống ví dụ, miễn là có một mệnh đề rõ.",
+      "explanation": "Tự sinh câu kiểm tra việc nguyên lý đã trở thành thao tác. Mục tiêu không phải đoán đúng một câu mẫu mà là tạo một câu có cấu trúc rõ.",
+      "misconception": "Nói riêng một danh từ hoặc một verb là đã tạo và luyện được một câu.",
+      "transfer_prompt": "Giữ cùng ý ‘hoàn thành ghi chú’ nhưng đổi người làm và đổi thời điểm để tạo câu thứ hai.",
+      "prerequisite_node_ids": [],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1",
+        "human-feedback:hiep-2026-09-01",
+        "fresh-novice-audit:2026-09-01"
+      ],
+      "status": "review",
+      "author": "codex+fresh-reviewers",
+      "reviewer": null,
+      "transfer_answer": "‘Hoàng will finish his notes tomorrow.’ Người làm đổi thành Hoàng, thời điểm đổi sang tương lai, và ‘will’ mang dấu hiệu của dự định tương lai trong câu này.",
+      "glossary_refs": [
+        "clause",
+        "subject",
+        "finite-verb",
+        "modifier"
+      ],
+      "revision_of": "core-en-07",
+      "revision_reason": "beginner_self_contained_and_transfer_alignment"
+    },
+    {
+      "id": "core-en-08",
+      "track": "english",
+      "node_id": "core-en-module-01",
+      "card_type": "production",
+      "prompt": "‘under the table’ cho biết nơi chốn nhưng chưa nói ai làm gì. Hãy gắn một cụm nơi chốn tương tự vào một câu mới mà vẫn giữ được trung tâm câu.",
+      "model_answer": "‘Under the table’ là một cụm giới từ: nó bổ sung nơi chốn nhưng tự nó chưa tổ chức một sự việc hoàn chỉnh. Ví dụ, ‘The cat sleeps under the table’: ‘The cat sleeps’ là phần lõi, còn ‘under the table’ là thông tin thêm.",
+      "explanation": "Một cụm có nghĩa riêng chưa chắc là một câu. Ta có thể gắn nó vào một mệnh đề để mở rộng thông tin mà không làm mất phần lõi.",
+      "misconception": "Cụm giới từ tự nó luôn là một câu vì người nghe vẫn hiểu nó nói về nơi nào.",
+      "transfer_prompt": "Lấy một cụm chỉ thời gian hoặc nơi chốn khác và gắn nó vào một mệnh đề mới mà không làm mất trung tâm câu.",
+      "prerequisite_node_ids": [],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1",
+        "human-feedback:hiep-2026-09-01",
+        "fresh-novice-audit:2026-09-01"
+      ],
+      "status": "review",
+      "author": "codex+fresh-reviewers",
+      "reviewer": null,
+      "transfer_answer": "Với cụm thời gian ‘after dinner’: ‘We reviewed the lesson after dinner.’ ‘We reviewed the lesson’ là phần lõi; ‘after dinner’ chỉ thêm thời điểm.",
+      "glossary_refs": [
+        "clause",
+        "subject",
+        "predicate",
+        "object",
+        "adjunct"
+      ],
+      "revision_of": "core-en-08",
+      "revision_reason": "beginner_self_contained_and_transfer_alignment"
+    },
+    {
+      "id": "core-en-09",
+      "track": "english",
+      "node_id": "core-en-module-02",
+      "card_type": "core_recall",
+      "prompt": "Trong ‘She has walked home’, từ nào gánh dấu hiệu ngữ pháp của cả mệnh đề, và từ nào mang nghĩa hành động đi bộ? Sau đó xem vì sao hai từ không làm cùng một việc.",
+      "model_answer": "‘Has’ là từ trợ động từ đang gánh dấu hiệu ngữ pháp của mệnh đề (finite verb/finite auxiliary). ‘Walked’ mang nghĩa chính là đi bộ nhưng ở dạng không tự gánh dấu hiệu đó (non-finite verb). Tách hai công việc này giúp ta hiểu vì sao một verb có thể đi sau verb trợ giúp.",
+      "explanation": "Finite nói về từ đang gánh tense/agreement của mệnh đề; lexical verb nói về verb mang nội dung sự việc. Hai nhãn mô tả hai công việc khác nhau.",
+      "misconception": "Finite nghĩa là hành động có thời lượng hữu hạn, nên ‘walked’ phải là finite vì việc đi bộ đã kết thúc.",
+      "transfer_prompt": "Chỉ ra từ trợ giúp và từ mang nghĩa chính trong ‘They have finished the report’.",
+      "prerequisite_node_ids": [
+        "core-en-module-01"
+      ],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1",
+        "human-feedback:hiep-2026-09-01",
+        "fresh-novice-audit:2026-09-01"
+      ],
+      "status": "review",
+      "author": "codex+fresh-reviewers",
+      "reviewer": null,
+      "transfer_answer": "‘Have’ là từ trợ giúp đang gánh dấu hiệu ngữ pháp; ‘finished’ mang nghĩa chính là hoàn thành. ‘Have’ không có nghĩa sở hữu trong câu này.",
+      "glossary_refs": [
+        "finite-verb",
+        "lexical-verb",
+        "auxiliary",
+        "clause"
+      ],
+      "revision_of": "core-en-09",
+      "revision_reason": "beginner_self_contained_and_transfer_alignment"
+    },
+    {
+      "id": "core-en-10",
+      "track": "english",
+      "node_id": "core-en-module-02",
+      "card_type": "mechanism",
+      "prompt": "Hãy nhìn ba câu: ‘They are working’, ‘Do they work?’ và ‘They have finished’. Trong mỗi câu, be/do/have đang giúp người nói làm việc gì?",
+      "model_answer": "‘Be’ giúp đóng gói việc đang diễn ra trong ‘are working’. ‘Do’ giúp tạo câu hỏi khi verb chính không có từ trợ giúp khác. ‘Have’ nối với dạng V3 để cho thấy một việc đã được hoàn tất hoặc có liên quan tới một mốc. Những từ này gọi là trợ động từ (auxiliary); chúng cũng có thể làm verb mang nghĩa riêng.",
+      "explanation": "Học theo công việc giúp ta dùng một nhóm nhỏ từ để sinh nhiều cấu trúc, thay vì học từng bảng như các ngoại lệ rời rạc.",
+      "misconception": "Be, do và have luôn có một nghĩa từ vựng cố định và lúc nào cũng phải dịch thành ‘là’, ‘làm’, ‘có’.",
+      "transfer_prompt": "Phân biệt have trong ‘They have finished’ và ‘They have a car’.",
+      "prerequisite_node_ids": [],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1",
+        "human-feedback:hiep-2026-09-01",
+        "fresh-novice-audit:2026-09-01"
+      ],
+      "status": "review",
+      "author": "codex+fresh-reviewers",
+      "reviewer": null,
+      "transfer_answer": "Trong ‘They have finished’, ‘have’ là trợ động từ nối với ‘finished’ để tạo cấu trúc perfect. Trong ‘They have a car’, ‘have’ tự mang nghĩa sở hữu và là verb chính của câu.",
+      "glossary_refs": [
+        "auxiliary",
+        "lexical-verb",
+        "finite-verb",
+        "aspect"
+      ],
+      "revision_of": "core-en-10",
+      "revision_reason": "beginner_self_contained_and_transfer_alignment"
+    },
+    {
+      "id": "core-en-11",
+      "track": "english",
+      "node_id": "core-en-module-02",
+      "card_type": "mechanism",
+      "prompt": "Trong ‘She walks’ và ‘She is walking’, vì sao ‘is’ mang dấu hiệu của câu còn ‘walking’ cho biết việc đang diễn ra?",
+      "model_answer": "Trong ‘She walks’, ‘walks’ vừa mang nghĩa đi bộ vừa gánh dấu hiệu ngữ pháp. Trong ‘She is walking’, ‘is’ gánh dấu hiệu ngữ pháp; ‘walking’ mang nội dung đi bộ và cho biết sự việc đang diễn ra. ‘Walking’ là dạng không hữu hạn (non-finite), còn ‘is’ là finite auxiliary.",
+      "explanation": "Một mệnh đề thường có một từ gánh dấu hiệu trung tâm. Khi trợ động từ nhận việc đó, verb mang nội dung có thể dùng một dạng khác để thêm góc nhìn về sự việc.",
+      "misconception": "Mọi verb xuất hiện trong một câu đều cùng lúc mang tense.",
+      "transfer_prompt": "Phân tích ‘She has been working’: từ nào gánh dấu hiệu của câu, từ nào tạo góc nhìn đã kéo dài, và từ nào mang nghĩa công việc?",
+      "prerequisite_node_ids": [],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1",
+        "human-feedback:hiep-2026-09-01",
+        "fresh-novice-audit:2026-09-01"
+      ],
+      "status": "review",
+      "author": "codex+fresh-reviewers",
+      "reviewer": null,
+      "transfer_answer": "‘Has’ gánh dấu hiệu của câu. ‘Been’ cùng ‘has’ tạo góc nhìn nhìn lại một việc đã diễn ra; ‘working’ mang nghĩa làm việc và cho thấy sự việc đang diễn tiến. Nói theo thuật ngữ, has là finite carrier, been là past participle trong perfect, và working là -ing form.",
+      "glossary_refs": [
+        "finite-verb",
+        "non-finite-verb",
+        "auxiliary",
+        "aspect",
+        "lexical-verb"
+      ],
+      "revision_of": "core-en-11",
+      "revision_reason": "beginner_self_contained_and_transfer_alignment"
+    },
+    {
+      "id": "core-en-12",
+      "track": "english",
+      "node_id": "core-en-module-02",
+      "card_type": "contrast",
+      "prompt": "Vì sao ‘I have a car’ và ‘I have finished’ dùng cùng từ have nhưng chỉ câu thứ hai có cấu trúc perfect? Hãy nhìn xem sau have là loại phần nào.",
+      "model_answer": "Trong ‘I have a car’, ‘have’ tự mang nghĩa sở hữu và theo sau là một noun phrase. Trong ‘I have finished’, ‘have’ làm trợ động từ và theo sau là dạng V3 của verb ‘finish’; chuỗi này gọi là perfect. Vì vậy phải nhìn công việc của have và phần đi sau, không chỉ nhìn spelling ‘have’.",
+      "explanation": "Một hình thức bề mặt có thể làm verb mang nghĩa hoặc trợ động từ. Cấu trúc xung quanh cho biết ta đang dùng nghĩa nào.",
+      "misconception": "Hễ thấy have trước bất kỳ từ nào là đã có perfect.",
+      "transfer_prompt": "Tạo hai câu mới với have: một câu have tự mang nghĩa chính và một câu have làm trợ động từ; giải thích dấu hiệu nhận biết.",
+      "prerequisite_node_ids": [],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1",
+        "human-feedback:hiep-2026-09-01",
+        "fresh-novice-audit:2026-09-01"
+      ],
+      "status": "review",
+      "author": "codex+fresh-reviewers",
+      "reviewer": null,
+      "transfer_answer": "‘I have two brothers’ dùng ‘have’ với nghĩa có/sở hữu, nên nó là verb chính. ‘I have completed the task’ dùng ‘have’ trước dạng V3 ‘completed’ để tạo perfect, nên nó là trợ động từ.",
+      "glossary_refs": [
+        "auxiliary",
+        "aspect",
+        "finite-verb",
+        "lexical-verb",
+        "noun-phrase"
+      ],
+      "revision_of": "core-en-12",
+      "revision_reason": "beginner_self_contained_and_transfer_alignment"
+    },
+    {
+      "id": "core-en-13",
+      "track": "english",
+      "node_id": "core-en-module-02",
+      "card_type": "boundary",
+      "prompt": "Vì sao không thể chỉ học mẹo ‘thêm -s’ để chia đúng mọi verb khi chủ ngữ là he, she, it hoặc một danh từ số ít?",
+      "model_answer": "Với nhiều verb, chủ ngữ số ít ở hiện tại làm verb thêm -s hoặc một biến thể chính tả, như go → goes. Nhưng một số verb có dạng riêng đã được ngôn ngữ giữ lại, như have → has và be → is. Gốc của hiện tượng là việc verb phải phù hợp với chủ ngữ; bề mặt đôi khi là quy tắc, đôi khi là dạng bất quy tắc.",
+      "explanation": "Phân biệt cơ chế phù hợp chủ ngữ với hình thức cụ thể giúp ta biết phần nào có thể suy ra và phần nào cần học như một pattern riêng.",
+      "misconception": "Biết thêm -s là đủ để chia đúng mọi verb ở hiện tại đơn.",
+      "transfer_prompt": "So sánh go → goes với have → has và nói rõ đâu là biến đổi có thể suy ra, đâu là dạng cần ghi nhớ.",
+      "prerequisite_node_ids": [],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1",
+        "human-feedback:hiep-2026-09-01",
+        "fresh-novice-audit:2026-09-01"
+      ],
+      "status": "review",
+      "author": "codex+fresh-reviewers",
+      "reviewer": null,
+      "transfer_answer": "Go → goes là một biến đổi chính tả thường gặp sau âm/chữ o khi chủ ngữ là he/she/it. Have → has là dạng bất quy tắc cần ghi nhớ; không thể chỉ lấy have rồi thêm -s.",
+      "glossary_refs": [
+        "lexical-verb",
+        "auxiliary",
+        "clause",
+        "finite-verb"
+      ],
+      "revision_of": "core-en-13",
+      "revision_reason": "beginner_self_contained_and_transfer_alignment"
+    },
+    {
+      "id": "core-en-14",
+      "track": "english",
+      "node_id": "core-en-module-02",
+      "card_type": "application",
+      "prompt": "Hãy biến ‘She works here’ thành câu hỏi và câu phủ định. Vì sao ‘work’ không còn có -s sau ‘does’?",
+      "model_answer": "Câu hỏi là ‘Does she work here?’ và phủ định là ‘She does not work here.’ ‘Does’ nhận dấu hiệu phù hợp với she và làm từ trợ giúp; vì vậy verb mang nội dung trở về dạng gốc ‘work’. Đây là do-support.",
+      "explanation": "Trong một mệnh đề, ta không cần đặt cùng một dấu hiệu ngữ pháp lên cả does và work. Dấu hiệu chuyển sang từ trợ giúp, còn verb chính giữ dạng gốc.",
+      "misconception": "Vì chủ ngữ vẫn là she nên phải viết ‘does she works’.",
+      "transfer_prompt": "Áp dụng cùng cơ chế với ‘He watches TV’: viết câu hỏi và câu phủ định.",
+      "prerequisite_node_ids": [],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1",
+        "human-feedback:hiep-2026-09-01",
+        "fresh-novice-audit:2026-09-01"
+      ],
+      "status": "review",
+      "author": "codex+fresh-reviewers",
+      "reviewer": null,
+      "transfer_answer": "‘Does he watch TV?’ và ‘He does not watch TV.’ ‘Does’ mang dấu hiệu của he; ‘watches’ trở về dạng gốc ‘watch’ sau trợ động từ.",
+      "glossary_refs": [
+        "auxiliary",
+        "lexical-verb",
+        "finite-verb",
+        "clause"
+      ],
+      "revision_of": "core-en-14",
+      "revision_reason": "beginner_self_contained_and_transfer_alignment"
+    },
+    {
+      "id": "core-en-15",
+      "track": "english",
+      "node_id": "core-en-module-02",
+      "card_type": "production",
+      "prompt": "Hãy tự tạo một cặp câu với cùng một verb: một câu verb tự mang dấu hiệu của câu, một câu có từ trợ giúp đứng trước. Sau đó nói rõ mỗi câu đang gánh dấu hiệu ở đâu.",
+      "model_answer": "Ví dụ: ‘They leave early’ có ‘leave’ vừa mang nghĩa chính vừa gánh dấu hiệu của câu. ‘They have left’ có ‘have’ là trợ động từ gánh dấu hiệu, còn ‘left’ mang nghĩa chính ở dạng khác. Cách trả lời khác vẫn đúng nếu chỉ ra được hai công việc này.",
+      "explanation": "Cặp đối chiếu buộc ta theo dõi kiến trúc verb thay vì học thuộc một định nghĩa đơn lẻ.",
+      "misconception": "Một lexical verb không bao giờ có thể tự là finite verb.",
+      "transfer_prompt": "Đổi cặp trên sang một verb khác và giữ nguyên sự khác nhau về kiến trúc.",
+      "prerequisite_node_ids": [],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1",
+        "human-feedback:hiep-2026-09-01",
+        "fresh-novice-audit:2026-09-01"
+      ],
+      "status": "review",
+      "author": "codex+fresh-reviewers",
+      "reviewer": null,
+      "transfer_answer": "‘They write reports weekly’ dùng ‘write’ vừa mang nghĩa chính vừa là finite verb. ‘They have written the report’ dùng ‘have’ làm finite auxiliary, còn ‘written’ mang nghĩa chính.",
+      "glossary_refs": [
+        "finite-verb",
+        "lexical-verb",
+        "auxiliary",
+        "tense",
+        "clause"
+      ],
+      "revision_of": "core-en-15",
+      "revision_reason": "beginner_self_contained_and_transfer_alignment"
+    },
+    {
+      "id": "core-en-16",
+      "track": "english",
+      "node_id": "core-en-module-02",
+      "card_type": "production",
+      "prompt": "Hãy giải thích cho một người mới vì sao học be/do/have theo công việc giúp sinh nhiều câu hơn học thuộc ba bảng chia riêng.",
+      "model_answer": "Mỗi từ có thể làm một công việc lặp lại trong nhiều cấu trúc: be có thể nối chủ thể với trạng thái, giúp diễn tả việc đang diễn ra hoặc giúp tạo câu bị động; do có thể giúp tạo hỏi/phủ định; have có thể giúp nhìn một việc như đã hoàn tất hoặc còn liên quan tới mốc. Sau đó ta mới học các dạng cụ thể như is, does, has.",
+      "explanation": "Một nhóm nhỏ cơ chế có thể tạo nhiều câu mới. Học công việc trước giúp ta suy luận; học dạng bất quy tắc sau giúp nói chính xác hơn.",
+      "misconception": "Học thật nhiều bảng động từ tự nó chứng minh đã hiểu cách hệ thống sinh câu.",
+      "transfer_prompt": "Chọn một trong be/do/have và nêu ba cấu trúc khác nhau mà nó có thể tham gia, kèm ví dụ ngắn.",
+      "prerequisite_node_ids": [],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1",
+        "human-feedback:hiep-2026-09-01",
+        "fresh-novice-audit:2026-09-01"
+      ],
+      "status": "review",
+      "author": "codex+fresh-reviewers",
+      "reviewer": null,
+      "transfer_answer": "Với be: ‘She is ready’ dùng be để nối người với trạng thái; ‘She is working’ dùng be để diễn tả việc đang diễn ra; ‘The door was opened’ dùng be trong câu bị động. Cùng một từ tham gia các cấu trúc khác nhau vì công việc của nó thay đổi theo môi trường.",
+      "glossary_refs": [
+        "finite-verb",
+        "lexical-verb",
+        "auxiliary",
+        "predicate",
+        "aspect"
+      ],
+      "revision_of": "core-en-16",
+      "revision_reason": "beginner_self_contained_and_transfer_alignment"
+    },
+    {
+      "id": "core-en-17",
+      "track": "english",
+      "node_id": "core-en-module-03",
+      "card_type": "core_recall",
+      "prompt": "Câu ‘You are ready’ biến thành câu hỏi ‘Are you ready?’ như thế nào? Từ nào được đưa lên trước và vì sao không cần thêm do?",
+      "model_answer": "‘Are’ là từ đang gánh dấu hiệu của câu. Khi tạo câu hỏi, ta đưa từ trợ giúp hữu hạn đó lên trước chủ thể: ‘Are you ready?’ Vì ‘be’ đã tự làm công việc trợ giúp nên không cần thêm ‘do’.",
+      "explanation": "Đảo vị trí một từ trợ giúp là một thao tác trên cấu trúc, không phải chỉ thêm dấu hỏi ở cuối câu.",
+      "misconception": "Câu hỏi nào cũng bắt đầu bằng do/does/did.",
+      "transfer_prompt": "Đổi ‘They can swim’ thành câu hỏi và chỉ ra từ đang làm công việc trợ giúp.",
+      "prerequisite_node_ids": [],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1",
+        "human-feedback:hiep-2026-09-01",
+        "fresh-novice-audit:2026-09-01"
+      ],
+      "status": "review",
+      "author": "codex+fresh-reviewers",
+      "reviewer": null,
+      "transfer_answer": "‘Can they swim?’ ‘Can’ là modal auxiliary đã mang dấu hiệu của câu, nên nó được đưa lên trước ‘they’; không thêm ‘do’.",
+      "glossary_refs": [
+        "finite-verb",
+        "auxiliary",
+        "clause"
+      ],
+      "revision_of": "core-en-17",
+      "revision_reason": "beginner_self_contained_and_transfer_alignment"
+    },
+    {
+      "id": "core-en-18",
+      "track": "english",
+      "node_id": "core-en-module-03",
+      "card_type": "mechanism",
+      "prompt": "Vì sao ‘She likes tea’ trở thành ‘Does she like tea?’ chứ không phải ‘Does she likes tea?’",
+      "model_answer": "‘Does’ đã nhận dấu hiệu hiện tại phù hợp với she và đứng làm từ trợ giúp. Vì vậy ‘like’ trở về dạng gốc; không đặt dấu hiệu hiện tại lên cả ‘does’ và ‘like’.",
+      "explanation": "Do-support cho thấy một mệnh đề chỉ cần một từ gánh dấu hiệu hình thức ở vị trí này.",
+      "misconception": "Mọi verb đi với she đều phải giữ -s, kể cả khi đã có does.",
+      "transfer_prompt": "Giải thích ‘Did she like tea?’ theo cùng cơ chế nhưng với quá khứ.",
+      "prerequisite_node_ids": [],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1",
+        "human-feedback:hiep-2026-09-01",
+        "fresh-novice-audit:2026-09-01"
+      ],
+      "status": "review",
+      "author": "codex+fresh-reviewers",
+      "reviewer": null,
+      "transfer_answer": "‘Did’ mang dấu hiệu quá khứ, nên verb chính dùng dạng gốc ‘like’. Vì vậy viết ‘Did she like tea?’, không viết ‘did she liked tea’.",
+      "glossary_refs": [
+        "auxiliary",
+        "lexical-verb",
+        "finite-verb",
+        "clause",
+        "tense"
+      ],
+      "revision_of": "core-en-18",
+      "revision_reason": "beginner_self_contained_and_transfer_alignment"
+    },
+    {
+      "id": "core-en-19",
+      "track": "english",
+      "node_id": "core-en-module-03",
+      "card_type": "mechanism",
+      "prompt": "Trong ‘I do my homework’ và ‘I do not understand’, do đang tự mang nghĩa ‘làm’ hay chỉ giúp tổ chức câu? Hãy dùng phần còn lại của mỗi câu làm bằng chứng.",
+      "model_answer": "Trong ‘I do my homework’, ‘do’ là verb chính và mang nghĩa ‘làm’. Trong ‘I do not understand’, ‘do’ chỉ là từ trợ giúp cho câu phủ định; ‘understand’ mới mang nghĩa chính. Cùng spelling có thể làm hai công việc khác nhau.",
+      "explanation": "Muốn hiểu một từ, hãy nhìn vai trò của nó trong toàn cấu trúc chứ không gắn một nghĩa cố định cho mọi lần xuất hiện.",
+      "misconception": "Do trong mọi câu đều phải dịch là ‘làm’.",
+      "transfer_prompt": "Tạo một cặp câu mới: một câu dùng do với nghĩa chính, một câu dùng do để giúp phủ định; giải thích cách nhận ra.",
+      "prerequisite_node_ids": [],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1",
+        "human-feedback:hiep-2026-09-01",
+        "fresh-novice-audit:2026-09-01"
+      ],
+      "status": "review",
+      "author": "codex+fresh-reviewers",
+      "reviewer": null,
+      "transfer_answer": "‘I do the dishes’ dùng ‘do’ với nghĩa làm và nó là verb chính. ‘I do not remember the name’ dùng ‘do’ làm trợ động từ cho phủ định; ‘remember’ mang nghĩa chính.",
+      "glossary_refs": [
+        "clause",
+        "auxiliary",
+        "lexical-verb",
+        "subject"
+      ],
+      "revision_of": "core-en-19",
+      "revision_reason": "beginner_self_contained_and_transfer_alignment"
+    },
+    {
+      "id": "core-en-20",
+      "track": "english",
+      "node_id": "core-en-module-03",
+      "card_type": "contrast",
+      "prompt": "Phủ định ‘She is ready’, ‘She has left’ và ‘She works here’ khác nhau ở đâu? Hãy tìm từ trợ giúp trước khi đặt not.",
+      "model_answer": "Nếu câu đã có ‘be’ hoặc một trợ động từ như ‘have’, đặt ‘not’ ngay sau từ đó: ‘She is not ready’, ‘She has not left’. Nếu câu chỉ có verb chính ‘works’, thêm ‘does’ rồi đặt ‘not’: ‘She does not work here’.",
+      "explanation": "Quy trình là tìm từ đã có thể gánh phủ định trước; chỉ dùng do-support khi câu chưa có từ trợ giúp phù hợp.",
+      "misconception": "Mọi câu phủ định đều phải dùng do not.",
+      "transfer_prompt": "Viết phủ định cho ‘They can help’ và ‘They help’, rồi giải thích vì sao hai câu dùng hai cơ chế khác nhau.",
+      "prerequisite_node_ids": [],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1",
+        "human-feedback:hiep-2026-09-01",
+        "fresh-novice-audit:2026-09-01"
+      ],
+      "status": "review",
+      "author": "codex+fresh-reviewers",
+      "reviewer": null,
+      "transfer_answer": "‘They cannot help’ đặt not sau modal ‘can’, vì can đã là trợ động từ. ‘They do not help’ thêm ‘do’ vì ‘help’ là verb chính và câu chưa có trợ động từ để mang phủ định.",
+      "glossary_refs": [
+        "clause",
+        "auxiliary",
+        "lexical-verb",
+        "finite-verb"
+      ],
+      "revision_of": "core-en-20",
+      "revision_reason": "beginner_self_contained_and_transfer_alignment"
+    },
+    {
+      "id": "core-en-21",
+      "track": "english",
+      "node_id": "core-en-module-03",
+      "card_type": "boundary",
+      "prompt": "Vì sao ‘Who called you?’ không cần do nhưng ‘Who did you call?’ lại cần did? Hãy xác định câu hỏi đang hỏi người làm hay người nhận tác động.",
+      "model_answer": "Trong ‘Who called you?’, who là người làm việc gọi, tức subject đang được hỏi; không cần thêm do. Trong ‘Who did you call?’, ‘you’ là người làm, còn who là người nhận cuộc gọi, tức object; ‘did’ giúp tạo câu hỏi và ‘call’ dùng dạng gốc.",
+      "explanation": "Cách tạo wh-question phụ thuộc vào thành phần bị hỏi. Không nên biến quy tắc của câu hỏi object thành công thức cho mọi câu hỏi.",
+      "misconception": "Mọi câu hỏi bắt đầu bằng who/what đều phải có do/does/did.",
+      "transfer_prompt": "Tạo một câu hỏi hỏi người làm và một câu hỏi hỏi thứ chịu tác động từ câu ‘Hoàng sent the message’.",
+      "prerequisite_node_ids": [],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1",
+        "human-feedback:hiep-2026-09-01",
+        "fresh-novice-audit:2026-09-01"
+      ],
+      "status": "review",
+      "author": "codex+fresh-reviewers",
+      "reviewer": null,
+      "transfer_answer": "Hỏi người làm: ‘Who sent the message?’ — who là subject nên không cần do. Hỏi thứ được gửi: ‘What did Hoàng send?’ — Hoàng là người làm, what là object, nên dùng did và để ‘send’ ở dạng gốc.",
+      "glossary_refs": [
+        "auxiliary",
+        "lexical-verb",
+        "finite-verb",
+        "subject",
+        "object",
+        "clause"
+      ],
+      "revision_of": "core-en-21",
+      "revision_reason": "beginner_self_contained_and_transfer_alignment"
+    },
+    {
+      "id": "core-en-22",
+      "track": "english",
+      "node_id": "core-en-module-03",
+      "card_type": "application",
+      "prompt": "Hãy biến ‘She has been waiting’ thành câu hỏi và câu phủ định mà không phá chuỗi ‘has been waiting’. Từ nào di chuyển hoặc nhận not?",
+      "model_answer": "‘Has’ là từ trợ giúp đầu tiên đang gánh dấu hiệu của câu. Đưa nó lên trước chủ thể để hỏi: ‘Has she been waiting?’; đặt not sau nó để phủ định: ‘She has not been waiting’. Giữ nguyên phần ‘been waiting’.",
+      "explanation": "Khi câu đã có chuỗi trợ động từ, ta thao tác với từ đầu tiên phù hợp thay vì thêm do hoặc đổi mọi verb còn lại.",
+      "misconception": "Vì là câu hỏi nên phải viết ‘Does she have been waiting?’ hoặc đổi ‘waiting’ thành dạng khác.",
+      "transfer_prompt": "Làm tương tự với ‘They have finished the work’: viết câu hỏi và câu phủ định.",
+      "prerequisite_node_ids": [
+        "core-en-module-02"
+      ],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1",
+        "human-feedback:hiep-2026-09-01",
+        "fresh-novice-audit:2026-09-01"
+      ],
+      "status": "review",
+      "author": "codex+fresh-reviewers",
+      "reviewer": null,
+      "transfer_answer": "‘Have they finished the work?’ và ‘They have not finished the work.’ ‘Have’ được đưa lên trước ‘they’ hoặc nhận ‘not’; ‘finished the work’ giữ nguyên.",
+      "glossary_refs": [
+        "auxiliary",
+        "clause",
+        "aspect",
+        "finite-verb"
+      ],
+      "revision_of": "core-en-22",
+      "revision_reason": "beginner_self_contained_and_transfer_alignment"
+    },
+    {
+      "id": "core-en-23",
+      "track": "english",
+      "node_id": "core-en-module-03",
+      "card_type": "production",
+      "prompt": "Hãy tạo ba câu về lịch học của bạn: một câu nói thông tin, một câu hỏi và một câu phủ định. Nói rõ từ nào đang giúp tổ chức câu hỏi hoặc phủ định.",
+      "model_answer": "Ví dụ: ‘I study at night.’, ‘Do I study at night?’, ‘I do not study at night.’ Trong hai câu biến đổi, ‘do’ là từ trợ giúp; ‘study’ mang nghĩa học và giữ dạng gốc. Một bộ câu khác vẫn đúng nếu giữ nguyên ý và cơ chế.",
+      "explanation": "Ba dạng liên tiếp cho thấy câu hỏi và phủ định là các thao tác trên cùng một mệnh đề, không chỉ là đổi dấu câu.",
+      "misconception": "Chỉ cần đổi dấu chấm thành dấu hỏi là đã tạo câu hỏi tiếng Anh.",
+      "transfer_prompt": "Lặp lại với một câu dùng be hoặc modal để cho thấy khi nào do biến mất.",
+      "prerequisite_node_ids": [],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1",
+        "human-feedback:hiep-2026-09-01",
+        "fresh-novice-audit:2026-09-01"
+      ],
+      "status": "review",
+      "author": "codex+fresh-reviewers",
+      "reviewer": null,
+      "transfer_answer": "Với be: ‘I am free tonight.’, ‘Am I free tonight?’, ‘I am not free tonight.’ ‘Am’ tự mang thông tin ngữ pháp nên được đảo hoặc nhận not; không cần do.",
+      "glossary_refs": [
+        "clause",
+        "subject",
+        "object",
+        "auxiliary",
+        "finite-verb"
+      ],
+      "revision_of": "core-en-23",
+      "revision_reason": "beginner_self_contained_and_transfer_alignment"
+    },
+    {
+      "id": "core-en-24",
+      "track": "english",
+      "node_id": "core-en-module-03",
+      "card_type": "production",
+      "prompt": "Từ câu khẳng định ‘Hoàng sent the message’, hãy tạo một câu hỏi hỏi người gửi và một câu hỏi hỏi thứ được gửi. Giải thích vì sao hai câu không dùng cùng một thao tác.",
+      "model_answer": "Câu hỏi là thao tác xác định phần thông tin cần lấy rồi sắp xếp phần trợ giúp phù hợp. Hỏi người gửi: ‘Who sent the message?’; hỏi thứ được gửi: ‘What did Hoàng send?’ Câu thứ hai cần did vì subject Hoàng vẫn còn trong câu và object what được hỏi.",
+      "explanation": "Wh-word, vị trí thành phần được hỏi và từ trợ giúp cùng làm việc. Thêm what/why vào đầu một câu bất kỳ chưa đủ để tạo câu hỏi đúng.",
+      "misconception": "Chỉ cần đặt who/what/why ở đầu câu là mọi câu hỏi sẽ đúng.",
+      "transfer_prompt": "Tạo một wh-question hỏi subject và một wh-question hỏi object từ một câu mới của bạn; chỉ ra điểm khác nhau.",
+      "prerequisite_node_ids": [],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1",
+        "human-feedback:hiep-2026-09-01",
+        "fresh-novice-audit:2026-09-01"
+      ],
+      "status": "review",
+      "author": "codex+fresh-reviewers",
+      "reviewer": null,
+      "transfer_answer": "Ví dụ: ‘Lan opened the window.’ Hỏi subject: ‘Who opened the window?’ — who là người làm nên không cần do. Hỏi object: ‘What did Lan open?’ — Lan là người làm, what là object, nên cần did và ‘open’ ở dạng gốc.",
+      "glossary_refs": [
+        "clause",
+        "auxiliary",
+        "finite-verb",
+        "subject",
+        "object"
+      ],
+      "revision_of": "core-en-24",
+      "revision_reason": "beginner_self_contained_and_transfer_alignment"
+    },
+    {
+      "id": "core-en-25",
+      "track": "english",
+      "node_id": "core-en-module-04",
+      "card_type": "core_recall",
+      "prompt": "Tense, aspect và modality trả lời ba câu hỏi khác nhau nào? Hãy phân tích ‘They must have left’ bằng lời dễ hiểu trước khi dùng tên thuật ngữ.",
+      "model_answer": "Tense liên quan tới hình thức định vị câu quanh mốc nói; aspect cho biết ta nhìn sự việc như thế nào; modality cho biết mức chắc chắn, khả năng hoặc nghĩa vụ. Trong ‘They must have left’, ‘must’ cho thấy người nói suy luận khá chắc, còn ‘have left’ nhìn việc rời đi như đã xảy ra trước mốc đang nói.",
+      "explanation": "Tách ba lớp giúp ta không gọi mọi chuỗi trợ động từ là một ‘thì’ riêng phải học thuộc.",
+      "misconception": "Must trong ‘must have left’ nhất thiết là mệnh lệnh, hoặc mọi từ trong chuỗi đều chỉ cùng một loại thời gian.",
+      "transfer_prompt": "Phân tích ‘They must have left’ thành thông tin về mức chắc chắn và thông tin về việc xảy ra trước mốc nói.",
+      "prerequisite_node_ids": [
+        "core-en-module-02"
+      ],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1",
+        "human-feedback:hiep-2026-09-01",
+        "fresh-novice-audit:2026-09-01"
+      ],
+      "status": "review",
+      "author": "codex+fresh-reviewers",
+      "reviewer": null,
+      "transfer_answer": "Ở đây ‘must’ là suy luận mạnh (‘chắc là họ đã rời đi’), không phải mệnh lệnh. ‘Have left’ đặt việc rời đi trước mốc hiện tại; hai phần đóng góp hai loại thông tin khác nhau.",
+      "glossary_refs": [
+        "tense",
+        "aspect",
+        "modality",
+        "clause",
+        "auxiliary"
+      ],
+      "revision_of": "core-en-25",
+      "revision_reason": "beginner_self_contained_and_transfer_alignment"
+    },
+    {
+      "id": "core-en-26",
+      "track": "english",
+      "node_id": "core-en-module-04",
+      "card_type": "mechanism",
+      "prompt": "Vì sao dạng past không phải lúc nào cũng có nghĩa ‘việc chắc chắn đã xảy ra trong quá khứ’? Hãy đọc câu ‘If I knew the answer, I would tell you’ trong một tình huống hiện tại.",
+      "model_answer": "Dạng present/past là hình thức ngữ pháp, nhưng nghĩa còn phụ thuộc cấu trúc và ngữ cảnh. Trong ‘If I knew the answer, I would tell you’, ‘knew’ có hình thức past nhưng nói về điều người nói hiện không biết và đang giả định xa thực tế; nó không kể một lần biết trong quá khứ.",
+      "explanation": "Không nên đọc một hình thức verb như một bản dịch thời gian duy nhất. Hình thức past đôi khi biểu thị khoảng cách giả định hoặc thái độ.",
+      "misconception": "Hễ thấy past form thì sự việc chắc chắn đã xảy ra trước đây.",
+      "transfer_prompt": "Giải thích bằng một câu tiếng Việt vì sao ‘knew’ trong ‘If I knew the answer, I would tell you’ không đơn giản nghĩa là ‘đã biết’.",
+      "prerequisite_node_ids": [],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1",
+        "human-feedback:hiep-2026-09-01",
+        "fresh-novice-audit:2026-09-01"
+      ],
+      "status": "review",
+      "author": "codex+fresh-reviewers",
+      "reviewer": null,
+      "transfer_answer": "Người nói đang ở hiện tại và thực tế không biết đáp án; họ chỉ giả định ‘nếu tôi biết thì tôi sẽ nói’. Vì vậy ‘knew’ tạo khoảng cách giả định, không đặt một sự kiện biết cụ thể vào quá khứ.",
+      "glossary_refs": [
+        "tense",
+        "modality",
+        "clause"
+      ],
+      "revision_of": "core-en-26",
+      "revision_reason": "beginner_self_contained_and_transfer_alignment"
+    },
+    {
+      "id": "core-en-27",
+      "track": "english",
+      "node_id": "core-en-module-04",
+      "card_type": "mechanism",
+      "prompt": "So sánh ba cách nhìn: một việc đã xảy ra, một việc đang diễn ra khi việc khác xảy ra, và một việc đã xong trước một mốc quá khứ khác. Dùng ‘I read’, ‘I was reading’ và ‘I had read’.",
+      "model_answer": "‘I read the report yesterday’ kể một việc quá khứ như một sự kiện. ‘I was reading it when you called’ nhìn vào phần đang diễn ra tại lúc bạn gọi. ‘I had read it before the meeting began’ nhìn việc đọc như đã hoàn tất trước một mốc quá khứ khác. Đây là khác nhau về góc nhìn (aspect), không chỉ đổi từ chỉ thời gian.",
+      "explanation": "Aspect chọn cách đóng khung bên trong hoặc quan hệ trước–sau của sự việc; nó không phải lúc nào cũng nói việc kéo dài hay vừa kết thúc.",
+      "misconception": "Progressive luôn chỉ việc kéo dài, còn perfect luôn chỉ việc vừa mới kết thúc.",
+      "transfer_prompt": "Chọn một việc khác và tạo ba câu tương ứng với: sự kiện đã xảy ra, đang diễn ra khi việc khác xảy ra, và đã xong trước một mốc quá khứ.",
+      "prerequisite_node_ids": [],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1",
+        "human-feedback:hiep-2026-09-01",
+        "fresh-novice-audit:2026-09-01"
+      ],
+      "status": "review",
+      "author": "codex+fresh-reviewers",
+      "reviewer": null,
+      "transfer_answer": "Ví dụ: ‘I cooked dinner last night’ kể sự kiện; ‘I was cooking dinner when Hoàng arrived’ nhìn việc đang diễn ra lúc Hoàng đến; ‘I had cooked dinner before the guests arrived’ đặt việc nấu xong trước mốc khách đến.",
+      "glossary_refs": [
+        "tense",
+        "aspect",
+        "clause"
+      ],
+      "revision_of": "core-en-27",
+      "revision_reason": "beginner_self_contained_and_transfer_alignment"
+    },
+    {
+      "id": "core-en-28",
+      "track": "english",
+      "node_id": "core-en-module-04",
+      "card_type": "contrast",
+      "prompt": "So sánh ‘I will call’, ‘I am going to call’ và ‘I am calling her tonight’ qua ba tình huống: quyết định ngay lúc nói, ý định/bằng chứng hiện tại, và lịch hẹn đã sắp xếp.",
+      "model_answer": "‘Will’ thường hợp với quyết định vừa đưa ra hoặc dự đoán. ‘Be going to’ thường gắn với ý định đã có hoặc bằng chứng hiện tại. Present progressive như ‘I am calling her tonight’ hợp khi việc đã được sắp xếp. Đây là các construction khác nhau, không phải ba câu luôn thay thế được cho nhau.",
+      "explanation": "Tiếng Anh diễn đạt tương lai bằng nhiều nguồn tín hiệu: thái độ của người nói, bằng chứng, ý định và lịch trình.",
+      "misconception": "Chỉ cần có trạng từ tương lai thì will, going to và present progressive luôn có cùng sắc thái.",
+      "transfer_prompt": "Bạn đã đặt lịch với bác sĩ vào thứ Sáu. Chọn construction tự nhiên và nói vì sao.",
+      "prerequisite_node_ids": [],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1",
+        "human-feedback:hiep-2026-09-01",
+        "fresh-novice-audit:2026-09-01"
+      ],
+      "status": "review",
+      "author": "codex+fresh-reviewers",
+      "reviewer": null,
+      "transfer_answer": "‘I am seeing the doctor on Friday.’ Present progressive tự nhiên vì đây là một lịch hẹn đã được sắp xếp, không chỉ là dự đoán hay ý định mơ hồ.",
+      "glossary_refs": [
+        "tense",
+        "modality",
+        "aspect",
+        "clause"
+      ],
+      "revision_of": "core-en-28",
+      "revision_reason": "beginner_self_contained_and_transfer_alignment"
+    },
+    {
+      "id": "core-en-29",
+      "track": "english",
+      "node_id": "core-en-module-04",
+      "card_type": "boundary",
+      "prompt": "Vì sao bảng ‘3 thời điểm × 4 dạng = 12 thì’ hữu ích để nhìn mẫu nhưng không phải bản chất đầy đủ của tiếng Anh? Hãy bắt đầu bằng câu ‘She has left’.",
+      "model_answer": "Bảng giúp nhìn một số hình thức kết hợp, nhưng không tách rõ tense, aspect, modality và ngữ cảnh. Trong ‘She has left’, ‘has’ mang hình thức present và kết hợp với dạng V3 ‘left’ để tạo perfect; việc câu nhấn vào kết quả hiện tại hay chỉ một sự kiện trước đó còn tùy context.",
+      "explanation": "Bảng là bản đồ ôn tập, không phải danh sách 12 hộp nghĩa độc lập. Phân tích cơ chế giúp ta suy ra câu mới và thấy giới hạn của bảng.",
+      "misconception": "Mỗi ô trong bảng 12 thì có một nghĩa cố định, dùng được không cần ngữ cảnh.",
+      "transfer_prompt": "Lấy một cấu trúc bạn từng gọi là một ‘thì’ và mô tả riêng hình thức tense, góc nhìn aspect và ý nghĩa do context tạo ra.",
+      "prerequisite_node_ids": [],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1",
+        "human-feedback:hiep-2026-09-01",
+        "fresh-novice-audit:2026-09-01"
+      ],
+      "status": "review",
+      "author": "codex+fresh-reviewers",
+      "reviewer": null,
+      "transfer_answer": "Ví dụ ‘She has left’: ‘has’ mang hình thức present; ‘has + left’ tạo perfect, tức nhìn việc rời đi như đã xảy ra trước mốc hiện tại; context quyết định người nói đang nhấn vào kết quả còn liên quan hay chỉ thông báo việc đã xảy ra.",
+      "glossary_refs": [
+        "tense",
+        "aspect",
+        "modality",
+        "auxiliary",
+        "clause"
+      ],
+      "revision_of": "core-en-29",
+      "revision_reason": "beginner_self_contained_and_transfer_alignment"
+    },
+    {
+      "id": "core-en-30",
+      "track": "english",
+      "node_id": "core-en-module-04",
+      "card_type": "application",
+      "prompt": "Phân tích ‘She may have been waiting for an hour’ theo từng lớp: mức chắc chắn, việc xảy ra trước mốc nói, và việc đang diễn tiến. Đừng coi cả chuỗi là một nhãn duy nhất.",
+      "model_answer": "‘May’ cho biết người nói chỉ nêu khả năng. ‘Have’ nhìn sự việc từ một mốc sau đó; ‘been waiting’ cho thấy việc chờ đang diễn tiến. Toàn câu nói rằng có khả năng cô ấy đã ở trong quá trình chờ suốt một giờ tính tới mốc được nói tới.",
+      "explanation": "Đọc chuỗi trợ động từ theo từng lớp giúp ta xử lý câu dài bằng các cơ chế nhỏ thay vì học thêm một tên ‘thì’ mới.",
+      "misconception": "Mọi trợ động từ trong chuỗi đều chỉ cùng một loại thời gian và không thể tách riêng.",
+      "transfer_prompt": "Phân tích ‘They must have forgotten’ theo cùng cách: người nói chắc đến đâu và việc quên nằm trước mốc nào?",
+      "prerequisite_node_ids": [
+        "core-en-module-02"
+      ],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1",
+        "human-feedback:hiep-2026-09-01",
+        "fresh-novice-audit:2026-09-01"
+      ],
+      "status": "review",
+      "author": "codex+fresh-reviewers",
+      "reviewer": null,
+      "transfer_answer": "‘Must’ cho thấy người nói suy luận khá chắc, không phải ra lệnh. ‘Have forgotten’ đặt việc quên trước mốc hiện tại; toàn câu có nghĩa ‘chắc là họ đã quên’.",
+      "glossary_refs": [
+        "tense",
+        "aspect",
+        "modality",
+        "auxiliary",
+        "clause"
+      ],
+      "revision_of": "core-en-30",
+      "revision_reason": "beginner_self_contained_and_transfer_alignment"
+    },
+    {
+      "id": "core-en-31",
+      "track": "english",
+      "node_id": "core-en-module-04",
+      "card_type": "production",
+      "prompt": "Tạo ba câu về việc học tiếng Anh: một thói quen, một việc đang diễn ra ngay lúc nói, và một việc đã kéo dài đến hiện tại. Đừng gọi câu thứ ba là ‘kinh nghiệm’ nếu bạn đang nói về khoảng thời gian.",
+      "model_answer": "Ví dụ: ‘I study English every day’ nói thói quen; ‘I am studying English now’ nói việc đang diễn ra; ‘I have studied English for two years’ nói việc bắt đầu trước đây và kéo dài đến hiện tại. Nếu muốn nói kinh nghiệm, dùng ‘I have studied English before’.",
+      "explanation": "Giữ cùng nội dung nhưng đổi góc nhìn giúp nối hình thức với ý định giao tiếp. ‘For two years’ là duration/khoảng thời gian; experience là một cách dùng khác của perfect.",
+      "misconception": "Mọi câu have + V3 đều có nghĩa kinh nghiệm, hoặc chỉ cần đổi trạng từ thời gian là verb form nào cũng được.",
+      "transfer_prompt": "Đổi cả ba câu sang một chủ thể khác và kiểm tra từ nào đang gánh dấu hiệu của câu.",
+      "prerequisite_node_ids": [],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1",
+        "human-feedback:hiep-2026-09-01",
+        "fresh-novice-audit:2026-09-01"
+      ],
+      "status": "review",
+      "author": "codex+fresh-reviewers",
+      "reviewer": null,
+      "transfer_answer": "‘She studies English every day’, ‘She is studying English now’, ‘She has studied English for two years.’ Từ gánh dấu hiệu lần lượt là ‘studies’, ‘is’ và ‘has’; câu thứ ba vẫn nói về khoảng thời gian kéo dài, không tự động có nghĩa experience.",
+      "glossary_refs": [
+        "auxiliary",
+        "tense",
+        "aspect",
+        "modality",
+        "finite-verb"
+      ],
+      "revision_of": "core-en-31",
+      "revision_reason": "beginner_self_contained_and_transfer_alignment"
+    },
+    {
+      "id": "core-en-32",
+      "track": "english",
+      "node_id": "core-en-module-04",
+      "card_type": "production",
+      "prompt": "Vì sao ‘Could you open the window?’ dùng dạng could nhưng không kể chuyện quá khứ? Hãy so sánh nó với ‘Can you open the window?’ trong một tình huống cụ thể.",
+      "model_answer": "Trong lời yêu cầu, ‘could’ thường tạo khoảng cách nhẹ và làm câu bớt trực tiếp; nó không nhất thiết định vị việc mở cửa sổ ở quá khứ. ‘Can’ thường trực tiếp hơn. Sắc thái thực tế còn phụ thuộc quan hệ, giọng nói và tình huống, nên could không phải công thức luôn lịch sự hơn.",
+      "explanation": "Dạng past đôi khi biểu thị khoảng cách về thái độ hoặc độ trực tiếp, không chỉ khoảng cách thời gian.",
+      "misconception": "Could luôn chỉ khả năng trong quá khứ hoặc luôn lịch sự hơn can trong mọi hoàn cảnh.",
+      "transfer_prompt": "Tạo một cặp yêu cầu với can/could và mô tả khác biệt về sắc thái trong một bối cảnh rõ ràng.",
+      "prerequisite_node_ids": [],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1",
+        "human-feedback:hiep-2026-09-01",
+        "fresh-novice-audit:2026-09-01"
+      ],
+      "status": "review",
+      "author": "codex+fresh-reviewers",
+      "reviewer": null,
+      "transfer_answer": "Với bạn thân: ‘Can you help me?’ nghe trực tiếp và tự nhiên. Với khách hàng hoặc người chưa thân: ‘Could you help me?’ thường tạo khoảng cách và mềm hơn. Đây là xu hướng theo context, không phải luật tuyệt đối.",
+      "glossary_refs": [
+        "tense",
+        "modality",
+        "clause",
+        "auxiliary"
+      ],
+      "revision_of": "core-en-32",
+      "revision_reason": "beginner_self_contained_and_transfer_alignment"
+    },
+    {
+      "id": "core-en-33",
+      "track": "english",
+      "node_id": "core-en-module-05",
+      "card_type": "core_recall",
+      "prompt": "Trong ‘those two old books on the shelf’, từ nào là danh từ chính? Các phần còn lại giúp người nghe biết thêm cái nào, bao nhiêu, đặc điểm gì và ở đâu?",
+      "model_answer": "‘Books’ là danh từ chính của cả cụm. ‘Those’ giúp người nghe xác định nhóm nào, ‘two’ cho biết số lượng, ‘old’ mô tả đặc điểm, và ‘on the shelf’ thu hẹp bằng nơi chốn. Cả nhóm cùng làm một noun phrase, không chỉ riêng từ books.",
+      "explanation": "Nhìn noun phrase như một hệ thống xác định đối tượng giúp ta hiểu vì sao các từ xung quanh danh từ ảnh hưởng trực tiếp đến nghĩa.",
+      "misconception": "Chỉ danh từ chính quyết định toàn bộ nghĩa; các từ xung quanh chỉ là phần trang trí.",
+      "transfer_prompt": "Tạo một noun phrase có từ chính ‘student’ và ít nhất hai lớp thông tin để người nghe nhận đúng người.",
+      "prerequisite_node_ids": [
+        "core-en-module-01"
+      ],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1",
+        "human-feedback:hiep-2026-09-01",
+        "fresh-novice-audit:2026-09-01"
+      ],
+      "status": "review",
+      "author": "codex+fresh-reviewers",
+      "reviewer": null,
+      "transfer_answer": "‘Those two diligent students in the front row’: ‘students’ là từ chính; ‘those’ và ‘two’ xác định nhóm và số lượng, ‘diligent’ mô tả, còn ‘in the front row’ giúp nhận đúng nhóm người.",
+      "glossary_refs": [
+        "noun-phrase",
+        "modifier",
+        "reference",
+        "determiner"
+      ],
+      "revision_of": "core-en-33",
+      "revision_reason": "beginner_self_contained_and_transfer_alignment"
+    },
+    {
+      "id": "core-en-34",
+      "track": "english",
+      "node_id": "core-en-module-05",
+      "card_type": "mechanism",
+      "prompt": "Trong ‘a surprisingly useful idea’, từ nào là danh từ chính? ‘a’, ‘useful’ và ‘surprisingly’ mỗi phần giúp người nghe hiểu cụm như thế nào?",
+      "model_answer": "‘Idea’ là danh từ chính. ‘A’ giới thiệu một ý tưởng chưa được xác định cụ thể; ‘useful’ mô tả ý tưởng; ‘surprisingly’ bổ sung mức độ bất ngờ cho mô tả ‘useful’. Các phần còn lại phụ thuộc vào từ chính để tạo một noun phrase hoàn chỉnh.",
+      "explanation": "Tìm từ chính trước rồi xem từng phần bổ sung làm rõ đối tượng ra sao sẽ dễ hơn đọc cụm dài như một chuỗi ngang.",
+      "misconception": "Từ đầu tiên của noun phrase luôn là danh từ chính.",
+      "transfer_prompt": "Tìm từ chính và các phần bổ sung trong ‘the three messages from Hoàng’.",
+      "prerequisite_node_ids": [],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1",
+        "human-feedback:hiep-2026-09-01",
+        "fresh-novice-audit:2026-09-01"
+      ],
+      "status": "review",
+      "author": "codex+fresh-reviewers",
+      "reviewer": null,
+      "transfer_answer": "‘Messages’ là danh từ chính. ‘The’ cho biết nhóm đã xác định, ‘three’ cho biết số lượng, và ‘from Hoàng’ thu hẹp nguồn của các tin nhắn.",
+      "glossary_refs": [
+        "noun-phrase",
+        "determiner",
+        "modifier",
+        "reference"
+      ],
+      "revision_of": "core-en-34",
+      "revision_reason": "beginner_self_contained_and_transfer_alignment"
+    },
+    {
+      "id": "core-en-35",
+      "track": "english",
+      "node_id": "core-en-module-05",
+      "card_type": "mechanism",
+      "prompt": "Cùng một spelling có thể được đóng gói như một đơn vị đếm được hoặc như chất liệu. Hãy dùng ‘chicken’ để giải thích sự khác nhau giữa ‘a chicken’ và ‘some chicken’.",
+      "model_answer": "‘A chicken’ nói về một con gà, tức một cá thể có thể đếm. ‘Some chicken’ thường nói về thịt gà như một chất liệu/thức ăn, không chia thành từng con trong ý đang nói. Cách đi kèm thay đổi vì meaning đang được chọn thay đổi.",
+      "explanation": "Không nên dán nhãn cố định cho spelling. Hãy hỏi người nói đang nói về một đơn vị hay một lượng/chất liệu, rồi chọn noun phrase và determiner phù hợp.",
+      "misconception": "Một noun đã từng xuất hiện như không đếm được thì không bao giờ có thể đi với a/an.",
+      "transfer_prompt": "Giải thích hai cách đóng gói ‘paper’ trong ‘a paper’ và ‘some paper’.",
+      "prerequisite_node_ids": [],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1",
+        "human-feedback:hiep-2026-09-01",
+        "fresh-novice-audit:2026-09-01"
+      ],
+      "status": "review",
+      "author": "codex+fresh-reviewers",
+      "reviewer": null,
+      "transfer_answer": "‘A paper’ có thể là một bài báo hoặc bài luận, tức một sản phẩm đếm được. ‘Some paper’ là giấy như vật liệu, không nói tới từng tờ cụ thể.",
+      "glossary_refs": [
+        "determiner",
+        "noun-phrase",
+        "reference"
+      ],
+      "revision_of": "core-en-35",
+      "revision_reason": "beginner_self_contained_and_transfer_alignment"
+    },
+    {
+      "id": "core-en-36",
+      "track": "english",
+      "node_id": "core-en-module-05",
+      "card_type": "contrast",
+      "prompt": "Đối chiếu ‘I saw a dog’ và ‘The dog followed me’: vì sao từ đứng trước dog đổi dù vẫn nói về cùng một con chó?",
+      "model_answer": "‘A dog’ giới thiệu một con chó mà người nghe chưa biết con nào. Sau khi con chó đã xuất hiện trong mạch câu, ‘the dog’ giúp người nghe nhận ra ta đang nhắc lại đúng con đó. Từ đứng trước noun là determiner; nó thể hiện cách người nói muốn người nghe xác định đối tượng.",
+      "explanation": "Reference nối các câu với nhau. A/the không chỉ tương ứng máy móc với ‘một/cái’; chúng phản ánh trạng thái thông tin giữa người nói và người nghe.",
+      "misconception": "The chỉ dùng cho vật duy nhất trên thế giới, còn a luôn chỉ đúng số lượng một trong mọi ngữ cảnh.",
+      "transfer_prompt": "Viết hai câu: câu đầu giới thiệu một cuốn sách, câu sau nhắc lại đúng cuốn sách đó bằng a/the.",
+      "prerequisite_node_ids": [],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1",
+        "human-feedback:hiep-2026-09-01",
+        "fresh-novice-audit:2026-09-01"
+      ],
+      "status": "review",
+      "author": "codex+fresh-reviewers",
+      "reviewer": null,
+      "transfer_answer": "‘I found a useful book yesterday. The book explains English clauses clearly.’ ‘A book’ giới thiệu một cuốn chưa được xác định; ‘the book’ nhắc lại cuốn mà cả hai bên giờ nhận ra.",
+      "glossary_refs": [
+        "determiner",
+        "reference",
+        "discourse",
+        "noun-phrase"
+      ],
+      "revision_of": "core-en-36",
+      "revision_reason": "beginner_self_contained_and_transfer_alignment"
+    },
+    {
+      "id": "core-en-37",
+      "track": "english",
+      "node_id": "core-en-module-05",
+      "card_type": "boundary",
+      "prompt": "Vì sao ‘Dogs are social animals’ và ‘The dogs are outside’ không dùng cùng cách xác định danh từ? Hãy phân biệt nói về loài nói chung với một nhóm cụ thể.",
+      "model_answer": "‘Dogs’ không có từ hạn định vì câu nói khái quát về loài chó nói chung. ‘The dogs’ có ‘the’ vì người nói muốn người nghe nhận ra một nhóm chó cụ thể trong ngữ cảnh. Không dùng từ hạn định cũng là một lựa chọn có ý nghĩa, không phải quên viết.",
+      "explanation": "Cách xác định noun phrase phụ thuộc số lượng, meaning và việc người nghe có thể nhận ra nhóm nào hay không.",
+      "misconception": "Noun số nhiều luôn không có article, hoặc zero article chỉ là bỏ sót mạo từ.",
+      "transfer_prompt": "Tạo một cặp câu: một câu nói khái quát về một loài/nhóm và một câu nói về nhóm cụ thể mà người nghe nhận ra được.",
+      "prerequisite_node_ids": [],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1",
+        "human-feedback:hiep-2026-09-01",
+        "fresh-novice-audit:2026-09-01"
+      ],
+      "status": "review",
+      "author": "codex+fresh-reviewers",
+      "reviewer": null,
+      "transfer_answer": "‘Books can open new worlds’ nói khái quát về sách. ‘The books on my desk are new’ nói về nhóm sách cụ thể trên bàn của tôi.",
+      "glossary_refs": [
+        "determiner",
+        "noun-phrase",
+        "reference",
+        "discourse"
+      ],
+      "revision_of": "core-en-37",
+      "revision_reason": "beginner_self_contained_and_transfer_alignment"
+    },
+    {
+      "id": "core-en-38",
+      "track": "english",
+      "node_id": "core-en-module-05",
+      "card_type": "application",
+      "prompt": "Bạn muốn mời ai đó uống một ít trà, rồi muốn hỏi trung tính xem họ có trà hay không. Vì sao hai câu tự nhiên là ‘Would you like some tea?’ và ‘Do you have any tea?’",
+      "model_answer": "‘Some’ hợp với lời mời vì người nói đang đề nghị một lượng trà như một khả năng có sẵn. ‘Any’ hợp với câu hỏi trung tính vì người hỏi chưa giả định rằng trà có sẵn. Cả hai từ đều giúp xác định cách ta đang nói về noun ‘tea’.",
+      "explanation": "Chọn từ hạn định bắt đầu từ mục đích giao tiếp và kỳ vọng về đối tượng, không chỉ từ việc câu là khẳng định hay câu hỏi.",
+      "misconception": "Any chỉ được dùng trong câu phủ định, còn some chỉ được dùng trong câu khẳng định.",
+      "transfer_prompt": "Tạo một lời mời tự nhiên dùng some và một câu hỏi trung tính dùng any với một noun khác.",
+      "prerequisite_node_ids": [
+        "core-en-module-03"
+      ],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1",
+        "human-feedback:hiep-2026-09-01",
+        "fresh-novice-audit:2026-09-01"
+      ],
+      "status": "review",
+      "author": "codex+fresh-reviewers",
+      "reviewer": null,
+      "transfer_answer": "‘Would you like some coffee?’ là lời mời dùng some. ‘Do you have any coffee?’ là câu hỏi trung tính dùng any khi người nói chưa biết có cà phê hay không.",
+      "glossary_refs": [
+        "determiner",
+        "noun-phrase",
+        "reference",
+        "clause"
+      ],
+      "revision_of": "core-en-38",
+      "revision_reason": "beginner_self_contained_and_transfer_alignment"
+    },
+    {
+      "id": "core-en-39",
+      "track": "english",
+      "node_id": "core-en-module-05",
+      "card_type": "production",
+      "prompt": "Hãy sửa ‘Please close door’ theo hai bối cảnh: chỉ có một cánh cửa mà cả hai đều nhận ra, và có nhiều cánh cửa nhưng người nói cho phép chọn bất kỳ cánh nào.",
+      "model_answer": "Nếu cả hai nhận ra một cánh cửa cụ thể, nói ‘Please close the door’. Nếu nhiều cánh cửa đều có thể được chọn, nói ‘Please close any door in the hallway’. Từ đứng trước noun thay đổi vì mục tiêu là xác định đối tượng cho người nghe.",
+      "explanation": "Article/determiner không thể sửa đúng nếu tách khỏi context. Cùng một noun door cần cách đóng gói khác nhau khi đối tượng đã xác định hoặc chưa chọn cụ thể.",
+      "misconception": "Noun số ít luôn dùng a, hoặc chỉ có một đáp án article đúng cho câu đứng riêng không có bối cảnh.",
+      "transfer_prompt": "Làm tương tự với ‘Please close door’ trong hai bối cảnh khác nhau; tránh dùng một câu nghe không tự nhiên chỉ để minh hoạ a/the.",
+      "prerequisite_node_ids": [],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1",
+        "human-feedback:hiep-2026-09-01",
+        "fresh-novice-audit:2026-09-01"
+      ],
+      "status": "review",
+      "author": "codex+fresh-reviewers",
+      "reviewer": null,
+      "transfer_answer": "Một cửa đã biết: ‘Please close the door.’ Nhiều cửa và cửa nào cũng được: ‘Please close any door in the hallway.’ Nếu muốn chọn đúng một trong số các cửa: ‘Please close one of the doors.’",
+      "glossary_refs": [
+        "determiner",
+        "noun-phrase",
+        "reference",
+        "clause"
+      ],
+      "revision_of": "core-en-39",
+      "revision_reason": "beginner_self_contained_and_transfer_alignment"
+    },
+    {
+      "id": "core-en-40",
+      "track": "english",
+      "node_id": "core-en-module-05",
+      "card_type": "production",
+      "prompt": "Tạo hai câu liên tiếp: câu đầu giới thiệu một người, câu sau nhắc lại người đó. Sau đó thêm một người thứ hai và sửa câu nhắc lại để người đọc không bị mơ hồ về ‘she/he/they’.",
+      "model_answer": "Ví dụ ban đầu: ‘A woman entered the room. She was carrying a blue folder.’ Khi chỉ có một người nữ phù hợp, ‘she’ đủ rõ. Nếu thêm một người nữ, hãy dùng noun phrase rõ hơn, như ‘A woman and a girl entered. The woman was carrying a blue folder.’",
+      "explanation": "Pronoun chỉ hiệu quả khi người đọc biết nó trỏ tới ai. Khi có nhiều đối tượng cạnh tranh, lặp lại một noun phrase rõ ràng giúp duy trì reference trong mạch câu.",
+      "misconception": "Pronoun luôn rõ chỉ vì một noun gần đó đã xuất hiện; không cần xét các đối tượng khác trong context.",
+      "transfer_prompt": "Thêm một người thứ hai vào đoạn giới thiệu và sửa câu nhắc lại để loại bỏ mơ hồ của ‘she/he/they’.",
+      "prerequisite_node_ids": [],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1",
+        "human-feedback:hiep-2026-09-01",
+        "fresh-novice-audit:2026-09-01"
+      ],
+      "status": "review",
+      "author": "codex+fresh-reviewers",
+      "reviewer": null,
+      "transfer_answer": "‘A woman and a girl entered. The woman was carrying a blue folder.’ Dùng ‘the woman’ thay vì ‘she’ vì lúc này có hai người có thể khiến ‘she’ bị hiểu mơ hồ.",
+      "glossary_refs": [
+        "noun-phrase",
+        "reference",
+        "discourse",
+        "determiner"
+      ],
+      "revision_of": "core-en-40",
+      "revision_reason": "beginner_self_contained_and_transfer_alignment"
+    },
+    {
+      "id": "core-en-41",
+      "track": "english",
+      "node_id": "core-en-module-06",
+      "card_type": "core_recall",
+      "prompt": "Trong “She put the keys on the table yesterday”, phần nào là hai mảnh mà động từ put cần để sự việc trọn nghĩa, và phần nào chỉ thêm thời gian? Hãy nói bằng lời của bạn.",
+      "model_answer": "Put thường cần một vật được đặt (the keys) và nơi hoặc đích đặt (on the table). Yesterday chỉ thêm thời gian nên có thể bỏ. Hai mảnh cần cho mẫu nghĩa được gọi là complement; thông tin thêm có thể bỏ được gọi là adjunct.",
+      "explanation": "Nhìn vào điều verb cần và điều chỉ bổ sung giúp ta tự dựng câu mới, thay vì coi mọi cụm sau verb như nhau.",
+      "misconception": "Mọi cụm đứng sau verb đều là object, hoặc đều chỉ là thông tin thêm.",
+      "transfer_prompt": "Phân tích “She depends on her team completely” theo hai loại: phần depend cần và phần chỉ thêm mức độ.",
+      "prerequisite_node_ids": [
+        "core-en-module-01",
+        "core-en-module-05"
+      ],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1",
+        "human-feedback:hiep-2026-09-01",
+        "fresh-novice-audit:2026-09-01"
+      ],
+      "status": "review",
+      "author": "codex+fresh-reviewers",
+      "reviewer": null,
+      "transfer_answer": "On her team là phần mà depend thường cần (complement); completely chỉ thêm mức độ nên là adjunct. Bỏ completely vẫn còn pattern depend on her team.",
+      "glossary_refs": [
+        "complement",
+        "adjunct",
+        "valency"
+      ],
+      "revision_of": "core-en-41",
+      "revision_reason": "beginner_self_contained_and_transfer_alignment"
+    },
+    {
+      "id": "core-en-42",
+      "track": "english",
+      "node_id": "core-en-module-06",
+      "card_type": "mechanism",
+      "prompt": "Vì sao học một động từ phải học cả “mẫu đi kèm” của nó? So sánh sleep, give và depend bằng ví dụ cụ thể.",
+      "model_answer": "Mỗi động từ mở ra những vai trò khác nhau. Sleep thường chỉ cần người hoặc vật ở trung tâm; give thường cần vật được cho và người nhận; depend thường đi với on + điều hoặc người mình phụ thuộc. Vì vậy biết nghĩa gần đúng của verb vẫn chưa cho biết cần đặt thành phần nào sau nó.",
+      "explanation": "Mẫu các thành phần đi với một verb được gọi là valency. Học mẫu cùng verb giúp ta dựng câu tự nhiên hơn.",
+      "misconception": "Nếu người nghe vẫn đoán được ý thì verb nào cũng có thể nhận bất kỳ object nào.",
+      "transfer_prompt": "Dùng cùng một thông điệp để so sánh mẫu của say và tell.",
+      "prerequisite_node_ids": [
+        "core-en-module-01",
+        "core-en-module-02"
+      ],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1",
+        "human-feedback:hiep-2026-09-01",
+        "fresh-novice-audit:2026-09-01"
+      ],
+      "status": "review",
+      "author": "codex+fresh-reviewers",
+      "reviewer": null,
+      "transfer_answer": "She said the message was urgent dùng say + nội dung. She told me the message was urgent dùng tell + người nhận + nội dung; không nói say me theo mẫu thông thường.",
+      "glossary_refs": [
+        "valency",
+        "lexical-verb",
+        "complement",
+        "clause"
+      ],
+      "revision_of": "core-en-42",
+      "revision_reason": "beginner_self_contained_and_transfer_alignment"
+    },
+    {
+      "id": "core-en-43",
+      "track": "english",
+      "node_id": "core-en-module-06",
+      "card_type": "mechanism",
+      "prompt": "Trong “I know that she left”, vì sao “that she left” có thể làm phần nội dung của know? Hãy tách câu thành hai mệnh đề.",
+      "model_answer": "Có hai mệnh đề: “I know” và “she left”. “That she left” đóng gói mệnh đề thứ hai thành điều được biết, nên nó làm phần nội dung sau know. Đưa một mệnh đề vào bên trong mệnh đề khác là subordination.",
+      "explanation": "Nhúng một mệnh đề nhỏ vào mệnh đề lớn cho phép nói về suy nghĩ, niềm tin hoặc phát hiện mà vẫn giữ rõ quan hệ giữa các ý.",
+      "misconception": "Câu dài chỉ là nhiều câu ngắn nối bằng and.",
+      "transfer_prompt": "Nhúng “the train is late” sau một verb chỉ niềm tin hoặc phát hiện.",
+      "prerequisite_node_ids": [
+        "core-en-module-01",
+        "core-en-module-05"
+      ],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1",
+        "human-feedback:hiep-2026-09-01",
+        "fresh-novice-audit:2026-09-01"
+      ],
+      "status": "review",
+      "author": "codex+fresh-reviewers",
+      "reviewer": null,
+      "transfer_answer": "I believe that the train is late. “That the train is late” là mệnh đề được dùng làm nội dung của believe.",
+      "glossary_refs": [
+        "clause",
+        "subordination",
+        "complement"
+      ],
+      "revision_of": "core-en-43",
+      "revision_reason": "beginner_self_contained_and_transfer_alignment"
+    },
+    {
+      "id": "core-en-44",
+      "track": "english",
+      "node_id": "core-en-module-06",
+      "card_type": "contrast",
+      "prompt": "So sánh “I stayed, and it rained” với “I stayed because it rained”. Từ nối nào chỉ đặt hai sự việc cạnh nhau, từ nối nào biến một sự việc thành lý do?",
+      "model_answer": "And nối hai mệnh đề tương đối ngang hàng: “I stayed” và “it rained”. Because đặt “it rained” vào vai trò lý do cho “I stayed”. Khi một mệnh đề phụ thuộc vào mệnh đề kia để giải thích quan hệ, đó là subordination.",
+      "explanation": "Từ nối không chỉ làm câu dài hơn; nó cho người nghe biết các sự việc liên hệ với nhau như thế nào.",
+      "misconception": "And, because và although chỉ khác phong cách chứ không đổi quan hệ nghĩa.",
+      "transfer_prompt": "Diễn đạt cùng hai sự việc bằng although rồi mô tả quan hệ mới.",
+      "prerequisite_node_ids": [
+        "core-en-module-01",
+        "core-en-module-05"
+      ],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1",
+        "human-feedback:hiep-2026-09-01",
+        "fresh-novice-audit:2026-09-01"
+      ],
+      "status": "review",
+      "author": "codex+fresh-reviewers",
+      "reviewer": null,
+      "transfer_answer": "Although it rained, I stayed. Although biến trời mưa thành điều có thể khiến tôi đi, nhưng kết quả thực tế là tôi vẫn ở lại.",
+      "glossary_refs": [
+        "subordination",
+        "clause",
+        "discourse"
+      ],
+      "revision_of": "core-en-44",
+      "revision_reason": "beginner_self_contained_and_transfer_alignment"
+    },
+    {
+      "id": "core-en-45",
+      "track": "english",
+      "node_id": "core-en-module-06",
+      "card_type": "boundary",
+      "prompt": "So sánh “The students who practised passed” và “The students, who practised, passed”. Dấu phẩy làm thay đổi nhóm học sinh được nói đến như thế nào?",
+      "model_answer": "Không có dấu phẩy, “who practised” giúp chọn nhóm học sinh đã luyện tập; có thể những học sinh khác không đỗ. Có dấu phẩy, người nói đã coi “the students” là nhóm xác định và chỉ thêm rằng nhóm đó đã luyện tập.",
+      "explanation": "Mệnh đề quan hệ có thể giúp người nghe xác định đúng đối tượng, hoặc chỉ thêm thông tin về đối tượng đã xác định. Dấu phẩy báo hiệu sự khác nhau này.",
+      "misconception": "Hễ có which thì luôn có dấu phẩy, hoặc dấu phẩy chỉ là trang trí.",
+      "transfer_prompt": "So sánh nghĩa của “My brothers who live abroad visit in summer” và “My brothers, who live abroad, visit in summer” trong một gia đình có nhiều anh em.",
+      "prerequisite_node_ids": [
+        "core-en-module-05"
+      ],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1",
+        "human-feedback:hiep-2026-09-01",
+        "fresh-novice-audit:2026-09-01"
+      ],
+      "status": "review",
+      "author": "codex+fresh-reviewers",
+      "reviewer": null,
+      "transfer_answer": "Câu không dấu phẩy có thể chỉ những người anh em sống ở nước ngoài mới thăm. Câu có dấu phẩy coi toàn bộ nhóm brothers đã xác định là sống ở nước ngoài và chỉ thêm thông tin đó.",
+      "glossary_refs": [
+        "relative-clause",
+        "noun-phrase",
+        "reference"
+      ],
+      "revision_of": "core-en-45",
+      "revision_reason": "beginner_self_contained_and_transfer_alignment"
+    },
+    {
+      "id": "core-en-46",
+      "track": "english",
+      "node_id": "core-en-module-06",
+      "card_type": "application",
+      "prompt": "Bắt đầu từ “The child found the key”. Hãy thêm lần lượt: (1) một cụm tả child hoặc key, (2) nơi chốn, (3) một mệnh đề cho biết khi nào. Sau mỗi lần nói phần lõi còn lại.",
+      "model_answer": "Ví dụ: “The tired child found the missing key under the sofa after everyone had left.” Lõi là “The child found the key”. Tired và missing mô tả danh từ; under the sofa thêm nơi chốn; after everyone had left thêm một mệnh đề thời gian.",
+      "explanation": "Mở rộng từ lõi ra ngoài giúp câu nhiều thông tin nhưng vẫn nhìn thấy ai làm gì với gì.",
+      "misconception": "Câu càng có nhiều phần mô tả thì càng tốt, dù không biết mỗi phần phục vụ việc gì.",
+      "transfer_prompt": "Bỏ từng phần mở rộng khỏi câu mẫu và nói phần thông tin nào biến mất.",
+      "prerequisite_node_ids": [
+        "core-en-module-01",
+        "core-en-module-05"
+      ],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1",
+        "human-feedback:hiep-2026-09-01",
+        "fresh-novice-audit:2026-09-01"
+      ],
+      "status": "review",
+      "author": "codex+fresh-reviewers",
+      "reviewer": null,
+      "transfer_answer": "Bỏ tired hoặc missing thì mất mô tả; bỏ under the sofa thì mất nơi chốn; bỏ after everyone had left thì mất quan hệ thời gian. Lõi “The child found the key” vẫn còn.",
+      "glossary_refs": [
+        "clause",
+        "noun-phrase",
+        "modifier",
+        "adjunct",
+        "subordination"
+      ],
+      "revision_of": "core-en-46",
+      "revision_reason": "beginner_self_contained_and_transfer_alignment"
+    },
+    {
+      "id": "core-en-47",
+      "track": "english",
+      "node_id": "core-en-module-06",
+      "card_type": "production",
+      "prompt": "Ba câu chỉ cho ta ba sự việc, chưa nói rõ quan hệ. Hãy ghép chúng theo một quan hệ bạn chọn (thời gian hoặc nguyên nhân), rồi nói rõ bạn đã thêm quan hệ nào.",
+      "model_answer": "Một đáp án: “When Hoàng opened the corrupted file, he called me.” When thêm quan hệ thời gian; corrupted mô tả file. Không nên dùng because trừ khi bạn thật sự muốn khẳng định file hỏng là lý do gọi.",
+      "explanation": "Khi ghép câu, trước hết chọn quan hệ giữa các sự việc rồi mới chọn hình thức nối. Không nên tự thêm nguyên nhân khi nguồn không nói vậy.",
+      "misconception": "Ghép các câu cho phép tự suy ra mọi quan hệ hợp lý giữa các sự việc.",
+      "transfer_prompt": "Viết một bản khác giữ ba ý nhưng nhấn mạnh việc file bị hỏng.",
+      "prerequisite_node_ids": [
+        "core-en-module-01",
+        "core-en-module-05"
+      ],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1",
+        "human-feedback:hiep-2026-09-01",
+        "fresh-novice-audit:2026-09-01"
+      ],
+      "status": "review",
+      "author": "codex+fresh-reviewers",
+      "reviewer": null,
+      "transfer_answer": "Hoàng opened the file, which was corrupted, and then called me. Mệnh đề which was corrupted nhấn trạng thái của file mà không khẳng định đó là nguyên nhân cuộc gọi; then giữ quan hệ thời gian.",
+      "glossary_refs": [
+        "clause",
+        "modifier",
+        "subordination"
+      ],
+      "revision_of": "core-en-47",
+      "revision_reason": "beginner_self_contained_and_transfer_alignment"
+    },
+    {
+      "id": "core-en-48",
+      "track": "english",
+      "node_id": "core-en-module-06",
+      "card_type": "production",
+      "prompt": "Hãy tự tạo một câu có một mệnh đề chính và một phần mở rộng. Sau đó viết lại chỉ còn mệnh đề lõi và nói phần bị bỏ đã giúp người nghe biết điều gì.",
+      "model_answer": "Ví dụ: “The student who sits near me submitted the assignment after class.” Lõi là “The student submitted the assignment”. “Who sits near me” giúp xác định student; “after class” cho biết thời gian.",
+      "explanation": "Thao tác mở rộng rồi rút gọn kiểm tra xem người học còn nhìn thấy cấu trúc bên dưới câu dài hay không.",
+      "misconception": "Chỉ cần gọi đúng tên thành phần là đủ, không cần biết nó giúp người nghe hiểu gì.",
+      "transfer_prompt": "Đổi hoặc bỏ một phần mở rộng và mô tả chính xác nghĩa hoặc đối tượng được nhắc đến thay đổi thế nào.",
+      "prerequisite_node_ids": [
+        "core-en-module-01",
+        "core-en-module-05"
+      ],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1",
+        "human-feedback:hiep-2026-09-01",
+        "fresh-novice-audit:2026-09-01"
+      ],
+      "status": "review",
+      "author": "codex+fresh-reviewers",
+      "reviewer": null,
+      "transfer_answer": "Trong “The student who sits near me submitted the assignment after class”, bỏ who sits near me có thể làm người nghe khó biết student nào; bỏ after class chỉ làm mất thời điểm nộp.",
+      "glossary_refs": [
+        "clause",
+        "complement",
+        "modifier",
+        "subordination",
+        "relative-clause"
+      ],
+      "revision_of": "core-en-48",
+      "revision_reason": "beginner_self_contained_and_transfer_alignment"
+    },
+    {
+      "id": "core-en-49",
+      "track": "english",
+      "node_id": "core-en-module-07",
+      "card_type": "core_recall",
+      "prompt": "Sau “I bought a lamp”, vì sao “It gives the room a warm light” thường tự nhiên hơn khi nói tiếp về chiếc đèn?",
+      "model_answer": "It nhắc lại vật đã được giới thiệu (given), rồi “gives the room a warm light” đưa thông tin mới. Người nghe có điểm bám trước khi nhận điều mới.",
+      "explanation": "Given là thông tin đang có trong ngữ cảnh; new là điều người nói thêm. Đây là xu hướng tổ chức mạch, không phải luật vị trí bất biến.",
+      "misconception": "Given luôn phải là subject và new luôn phải là object cuối câu.",
+      "transfer_prompt": "Sau câu “I bought a lamp”, chọn cách mở câu tiếp theo để nói thêm về chiếc đèn.",
+      "prerequisite_node_ids": [
+        "core-en-module-01",
+        "core-en-module-05"
+      ],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1",
+        "human-feedback:hiep-2026-09-01",
+        "fresh-novice-audit:2026-09-01"
+      ],
+      "status": "review",
+      "author": "codex+fresh-reviewers",
+      "reviewer": null,
+      "transfer_answer": "I bought a lamp. It gives the room a warm light. It nối với chiếc lamp đã được giới thiệu, còn đặc điểm ánh sáng là thông tin mới.",
+      "glossary_refs": [
+        "discourse",
+        "reference"
+      ],
+      "revision_of": "core-en-49",
+      "revision_reason": "beginner_self_contained_and_transfer_alignment"
+    },
+    {
+      "id": "core-en-50",
+      "track": "english",
+      "node_id": "core-en-module-07",
+      "card_type": "mechanism",
+      "prompt": "Cùng câu “Mai bought the red book” có thể trả lời hai câu hỏi khác nhau. Nếu người hỏi muốn biết người mua là ai, phần nào cần nổi bật? Nếu muốn biết Mai mua quyển nào, phần nào cần nổi bật?",
+      "model_answer": "Mai nổi bật khi trả lời “Who bought the red book?”. The red book nổi bật khi trả lời “What did Mai buy?”. Focus là phần câu trả lời đang cung cấp hoặc sửa trong ngữ cảnh đó.",
+      "explanation": "Một câu đúng ngữ pháp vẫn có thể không phù hợp nếu nó không làm nổi bật đúng phần người nghe đang cần biết.",
+      "misconception": "Từ đứng cuối câu luôn là thông tin mới và luôn là phần cần nhấn.",
+      "transfer_prompt": "Đặt hai câu hỏi khác nhau để cùng câu trả lời trên trả lời tự nhiên với focus khác.",
+      "prerequisite_node_ids": [
+        "core-en-module-01",
+        "core-en-module-05"
+      ],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1",
+        "human-feedback:hiep-2026-09-01",
+        "fresh-novice-audit:2026-09-01"
+      ],
+      "status": "review",
+      "author": "codex+fresh-reviewers",
+      "reviewer": null,
+      "transfer_answer": "Who bought the red book? làm Mai là phần cần biết. Which book did Mai buy? làm the red book là phần cần biết. Cùng một câu trả lời được hiểu khác theo câu hỏi trước.",
+      "glossary_refs": [
+        "discourse",
+        "prosody"
+      ],
+      "revision_of": "core-en-50",
+      "revision_reason": "beginner_self_contained_and_transfer_alignment"
+    },
+    {
+      "id": "core-en-51",
+      "track": "english",
+      "node_id": "core-en-module-07",
+      "card_type": "mechanism",
+      "prompt": "Hai câu nói cùng sự việc: “A storm damaged the roof” và “The roof was damaged by a storm”. Câu nào bắt đầu từ cơn bão, câu nào bắt đầu từ mái nhà? Vì sao người nói có thể chọn cách thứ hai?",
+      "model_answer": "Câu chủ động bắt đầu từ tác nhân “a storm”. Câu bị động đưa vật chịu tác động “the roof” lên đầu, rồi mới nói ai gây ra việc đó. Chọn bị động khi muốn tiếp tục nói về mái nhà hoặc khi tác nhân không quan trọng.",
+      "explanation": "Active và passive đóng gói cùng sự việc từ hai điểm xuất phát khác nhau; lựa chọn phụ thuộc vào mạch thông tin.",
+      "misconception": "Passive luôn che giấu người chịu trách nhiệm và chỉ dùng trong văn viết trang trọng.",
+      "transfer_prompt": "Chọn active hoặc passive để tiếp câu “Let me tell you what happened to the roof” và giải thích.",
+      "prerequisite_node_ids": [
+        "core-en-module-01",
+        "core-en-module-02"
+      ],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1",
+        "human-feedback:hiep-2026-09-01",
+        "fresh-novice-audit:2026-09-01"
+      ],
+      "status": "review",
+      "author": "codex+fresh-reviewers",
+      "reviewer": null,
+      "transfer_answer": "The roof was damaged by a storm. Passive tiếp tục lấy the roof làm điểm bám, rồi đưa a storm vào sau như tác nhân.",
+      "glossary_refs": [
+        "clause",
+        "subject",
+        "object",
+        "discourse"
+      ],
+      "revision_of": "core-en-51",
+      "revision_reason": "beginner_self_contained_and_transfer_alignment"
+    },
+    {
+      "id": "core-en-52",
+      "track": "english",
+      "node_id": "core-en-module-07",
+      "card_type": "contrast",
+      "prompt": "So sánh “Lan solved the problem” với “It was Lan who solved the problem”. Câu thứ hai dùng cách nào để nhấn mạnh Lan và sửa một phỏng đoán sai?",
+      "model_answer": "Cả hai câu đều nói Lan giải bài. Câu “It was Lan who…” đặt Lan vào vị trí được chọn hoặc đối chiếu, như khi ai đó tưởng Hoàng giải. Cấu trúc này gọi là cleft.",
+      "explanation": "Cleft thay đổi phần được làm nổi bật trong thông tin, không thay đổi người giải hay sự việc chính.",
+      "misconception": "Cleft chỉ là cách viết dài và trang trọng hơn, dùng lúc nào cũng tốt hơn.",
+      "transfer_prompt": "Tạo một ngữ cảnh trong đó cleft sửa một hiểu lầm về người giải bài.",
+      "prerequisite_node_ids": [
+        "core-en-module-01",
+        "core-en-module-05"
+      ],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1",
+        "human-feedback:hiep-2026-09-01",
+        "fresh-novice-audit:2026-09-01"
+      ],
+      "status": "review",
+      "author": "codex+fresh-reviewers",
+      "reviewer": null,
+      "transfer_answer": "Did Hoàng solve the problem? — No, it was Lan who solved the problem. Cleft chọn Lan để sửa phỏng đoán rằng Hoàng là người làm.",
+      "glossary_refs": [
+        "discourse",
+        "prosody"
+      ],
+      "revision_of": "core-en-52",
+      "revision_reason": "beginner_self_contained_and_transfer_alignment"
+    },
+    {
+      "id": "core-en-53",
+      "track": "english",
+      "node_id": "core-en-module-07",
+      "card_type": "boundary",
+      "prompt": "Vì sao “thông tin mới thường ở cuối” chỉ là xu hướng? Trong “I thought a cat scratched you — No, A DOG bit me”, vì sao phần mới lại đứng sớm?",
+      "model_answer": "Thông tin mới thường đi sau điểm bám, nhưng người nói có thể đưa nó lên trước để sửa một lựa chọn đang bị hiểu sai. Ở đây “A DOG” đứng sớm vì nó đối lập với “a cat” và được nhấn mạnh.",
+      "explanation": "Mạch thông tin, cách nhấn và mục tiêu sửa hiểu lầm cùng ảnh hưởng tới thứ tự nghe thấy.",
+      "misconception": "Bất kỳ thông tin mới nào ở đầu câu cũng sai hoặc khó hiểu.",
+      "transfer_prompt": "Tìm một lời đáp ngắn như “A DOG bit me” trong đó phần mới hoặc đối chiếu xuất hiện sớm và giải thích ngữ cảnh.",
+      "prerequisite_node_ids": [
+        "core-en-module-01",
+        "core-en-module-05"
+      ],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1",
+        "human-feedback:hiep-2026-09-01",
+        "fresh-novice-audit:2026-09-01"
+      ],
+      "status": "review",
+      "author": "codex+fresh-reviewers",
+      "reviewer": null,
+      "transfer_answer": "I thought a cat scratched you. — No, A DOG bit me. A DOG xuất hiện sớm để đối lập trực tiếp với a cat; sự nhấn mạnh giúp người nghe nhận ra phần cần sửa.",
+      "glossary_refs": [
+        "discourse",
+        "prosody"
+      ],
+      "revision_of": "core-en-53",
+      "revision_reason": "beginner_self_contained_and_transfer_alignment"
+    },
+    {
+      "id": "core-en-54",
+      "track": "english",
+      "node_id": "core-en-module-07",
+      "card_type": "application",
+      "prompt": "Nếu đoạn văn đang nói tiếp về “the package”, hãy viết lại câu sau để vẫn giữ chiếc package làm điểm bám. Sau đó viết một bản khác nếu đoạn văn đang nói về courier.",
+      "model_answer": "Chủ đề package: “A strange package arrived. It was left at the door by a courier.” Chủ đề courier: “A courier arrived and left a strange package at the door. He then walked away.” Chọn active hoặc passive theo thứ bạn muốn giữ làm điểm bám.",
+      "explanation": "Pronoun, noun phrase và active/passive phối hợp để người đọc theo dõi đúng người hoặc vật qua nhiều câu.",
+      "misconception": "Dùng passive luôn làm đoạn văn mạch lạc hơn active.",
+      "transfer_prompt": "Viết một bản active tự nhiên nếu câu trước đang nói về courier.",
+      "prerequisite_node_ids": [
+        "core-en-module-04",
+        "core-en-module-05"
+      ],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1",
+        "human-feedback:hiep-2026-09-01",
+        "fresh-novice-audit:2026-09-01"
+      ],
+      "status": "review",
+      "author": "codex+fresh-reviewers",
+      "reviewer": null,
+      "transfer_answer": "The courier reached our building at noon. He left a strange package at the door. Active giữ courier làm chủ đề đã có trong câu trước.",
+      "glossary_refs": [
+        "reference",
+        "discourse",
+        "noun-phrase"
+      ],
+      "revision_of": "core-en-54",
+      "revision_reason": "beginner_self_contained_and_transfer_alignment"
+    },
+    {
+      "id": "core-en-55",
+      "track": "english",
+      "node_id": "core-en-module-07",
+      "card_type": "production",
+      "prompt": "Hãy tự tạo một lý do để trả lời “Why did Hiệp leave early?”. Sau đó trả lời “Who left early?” sao cho người nghe nhận ra bạn đang cung cấp tên người.",
+      "model_answer": "Ví dụ cho why: “Hiệp left early because he felt ill.” Lý do felt ill là thông tin do người nói thêm, không có sẵn trong câu hỏi. Cho who: “HIỆP left early” — nhấn người để trả lời ai đã rời đi.",
+      "explanation": "Câu hỏi trước quyết định phần thông tin cần làm nổi bật; lý do trong ví dụ chỉ là một lựa chọn, không phải đáp án duy nhất.",
+      "misconception": "Một câu trả lời đúng ngữ pháp sẽ phù hợp như nhau với mọi câu hỏi.",
+      "transfer_prompt": "Đọc hai câu với điểm nhấn khác nhau và kiểm tra phần nào người nghe dự đoán là mới: người hay thời điểm.",
+      "prerequisite_node_ids": [
+        "core-en-module-01",
+        "core-en-module-05"
+      ],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1",
+        "human-feedback:hiep-2026-09-01",
+        "fresh-novice-audit:2026-09-01"
+      ],
+      "status": "review",
+      "author": "codex+fresh-reviewers",
+      "reviewer": null,
+      "transfer_answer": "HIỆP left early nhấn người để trả lời who. Hiệp left EARLY nhấn thời điểm để sửa hoặc cung cấp thông tin về when.",
+      "glossary_refs": [
+        "discourse",
+        "prosody"
+      ],
+      "revision_of": "core-en-55",
+      "revision_reason": "beginner_self_contained_and_transfer_alignment"
+    },
+    {
+      "id": "core-en-56",
+      "track": "english",
+      "node_id": "core-en-module-07",
+      "card_type": "production",
+      "prompt": "Viết ba câu về một chiếc laptop mới: giới thiệu nó, nhắc lại nó bằng đại từ, rồi thêm một vật khác để cho thấy cách tránh nhầm hai vật.",
+      "model_answer": "Ví dụ: “A new laptop arrived. It has a bright screen. A tablet arrived later, but the laptop was faster.” A giới thiệu vật mới; it nhắc lại vật đang nói; khi tablet cạnh tranh xuất hiện, the laptop cho người đọc biết ta quay lại vật nào.",
+      "explanation": "Cách gọi lại một người hoặc vật phải thay đổi theo việc người nghe đã biết gì và có bao nhiêu đối tượng cạnh tranh.",
+      "misconception": "Lặp cùng một danh từ đầy đủ ở đầu mọi câu luôn là cách rõ nhất.",
+      "transfer_prompt": "Thêm một referent cạnh tranh và sửa các biểu thức nhắc lại để vẫn không mơ hồ.",
+      "prerequisite_node_ids": [
+        "core-en-module-05"
+      ],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1",
+        "human-feedback:hiep-2026-09-01",
+        "fresh-novice-audit:2026-09-01"
+      ],
+      "status": "review",
+      "author": "codex+fresh-reviewers",
+      "reviewer": null,
+      "transfer_answer": "A new laptop arrived. It has a bright screen. A tablet arrived later, but the laptop was faster. Khi tablet xuất hiện, dùng the laptop thay it để không nhầm hai vật.",
+      "glossary_refs": [
+        "reference",
+        "discourse",
+        "noun-phrase"
+      ],
+      "revision_of": "core-en-56",
+      "revision_reason": "beginner_self_contained_and_transfer_alignment"
+    },
+    {
+      "id": "core-en-57",
+      "track": "english",
+      "node_id": "core-en-module-08",
+      "card_type": "core_recall",
+      "prompt": "Khi nghe “Can you send it?”, vì sao ta không luôn nghe được từng từ như trên giấy? Hãy thử chia dòng âm thành các từ và nói tín hiệu nào giúp bạn đoán.",
+      "model_answer": "Ta đoán can | you | send | it, dù nói nhanh có thể nghe gần như /kənjə sendɪt/. Âm yếu và nối làm ranh giới mờ; cấu trúc yêu cầu và nghĩa của câu giúp ta khôi phục từng từ.",
+      "explanation": "Lời nói là dòng âm liên tục. Người nghe kết hợp tín hiệu âm thanh với cấu trúc và ngữ cảnh để phân đoạn thành từ.",
+      "misconception": "Người bản ngữ phát âm thiếu chữ; chỉ cần nghe thật nhiều tốc độ nhanh là đủ.",
+      "transfer_prompt": "Nghe hoặc tự nói “Can you send it?” và đánh dấu nơi bạn dự đoán ranh giới từ dù âm nối liền.",
+      "prerequisite_node_ids": [
+        "core-en-module-07"
+      ],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1",
+        "human-feedback:hiep-2026-09-01",
+        "fresh-novice-audit:2026-09-01"
+      ],
+      "status": "review",
+      "author": "codex+fresh-reviewers",
+      "reviewer": null,
+      "transfer_answer": "Đánh dấu can | you | send | it. Khi nói nhanh, /kənjə sendɪt/ nối các biên, nhưng mẫu lời yêu cầu và nghĩa giúp kiểm tra cách chia này.",
+      "glossary_refs": [
+        "phoneme",
+        "prosody",
+        "clause"
+      ],
+      "revision_of": "core-en-57",
+      "revision_reason": "beginner_self_contained_and_transfer_alignment"
+    },
+    {
+      "id": "core-en-58",
+      "track": "english",
+      "node_id": "core-en-module-08",
+      "card_type": "mechanism",
+      "prompt": "Với câu “I wanted the blue one”, hãy tạo hai tình huống: một tình huống nhấn I để sửa người làm, và một tình huống nhấn wanted để sửa hành động. Viết từ được nhấn bằng chữ hoa.",
+      "model_answer": "“I wanted the blue one” với I nổi bật khi sửa “Hoàng wanted it”. “I WANTED the blue one” với wanted nổi bật khi sửa ý “I bought the blue one”. Cùng chuỗi từ nhưng điểm nhấn thay đổi phần đối chiếu.",
+      "explanation": "Prominence là phần âm thanh nổi bật hơn để hướng sự chú ý của người nghe tới thông tin cần cung cấp hoặc sửa.",
+      "misconception": "Content word luôn được nhấn và function word luôn không được nhấn.",
+      "transfer_prompt": "Đổi prominence sang I hoặc wanted và tạo ngữ cảnh làm mỗi cách đọc hợp lý.",
+      "prerequisite_node_ids": [
+        "core-en-module-07"
+      ],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1",
+        "human-feedback:hiep-2026-09-01",
+        "fresh-novice-audit:2026-09-01"
+      ],
+      "status": "review",
+      "author": "codex+fresh-reviewers",
+      "reviewer": null,
+      "transfer_answer": "Nhấn I trong “I wanted the blue one” khi sửa người muốn. Nhấn wanted trong “I WANTED the blue one” khi sửa hành động bị hiểu thành bought.",
+      "glossary_refs": [
+        "prosody",
+        "discourse"
+      ],
+      "revision_of": "core-en-58",
+      "revision_reason": "beginner_self_contained_and_transfer_alignment"
+    },
+    {
+      "id": "core-en-59",
+      "track": "english",
+      "node_id": "core-en-module-08",
+      "card_type": "mechanism",
+      "prompt": "Vì sao “can” nghe rõ hơn trong “I CAN do it” nhưng thường nhẹ hơn trong “I can DO it”?",
+      "model_answer": "Khi can là điều muốn nhấn, người nói giữ nó rõ: “I CAN do it”. Khi trọng tâm là hành động do, can thường đọc nhẹ như /kən/. Schwa là âm nguyên âm ngắn, trung tính thường xuất hiện ở phần không được nhấn.",
+      "explanation": "Âm trong phần không được nhấn thường yếu và ngắn hơn. Đây là biến đổi có điều kiện theo trọng tâm, không phải phát âm cẩu thả.",
+      "misconception": "Schwa là cách phát âm sai cần tránh hoàn toàn khi nói.",
+      "transfer_prompt": "So sánh “I CAN do it” với “I can DO it” và mô tả can thay đổi theo prominence.",
+      "prerequisite_node_ids": [
+        "core-en-module-07"
+      ],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1",
+        "human-feedback:hiep-2026-09-01",
+        "fresh-novice-audit:2026-09-01"
+      ],
+      "status": "review",
+      "author": "codex+fresh-reviewers",
+      "reviewer": null,
+      "transfer_answer": "I CAN do it làm can nổi bật nên đọc rõ. I can DO it làm do nổi bật nên can thường yếu thành /kən/.",
+      "glossary_refs": [
+        "prosody",
+        "phoneme",
+        "discourse"
+      ],
+      "revision_of": "core-en-59",
+      "revision_reason": "beginner_self_contained_and_transfer_alignment"
+    },
+    {
+      "id": "core-en-60",
+      "track": "english",
+      "node_id": "core-en-module-08",
+      "card_type": "contrast",
+      "prompt": "Một câu có thể phát âm đúng từng phụ âm và nguyên âm nhưng vẫn khó hiểu hoặc nghe khác ý. Với “You finished”, hãy đọc như lời xác nhận và như câu hỏi; điều gì thay đổi ngoài từng âm?",
+      "model_answer": "Các âm trong từ có thể giữ nguyên. Đường lên hoặc xuống của giọng và chỗ ngắt nhóm thay đổi: giọng xuống thường nghe như xác nhận, giọng lên có thể nghe như câu hỏi hoặc chưa chắc. Đây là intonation/prosody.",
+      "explanation": "Nghe và nói không chỉ gồm âm riêng lẻ; nhịp, trọng âm và đường cao độ cũng tổ chức ý định giao tiếp.",
+      "misconception": "Chỉ cần IPA chính xác từng từ là câu tự nhiên và dễ nghe.",
+      "transfer_prompt": "Nói cùng chuỗi “You finished” như lời xác nhận và như câu hỏi ngạc nhiên; điều gì đổi ngoài segment?",
+      "prerequisite_node_ids": [
+        "core-en-module-07"
+      ],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1",
+        "human-feedback:hiep-2026-09-01",
+        "fresh-novice-audit:2026-09-01"
+      ],
+      "status": "review",
+      "author": "codex+fresh-reviewers",
+      "reviewer": null,
+      "transfer_answer": "Các segment có thể giữ nguyên. Giọng xuống tạo cảm giác xác nhận; giọng lên hoặc đường giọng ngạc nhiên tạo cảm giác hỏi hoặc không tin.",
+      "glossary_refs": [
+        "phoneme",
+        "prosody",
+        "discourse"
+      ],
+      "revision_of": "core-en-60",
+      "revision_reason": "beginner_self_contained_and_transfer_alignment"
+    },
+    {
+      "id": "core-en-61",
+      "track": "english",
+      "node_id": "core-en-module-08",
+      "card_type": "boundary",
+      "prompt": "Vì sao không nên cố làm cho mọi khoảng cách giữa các âm tiết được nhấn dài bằng nhau khi nói tiếng Anh? Hãy đọc cùng câu chậm và nhanh rồi quan sát phần không được nhấn.",
+      "model_answer": "Trong nói nhanh, các từ chức năng và âm tiết không được nhấn thường co lại hoặc nối với nhau; phần được nhấn vẫn giúp người nghe tìm trọng tâm. Stress-timed chỉ là cách mô tả xu hướng, không phải đồng hồ bắt mọi khoảng cách bằng nhau.",
+      "explanation": "Nhịp nói là kết quả của nhiều yếu tố như trọng âm, cấu trúc âm tiết, giảm âm và tốc độ; không có một khoảng thời gian cứng cho mọi câu.",
+      "misconception": "Muốn nói tự nhiên phải ép mọi âm tiết được nhấn cách nhau đúng cùng số mili-giây.",
+      "transfer_prompt": "Đọc một câu chậm rồi nhanh nhưng giữ focus; quan sát phần nào co giãn mà meaning vẫn rõ.",
+      "prerequisite_node_ids": [
+        "core-en-module-07"
+      ],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1",
+        "human-feedback:hiep-2026-09-01",
+        "fresh-novice-audit:2026-09-01"
+      ],
+      "status": "review",
+      "author": "codex+fresh-reviewers",
+      "reviewer": null,
+      "transfer_answer": "Trong “I really need to finish this today”, các từ nhẹ có thể co lại và nối khi nói nhanh, nhưng finish hoặc today vẫn giữ trọng tâm. Khoảng cách giữa các stress không cần bằng nhau tuyệt đối.",
+      "glossary_refs": [
+        "phoneme",
+        "prosody"
+      ],
+      "revision_of": "core-en-61",
+      "revision_reason": "beginner_self_contained_and_transfer_alignment"
+    },
+    {
+      "id": "core-en-62",
+      "track": "english",
+      "node_id": "core-en-module-08",
+      "card_type": "application",
+      "prompt": "Khi nghe “Could you send it again?”, hãy đoán trước mẫu câu và tìm từ được nhấn trước khi kiểm tra các âm nhẹ xung quanh. Sau đó thay send bằng check.",
+      "model_answer": "Đây có thể là lời yêu cầu: could + you + động từ nguyên mẫu + it + again. Ta chú ý SEND và AGAIN, rồi kiểm tra phần nhẹ quanh chúng. Bản chuyển là “Could you check it again?”.",
+      "explanation": "Dự đoán cấu trúc giúp ta tìm từ trong dòng âm, nhưng tín hiệu âm thanh vẫn phải xác nhận dự đoán.",
+      "misconception": "Biết ngữ pháp cho phép điền bất kỳ từ nào hợp nghĩa dù âm thanh không khớp.",
+      "transfer_prompt": "Thay send bằng một verb khác, tự nói nhanh tự nhiên rồi chép lại sau một lần nghe bản ghi.",
+      "prerequisite_node_ids": [
+        "core-en-module-03",
+        "core-en-module-07"
+      ],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1",
+        "human-feedback:hiep-2026-09-01",
+        "fresh-novice-audit:2026-09-01"
+      ],
+      "status": "review",
+      "author": "codex+fresh-reviewers",
+      "reviewer": null,
+      "transfer_answer": "Thay send bằng check: “Could you check it again?”. Vẫn giữ could + you + verb nguyên mẫu + it + again; trọng tâm thường rơi vào check hoặc again.",
+      "glossary_refs": [
+        "phoneme",
+        "clause",
+        "prosody"
+      ],
+      "revision_of": "core-en-62",
+      "revision_reason": "beginner_self_contained_and_transfer_alignment"
+    },
+    {
+      "id": "core-en-63",
+      "track": "english",
+      "node_id": "core-en-module-08",
+      "card_type": "production",
+      "prompt": "Chọn một câu ngắn, nghe một lần, rồi nói đè theo người nói với độ trễ rất ngắn (shadowing). Ngoài việc bắt chước giọng, hãy tự kiểm: nhóm ý, từ được nhấn, và chỗ các âm nối hoặc nhẹ.",
+      "model_answer": "Shadowing có ích khi ta kiểm được ba thứ: câu được chia thành nhóm ý nào, từ nào nổi bật để mang trọng tâm, và các từ nhẹ hoặc nối biến đổi ra sao. Ví dụ “I NEED the blue one” có thể chuyển thành “I WANT the blue one” nhưng vẫn giữ nhóm ý.",
+      "explanation": "Bài nói lại tốt phải nối âm thanh với ý nghĩa; tốc độ hoặc vẻ giống giọng người mẫu không tự chứng minh đã hiểu.",
+      "misconception": "Shadow càng nhanh và càng giống người bản ngữ thì càng học tốt.",
+      "transfer_prompt": "Giữ cấu trúc nhịp nhưng đổi một content word và đặt prominence mới phù hợp với meaning.",
+      "prerequisite_node_ids": [
+        "core-en-module-07"
+      ],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1",
+        "human-feedback:hiep-2026-09-01",
+        "fresh-novice-audit:2026-09-01"
+      ],
+      "status": "review",
+      "author": "codex+fresh-reviewers",
+      "reviewer": null,
+      "transfer_answer": "Từ “I NEED the blue one”, đổi content word thành “I WANT the blue one”. Nếu muốn sửa màu, đặt prominence ở BLUE; nếu muốn sửa hành động, đặt prominence ở WANT.",
+      "glossary_refs": [
+        "phoneme",
+        "prosody",
+        "discourse"
+      ],
+      "revision_of": "core-en-63",
+      "revision_reason": "beginner_self_contained_and_transfer_alignment"
+    },
+    {
+      "id": "core-en-64",
+      "track": "english",
+      "node_id": "core-en-module-08",
+      "card_type": "production",
+      "prompt": "Khi nghe nhầm “Did you send it?” thành “Do you send it?”, hãy đoán lỗi nằm ở đâu, xem transcript để kiểm tra, rồi tạo một câu mới cùng mẫu.",
+      "model_answer": "Lỗi có thể nằm ở việc “did you” nói nhanh bị nối hoặc nhẹ thành gần /dɪdʒə/, chứ không phải câu đổi sang hiện tại. Sau khi kiểm transcript, thử “Did you check it?” để xem ta còn nhận ra did you trong mẫu mới không.",
+      "explanation": "Một quy trình nghe có giả thuyết, bằng chứng và câu chuyển giao hữu hạn hơn việc tua lại vô hạn mà không biết mình sai ở tầng nào.",
+      "misconception": "Nghe lặp đủ nhiều sẽ tự động sửa mọi loại lỗi mà không cần biết sai ở đâu.",
+      "transfer_prompt": "Lấy một câu bạn từng nghe nhầm, phân loại lỗi và thiết kế một ví dụ mới để kiểm tra cùng cơ chế.",
+      "prerequisite_node_ids": [
+        "core-en-module-07"
+      ],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1",
+        "human-feedback:hiep-2026-09-01",
+        "fresh-novice-audit:2026-09-01"
+      ],
+      "status": "review",
+      "author": "codex+fresh-reviewers",
+      "reviewer": null,
+      "transfer_answer": "Với lỗi “Did you send it?” thành “Do you send it?”, phân loại là weak form hoặc segmentation của did you; kiểm transcript và thử “Did you check it?” để kiểm cùng cơ chế.",
+      "glossary_refs": [
+        "phoneme",
+        "prosody",
+        "discourse"
+      ],
+      "revision_of": "core-en-64",
+      "revision_reason": "beginner_self_contained_and_transfer_alignment"
+    },
+    {
+      "id": "core-en-65",
+      "track": "english",
+      "node_id": "core-en-module-09",
+      "card_type": "core_recall",
+      "prompt": "Vì sao học từ “run” không nên chỉ ghi một nghĩa tiếng Việt? Hãy nối một dạng từ với một nghĩa, một mẫu câu và hai cụm từ thường đi cùng.",
+      "model_answer": "Một từ có thể có nhiều nghĩa và cách dùng. Run có thể là “chạy”, đi với “run five kilometres”, nhưng cũng có “run a business” và “run out of time”. Vì vậy nên nhớ form (run), meaning và use/pattern cùng nhau.",
+      "explanation": "Học từ như mạng lưới form–meaning–use tạo nhiều điểm bám để nhận ra và tự dùng lại từ trong câu mới.",
+      "misconception": "Mỗi từ tiếng Anh có đúng một nghĩa tiếng Việt dùng được trong mọi câu.",
+      "transfer_prompt": "Vẽ mạng nhỏ quanh “run” gồm một sense, một pattern ngữ pháp và hai collocation khác nhau.",
+      "prerequisite_node_ids": [
+        "core-en-module-01",
+        "core-en-module-05"
+      ],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1",
+        "human-feedback:hiep-2026-09-01",
+        "fresh-novice-audit:2026-09-01"
+      ],
+      "status": "review",
+      "author": "codex+fresh-reviewers",
+      "reviewer": null,
+      "transfer_answer": "Run có sense “chạy bằng chân”, pattern run + distance như “run five kilometres”, và các collocation “run a business” và “run out of time”. Các nhánh nối cùng form với các meaning/use khác nhau.",
+      "glossary_refs": [
+        "collocation",
+        "reference"
+      ],
+      "revision_of": "core-en-65",
+      "revision_reason": "beginner_self_contained_and_transfer_alignment"
+    },
+    {
+      "id": "core-en-66",
+      "track": "english",
+      "node_id": "core-en-module-09",
+      "card_type": "mechanism",
+      "prompt": "Nếu có năm từ hoặc chunk trong công việc của bạn, bạn sẽ quyết định học trước từ nào? Hãy dùng cả số lần gặp và việc bạn sắp cần dùng, rồi giải thích thứ tự.",
+      "model_answer": "Ví dụ với công việc: “check the file” có thể đứng trước vì vừa gặp thường xuyên vừa cần dùng ngay; “meet the client” có thể đứng sau nếu ít gặp hơn. Tần suất giúp ưu tiên, còn mục tiêu thật điều chỉnh thứ tự; không có con số từ vựng nào tự hứa hiểu mọi văn bản.",
+      "explanation": "Frequency là công cụ phân bổ công sức, không phải lời hứa về một phần trăm hiểu cố định. Context, word family và chunks cũng ảnh hưởng độ bao phủ.",
+      "misconception": "Học xong một danh sách nghìn từ là đủ nghe đọc tự nhiên mà không cần context hay chunks.",
+      "transfer_prompt": "Chọn năm từ hoặc chunk từ một đoạn bạn thật sự dùng, kết hợp tần suất với mục tiêu cá nhân để xếp thứ tự học.",
+      "prerequisite_node_ids": [],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1",
+        "human-feedback:hiep-2026-09-01",
+        "fresh-novice-audit:2026-09-01"
+      ],
+      "status": "review",
+      "author": "codex+fresh-reviewers",
+      "reviewer": null,
+      "transfer_answer": "Ví dụ xếp “check the file” trước “fix the bug” trước “update the report” trước “send an email” trước “meet the client” nếu đó là thứ tự gặp và cần dùng trong tuần. Đây là quyết định theo input và mục tiêu thật, không phải lời hứa về coverage.",
+      "glossary_refs": [
+        "collocation"
+      ],
+      "revision_of": "core-en-66",
+      "revision_reason": "beginner_self_contained_and_transfer_alignment"
+    },
+    {
+      "id": "core-en-67",
+      "track": "english",
+      "node_id": "core-en-module-09",
+      "card_type": "mechanism",
+      "prompt": "Từ “possible”, hãy tạo một từ mang nghĩa ngược và một danh từ liên quan. Nói phần thêm vào đã đổi nghĩa hoặc loại từ thế nào, rồi kiểm tra ví dụ.",
+      "model_answer": "Impossible thêm im- để tạo nghĩa ngược nhưng vẫn là adjective: “That is impossible.” Possibility thêm -ity để tạo noun: “There is a possibility of rain.” Prefix và suffix giúp đoán, nhưng usage thực tế vẫn phải kiểm tra.",
+      "explanation": "Morpheme là phần nhỏ mang nghĩa hoặc chức năng. Nhận ra chúng giúp tạo giả thuyết về từ mới, nhưng quy ước dùng từ vẫn có thể có ngoại lệ.",
+      "misconception": "Biết nghĩa prefix hoặc suffix cho phép tự tạo bất kỳ từ nào và chắc chắn người khác dùng.",
+      "transfer_prompt": "Từ “possible”, suy hai thành viên family rồi kiểm tra category và cách dùng trong câu.",
+      "prerequisite_node_ids": [],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1",
+        "human-feedback:hiep-2026-09-01",
+        "fresh-novice-audit:2026-09-01"
+      ],
+      "status": "review",
+      "author": "codex+fresh-reviewers",
+      "reviewer": null,
+      "transfer_answer": "Possible → impossible là adjective trong “That is impossible”; possible → possibility là noun trong “There is a possibility of rain”. Cần kiểm tra spelling, category và pattern complement.",
+      "glossary_refs": [
+        "morpheme",
+        "clause",
+        "noun-phrase"
+      ],
+      "revision_of": "core-en-67",
+      "revision_reason": "beginner_self_contained_and_transfer_alignment"
+    },
+    {
+      "id": "core-en-68",
+      "track": "english",
+      "node_id": "core-en-module-09",
+      "card_type": "contrast",
+      "prompt": "So sánh “walk out” và “figure out”. Nghĩa nào có thể đoán từ từng phần, nghĩa nào phải học như một cụm quen dùng?",
+      "model_answer": "Walk out thường gần với nghĩa đi ra ngoài: walk + out. Figure out thường có nghĩa “hiểu hoặc tìm ra”, không thể cộng nghĩa figure và out một cách đơn giản. Với phrasal verb, hãy thử đoán bằng hình ảnh nhưng vẫn kiểm tra context.",
+      "explanation": "Phrasal verb nằm trên một dải từ khá dễ đoán đến quy ước hoá. Nhận ra dải này giúp ta vừa suy luận vừa biết khi nào cần tra cứu.",
+      "misconception": "Mọi particle có một nghĩa cố định nên mọi phrasal verb đều suy được hoàn toàn.",
+      "transfer_prompt": "Đặt “take off” vào hai context và phân loại mức compositional của từng sense.",
+      "prerequisite_node_ids": [],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1",
+        "human-feedback:hiep-2026-09-01",
+        "fresh-novice-audit:2026-09-01"
+      ],
+      "status": "review",
+      "author": "codex+fresh-reviewers",
+      "reviewer": null,
+      "transfer_answer": "The plane took off khá gần nghĩa rời mặt đất nên dễ đoán hơn. The new product really took off là nghĩa trở nên thành công hoặc phổ biến, cần context và ví dụ riêng hơn.",
+      "glossary_refs": [
+        "collocation",
+        "reference"
+      ],
+      "revision_of": "core-en-68",
+      "revision_reason": "beginner_self_contained_and_transfer_alignment"
+    },
+    {
+      "id": "core-en-69",
+      "track": "english",
+      "node_id": "core-en-module-09",
+      "card_type": "boundary",
+      "prompt": "Vì sao “make a decision” tự nhiên hơn “do a decision” dù cả make và do đều có thể dịch gần là “làm”? Bạn sẽ kiểm tra điều này bằng cách nào?",
+      "model_answer": "Các từ thường đi với nhau theo thói quen của cộng đồng dùng tiếng Anh; sự kết hợp đó gọi là collocation. “Make a decision” là cụm thông dụng. Có thể kiểm tra bằng từ điển collocation hoặc nhiều ví dụ thật thay vì dịch từng từ.",
+      "explanation": "Ngữ pháp và logic giúp đoán, nhưng input và nguồn dùng thật xác nhận tổ hợp nào tự nhiên trong một nghĩa hoặc hoàn cảnh.",
+      "misconception": "Mọi tổ hợp đúng ngữ pháp và hiểu được đều tự nhiên như nhau.",
+      "transfer_prompt": "So sánh “make a decision” với một tổ hợp dịch sát từ tiếng Việt và nêu cách kiểm chứng thay vì chỉ tin trực giác.",
+      "prerequisite_node_ids": [],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1",
+        "human-feedback:hiep-2026-09-01",
+        "fresh-novice-audit:2026-09-01"
+      ],
+      "status": "review",
+      "author": "codex+fresh-reviewers",
+      "reviewer": null,
+      "transfer_answer": "Do a decision có thể là tổ hợp dịch sát nhưng không phải lựa chọn thông dụng. Kiểm từ điển collocation hoặc nhiều ví dụ thật để xác nhận make a decision.",
+      "glossary_refs": [
+        "collocation",
+        "discourse"
+      ],
+      "revision_of": "core-en-69",
+      "revision_reason": "beginner_self_contained_and_transfer_alignment"
+    },
+    {
+      "id": "core-en-70",
+      "track": "english",
+      "node_id": "core-en-module-09",
+      "card_type": "application",
+      "prompt": "Với cụm “take responsibility for”, hãy thay phần sau “for” bằng một hoạt động và một danh từ dự án; sau đó đổi take sang quá khứ và tương lai.",
+      "model_answer": "“She took responsibility for fixing the error.” dùng hoạt động fixing. “They will take responsibility for the project.” dùng danh từ project. Tense của take đổi, nhưng cụm “responsibility for + …” vẫn giữ quan hệ.",
+      "explanation": "Học một chunk cùng các vị trí có thể thay thế giúp ta biến đổi câu mà vẫn giữ ràng buộc kết hợp tự nhiên.",
+      "misconception": "Chỉ cần ghi bản dịch “chịu trách nhiệm” là đã biết cách dùng.",
+      "transfer_prompt": "Tạo hai câu thay phần sau for và đổi tense của take mà vẫn giữ pattern.",
+      "prerequisite_node_ids": [
+        "core-en-module-05"
+      ],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1",
+        "human-feedback:hiep-2026-09-01",
+        "fresh-novice-audit:2026-09-01"
+      ],
+      "status": "review",
+      "author": "codex+fresh-reviewers",
+      "reviewer": null,
+      "transfer_answer": "She took responsibility for fixing the error. They will take responsibility for the project. Sau for có thể là hoạt động dạng -ing hoặc noun phrase; take đổi sang past hoặc will + base.",
+      "glossary_refs": [
+        "collocation",
+        "clause",
+        "noun-phrase"
+      ],
+      "revision_of": "core-en-70",
+      "revision_reason": "beginner_self_contained_and_transfer_alignment"
+    },
+    {
+      "id": "core-en-71",
+      "track": "english",
+      "node_id": "core-en-module-09",
+      "card_type": "production",
+      "prompt": "Hãy nối ít nhất ba cách dùng của “break” quanh một hình ảnh nghĩa gốc, rồi đánh dấu cách dùng nào không thể đoán chắc chỉ từ hình ảnh đó.",
+      "model_answer": "Có thể bắt đầu từ break = làm vật mất nguyên vẹn. Từ đó liên hệ break a rule và break the news, nhưng hai cách sau là mở rộng quy ước và cần ví dụ riêng. “The news broke overnight” không nói vật bị vỡ; nó nói tin trở nên công khai.",
+      "explanation": "Một mạng nghĩa giúp tạo dự đoán có kiểm soát. Những mở rộng đã thành quy ước vẫn cần được học qua context, từ điển hoặc input.",
+      "misconception": "Tìm được một hình ảnh gốc nghĩa là có thể suy chính xác mọi idiom chứa từ đó.",
+      "transfer_prompt": "Dùng một context mới để dự đoán sense của break, sau đó nêu bằng chứng cần kiểm tra.",
+      "prerequisite_node_ids": [],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1",
+        "human-feedback:hiep-2026-09-01",
+        "fresh-novice-audit:2026-09-01"
+      ],
+      "status": "review",
+      "author": "codex+fresh-reviewers",
+      "reviewer": null,
+      "transfer_answer": "Trong “The news broke overnight”, dự đoán break nghĩa tin trở nên công khai, không phải vật thể vỡ. Kiểm dictionary hoặc corpus và các collocation như breaking news để xác nhận.",
+      "glossary_refs": [
+        "collocation",
+        "discourse",
+        "reference"
+      ],
+      "revision_of": "core-en-71",
+      "revision_reason": "beginner_self_contained_and_transfer_alignment"
+    },
+    {
+      "id": "core-en-72",
+      "track": "english",
+      "node_id": "core-en-module-09",
+      "card_type": "production",
+      "prompt": "Chọn một cụm bạn gặp thật. Hãy thiết kế ba lần tự gọi lại: lần đầu từ nghĩa, lần hai trong bối cảnh mới, lần ba tự dùng cho người nghe khác. Vì sao không chỉ chép lại câu cũ?",
+      "model_answer": "Với “make a decision”: lần 1 gọi cụm từ nghĩa “quyết định”; lần 2 dùng “They will make an important decision tomorrow”; lần 3 dùng nó trong một tình huống công việc khác. Mỗi lần phải tự nhớ và thay đổi context để kiểm tra dùng được ngoài câu gốc.",
+      "explanation": "Tự gọi lại và thay đổi bối cảnh kiểm tra liên kết form–meaning–use tốt hơn việc chỉ nhìn lại cùng một câu.",
+      "misconception": "Cùng nhìn lại đáp án nhiều lần tạo retrieval mạnh như tự gọi từ trí nhớ.",
+      "transfer_prompt": "Đổi subject, tense và object của chunk nhưng giữ collocational constraint cốt lõi.",
+      "prerequisite_node_ids": [],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1",
+        "human-feedback:hiep-2026-09-01",
+        "fresh-novice-audit:2026-09-01"
+      ],
+      "status": "review",
+      "author": "codex+fresh-reviewers",
+      "reviewer": null,
+      "transfer_answer": "She made a decision about the budget. They will make an important decision tomorrow. Subject, tense và topic đổi nhưng make + decision vẫn giữ.",
+      "glossary_refs": [
+        "collocation",
+        "discourse",
+        "clause"
+      ],
+      "revision_of": "core-en-72",
+      "revision_reason": "beginner_self_contained_and_transfer_alignment"
+    },
+    {
+      "id": "core-en-73",
+      "track": "english",
+      "node_id": "core-en-module-10",
+      "card_type": "core_recall",
+      "prompt": "Từ ý “Hoàng có thể đã quên chìa khóa”, hãy đi qua bốn bước đơn giản: ý nghĩa, ai làm gì với gì, mức chắc chắn hoặc thời điểm, rồi ghép câu.",
+      "model_answer": "Ý nghĩa là có khả năng việc quên đã xảy ra. Hoàng là người thực hiện hoặc trải nghiệm, chìa khóa là vật bị quên. Dùng might cho khả năng và might have forgotten cho việc đã xảy ra trước: “Hoàng might have forgotten the key.”",
+      "explanation": "Các lớp ý nghĩa nối với nhau: vai trò trong mệnh đề, kiến trúc verb, thời điểm và thái độ. Có thể quay lại từng lớp khi câu mới khó hiểu.",
+      "misconception": "Muốn nói nhanh phải bỏ qua cấu trúc và dịch trực tiếp câu tiếng Việt trong đầu.",
+      "transfer_prompt": "Từ ý “Hoàng có thể đã quên chìa khóa”, đi qua từng tầng để tạo một câu và nêu lựa chọn của bạn.",
+      "prerequisite_node_ids": [
+        "core-en-module-04",
+        "core-en-module-08",
+        "core-en-module-09"
+      ],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1",
+        "human-feedback:hiep-2026-09-01",
+        "fresh-novice-audit:2026-09-01"
+      ],
+      "status": "review",
+      "author": "codex+fresh-reviewers",
+      "reviewer": null,
+      "transfer_answer": "Ý nghĩa là khả năng + việc đã xảy ra. Hoàng là subject và the key là object; might biểu thị khả năng; have forgotten nhìn việc quên như xảy ra trước. Câu là “Hoàng might have forgotten the key.”",
+      "glossary_refs": [
+        "clause",
+        "finite-verb",
+        "tense",
+        "aspect",
+        "modality",
+        "reference"
+      ],
+      "revision_of": "core-en-73",
+      "revision_reason": "beginner_self_contained_and_transfer_alignment"
+    },
+    {
+      "id": "core-en-74",
+      "track": "english",
+      "node_id": "core-en-module-10",
+      "card_type": "mechanism",
+      "prompt": "Giữ sự việc “The team solved the problem” rồi tạo ba phiên bản: câu hỏi, bị động, và khả năng đã xảy ra. Sau mỗi phiên bản, nói phần nghĩa mới được thêm.",
+      "model_answer": "“Did the team solve the problem?” hỏi sự việc; “The problem was solved by the team” đổi điểm bắt đầu sang vật chịu tác động; “The team may have solved the problem” thêm khả năng và cho thấy việc giải đã xảy ra trước mốc nói.",
+      "explanation": "Giữ sự việc và vai trò chính ổn định trong khi thay từng lớp giúp ta hiểu mỗi biến đổi thay đổi hình thức hoặc ý nghĩa gì.",
+      "misconception": "Biến đổi càng nhiều dạng càng tốt dù câu không có ngữ cảnh sử dụng.",
+      "transfer_prompt": "Từ “The team solved the problem”, tạo question, passive và modal-perfect, giải thích từng lớp.",
+      "prerequisite_node_ids": [
+        "core-en-module-03",
+        "core-en-module-04",
+        "core-en-module-07"
+      ],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1",
+        "human-feedback:hiep-2026-09-01",
+        "fresh-novice-audit:2026-09-01"
+      ],
+      "status": "review",
+      "author": "codex+fresh-reviewers",
+      "reviewer": null,
+      "transfer_answer": "Question: “Did the team solve the problem?”; passive: “The problem was solved by the team”; modal-perfect: “The team may have solved the problem.” Mỗi câu lần lượt thêm mục đích hỏi, đổi điểm xuất phát, hoặc thêm khả năng + việc đã xảy ra trước.",
+      "glossary_refs": [
+        "clause",
+        "auxiliary",
+        "tense",
+        "aspect",
+        "modality"
+      ],
+      "revision_of": "core-en-74",
+      "revision_reason": "beginner_self_contained_and_transfer_alignment"
+    },
+    {
+      "id": "core-en-75",
+      "track": "english",
+      "node_id": "core-en-module-10",
+      "card_type": "mechanism",
+      "prompt": "Khi nghe một câu thật, hãy ghi: trước khi kiểm tra bạn đoán gì, bạn sai ở đâu, âm hoặc từ nào cho bằng chứng, và một câu mới dùng cùng mẫu.",
+      "model_answer": "Ví dụ “I should have called earlier.” Có thể ban đầu nghe nhầm have. Kiểm tra transcript cho thấy should + have + called diễn tả việc đáng lẽ đã gọi nhưng không gọi. Câu mới: “I should have sent the message yesterday.”",
+      "explanation": "Dự đoán, kiểm bằng chứng, chẩn đoán và tự nói lại biến một lỗi nghe thành dữ liệu có thể dùng cho lần sau.",
+      "misconception": "Hiểu được video nghĩa là mọi cấu trúc trong đó tự động trở thành câu mình nói được.",
+      "transfer_prompt": "Chọn một câu input thật và ghi rõ giả thuyết ban đầu, lỗi, bằng chứng sửa và câu transfer.",
+      "prerequisite_node_ids": [
+        "core-en-module-07",
+        "core-en-module-09"
+      ],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1",
+        "human-feedback:hiep-2026-09-01",
+        "fresh-novice-audit:2026-09-01"
+      ],
+      "status": "review",
+      "author": "codex+fresh-reviewers",
+      "reviewer": null,
+      "transfer_answer": "Với input “I should have called earlier”, giả thuyết có thể là người nói tiếc một việc chưa làm; lỗi là nghe have thành of; bằng chứng là should + have + called; transfer là “I should have sent the message yesterday.”",
+      "glossary_refs": [
+        "phoneme",
+        "prosody",
+        "clause",
+        "collocation"
+      ],
+      "revision_of": "core-en-75",
+      "revision_reason": "beginner_self_contained_and_transfer_alignment"
+    },
+    {
+      "id": "core-en-76",
+      "track": "english",
+      "node_id": "core-en-module-10",
+      "card_type": "contrast",
+      "prompt": "Cùng muốn người khác gửi ảnh hoặc tài liệu, bạn sẽ nói với bạn thân và khách hàng thế nào? Điều gì trong câu thay đổi vì quan hệ và hoàn cảnh?",
+      "model_answer": "Với bạn thân: “Send me the photos when you can.” Với khách hàng: “Could you send me the signed document when convenient?” Câu thứ hai mềm và rõ hơn vì quan hệ, mục tiêu và hoàn cảnh khác; câu dài hơn không tự động lịch sự hơn.",
+      "explanation": "Một câu có thể đúng ngữ pháp nhưng chưa phù hợp với người nghe. Cách chọn lời phụ thuộc vào quan hệ, mục tiêu và hoàn cảnh giao tiếp.",
+      "misconception": "Câu càng dài và dùng could càng luôn lịch sự hơn.",
+      "transfer_prompt": "Tạo cùng yêu cầu cho bạn thân và cho khách hàng, giải thích form nào đổi và vì sao.",
+      "prerequisite_node_ids": [
+        "core-en-module-04",
+        "core-en-module-07"
+      ],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1",
+        "human-feedback:hiep-2026-09-01",
+        "fresh-novice-audit:2026-09-01"
+      ],
+      "status": "review",
+      "author": "codex+fresh-reviewers",
+      "reviewer": null,
+      "transfer_answer": "Bạn thân: “Send me the photos when you can.” Khách hàng: “Could you send me the signed document when convenient?” Modal, cách gọi tài liệu và when convenient điều chỉnh mức trực tiếp và hoàn cảnh.",
+      "glossary_refs": [
+        "discourse",
+        "modality",
+        "clause"
+      ],
+      "revision_of": "core-en-76",
+      "revision_reason": "beginner_self_contained_and_transfer_alignment"
+    },
+    {
+      "id": "core-en-77",
+      "track": "english",
+      "node_id": "core-en-module-10",
+      "card_type": "boundary",
+      "prompt": "Sau khi hiểu các nguyên lý, hãy chọn một thứ vẫn phải học bằng input hoặc phản hồi thật. Vì sao chỉ biết nguyên lý chưa đủ?",
+      "model_answer": "Ví dụ trọng âm khi nói: ta cần nghe nhiều người và nhờ người nghe thật cho biết phần nào được hiểu là trọng tâm. Nguyên lý giúp ta biết cần kiểm tra gì, nhưng không tự cho ta trải nghiệm âm thanh, thói quen cụm từ hay phản hồi giao tiếp.",
+      "explanation": "Core là khung để gắn kiến thức mới, không thay thế input đa dạng, quy ước từ vựng, phát âm và tương tác thật.",
+      "misconception": "Hiểu nguyên lý rồi thì không cần ghi nhớ chunks, ngoại lệ hoặc luyện với người thật.",
+      "transfer_prompt": "Chọn một gap chỉ input hoặc feedback thật mới sửa được và thiết kế cách thu bằng chứng trong tuần.",
+      "prerequisite_node_ids": [
+        "core-en-module-01",
+        "core-en-module-07",
+        "core-en-module-09"
+      ],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1",
+        "human-feedback:hiep-2026-09-01",
+        "fresh-novice-audit:2026-09-01"
+      ],
+      "status": "review",
+      "author": "codex+fresh-reviewers",
+      "reviewer": null,
+      "transfer_answer": "Gap: chưa biết prominence của mình có giúp người nghe nhận đúng focus. Trong tuần, thu hai cách đọc cùng một câu, nhờ một người nghe nói họ hiểu phần nào được nhấn, rồi sửa và thu lại.",
+      "glossary_refs": [
+        "discourse",
+        "prosody",
+        "collocation",
+        "phoneme"
+      ],
+      "revision_of": "core-en-77",
+      "revision_reason": "beginner_self_contained_and_transfer_alignment"
+    },
+    {
+      "id": "core-en-78",
+      "track": "english",
+      "node_id": "core-en-module-10",
+      "card_type": "application",
+      "prompt": "Phân tích “The proposal might have been rejected” theo từng lớp: ai hoặc vật ở đầu câu, mức chắc chắn, thời điểm, và dạng bị động. Sau đó đổi rejected thành delayed và viết câu chủ động.",
+      "model_answer": "The proposal là vật chịu tác động và đứng đầu câu. Might thêm khả năng; have + rejected cho thấy sự việc đã xảy ra trước mốc nói; be + rejected là bị động. Bản chủ động: “The committee might have delayed the proposal.” Ai thực sự làm việc đó vẫn cần context.",
+      "explanation": "Phân lớp cấu trúc thu hẹp meaning nhưng vẫn phải đánh dấu phần context chưa cung cấp, như tác nhân cụ thể.",
+      "misconception": "Phân tích grammar cho phép biết chắc toàn bộ ý định người nói mà không cần discourse.",
+      "transfer_prompt": "Thay rejected bằng một verb mới rồi đổi câu sang active, giữ mức độ chắc chắn tương đương.",
+      "prerequisite_node_ids": [
+        "core-en-module-04",
+        "core-en-module-06",
+        "core-en-module-07"
+      ],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1",
+        "human-feedback:hiep-2026-09-01",
+        "fresh-novice-audit:2026-09-01"
+      ],
+      "status": "review",
+      "author": "codex+fresh-reviewers",
+      "reviewer": null,
+      "transfer_answer": "Thay bằng delayed: “The proposal might have been delayed.” Bản active là “The committee might have delayed the proposal.” Might giữ khả năng; have delayed giữ việc xảy ra trước; committee thêm tác nhân.",
+      "glossary_refs": [
+        "clause",
+        "subject",
+        "object",
+        "auxiliary",
+        "tense",
+        "aspect",
+        "modality"
+      ],
+      "revision_of": "core-en-78",
+      "revision_reason": "beginner_self_contained_and_transfer_alignment"
+    },
+    {
+      "id": "core-en-79",
+      "track": "english",
+      "node_id": "core-en-module-10",
+      "card_type": "production",
+      "prompt": "Nói 3–5 câu: một việc đã xảy ra và kế hoạch tiếp theo. Sau đó tự kiểm ba điều: người hoặc vật có rõ không, thời gian có khớp không, và thông tin chính có nổi bật không.",
+      "model_answer": "Ví dụ: “I finished the report yesterday. I found one problem, so I will check the data again tomorrow.” Người hoặc vật rõ, yesterday/tomorrow khớp dòng thời gian, và problem/check the data là thông tin quan trọng. Chọn một điểm cần sửa rồi nói lại.",
+      "explanation": "Tự kiểm theo tầng phản ánh khả năng dùng nguyên lý trong sản xuất tốt hơn việc chỉ đếm số lỗi riêng lẻ.",
+      "misconception": "Chỉ số tốt nhất là nói không dừng và không có bất kỳ lỗi ngữ pháp nào.",
+      "transfer_prompt": "Nói lại cùng nội dung cho một người nghe khác và điều chỉnh reference, register hoặc focus.",
+      "prerequisite_node_ids": [
+        "core-en-module-07",
+        "core-en-module-08",
+        "core-en-module-09"
+      ],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1",
+        "human-feedback:hiep-2026-09-01",
+        "fresh-novice-audit:2026-09-01"
+      ],
+      "status": "review",
+      "author": "codex+fresh-reviewers",
+      "reviewer": null,
+      "transfer_answer": "Kể cho bạn thân có thể dùng cách gọi lại và từ ngữ thân mật hơn; kể cho đồng nghiệp mới cần gọi người hoặc vật rõ hơn, thêm background và dùng từ trung tính hơn. Timeline giữ nguyên nhưng reference, register và focus đổi theo người nghe.",
+      "glossary_refs": [
+        "clause",
+        "tense",
+        "aspect",
+        "modality",
+        "reference",
+        "collocation",
+        "prosody"
+      ],
+      "revision_of": "core-en-79",
+      "revision_reason": "beginner_self_contained_and_transfer_alignment"
+    },
+    {
+      "id": "core-en-80",
+      "track": "english",
+      "node_id": "core-en-module-10",
+      "card_type": "production",
+      "prompt": "Chọn một nguyên lý đã học, dạy lại bằng lời đơn giản, nối nó với ba ví dụ khác nhau, rồi nói một trường hợp không thể suy ra chỉ bằng nguyên lý.",
+      "model_answer": "Ví dụ nguyên lý: câu tiếng Anh cần một verb mang dấu hiệu ngữ pháp hữu hạn. Nó nối với câu kể “She works”, câu hỏi “Does she work?”, và modal “She can work”. Ranh giới: nguyên lý không tự cho biết mọi cách kết hợp từ; collocation và context vẫn cần học từ ví dụ thật.",
+      "explanation": "Teach-back tích hợp recall, mechanism, transfer và boundary: biết cách sinh ví dụ, nhưng cũng biết điều gì phải học từ input hoặc quy ước.",
+      "misconception": "Kể lại càng nhiều thuật ngữ trong thẻ càng chứng minh hiểu sâu.",
+      "transfer_prompt": "Dùng nguyên lý vừa dạy để phân tích một câu hoặc input bạn chưa từng thấy trong bộ thẻ.",
+      "prerequisite_node_ids": [
+        "core-en-module-01",
+        "core-en-module-07",
+        "core-en-module-09"
+      ],
+      "source_refs": [
+        "claude-owner-paste:english-2026-08-25",
+        "english-core-sources:v1",
+        "core-synthesis:english-generative-core-v1",
+        "human-feedback:hiep-2026-09-01",
+        "fresh-novice-audit:2026-09-01"
+      ],
+      "status": "review",
+      "author": "codex+fresh-reviewers",
+      "reviewer": null,
+      "transfer_answer": "Với “The report could have been changed”, could là modal hữu hạn; have + been tạo lớp perfect; been + changed tạo bị động; report là subject chịu tác động. Context vẫn cần để biết ai đổi và mức khả năng cụ thể.",
+      "glossary_refs": [
+        "clause",
+        "discourse",
+        "collocation",
+        "prosody"
+      ],
+      "revision_of": "core-en-80",
+      "revision_reason": "beginner_self_contained_and_transfer_alignment"
+    },
+    {
+      "id": "core-en-bridge-02",
+      "node_id": "core-en-module-02",
+      "card_type": "core_recall",
+      "prompt": "Trong ‘She walks’ và ‘She is walking’, từ nào cho biết việc chính, từ nào đang giúp câu mang dấu hiệu ngữ pháp? Hãy giải thích trước bằng lời thường.",
+      "model_answer": "Cả hai câu đều nói về việc đi bộ. Ở ‘She walks’, walks vừa mang nghĩa đi bộ vừa mang dấu hiệu của câu. Ở ‘She is walking’, walking mang nghĩa việc đang diễn ra, còn is giúp gánh dấu hiệu ngữ pháp. Từ giúp như is được gọi là auxiliary.",
+      "explanation": "Tách việc câu nói về điều gì khỏi từ đang gánh cấu trúc giúp hiểu câu hỏi, phủ định và các chuỗi verb sau này.",
+      "misconception": "Mọi verb trong một câu đều cùng làm một công việc và đều mang tense.",
+      "transfer_prompt": "Phân tích ‘They have finished’: từ nào giúp tạo cấu trúc và từ nào nói việc đã hoàn thành?",
+      "transfer_answer": "Have là từ trợ giúp tạo perfect; finished mang nghĩa việc hoàn thành. Have đang gánh dấu hiệu hữu hạn của câu.",
+      "glossary_refs": [
+        "auxiliary",
+        "lexical-verb",
+        "finite-verb",
+        "aspect"
+      ],
+      "prerequisite_node_ids": [
+        "core-en-module-01"
+      ],
+      "track": "english",
+      "status": "review",
+      "author": "codex",
+      "reviewer": null,
+      "source_refs": [
+        "human-feedback:hiep-2026-09-01",
+        "content-style:hiep-hoang-v1",
+        "fresh-novice-audit:2026-09-01"
+      ],
+      "revision_reason": "new_beginner_bridge"
+    },
+    {
+      "id": "core-en-bridge-03",
+      "node_id": "core-en-module-03",
+      "card_type": "core_recall",
+      "prompt": "Với câu ‘Lan likes tea’, muốn hỏi hoặc phủ định thì tiếng Anh cần một chỗ mang dấu hiệu của câu. Nếu chưa có từ trợ giúp, ta làm gì?",
+      "model_answer": "Ta thêm do: ‘Does Lan like tea?’ và ‘Lan does not like tea.’ Does mang dấu hiệu phù hợp với Lan; like trở về dạng gốc. Đây là cơ chế do-support.",
+      "explanation": "Thay vì học riêng từng mẫu hỏi và phủ định, ta tìm từ trợ giúp đang mang cấu trúc rồi đảo nó hoặc đặt not sau nó.",
+      "misconception": "Có does thì verb chính vẫn phải thêm -s: ‘Does Lan likes…?’",
+      "transfer_prompt": "Đổi ‘Hoàng watched the film’ thành câu hỏi và câu phủ định.",
+      "transfer_answer": "‘Did Hoàng watch the film?’ và ‘Hoàng did not watch the film.’ Did đã mang quá khứ nên watch dùng dạng gốc.",
+      "glossary_refs": [
+        "auxiliary",
+        "finite-verb",
+        "lexical-verb"
+      ],
+      "prerequisite_node_ids": [
+        "core-en-module-02"
+      ],
+      "track": "english",
+      "status": "review",
+      "author": "codex",
+      "reviewer": null,
+      "source_refs": [
+        "human-feedback:hiep-2026-09-01",
+        "content-style:hiep-hoang-v1",
+        "fresh-novice-audit:2026-09-01"
+      ],
+      "revision_reason": "new_beginner_bridge"
+    },
+    {
+      "id": "core-en-bridge-04",
+      "node_id": "core-en-module-04",
+      "card_type": "core_recall",
+      "prompt": "Một câu không chỉ cho biết ‘khi nào’. Nó còn cho biết người nói nhìn sự việc ra sao và chắc đến mức nào. Trong ‘She may be working’, ba lớp đó nằm ở đâu?",
+      "model_answer": "May cho biết mức khả năng của người nói; be + working nhìn việc như đang diễn ra; mốc thời gian cụ thể cần context. Các lớp này lần lượt liên quan đến modality, aspect và time/tense.",
+      "explanation": "Tách ba câu hỏi giúp tránh coi mọi khác biệt verb là một danh sách ‘thì’ phải thuộc lòng.",
+      "misconception": "Tên một tense tự quyết định đầy đủ thời gian, góc nhìn và mức chắc chắn của cả câu.",
+      "transfer_prompt": "Phân tích ‘They must have left’: lớp nào nói mức chắc chắn và lớp nào nhìn việc rời đi như đã xảy ra trước mốc nói?",
+      "transfer_answer": "Must biểu thị suy luận khá chắc; have + left tạo perfect, nhìn việc rời đi như đã xảy ra trước mốc đang nói. Mốc chính xác vẫn dựa vào context.",
+      "glossary_refs": [
+        "tense",
+        "aspect",
+        "modality",
+        "auxiliary"
+      ],
+      "prerequisite_node_ids": [
+        "core-en-module-02"
+      ],
+      "track": "english",
+      "status": "review",
+      "author": "codex",
+      "reviewer": null,
+      "source_refs": [
+        "human-feedback:hiep-2026-09-01",
+        "content-style:hiep-hoang-v1",
+        "fresh-novice-audit:2026-09-01"
+      ],
+      "revision_reason": "new_beginner_bridge"
+    },
+    {
+      "id": "core-en-bridge-05",
+      "node_id": "core-en-module-05",
+      "card_type": "core_recall",
+      "prompt": "Trong ‘the two small robots’, từ nào gọi tên loại vật, còn các từ khác giúp người nghe chọn đúng nhóm như thế nào?",
+      "model_answer": "Robots là từ chính. The giúp người nghe tìm nhóm đã xác định; two cho số lượng; small mô tả. Cả nhóm hoạt động như một cụm danh từ (noun phrase).",
+      "explanation": "Học noun phrase như một gói quy chiếu giúp hiểu article, số lượng và mô tả cùng phục vụ việc người nghe nhận ra đối tượng.",
+      "misconception": "Noun phrase chỉ là một noun; các từ xung quanh không ảnh hưởng việc người nghe biết ta nói vật nào.",
+      "transfer_prompt": "Phân tích ‘those three messages from Hoàng’ theo từ chính và các lớp giúp xác định.",
+      "transfer_answer": "Messages là từ chính; those chỉ nhóm đang được trỏ tới; three cho số lượng; from Hoàng thu hẹp nguồn của messages.",
+      "glossary_refs": [
+        "noun-phrase",
+        "determiner",
+        "modifier",
+        "reference"
+      ],
+      "prerequisite_node_ids": [
+        "core-en-module-01"
+      ],
+      "track": "english",
+      "status": "review",
+      "author": "codex",
+      "reviewer": null,
+      "source_refs": [
+        "human-feedback:hiep-2026-09-01",
+        "content-style:hiep-hoang-v1",
+        "fresh-novice-audit:2026-09-01"
+      ],
+      "revision_reason": "new_beginner_bridge"
+    },
+    {
+      "id": "core-en-bridge-06",
+      "node_id": "core-en-module-06",
+      "card_type": "core_recall",
+      "prompt": "Bắt đầu từ ‘The child found the key’. Phần nào là lõi không thể bỏ nếu vẫn muốn kể cùng sự việc, và ta có thể gắn thêm những lớp nào?",
+      "model_answer": "Lõi là người/vật liên quan và việc trung tâm: the child – found – the key. Ta có thể thêm mô tả cho danh từ, nơi chốn, thời gian hoặc một mệnh đề phụ, miễn vẫn nhìn ra lõi.",
+      "explanation": "Nhìn câu như lõi cộng các lớp mở rộng giúp tạo câu dài mà không mất cấu trúc hay ý chính.",
+      "misconception": "Câu dài là một mẫu hoàn toàn mới phải nhớ nguyên khối.",
+      "transfer_prompt": "Mở rộng ‘The student submitted the assignment’ bằng một mô tả và một lớp thời gian, rồi chỉ lại câu lõi.",
+      "transfer_answer": "‘The tired student submitted the assignment after class.’ Tired mô tả student; after class thêm thời gian; lõi vẫn là ‘The student submitted the assignment.’",
+      "glossary_refs": [
+        "clause",
+        "modifier",
+        "adjunct",
+        "subordination"
+      ],
+      "prerequisite_node_ids": [
+        "core-en-module-01",
+        "core-en-module-05"
+      ],
+      "track": "english",
+      "status": "review",
+      "author": "codex",
+      "reviewer": null,
+      "source_refs": [
+        "human-feedback:hiep-2026-09-01",
+        "content-style:hiep-hoang-v1",
+        "fresh-novice-audit:2026-09-01"
+      ],
+      "revision_reason": "new_beginner_bridge"
+    },
+    {
+      "id": "core-en-bridge-07",
+      "node_id": "core-en-module-07",
+      "card_type": "core_recall",
+      "prompt": "Sau ‘I bought a lamp’, vì sao câu tiếp theo thường bắt đầu bằng ‘It’ rồi mới nói điều mới về chiếc đèn?",
+      "model_answer": "It nhắc lại chiếc đèn người nghe vừa biết, tạo điểm bám. Phần sau đưa thông tin mới. Đây là một cách tổ chức mạch lời nói từ điều đã biết sang điều mới.",
+      "explanation": "Ngữ pháp đúng chưa đủ; người nghe còn cần biết ta đang tiếp tục nói về vật nào và thông tin nào là trọng tâm.",
+      "misconception": "Các câu đúng riêng lẻ đặt theo bất kỳ thứ tự nào cũng tạo một đoạn dễ hiểu như nhau.",
+      "transfer_prompt": "Viết hai câu: giới thiệu một cuốn sách rồi dùng điểm bám để nói điều mới về nó.",
+      "transfer_answer": "‘I found a useful book. It explains English clauses clearly.’ It nối lại book; explains… là thông tin mới.",
+      "glossary_refs": [
+        "reference",
+        "discourse",
+        "noun-phrase"
+      ],
+      "prerequisite_node_ids": [
+        "core-en-module-01",
+        "core-en-module-05"
+      ],
+      "track": "english",
+      "status": "review",
+      "author": "codex",
+      "reviewer": null,
+      "source_refs": [
+        "human-feedback:hiep-2026-09-01",
+        "content-style:hiep-hoang-v1",
+        "fresh-novice-audit:2026-09-01"
+      ],
+      "revision_reason": "new_beginner_bridge"
+    },
+    {
+      "id": "core-en-bridge-08",
+      "node_id": "core-en-module-08",
+      "card_type": "core_recall",
+      "prompt": "Vì sao ‘Can you send it?’ khi nói nhanh có thể không nghe giống bốn từ tách rời trên giấy? Người nghe dựa vào đâu để chia lại?",
+      "model_answer": "Âm không nhấn có thể nhẹ đi và các từ nối với nhau, nên ranh giới từ mờ. Người nghe kết hợp âm nổi bật, nhịp, cấu trúc quen và context để khôi phục can | you | send | it.",
+      "explanation": "Nghe không phải chép từng âm độc lập; đó là quá trình dùng cả tín hiệu âm thanh và dự đoán có kiểm chứng.",
+      "misconception": "Nếu không nghe rõ từng âm như từ điển thì người nói đã phát âm sai hoặc mình không thể hiểu câu.",
+      "transfer_prompt": "Với ‘Did you check it?’, nêu một chỗ có thể bị nối/nhẹ và cách dùng cấu trúc để kiểm tra dự đoán.",
+      "transfer_answer": "Did you có thể nghe gần như một cụm nối. Ta dự đoán mẫu câu hỏi quá khứ did + subject + base verb, rồi kiểm xem check có ở dạng gốc và context có nói về việc đã xảy ra không.",
+      "glossary_refs": [
+        "prosody",
+        "clause",
+        "auxiliary"
+      ],
+      "prerequisite_node_ids": [
+        "core-en-module-03",
+        "core-en-module-07"
+      ],
+      "track": "english",
+      "status": "review",
+      "author": "codex",
+      "reviewer": null,
+      "source_refs": [
+        "human-feedback:hiep-2026-09-01",
+        "content-style:hiep-hoang-v1",
+        "fresh-novice-audit:2026-09-01"
+      ],
+      "revision_reason": "new_beginner_bridge"
+    },
+    {
+      "id": "core-en-bridge-09",
+      "node_id": "core-en-module-09",
+      "card_type": "core_recall",
+      "prompt": "Vì sao học từ ‘run’ chỉ bằng một nghĩa tiếng Việt vẫn chưa đủ để tự dùng nó trong câu mới?",
+      "model_answer": "Ta cần nối dạng từ với từng nghĩa và cách dùng: run five kilometres, run a business, run out of time. Những mối nối với mẫu câu và từ thường đi cùng tạo thành mạng từ vựng.",
+      "explanation": "Một danh sách dịch rời không cho biết sense nào đang dùng, từ đi với gì và tình huống nào nghe tự nhiên.",
+      "misconception": "Biết một bản dịch phổ biến đồng nghĩa với biết mọi cách dùng của từ.",
+      "transfer_prompt": "Tạo một mạng nhỏ cho ‘make’: một nghĩa, hai collocation và một câu mới.",
+      "transfer_answer": "Make có nghĩa rộng liên quan tạo/thực hiện; hai collocation là make a decision và make progress. Ví dụ: ‘We made good progress today.’",
+      "glossary_refs": [
+        "collocation",
+        "reference",
+        "morpheme"
+      ],
+      "prerequisite_node_ids": [
+        "core-en-module-06",
+        "core-en-module-08"
+      ],
+      "track": "english",
+      "status": "review",
+      "author": "codex",
+      "reviewer": null,
+      "source_refs": [
+        "human-feedback:hiep-2026-09-01",
+        "content-style:hiep-hoang-v1",
+        "fresh-novice-audit:2026-09-01"
+      ],
+      "revision_reason": "new_beginner_bridge"
+    },
+    {
+      "id": "core-en-bridge-10",
+      "node_id": "core-en-module-10",
+      "card_type": "core_recall",
+      "prompt": "Khi gặp một ý mới cần nói, bốn bước đơn giản nào giúp bạn đi từ ý nghĩa đến một câu có thể kiểm tra và sửa?",
+      "model_answer": "Một đường đi hữu ích là: (1) nói rõ ý định, (2) chọn ai/làm gì/với gì, (3) thêm thời gian, góc nhìn hoặc mức chắc chắn, (4) chọn từ/cụm tự nhiên rồi nói và kiểm tra bằng input hay phản hồi.",
+      "explanation": "Bước tích hợp nối các nguyên lý thành quy trình sinh câu; nó không đòi nhớ lại toàn bộ thuật ngữ trước khi nói.",
+      "misconception": "Muốn tự tạo câu phải dịch trọn câu tiếng Việt hoặc nhớ đúng một mẫu đã học.",
+      "transfer_prompt": "Dùng bốn bước để diễn đạt ý ‘Hoàng có thể đã quên chìa khóa’.",
+      "transfer_answer": "Ý là khả năng về một việc đã xảy ra; Hoàng là người quên, key là vật bị quên; might thêm khả năng và have forgotten nhìn việc như đã xảy ra trước: ‘Hoàng might have forgotten the key.’",
+      "glossary_refs": [
+        "clause",
+        "modality",
+        "aspect",
+        "collocation"
+      ],
+      "prerequisite_node_ids": [
+        "core-en-module-01",
+        "core-en-module-04",
+        "core-en-module-09"
+      ],
+      "track": "english",
+      "status": "review",
+      "author": "codex",
+      "reviewer": null,
+      "source_refs": [
+        "human-feedback:hiep-2026-09-01",
+        "content-style:hiep-hoang-v1",
+        "fresh-novice-audit:2026-09-01"
+      ],
+      "revision_reason": "new_beginner_bridge"
+    }
+  ]
+}

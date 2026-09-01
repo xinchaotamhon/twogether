@@ -1,5 +1,7 @@
 # Flashcard Authoring Contract
 
+The audience-specific wording and feedback rules are owned by `docs/CONTENT_STYLE_HIEP_HOANG.md`. Read both documents before authoring. In particular, assume the learner may be meeting the concept for the first time; plain-language mechanism comes before terminology.
+
 ## One card, one retrieval target
 
 Write a prompt that demands an answer, not recognition. Avoid “Which of these…?”, yes/no prompts without explanation, and prompts whose answer is copied verbatim from the question. Keep one main idea per card; split a large explanation into a bundle.
@@ -47,13 +49,15 @@ Write a prompt that demands an answer, not recognition. Avoid “Which of these�
 
 For a principle, prefer a four-card bundle: state it, explain its mechanism, identify where it fails, and use it in a novel case. The app may schedule each card independently while the map reports the bundle’s transfer status.
 
+Four cards is a shape, not a quota. There is no fixed eight-card collection rule: add entry or bridge cards when a beginner needs them, and split overloaded concepts instead of padding or compressing to a cosmetic count.
+
 ## Importing external material
 
 Capture the source separately, hash it, and write a transformation note. Do not paste an entire external conversation into `START_HERE.md` or project Markdown. Owner-pasted captures for English and React are summarized under `content/sources/`; their derived cards remain in `content/drafts/` until Human review. See `CLAUDE_SOURCE_STATUS.md`.
 
 ## Active English publication
 
-`content/drafts/core-curriculum-drafts-v2.json` remains the immutable English Generative Core v1 source packet. Hiệp approved the exact 80 English IDs on 2026-08-26 in `content/reviews/english-generative-core-v1-owner-approval-2026-08-26.json`; `src/approvedCurriculum.ts` derives ten published collections of eight with reviewer `hiep`. The ten React cards remain draft history.
+`content/drafts/core-curriculum-drafts-v2.json` remains the immutable English Generative Core v1 source packet. Hiệp approved the exact 80 English IDs on 2026-08-26 in `content/reviews/english-generative-core-v1-owner-approval-2026-08-26.json`; `src/approvedCurriculum.ts` derives the ten currently published v1 collections with reviewer `hiep`. Eight was that release's packaging choice, not a future authoring quota. `content/drafts/english-core-beginner-revision-v2.json` is a separate 89-card second-review packet; it must not be described as approved until Hiệp applies it. The ten React cards remain draft history.
 
 Editing an approved runtime card must create a new local draft revision. Do not rewrite the source packet, delete its published version, reset FSRS state, or erase review events. Future pronunciation, vocabulary, comparison, React, or other-subject branches follow `docs/CURRICULUM_EXPANSION_ROADMAP.md` and require their own bounded Human approval.
 

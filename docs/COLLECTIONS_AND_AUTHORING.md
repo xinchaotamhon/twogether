@@ -10,7 +10,7 @@ After selecting Hiệp or Hoàng, the learner chooses any deck in the deck shelf
 
 The `Tiến độ` view shows the streak and opens `Thẻ`. The authoring view can create/edit a draft, publish it with an explicit local-human action, archive it without deleting history, and import/export an AI packet. The packet is content-only: it never carries learner progress, private notes, or review events.
 
-The same view exposes English Generative Core v1 as ten approved slices of eight cards. Those exact 80 cards are the active due queue and participate in FSRS and honest streak qualification; the old 12 fixtures remain hidden without deleting their history. “Đưa vào chỉnh sửa” creates a local draft revision and never mutates the immutable approved packet or resets review state.
+The same view exposes English Generative Core v1 as ten approved slices containing the exact 80 approved cards. Those cards are the active due queue and participate in FSRS and honest streak qualification; the old 12 fixtures remain hidden without deleting their history. The beginner v2 panel is a separate second-review surface with variable collection sizes. “Đưa vào chỉnh sửa” creates a local draft revision and never mutates the immutable approved packet or resets review state.
 
 The library also exposes the separate 80-record support packet as an explicit browser-local preview. Preview overlays optional `scaffold_prompt`, `scaffold_answer`, and `glossary_refs` during study and preserves them in CRUD/import/export. It does not promote `ai_draft_unreviewed` support to Human-approved content and does not affect the scheduler.
 

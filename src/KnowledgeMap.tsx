@@ -13,28 +13,93 @@ import {
   type NodeProps,
 } from "@xyflow/react";
 import "@xyflow/react/dist/style.css";
-import { addGraphNode } from "./graphWorkspace";
-import type { Card, ConceptEdge, ConceptNode, LearnerId, LearnerSnapshot } from "./types";
+import type { CardCollection } from "./featureTypes";
+import {
+  projectKnowledgeLayout,
+  UNIVERSAL_ROOT_ID,
+} from "./knowledgeTreeLayout";
+import type { Card, ConceptEdge, ConceptNode, LearnerSnapshot } from "./types";
 
-type DisplayNode = Pick<ConceptNode, "id" | "title" | "purpose" | "status"> & { kind: ConceptNode["kind"] | "universal"; virtual?: boolean };
-type TreeEdge = { from: string; to: string; type: string; virtual?: boolean };
+type DisplayNode = Pick<ConceptNode, "id" | "title" | "purpose" | "status"> & {
+  kind: ConceptNode["kind"] | "universal";
+  virtual?: boolean;
+};
 interface Progress { count: number; stable: number; percent: number }
-interface KnowledgeNodeData extends Record<string, unknown> { displayNode: DisplayNode; progress: Progress }
+interface KnowledgeNodeData extends Record<string, unknown> {
+  displayNode: DisplayNode;
+  progress: Progress;
+}
 type KnowledgeFlowNode = FlowNode<KnowledgeNodeData, "knowledge">;
 type KnowledgeFlowEdge = FlowEdge<{ relation: string }, "knowledge">;
 
-const UNIVERSAL_ROOT: DisplayNode = { id: "twogether-universal-root", kind: "universal", title: "Bản chất chung", purpose: "Mọi nhánh bắt đầu từ nguyên lý, đi qua cơ chế, ranh giới rồi chuyển sang tình huống mới.", status: "framework", virtual: true };
-const treeKindLabels: Record<DisplayNode["kind"], string> = { universal: "Gốc chung", root: "Bộ kiến thức", trunk: "Thân nguyên lý", branch: "Cành cơ chế", leaf: "Lá chuyển giao" };
+const UNIVERSAL_ROOT: DisplayNode = {
+  id: UNIVERSAL_ROOT_ID,
+  kind: "universal",
+  title: "Bản chất chung",
+  purpose: "Mọi nhánh bắt đầu từ điều đã hiểu, đi qua cơ chế và ranh giới rồi mở sang tình huống mới.",
+  status: "framework",
+  virtual: true,
+};
+
+const DOMAIN_DEFINITIONS = [
+  {
+    id: "twogether-domain-english",
+    title: "Tiếng Anh",
+    purpose: "Từ cách tạo nghĩa và dựng câu đến giao tiếp, phát âm, từ vựng và những nhánh mở rộng sau này.",
+    matches: (nodeId: string) => nodeId.startsWith("core-en-"),
+  },
+  {
+    id: "twogether-domain-react",
+    title: "React",
+    purpose: "Từ mô hình giao diện theo trạng thái đến component, dữ liệu, hiệu năng và kiến trúc ứng dụng.",
+    matches: (nodeId: string) => nodeId.startsWith("core-react-"),
+  },
+] as const;
+
+function addDomainBranches(nodes: ConceptNode[], edges: ConceptEdge[]) {
+  const projectedNodes = [...nodes];
+  const projectedEdges = [...edges];
+  for (const domain of DOMAIN_DEFINITIONS) {
+    const members = nodes.filter((node) => domain.matches(node.id));
+    if (!members.length) continue;
+    const memberIds = new Set(members.map((node) => node.id));
+    const hasParentInDomain = new Set(
+      edges
+        .filter((edge) => edge.type === "part_of" && memberIds.has(edge.from) && memberIds.has(edge.to))
+        .map((edge) => edge.to),
+    );
+    projectedNodes.push({
+      id: domain.id,
+      kind: "root",
+      title: domain.title,
+      purpose: domain.purpose,
+      status: "framework",
+      source_refs: ["docs/KNOWLEDGE_GRAPH.md"],
+      maintainer: "hiep",
+    });
+    members
+      .filter((node) => !hasParentInDomain.has(node.id))
+      .forEach((node) => projectedEdges.push({ from: domain.id, to: node.id, type: "part_of" }));
+  }
+  return { nodes: projectedNodes, edges: projectedEdges };
+}
+const treeKindLabels: Record<DisplayNode["kind"], string> = {
+  universal: "Gốc chung",
+  root: "Miền kiến thức",
+  trunk: "Thân nguyên lý",
+  branch: "Cành kiến thức",
+  leaf: "Lá ứng dụng",
+};
 
 function KnowledgeNode({ data, selected }: NodeProps<KnowledgeFlowNode>) {
   const { displayNode: node, progress } = data;
   return <div data-testid={`tree-node-${node.id}`} className={`flow-knowledge-node ${node.kind}${selected ? " is-selected" : ""}`}>
-    <Handle type="target" position={Position.Top} isConnectable={false} className="knowledge-handle" />
+    <Handle type="source" position={Position.Top} isConnectable={false} className="knowledge-handle" />
     <span className="node-kind">{treeKindLabels[node.kind]}</span>
     <strong>{node.title}</strong>
     <span className="tree-node-meter" aria-hidden="true"><i style={{ width: `${progress.percent}%` }} /></span>
-    <span className="tree-node-progress">{progress.count ? `${progress.stable}/${progress.count} card bền hơn` : "Chưa có card trực tiếp"}</span>
-    <Handle type="source" position={Position.Bottom} isConnectable={false} className="knowledge-handle" />
+    <span className="tree-node-progress">{progress.count ? `${progress.stable}/${progress.count} thẻ đã bền` : "Chưa có thẻ trong nhánh"}</span>
+    <Handle type="target" position={Position.Bottom} isConnectable={false} className="knowledge-handle" />
   </div>;
 }
 
@@ -42,60 +107,129 @@ function KnowledgeEdge({ id, sourceX, sourceY, targetX, targetY, sourcePosition,
   const [path] = getBezierPath({ sourceX, sourceY, targetX, targetY, sourcePosition, targetPosition });
   return <path id={id} data-testid="tree-link" className={`flow-knowledge-edge ${data?.relation ?? "part_of"}`} d={path} fill="none" />;
 }
-
 const nodeTypes = { knowledge: KnowledgeNode };
 const edgeTypes = { knowledge: KnowledgeEdge };
 
-function projectDepths(nodes: readonly ConceptNode[], structuralEdges: readonly ConceptEdge[]): { depthById: Map<string, number>; entryNodes: ConceptNode[] } {
-  const nodesWithParents = new Set(structuralEdges.map((edge) => edge.to));
-  const entryNodes = nodes.filter((node) => !nodesWithParents.has(node.id));
-  const depthById = new Map<string, number>(entryNodes.map((node) => [node.id, 0]));
-  for (let pass = 0; pass < nodes.length; pass += 1) {
-    for (const edge of structuralEdges) {
-      const fromDepth = depthById.get(edge.from);
-      if (fromDepth !== undefined) depthById.set(edge.to, Math.max(depthById.get(edge.to) ?? 0, fromDepth + 1));
+export function KnowledgeMap({
+  nodes,
+  edges,
+  cards,
+  collections,
+  snapshot,
+  focusedCollectionIds,
+  onToggleCollection,
+  onStartCollection,
+}: {
+  nodes: ConceptNode[];
+  edges: ConceptEdge[];
+  cards: Card[];
+  collections: CardCollection[];
+  snapshot: LearnerSnapshot;
+  focusedCollectionIds: string[];
+  onToggleCollection: (collectionId: string) => void;
+  onStartCollection: (collection: CardCollection) => void;
+}) {
+  const projection = useMemo(() => addDomainBranches(nodes, edges), [nodes, edges]);
+  const displayNodes: DisplayNode[] = useMemo(() => [UNIVERSAL_ROOT, ...projection.nodes], [projection.nodes]);
+  const layout = useMemo(() => projectKnowledgeLayout(projection.nodes, projection.edges), [projection]);
+  const labelFor = (id: string) => displayNodes.find((node) => node.id === id)?.title ?? id;
+  const visualChildren = useMemo(() => {
+    const result = new Map<string, string[]>();
+    layout.skeletonEdges.forEach((edge) => result.set(edge.from, [...(result.get(edge.from) ?? []), edge.to]));
+    return result;
+  }, [layout.skeletonEdges]);
+  const descendants = (id: string) => {
+    const found = new Set<string>();
+    const pending = [id];
+    while (pending.length) {
+      const next = pending.shift()!;
+      if (found.has(next)) continue;
+      found.add(next);
+      pending.push(...(visualChildren.get(next) ?? []));
     }
-  }
-  nodes.forEach((node) => { if (!depthById.has(node.id)) depthById.set(node.id, 0); });
-  return { depthById, entryNodes };
-}
-
-export function KnowledgeMap({ nodes, edges, cards, snapshot, learnerId, onGraphChanged }: { nodes: ConceptNode[]; edges: ConceptEdge[]; cards: Card[]; snapshot: LearnerSnapshot; learnerId: LearnerId; onGraphChanged: () => void }) {
-  const displayNodes: DisplayNode[] = useMemo(() => [UNIVERSAL_ROOT, ...nodes], [nodes]);
-  const structuralEdges = useMemo(() => edges.filter((edge) => edge.type === "part_of" || edge.type === "prerequisite"), [edges]);
-  const { depthById, entryNodes } = useMemo(() => projectDepths(nodes, structuralEdges), [nodes, structuralEdges]);
-  const treeEdges: TreeEdge[] = useMemo(() => [...entryNodes.map((node) => ({ from: UNIVERSAL_ROOT.id, to: node.id, type: "part_of", virtual: true })), ...structuralEdges.map((edge) => ({ from: edge.from, to: edge.to, type: edge.type }))], [entryNodes, structuralEdges]);
-  const children = useMemo(() => { const result = new Map<string, string[]>(); treeEdges.forEach((edge) => result.set(edge.from, [...(result.get(edge.from) ?? []), edge.to])); return result; }, [treeEdges]);
-  const descendants = (id: string) => { const found = new Set<string>(); const pending = [id]; while (pending.length) { const next = pending.shift()!; if (found.has(next)) continue; found.add(next); pending.push(...(children.get(next) ?? [])); } return found; };
-  const progressFor = (id: string): Progress => { const ids = descendants(id); const nodeCards = cards.filter((card) => ids.has(card.node_id)); const stable = nodeCards.filter((card) => snapshot.cardStates[card.id]?.fsrs.stability > 2).length; return { count: nodeCards.length, stable, percent: nodeCards.length ? Math.round((stable / nodeCards.length) * 100) : 0 }; };
-  const [selectedNodeId, setSelectedNodeId] = useState(UNIVERSAL_ROOT.id);
+    return found;
+  };
+  const progressByNodeId = useMemo(() => {
+    const result = new Map<string, Progress>();
+    displayNodes.forEach((node) => {
+      const ids = descendants(node.id);
+      const cardIds = new Set(cards.filter((card) => ids.has(card.node_id)).map((card) => card.id));
+      const stable = [...cardIds].filter((id) => (snapshot.cardStates[id]?.fsrs.stability ?? 0) > 2).length;
+      result.set(node.id, { count: cardIds.size, stable, percent: cardIds.size ? Math.round((stable / cardIds.size) * 100) : 0 });
+    });
+    return result;
+  }, [cards, displayNodes, snapshot, visualChildren]);
+  const progressFor = (id: string) => progressByNodeId.get(id) ?? { count: 0, stable: 0, percent: 0 };
+  const [selectedNodeId, setSelectedNodeId] = useState(UNIVERSAL_ROOT_ID);
   const selected = displayNodes.find((node) => node.id === selectedNodeId) ?? UNIVERSAL_ROOT;
   const selectedProgress = progressFor(selected.id);
-  const mapProgress = progressFor(UNIVERSAL_ROOT.id);
-  const labelFor = (id: string) => displayNodes.find((node) => node.id === id)?.title ?? id;
+  const mapProgress = progressFor(UNIVERSAL_ROOT_ID);
+  const selectedBranchIds = descendants(selected.id);
+  const cardById = useMemo(() => new Map(cards.map((card) => [card.id, card])), [cards]);
+  const relatedCollections = collections.filter((collection) => {
+    if (selected.id === UNIVERSAL_ROOT_ID) return true;
+    if (collection.rootNodeId && selectedBranchIds.has(collection.rootNodeId)) return true;
+    return collection.cardIds.some((cardId) => {
+      const card = cardById.get(cardId);
+      return card ? selectedBranchIds.has(card.node_id) : false;
+    });
+  });
   const prerequisites = edges.filter((edge) => edge.to === selected.id && edge.type === "prerequisite").map((edge) => labelFor(edge.from));
-  const layers = useMemo(() => { const grouped = new Map<number, ConceptNode[]>(); nodes.forEach((node) => grouped.set(depthById.get(node.id) ?? 0, [...(grouped.get(depthById.get(node.id) ?? 0) ?? []), node])); return [...grouped.entries()].sort(([a], [b]) => a - b); }, [nodes, depthById]);
-  const widestLayer = Math.max(1, ...layers.map(([, layerNodes]) => layerNodes.length));
-  const stageWidth = Math.max(900, widestLayer * 300);
-  const xFor = (index: number, count: number) => stageWidth / 2 + (index - (count - 1) / 2) * 280;
-  const flowNodes: KnowledgeFlowNode[] = useMemo(() => {
-    const result: KnowledgeFlowNode[] = [{ id: UNIVERSAL_ROOT.id, type: "knowledge", position: { x: stageWidth / 2 - 130, y: 20 }, data: { displayNode: UNIVERSAL_ROOT, progress: progressFor(UNIVERSAL_ROOT.id) }, draggable: false, connectable: false, selectable: true, ariaLabel: `${UNIVERSAL_ROOT.title}. ${mapProgress.stable}/${mapProgress.count} card bền hơn` }];
-    layers.forEach(([depth, layerNodes]) => layerNodes.forEach((node, index) => result.push({ id: node.id, type: "knowledge", position: { x: xFor(index, layerNodes.length) - 112, y: 225 + depth * 205 }, data: { displayNode: node, progress: progressFor(node.id) }, draggable: false, connectable: false, selectable: true, ariaLabel: `${node.title}. ${progressFor(node.id).stable}/${progressFor(node.id).count} card bền hơn` })));
-    return result;
-  }, [layers, mapProgress.count, mapProgress.stable, snapshot, stageWidth]);
-  const flowEdges: KnowledgeFlowEdge[] = useMemo(() => treeEdges.map((edge, index) => ({ id: `${edge.from}-${edge.to}-${index}`, source: edge.from, target: edge.to, type: "knowledge", data: { relation: edge.type }, ariaLabel: `${labelFor(edge.from)} ${edge.type === "prerequisite" ? "học trước" : "thuộc về"} ${labelFor(edge.to)}` })), [treeEdges, displayNodes]);
-  const [title, setTitle] = useState("");
-  const [purpose, setPurpose] = useState("");
-  const [parentId, setParentId] = useState(nodes[0]?.id ?? "");
-  const [relation, setRelation] = useState<"part_of" | "prerequisite">("part_of");
-  const [graphMessage, setGraphMessage] = useState<string | null>(null);
-  const addNode = () => { const result = addGraphNode({ title, purpose, kind: "branch", parentId, relation, maintainer: learnerId }, edges); if (!result.ok) setGraphMessage(result.error); else { setGraphMessage(`Đã thêm nhánh “${result.node.title}” ở trạng thái draft.`); setTitle(""); setPurpose(""); onGraphChanged(); } };
 
-  return <section className="map-page"><div className="page-heading map-heading"><div><h1>Một gốc để nhớ lâu,<br /><em>nhiều cành để đi xa.</em></h1><p className="map-subtitle">Kéo để đi quanh cây, cuộn hoặc chụm hai ngón để phóng to. Nút vừa màn hình sẽ đưa toàn bộ kiến thức về trước mắt.</p></div><div className="map-summary" aria-label="Tóm tắt bản đồ"><div><strong>{displayNodes.length - 1}</strong><span>nhánh</span></div><div><strong>{mapProgress.count}</strong><span>card trong cây</span></div></div></div>
-    <div className="map-controls"><span className="map-instruction"><i aria-hidden="true" /> Chạm, focus hoặc click một nút để xem nhánh.</span><span className="map-progress-caption">{mapProgress.stable}/{mapProgress.count} card đang bền</span></div>
-    <div className="knowledge-flow surface" data-testid="knowledge-tree"><div className="knowledge-flow-canvas" data-testid="tree-map"><ReactFlow nodes={flowNodes} edges={flowEdges} nodeTypes={nodeTypes} edgeTypes={edgeTypes} fitView fitViewOptions={{ padding: 0.18, maxZoom: 1 }} minZoom={0.25} maxZoom={1.8} nodesDraggable={false} nodesConnectable={false} elementsSelectable deleteKeyCode={null} panOnDrag zoomOnPinch zoomOnScroll zoomOnDoubleClick onNodeMouseEnter={(_event, node) => setSelectedNodeId(node.id)} onNodeClick={(_event, node) => setSelectedNodeId(node.id)} onSelectionChange={({ nodes: selectedNodes }) => { if (selectedNodes[0]) setSelectedNodeId(selectedNodes[0].id); }} ariaLabelConfig={{ "node.a11yDescription.default": "Nhấn Enter hoặc Space để chọn nhánh kiến thức." }}><Background color="#d9d0c3" gap={28} size={1} /><MiniMap pannable zoomable nodeColor={(node) => node.id === UNIVERSAL_ROOT.id ? "#ef6d4d" : "#94b8b7"} maskColor="rgba(247, 242, 233, .72)" /><Controls showInteractive={false} /></ReactFlow></div><div className="tree-legend" aria-label="Chú thích các đường nối"><span><i className="legend-line-solid" aria-hidden="true" /> thuộc về</span><span><i className="legend-line-dashed" aria-hidden="true" /> prerequisite</span></div></div>
-    <section className="tree-detail surface" aria-live="polite" data-testid="tree-detail"><div className="tree-detail-heading"><div><span className="tree-detail-label">ĐANG XEM</span><span className="node-kind">{treeKindLabels[selected.kind]}</span></div><span className="tree-detail-percent">{selectedProgress.percent}% bền hơn</span></div><h2 data-testid="tree-detail-title">{selected.title}</h2><p>{selected.purpose}</p><div className="tree-detail-stats"><span>{selectedProgress.count} card trong nhánh</span><span>{selectedProgress.stable} card đang bền</span></div>{prerequisites.length > 0 && <p className="tree-prerequisites"><strong>Học sau:</strong> {prerequisites.join(", ")}</p>}</section>
-    <details className="accessible-map surface"><summary>Danh sách map cho bàn phím và trình đọc màn hình</summary><div className="table-wrap"><table><caption>Concept map và prerequisite</caption><thead><tr><th>Node</th><th>Loại</th><th>Mục đích</th><th>Trạng thái</th></tr></thead><tbody>{displayNodes.map((node) => { const progress = progressFor(node.id); return <tr key={node.id}><th scope="row">{node.title}</th><td>{treeKindLabels[node.kind]}</td><td>{node.purpose}</td><td>{progress.stable}/{progress.count} card có stability &gt; 2</td></tr>; })}</tbody></table></div><div className="edge-list"><span className="section-label">CÁC NỐI PREREQUISITE</span>{edges.filter((edge) => edge.type === "prerequisite").map((edge) => <span key={`${edge.from}-${edge.to}`}>{labelFor(edge.from)} <b>→</b> {labelFor(edge.to)}</span>)}</div></details>
-    <section className="graph-authoring surface"><div><span className="eyebrow">THÊM NHÁNH</span><h2>Cho kiến thức mới một chỗ để bám.</h2><p>Nhánh mới được lưu draft; relation prerequisite sẽ được kiểm tra vòng trước khi nối vào cây.</p></div><div className="graph-authoring-grid"><label>Tên nhánh<input value={title} onChange={(event) => setTitle(event.target.value)} placeholder="Ví dụ: Component boundaries" /></label><label>Bám vào<select value={parentId} onChange={(event) => setParentId(event.target.value)}>{nodes.map((node) => <option key={node.id} value={node.id}>{node.title}</option>)}</select></label><label>Quan hệ<select value={relation} onChange={(event) => setRelation(event.target.value as "part_of" | "prerequisite")}><option value="part_of">thuộc về</option><option value="prerequisite">học trước</option></select></label><label>Mục đích<textarea value={purpose} onChange={(event) => setPurpose(event.target.value)} placeholder="Nó giúp hiểu nguyên lý nào?" rows={2} /></label></div><button className="button button-dark" onClick={addNode}>Thêm nhánh draft</button>{graphMessage && <p className="toast" role="status">{graphMessage}</p>}</section>
+  const flowNodes: KnowledgeFlowNode[] = useMemo(() => displayNodes.map((node) => {
+    const position = layout.positions.get(node.id)!;
+    const progress = progressFor(node.id);
+    return {
+      id: node.id,
+      type: "knowledge",
+      position: { x: position.x - 112, y: position.y - 70 },
+      data: { displayNode: node, progress },
+      draggable: false,
+      connectable: false,
+      selectable: true,
+      ariaLabel: `${node.title}. ${progress.stable}/${progress.count} thẻ đã bền`,
+    };
+  }), [displayNodes, layout.positions, progressByNodeId]);
+  const projectedEdges = [...layout.skeletonEdges, ...layout.overlayEdges];
+  const flowEdges: KnowledgeFlowEdge[] = useMemo(() => projectedEdges.map((edge, index) => ({
+    id: `${edge.from}-${edge.to}-${edge.type}-${index}`,
+    source: edge.from,
+    target: edge.to,
+    type: "knowledge",
+    data: { relation: edge.type },
+    ariaLabel: `${labelFor(edge.from)} ${edge.type === "prerequisite" ? "học trước" : "thuộc về"} ${labelFor(edge.to)}`,
+  })), [projectedEdges, displayNodes]);
+
+  return <section className="map-page map-home" data-testid="map-home">
+    <div className="map-home-bar">
+      <div><span className="eyebrow">CÂY HỌC CỦA HAI ANH EM</span><h1>Từ một gốc,<em> mọc ra điều mới.</em></h1></div>
+      <div className="map-home-status" aria-label="Tóm tắt bản đồ"><strong>{focusedCollectionIds.length}</strong><span>bộ đang chọn</span><strong>{mapProgress.stable}</strong><span>thẻ đã bền</span></div>
+    </div>
+    <div className="map-home-stage">
+      <div className="knowledge-flow" data-testid="knowledge-tree">
+        <div className="knowledge-flow-canvas" data-testid="tree-map">
+          <ReactFlow nodes={flowNodes} edges={flowEdges} nodeTypes={nodeTypes} edgeTypes={edgeTypes} fitView fitViewOptions={{ padding: 0.16, minZoom: 0.46, maxZoom: 1.05 }} minZoom={0.2} maxZoom={1.9} nodesDraggable={false} nodesConnectable={false} elementsSelectable deleteKeyCode={null} panOnDrag zoomOnPinch zoomOnScroll zoomOnDoubleClick onNodeMouseEnter={(_event, node) => setSelectedNodeId(node.id)} onNodeClick={(_event, node) => setSelectedNodeId(node.id)} onSelectionChange={({ nodes: selectedNodes }) => { if (selectedNodes[0]) setSelectedNodeId(selectedNodes[0].id); }} ariaLabelConfig={{ "node.a11yDescription.default": "Nhấn Enter hoặc Space để mở chi tiết nhánh kiến thức." }}>
+            <Background color="#d9d0c3" gap={28} size={1} />
+            <MiniMap pannable zoomable nodeColor={(node) => node.id === UNIVERSAL_ROOT_ID ? "#ef6d4d" : "#94b8b7"} maskColor="rgba(247, 242, 233, .72)" />
+            <Controls showInteractive={false} />
+          </ReactFlow>
+        </div>
+        <div className="tree-legend" aria-label="Chú thích các đường nối"><span>Kéo để đi quanh · dùng +/− để phóng to</span><span><i className="legend-line-solid" aria-hidden="true" /> cùng một cành</span><span><i className="legend-line-dashed" aria-hidden="true" /> cần học trước</span></div>
+      </div>
+      <section className="tree-detail map-home-detail" aria-live="polite" data-testid="tree-detail">
+        <div className="tree-detail-heading"><div><span className="tree-detail-label">ĐANG XEM</span><span className="node-kind">{treeKindLabels[selected.kind]}</span></div><span className="tree-detail-percent">{selectedProgress.percent}% bền</span></div>
+        <h2 data-testid="tree-detail-title">{selected.title}</h2><p>{selected.purpose}</p>
+        <div className="tree-detail-stats"><span>{selectedProgress.count} thẻ trong cành</span><span>{selectedProgress.stable} thẻ đã bền</span></div>
+        {prerequisites.length > 0 && <p className="tree-prerequisites"><strong>Nên biết trước:</strong> {prerequisites.join(", ")}</p>}
+        <div className="map-collection-focus">
+          <div><span className="section-label">CHỌN BỘ MUỐN HỌC</span><p>Tích nhiều bộ để giữ trong danh sách; mỗi lượt vẫn học một bộ.</p></div>
+          {relatedCollections.length ? relatedCollections.map((collection) => <div className="map-collection-row" key={collection.id}>
+            <label><input type="checkbox" checked={focusedCollectionIds.includes(collection.id)} onChange={() => onToggleCollection(collection.id)} /><span><strong>{collection.title}</strong><small>{collection.cardIds.length} thẻ</small></span></label>
+            <button type="button" className="text-button" onClick={() => onStartCollection(collection)}>Học bộ này</button>
+          </div>) : <p className="map-empty-branch">Cành này chưa có bộ thẻ.</p>}
+        </div>
+      </section>
+    </div>
+    <details className="accessible-map surface"><summary>Danh sách kiến thức và các mối nối</summary><div className="table-wrap"><table><caption>Bản đồ tri thức và prerequisite</caption><thead><tr><th>Nút</th><th>Loại</th><th>Mục đích</th><th>Tiến độ</th></tr></thead><tbody>{displayNodes.map((node) => { const progress = progressFor(node.id); return <tr key={node.id}><th scope="row">{node.title}</th><td>{treeKindLabels[node.kind]}</td><td>{node.purpose}</td><td>{progress.stable}/{progress.count} thẻ đã bền</td></tr>; })}</tbody></table></div><div className="edge-list"><span className="section-label">CÁC NỐI CẦN HỌC TRƯỚC</span>{layout.overlayEdges.map((edge) => <span key={`${edge.from}-${edge.to}`}>{labelFor(edge.from)} <b>→</b> {labelFor(edge.to)}</span>)}</div></details>
   </section>;
 }

@@ -1,15 +1,15 @@
 ---
-last_verified: 2026-08-31
-verified_by: Codex support/map implementation and cross-device design review
+last_verified: 2026-09-01
+verified_by: Codex beginner-core/map-home implementation
 status: active
 ---
 
 # Next Actions
 
-1. **Human-review the support preview while learning** — enable “Dùng thử lớp hỗ trợ” in `Thẻ`, note any secondary answer that leaks the main answer or any glossary explanation that remains unclear, then explicitly approve or request revisions. Preview is browser-local and does not affect FSRS.
-2. **Deploy and run a seven-day English Core pilot** — Hiệp and Hoàng complete any one deck per day for streak qualification and record confusing prompts, dishonest self-grades, weak transfer, or excessive workload. Existing local history must survive deploy without clearing storage.
-3. **Choose one bounded English branch from observed need** — likely `Comparison as a Scale v1` (12–16 cards), `English Sound & Word Form v1`, or a small high-frequency lexicon batch. Read `docs/CURRICULUM_EXPANSION_ROADMAP.md`; do not publish an AI-generated branch without a new Human approval manifest.
-4. **Decide the cross-device identity rule before Supabase activation** — recommended: one learner per browser/OS profile, then one-time short-lived device pairing. If one browser must securely hold both learners, choose a PIN/passkey/login factor. ADR-0015 remains proposed until this Human choice, backup/dry-run, and real RLS/conflict gates pass.
-5. **Build React only after the English pilot is stable** — use the existing ten React drafts as source history and expand them into a separate React Generative Core trunk based on official React principles. Do not mix English review state with React content publication.
+1. **Second-review Beginner Core v2** — open `Thẻ` → `English Core · Duyệt lần 2`, expand each branch, flag any weak card and apply only accepted cards. A flagged rewrite keeps v1 and its FSRS history; a flagged new bridge remains unpublished.
+2. **Human-review Empower A2** — open its separate panel, flag cards needing correction and merge only the accepted long-term learning cards. Preserve source pages and English Core prerequisites.
+3. **Authorize and prove remote sync** — if Hiệp wants cross-device history now, explicitly authorize Anonymous Sign-Ins plus the documented SQL sequence. Back up first, then run real two-learner RLS, idempotency, conflict and streak-boundary tests. Host/key reachability alone is not sync.
+4. **Deploy and run a seven-day learning pilot** — Hiệp and Hoàng complete any one chosen collection per day and record confusing prompts, weak transfer or excessive workload. Do not clear browser data during deploy.
+5. **Expand from observed need** — add comparison, sound/word form and lexicon branches with variable card counts. Build React later as a separate domain branch from authoritative React sources and a new Human approval manifest.
 
 Do not spend money, request notification permission, erase local history, or weaken learner isolation to accelerate any step.

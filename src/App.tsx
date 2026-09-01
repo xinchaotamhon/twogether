@@ -478,7 +478,7 @@ function LearningApp({
   const [snapshot, setSnapshot] = useState(() =>
     adapter.readLearner(learnerId, learnerId),
   );
-  const [view, setView] = useState<View>("study");
+  const [view, setView] = useState<View>("map");
   const [selectedCollectionId, setSelectedCollectionId] = useState(
     () =>
       window.localStorage.getItem(`twogether.collection.${learnerId}`) ??
@@ -488,6 +488,25 @@ function LearningApp({
   const selectedCollection =
     collections.find((collection) => collection.id === selectedCollectionId) ??
     collections[0];
+  const focusStorageKey = `twogether.focused-collections.${learnerId}.v1`;
+  const [focusedCollectionIds, setFocusedCollectionIds] = useState<string[]>(
+    () => {
+      try {
+        const parsed = JSON.parse(
+          window.localStorage.getItem(focusStorageKey) ?? "[]",
+        );
+        if (Array.isArray(parsed)) {
+          const valid = parsed.filter(
+            (id): id is string => typeof id === "string",
+          );
+          if (valid.length) return valid;
+        }
+      } catch {
+        // A malformed preference never blocks learning or touches review state.
+      }
+      return [selectedCollectionId];
+    },
+  );
   const publishedCards = useMemo(
     () => cards.filter((card) => card.status === "published"),
     [cards],
@@ -589,6 +608,15 @@ function LearningApp({
       );
   }, [adapter, runPlan.id]);
   const refreshWorkspace = () => setWorkspaceVersion((value) => value + 1);
+  const toggleFocusedCollection = (collectionId: string) => {
+    setFocusedCollectionIds((current) => {
+      const next = current.includes(collectionId)
+        ? current.filter((id) => id !== collectionId)
+        : [...current, collectionId];
+      window.localStorage.setItem(focusStorageKey, JSON.stringify(next));
+      return next;
+    });
+  };
   const resetStudy = (plan: CollectionRunPlan, attempts: RunAttempt[] = []) => {
     setRunPlan(plan);
     setRunAttempts(attempts);
@@ -758,27 +786,31 @@ function LearningApp({
         onLogout={onLogout}
         streak={streak.currentDays}
       />
-      <main className="main-content">
-        <div className="topline">
-          <div>
-            <span className="eyebrow">
-              HÔM NAY ·{" "}
-              {new Date().toLocaleDateString("vi-VN", {
-                day: "2-digit",
-                month: "2-digit",
-              })}
-            </span>
-          </div>
-          <span className="offline-note">Thông báo đẩy đang tắt</span>
-        </div>
-        <CollectionShelf
-          collections={collections}
-          selectedCollectionId={selectedCollection.id}
-          runPlan={runPlan}
-          completedUnique={completedUnique}
-          onSelect={startCollection}
-          onCreated={refreshWorkspace}
-        />
+      <main className={`main-content${view === "map" ? " map-main-content" : ""}`}>
+        {view === "study" && (
+          <>
+            <div className="topline">
+              <div>
+                <span className="eyebrow">
+                  HÔM NAY ·{" "}
+                  {new Date().toLocaleDateString("vi-VN", {
+                    day: "2-digit",
+                    month: "2-digit",
+                  })}
+                </span>
+              </div>
+              <span className="offline-note">Thông báo đẩy đang tắt</span>
+            </div>
+            <CollectionShelf
+              collections={collections}
+              selectedCollectionId={selectedCollection.id}
+              runPlan={runPlan}
+              completedUnique={completedUnique}
+              onSelect={startCollection}
+              onCreated={refreshWorkspace}
+            />
+          </>
+        )}
         {view === "study" && (
           <StudyView
             dueCount={dueCount}
@@ -809,9 +841,11 @@ function LearningApp({
               nodes={graph.nodes}
               edges={graph.edges}
               cards={publishedCards}
+              collections={collections}
               snapshot={snapshot}
-              learnerId={learnerId}
-              onGraphChanged={refreshWorkspace}
+              focusedCollectionIds={focusedCollectionIds}
+              onToggleCollection={toggleFocusedCollection}
+              onStartCollection={startCollection}
             />
           </Suspense>
         )}
@@ -835,6 +869,8 @@ function LearningApp({
             <CardLibraryView
               cards={cards}
               nodes={graph.nodes}
+              edges={graph.edges}
+              learnerId={learnerId}
               onChanged={refreshWorkspace}
             />
           </Suspense>
@@ -2144,20 +2180,20 @@ function BottomNav({
   return (
     <nav className="bottom-nav" aria-label="Điều hướng chính">
       <button
-        data-testid="nav-study"
-        className={view === "study" ? "active" : ""}
-        onClick={() => setView("study")}
-      >
-        <span aria-hidden="true">◌</span>
-        <small>Học</small>
-      </button>
-      <button
         data-testid="nav-map"
         className={view === "map" ? "active" : ""}
         onClick={() => setView("map")}
       >
         <span aria-hidden="true">⌘</span>
-        <small>Bản đồ</small>
+        <small>Cây</small>
+      </button>
+      <button
+        data-testid="nav-study"
+        className={view === "study" ? "active" : ""}
+        onClick={() => setView("study")}
+      >
+        <span aria-hidden="true">◌</span>
+        <small>Tiếp tục</small>
       </button>
       <button
         data-testid="nav-progress"

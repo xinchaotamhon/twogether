@@ -81,3 +81,9 @@ Raw logs and future screenshots belong under dated evidence subfolders; do not r
 - `50-Evidence/empower-a2-coursebook-review-2026-09-01.md` records visual inspection of 176/176 coursebook pages, the 81-card review packet, Human checkbox/merge boundary and durable English Core anchoring.
 - ADR-0016 replaces active secondary questions with worked transfer answers. ADR-0017 records Empower A2 as a long-term FSRS branch, not a disposable exam deck.
 - Final cumulative receipt `20260901T052017Z-936f280c` passed 14/14; unit tests 26/26, Playwright/Chrome 12/12 and production build passed.
+
+## Beginner Core v2 and map-first home — 2026-09-01
+
+- `50-Evidence/beginner-core-map-home-2026-09-01.md` records the 89-card second-review packet, durable Hiệp/Hoàng content style, three fresh-agent audit stances, transfer prompt/answer routing repair, upward-growing domain tree, focus-list semantics, mobile/desktop checks and the updated Supabase reachability finding.
+- ADR-0018 owns the map-first, variable-size and versioned beginner-revision decision. The packet remains AI-reviewed and Human-unapproved until Hiệp acts in `Thẻ`.
+- The latest cumulative receipt is recorded inside that evidence packet.

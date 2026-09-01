@@ -6,7 +6,7 @@ status: active
 
 # Collections and Authoring State
 
-The active local shelf has ten published English Generative Core v1 collections, each containing eight unique owner-approved cards. Completing the required attempt for every unique due card in any one selected collection may qualify that learner’s local day/streak once.
+The active local shelf has ten published English Generative Core v1 collections containing the exact 80 owner-approved cards. Their eight-card sizing is historical v1 packaging, not a product rule. Completing the required attempt for every unique due card in any one selected collection may qualify that learner’s local day/streak once.
 
 `content/drafts/core-curriculum-drafts-v2.json` remains immutable provenance. The exact approved IDs are recorded in the 2026-08-26 owner manifest and derived into runtime by `src/approvedCurriculum.ts`; editing a published card creates a local draft revision.
 
