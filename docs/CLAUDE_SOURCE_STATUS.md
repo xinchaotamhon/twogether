@@ -13,10 +13,10 @@ The immutable raw attachments remain outside this repository. Only hashes and de
 
 - the fuller English capture resolves the earlier fifth pillar as high-frequency vocabulary/chunks; `content/sources/claude-english-owner-capture-2026-08-25.md` records the non-verbatim transformation and qualifications;
 - the React capture contains a principle ladder from state snapshots to reconciliation, purity, and Hook constraints;
-- the active curriculum is `content/drafts/core-curriculum-drafts-v2.json`: 80 English + 10 unchanged React cards, all `draft`; current P0 study fixtures remain project-owned and published separately.
+- `content/drafts/core-curriculum-drafts-v2.json` remains historical source provenance; the active English runtime is derived from the 89-card beginner packet plus Hiệp's exact 2026-09-01 approval manifest. The ten React cards remain draft history.
 
 The direct-link status is not evidence that the links are invalid or that content is absent. The owner captures remove the source-content blocker for draft authoring while preserving provenance and avoiding raw private chat in Git.
 
 ## Safe next capture
 
-Keep owner attachments immutable outside project memory, preserve their hashes, and derive cards through `CONTENT_AUTHORING.md`. Human-review one eight-card module at a time; distinguish public React contracts from implementation explanations and record source IDs for every future published card. The source manifest, three derived summaries, academic source map, and v2 draft packet are the current transformation record.
+Keep owner attachments immutable outside project memory, preserve their hashes, and derive cards through `CONTENT_AUTHORING.md`. Human-review bounded modules with variable size; distinguish public React contracts from implementation explanations and record source IDs for every future published card. The source manifest, derived summaries, approval manifests and versioned packets are the transformation record.

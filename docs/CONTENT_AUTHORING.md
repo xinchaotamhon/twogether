@@ -57,8 +57,8 @@ Capture the source separately, hash it, and write a transformation note. Do not 
 
 ## Active English publication
 
-`content/drafts/core-curriculum-drafts-v2.json` remains the immutable English Generative Core v1 source packet. Hiệp approved the exact 80 English IDs on 2026-08-26 in `content/reviews/english-generative-core-v1-owner-approval-2026-08-26.json`; `src/approvedCurriculum.ts` derives the ten currently published v1 collections with reviewer `hiep`. Eight was that release's packaging choice, not a future authoring quota. `content/drafts/english-core-beginner-revision-v2.json` is a separate 89-card second-review packet; it must not be described as approved until Hiệp applies it. The ten React cards remain draft history.
+`content/drafts/english-core-beginner-revision-v2.json` is the immutable beginner-first source/review packet. Hiệp approved its exact 89 English IDs on 2026-09-01 in `content/reviews/english-generative-core-v2-owner-approval-2026-09-01.json`; `src/approvedCurriculum.ts` derives the ten published variable-size collections with reviewer `hiep`. The earlier 80-card packet and approval remain historical provenance, not runtime authority. The ten React cards remain draft history.
 
 Editing an approved runtime card must create a new local draft revision. Do not rewrite the source packet, delete its published version, reset FSRS state, or erase review events. Future pronunciation, vocabulary, comparison, React, or other-subject branches follow `docs/CURRICULUM_EXPANSION_ROADMAP.md` and require their own bounded Human approval.
 
-`content/drafts/english-core-support-v1.json` is a separate AI-authored support packet for the 80 approved cards. Its `ai_draft_unreviewed` status is intentional: the app exposes an explicit local preview switch, but visibility or preview is not Human publication approval.
+The published 89-card packet includes matching worked transfer answers and glossary references. Older support packets remain provenance; do not restore a duplicate preview layer or treat visibility as Human approval for future changes.

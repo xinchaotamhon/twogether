@@ -4,6 +4,16 @@ Twogether uses Supabase Free as the shared source of truth for review events, FS
 
 Never put a service-role key, learner password or pairing code in this repository. The browser needs only `VITE_SUPABASE_URL`, `VITE_SUPABASE_ANON_KEY` and `VITE_SYNC_MODE=cloud`.
 
+## The simple mental model
+
+There are only three pieces:
+
+1. **Cloudflare** serves the website files. It does not own the FSRS history.
+2. **Supabase** stores the shared cards plus separate Hiệp and Hoàng review events, FSRS state and streak qualifications.
+3. **A paired browser profile** proves which learner's rows that device may read/write. The public anon key only identifies the Supabase project; it is not a password and RLS still rejects another learner's rows.
+
+Pairing happens once per browser profile. After pairing, normal learning needs no email, PIN or repeated code. A new phone/browser profile needs a new one-use pairing code. Using the same physical computer for both learners requires two browser profiles under the current security model.
+
 ## Owner-operated activation
 
 The simplest path on Windows is to double-click `CONNECT_SUPABASE.bat` in the project root. It checks the existing `.env.local` without printing its values, assembles the SQL in the required order, copies it to the clipboard and opens the two exact dashboard pages. Then:

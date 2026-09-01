@@ -6,20 +6,13 @@ test.describe("Twogether local learning features", () => {
   }) => {
     await page.goto("/");
     await page.getByTestId("learner-choice-hiep").click();
-    await page.getByTestId("nav-study").click({ force: true });
-    await expect(
-      page.getByTestId("collection-collection-english-core-01"),
-    ).toBeVisible();
-    await expect(
-      page.getByTestId("collection-collection-english-core-10"),
-    ).toBeVisible();
-    await expect(
-      page.getByTestId("collection-english-foundations"),
-    ).toHaveCount(0);
+    await expect(page.getByTestId("nav-study")).toHaveCount(0);
+    await page.getByRole("button", { name: "Học bộ Meaning → Clause, 8 thẻ" }).click();
     await expect(page.getByTestId("study-progress").locator("i")).toHaveText(
       "/ 08",
     );
-    await page.getByTestId("collection-collection-english-core-02").click();
+    await page.getByRole("button", { name: "Đóng flashcard và trở lại cây" }).click();
+    await page.getByRole("button", { name: "Học bộ Verb Architecture, 9 thẻ" }).click();
     await expect(page.getByTestId("study-progress").locator("i")).toHaveText(
       "/ 09",
     );
@@ -60,7 +53,8 @@ test.describe("Twogether local learning features", () => {
     await page.getByTestId("learner-choice-hiep").click();
     await page.getByTestId("nav-cards").click();
     await expect(page.getByText("English Core v2 · 89 thẻ chính thức")).toBeVisible();
-    await page.getByTestId("nav-study").click({ force: true });
+    await page.getByTestId("nav-map").click({ force: true });
+    await page.getByRole("button", { name: "Học bộ Meaning → Clause, 8 thẻ" }).click();
     await expect(page.getByTestId("reveal-panel")).toHaveCount(0);
 
     await page.locator(".glossary-chip").first().click();
@@ -93,10 +87,9 @@ test.describe("Twogether local learning features", () => {
     await expect(empowerPanel.getByText("1 cần sửa/bỏ")).toBeVisible();
     await empowerPanel.getByRole("button", { name: "Gộp 80 thẻ đạt yêu cầu" }).click();
     await expect(page.getByText("Đã gộp 80 thẻ đạt yêu cầu")).toBeVisible();
-    await page.getByTestId("nav-study").click();
-    await expect(
-      page.getByTestId("collection-collection-empower-a2-learning-v1"),
-    ).toBeVisible();
+    await page.getByTestId("nav-map").click();
+    await page.getByRole("button", { name: "Học bộ Empower A2 · Học bền vững, 80 thẻ" }).click();
+    await expect(page.getByTestId("map-study-overlay")).toContainText("Empower A2 · Học bền vững");
   });
 
   test("shows the owner-approved beginner Core as the official editable curriculum", async ({ page }) => {

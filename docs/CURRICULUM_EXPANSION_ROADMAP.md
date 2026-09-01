@@ -8,7 +8,7 @@ status: active design — future cards still require Human approval
 
 ## Honest completeness claim
 
-English Generative Core v1 is a complete **foundation backbone**, not “all of English”. Its 80 approved cards cover ten connected mechanisms: meaning-to-clause, verb architecture, negation/questions, time/aspect/modality, noun/reference, clause expansion, information flow, sound/listening, lexicon networks, and integrated production.
+English Generative Core v2 is a complete **foundation backbone**, not “all of English”. Its 89 approved beginner-first cards cover ten connected mechanisms: meaning-to-clause, verb architecture, negation/questions, time/aspect/modality, noun/reference, clause expansion, information flow, sound/listening, lexicon networks, and integrated production.
 
 That is enough to support “học 1 hiểu 10” at the principle level: a new construction should have a place to attach and a mechanism to compare against. It is not enough to claim complete vocabulary, pronunciation feedback, idiom/register knowledge, genre/pragmatics, dialect variation, or fluent production. Those are growing branches and feedback loops, not a finite checklist.
 
@@ -20,7 +20,7 @@ Use this maturity ladder when describing coverage:
 4. **Fluency and feedback** — recall works under listening/speaking pressure and errors create targeted repairs.
 5. **Breadth** — vocabulary, constructions, registers, accents, and domains expand over real use.
 
-English Core v1 deliberately targets levels 1–3. A seven-day pilot must decide which level-4/5 branch comes next.
+English Core v2 deliberately targets levels 1–3. A seven-day pilot must decide which level-4/5 branch comes next.
 
 ## How the knowledge DAG grows
 
@@ -91,13 +91,12 @@ React cards should ask for predictions, explanations, bug diagnosis, state owner
 
 ## Cross-browser progress and identity
 
-The current production adapter is still `localStorage`: it survives a deploy and is migrated in place, but it does not follow the learner to another browser or device.
+The safe fallback adapter remains `localStorage`: it survives a deploy in one browser but does not follow the learner elsewhere. The Supabase adapter and pairing schema are implemented; remote authority still requires owner dashboard activation and real two-profile RLS tests.
 
-Supabase can provide shared content plus per-learner remote progress, but choosing “Hiệp” or “Hoàng” alone is not secure authentication; anyone with the URL could impersonate either learner. The recommended future compromise keeps the daily UI simple:
+Supabase provides shared content plus per-learner remote progress only after remote activation and security gates. Choosing “Hiệp” or “Hoàng” alone is not secure authentication; anyone with the URL could impersonate either learner. The implemented compromise keeps daily use simple:
 
-- normal entry remains the Hiệp/Hoàng picker;
-- first device creates a private recovery/pairing secret behind the scenes;
-- a new device connects once through a QR/recovery link in Settings;
+- a browser profile signs in anonymously and pairs once to Hiệp or Hoàng with an expiring one-use code;
+- a paired device can generate another short-lived code for a new phone/profile;
 - the browser stores only a revocable session, and Supabase RLS scopes progress to the authenticated identity;
 - export/rollback is tested before remote sync becomes authoritative.
 

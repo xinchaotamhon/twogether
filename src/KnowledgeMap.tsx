@@ -83,6 +83,37 @@ function addDomainBranches(nodes: ConceptNode[], edges: ConceptEdge[]) {
   return { nodes: projectedNodes, edges: projectedEdges };
 }
 
+function addCollectionBranches(nodes: ConceptNode[], edges: ConceptEdge[], collections: CardCollection[]) {
+  const projectedNodes = [...nodes];
+  const projectedEdges = [...edges];
+  const existingNodeIds = new Set(nodes.map((node) => node.id));
+  const collectionByNodeId = new Map<string, CardCollection>();
+
+  collections.forEach((collection) => {
+    const rootId = collection.rootNodeId;
+    if (rootId && existingNodeIds.has(rootId) && !collectionByNodeId.has(rootId)) {
+      collectionByNodeId.set(rootId, collection);
+      return;
+    }
+    const collectionNodeId = `twogether-collection-${collection.id}`;
+    projectedNodes.push({
+      id: collectionNodeId,
+      kind: "leaf",
+      title: collection.title,
+      purpose: collection.description,
+      status: collection.status,
+      source_refs: ["collection-workspace:p0"],
+      maintainer: "hiep",
+    });
+    collectionByNodeId.set(collectionNodeId, collection);
+    if (rootId && existingNodeIds.has(rootId)) {
+      projectedEdges.push({ from: rootId, to: collectionNodeId, type: "part_of" });
+    }
+  });
+
+  return { nodes: projectedNodes, edges: projectedEdges, collectionByNodeId };
+}
+
 const treeKindLabels: Record<DisplayNode["kind"], string> = {
   universal: "Gốc chung",
   root: "Miền kiến thức",
@@ -133,10 +164,11 @@ export function KnowledgeMap({
   snapshot: LearnerSnapshot;
   onStartCollection: (collection: CardCollection) => void;
 }) {
-  const projection = useMemo(() => addDomainBranches(nodes, edges), [nodes, edges]);
+  const domainProjection = useMemo(() => addDomainBranches(nodes, edges), [nodes, edges]);
+  const projection = useMemo(() => addCollectionBranches(domainProjection.nodes, domainProjection.edges, collections), [collections, domainProjection]);
   const displayNodes: DisplayNode[] = useMemo(() => [UNIVERSAL_ROOT, ...projection.nodes], [projection.nodes]);
   const layout = useMemo(() => projectKnowledgeLayout(projection.nodes, projection.edges), [projection]);
-  const collectionByRootNode = useMemo(() => new Map(collections.filter((item) => item.rootNodeId).map((item) => [item.rootNodeId!, item])), [collections]);
+  const collectionByRootNode = projection.collectionByNodeId;
   const labelFor = (id: string) => displayNodes.find((node) => node.id === id)?.title ?? id;
   const visualChildren = useMemo(() => {
     const result = new Map<string, string[]>();
@@ -157,13 +189,16 @@ export function KnowledgeMap({
   const progressByNodeId = useMemo(() => {
     const result = new Map<string, Progress>();
     displayNodes.forEach((node) => {
+      const collection = collectionByRootNode.get(node.id);
       const ids = descendants(node.id);
-      const cardIds = new Set(cards.filter((card) => ids.has(card.node_id)).map((card) => card.id));
+      const cardIds = collection
+        ? new Set(collection.cardIds)
+        : new Set(cards.filter((card) => ids.has(card.node_id)).map((card) => card.id));
       const stable = [...cardIds].filter((id) => (snapshot.cardStates[id]?.fsrs.stability ?? 0) > 2).length;
       result.set(node.id, { count: cardIds.size, stable, percent: cardIds.size ? Math.round((stable / cardIds.size) * 100) : 0 });
     });
     return result;
-  }, [cards, displayNodes, snapshot, visualChildren]);
+  }, [cards, collectionByRootNode, displayNodes, snapshot, visualChildren]);
   const progressFor = (id: string) => progressByNodeId.get(id) ?? { count: 0, stable: 0, percent: 0 };
   const mapProgress = progressFor(UNIVERSAL_ROOT_ID);
 

@@ -4,17 +4,17 @@
 
 Hiệp and Hoàng should build durable English understanding from first principles, then expand into branches. A successful first slice lets either learner answer a fresh prompt in their own words, explain why, identify a boundary or counterexample, and apply the idea to a new situation more reliably after a week—not merely finish a lesson or recognize a choice.
 
-The owner-pasted Claude captures now supply two draft source layers: English foundations and React principles. Their direct share URLs remain inaccessible to this runtime, so the app must use the hashed owner captures and keep derived cards in `draft`/`review` until Human approval. See `docs/CLAUDE_SOURCE_STATUS.md`.
+The owner-pasted Claude captures supply two source layers: English foundations and React principles. Their direct share URLs remain inaccessible to this runtime, so the app uses the hashed owner captures. English Core v2 now has an exact Human approval manifest; React and every future revision remain `draft`/`review` until their own approval. See `docs/CLAUDE_SOURCE_STATUS.md`.
 
 ## MVP scope
 
 - Two allowlisted accounts: Hiệp and Hoàng.
 - Shared concept map and card content; isolated review state, streak, settings, and private notes.
-- Open-ended prompt → optional card-specific scaffold/glossary → learner attempt → reveal model answer/explanation → `Nhớ` or `Quên`.
+- Open-ended prompt → optional clickable glossary → learner attempt → reveal model answer/explanation and a matching worked transfer example → `Nhớ` or `Quên`.
 - FSRS-6 scheduling with a same-session repair loop for `Quên`.
 - Add/edit/archive cards with provenance, concept node, prerequisites, card type, model answer, misconception, and transfer cue.
 - Map view showing trunk, branches, prerequisites, due cards, and durable mastery.
-- Home view led by the full-screen knowledge map, with today’s due/focus collections, a calm progress signal, and a personal or cooperative goal.
+- Home view led by the full-screen knowledge map. Clicking a studyable node opens the flashcard loop on top of the map; there is no separate study page or multi-deck checkbox list.
 - Installable PWA shell, responsive phone-first UI, offline read-only shell and safe local queue for the current session.
 
 ## Explicit non-goals for MVP
@@ -30,9 +30,9 @@ The owner-pasted Claude captures now supply two draft source layers: English fou
 ## Study loop
 
 1. Select a due card from the learner’s queue, prioritizing overdue reviews before new cards.
-2. Show the prompt and concept breadcrumb. If the learner is blocked by the wording, allow an optional card-specific secondary question, its separate answer, and clickable glossary terms; none may reveal the main answer or count as an attempt.
+2. Show the prompt and concept breadcrumb. Clickable glossary terms may explain essential vocabulary without counting as an attempt or revealing the main answer.
 3. Require an attempt action (`Đã thử`) before reveal. The attempt may be mental, spoken, typed, or written privately; the app records only the attempt kind by default.
-4. Reveal a concise model answer, why it works, a common misconception, and an example or counterexample.
+4. Reveal a concise model answer, why it works, a common misconception, then the transfer prompt with its own collapsed worked answer.
 5. Learner presses `Nhớ` or `Quên`.
 6. `Quên` moves to the repair queue and is shown again after intervening cards, with a bounded cap per session. `Nhớ` passes the result to FSRS.
 7. Show the next due interval in plain language, never as a promise of certainty.

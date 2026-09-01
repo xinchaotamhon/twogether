@@ -26,7 +26,7 @@ The repair queue is not a second scheduler. It is a user-facing containment loop
 - After a successful recall, schedule normally with the card’s existing FSRS state. Do not hard-reset a mature card to day zero; that destroys evidence and can create unnecessary workload.
 - A card still failed at the cap remains due soon and is labeled `cần củng cố`, never marked complete.
 
-Secondary questions, their answers, and glossary dialogs are comprehension scaffolds, not review outcomes. Opening or closing them does not create a review event, advance the run, qualify a streak, or alter FSRS state. The learner must still confirm an attempt before the main answer appears.
+Glossary dialogs and the collapsed worked transfer answer are comprehension scaffolds, not review outcomes. Opening or closing them does not create a review event, advance the run, qualify a streak, or alter FSRS state. The learner must still confirm an attempt before the main answer appears.
 
 This is a deliberate compromise with the request to review from the beginning: the learner sees the concept again until one honest recall succeeds, while the scheduler retains history. Anki’s documented learning-step behavior also sends `Again` back to the first step and recommends short same-day steps under FSRS ([learning/relearning steps](https://docs.ankiweb.net/deck-options)).
 

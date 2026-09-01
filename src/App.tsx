@@ -44,7 +44,6 @@ import {
   saveCardDraft,
   saveRun,
 } from "./localWorkspace";
-import { createCollection } from "./collectionWorkspace";
 import { deriveStreak, type StreakProjection } from "./streak";
 import { addGraphNode, readGraph } from "./graphWorkspace";
 import { exportCardPacket, importPacketAsDraft } from "./contentPacket";
@@ -63,7 +62,7 @@ import {
 } from "./supabaseAdapter";
 import "./curriculumDrafts.css";
 
-type View = "study" | "map" | "progress" | "cards";
+type View = "map" | "progress" | "cards";
 const TIMEZONE =
   Intl.DateTimeFormat().resolvedOptions().timeZone || "Asia/Ho_Chi_Minh";
 const KnowledgeMap = lazy(() =>
@@ -479,6 +478,7 @@ function LearningApp({
     adapter.readLearner(learnerId, learnerId),
   );
   const [view, setView] = useState<View>("map");
+  const [studyOpen, setStudyOpen] = useState(false);
   const [selectedCollectionId, setSelectedCollectionId] = useState(
     () =>
       window.localStorage.getItem(`twogether.collection.${learnerId}`) ??
@@ -627,7 +627,8 @@ function LearningApp({
     );
     setSelectedCollectionId(collection.id);
     resetStudy(plan);
-    setView("study");
+    setStudyOpen(true);
+    setView("map");
   };
   const advanceAfterReview = (
     nextRepairQueue: RepairItem[],
@@ -752,72 +753,58 @@ function LearningApp({
     }
   };
   return (
-    <div className={`app-shell${view === "map" ? " map-shell" : ""}`}>
+    <div className={`app-shell${view === "map" ? " map-shell" : ""}${studyOpen ? " is-studying" : ""}`}>
       <AppHeader
         learner={learner}
         onLogout={onLogout}
         streak={streak.currentDays}
       />
       <main className={`main-content${view === "map" ? " map-main-content" : ""}`}>
-        {view === "study" && (
-          <>
-            <div className="topline">
-              <div>
-                <span className="eyebrow">
-                  HÔM NAY ·{" "}
-                  {new Date().toLocaleDateString("vi-VN", {
-                    day: "2-digit",
-                    month: "2-digit",
-                  })}
-                </span>
-              </div>
-              <span className="offline-note">Thông báo đẩy đang tắt</span>
-            </div>
-            <CollectionShelf
-              collections={collections}
-              selectedCollectionId={selectedCollection.id}
-              runPlan={runPlan}
-              completedUnique={completedUnique}
-              onSelect={startCollection}
-              onCreated={refreshWorkspace}
-            />
-          </>
-        )}
-        {view === "study" && (
-          <StudyView
-            dueCount={dueCount}
-            currentCard={currentCard}
-            cardNodeTitle={currentCardNodeTitle}
-            repairQueue={repairQueue}
-            completedReviews={completedUnique}
-            revealed={revealed}
-            attemptText={attemptText}
-            setAttemptText={setAttemptText}
-            handleAttempt={handleAttempt}
-            handleGrade={handleGrade}
-            restartSession={() => startCollection(selectedCollection)}
-            message={message}
-            lastInterval={lastInterval}
-            savingReview={savingReview}
-          />
-        )}
         {view === "map" && (
-          <Suspense
-            fallback={
-              <section className="map-loading surface" role="status">
-                Đang mở bản đồ…
-              </section>
-            }
-          >
-            <KnowledgeMap
-              nodes={graph.nodes}
-              edges={graph.edges}
-              cards={publishedCards}
-              collections={collections}
-              snapshot={snapshot}
-              onStartCollection={startCollection}
-            />
-          </Suspense>
+          <>
+            <Suspense
+              fallback={
+                <section className="map-loading surface" role="status">
+                  Đang mở bản đồ…
+                </section>
+              }
+            >
+              <KnowledgeMap
+                nodes={graph.nodes}
+                edges={graph.edges}
+                cards={publishedCards}
+                collections={collections}
+                snapshot={snapshot}
+                onStartCollection={startCollection}
+              />
+            </Suspense>
+            {studyOpen && (
+              <aside className="map-study-overlay" data-testid="map-study-overlay" aria-label={`Đang học bộ ${selectedCollection.title}`}>
+                <div className="map-study-toolbar">
+                  <div><span className="eyebrow">ĐANG HỌC TRÊN CÂY</span><strong>{selectedCollection.title}</strong></div>
+                  <button type="button" className="map-study-close" aria-label="Đóng flashcard và trở lại cây" onClick={() => setStudyOpen(false)} autoFocus>×</button>
+                </div>
+                <div className="map-study-scroll">
+                  <StudyView
+                    dueCount={dueCount}
+                    currentCard={currentCard}
+                    cardNodeTitle={currentCardNodeTitle}
+                    repairQueue={repairQueue}
+                    completedReviews={completedUnique}
+                    revealed={revealed}
+                    attemptText={attemptText}
+                    setAttemptText={setAttemptText}
+                    handleAttempt={handleAttempt}
+                    handleGrade={handleGrade}
+                    restartSession={() => startCollection(selectedCollection)}
+                    message={message}
+                    lastInterval={lastInterval}
+                    savingReview={savingReview}
+                  />
+                </div>
+              </aside>
+            )}
+          </>
         )}
         {view === "progress" && (
           <ProgressView
@@ -846,7 +833,7 @@ function LearningApp({
           </Suspense>
         )}
       </main>
-      <BottomNav view={view} setView={setView} />
+      <BottomNav view={view} setView={(nextView) => { setStudyOpen(false); setView(nextView); }} />
     </div>
   );
 }
@@ -882,86 +869,6 @@ function AppHeader({
         </button>
       </div>
     </header>
-  );
-}
-
-function CollectionShelf({
-  collections,
-  selectedCollectionId,
-  runPlan,
-  completedUnique,
-  onSelect,
-  onCreated,
-}: {
-  collections: CardCollection[];
-  selectedCollectionId: string;
-  runPlan: CollectionRunPlan;
-  completedUnique: number;
-  onSelect: (collection: CardCollection) => void;
-  onCreated: () => void;
-}) {
-  const [creating, setCreating] = useState(false);
-  const [title, setTitle] = useState("");
-  const submit = () => {
-    if (!title.trim()) return;
-    createCollection({
-      title,
-      description: "Bộ do anh em tự tạo, bám vào gốc chung.",
-      rootNodeId: null,
-      cardIds: [],
-    });
-    setTitle("");
-    setCreating(false);
-    onCreated();
-  };
-  return (
-    <section className="collection-shelf" aria-label="Chọn bộ thẻ">
-      <div className="collection-shelf-head">
-        <div>
-          <span className="eyebrow">BỘ THẺ ĐANG HỌC</span>
-          <strong>
-            {completedUnique}/{runPlan.requiredCardIds.length || 0} thẻ đã gọi ý
-          </strong>
-        </div>
-        <button className="text-button" onClick={() => setCreating(!creating)}>
-          {creating ? "Đóng" : "+ Tạo bộ"}
-        </button>
-      </div>
-      <div className="collection-list">
-        {collections.map((collection) => (
-          <button
-            type="button"
-            data-testid={`collection-${collection.id}`}
-            className={`collection-chip ${collection.id === selectedCollectionId ? "is-active" : ""}`}
-            key={collection.id}
-            onClick={() => onSelect(collection)}
-          >
-            <span className="collection-chip-dot" />
-            <span>
-              <strong>{collection.title}</strong>
-              <small>
-                {collection.cardIds.length} card · {collection.description}
-              </small>
-            </span>
-          </button>
-        ))}
-      </div>
-      {creating && (
-        <div className="collection-create">
-          <label htmlFor="new-collection-title">Tên bộ mới</label>
-          <input
-            id="new-collection-title"
-            value={title}
-            onChange={(event) => setTitle(event.target.value)}
-            placeholder="Ví dụ: React từ gốc"
-          />
-          <button className="button button-dark" onClick={submit}>
-            Tạo bộ
-          </button>
-          <small>Bộ mới bắt đầu rỗng; thêm card ở mục Thẻ.</small>
-        </div>
-      )}
-    </section>
   );
 }
 
@@ -2156,14 +2063,6 @@ function BottomNav({
       >
         <span aria-hidden="true">⌘</span>
         <small>Cây</small>
-      </button>
-      <button
-        data-testid="nav-study"
-        className={view === "study" ? "active" : ""}
-        onClick={() => setView("study")}
-      >
-        <span aria-hidden="true">◌</span>
-        <small>Tiếp tục</small>
       </button>
       <button
         data-testid="nav-progress"

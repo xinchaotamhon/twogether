@@ -68,9 +68,17 @@ status: active
 - Disposition: fixed by rendering the transfer prompt and answer as one inseparable region in both the study support and library review surfaces.
 - Regression gates: `content.personal-style-contract` and `browser.p0-contract`.
 
-## CONTENT-002 — Approved Core is not yet beginner-self-contained
+## CONTENT-002 — Approved Core was not beginner-self-contained
 
 - Symptom: many cards lead with several technical labels, some model answers are rubrics rather than worked examples, and many card records include their own node as a prerequisite.
 - Impact: Hoàng may be unable to learn the material without first reading the source discussion; self-prerequisites do not create a real learning bridge.
-- Disposition: contained. Published v1 is preserved; the 89-card versioned beginner revision, bridge cards and durable style contract are ready for second Human approval.
-- Regression gate: `content.personal-style-contract`. Remaining Human gate: review/flag/apply in `Thẻ`.
+- Disposition: fixed and superseded by Hiệp's exact 89-card v2 approval on 2026-09-01. Stable IDs preserve existing FSRS history; bridge cards use new IDs.
+- Regression gates: `content.personal-style-contract` and `content.core-curriculum-contract`.
+
+## UI-003 — Map legend overlapped the bottom navigation
+
+- Symptom: the centered legend and fixed bottom navigation occupied the same bottom strip, hiding both copy and controls.
+- Impact: the map instruction was hard to read and the interface looked unfinished.
+- Root cause: both overlays used the same bottom anchor without collision ownership.
+- Disposition: fixed by moving the legend to the top-left canvas corner and keeping the mastery summary top-right. The flashcard loop now opens in a separate overlay layer above the map and above neither navigation nor legend.
+- Regression gate: `browser.p0-contract` compares legend and navigation bounding boxes on a phone viewport.

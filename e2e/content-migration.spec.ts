@@ -19,10 +19,9 @@ test("migrates a legacy browser shelf without deleting streak, runs, or local co
   });
 
   await page.goto("/");
-  await page.getByTestId("nav-study").click();
-  await expect(page.getByTestId("collection-collection-english-core-01")).toBeVisible();
-  await expect(page.getByTestId("collection-english-foundations")).toHaveCount(0);
-  await expect(page.getByText("So sánh của tôi")).toBeVisible();
+  await expect(page.getByTestId("nav-study")).toHaveCount(0);
+  await expect(page.getByRole("button", { name: "Học bộ So sánh của tôi, 0 thẻ" })).toBeAttached();
+  await page.getByRole("button", { name: "Học bộ Meaning → Clause, 8 thẻ" }).click();
   await expect(page.getByTestId("study-progress").locator("i")).toHaveText("/ 08");
 
   const migrated = await page.evaluate(() => JSON.parse(localStorage.getItem("twogether.workspace.p0.v1") ?? "{}"));

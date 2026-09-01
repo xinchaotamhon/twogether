@@ -93,3 +93,8 @@ Raw logs and future screenshots belong under dated evidence subfolders; do not r
 - `50-Evidence/owner-approved-v2-fullscreen-map-and-supabase-activation-2026-09-01.md` records Hiệp's explicit 89-card approval, stable-ID FSRS preservation, removal of the map sidebar/checkbox state, one-click deck nodes, fixed one-screen phone/desktop map and the owner-run Supabase dashboard boundary.
 - `content/reviews/english-generative-core-v2-owner-approval-2026-09-01.json` is the exact Human approval manifest. ADR-0019 owns publication, navigation and activation/rollback decisions.
 - `CONNECT_SUPABASE.bat` prepares but cannot impersonate the owner's unauthenticated Supabase dashboard session; live cross-device authority still requires activation plus real two-profile RLS tests.
+
+## Inline study on the map — 2026-09-01
+
+- `50-Evidence/inline-map-study-2026-09-01.md` records removal of the separate `Tiếp tục` page, inline flashcard open/close behavior, virtual nodes for extra collections and the legend collision repair.
+- ADR-0020 owns the one-surface navigation decision and explicitly preserves FSRS/run/streak behavior.

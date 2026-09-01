@@ -202,7 +202,7 @@
     },
     {
       "id": "browser.p0-contract",
-      "description": "Production preview passes learning, learner isolation, history migration, fullscreen direct-study DAG, and PWA cache checks",
+      "description": "Production preview passes inline map study, learner isolation, history migration, responsive non-overlap, and PWA cache checks",
       "tier": "smoke",
       "command": ["node", "tools/run_browser_gate.mjs"],
       "cwd": ".",

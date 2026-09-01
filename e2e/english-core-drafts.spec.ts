@@ -20,7 +20,7 @@ test("shows English Core v2 as ten owner-approved study slices", async ({ page }
   await page.getByTestId("draft-card-core-en-25").getByRole("button", { name: "Đưa vào chỉnh sửa" }).click({ force: true });
   await expect(page.getByRole("textbox", { name: "Câu hỏi", exact: true })).toHaveValue(/Tense, aspect và modality/);
 
-  await page.getByTestId("nav-study").click({ force: true });
-  await expect(page.getByTestId("collection-collection-english-core-01")).toBeVisible();
-  await expect(page.getByTestId("collection-english-foundations")).toHaveCount(0);
+  await page.getByTestId("nav-map").click({ force: true });
+  await page.getByRole("button", { name: "Học bộ Meaning → Clause, 8 thẻ" }).click();
+  await expect(page.getByTestId("map-study-overlay")).toBeVisible();
 });

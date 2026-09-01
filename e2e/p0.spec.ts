@@ -13,7 +13,9 @@ test.describe("Twogether P0 browser contract", () => {
   });
   test("requires an attempt before revealing the answer and keeps focus keyboardable", async ({ page }) => {
     await page.getByTestId("learner-choice-hiep").click();
-    await page.getByTestId("nav-study").click();
+    await expect(page.getByTestId("nav-study")).toHaveCount(0);
+    await page.getByRole("button", { name: "Học bộ Meaning → Clause, 8 thẻ" }).click();
+    await expect(page.getByTestId("map-study-overlay")).toBeVisible();
     await expect(page.getByTestId("study-card")).toBeVisible();
     await expect(page.locator(".card-type")).toHaveCount(0);
     await expect(page.getByText("local · riêng tư")).toHaveCount(0);
@@ -34,12 +36,12 @@ test.describe("Twogether P0 browser contract", () => {
 
   test("keeps learner review state separate in the local adapter", async ({ page }) => {
     await page.getByTestId("learner-choice-hiep").click();
-    await page.getByTestId("nav-study").click();
+    await page.getByRole("button", { name: "Học bộ Meaning → Clause, 8 thẻ" }).click();
     await page.getByRole("button", { name: /Đã thử/ }).click();
     await page.getByRole("button", { name: /Nhớ/ }).click();
     await page.getByRole("button", { name: "Mở bộ chọn hồ sơ" }).click();
     await page.getByTestId("learner-choice-hoang").click();
-    await page.getByTestId("nav-study").click();
+    await page.getByRole("button", { name: "Học bộ Meaning → Clause, 8 thẻ" }).click();
 
     await expect(page.getByTestId("study-progress").locator("i")).toHaveText("/ 08");
     await expect(page.getByTestId("study-card")).toBeVisible();
@@ -64,9 +66,14 @@ test.describe("Twogether P0 browser contract", () => {
     await expect(page.getByRole("button", { name: "Fit View" })).toBeVisible();
     await expect(page.getByTestId("tree-node-core-en-module-01")).toContainText("Bấm để học · 8 thẻ");
     await page.getByRole("button", { name: "Học bộ Verb Architecture, 9 thẻ" }).click();
+    await expect(page.getByTestId("map-home")).toBeVisible();
+    await expect(page.getByTestId("map-study-overlay")).toBeVisible();
     await expect(page.getByTestId("study-card")).toBeVisible();
-    await expect(page.getByTestId("collection-collection-english-core-02")).toHaveClass(/is-active/);
+    await expect(page.getByTestId("map-study-overlay")).toContainText("Verb Architecture");
     await expect(page.getByTestId("study-progress").locator("i")).toHaveText("/ 09");
+    await page.getByRole("button", { name: "Đóng flashcard và trở lại cây" }).click();
+    await expect(page.getByTestId("map-study-overlay")).toHaveCount(0);
+    await expect(page.getByTestId("tree-map")).toBeVisible();
   });
 
   test("keeps the map inside one phone screen without vertical page scrolling", async ({ page }) => {
@@ -78,6 +85,12 @@ test.describe("Twogether P0 browser contract", () => {
     expect(await page.evaluate(() => document.scrollingElement!.scrollHeight <= window.innerHeight + 1)).toBe(true);
     await expect(page.getByRole("button", { name: "Zoom In" })).toBeVisible();
     await expect(page.getByTestId("nav-map")).toBeVisible();
+    await expect(page.getByTestId("nav-study")).toHaveCount(0);
+    const legendBox = await page.locator(".tree-legend").boundingBox();
+    const navBox = await page.locator(".bottom-nav").boundingBox();
+    expect(legendBox).not.toBeNull();
+    expect(navBox).not.toBeNull();
+    expect(legendBox!.y + legendBox!.height).toBeLessThan(navBox!.y);
   });
 
   test("serves an installable shell without private data in the service worker", async ({ page, request }) => {
