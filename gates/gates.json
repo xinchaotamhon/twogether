@@ -97,7 +97,7 @@
     },
     {
       "id": "content.core-curriculum-contract",
-      "description": "English Core v1 keeps immutable draft provenance while publishing exactly the 80 owner-approved cards in ten decks",
+      "description": "English Core v2 keeps immutable review provenance while publishing exactly the 89 owner-approved cards in ten variable-size decks",
       "tier": "smoke",
       "command": ["{python}", "tools/check_published_english_core.py"],
       "cwd": ".",
@@ -202,7 +202,7 @@
     },
     {
       "id": "browser.p0-contract",
-      "description": "Production preview passes learning, learner isolation, v1→v2 migration, dynamic DAG/map parity, and PWA cache checks",
+      "description": "Production preview passes learning, learner isolation, history migration, fullscreen direct-study DAG, and PWA cache checks",
       "tier": "smoke",
       "command": ["node", "tools/run_browser_gate.mjs"],
       "cwd": ".",

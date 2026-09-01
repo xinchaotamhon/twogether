@@ -87,3 +87,9 @@ Raw logs and future screenshots belong under dated evidence subfolders; do not r
 - `50-Evidence/beginner-core-map-home-2026-09-01.md` records the 89-card second-review packet, durable Hiệp/Hoàng content style, three fresh-agent audit stances, transfer prompt/answer routing repair, upward-growing domain tree, focus-list semantics, mobile/desktop checks and the updated Supabase reachability finding.
 - ADR-0018 owns the map-first, variable-size and versioned beginner-revision decision. The packet remains AI-reviewed and Human-unapproved until Hiệp acts in `Thẻ`.
 - The latest cumulative receipt is recorded inside that evidence packet.
+
+## Owner-approved v2, direct-study fullscreen map and activation helper — 2026-09-01
+
+- `50-Evidence/owner-approved-v2-fullscreen-map-and-supabase-activation-2026-09-01.md` records Hiệp's explicit 89-card approval, stable-ID FSRS preservation, removal of the map sidebar/checkbox state, one-click deck nodes, fixed one-screen phone/desktop map and the owner-run Supabase dashboard boundary.
+- `content/reviews/english-generative-core-v2-owner-approval-2026-09-01.json` is the exact Human approval manifest. ADR-0019 owns publication, navigation and activation/rollback decisions.
+- `CONNECT_SUPABASE.bat` prepares but cannot impersonate the owner's unauthenticated Supabase dashboard session; live cross-device authority still requires activation plus real two-profile RLS tests.

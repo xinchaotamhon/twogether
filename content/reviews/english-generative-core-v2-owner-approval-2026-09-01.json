@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "decision_id": "owner-approval:english-generative-core-beginner-v2:2026-09-01",
+  "decided_at": "2026-09-01",
+  "decided_by": "hiep",
+  "decision": "approved_for_published_study",
+  "curriculum_id": "english-generative-core-beginner-v2",
+  "source_packet": "content/drafts/english-core-beginner-revision-v2.json",
+  "card_ids": [
+    "core-en-01", "core-en-02", "core-en-03", "core-en-04", "core-en-05", "core-en-06", "core-en-07", "core-en-08",
+    "core-en-09", "core-en-10", "core-en-11", "core-en-12", "core-en-13", "core-en-14", "core-en-15", "core-en-16",
+    "core-en-17", "core-en-18", "core-en-19", "core-en-20", "core-en-21", "core-en-22", "core-en-23", "core-en-24",
+    "core-en-25", "core-en-26", "core-en-27", "core-en-28", "core-en-29", "core-en-30", "core-en-31", "core-en-32",
+    "core-en-33", "core-en-34", "core-en-35", "core-en-36", "core-en-37", "core-en-38", "core-en-39", "core-en-40",
+    "core-en-41", "core-en-42", "core-en-43", "core-en-44", "core-en-45", "core-en-46", "core-en-47", "core-en-48",
+    "core-en-49", "core-en-50", "core-en-51", "core-en-52", "core-en-53", "core-en-54", "core-en-55", "core-en-56",
+    "core-en-57", "core-en-58", "core-en-59", "core-en-60", "core-en-61", "core-en-62", "core-en-63", "core-en-64",
+    "core-en-65", "core-en-66", "core-en-67", "core-en-68", "core-en-69", "core-en-70", "core-en-71", "core-en-72",
+    "core-en-73", "core-en-74", "core-en-75", "core-en-76", "core-en-77", "core-en-78", "core-en-79", "core-en-80",
+    "core-en-bridge-02", "core-en-bridge-03", "core-en-bridge-04", "core-en-bridge-05", "core-en-bridge-06",
+    "core-en-bridge-07", "core-en-bridge-08", "core-en-bridge-09", "core-en-bridge-10"
+  ],
+  "collection_ids": [
+    "collection-english-core-01", "collection-english-core-02", "collection-english-core-03", "collection-english-core-04", "collection-english-core-05",
+    "collection-english-core-06", "collection-english-core-07", "collection-english-core-08", "collection-english-core-09", "collection-english-core-10"
+  ],
+  "legacy_fixture_disposition": "archive_from_default_shelf_keep_history",
+  "notes": "Owner explicitly approved all 89 beginner-first English Core v2 cards for official study. Stable IDs preserve existing FSRS history; nine bridge cards start with fresh state. The source review packet remains immutable provenance rather than being rewritten as if it had always been published."
+}

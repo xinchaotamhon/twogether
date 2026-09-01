@@ -45,56 +45,37 @@ test.describe("Twogether P0 browser contract", () => {
     await expect(page.getByTestId("study-card")).toBeVisible();
   });
 
-  test("keeps the visual map and keyboard table alternative in parity", async ({ page }) => {
+  test("uses the full-screen map and opens a deck directly from its branch", async ({ page }) => {
     await page.getByTestId("learner-choice-hiep").click();
     await expect(page.getByTestId("map-home")).toBeVisible();
-    const accessibleMap = page.locator("details.accessible-map");
-    await accessibleMap.locator("summary").click();
-    await expect(accessibleMap.locator("table")).toBeVisible();
-    await expect(accessibleMap.locator("tbody th").first()).toBeVisible();
+    await expect(page.locator(".map-accessible-table")).toHaveCount(1);
+    await expect(page.getByRole("checkbox")).toHaveCount(0);
+    await expect(page.getByTestId("tree-detail")).toHaveCount(0);
     await expect(page.getByText("Meaning → Clause").first()).toBeVisible();
     await expect(page.getByText("KNOWLEDGE MAP · DAG")).toHaveCount(0);
     await expect(page.getByText("shared content")).toHaveCount(0);
     await expect(page.getByText("Đây là một lối đi gợi ý, không phải chiếc cây hoàn hảo của tiếng Anh.")).toHaveCount(0);
-    await expect(page.getByTestId("tree-node-twogether-universal-root")).toContainText("0/80 thẻ đã bền");
+    await expect(page.getByTestId("tree-node-twogether-universal-root")).toContainText("0/89 thẻ đã bền");
     await expect(page.getByTestId("tree-map")).toBeVisible();
     expect(await page.getByTestId("tree-link").count()).toBeGreaterThan(0);
     await expect(page.getByTestId("tree-link").first()).toHaveAttribute("d", /M.+C/);
     await expect(page.getByRole("button", { name: "Zoom In" })).toBeVisible();
     await expect(page.getByRole("button", { name: "Zoom Out" })).toBeVisible();
     await expect(page.getByRole("button", { name: "Fit View" })).toBeVisible();
-    await expect(page.getByTestId("tree-node-core-en-module-01")).toContainText(/thẻ đã bền/);
-    await page.getByTestId("tree-node-core-en-module-02").hover();
-    await expect(page.getByTestId("tree-detail-title")).toHaveText("Verb Architecture");
-    await page.getByTestId("tree-node-core-en-module-10").click();
-    await expect(page.getByTestId("tree-detail-title")).toHaveText("Integration & Production");
-  });
-
-  test("uses collection checkboxes as a focus list but starts one real collection", async ({ page }) => {
-    await page.getByTestId("learner-choice-hiep").click();
-    const first = page.getByRole("checkbox", { name: /Meaning → Clause/ });
-    const second = page.getByRole("checkbox", { name: /Verb Architecture/ });
-    await expect(first).toBeChecked();
-    await second.check();
-    await expect(page.getByText("2", { exact: true }).first()).toBeVisible();
-    await page.getByRole("button", { name: "Học bộ này" }).first().click();
+    await expect(page.getByTestId("tree-node-core-en-module-01")).toContainText("Bấm để học · 8 thẻ");
+    await page.getByRole("button", { name: "Học bộ Verb Architecture, 9 thẻ" }).click();
     await expect(page.getByTestId("study-card")).toBeVisible();
-    await expect(page.getByTestId("collection-collection-english-core-01")).toHaveClass(/is-active/);
+    await expect(page.getByTestId("collection-collection-english-core-02")).toHaveClass(/is-active/);
+    await expect(page.getByTestId("study-progress").locator("i")).toHaveText("/ 09");
   });
 
-  test("stacks the tree detail below the zoomable canvas on a phone", async ({ page }) => {
+  test("keeps the map inside one phone screen without vertical page scrolling", async ({ page }) => {
     await page.setViewportSize({ width: 390, height: 844 });
     await page.reload();
     await page.getByTestId("learner-choice-hiep").click();
     const canvas = page.getByTestId("tree-map");
-    const detail = page.getByTestId("tree-detail");
     await expect(canvas).toBeVisible();
-    await expect(detail).toBeVisible();
-    const canvasBox = await canvas.boundingBox();
-    const detailBox = await detail.boundingBox();
-    expect(canvasBox).not.toBeNull();
-    expect(detailBox).not.toBeNull();
-    expect(detailBox!.y).toBeGreaterThan(canvasBox!.y + canvasBox!.height - 2);
+    expect(await page.evaluate(() => document.scrollingElement!.scrollHeight <= window.innerHeight + 1)).toBe(true);
     await expect(page.getByRole("button", { name: "Zoom In" })).toBeVisible();
     await expect(page.getByTestId("nav-map")).toBeVisible();
   });

@@ -23,8 +23,8 @@ def main() -> int:
     for value in ["record_review_v2", "p_run_id", "import_local_learning_state", "cloud-import-backup"]:
         if value not in adapter:
             errors.append(f"adapter lacks {value}")
-    if len(re.findall(r"\('core-en-\d{2}',", seed)) != 80 or "fixture-recall-01" in seed:
-        errors.append("Supabase seed is not the exact 80-card approved core")
+    if len(re.findall(r"\('core-en-(?:\d{2}|bridge-\d{2})', 'core-en-module", seed)) != 89 or "fixture-recall-01" in seed:
+        errors.append("Supabase seed is not the exact 89-card approved core")
     if "service_role" in app.lower() or "service_role" in adapter.lower():
         errors.append("browser source mentions a forbidden service-role credential")
     if errors:

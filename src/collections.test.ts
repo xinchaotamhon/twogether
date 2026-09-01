@@ -10,13 +10,13 @@ const snapshot: LearnerSnapshot = { learnerId: "hiep", dailyGoalMinutes: 15, rev
 describe("collection domain", () => {
   it("publishes ten compact, non-duplicated English Core collections", () => {
     expect(COLLECTION_FIXTURES).toHaveLength(10);
-    expect(COLLECTION_FIXTURES.every((collection) => collection.status === "published" && collection.cardIds.length === 8)).toBe(true);
-    expect(new Set(COLLECTION_FIXTURES.flatMap((collection) => collection.cardIds)).size).toBe(80);
+    expect(COLLECTION_FIXTURES.every((collection) => collection.status === "published" && collection.cardIds.length >= 8 && collection.cardIds.length <= 9)).toBe(true);
+    expect(new Set(COLLECTION_FIXTURES.flatMap((collection) => collection.cardIds)).size).toBe(89);
     expect(cardsInCollection(cards, COLLECTION_FIXTURES[0])).toHaveLength(8);
   });
 
   it("scopes due work to the selected collection", () => {
-    expect(dueCardIdsForCollection(cards, COLLECTION_FIXTURES[1], snapshot)).toHaveLength(8);
+    expect(dueCardIdsForCollection(cards, COLLECTION_FIXTURES[1], snapshot)).toHaveLength(9);
   });
 
   it("snapshots unique cards and requires an honest attempt for every card", () => {

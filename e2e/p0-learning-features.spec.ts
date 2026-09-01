@@ -21,7 +21,7 @@ test.describe("Twogether local learning features", () => {
     );
     await page.getByTestId("collection-collection-english-core-02").click();
     await expect(page.getByTestId("study-progress").locator("i")).toHaveText(
-      "/ 08",
+      "/ 09",
     );
   });
 
@@ -59,9 +59,7 @@ test.describe("Twogether local learning features", () => {
     await page.goto("/");
     await page.getByTestId("learner-choice-hiep").click();
     await page.getByTestId("nav-cards").click();
-    await expect(
-      page.getByText("80 lời giải chuyển giao và glossary."),
-    ).toBeVisible();
+    await expect(page.getByText("English Core v2 · 89 thẻ chính thức")).toBeVisible();
     await page.getByTestId("nav-study").click({ force: true });
     await expect(page.getByTestId("reveal-panel")).toHaveCount(0);
 
@@ -101,19 +99,14 @@ test.describe("Twogether local learning features", () => {
     ).toBeVisible();
   });
 
-  test("reviews beginner Core with variable collection size and preserves flagged cards", async ({ page }) => {
+  test("shows the owner-approved beginner Core as the official editable curriculum", async ({ page }) => {
     await page.goto("/");
     await page.getByTestId("learner-choice-hiep").click();
     await page.getByTestId("nav-cards").click();
-    const panel = page.getByTestId("beginner-core-review");
-    await expect(panel.getByText("89 thẻ tự học từ số 0")).toBeVisible();
-    await panel.locator(":scope > summary").click();
-    await expect(panel.getByRole("option", { name: /Verb Architecture · 9 thẻ/ })).toBeAttached();
-    await expect(panel.getByTestId("beginner-review-core-en-01")).toContainText("THỬ CHUYỂN SANG TÌNH HUỐNG MỚI");
-    await expect(panel.getByTestId("beginner-review-core-en-01")).toContainText("My friend sent an email");
-    await panel.locator(".coursebook-flag input").first().check();
-    await expect(panel.getByText("1 cần sửa")).toBeVisible();
-    await panel.getByRole("button", { name: "Duyệt và áp dụng 88 thẻ" }).click();
-    await expect(panel.getByText(/Đã áp dụng 88 thẻ/)).toBeVisible();
+    await expect(page.getByText("English Core v2 · 89 thẻ chính thức")).toBeVisible();
+    await page.getByTestId("draft-collection-collection-english-core-02").click();
+    await expect(page.getByTestId("draft-collection-panel")).toContainText("9 thẻ");
+    await expect(page.getByTestId("draft-card-core-en-bridge-02")).toContainText("THỬ CHUYỂN SANG TÌNH HUỐNG MỚI");
+    await expect(page.getByTestId("transfer-preview-answer-core-en-bridge-02")).not.toHaveText("Chưa có lời giải mẫu.");
   });
 });

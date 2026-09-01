@@ -1,19 +1,16 @@
 import { readFile, writeFile } from "node:fs/promises";
 
-const packet = JSON.parse(await readFile("content/drafts/core-curriculum-drafts-v2.json", "utf8"));
-const approval = JSON.parse(await readFile("content/reviews/english-generative-core-v1-owner-approval-2026-08-26.json", "utf8"));
-const transferPacket = JSON.parse(await readFile("content/drafts/english-core-transfer-answers-v1.json", "utf8"));
-const supportPacket = JSON.parse(await readFile("content/drafts/english-core-support-v1.json", "utf8"));
+const graphPacket = JSON.parse(await readFile("content/drafts/core-curriculum-drafts-v2.json", "utf8"));
+const packet = JSON.parse(await readFile("content/drafts/english-core-beginner-revision-v2.json", "utf8"));
+const approval = JSON.parse(await readFile("content/reviews/english-generative-core-v2-owner-approval-2026-09-01.json", "utf8"));
 
 const approvedIds = new Set(approval.card_ids);
 const cards = packet.cards.filter((card) => card.track === "english" && approvedIds.has(card.id));
-if (approval.decision !== "approved_for_published_study" || cards.length !== 80) throw new Error("Owner approval must cover exactly 80 English Core cards.");
+if (approval.decision !== "approved_for_published_study" || cards.length !== 89) throw new Error("Owner approval must cover exactly 89 English Core v2 cards.");
 const nodeIds = new Set(cards.map((card) => card.node_id));
-const nodes = packet.nodes.filter((node) => nodeIds.has(node.id));
-const edges = packet.edges.filter((edge) => nodeIds.has(edge.from) && nodeIds.has(edge.to));
-const transferById = new Map(transferPacket.answers.map((item) => [item.card_id, item.transfer_answer]));
-const glossaryById = new Map(supportPacket.support_records.map((item) => [item.card_id, item.glossary_refs]));
-if (transferById.size !== 80 || cards.some((card) => !transferById.get(card.id))) throw new Error("Transfer-answer packet must cover all 80 cards.");
+const nodes = graphPacket.nodes.filter((node) => nodeIds.has(node.id));
+const edges = graphPacket.edges.filter((edge) => nodeIds.has(edge.from) && nodeIds.has(edge.to));
+if (cards.some((card) => !card.transfer_answer)) throw new Error("Every approved v2 card must include its own transfer answer.");
 
 const text = (value) => `'${String(value ?? "").replaceAll("'", "''")}'`;
 const array = (values = []) => values.length ? `ARRAY[${values.map(text).join(", ")}]::text[]` : "ARRAY[]::text[]";
@@ -21,13 +18,13 @@ const nodeRows = nodes.map((node) => `  (${text(node.id)}, ${text(node.kind)}, $
 const edgeRows = edges.map((edge) => `  (${text(edge.from)}, ${text(edge.to)}, ${text(edge.type)})`).join(",\n");
 const cardRows = cards.map((card) => `  (${[
   text(card.id), text(card.node_id), text(card.card_type), text(card.prompt), text(card.model_answer),
-  text(card.explanation), text(card.misconception), text(card.transfer_prompt), text(transferById.get(card.id)),
-  array(glossaryById.get(card.id) ?? []), array(card.prerequisite_node_ids), array([...card.source_refs, "english-core-transfer-answers-v1"]),
+  text(card.explanation), text(card.misconception), text(card.transfer_prompt), text(card.transfer_answer),
+  array(card.glossary_refs ?? []), array(card.prerequisite_node_ids), array(card.source_refs),
   "'published'", text(card.author), "'hiep'",
 ].join(", ")})`).join(",\n");
 
-const sql = `-- Generated from the owner-approved English Generative Core v1 manifest.
--- Includes 80 approved main cards plus owner-requested visible transfer examples and glossary refs.
+const sql = `-- Generated from the owner-approved English Generative Core beginner v2 manifest.
+-- Includes 89 approved cards with beginner-first explanations, matching transfer answers and glossary refs.
 -- Re-running this file is idempotent. Historical 12-card fixtures are not seeded.
 
 begin;

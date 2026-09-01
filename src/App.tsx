@@ -488,25 +488,6 @@ function LearningApp({
   const selectedCollection =
     collections.find((collection) => collection.id === selectedCollectionId) ??
     collections[0];
-  const focusStorageKey = `twogether.focused-collections.${learnerId}.v1`;
-  const [focusedCollectionIds, setFocusedCollectionIds] = useState<string[]>(
-    () => {
-      try {
-        const parsed = JSON.parse(
-          window.localStorage.getItem(focusStorageKey) ?? "[]",
-        );
-        if (Array.isArray(parsed)) {
-          const valid = parsed.filter(
-            (id): id is string => typeof id === "string",
-          );
-          if (valid.length) return valid;
-        }
-      } catch {
-        // A malformed preference never blocks learning or touches review state.
-      }
-      return [selectedCollectionId];
-    },
-  );
   const publishedCards = useMemo(
     () => cards.filter((card) => card.status === "published"),
     [cards],
@@ -608,15 +589,6 @@ function LearningApp({
       );
   }, [adapter, runPlan.id]);
   const refreshWorkspace = () => setWorkspaceVersion((value) => value + 1);
-  const toggleFocusedCollection = (collectionId: string) => {
-    setFocusedCollectionIds((current) => {
-      const next = current.includes(collectionId)
-        ? current.filter((id) => id !== collectionId)
-        : [...current, collectionId];
-      window.localStorage.setItem(focusStorageKey, JSON.stringify(next));
-      return next;
-    });
-  };
   const resetStudy = (plan: CollectionRunPlan, attempts: RunAttempt[] = []) => {
     setRunPlan(plan);
     setRunAttempts(attempts);
@@ -780,7 +752,7 @@ function LearningApp({
     }
   };
   return (
-    <div className="app-shell">
+    <div className={`app-shell${view === "map" ? " map-shell" : ""}`}>
       <AppHeader
         learner={learner}
         onLogout={onLogout}
@@ -843,8 +815,6 @@ function LearningApp({
               cards={publishedCards}
               collections={collections}
               snapshot={snapshot}
-              focusedCollectionIds={focusedCollectionIds}
-              onToggleCollection={toggleFocusedCollection}
               onStartCollection={startCollection}
             />
           </Suspense>

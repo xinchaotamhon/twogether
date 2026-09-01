@@ -6,10 +6,12 @@ Never put a service-role key, learner password or pairing code in this repositor
 
 ## Owner-operated activation
 
-1. In Supabase Auth settings, enable Anonymous Sign-Ins.
-2. In SQL Editor, apply every file in `supabase/migrations/` in timestamp order. Existing projects must be backed up first; repair the schema only with additive migrations.
-3. Run `supabase/seed.sql`. It is generated from the exact owner-approved English Core manifest and contains 80 cards, not the historical 12 fixtures.
-4. Run `supabase/bootstrap_pairing_codes.sql` once. Copy the returned code for Hiệp and the returned code for Hoàng; plaintext codes are not stored and expire after 24 hours.
+The simplest path on Windows is to double-click `CONNECT_SUPABASE.bat` in the project root. It checks the existing `.env.local` without printing its values, assembles the SQL in the required order, copies it to the clipboard and opens the two exact dashboard pages. Then:
+
+1. In Auth Providers, enable **Allow anonymous sign-ins** and save.
+2. In SQL Editor, press `Ctrl+V` and **Run** once. Existing projects must be backed up first; repair the schema only with additive migrations.
+3. The combined SQL runs every timestamped migration, the exact 89-card owner-approved v2 seed, and the pairing bootstrap.
+4. Copy the returned code for Hiệp and the returned code for Hoàng; plaintext codes are not stored and expire after 24 hours. Do not paste these codes into chat or commit them.
 5. Open the deployed PWA in Hiệp's browser profile and enter Hiệp's code. Repeat with Hoàng's code in Hoàng's browser profile.
 6. A paired device can create a 10-minute, one-use code from its avatar to pair another phone or browser profile.
 

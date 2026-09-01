@@ -1,43 +1,37 @@
 ---
 last_verified: 2026-09-01
-verified_by: Codex beginner-core/map-home implementation with fresh-agent audits
+verified_by: Codex owner-approved v2/fullscreen-direct-map implementation
 status: active
 ---
 
 # Next AI Handoff
 
-Continue Twogether from the repository, not chat memory. Read `START_HERE.md` and its full order first. Hiệp owns the project; Hoàng is the second learner.
+Continue from the repository, not chat memory. Read `START_HERE.md` and its full order first. Hiệp owns the project; Hoàng is the second learner.
 
 ## Current baseline
 
-- English Core v1: exactly 80 owner-approved published cards with stable IDs. Immutable source and approval manifest remain under `content/drafts/` and `content/reviews/`; eight-card v1 packaging is not a future quota.
-- Beginner Core v2: `content/drafts/english-core-beginner-revision-v2.json` contains 80 rewrites plus 9 bridge cards and remains second-review only. In `Thẻ`, a flagged rewrite retains the published v1 card/history; a flagged bridge remains unpublished. Read `docs/CONTENT_STYLE_HIEP_HOANG.md` before touching content.
-- Study contract: open recall, mandatory attempt, main reveal, only `Nhớ`/`Quên`, FSRS, bounded repair. Never convert this to multiple choice or endless repetition.
-- Active support: structured glossary plus one worked `transfer_answer` for every core card after reveal. Do not restore the secondary-question preview. Transfer wording is AI-authored at owner request and must not be described as line-by-line Human-reviewed.
-- Empower A2: source PDF fingerprint and full inspection evidence are in `50-Evidence/empower-a2-coursebook-review-2026-09-01.md`. The review packet has 81 cards. It is long-term learning, not a disposable exam deck. Checkboxes flag cards to exclude/fix; the merge action takes only unflagged cards.
-- Coursebook cards anchor to existing English Core nodes via prerequisites. Preserve stable IDs and page provenance when revising a flagged card.
-- Supabase implementation is present but not remotely verified. The configured host now resolves and Auth health accepts the public key, but `profiles` and `concept_nodes` return `404`; the application schema is absent. Do not claim live sync until owner-authorized provisioning and real RLS/conflict tests pass.
-- Cloud identity is anonymous device pairing: one browser profile → one learner. Never sign out an anonymous device as a routine learner-switch action; pair another device first. No service-role key belongs in React or `VITE_*`.
-- `supabase/seed.sql` is the exact 80-card approved core. Run migrations in timestamp order, then seed, then `bootstrap_pairing_codes.sql` only after backup and owner confirmation.
-- Local fallback and local backups are deliberate rollback paths. Never clear localStorage or delete remote events to repair sync.
-- Map is the default full-screen home. It grows upward from the universal root through domain nodes such as English; `part_of` is the visual skeleton and `prerequisite` is an overlay. Focus checkboxes do not merge collections into one run. React Flow viewport and accessible table remain required.
-- Latest verification: unit 29/29, browser 15/15, production build and dependency audit pass; cumulative receipt `20260901T114856Z-6186d2d3` passed 15/15.
-- The zero-cost personal deployment constraint remains absolute. Do not spend money or enable a paid Supabase/Cloudflare add-on without a new explicit owner decision.
+- English Core v2 is official: exactly 89 owner-approved published cards in ten variable-size decks. The 80 stable IDs preserve prior FSRS state; nine `core-en-bridge-*` IDs are new. The Human manifest is `content/reviews/english-generative-core-v2-owner-approval-2026-09-01.json` and the immutable source review packet is `content/drafts/english-core-beginner-revision-v2.json`.
+- Read `docs/CONTENT_STYLE_HIEP_HOANG.md` before touching content. Assume first exposure, use plain Vietnamese before labels, require open recall, provide a worked answer matching each transfer prompt and keep glossary explanations available on demand.
+- Study behavior is mandatory attempt → reveal → only `Nhớ`/`Quên` → FSRS → bounded repair. Never replace it with multiple choice or endless same-card repetition.
+- The default home is a one-screen React Flow tree with no sidebar or deck checkboxes. A studyable module node starts its one collection directly. Preserve bottom-root growth, pan/zoom/pinch/fit/minimap, dashed prerequisite overlays and the screen-reader table.
+- The `Thẻ` screen provides CRUD. English Core v2 is shown once as official content; editing creates a draft without erasing review history. The obsolete Beginner Core second-review panel is not part of the active UI.
+- Empower A2 remains an 81-card long-term Human review packet. Checkboxes flag weak cards to exclude/fix; never silently publish it or call it exam-only.
+- Supabase code is present, but live authority is not yet proven. `CONNECT_SUPABASE.bat` assembles ordered migrations + exact 89-card seed + pairing bootstrap, copies SQL to clipboard and opens the relevant dashboard pages. The owner must sign in, enable anonymous sign-ins and run it.
+- Cloud identity is anonymous device pairing: one browser profile → one learner. Never put a service-role key in React or `VITE_*`; never sign out or clear a paired anonymous profile casually.
+- Existing local history and cloud-import backup are rollback paths. Never erase review events, FSRS state, streak inputs or localStorage to repair a deployment.
+- Latest local verification: 29/29 unit, 14/14 Chrome, production build, dependency audit and cumulative receipt `20260901T140031Z-89014eb6` (15/15) pass.
+- The zero-cost personal deployment constraint remains absolute. Do not spend money or enable paid Supabase/Cloudflare features without a new explicit owner decision.
 
 ## Next bounded work
 
-1. Let Hiệp second-review Beginner Core v2 and Empower A2 separately. Revise flagged cards only; never automatically approve either packet.
-2. At action time, obtain owner confirmation before enabling Anonymous Sign-Ins or applying SQL in the remote dashboard. Apply migrations/seed/bootstrap in the documented order.
-3. Pair one browser profile for Hiệp and one for Hoàng. Run real negative RLS tests: unpaired denial, cross-learner denial, invite expiry/reuse, idempotent review retry, same-card conflict, direct streak-write denial, qualification idempotency and Asia/Ho_Chi_Minh date boundaries.
-4. Run a seven-day map-first learning pilot and update `docs/CONTENT_STYLE_HIEP_HOANG.md` whenever Human feedback reveals a reusable content rule.
-5. After the durable English branch is in use, build React as a separate domain branch from authoritative React sources and a new Human approval manifest.
+1. Have the owner run `CONNECT_SUPABASE.bat`; keep pairing codes outside chat and repository.
+2. Pair separate browser profiles for Hiệp and Hoàng and run real RLS/conflict/date-boundary tests before claiming cross-device sync live.
+3. Deploy the verified commit to Cloudflare with `VITE_SUPABASE_URL`, `VITE_SUPABASE_ANON_KEY` and cloud mode, then test one real review and streak update on each profile.
+4. Continue Human review of Empower A2. Later build React as a separate domain branch from authoritative React sources and a new approval manifest.
 
 ## Do not do
 
-- Do not call Empower A2 an exam-only or temporary deck.
-- Do not describe Beginner Core v2 or its fresh-agent audits as Human approval.
-- Do not restore a fixed eight-card quota or detach a transfer answer from its transfer prompt.
-- Do not silently publish all 81 AI cards or mark them Human-reviewed.
-- Do not reintroduce scaffold questions after the owner's correction.
-- Do not claim cross-device sync from static SQL checks alone.
-- Do not spend money, request notification permission on load, expose environment values, erase review history, or weaken RLS for convenience.
+- Do not revert to 80 published cards, fixed eight-card decks, a focus sidebar, collection checkboxes or a vertically scrolling map home.
+- Do not detach transfer answers from their prompts or hide unexplained technical terms.
+- Do not claim Supabase is live from static checks alone, weaken RLS, expose environment values/pairing codes, or overwrite remote history.
+- Do not spend money, request notification permission on load, or describe AI review as Human approval.

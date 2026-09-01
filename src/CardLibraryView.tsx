@@ -1,14 +1,11 @@
 import { useState } from "react";
 import {
-  ENGLISH_CORE_DRAFT_CARD_IDS,
-  ENGLISH_CORE_DRAFT_COLLECTIONS,
-  draftCardsForCollection,
-} from "./curriculumDrafts";
+  APPROVED_ENGLISH_CARD_IDS,
+  APPROVED_ENGLISH_COLLECTIONS,
+} from "./approvedCurriculum";
 import { exportCardPacket, importPacketAsDraft } from "./contentPacket";
 import { archiveCard, publishCardDraft, saveCardDraft } from "./localWorkspace";
-import { supportForCard } from "./cardSupport";
 import { CoursebookReviewPanel } from "./CoursebookReviewPanel";
-import { EnglishCoreRevisionPanel } from "./EnglishCoreRevisionPanel";
 import { GraphBranchAuthoring } from "./GraphBranchAuthoring";
 import type { Card, ConceptEdge, ConceptNode, LearnerId } from "./types";
 
@@ -31,21 +28,19 @@ export function CardLibraryView({
   const [packetText, setPacketText] = useState("");
   const [notice, setNotice] = useState<string | null>(null);
   const [selectedCollectionId, setSelectedCollectionId] = useState(
-    ENGLISH_CORE_DRAFT_COLLECTIONS[0]?.id ?? "",
+    APPROVED_ENGLISH_COLLECTIONS[0]?.id ?? "",
   );
   const selectedCollection =
-    ENGLISH_CORE_DRAFT_COLLECTIONS.find(
+    APPROVED_ENGLISH_COLLECTIONS.find(
       (collection) => collection.id === selectedCollectionId,
-    ) ?? ENGLISH_CORE_DRAFT_COLLECTIONS[0];
+    ) ?? APPROVED_ENGLISH_COLLECTIONS[0];
   const coreCards = selectedCollection
-    ? draftCardsForCollection(selectedCollection.id).map((card) => ({
-        ...card,
-        ...(supportForCard(card.id) ?? {}),
-        ...(cards.find((candidate) => candidate.id === card.id) ?? {}),
-      }))
+    ? selectedCollection.cardIds
+        .map((cardId) => cards.find((candidate) => candidate.id === cardId))
+        .filter((card): card is Card => Boolean(card))
     : [];
   const regularCards = cards.filter(
-    (card) => !ENGLISH_CORE_DRAFT_CARD_IDS.has(card.id),
+    (card) => !APPROVED_ENGLISH_CARD_IDS.has(card.id),
   );
 
   const blank = (): Card => ({
@@ -157,24 +152,8 @@ export function CardLibraryView({
           Xoá vùng packet
         </button>
       </div>
-      <EnglishCoreRevisionPanel onChanged={onChanged} />
       <CoursebookReviewPanel onChanged={onChanged} />
       <GraphBranchAuthoring nodes={nodes} edges={edges} learnerId={learnerId} onChanged={onChanged} />
-      <section
-        className="support-review surface"
-        aria-labelledby="support-review-title"
-      >
-        <div>
-          <span className="eyebrow">LỚP HỖ TRỢ · ĐANG DÙNG</span>
-          <h2 id="support-review-title">
-            80 lời giải chuyển giao và glossary.
-          </h2>
-          <p>
-            Lời giải chuyển giao là một cách làm mẫu, không phải đáp án duy nhất
-            và không thay đổi lịch FSRS.
-          </p>
-        </div>
-      </section>
       <section
         className="draft-core-library surface"
         aria-labelledby="english-core-title"
@@ -182,22 +161,22 @@ export function CardLibraryView({
         <div className="draft-core-heading">
           <div>
             <span className="eyebrow">CURRICULUM · ĐÃ DUYỆT</span>
-            <h2 id="english-core-title">English Core v1 · bản đang học</h2>
+            <h2 id="english-core-title">English Core v2 · 89 thẻ chính thức</h2>
             <p>
               Mười bộ nguyên lý đang nằm trong lịch học. Chỉnh một thẻ sẽ tạo
               bản nháp mới, không làm mất bản đã duyệt hay lịch sử ôn.
             </p>
           </div>
           <span className="draft-core-count">
-            {ENGLISH_CORE_DRAFT_COLLECTIONS.length} bộ · số thẻ theo nội dung
+            {APPROVED_ENGLISH_COLLECTIONS.length} bộ · 89 thẻ
           </span>
         </div>
         <div
           className="draft-collection-tabs"
           role="tablist"
-          aria-label="Các bộ thẻ English Core v1"
+          aria-label="Các bộ thẻ English Core v2"
         >
-          {ENGLISH_CORE_DRAFT_COLLECTIONS.map((collection, index) => (
+          {APPROVED_ENGLISH_COLLECTIONS.map((collection, index) => (
             <button
               type="button"
               key={collection.id}

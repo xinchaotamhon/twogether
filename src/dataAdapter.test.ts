@@ -11,7 +11,7 @@ describe("local development data adapter", () => {
     const hoang = adapter.readLearner("hoang", "hoang");
     expect(hiep.reviewEvents).toHaveLength(0);
     expect(hoang.reviewEvents).toHaveLength(0);
-    expect(Object.keys(hiep.cardStates)).toHaveLength(80);
+    expect(Object.keys(hiep.cardStates)).toHaveLength(89);
   });
 
   it("makes a duplicate review write idempotent", () => {
@@ -48,6 +48,6 @@ describe("local development data adapter", () => {
     expect(snapshot.cardStates["fixture-recall-01"].reviewCount).toBe(3);
     expect(snapshot.reviewEvents).toHaveLength(1);
     expect(snapshot.dailyGoalMinutes).toBe(20);
-    expect(Object.keys(snapshot.cardStates)).toHaveLength(81);
+    expect(Object.keys(snapshot.cardStates)).toHaveLength(90);
   });
 });

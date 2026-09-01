@@ -1,21 +1,20 @@
 import { expect, test } from "@playwright/test";
 
-test("shows English Core v1 as ten owner-approved study slices", async ({ page }) => {
+test("shows English Core v2 as ten owner-approved study slices", async ({ page }) => {
   await page.goto("/");
   await page.getByTestId("learner-choice-hiep").click();
   await page.getByTestId("nav-cards").click();
 
   const reviewArea = page.locator(".draft-core-library");
-  await expect(reviewArea.getByRole("heading", { name: "English Core v1 · bản đang học" })).toBeVisible();
+  await expect(reviewArea.getByRole("heading", { name: "English Core v2 · 89 thẻ chính thức" })).toBeVisible();
   await expect(reviewArea.getByRole("tab")).toHaveCount(10);
   await expect(reviewArea.locator(".draft-review-card")).toHaveCount(8);
   await expect(reviewArea.getByText("đã duyệt · đang học").first()).toBeVisible();
-  await expect(reviewArea.getByText(/số thẻ theo nội dung/)).toBeVisible();
+  await expect(reviewArea.getByText("10 bộ · 89 thẻ")).toBeVisible();
 
   await page.getByTestId("draft-collection-collection-english-core-04").click();
   await expect(page.getByTestId("draft-collection-panel")).toContainText("Time, Aspect & Modality");
-  await expect(page.getByTestId("draft-collection-panel").locator(".draft-review-card")).toHaveCount(8);
-  await expect(page.getByTestId("draft-card-core-en-25")).toContainText("Tense, aspect và modality");
+  await expect(page.getByTestId("draft-collection-panel").locator(".draft-review-card")).toHaveCount(9);
   await expect(page.getByTestId("draft-card-core-en-25")).toContainText("THỬ CHUYỂN SANG TÌNH HUỐNG MỚI");
 
   await page.getByTestId("draft-card-core-en-25").getByRole("button", { name: "Đưa vào chỉnh sửa" }).click({ force: true });

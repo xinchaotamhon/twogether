@@ -37,8 +37,8 @@ if (!setup.includes("Never put a service-role key") || !setup.includes("learner 
   throw new Error("setup guide must keep passwords and service-role keys outside the repository");
 }
 
-if (!seed.includes("core-en-01") || !seed.includes("core-en-80") || seed.includes("fixture-recall-01") || seed.includes("core-react-01")) {
-  throw new Error("seed must contain the owner-approved 80-card English Core set only");
+if (!seed.includes("core-en-01") || !seed.includes("core-en-80") || !seed.includes("core-en-bridge-10") || seed.includes("fixture-recall-01") || seed.includes("core-react-01")) {
+  throw new Error("seed must contain the owner-approved 89-card English Core v2 set only");
 }
 
 console.log("Supabase contract: migration, RLS, idempotent review RPC, env boundary, and secret hygiene present");

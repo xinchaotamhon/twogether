@@ -6,7 +6,7 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
-EXPECTED_IDS = [f"core-en-{index:02d}" for index in range(1, 81)]
+EXPECTED_IDS = [f"core-en-{index:02d}" for index in range(1, 81)] + [f"core-en-bridge-{index:02d}" for index in range(2, 11)]
 ALLOWED_TERMS = {
     "finite-verb", "non-finite-verb", "clause", "subject", "predicate", "object",
     "complement", "adjunct", "modifier", "tense", "aspect", "modality", "auxiliary",
@@ -17,21 +17,17 @@ ALLOWED_TERMS = {
 
 def main() -> int:
     errors: list[str] = []
-    support = json.loads(Path("content/drafts/english-core-support-v1.json").read_text(encoding="utf-8"))
-    transfer = json.loads(Path("content/drafts/english-core-transfer-answers-v1.json").read_text(encoding="utf-8"))
-    records = support.get("support_records", [])
-    answers = transfer.get("answers", [])
-    if [item.get("card_id") for item in records] != EXPECTED_IDS:
-        errors.append("glossary support must cover the exact ordered 80 English Core IDs")
-    if [item.get("card_id") for item in answers] != EXPECTED_IDS:
-        errors.append("transfer answers must cover the exact ordered 80 English Core IDs")
-    if transfer.get("provenance", {}).get("review_status") != "owner_requested_visible_draft":
-        errors.append("transfer answers must retain visible AI-draft provenance")
-    for record in records:
+    packet = json.loads(Path("content/drafts/english-core-beginner-revision-v2.json").read_text(encoding="utf-8"))
+    cards = packet.get("cards", [])
+    if [item.get("id") for item in cards] != EXPECTED_IDS:
+        errors.append("support must cover the exact ordered 89 English Core v2 IDs")
+    if packet.get("provenance", {}).get("review_status") != "awaiting_owner_second_review":
+        errors.append("source packet must retain its original review provenance")
+    for record in cards:
         refs = record.get("glossary_refs")
         if not isinstance(refs, list) or any(ref not in ALLOWED_TERMS for ref in refs):
-            errors.append(f"{record.get('card_id')}: glossary refs are invalid")
-    if any(not str(item.get("transfer_answer", "")).strip() for item in answers):
+            errors.append(f"{record.get('id')}: glossary refs are invalid")
+    if any(not str(item.get("transfer_answer", "")).strip() for item in cards):
         errors.append("every transfer answer must be non-empty")
 
     study = Path("src/StudyView.tsx").read_text(encoding="utf-8")
@@ -47,7 +43,7 @@ def main() -> int:
         for error in errors:
             print(f" - {error}")
         return 1
-    print("[PASS] 80 worked transfer answers + glossary + attempt-before-reveal boundary")
+    print("[PASS] 89 worked transfer answers + glossary + attempt-before-reveal boundary")
     return 0
 
 
