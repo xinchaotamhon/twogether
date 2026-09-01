@@ -1,0 +1,3842 @@
+{
+  "schema_version": 1,
+  "packet_id": "empower-a2-long-term-learning-review-v1",
+  "status": "review",
+  "created_at": "2026-08-31T19:04:31.418Z",
+  "source": {
+    "local_path": "D:/book/English/CourseBook/D_Empower_2nd_A2_Students_Book.pdf",
+    "sha256": "a2c3fb113bdd9368bc6b9687e2b4cad61b64226dc773a6fdf4fa60f0f24d3d93",
+    "pdf_pages": 176,
+    "copy_restricted": true,
+    "inspection": "All 176 PDF pages were visually inspected in three ranges; targeted grammar, vocabulary, pronunciation, functional-language and review pages were spot-checked."
+  },
+  "provenance": {
+    "created_by": {
+      "actor_type": "ai-team",
+      "actor_id": "codex-subagents"
+    },
+    "requested_by": "hiep",
+    "review_status": "ai_draft_owner_review_required",
+    "transformation": "Original Vietnamese teaching prompts synthesized from course scope; no long textbook passage or exercise answer copied."
+  },
+  "review_contract": {
+    "checkbox_meaning": "flag_for_fix_or_exclusion",
+    "default_flagged": false,
+    "merge_rule": "Only unflagged cards are eligible for owner merge."
+  },
+  "units": [
+    {
+      "unit": "Welcome",
+      "lesson": "First conversations; alphabet; possessives; articles; classroom language",
+      "pdf_pages": [
+        12,
+        13,
+        14
+      ],
+      "printed_pages": [
+        6,
+        7,
+        8
+      ],
+      "topics": [
+        "introducing yourself",
+        "spelling names",
+        "classroom objects and instructions"
+      ],
+      "grammar": [
+        "possessive adjectives",
+        "a/an",
+        "regular plurals",
+        "basic question words"
+      ],
+      "vocabulary": [
+        "numbers",
+        "colours",
+        "classroom objects"
+      ],
+      "pronunciation": [
+        "alphabet-letter sounds",
+        "word stress in classroom objects"
+      ],
+      "functional_language": [
+        "greeting",
+        "asking a name or address",
+        "asking how to spell a word"
+      ],
+      "exam_priority": "High foundation: questions, articles, plural spelling and spelling aloud recur in later form/profile tasks.",
+      "core_links": [
+        "core-en-01",
+        "core-en-04",
+        "core-en-17",
+        "core-en-25"
+      ]
+    },
+    {
+      "unit": "Unit 1 - People",
+      "lesson": "1A-1D and review",
+      "pdf_pages": [
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24
+      ],
+      "printed_pages": [
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18
+      ],
+      "topics": [
+        "countries and nationalities",
+        "describing people",
+        "asking for information",
+        "online profile"
+      ],
+      "grammar": [
+        "be positive/negative",
+        "be questions and short answers",
+        "contractions",
+        "capital letters and punctuation"
+      ],
+      "vocabulary": [
+        "countries/nationalities",
+        "personality adjectives"
+      ],
+      "pronunciation": [
+        "syllable and word stress",
+        "/k/",
+        "consonant clusters",
+        "checking intonation"
+      ],
+      "functional_language": [
+        "checking understanding",
+        "asking for and giving personal information"
+      ],
+      "exam_priority": "Very high: personal profile, be, short answers, question forms and clear writing are core A2 production skills.",
+      "core_links": [
+        "core-en-01",
+        "core-en-02",
+        "core-en-04",
+        "core-en-17",
+        "core-en-20"
+      ]
+    },
+    {
+      "unit": "Unit 2 - Work and study",
+      "lesson": "2A-2D and review",
+      "pdf_pages": [
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34
+      ],
+      "printed_pages": [
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28
+      ],
+      "topics": [
+        "jobs",
+        "study habits",
+        "time",
+        "requests and replies",
+        "forms and spelling"
+      ],
+      "grammar": [
+        "present simple positive/negative",
+        "present simple questions and short answers",
+        "do-support"
+      ],
+      "vocabulary": [
+        "jobs",
+        "study routines",
+        "clock times",
+        "spelling"
+      ],
+      "pronunciation": [
+        "third-person -s endings",
+        "do you",
+        "ou spelling"
+      ],
+      "functional_language": [
+        "asking for things",
+        "accepting/refusing/replying",
+        "reacting to bad news"
+      ],
+      "exam_priority": "Very high: present simple and time expressions support daily-life writing and oral answers.",
+      "core_links": [
+        "core-en-09",
+        "core-en-13",
+        "core-en-14",
+        "core-en-17",
+        "core-en-18",
+        "core-en-19"
+      ]
+    },
+    {
+      "unit": "Unit 3 - Daily life",
+      "lesson": "3A-3D and review",
+      "pdf_pages": [
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44
+      ],
+      "printed_pages": [
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38
+      ],
+      "topics": [
+        "routines",
+        "technology",
+        "making arrangements",
+        "informal invitations"
+      ],
+      "grammar": [
+        "position of frequency adverbs",
+        "time expressions",
+        "have got"
+      ],
+      "vocabulary": [
+        "daily actions",
+        "technology items",
+        "time and days"
+      ],
+      "pronunciation": [
+        "sentence stress",
+        "word stress",
+        "main stress"
+      ],
+      "functional_language": [
+        "making arrangements",
+        "thinking time",
+        "inviting and replying"
+      ],
+      "exam_priority": "High: tests commonly ask learners to describe routines, possessions and make plans with another person.",
+      "core_links": [
+        "core-en-10",
+        "core-en-12",
+        "core-en-17",
+        "core-en-18",
+        "core-en-26"
+      ]
+    },
+    {
+      "unit": "Unit 4 - Food",
+      "lesson": "4A-4D and review",
+      "pdf_pages": [
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54
+      ],
+      "printed_pages": [
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48
+      ],
+      "topics": [
+        "food shopping",
+        "cooking",
+        "restaurants",
+        "procedural blog post"
+      ],
+      "grammar": [
+        "countable/uncountable nouns",
+        "a/an/some/any",
+        "much/many/a lot (of)"
+      ],
+      "vocabulary": [
+        "food groups",
+        "cooking verbs and adjectives",
+        "restaurant courses"
+      ],
+      "pronunciation": [
+        "food vowel/spelling contrasts",
+        "word groups"
+      ],
+      "functional_language": [
+        "arriving at a restaurant",
+        "ordering",
+        "changing an order"
+      ],
+      "exam_priority": "High: quantifiers, article choice, food requests and sequencing are compact, productive exam targets.",
+      "core_links": [
+        "core-en-27",
+        "core-en-28",
+        "core-en-34",
+        "core-en-35"
+      ]
+    },
+    {
+      "unit": "Unit 5 - Places (partial in this range)",
+      "lesson": "5A-5C through the directions setup",
+      "pdf_pages": [
+        55,
+        56,
+        57,
+        58,
+        59,
+        60
+      ],
+      "printed_pages": [
+        49,
+        50,
+        51,
+        52,
+        53,
+        54
+      ],
+      "topics": [
+        "towns",
+        "furniture",
+        "asking for directions"
+      ],
+      "grammar": [
+        "there is/there are",
+        "possessive pronouns",
+        "possessive 's"
+      ],
+      "vocabulary": [
+        "places in a city",
+        "furniture"
+      ],
+      "pronunciation": [
+        "there's / there are",
+        "vowel contrasts",
+        "sentence stress"
+      ],
+      "functional_language": [
+        "checking whether information is correct",
+        "starting a directions exchange"
+      ],
+      "exam_priority": "High foundation for description tasks: describe a town/room and identify whose object it is.",
+      "core_links": [
+        "core-en-04",
+        "core-en-25",
+        "core-en-27",
+        "core-en-32"
+      ]
+    },
+    {
+      "unit": "5 (phần kết thúc)",
+      "lesson": "5D và Review",
+      "pdf_pages": "61-64",
+      "printed_pages": "55-58",
+      "topics": [
+        "neighbourhood",
+        "directions",
+        "mô tả khu phố"
+      ],
+      "grammar": [
+        "mệnh lệnh chỉ đường",
+        "giới từ nơi chốn"
+      ],
+      "vocabulary": [
+        "places in a town",
+        "prepositions of place"
+      ],
+      "pronunciation": [
+        "các âm của chữ a"
+      ],
+      "functional_language": [
+        "hỏi và chỉ đường"
+      ],
+      "exam_priority": "Củng cố: dùng cụm chỉ vị trí/chuyển động để câu chỉ đường có thể thực hiện được.",
+      "core_links": [
+        "core-en-01",
+        "core-en-06",
+        "core-en-51"
+      ]
+    },
+    {
+      "unit": "6",
+      "lesson": "Family",
+      "pdf_pages": "65-74",
+      "printed_pages": "59-68",
+      "topics": [
+        "family history",
+        "past activities",
+        "phone messages"
+      ],
+      "grammar": [
+        "past simple: be",
+        "past simple positive",
+        "regular and irregular verbs"
+      ],
+      "vocabulary": [
+        "family",
+        "years and dates",
+        "past-time verbs"
+      ],
+      "pronunciation": [
+        "was/were stress",
+        "-ed endings",
+        "letter a"
+      ],
+      "functional_language": [
+        "asking for someone on the phone",
+        "asking someone to wait"
+      ],
+      "exam_priority": "Rất cao: quá khứ đơn, động từ bất quy tắc và câu kể về sự kiện đã kết thúc.",
+      "core_links": [
+        "core-en-18",
+        "core-en-19",
+        "core-en-20",
+        "core-en-27"
+      ]
+    },
+    {
+      "unit": "7",
+      "lesson": "Trips",
+      "pdf_pages": "75-84",
+      "printed_pages": "69-78",
+      "topics": [
+        "past trips",
+        "transport",
+        "preferences"
+      ],
+      "grammar": [
+        "past simple negative",
+        "past simple questions",
+        "love/like/don't mind/hate + -ing"
+      ],
+      "vocabulary": [
+        "transport",
+        "transport adjectives"
+      ],
+      "pronunciation": [
+        "question stress",
+        "emphasis"
+      ],
+      "functional_language": [
+        "excuse me",
+        "I'm sorry"
+      ],
+      "exam_priority": "Rất cao: do-support trong quá khứ, base form sau did/didn't, và verb + -ing.",
+      "core_links": [
+        "core-en-20",
+        "core-en-21",
+        "core-en-25",
+        "core-en-31"
+      ]
+    },
+    {
+      "unit": "8",
+      "lesson": "Fit and healthy",
+      "pdf_pages": "85-94",
+      "printed_pages": "79-88",
+      "topics": [
+        "ability",
+        "fitness",
+        "health"
+      ],
+      "grammar": [
+        "can/can't",
+        "could/couldn't",
+        "have to/don't have to"
+      ],
+      "vocabulary": [
+        "sport and exercise",
+        "body",
+        "appearance"
+      ],
+      "pronunciation": [
+        "joining words",
+        "stress in can/can't"
+      ],
+      "functional_language": [
+        "expressing sympathy",
+        "talking about health"
+      ],
+      "exam_priority": "Cao: phân biệt khả năng với sự cần thiết/bắt buộc.",
+      "core_links": [
+        "core-en-30",
+        "core-en-31",
+        "core-en-50"
+      ]
+    },
+    {
+      "unit": "9",
+      "lesson": "Clothes and shopping",
+      "pdf_pages": "95-104",
+      "printed_pages": "89-98",
+      "topics": [
+        "shopping",
+        "clothes",
+        "things happening now"
+      ],
+      "grammar": [
+        "present continuous",
+        "present simple or present continuous"
+      ],
+      "vocabulary": [
+        "shops",
+        "money and prices",
+        "clothes"
+      ],
+      "pronunciation": [
+        "joining words",
+        "vowel sound of o"
+      ],
+      "functional_language": [
+        "paying for clothes",
+        "saying something nice"
+      ],
+      "exam_priority": "Rất cao: chọn thì theo nghĩa routine hay action-now, không theo dấu hiệu bề ngoài của từ.",
+      "core_links": [
+        "core-en-16",
+        "core-en-18",
+        "core-en-22",
+        "core-en-51"
+      ]
+    },
+    {
+      "unit": "10",
+      "lesson": "Communication",
+      "pdf_pages": "105-114",
+      "printed_pages": "99-108",
+      "topics": [
+        "technology",
+        "languages",
+        "help",
+        "opinions"
+      ],
+      "grammar": [
+        "comparative adjectives",
+        "superlative adjectives"
+      ],
+      "vocabulary": [
+        "IT collocations",
+        "high numbers"
+      ],
+      "pronunciation": [
+        "comparative/superlative stress",
+        "main stress and intonation"
+      ],
+      "functional_language": [
+        "asking for help",
+        "checking instructions"
+      ],
+      "exam_priority": "Rất cao: so sánh hơn/nhất, quy tắc -er/-est, more/most và dạng bất quy tắc.",
+      "core_links": [
+        "core-en-06",
+        "core-en-35",
+        "core-en-51",
+        "core-en-65"
+      ]
+    },
+    {
+      "unit": "11 (phần đầu)",
+      "lesson": "Entertainment",
+      "pdf_pages": "115-120",
+      "printed_pages": "109-114",
+      "topics": [
+        "films",
+        "music",
+        "experiences",
+        "opinions"
+      ],
+      "grammar": [
+        "present perfect positive",
+        "present perfect negative and questions",
+        "present perfect or past simple"
+      ],
+      "vocabulary": [
+        "irregular past participles",
+        "music"
+      ],
+      "pronunciation": [
+        "past participle stress",
+        "main stress and intonation"
+      ],
+      "functional_language": [
+        "asking for and expressing opinions"
+      ],
+      "exam_priority": "Rất cao: hiện tại hoàn thành cho trải nghiệm/chưa xác định thời điểm, quá khứ đơn khi thời điểm đã rõ.",
+      "core_links": [
+        "core-en-18",
+        "core-en-19",
+        "core-en-20",
+        "core-en-65"
+      ]
+    },
+    {
+      "unit": "11 (kết thúc)",
+      "lesson": "11D và Review",
+      "pdf_pages": "121-124",
+      "printed_pages": "115-118",
+      "topics": [
+        "opinions",
+        "reviews",
+        "entertainment"
+      ],
+      "grammar": [
+        "present perfect review",
+        "past simple contrast"
+      ],
+      "vocabulary": [
+        "films and music"
+      ],
+      "pronunciation": [
+        "stress and intonation"
+      ],
+      "functional_language": [
+        "responding to opinions"
+      ],
+      "exam_priority": "Cao: phối hợp trải nghiệm và mốc thời gian, viết review có cấu trúc.",
+      "core_links": [
+        "core-en-19",
+        "core-en-65"
+      ]
+    },
+    {
+      "unit": "12",
+      "lesson": "Travel",
+      "pdf_pages": "125-134",
+      "printed_pages": "119-128",
+      "topics": [
+        "holiday plans",
+        "advice",
+        "hotel and tourist information",
+        "travel email"
+      ],
+      "grammar": [
+        "be going to",
+        "should/shouldn't"
+      ],
+      "vocabulary": [
+        "geography",
+        "travel collocations",
+        "uses of take"
+      ],
+      "pronunciation": [
+        "consonant clusters"
+      ],
+      "functional_language": [
+        "checking in",
+        "asking tourist information"
+      ],
+      "exam_priority": "Rất cao: future plan khác advice; modal giữ verb base form; câu hỏi dịch vụ/du lịch.",
+      "core_links": [
+        "core-en-21",
+        "core-en-30",
+        "core-en-31",
+        "core-en-65"
+      ]
+    },
+    {
+      "unit": "Grammar Focus",
+      "lesson": "1A-12B",
+      "pdf_pages": "144-167",
+      "printed_pages": "138-161",
+      "topics": [
+        "whole-course grammar retrieval"
+      ],
+      "grammar": [
+        "be",
+        "present simple",
+        "frequency adverbs",
+        "countability",
+        "there is/are",
+        "past simple",
+        "modals",
+        "present continuous",
+        "comparison",
+        "present perfect"
+      ],
+      "vocabulary": [],
+      "pronunciation": [],
+      "functional_language": [],
+      "exam_priority": "Rất cao: phần này là bản đồ ôn tổng hợp các cấu trúc dễ nhầm trong bài kiểm tra.",
+      "core_links": [
+        "core-en-16",
+        "core-en-18",
+        "core-en-19",
+        "core-en-20",
+        "core-en-21"
+      ]
+    },
+    {
+      "unit": "Vocabulary Focus and reference",
+      "lesson": "1A-12A",
+      "pdf_pages": "168-176",
+      "printed_pages": "162-170",
+      "topics": [
+        "collocations",
+        "common verbs",
+        "prices",
+        "numbers",
+        "irregular verbs"
+      ],
+      "grammar": [],
+      "vocabulary": [
+        "travel",
+        "sport",
+        "food",
+        "clothes",
+        "money"
+      ],
+      "pronunciation": [
+        "word stress and sound patterns"
+      ],
+      "functional_language": [],
+      "exam_priority": "Cao: học cụm từ để dùng được câu, không tách động từ khỏi partner đi cùng.",
+      "core_links": [
+        "core-en-09",
+        "core-en-50",
+        "core-en-51"
+      ]
+    }
+  ],
+  "cards": [
+    {
+      "id": "coursebook-empower-a2-p01-c01",
+      "node_id": "core-en-module-01",
+      "card_type": "production",
+      "prompt": "Khi muốn hỏi tên, giờ học hoặc nơi chốn, vì sao phải chọn đúng từ hỏi trước khi nghĩ đến các từ còn lại? Hãy nêu vai trò của what, when và where.",
+      "model_answer": "Từ hỏi nói rõ phần thông tin còn thiếu: what hỏi sự vật/thông tin, when hỏi thời gian, where hỏi nơi chốn. Sau đó mới dựng phần còn lại của câu hỏi theo cấu trúc phù hợp.",
+      "explanation": "Đừng học từng câu rời. Hãy bắt đầu bằng 'mình đang thiếu loại thông tin nào?', rồi chọn từ hỏi và cơ chế câu hỏi.",
+      "misconception": "Cứ dùng what cho mọi câu hỏi rồi đổi nghĩa theo ngữ cảnh.",
+      "transfer_prompt": "Bạn cần biết cách một bạn mới đánh vần họ của bạn ấy. Hãy tạo câu hỏi tự nhiên.",
+      "transfer_answer": "Có thể hỏi: 'How do you spell your surname?' Vì thông tin thiếu là cách đánh vần, nên dùng how do you spell, không dùng what hoặc where.",
+      "glossary_terms": [
+        "question word",
+        "surname",
+        "spell"
+      ],
+      "prerequisite_card_ids": [
+        "core-en-01",
+        "core-en-17"
+      ],
+      "prerequisite_node_ids": [
+        "core-en-module-01",
+        "core-en-module-03"
+      ],
+      "source_refs": [
+        "empower-a2-students-book:sha256:a2c3fb113bdd9368bc6b9687e2b4cad61b64226dc773a6fdf4fa60f0f24d3d93:pdf-pages:12,13,14",
+        "coursebook-analysis:empower-a2-p01-c01"
+      ],
+      "source_pdf_pages": [
+        12,
+        13,
+        14
+      ],
+      "source_scope": "Welcome grammar and information-exchange objectives; paraphrased synthesis.",
+      "deck": "Empower A2 · Welcome and Unit 1",
+      "status": "review",
+      "author": "ai-coursebook-synthesis",
+      "reviewer": null,
+      "provenance_note": "AI-drafted from the listed textbook pages; paraphrased teaching card, not a copied exercise or answer. Needs owner/teacher review before publishing."
+    },
+    {
+      "id": "coursebook-empower-a2-p01-c02",
+      "node_id": "core-en-module-01",
+      "card_type": "production",
+      "prompt": "Tại sao chọn a hay an dựa vào âm đầu của từ kế tiếp, còn số nhiều lại phụ thuộc vào dạng của danh từ? Hãy giải thích hai quyết định khác nhau này.",
+      "model_answer": "a/an là tín hiệu cho một danh từ đếm được số ít và lựa chọn theo âm mở đầu; số nhiều là thay đổi danh từ để chỉ hơn một. Đây là hai cơ chế khác nhau, dù thường xuất hiện cùng trong cụm danh từ.",
+      "explanation": "Hãy quyết định theo thứ tự: danh từ là một hay nhiều; nếu là một, có cần mạo từ không và âm đầu nghe thế nào?",
+      "misconception": "an luôn đứng trước mọi từ bắt đầu bằng nguyên âm viết, hoặc cứ số nhiều là thêm -s không cần nhìn từ.",
+      "transfer_prompt": "Bạn muốn mô tả một quả táo và ba chiếc hộp. Hãy nói hai cụm danh từ đúng và giải thích ngắn gọn.",
+      "transfer_answer": "'an apple' vì apple là một danh từ đếm được số ít và bắt đầu bằng âm nguyên âm; 'three boxes' vì nhiều box cần số nhiều, với -es sau âm cuối phù hợp.",
+      "glossary_terms": [
+        "article",
+        "countable noun",
+        "plural"
+      ],
+      "prerequisite_card_ids": [
+        "core-en-04",
+        "core-en-27"
+      ],
+      "prerequisite_node_ids": [
+        "core-en-module-01",
+        "core-en-module-04"
+      ],
+      "source_refs": [
+        "empower-a2-students-book:sha256:a2c3fb113bdd9368bc6b9687e2b4cad61b64226dc773a6fdf4fa60f0f24d3d93:pdf-pages:13,14",
+        "coursebook-analysis:empower-a2-p01-c02"
+      ],
+      "source_pdf_pages": [
+        13,
+        14
+      ],
+      "source_scope": "Welcome articles and plural forms.",
+      "deck": "Empower A2 · Welcome and Unit 1",
+      "status": "review",
+      "author": "ai-coursebook-synthesis",
+      "reviewer": null,
+      "provenance_note": "AI-drafted from the listed textbook pages; paraphrased teaching card, not a copied exercise or answer. Needs owner/teacher review before publishing."
+    },
+    {
+      "id": "coursebook-empower-a2-p01-c03",
+      "node_id": "core-en-module-01",
+      "card_type": "production",
+      "prompt": "Trong một câu giới thiệu quốc tịch, khi nào dùng tên nước và khi nào dùng tính từ quốc tịch? Hãy đặt chúng vào hai vai trò khác nhau trong câu.",
+      "model_answer": "Tên nước thường đi sau from để nêu nơi xuất thân; tính từ quốc tịch thường đi sau be để mô tả người. Ví dụ một người có thể 'be Vietnamese' và 'be from Vietnam'.",
+      "explanation": "Đây là khác nhau giữa cụm giới từ chỉ nguồn gốc và phần mô tả sau be, không phải hai từ hoán đổi tùy ý.",
+      "misconception": "Có thể dùng tên nước ngay sau be để nói quốc tịch trong mọi trường hợp.",
+      "transfer_prompt": "Hãy tự giới thiệu một người đến từ Nhật bằng cả hai cách, không cần nêu tên thật.",
+      "transfer_answer": "'She is from Japan. She is Japanese.' Câu đầu dùng tên nước sau from; câu sau dùng nationality adjective sau be.",
+      "glossary_terms": [
+        "country",
+        "nationality",
+        "preposition"
+      ],
+      "prerequisite_card_ids": [
+        "core-en-02",
+        "core-en-04"
+      ],
+      "prerequisite_node_ids": [
+        "core-en-module-01"
+      ],
+      "source_refs": [
+        "empower-a2-students-book:sha256:a2c3fb113bdd9368bc6b9687e2b4cad61b64226dc773a6fdf4fa60f0f24d3d93:pdf-pages:16,17",
+        "coursebook-analysis:empower-a2-p01-c03"
+      ],
+      "source_pdf_pages": [
+        16,
+        17
+      ],
+      "source_scope": "1A countries/nationalities and be positive/negative.",
+      "deck": "Empower A2 · Unit 1 · People",
+      "status": "review",
+      "author": "ai-coursebook-synthesis",
+      "reviewer": null,
+      "provenance_note": "AI-drafted from the listed textbook pages; paraphrased teaching card, not a copied exercise or answer. Needs owner/teacher review before publishing."
+    },
+    {
+      "id": "coursebook-empower-a2-p01-c04",
+      "node_id": "core-en-module-02",
+      "card_type": "application",
+      "prompt": "Muốn phủ định một câu có be, vì sao chỉ cần đặt not sau dạng be thay vì thêm do?",
+      "model_answer": "Trong kiểu câu này, be đã là verb mang thông tin ngữ pháp của mệnh đề nên nó nhận not trực tiếp. Do-support chỉ cần khi lexical verb hiện tại đơn không có auxiliary phù hợp.",
+      "explanation": "Trước khi phủ định, hãy tìm finite carrier. Nếu là be thì gắn not vào đó; đừng tự động gọi do/does.",
+      "misconception": "Mọi câu phủ định hiện tại đều phải có don't hoặc doesn't.",
+      "transfer_prompt": "Biến ý 'họ không ở trường' thành một câu hoàn chỉnh và nói vì sao không dùng don't.",
+      "transfer_answer": "'They aren't at school.' are là finite be nên nhận not trực tiếp; at school chỉ là phần bổ sung nơi chốn.",
+      "glossary_terms": [
+        "finite verb",
+        "auxiliary",
+        "negative"
+      ],
+      "prerequisite_card_ids": [
+        "core-en-09",
+        "core-en-20"
+      ],
+      "prerequisite_node_ids": [
+        "core-en-module-02",
+        "core-en-module-03"
+      ],
+      "source_refs": [
+        "empower-a2-students-book:sha256:a2c3fb113bdd9368bc6b9687e2b4cad61b64226dc773a6fdf4fa60f0f24d3d93:pdf-pages:17",
+        "coursebook-analysis:empower-a2-p01-c04"
+      ],
+      "source_pdf_pages": [
+        17
+      ],
+      "source_scope": "1A be: positive and negative.",
+      "deck": "Empower A2 · Unit 1 · People",
+      "status": "review",
+      "author": "ai-coursebook-synthesis",
+      "reviewer": null,
+      "provenance_note": "AI-drafted from the listed textbook pages; paraphrased teaching card, not a copied exercise or answer. Needs owner/teacher review before publishing."
+    },
+    {
+      "id": "coursebook-empower-a2-p01-c05",
+      "node_id": "core-en-module-01",
+      "card_type": "production",
+      "prompt": "Một câu hỏi yes/no với be được tạo ra bằng phép đổi nào từ câu kể? Vì sao short answer vẫn phải giữ be?",
+      "model_answer": "Đưa be lên trước subject, ví dụ từ một câu kể về một người thành 'Is she ...?'. Short answer giữ be vì be mang phần ngữ pháp của mệnh đề: 'Yes, she is' hoặc 'No, she isn't'.",
+      "explanation": "Không chỉ thêm dấu hỏi: tiếng Anh đánh dấu câu hỏi bằng vị trí của finite be.",
+      "misconception": "Câu trả lời ngắn chỉ cần yes/no hoặc phải lặp lại toàn bộ tính từ.",
+      "transfer_prompt": "Tạo câu hỏi và câu trả lời ngắn để kiểm tra một người có thân thiện không.",
+      "transfer_answer": "'Is he friendly?' - 'Yes, he is.' friendly là predicate adjective; is được đảo lên để hỏi và được giữ lại trong short answer.",
+      "glossary_terms": [
+        "yes/no question",
+        "short answer",
+        "predicate adjective"
+      ],
+      "prerequisite_card_ids": [
+        "core-en-04",
+        "core-en-17"
+      ],
+      "prerequisite_node_ids": [
+        "core-en-module-01",
+        "core-en-module-03"
+      ],
+      "source_refs": [
+        "empower-a2-students-book:sha256:a2c3fb113bdd9368bc6b9687e2b4cad61b64226dc773a6fdf4fa60f0f24d3d93:pdf-pages:18,19",
+        "coursebook-analysis:empower-a2-p01-c05"
+      ],
+      "source_pdf_pages": [
+        18,
+        19
+      ],
+      "source_scope": "1B adjectives; be questions and short answers.",
+      "deck": "Empower A2 · Unit 1 · People",
+      "status": "review",
+      "author": "ai-coursebook-synthesis",
+      "reviewer": null,
+      "provenance_note": "AI-drafted from the listed textbook pages; paraphrased teaching card, not a copied exercise or answer. Needs owner/teacher review before publishing."
+    },
+    {
+      "id": "coursebook-empower-a2-p01-c06",
+      "node_id": "core-en-module-03",
+      "card_type": "application",
+      "prompt": "Khi bạn nghe một thông tin nhưng không chắc mình hiểu đúng, tại sao nên vừa báo hiệu sự chưa chắc vừa nhắc lại thông tin?",
+      "model_answer": "Cách đó cho người kia một điểm cụ thể để xác nhận hoặc sửa. Có thể dùng một tín hiệu như 'Sorry?' rồi lặp lại phần cần kiểm tra với ngữ điệu hỏi.",
+      "explanation": "Mục tiêu giao tiếp là sửa hiểu lầm sớm, không phải đoán im lặng. Đây là kỹ năng dùng được cho tên, giờ, phòng và chỉ dẫn.",
+      "misconception": "Chỉ nói 'I don't understand' là đủ rõ trong mọi tình huống.",
+      "transfer_prompt": "Bạn nghe giờ học là 7:20 nhưng không chắc. Hãy tạo một lượt kiểm tra lịch sự.",
+      "transfer_answer": "'Sorry, 7:20?' hoặc 'Sorry, is it 7:20?' Việc nhắc lại chính số giờ cho người nói biết đúng phần cần xác nhận.",
+      "glossary_terms": [
+        "check understanding",
+        "intonation",
+        "consonant cluster"
+      ],
+      "prerequisite_card_ids": [
+        "core-en-17",
+        "core-en-25"
+      ],
+      "prerequisite_node_ids": [
+        "core-en-module-03",
+        "core-en-module-04"
+      ],
+      "source_refs": [
+        "empower-a2-students-book:sha256:a2c3fb113bdd9368bc6b9687e2b4cad61b64226dc773a6fdf4fa60f0f24d3d93:pdf-pages:20,21",
+        "coursebook-analysis:empower-a2-p01-c06"
+      ],
+      "source_pdf_pages": [
+        20,
+        21
+      ],
+      "source_scope": "1C asking for/giving information, checking understanding, consonant clusters.",
+      "deck": "Empower A2 · Unit 1 · People",
+      "status": "review",
+      "author": "ai-coursebook-synthesis",
+      "reviewer": null,
+      "provenance_note": "AI-drafted from the listed textbook pages; paraphrased teaching card, not a copied exercise or answer. Needs owner/teacher review before publishing."
+    },
+    {
+      "id": "coursebook-empower-a2-p01-c07",
+      "node_id": "core-en-module-01",
+      "card_type": "application",
+      "prompt": "Vì sao một online profile dễ đọc cần coi chữ hoa và dấu câu là tín hiệu cấu trúc, không chỉ là trang trí?",
+      "model_answer": "Chữ hoa đánh dấu tên riêng, nơi chốn, quốc gia và đầu câu; dấu chấm kết thúc ý; dấu phẩy giúp tách các mục cùng loại. Chúng làm người đọc nhìn thấy ranh giới thông tin.",
+      "explanation": "Trong bài viết ngắn, tín hiệu hình thức càng quan trọng vì người đọc không có giọng nói hay cử chỉ để suy ra cấu trúc.",
+      "misconception": "Nếu từ vựng và ngữ pháp đúng thì không cần kiểm tra chữ hoa hay dấu câu.",
+      "transfer_prompt": "Viết hai câu hồ sơ ngắn về chính bạn, có tên nơi chốn và hai sở thích; sau đó tự kiểm tra ba điểm viết hoa/dấu câu.",
+      "transfer_answer": "Ví dụ: 'I'm Hiep. I'm from Vietnam, and I like music and football.' Kiểm tra: Hiep/Vietnam viết hoa; mỗi câu có dấu chấm; danh sách sở thích được nối rõ bằng and.",
+      "glossary_terms": [
+        "capital letter",
+        "proper noun",
+        "punctuation"
+      ],
+      "prerequisite_card_ids": [
+        "core-en-01",
+        "core-en-07"
+      ],
+      "prerequisite_node_ids": [
+        "core-en-module-01"
+      ],
+      "source_refs": [
+        "empower-a2-students-book:sha256:a2c3fb113bdd9368bc6b9687e2b4cad61b64226dc773a6fdf4fa60f0f24d3d93:pdf-pages:22,23",
+        "coursebook-analysis:empower-a2-p01-c07"
+      ],
+      "source_pdf_pages": [
+        22,
+        23
+      ],
+      "source_scope": "1D online profile, capital letters and punctuation.",
+      "deck": "Empower A2 · Unit 1 · People",
+      "status": "review",
+      "author": "ai-coursebook-synthesis",
+      "reviewer": null,
+      "provenance_note": "AI-drafted from the listed textbook pages; paraphrased teaching card, not a copied exercise or answer. Needs owner/teacher review before publishing."
+    },
+    {
+      "id": "coursebook-empower-a2-p01-c08",
+      "node_id": "core-en-module-02",
+      "card_type": "application",
+      "prompt": "Trong hiện tại đơn, vì sao một lexical verb thường đổi dạng với he/she/it nhưng không đổi dạng sau does/doesn't?",
+      "model_answer": "Ở câu khẳng định không có auxiliary, lexical verb tự mang agreement với ngôi ba số ít. Khi does/doesn't xuất hiện, auxiliary đó đã mang agreement nên lexical verb trở về base form.",
+      "explanation": "Hãy tìm nơi đang mang gánh nặng ngữ pháp; đừng đặt dấu hiệu ngôi ba lên hai chỗ.",
+      "misconception": "Vì subject là she nên mọi verb trong câu đều phải có -s.",
+      "transfer_prompt": "Tạo một cặp phủ định và khẳng định về việc một bạn học mỗi ngày.",
+      "transfer_answer": "'She studies every day, but she doesn't study at night.' studies mang -s ở câu khẳng định; sau doesn't dùng study dạng gốc.",
+      "glossary_terms": [
+        "present simple",
+        "lexical verb",
+        "base form",
+        "third-person singular"
+      ],
+      "prerequisite_card_ids": [
+        "core-en-13",
+        "core-en-14",
+        "core-en-18"
+      ],
+      "prerequisite_node_ids": [
+        "core-en-module-02",
+        "core-en-module-03"
+      ],
+      "source_refs": [
+        "empower-a2-students-book:sha256:a2c3fb113bdd9368bc6b9687e2b4cad61b64226dc773a6fdf4fa60f0f24d3d93:pdf-pages:26,27",
+        "coursebook-analysis:empower-a2-p01-c08"
+      ],
+      "source_pdf_pages": [
+        26,
+        27
+      ],
+      "source_scope": "2A present simple positive/negative and job language.",
+      "deck": "Empower A2 · Unit 2 · Work and study",
+      "status": "review",
+      "author": "ai-coursebook-synthesis",
+      "reviewer": null,
+      "provenance_note": "AI-drafted from the listed textbook pages; paraphrased teaching card, not a copied exercise or answer. Needs owner/teacher review before publishing."
+    },
+    {
+      "id": "coursebook-empower-a2-p01-c09",
+      "node_id": "core-en-module-03",
+      "card_type": "application",
+      "prompt": "Để hỏi thông tin mới về thói quen bằng hiện tại đơn, vì sao cần đặt do/does trước subject rồi mới đến lexical verb?",
+      "model_answer": "Do/does là finite auxiliary cho hiện tại đơn trong câu hỏi; nó đứng trước subject để đánh dấu câu hỏi, còn lexical verb theo sau ở base form. Thêm wh-word ở đầu khi cần loại thông tin cụ thể.",
+      "explanation": "Khung có thể là: wh-word + do/does + subject + base verb + phần còn lại.",
+      "misconception": "Có thể hỏi bằng cách giữ trật tự câu kể rồi thêm dấu hỏi.",
+      "transfer_prompt": "Hỏi một bạn học bao nhiêu giờ một tuần bằng một câu có wh-word.",
+      "transfer_answer": "'How many hours do you study a week?' how many hỏi số lượng, do đứng trước subject you, còn study ở base form.",
+      "glossary_terms": [
+        "wh-question",
+        "subject",
+        "base form",
+        "time expression"
+      ],
+      "prerequisite_card_ids": [
+        "core-en-17",
+        "core-en-18"
+      ],
+      "prerequisite_node_ids": [
+        "core-en-module-03"
+      ],
+      "source_refs": [
+        "empower-a2-students-book:sha256:a2c3fb113bdd9368bc6b9687e2b4cad61b64226dc773a6fdf4fa60f0f24d3d93:pdf-pages:28,29",
+        "coursebook-analysis:empower-a2-p01-c09"
+      ],
+      "source_pdf_pages": [
+        28,
+        29
+      ],
+      "source_scope": "2B present simple questions, study/time vocabulary and question order.",
+      "deck": "Empower A2 · Unit 2 · Work and study",
+      "status": "review",
+      "author": "ai-coursebook-synthesis",
+      "reviewer": null,
+      "provenance_note": "AI-drafted from the listed textbook pages; paraphrased teaching card, not a copied exercise or answer. Needs owner/teacher review before publishing."
+    },
+    {
+      "id": "coursebook-empower-a2-p01-c10",
+      "node_id": "core-en-module-03",
+      "card_type": "application",
+      "prompt": "Khi xin thứ gì đó hoặc nhờ giúp, điều gì khiến một request tự nhiên hơn một mệnh lệnh đơn thuần?",
+      "model_answer": "Nêu rõ điều mình muốn, dùng dạng lịch sự phù hợp như can/could hoặc would like, và thêm please khi hợp cảnh. Người nghe có thể nhận lời, từ chối lịch sự hoặc xin thêm thông tin.",
+      "explanation": "Ngữ pháp là một phần; chức năng giao tiếp còn cần cho người nghe một lựa chọn phản hồi lịch sự.",
+      "misconception": "Cứ dùng 'Give me ...' là lịch sự nếu nói với giọng nhẹ.",
+      "transfer_prompt": "Bạn muốn mượn bút của bạn cùng lớp. Hãy nói request và một phản hồi nhận lời tự nhiên.",
+      "transfer_answer": "'Could I borrow your pen, please?' - 'Sure, no problem.' could I làm yêu cầu mềm hơn và phản hồi xác nhận rõ điều được đồng ý.",
+      "glossary_terms": [
+        "request",
+        "reply",
+        "polite",
+        "borrow"
+      ],
+      "prerequisite_card_ids": [
+        "core-en-17",
+        "core-en-25"
+      ],
+      "prerequisite_node_ids": [
+        "core-en-module-03",
+        "core-en-module-04"
+      ],
+      "source_refs": [
+        "empower-a2-students-book:sha256:a2c3fb113bdd9368bc6b9687e2b4cad61b64226dc773a6fdf4fa60f0f24d3d93:pdf-pages:29,30,31",
+        "coursebook-analysis:empower-a2-p01-c10"
+      ],
+      "source_pdf_pages": [
+        29,
+        30,
+        31
+      ],
+      "source_scope": "2B time; 2C asking/replying; reaction to news.",
+      "deck": "Empower A2 · Unit 2 · Work and study",
+      "status": "review",
+      "author": "ai-coursebook-synthesis",
+      "reviewer": null,
+      "provenance_note": "AI-drafted from the listed textbook pages; paraphrased teaching card, not a copied exercise or answer. Needs owner/teacher review before publishing."
+    },
+    {
+      "id": "coursebook-empower-a2-p01-c11",
+      "node_id": "core-en-module-01",
+      "card_type": "application",
+      "prompt": "Vì sao rà spelling trong một form không nên chỉ là nhìn từng từ, mà phải kiểm tra từng ô thông tin theo mục đích của nó?",
+      "model_answer": "Mỗi ô cần đúng loại thông tin: tên, quốc tịch, email, ngày hoặc lý do. Ta kiểm tra cả chữ cái, thứ tự, chữ hoa cần thiết và việc câu trả lời có thực sự trả lời đúng nhãn ô.",
+      "explanation": "Form là bài kiểm tra ghép ý nghĩa với hình thức chính xác; một từ đúng chính tả nhưng nằm sai ô vẫn là thông tin sai.",
+      "misconception": "Chỉ cần câu tiếng Anh hay là có thể điền vào bất kỳ ô nào.",
+      "transfer_prompt": "Một form hỏi 'Why is English important for you?'. Hãy tự tạo một câu trả lời ngắn, đúng chức năng của ô.",
+      "transfer_answer": "Ví dụ: 'It is important because I need it for my future job.' Câu này trực tiếp nêu lý do, không đưa thông tin lạc đề như địa chỉ hay giờ học.",
+      "glossary_terms": [
+        "form",
+        "field",
+        "spelling",
+        "purpose"
+      ],
+      "prerequisite_card_ids": [
+        "core-en-01",
+        "core-en-07"
+      ],
+      "prerequisite_node_ids": [
+        "core-en-module-01"
+      ],
+      "source_refs": [
+        "empower-a2-students-book:sha256:a2c3fb113bdd9368bc6b9687e2b4cad61b64226dc773a6fdf4fa60f0f24d3d93:pdf-pages:32,33,34",
+        "coursebook-analysis:empower-a2-p01-c11"
+      ],
+      "source_pdf_pages": [
+        32,
+        33,
+        34
+      ],
+      "source_scope": "2D form completion, spelling and review.",
+      "deck": "Empower A2 · Unit 2 · Work and study",
+      "status": "review",
+      "author": "ai-coursebook-synthesis",
+      "reviewer": null,
+      "provenance_note": "AI-drafted from the listed textbook pages; paraphrased teaching card, not a copied exercise or answer. Needs owner/teacher review before publishing."
+    },
+    {
+      "id": "coursebook-empower-a2-p01-c12",
+      "node_id": "core-en-module-01",
+      "card_type": "application",
+      "prompt": "Vì sao adverb of frequency như always/often/never thường đứng trước lexical verb nhưng sau be?",
+      "model_answer": "Adverb này bổ sung tần suất cho sự việc; với lexical verb nó thường đứng trước verb, còn be là carrier đặc biệt nên adverb thường đặt sau be. Ta cần nhìn kiến trúc verb, không chỉ nhớ một vị trí cố định.",
+      "explanation": "So sánh 'I often walk' với 'She is often tired' để thấy vị trí phụ thuộc verb trung tâm/auxiliary.",
+      "misconception": "always luôn đứng trước mọi verb, kể cả be.",
+      "transfer_prompt": "Viết hai câu về việc ăn sáng: một câu dùng lexical verb, một câu dùng be.",
+      "transfer_answer": "'I usually eat breakfast at seven.' và 'I am usually hungry at seven.' usually đứng trước eat nhưng sau am.",
+      "glossary_terms": [
+        "adverb of frequency",
+        "lexical verb",
+        "time expression"
+      ],
+      "prerequisite_card_ids": [
+        "core-en-02",
+        "core-en-06"
+      ],
+      "prerequisite_node_ids": [
+        "core-en-module-01"
+      ],
+      "source_refs": [
+        "empower-a2-students-book:sha256:a2c3fb113bdd9368bc6b9687e2b4cad61b64226dc773a6fdf4fa60f0f24d3d93:pdf-pages:36,37,44",
+        "coursebook-analysis:empower-a2-p01-c12"
+      ],
+      "source_pdf_pages": [
+        36,
+        37,
+        44
+      ],
+      "source_scope": "3A frequency adverbs, time expressions and review.",
+      "deck": "Empower A2 · Unit 3 · Daily life",
+      "status": "review",
+      "author": "ai-coursebook-synthesis",
+      "reviewer": null,
+      "provenance_note": "AI-drafted from the listed textbook pages; paraphrased teaching card, not a copied exercise or answer. Needs owner/teacher review before publishing."
+    },
+    {
+      "id": "coursebook-empower-a2-p01-c13",
+      "node_id": "core-en-module-01",
+      "card_type": "application",
+      "prompt": "Khi thêm thời gian vào câu về thói quen, vì sao time expression thường đi cuối câu và at/in/on không phải ba từ thay thế nhau?",
+      "model_answer": "Time expression thường bổ sung cho cả sự việc nên hay ở cuối. at dùng cho giờ/điểm thời gian; on cho ngày/ngày tháng; in cho tháng, năm, mùa hoặc phần rộng hơn của ngày.",
+      "explanation": "Hãy xác định 'độ rộng' của thời gian trước: điểm cụ thể, ngày, hay khoảng lớn hơn.",
+      "misconception": "Chọn giới từ theo cảm giác, vì mọi từ đều chỉ thời gian.",
+      "transfer_prompt": "Nói bạn học tiếng Anh vào 7 giờ tối thứ Hai bằng một câu đúng.",
+      "transfer_answer": "'I study English at seven o'clock on Monday evening.' at gắn với giờ, on gắn với ngày; phần thời gian được đặt sau mệnh đề chính.",
+      "glossary_terms": [
+        "time expression",
+        "preposition",
+        "at",
+        "on",
+        "in"
+      ],
+      "prerequisite_card_ids": [
+        "core-en-06",
+        "core-en-34"
+      ],
+      "prerequisite_node_ids": [
+        "core-en-module-01",
+        "core-en-module-05"
+      ],
+      "source_refs": [
+        "empower-a2-students-book:sha256:a2c3fb113bdd9368bc6b9687e2b4cad61b64226dc773a6fdf4fa60f0f24d3d93:pdf-pages:37,44",
+        "coursebook-analysis:empower-a2-p01-c13"
+      ],
+      "source_pdf_pages": [
+        37,
+        44
+      ],
+      "source_scope": "3A time expressions and prepositions of time review.",
+      "deck": "Empower A2 · Unit 3 · Daily life",
+      "status": "review",
+      "author": "ai-coursebook-synthesis",
+      "reviewer": null,
+      "provenance_note": "AI-drafted from the listed textbook pages; paraphrased teaching card, not a copied exercise or answer. Needs owner/teacher review before publishing."
+    },
+    {
+      "id": "coursebook-empower-a2-p01-c14",
+      "node_id": "core-en-module-02",
+      "card_type": "production",
+      "prompt": "Làm sao nhận ra have got đang nói về sở hữu trong hiện tại, và câu hỏi/phủ định của nó vận hành khác lexical have như thế nào?",
+      "model_answer": "have got là cụm hiện tại nói sở hữu; have/has đứng ở vị trí auxiliary-like nên đảo lên để hỏi và nhận not trực tiếp trong mẫu này. Dạng chọn phải khớp subject: I/you/we/they have, he/she/it has.",
+      "explanation": "Hãy xem toàn cụm có got hay không và tìm carrier have/has, thay vì chỉ dịch have là 'có'.",
+      "misconception": "Câu 'Has she got ...?' cần do vì có have.",
+      "transfer_prompt": "Hỏi một bạn xem bạn ấy có tai nghe không, rồi tạo một câu phủ định cho he.",
+      "transfer_answer": "'Has she got headphones?' và 'He hasn't got headphones.' has/haven't là phần mang câu hỏi/phủ định trong mẫu have got.",
+      "glossary_terms": [
+        "have got",
+        "possession",
+        "auxiliary",
+        "headphones"
+      ],
+      "prerequisite_card_ids": [
+        "core-en-10",
+        "core-en-12",
+        "core-en-17"
+      ],
+      "prerequisite_node_ids": [
+        "core-en-module-02",
+        "core-en-module-03"
+      ],
+      "source_refs": [
+        "empower-a2-students-book:sha256:a2c3fb113bdd9368bc6b9687e2b4cad61b64226dc773a6fdf4fa60f0f24d3d93:pdf-pages:38,39",
+        "coursebook-analysis:empower-a2-p01-c14"
+      ],
+      "source_pdf_pages": [
+        38,
+        39
+      ],
+      "source_scope": "3B have got and technology.",
+      "deck": "Empower A2 · Unit 3 · Daily life",
+      "status": "review",
+      "author": "ai-coursebook-synthesis",
+      "reviewer": null,
+      "provenance_note": "AI-drafted from the listed textbook pages; paraphrased teaching card, not a copied exercise or answer. Needs owner/teacher review before publishing."
+    },
+    {
+      "id": "coursebook-empower-a2-p01-c15",
+      "node_id": "core-en-module-03",
+      "card_type": "application",
+      "prompt": "Khi rủ ai làm việc gì, vì sao một arrangement tốt thường có đề xuất, thời điểm và chỗ cho người kia nhận lời hoặc từ chối?",
+      "model_answer": "Đề xuất nêu hoạt động; thời điểm làm kế hoạch có thể thực hiện; phản hồi cho phép hai bên thương lượng. Mẫu như 'How about ...?' hoặc 'Would you like ...?' mở một cuộc phối hợp thay vì ép buộc.",
+      "explanation": "Học chức năng theo vai giao tiếp: đề xuất, kiểm tra rảnh, nhận lời/từ chối, rồi xác nhận chi tiết.",
+      "misconception": "Nói một động từ với giờ là đủ để tạo arrangement.",
+      "transfer_prompt": "Rủ một bạn đi uống cà phê sau giờ học và đưa một câu trả lời lịch sự nếu bạn ấy bận.",
+      "transfer_answer": "'How about a coffee after class?' - 'I'd love to, but I need to finish my homework.' Câu trả lời vừa thể hiện thiện chí vừa cho lý do từ chối.",
+      "glossary_terms": [
+        "arrangement",
+        "suggestion",
+        "accept",
+        "decline"
+      ],
+      "prerequisite_card_ids": [
+        "core-en-17",
+        "core-en-25"
+      ],
+      "prerequisite_node_ids": [
+        "core-en-module-03",
+        "core-en-module-04"
+      ],
+      "source_refs": [
+        "empower-a2-students-book:sha256:a2c3fb113bdd9368bc6b9687e2b4cad61b64226dc773a6fdf4fa60f0f24d3d93:pdf-pages:40,41",
+        "coursebook-analysis:empower-a2-p01-c15"
+      ],
+      "source_pdf_pages": [
+        40,
+        41
+      ],
+      "source_scope": "3C making arrangements and thinking time.",
+      "deck": "Empower A2 · Unit 3 · Daily life",
+      "status": "review",
+      "author": "ai-coursebook-synthesis",
+      "reviewer": null,
+      "provenance_note": "AI-drafted from the listed textbook pages; paraphrased teaching card, not a copied exercise or answer. Needs owner/teacher review before publishing."
+    },
+    {
+      "id": "coursebook-empower-a2-p01-c16",
+      "node_id": "core-en-module-01",
+      "card_type": "application",
+      "prompt": "Một informal invitation rõ cần trả lời ít nhất bốn câu hỏi thực tế nào để người nhận có thể quyết định?",
+      "model_answer": "Nó cần làm rõ sự kiện là gì, khi nào, ở đâu và người nhận cần hoặc nên làm gì; có thể thêm lý do hay thông tin ở lại. Reply nên xác nhận nhận lời hoặc từ chối, kèm lý do ngắn khi cần.",
+      "explanation": "Đây là cấu trúc thông tin chứ không phải học thuộc một email: mục tiêu là để người đọc hành động được.",
+      "misconception": "Một lời mời chỉ cần viết 'Come to my party!' là đầy đủ.",
+      "transfer_prompt": "Lập hai câu mời bạn dự sinh nhật và hai câu reply nhận lời có đủ thời gian/nơi chốn.",
+      "transfer_answer": "'Would you like to come to my birthday party at my house on Saturday at 7?' - 'Thanks for inviting me. I'd love to come.' Lời mời có sự kiện, nơi, ngày giờ; reply xác nhận rõ.",
+      "glossary_terms": [
+        "invitation",
+        "reply",
+        "event",
+        "details"
+      ],
+      "prerequisite_card_ids": [
+        "core-en-01",
+        "core-en-25"
+      ],
+      "prerequisite_node_ids": [
+        "core-en-module-01",
+        "core-en-module-04"
+      ],
+      "source_refs": [
+        "empower-a2-students-book:sha256:a2c3fb113bdd9368bc6b9687e2b4cad61b64226dc773a6fdf4fa60f0f24d3d93:pdf-pages:42,43",
+        "coursebook-analysis:empower-a2-p01-c16"
+      ],
+      "source_pdf_pages": [
+        42,
+        43
+      ],
+      "source_scope": "3D informal invitation and reply.",
+      "deck": "Empower A2 · Unit 3 · Daily life",
+      "status": "review",
+      "author": "ai-coursebook-synthesis",
+      "reviewer": null,
+      "provenance_note": "AI-drafted from the listed textbook pages; paraphrased teaching card, not a copied exercise or answer. Needs owner/teacher review before publishing."
+    },
+    {
+      "id": "coursebook-empower-a2-p01-c17",
+      "node_id": "core-en-module-04",
+      "card_type": "production",
+      "prompt": "Tại sao trước khi chọn a/an, some hay any cho đồ ăn, bạn phải quyết định danh từ đang được nói như một đơn vị đếm được hay như chất/lượng không đếm trực tiếp?",
+      "model_answer": "Danh từ đếm được số ít có thể dùng a/an; danh từ không đếm được không đi thẳng với a/an. some thường dùng cho lượng không xác định trong khẳng định; any thường hữu ích trong phủ định/câu hỏi theo mẫu A2.",
+      "explanation": "Quyết định về cách 'đóng gói' sự vật trước, rồi mới chọn determiner. Đó là lý do food words không cùng một công thức.",
+      "misconception": "Mọi food word đều dùng a/an nếu chỉ nói một ít.",
+      "transfer_prompt": "Bạn cần nói rằng có vài quả cà chua nhưng không có pho mát. Hãy tạo hai câu và giải thích lựa chọn.",
+      "transfer_answer": "'There are some tomatoes, but there isn't any cheese.' tomatoes là countable plural; cheese được xem là uncountable nên dùng any trong phủ định.",
+      "glossary_terms": [
+        "countable",
+        "uncountable",
+        "determiner",
+        "some",
+        "any"
+      ],
+      "prerequisite_card_ids": [
+        "core-en-27",
+        "core-en-28"
+      ],
+      "prerequisite_node_ids": [
+        "core-en-module-04"
+      ],
+      "source_refs": [
+        "empower-a2-students-book:sha256:a2c3fb113bdd9368bc6b9687e2b4cad61b64226dc773a6fdf4fa60f0f24d3d93:pdf-pages:46,47",
+        "coursebook-analysis:empower-a2-p01-c17"
+      ],
+      "source_pdf_pages": [
+        46,
+        47
+      ],
+      "source_scope": "4A countable/uncountable nouns and a/an/some/any.",
+      "deck": "Empower A2 · Unit 4 · Food",
+      "status": "review",
+      "author": "ai-coursebook-synthesis",
+      "reviewer": null,
+      "provenance_note": "AI-drafted from the listed textbook pages; paraphrased teaching card, not a copied exercise or answer. Needs owner/teacher review before publishing."
+    },
+    {
+      "id": "coursebook-empower-a2-p01-c18",
+      "node_id": "core-en-module-04",
+      "card_type": "application",
+      "prompt": "Khi hỏi số lượng, vì sao much đi tự nhiên với danh từ không đếm được còn many đi với danh từ đếm được số nhiều?",
+      "model_answer": "much đo lượng chất/khái niệm không đếm từng đơn vị; many đếm số lượng các đơn vị plural. a lot of có thể dùng cho cả hai và thường nghe tự nhiên trong câu khẳng định.",
+      "explanation": "Câu hỏi quantity bắt đầu từ bản chất danh từ, không từ việc chọn một từ nghe quen tai.",
+      "misconception": "much và many chỉ khác nhau về mức độ nhiều.",
+      "transfer_prompt": "Hỏi bạn cùng lớp về lượng nước và số quả táo bạn ấy uống/ăn mỗi ngày.",
+      "transfer_answer": "'How much water do you drink every day?' và 'How many apples do you eat every day?' water không đếm trực tiếp; apples là các đơn vị plural.",
+      "glossary_terms": [
+        "quantifier",
+        "much",
+        "many",
+        "a lot of"
+      ],
+      "prerequisite_card_ids": [
+        "core-en-27",
+        "core-en-28"
+      ],
+      "prerequisite_node_ids": [
+        "core-en-module-04"
+      ],
+      "source_refs": [
+        "empower-a2-students-book:sha256:a2c3fb113bdd9368bc6b9687e2b4cad61b64226dc773a6fdf4fa60f0f24d3d93:pdf-pages:48,49",
+        "coursebook-analysis:empower-a2-p01-c18"
+      ],
+      "source_pdf_pages": [
+        48,
+        49
+      ],
+      "source_scope": "4B cooking vocabulary and quantifiers.",
+      "deck": "Empower A2 · Unit 4 · Food",
+      "status": "review",
+      "author": "ai-coursebook-synthesis",
+      "reviewer": null,
+      "provenance_note": "AI-drafted from the listed textbook pages; paraphrased teaching card, not a copied exercise or answer. Needs owner/teacher review before publishing."
+    },
+    {
+      "id": "coursebook-empower-a2-p01-c19",
+      "node_id": "core-en-module-01",
+      "card_type": "application",
+      "prompt": "Làm sao biến một quy trình nấu ăn hoặc làm việc thành chỉ dẫn dễ theo mà không chỉ liệt kê các động từ?",
+      "model_answer": "Sắp các bước theo thời gian bằng từ nối như first, next, after that, then và finally; mỗi bước nêu hành động và đối tượng cần tác động. Trật tự cho người đọc thấy quan hệ trước-sau.",
+      "explanation": "Từ nối không chỉ làm bài viết đẹp: chúng mã hóa trình tự, giúp người khác thực hiện đúng.",
+      "misconception": "Chỉ cần có đủ động từ cook, add, serve thì thứ tự không quan trọng.",
+      "transfer_prompt": "Viết ba bước rất ngắn để pha một đồ uống, dùng ít nhất hai từ nối trình tự.",
+      "transfer_answer": "'First, boil some water. Then add tea. Finally, pour it into a cup.' Mỗi bước có hành động rõ và các từ nối giữ trình tự.",
+      "glossary_terms": [
+        "sequence",
+        "instruction",
+        "first",
+        "then",
+        "finally"
+      ],
+      "prerequisite_card_ids": [
+        "core-en-06",
+        "core-en-35"
+      ],
+      "prerequisite_node_ids": [
+        "core-en-module-01",
+        "core-en-module-05"
+      ],
+      "source_refs": [
+        "empower-a2-students-book:sha256:a2c3fb113bdd9368bc6b9687e2b4cad61b64226dc773a6fdf4fa60f0f24d3d93:pdf-pages:49,52,53",
+        "coursebook-analysis:empower-a2-p01-c19"
+      ],
+      "source_pdf_pages": [
+        49,
+        52,
+        53
+      ],
+      "source_scope": "4B cooking forms and 4D procedural writing.",
+      "deck": "Empower A2 · Unit 4 · Food",
+      "status": "review",
+      "author": "ai-coursebook-synthesis",
+      "reviewer": null,
+      "provenance_note": "AI-drafted from the listed textbook pages; paraphrased teaching card, not a copied exercise or answer. Needs owner/teacher review before publishing."
+    },
+    {
+      "id": "coursebook-empower-a2-p01-c20",
+      "node_id": "core-en-module-01",
+      "card_type": "application",
+      "prompt": "Khi gọi món ở nhà hàng, vì sao một lượt gọi món rõ thường đi từ lịch sự đến từng course, thay vì nêu một chuỗi danh từ thức ăn?",
+      "model_answer": "Người nói mở đầu bằng request lịch sự, nói course/ý định, rồi nêu món. Cấu trúc này giúp người phục vụ biết phần nào của bữa ăn và có thể xác nhận hoặc hỏi tiếp.",
+      "explanation": "Nhóm từ theo chức năng giao tiếp: opening request → starter/main course → món → phản hồi/xác nhận.",
+      "misconception": "Nói tên món một mình luôn đủ lịch sự và rõ trong bối cảnh nhà hàng.",
+      "transfer_prompt": "Gọi một món chính là mì Ý và một starter là salad bằng một lượt nói lịch sự.",
+      "transfer_answer": "'I'd like a salad for my starter, and I'll have spaghetti for my main course, please.' Các cụm for my starter/main course làm rõ vai trò của từng món.",
+      "glossary_terms": [
+        "starter",
+        "main course",
+        "order",
+        "word group"
+      ],
+      "prerequisite_card_ids": [
+        "core-en-01",
+        "core-en-25"
+      ],
+      "prerequisite_node_ids": [
+        "core-en-module-01",
+        "core-en-module-04"
+      ],
+      "source_refs": [
+        "empower-a2-students-book:sha256:a2c3fb113bdd9368bc6b9687e2b4cad61b64226dc773a6fdf4fa60f0f24d3d93:pdf-pages:50,51",
+        "coursebook-analysis:empower-a2-p01-c20"
+      ],
+      "source_pdf_pages": [
+        50,
+        51
+      ],
+      "source_scope": "4C arriving and ordering in a restaurant; word groups.",
+      "deck": "Empower A2 · Unit 4 · Food",
+      "status": "review",
+      "author": "ai-coursebook-synthesis",
+      "reviewer": null,
+      "provenance_note": "AI-drafted from the listed textbook pages; paraphrased teaching card, not a copied exercise or answer. Needs owner/teacher review before publishing."
+    },
+    {
+      "id": "coursebook-empower-a2-p01-c21",
+      "node_id": "core-en-module-04",
+      "card_type": "production",
+      "prompt": "Nếu muốn đổi món sau khi đã gọi, vì sao cần vừa đánh dấu sự thay đổi vừa nói rõ lựa chọn mới?",
+      "model_answer": "Người nghe cần biết bạn đang sửa thông tin cũ, không phải thêm một yêu cầu mới. Có thể dùng một tín hiệu như 'Actually' hoặc 'No, I'll have ...' rồi nêu món thay thế rõ ràng.",
+      "explanation": "Đây là cách quản lý hội thoại: sửa trạng thái chung giữa hai người bằng tín hiệu thay đổi và nội dung mới.",
+      "misconception": "Chỉ cần nói tên món mới, người phục vụ sẽ tự biết là đổi món.",
+      "transfer_prompt": "Bạn đã định gọi fish nhưng đổi sang chicken salad. Hãy nói một câu tự nhiên.",
+      "transfer_answer": "'Actually, I'll have the chicken salad, please.' Actually báo hiệu sửa quyết định; phần còn lại đưa lựa chọn mới.",
+      "glossary_terms": [
+        "change an order",
+        "actually",
+        "choice"
+      ],
+      "prerequisite_card_ids": [
+        "core-en-25",
+        "core-en-40"
+      ],
+      "prerequisite_node_ids": [
+        "core-en-module-04",
+        "core-en-module-05"
+      ],
+      "source_refs": [
+        "empower-a2-students-book:sha256:a2c3fb113bdd9368bc6b9687e2b4cad61b64226dc773a6fdf4fa60f0f24d3d93:pdf-pages:51",
+        "coursebook-analysis:empower-a2-p01-c21"
+      ],
+      "source_pdf_pages": [
+        51
+      ],
+      "source_scope": "4C changing an order.",
+      "deck": "Empower A2 · Unit 4 · Food",
+      "status": "review",
+      "author": "ai-coursebook-synthesis",
+      "reviewer": null,
+      "provenance_note": "AI-drafted from the listed textbook pages; paraphrased teaching card, not a copied exercise or answer. Needs owner/teacher review before publishing."
+    },
+    {
+      "id": "coursebook-empower-a2-p01-c22",
+      "node_id": "core-en-module-01",
+      "card_type": "application",
+      "prompt": "Khi mô tả một nơi có hoặc không có thứ gì, vì sao there is/are đặt sự tồn tại của thứ đó làm ý chính thay vì mở đầu bằng một địa điểm cụ thể?",
+      "model_answer": "There is/are giới thiệu sự tồn tại của một hoặc nhiều thứ trong bối cảnh đã rõ. is đi với một danh từ số ít/không đếm được; are đi với plural, và phủ định/câu hỏi theo carrier is/are.",
+      "explanation": "Hãy hỏi: mình đang giới thiệu cái gì tồn tại ở đây không? Nếu có, dùng there + be; sau đó mới nêu danh từ và nơi chốn.",
+      "misconception": "there is chỉ có nghĩa là 'ở đó' nên không cần quan tâm danh từ sau nó là số ít hay số nhiều.",
+      "transfer_prompt": "Mô tả lớp học của bạn: có một bảng nhưng không có máy chiếu.",
+      "transfer_answer": "'There is a board in my classroom, but there isn't a projector.' Cả hai câu dùng is vì board/projector đều là số ít.",
+      "glossary_terms": [
+        "there is",
+        "there are",
+        "existence",
+        "singular",
+        "plural"
+      ],
+      "prerequisite_card_ids": [
+        "core-en-04",
+        "core-en-17",
+        "core-en-27"
+      ],
+      "prerequisite_node_ids": [
+        "core-en-module-01",
+        "core-en-module-03",
+        "core-en-module-04"
+      ],
+      "source_refs": [
+        "empower-a2-students-book:sha256:a2c3fb113bdd9368bc6b9687e2b4cad61b64226dc773a6fdf4fa60f0f24d3d93:pdf-pages:56,57",
+        "coursebook-analysis:empower-a2-p01-c22"
+      ],
+      "source_pdf_pages": [
+        56,
+        57
+      ],
+      "source_scope": "5A there is/there are and places in a city.",
+      "deck": "Empower A2 · Unit 5 · Places",
+      "status": "review",
+      "author": "ai-coursebook-synthesis",
+      "reviewer": null,
+      "provenance_note": "AI-drafted from the listed textbook pages; paraphrased teaching card, not a copied exercise or answer. Needs owner/teacher review before publishing."
+    },
+    {
+      "id": "coursebook-empower-a2-p01-c23",
+      "node_id": "core-en-module-03",
+      "card_type": "application",
+      "prompt": "Khi hỏi một thị trấn có công viên hoặc quán ăn không, vì sao câu hỏi phải giữ there và đảo is/are thay vì hỏi theo mẫu do/does?",
+      "model_answer": "Cấu trúc gốc là there + be, nên câu hỏi đưa finite be lên trước: 'Is there ...?' hoặc 'Are there ...?'. Do/does chỉ hỗ trợ lexical verb hiện tại đơn, không thay be ở đây.",
+      "explanation": "Luôn xác định carrier đã có. Nếu be đã mang ngữ pháp thì đảo be, không thêm một auxiliary khác.",
+      "misconception": "Câu hỏi hiện tại nào cũng bắt đầu bằng do/does.",
+      "transfer_prompt": "Hỏi xem trong khu phố có quán cà phê nào không, rồi cho một short answer phủ định.",
+      "transfer_answer": "'Are there any cafés in your neighbourhood?' - 'No, there aren't.' are được đảo lên và lặp lại trong short answer.",
+      "glossary_terms": [
+        "inversion",
+        "short answer",
+        "neighbourhood"
+      ],
+      "prerequisite_card_ids": [
+        "core-en-17",
+        "core-en-20"
+      ],
+      "prerequisite_node_ids": [
+        "core-en-module-03"
+      ],
+      "source_refs": [
+        "empower-a2-students-book:sha256:a2c3fb113bdd9368bc6b9687e2b4cad61b64226dc773a6fdf4fa60f0f24d3d93:pdf-pages:57",
+        "coursebook-analysis:empower-a2-p01-c23"
+      ],
+      "source_pdf_pages": [
+        57
+      ],
+      "source_scope": "5A there is/are questions and town description.",
+      "deck": "Empower A2 · Unit 5 · Places",
+      "status": "review",
+      "author": "ai-coursebook-synthesis",
+      "reviewer": null,
+      "provenance_note": "AI-drafted from the listed textbook pages; paraphrased teaching card, not a copied exercise or answer. Needs owner/teacher review before publishing."
+    },
+    {
+      "id": "coursebook-empower-a2-p01-c24",
+      "node_id": "core-en-module-04",
+      "card_type": "application",
+      "prompt": "Phân biệt 'Anna's chair', 'her chair' và 'hers': ba cách này cùng liên quan sở hữu nhưng khác công việc trong cụm từ ra sao?",
+      "model_answer": "Anna's dùng tên chủ sở hữu trước noun; her là possessive determiner nên cũng cần noun sau; hers là possessive pronoun thay được cả cụm noun đã rõ. Chọn dạng theo việc noun có còn được nói ra hay không.",
+      "explanation": "Đừng chỉ dịch cả ba là 'của cô ấy'. Hãy nhìn xem câu còn cần một danh từ hay đã có thứ được nhắc đến để thay thế.",
+      "misconception": "Có thể nói 'hers chair' vì hers và her đều chỉ sở hữu.",
+      "transfer_prompt": "Hai bạn nhìn thấy một chiếc đèn. Hãy nói 'đó là đèn của tôi' theo cách không lặp lại lamp ở cuối.",
+      "transfer_answer": "'It's mine.' mine thay cho 'my lamp', nên không có noun ngay sau. Nếu còn noun phải nói 'It's my lamp.'",
+      "glossary_terms": [
+        "possessive determiner",
+        "possessive pronoun",
+        "possessive 's"
+      ],
+      "prerequisite_card_ids": [
+        "core-en-27",
+        "core-en-32"
+      ],
+      "prerequisite_node_ids": [
+        "core-en-module-04"
+      ],
+      "source_refs": [
+        "empower-a2-students-book:sha256:a2c3fb113bdd9368bc6b9687e2b4cad61b64226dc773a6fdf4fa60f0f24d3d93:pdf-pages:58,59",
+        "coursebook-analysis:empower-a2-p01-c24"
+      ],
+      "source_pdf_pages": [
+        58,
+        59
+      ],
+      "source_scope": "5B furniture; possessive pronouns and possessive 's.",
+      "deck": "Empower A2 · Unit 5 · Places",
+      "status": "review",
+      "author": "ai-coursebook-synthesis",
+      "reviewer": null,
+      "provenance_note": "AI-drafted from the listed textbook pages; paraphrased teaching card, not a copied exercise or answer. Needs owner/teacher review before publishing."
+    },
+    {
+      "id": "coursebook-empower-a2-p01-c25",
+      "node_id": "core-en-module-03",
+      "card_type": "application",
+      "prompt": "Vì sao trong chỉ đường, 'Are you sure?' và 'I think so' là hai chức năng khác nhau dù đều liên quan đến mức độ chắc chắn?",
+      "model_answer": "'Are you sure?' yêu cầu người kia xác nhận hoặc kiểm tra lại thông tin; 'I think so' cho biết người nói có niềm tin nhưng chưa khẳng định tuyệt đối. Một câu mở kiểm tra, câu kia báo mức độ tin cậy.",
+      "explanation": "Khi bị lạc, phân biệt hai vai trò này giúp cuộc hội thoại tiến lên: hỏi xác nhận thay vì giả vờ chắc chắn.",
+      "misconception": "I think so nghĩa là chắc chắn như Yes, và không cần hỏi lại.",
+      "transfer_prompt": "Bạn nghe rằng ngân hàng ở Park Road nhưng chưa chắc. Hãy tạo một lượt nói gồm kiểm tra và phản hồi thận trọng.",
+      "transfer_answer": "A: 'Are you sure the bank is on Park Road?' B: 'I think so, but let's check the map.' Câu đầu kiểm tra; câu sau cho mức chắc chắn chưa tuyệt đối và đề nghị kiểm chứng.",
+      "glossary_terms": [
+        "check information",
+        "certainty",
+        "directions",
+        "bank"
+      ],
+      "prerequisite_card_ids": [
+        "core-en-17",
+        "core-en-25"
+      ],
+      "prerequisite_node_ids": [
+        "core-en-module-03",
+        "core-en-module-04"
+      ],
+      "source_refs": [
+        "empower-a2-students-book:sha256:a2c3fb113bdd9368bc6b9687e2b4cad61b64226dc773a6fdf4fa60f0f24d3d93:pdf-pages:60",
+        "coursebook-analysis:empower-a2-p01-c25"
+      ],
+      "source_pdf_pages": [
+        60
+      ],
+      "source_scope": "5C checking what other people say; beginning a directions exchange.",
+      "deck": "Empower A2 · Unit 5 · Places",
+      "status": "review",
+      "author": "ai-coursebook-synthesis",
+      "reviewer": null,
+      "provenance_note": "AI-drafted from the listed textbook pages; paraphrased teaching card, not a copied exercise or answer. Needs owner/teacher review before publishing."
+    },
+    {
+      "id": "coursebook-a2-course-05-01",
+      "node_id": "core-en-module-01",
+      "card_type": "application",
+      "prompt": "Muốn chỉ đường từ quán cà phê đến ngân hàng, câu trả lời cần có hai loại thông tin nào để người nghe thực sự đi được?",
+      "model_answer": "Cần nêu hành động/chuyển động và điểm định vị: ví dụ đi thẳng, rẽ trái ở..., rồi ngân hàng ở cạnh/đối diện... Một tên địa điểm đơn lẻ chưa đủ.",
+      "explanation": "Chỉ đường là mô hình 'di chuyển + mốc không gian'. Nắm mô hình này sẽ tự sinh được nhiều câu thay vì nhớ từng đoạn hội thoại.",
+      "misconception": "Chỉ cần nói tên nơi đến là đã là một chỉ dẫn hoàn chỉnh.",
+      "transfer_prompt": "Hãy chỉ một người từ cổng trường đến thư viện bằng hai bước và một mốc vị trí.",
+      "transfer_answer": "Walk straight past the café, then turn right at the bank. The library is next to the park.",
+      "glossary_terms": [
+        "turn",
+        "past",
+        "next to",
+        "opposite"
+      ],
+      "prerequisite_card_ids": [
+        "core-en-01",
+        "core-en-51"
+      ],
+      "prerequisite_node_ids": [
+        "core-en-module-01",
+        "core-en-module-07"
+      ],
+      "source_refs": [
+        "empower-a2-students-book:sha256:a2c3fb113bdd9368bc6b9687e2b4cad61b64226dc773a6fdf4fa60f0f24d3d93:pdf-pages:61,64",
+        "coursebook-analysis:a2-course-05-01"
+      ],
+      "source_pdf_pages": [
+        61,
+        64
+      ],
+      "source_scope": "Unit 5 direction and place-language review",
+      "deck": "Empower A2 · Unit 5-6 · Places and past",
+      "status": "review",
+      "author": "ai-coursebook-synthesis",
+      "reviewer": null,
+      "provenance_note": "Diễn đạt mới từ chủ điểm places/directions trên PDF 61-64; không sao chép bài tập."
+    },
+    {
+      "id": "coursebook-a2-course-06-01",
+      "node_id": "core-en-module-03",
+      "card_type": "production",
+      "prompt": "Khi nào câu quá khứ về trạng thái dùng was/were thay vì did + verb? Hãy tự tạo một ví dụ phủ định.",
+      "model_answer": "Khi động từ chính là be ở quá khứ, dùng was/were trực tiếp; không mượn did. Ví dụ: They weren't at school yesterday.",
+      "explanation": "Be tự mang chức năng thì và phủ định; do-support chỉ cần khi động từ chính không phải be (hoặc modal).",
+      "misconception": "Mọi câu quá khứ đều phải dùng did/didn't.",
+      "transfer_prompt": "Nói 'Tôi không mệt hôm qua' và hỏi 'Bạn có ở nhà tối qua không?'.",
+      "transfer_answer": "I wasn't tired yesterday. Were you at home last night?",
+      "glossary_terms": [
+        "state",
+        "past simple",
+        "was",
+        "were"
+      ],
+      "prerequisite_card_ids": [
+        "core-en-18",
+        "core-en-20"
+      ],
+      "prerequisite_node_ids": [
+        "core-en-module-03"
+      ],
+      "source_refs": [
+        "empower-a2-students-book:sha256:a2c3fb113bdd9368bc6b9687e2b4cad61b64226dc773a6fdf4fa60f0f24d3d93:pdf-pages:66,67,74",
+        "coursebook-analysis:a2-course-06-01"
+      ],
+      "source_pdf_pages": [
+        66,
+        67,
+        74
+      ],
+      "source_scope": "Past simple of be",
+      "deck": "Empower A2 · Unit 6 · Family and past",
+      "status": "review",
+      "author": "ai-coursebook-synthesis",
+      "reviewer": null,
+      "provenance_note": "Diễn đạt mới từ Unit 6 past simple: be, PDF 67 và review PDF 74."
+    },
+    {
+      "id": "coursebook-a2-course-06-02",
+      "node_id": "core-en-module-03",
+      "card_type": "application",
+      "prompt": "Vì sao câu hỏi 'Were they happy?' không cần do/did, và câu trả lời ngắn giữ lại từ nào?",
+      "model_answer": "Were đã là auxiliary của be ở quá khứ nên nó đứng đầu câu hỏi. Trả lời ngắn giữ auxiliary: Yes, they were. / No, they weren't.",
+      "explanation": "Câu hỏi Anh đảo auxiliary lên trước subject; câu trả lời ngắn phản chiếu auxiliary đó.",
+      "misconception": "Có thể nói 'Did they were happy?' hoặc trả lời 'Yes, they happy.'",
+      "transfer_prompt": "Tạo một câu hỏi và câu trả lời ngắn về việc hai người là bạn năm ngoái.",
+      "transfer_answer": "Were they friends last year? Yes, they were.",
+      "glossary_terms": [
+        "auxiliary",
+        "short answer",
+        "subject"
+      ],
+      "prerequisite_card_ids": [
+        "core-en-18",
+        "core-en-21"
+      ],
+      "prerequisite_node_ids": [
+        "core-en-module-03"
+      ],
+      "source_refs": [
+        "empower-a2-students-book:sha256:a2c3fb113bdd9368bc6b9687e2b4cad61b64226dc773a6fdf4fa60f0f24d3d93:pdf-pages:67",
+        "coursebook-analysis:a2-course-06-02"
+      ],
+      "source_pdf_pages": [
+        67
+      ],
+      "source_scope": "Past simple: be; questions and short answers",
+      "deck": "Empower A2 · Unit 6 · Family and past",
+      "status": "review",
+      "author": "ai-coursebook-synthesis",
+      "reviewer": null,
+      "provenance_note": "Tổng hợp mới từ Unit 6A, PDF 67."
+    },
+    {
+      "id": "coursebook-a2-course-06-03",
+      "node_id": "core-en-module-03",
+      "card_type": "application",
+      "prompt": "Gốc chung của động từ quá khứ có quy tắc và bất quy tắc là gì, và phần nào khác nhau?",
+      "model_answer": "Cả hai đều biểu thị sự việc đã kết thúc trong quá khứ. Khác ở hình thức: regular thường thêm -ed, irregular đổi sang một dạng phải học như went, bought, made.",
+      "explanation": "Đừng học như hai thì khác nhau: thì là quá khứ đơn; chỉ cách mã hoá hình thức của verb khác nhau.",
+      "misconception": "Went là một thì riêng, còn worked là một thì khác.",
+      "transfer_prompt": "Đổi 'I play football' và 'I go home' thành hai câu về hôm qua.",
+      "transfer_answer": "I played football yesterday. I went home yesterday.",
+      "glossary_terms": [
+        "regular verb",
+        "irregular verb",
+        "base form",
+        "past form"
+      ],
+      "prerequisite_card_ids": [
+        "core-en-18",
+        "core-en-27"
+      ],
+      "prerequisite_node_ids": [
+        "core-en-module-03",
+        "core-en-module-04"
+      ],
+      "source_refs": [
+        "empower-a2-students-book:sha256:a2c3fb113bdd9368bc6b9687e2b4cad61b64226dc773a6fdf4fa60f0f24d3d93:pdf-pages:69,74",
+        "coursebook-analysis:a2-course-06-03"
+      ],
+      "source_pdf_pages": [
+        69,
+        74
+      ],
+      "source_scope": "Regular and irregular past verbs",
+      "deck": "Empower A2 · Unit 6 · Family and past",
+      "status": "review",
+      "author": "ai-coursebook-synthesis",
+      "reviewer": null,
+      "provenance_note": "Diễn đạt mới từ Unit 6B và review, PDF 69, 74."
+    },
+    {
+      "id": "coursebook-a2-course-06-04",
+      "node_id": "core-en-module-07",
+      "card_type": "production",
+      "prompt": "Vì sao -ed không phải lúc nào cũng tạo thêm một âm tiết, và khi nào nó thường thành /ɪd/?",
+      "model_answer": "-ed thường chỉ thành thêm âm tiết sau âm /t/ hoặc /d/, như wanted hoặc needed; ở nhiều verb khác nó chỉ là âm cuối /t/ hay /d/.",
+      "explanation": "Hình thức viết -ed giống nhau nhưng phát âm phụ thuộc âm cuối của động từ gốc, không phụ thuộc chữ cái một cách máy móc.",
+      "misconception": "Mọi từ có -ed đều đọc thành một âm tiết 'id'.",
+      "transfer_prompt": "Phân loại wanted và watched: từ nào có thêm âm tiết?",
+      "transfer_answer": "Wanted có thêm âm /ɪd/ vì gốc kết thúc bằng /t/; watched không có thêm âm tiết.",
+      "glossary_terms": [
+        "syllable",
+        "ending",
+        "sound"
+      ],
+      "prerequisite_card_ids": [
+        "core-en-50"
+      ],
+      "prerequisite_node_ids": [
+        "core-en-module-07"
+      ],
+      "source_refs": [
+        "empower-a2-students-book:sha256:a2c3fb113bdd9368bc6b9687e2b4cad61b64226dc773a6fdf4fa60f0f24d3d93:pdf-pages:69",
+        "coursebook-analysis:a2-course-06-04"
+      ],
+      "source_pdf_pages": [
+        69
+      ],
+      "source_scope": "Past -ed pronunciation",
+      "deck": "Empower A2 · Unit 6 · Family and past",
+      "status": "review",
+      "author": "ai-coursebook-synthesis",
+      "reviewer": null,
+      "provenance_note": "Diễn đạt mới từ mục pronunciation Unit 6B, PDF 69."
+    },
+    {
+      "id": "coursebook-a2-course-06-05",
+      "node_id": "core-en-module-01",
+      "card_type": "application",
+      "prompt": "Khi gọi điện hỏi một người, vì sao 'Is Mai there?' và 'Can I speak to Mai?' là hai cách hữu ích khác nhau?",
+      "model_answer": "Cả hai kiểm tra việc có thể nói chuyện với Mai. Câu đầu hỏi Mai có ở đó không; câu sau trực tiếp xin được nói với Mai, nên phù hợp hơn khi tổng đài/người khác nhấc máy.",
+      "explanation": "Mục tiêu giao tiếp quyết định mẫu câu; ngữ pháp chỉ là công cụ để làm việc đó lịch sự và rõ ràng.",
+      "misconception": "Chỉ có một câu đúng tuyệt đối để hỏi một người trên điện thoại.",
+      "transfer_prompt": "Bạn gọi nhà bạn Nam, mẹ bạn ấy nghe máy. Hãy xin nói chuyện với Nam và chấp nhận khi Nam bận.",
+      "transfer_answer": "Hello, can I speak to Nam, please? — Sorry, he's busy right now. — That's OK. Can you ask him to call me back?",
+      "glossary_terms": [
+        "speak to",
+        "busy",
+        "call back",
+        "right now"
+      ],
+      "prerequisite_card_ids": [
+        "core-en-01",
+        "core-en-65"
+      ],
+      "prerequisite_node_ids": [
+        "core-en-module-01",
+        "core-en-module-09"
+      ],
+      "source_refs": [
+        "empower-a2-students-book:sha256:a2c3fb113bdd9368bc6b9687e2b4cad61b64226dc773a6fdf4fa60f0f24d3d93:pdf-pages:71,74",
+        "coursebook-analysis:a2-course-06-05"
+      ],
+      "source_pdf_pages": [
+        71,
+        74
+      ],
+      "source_scope": "Phone language and go collocations",
+      "deck": "Empower A2 · Unit 6 · Family and past",
+      "status": "review",
+      "author": "ai-coursebook-synthesis",
+      "reviewer": null,
+      "provenance_note": "Tình huống mới từ functional language Unit 6C, PDF 71."
+    },
+    {
+      "id": "coursebook-a2-course-07-01",
+      "node_id": "core-en-module-03",
+      "card_type": "application",
+      "prompt": "Vì sao sau didn't động từ trở về base form, kể cả khi sự việc ở quá khứ?",
+      "model_answer": "Didn't đã mang dấu hiệu quá khứ và phủ định, nên verb sau nó chỉ nêu hành động ở dạng gốc: We didn't go, không phải didn't went.",
+      "explanation": "Một cụm động từ chỉ cần một nơi mang thì. Khi do mang thì, lexical verb không mang quá khứ thêm lần nữa.",
+      "misconception": "Vì nghĩa là quá khứ nên sau didn't phải dùng went/played.",
+      "transfer_prompt": "Phủ định câu 'Lan bought a ticket yesterday'.",
+      "transfer_answer": "Lan didn't buy a ticket yesterday.",
+      "glossary_terms": [
+        "didn't",
+        "base form",
+        "lexical verb"
+      ],
+      "prerequisite_card_ids": [
+        "core-en-20",
+        "core-en-27"
+      ],
+      "prerequisite_node_ids": [
+        "core-en-module-03",
+        "core-en-module-04"
+      ],
+      "source_refs": [
+        "empower-a2-students-book:sha256:a2c3fb113bdd9368bc6b9687e2b4cad61b64226dc773a6fdf4fa60f0f24d3d93:pdf-pages:77,84",
+        "coursebook-analysis:a2-course-07-01"
+      ],
+      "source_pdf_pages": [
+        77,
+        84
+      ],
+      "source_scope": "Past simple negative",
+      "deck": "Empower A2 · Unit 7 · Trips",
+      "status": "review",
+      "author": "ai-coursebook-synthesis",
+      "reviewer": null,
+      "provenance_note": "Diễn đạt mới từ Unit 7A past simple negative, PDF 77."
+    },
+    {
+      "id": "coursebook-a2-course-07-02",
+      "node_id": "core-en-module-03",
+      "card_type": "production",
+      "prompt": "Hãy nêu khung tạo câu hỏi quá khứ đơn với động từ thường, rồi giải thích tại sao câu hỏi không dùng dạng quá khứ của verb.",
+      "model_answer": "Dùng Did + subject + base verb? Ví dụ: Did you travel by train? Did mang thì quá khứ nên travel giữ base form.",
+      "explanation": "Đây là cùng một cơ chế với didn't: trợ động từ mang thời gian, động từ nội dung giữ dạng gốc.",
+      "misconception": "Có thể hỏi 'Did you travelled by train?'.",
+      "transfer_prompt": "Hỏi một bạn xem cuối tuần trước bạn ấy đã thích chuyến đi không.",
+      "transfer_answer": "Did you enjoy your trip last weekend?",
+      "glossary_terms": [
+        "did",
+        "question",
+        "base form"
+      ],
+      "prerequisite_card_ids": [
+        "core-en-20",
+        "core-en-21"
+      ],
+      "prerequisite_node_ids": [
+        "core-en-module-03"
+      ],
+      "source_refs": [
+        "empower-a2-students-book:sha256:a2c3fb113bdd9368bc6b9687e2b4cad61b64226dc773a6fdf4fa60f0f24d3d93:pdf-pages:77",
+        "coursebook-analysis:a2-course-07-02"
+      ],
+      "source_pdf_pages": [
+        77
+      ],
+      "source_scope": "Past simple questions",
+      "deck": "Empower A2 · Unit 7 · Trips",
+      "status": "review",
+      "author": "ai-coursebook-synthesis",
+      "reviewer": null,
+      "provenance_note": "Diễn đạt mới từ Unit 7A grammar, PDF 77."
+    },
+    {
+      "id": "coursebook-a2-course-07-03",
+      "node_id": "core-en-module-04",
+      "card_type": "production",
+      "prompt": "Khi nói sở thích chung về một hoạt động, vì sao sau love/like/don't mind/hate trong bài dùng verb + -ing?",
+      "model_answer": "-ing biến hành động thành hoạt động được xem như một 'thing' để thích/ghét: I like travelling; She doesn't mind waiting.",
+      "explanation": "Ta không đang nói một hành động cụ thể phải làm, mà đang đánh giá trải nghiệm loại hoạt động đó.",
+      "misconception": "Sau like lúc nào cũng phải dùng to + verb hoặc verb nguyên mẫu.",
+      "transfer_prompt": "Nói bạn rất thích đi bộ nhưng không ngại đi xe buýt.",
+      "transfer_answer": "I love walking, but I don't mind taking the bus.",
+      "glossary_terms": [
+        "preference",
+        "-ing form",
+        "don't mind"
+      ],
+      "prerequisite_card_ids": [
+        "core-en-25",
+        "core-en-31"
+      ],
+      "prerequisite_node_ids": [
+        "core-en-module-04"
+      ],
+      "source_refs": [
+        "empower-a2-students-book:sha256:a2c3fb113bdd9368bc6b9687e2b4cad61b64226dc773a6fdf4fa60f0f24d3d93:pdf-pages:79",
+        "coursebook-analysis:a2-course-07-03"
+      ],
+      "source_pdf_pages": [
+        79
+      ],
+      "source_scope": "Preference verbs plus -ing",
+      "deck": "Empower A2 · Unit 7 · Trips",
+      "status": "review",
+      "author": "ai-coursebook-synthesis",
+      "reviewer": null,
+      "provenance_note": "Diễn đạt mới từ Unit 7B grammar, PDF 79."
+    },
+    {
+      "id": "coursebook-a2-course-07-04",
+      "node_id": "core-en-module-09",
+      "card_type": "application",
+      "prompt": "Phân biệt mục đích của 'Excuse me, please' và 'I'm sorry' trong tình huống đông người.",
+      "model_answer": "Excuse me dùng để lịch sự thu hút chú ý/xin người khác nhường chỗ; I'm sorry dùng khi nhận lỗi hoặc gây bất tiện. Có thể nói 'Excuse me, can I get past?' nhưng 'I'm sorry I stepped on your foot.'",
+      "explanation": "Hai câu không thay thế hoàn toàn vì chúng làm hai hành động xã hội khác nhau.",
+      "misconception": "Excuse me và I'm sorry luôn đồng nghĩa nên đổi tự do được.",
+      "transfer_prompt": "Bạn cần xuống xe buýt nhưng có người chắn đường; sau đó bạn vô ý va vào họ. Hãy nói hai câu phù hợp.",
+      "transfer_answer": "Excuse me, please. Can I get past? — Oh, I'm sorry. I didn't see you.",
+      "glossary_terms": [
+        "apologise",
+        "get past",
+        "attention"
+      ],
+      "prerequisite_card_ids": [
+        "core-en-65"
+      ],
+      "prerequisite_node_ids": [
+        "core-en-module-09"
+      ],
+      "source_refs": [
+        "empower-a2-students-book:sha256:a2c3fb113bdd9368bc6b9687e2b4cad61b64226dc773a6fdf4fa60f0f24d3d93:pdf-pages:80,81",
+        "coursebook-analysis:a2-course-07-04"
+      ],
+      "source_pdf_pages": [
+        80,
+        81
+      ],
+      "source_scope": "Apologies and intonation",
+      "deck": "Empower A2 · Unit 7 · Trips",
+      "status": "review",
+      "author": "ai-coursebook-synthesis",
+      "reviewer": null,
+      "provenance_note": "Tình huống mới từ Unit 7C useful language, PDF 80-81."
+    },
+    {
+      "id": "coursebook-a2-course-08-01",
+      "node_id": "core-en-module-03",
+      "card_type": "production",
+      "prompt": "Hãy dùng một nguyên lý để chọn can/can't hay could/couldn't khi nói về khả năng.",
+      "model_answer": "Chọn theo thời điểm: can/can't cho khả năng hiện tại, could/couldn't cho khả năng trong quá khứ. Ví dụ: I can swim now, but I couldn't swim when I was five.",
+      "explanation": "Cùng là 'ability'; dạng modal đổi để neo khả năng vào thời gian khác nhau.",
+      "misconception": "Could chỉ là cách lịch sự của can nên không liên quan quá khứ.",
+      "transfer_prompt": "Nói rằng bây giờ bạn chơi được guitar, nhưng năm ngoái chưa chơi được.",
+      "transfer_answer": "I can play the guitar now, but I couldn't play it last year.",
+      "glossary_terms": [
+        "ability",
+        "can",
+        "could",
+        "present",
+        "past"
+      ],
+      "prerequisite_card_ids": [
+        "core-en-18",
+        "core-en-30"
+      ],
+      "prerequisite_node_ids": [
+        "core-en-module-03",
+        "core-en-module-04"
+      ],
+      "source_refs": [
+        "empower-a2-students-book:sha256:a2c3fb113bdd9368bc6b9687e2b4cad61b64226dc773a6fdf4fa60f0f24d3d93:pdf-pages:86",
+        "coursebook-analysis:a2-course-08-01"
+      ],
+      "source_pdf_pages": [
+        86
+      ],
+      "source_scope": "Can/can't and could/couldn't for ability",
+      "deck": "Empower A2 · Unit 8 · Fit and healthy",
+      "status": "review",
+      "author": "ai-coursebook-synthesis",
+      "reviewer": null,
+      "provenance_note": "Diễn đạt mới từ Unit 8A grammar, PDF 86."
+    },
+    {
+      "id": "coursebook-a2-course-08-02",
+      "node_id": "core-en-module-04",
+      "card_type": "production",
+      "prompt": "Khả năng (can) và sự cần thiết (have to) khác nhau ở câu hỏi nào mà người nói đang trả lời?",
+      "model_answer": "Can trả lời 'có làm được không?'; have to trả lời 'có cần/phải làm không?'. You can run five kilometres không suy ra You have to run five kilometres.",
+      "explanation": "Một bên là năng lực/khả năng; bên kia là yêu cầu hoặc điều cần thiết. Không được suy từ cái này sang cái kia.",
+      "misconception": "Can và have to đều dịch là 'có thể' nên dùng thay nhau.",
+      "transfer_prompt": "Nói rằng hôm nay bạn có thể tập nhưng không bắt buộc phải tập.",
+      "transfer_answer": "I can exercise today, but I don't have to exercise today.",
+      "glossary_terms": [
+        "ability",
+        "necessity",
+        "have to",
+        "don't have to"
+      ],
+      "prerequisite_card_ids": [
+        "core-en-30",
+        "core-en-31"
+      ],
+      "prerequisite_node_ids": [
+        "core-en-module-04"
+      ],
+      "source_refs": [
+        "empower-a2-students-book:sha256:a2c3fb113bdd9368bc6b9687e2b4cad61b64226dc773a6fdf4fa60f0f24d3d93:pdf-pages:88",
+        "coursebook-analysis:a2-course-08-02"
+      ],
+      "source_pdf_pages": [
+        88
+      ],
+      "source_scope": "Have to and don't have to",
+      "deck": "Empower A2 · Unit 8 · Fit and healthy",
+      "status": "review",
+      "author": "ai-coursebook-synthesis",
+      "reviewer": null,
+      "provenance_note": "Diễn đạt mới từ Unit 8B grammar, PDF 88."
+    },
+    {
+      "id": "coursebook-a2-course-08-03",
+      "node_id": "core-en-module-01",
+      "card_type": "application",
+      "prompt": "Nếu một bạn trông không khỏe, một đoạn phản hồi có ích cần gồm hai bước giao tiếp nào?",
+      "model_answer": "Trước hết hỏi/ghi nhận vấn đề, rồi đáp lại bằng sự quan tâm. Ví dụ: Are you all right? You don't look well. — I feel a bit tired.",
+      "explanation": "Hội thoại về sức khỏe không chỉ là từ vựng triệu chứng; nó có lượt hỏi, mô tả và phản hồi quan tâm.",
+      "misconception": "Chỉ cần nói 'sick' là đã xử lý xong tình huống giao tiếp.",
+      "transfer_prompt": "Bạn của bạn ôm đầu và trông mệt. Hãy mở đầu hội thoại ngắn, lịch sự.",
+      "transfer_answer": "Are you all right? You don't look well. — I've got a headache. — I'm sorry to hear that.",
+      "glossary_terms": [
+        "feel well",
+        "headache",
+        "all right",
+        "sympathy"
+      ],
+      "prerequisite_card_ids": [
+        "core-en-01",
+        "core-en-65"
+      ],
+      "prerequisite_node_ids": [
+        "core-en-module-01",
+        "core-en-module-09"
+      ],
+      "source_refs": [
+        "empower-a2-students-book:sha256:a2c3fb113bdd9368bc6b9687e2b4cad61b64226dc773a6fdf4fa60f0f24d3d93:pdf-pages:90",
+        "coursebook-analysis:a2-course-08-03"
+      ],
+      "source_pdf_pages": [
+        90
+      ],
+      "source_scope": "Talking about health and sympathy",
+      "deck": "Empower A2 · Unit 8 · Fit and healthy",
+      "status": "review",
+      "author": "ai-coursebook-synthesis",
+      "reviewer": null,
+      "provenance_note": "Tình huống mới từ Unit 8C, PDF 90."
+    },
+    {
+      "id": "coursebook-a2-course-08-04",
+      "node_id": "core-en-module-05",
+      "card_type": "production",
+      "prompt": "Trong một đoạn viết, however làm công việc gì khác với and?",
+      "model_answer": "And nối ý cùng chiều hoặc thêm ý; however báo người nghe rằng ý sau đối lập/điều chỉnh kỳ vọng từ ý trước. Ví dụ: I practised every day. However, I improved slowly.",
+      "explanation": "Từ nối là biển báo quan hệ giữa hai mệnh đề; hiểu quan hệ giúp chọn từ thay vì học câu mẫu.",
+      "misconception": "However chỉ là bản dài hơn của and.",
+      "transfer_prompt": "Nối hai ý 'bài tập ngắn' và 'tôi thấy rất khó' bằng however.",
+      "transfer_answer": "The exercise is short. However, I find it very difficult.",
+      "glossary_terms": [
+        "however",
+        "contrast",
+        "adverb",
+        "manner"
+      ],
+      "prerequisite_card_ids": [
+        "core-en-35",
+        "core-en-65"
+      ],
+      "prerequisite_node_ids": [
+        "core-en-module-05",
+        "core-en-module-09"
+      ],
+      "source_refs": [
+        "empower-a2-students-book:sha256:a2c3fb113bdd9368bc6b9687e2b4cad61b64226dc773a6fdf4fa60f0f24d3d93:pdf-pages:92,93",
+        "coursebook-analysis:a2-course-08-04"
+      ],
+      "source_pdf_pages": [
+        92,
+        93
+      ],
+      "source_scope": "However and adverbs of manner",
+      "deck": "Empower A2 · Unit 8 · Fit and healthy",
+      "status": "review",
+      "author": "ai-coursebook-synthesis",
+      "reviewer": null,
+      "provenance_note": "Diễn đạt mới từ Unit 8D writing skills, PDF 92-93."
+    },
+    {
+      "id": "coursebook-a2-course-09-01",
+      "node_id": "core-en-module-02",
+      "card_type": "production",
+      "prompt": "Khi nào dùng be + verb-ing, và câu hỏi được tạo bằng cách di chuyển từ nào?",
+      "model_answer": "Dùng present continuous cho việc đang xảy ra bây giờ/đang trong tiến trình. Đảo be lên đầu: Are you waiting? Is she buying a coat?",
+      "explanation": "Be vừa mang thì vừa giúp tạo câu hỏi; -ing cho thấy hành động được nhìn như đang diễn ra.",
+      "misconception": "Chỉ cần thêm -ing, không cần be; hoặc dùng do trong mọi câu hỏi.",
+      "transfer_prompt": "Nói 'Tôi đang chờ xe buýt' rồi biến nó thành câu hỏi với you.",
+      "transfer_answer": "I'm waiting for the bus. Are you waiting for the bus?",
+      "glossary_terms": [
+        "present continuous",
+        "be",
+        "-ing",
+        "in progress"
+      ],
+      "prerequisite_card_ids": [
+        "core-en-16",
+        "core-en-21"
+      ],
+      "prerequisite_node_ids": [
+        "core-en-module-02",
+        "core-en-module-03"
+      ],
+      "source_refs": [
+        "empower-a2-students-book:sha256:a2c3fb113bdd9368bc6b9687e2b4cad61b64226dc773a6fdf4fa60f0f24d3d93:pdf-pages:97",
+        "coursebook-analysis:a2-course-09-01"
+      ],
+      "source_pdf_pages": [
+        97
+      ],
+      "source_scope": "Present continuous form and meaning",
+      "deck": "Empower A2 · Unit 9 · Clothes and shopping",
+      "status": "review",
+      "author": "ai-coursebook-synthesis",
+      "reviewer": null,
+      "provenance_note": "Diễn đạt mới từ Unit 9A grammar, PDF 97."
+    },
+    {
+      "id": "coursebook-a2-course-09-02",
+      "node_id": "core-en-module-02",
+      "card_type": "production",
+      "prompt": "Không nhìn từ vựng; hãy dùng ý nghĩa để chọn thì cho 'Lan ___ online every Friday' và 'Lan ___ online now'.",
+      "model_answer": "Every Friday là routine nên Lan shops online every Friday. Now là hành động đang diễn ra nên Lan is shopping online now.",
+      "explanation": "Present simple nhìn thói quen/sự thật; present continuous nhìn sự việc đang diễn ra. Chủ đề shopping không quyết định thì.",
+      "misconception": "Câu có từ shop luôn phải dùng is shopping.",
+      "transfer_prompt": "Viết hai câu về việc em bạn thường mặc đồng phục và hôm nay đang mặc áo đỏ.",
+      "transfer_answer": "My brother usually wears a uniform. Today, he is wearing a red T-shirt.",
+      "glossary_terms": [
+        "routine",
+        "now",
+        "usually",
+        "present simple"
+      ],
+      "prerequisite_card_ids": [
+        "core-en-16",
+        "core-en-18",
+        "core-en-22"
+      ],
+      "prerequisite_node_ids": [
+        "core-en-module-02",
+        "core-en-module-03"
+      ],
+      "source_refs": [
+        "empower-a2-students-book:sha256:a2c3fb113bdd9368bc6b9687e2b4cad61b64226dc773a6fdf4fa60f0f24d3d93:pdf-pages:99",
+        "coursebook-analysis:a2-course-09-02"
+      ],
+      "source_pdf_pages": [
+        99
+      ],
+      "source_scope": "Present simple versus present continuous",
+      "deck": "Empower A2 · Unit 9 · Clothes and shopping",
+      "status": "review",
+      "author": "ai-coursebook-synthesis",
+      "reviewer": null,
+      "provenance_note": "Diễn đạt mới từ Unit 9B grammar, PDF 99."
+    },
+    {
+      "id": "coursebook-a2-course-09-03",
+      "node_id": "core-en-module-01",
+      "card_type": "application",
+      "prompt": "Trong cửa hàng quần áo, vì sao 'Can I help you?' và 'Can I try them on?' có subject là người khác nhau?",
+      "model_answer": "Nhân viên hỏi khách 'Can I help you?' vì I là nhân viên. Khách hỏi 'Can I try them on?' vì I là khách; them là món đồ. Đổi vai thì đổi đại từ.",
+      "explanation": "Đại từ mã hoá góc nhìn của người đang nói; học theo vai giao tiếp tránh dịch từng chữ.",
+      "misconception": "I và you giữ nguyên dù người nói đổi vai.",
+      "transfer_prompt": "Viết hai lượt hội thoại: nhân viên mời giúp và khách hỏi giá một đôi giày.",
+      "transfer_answer": "Assistant: Can I help you? Customer: Yes, how much are these shoes?",
+      "glossary_terms": [
+        "try on",
+        "assistant",
+        "customer",
+        "these"
+      ],
+      "prerequisite_card_ids": [
+        "core-en-01",
+        "core-en-51"
+      ],
+      "prerequisite_node_ids": [
+        "core-en-module-01",
+        "core-en-module-07"
+      ],
+      "source_refs": [
+        "empower-a2-students-book:sha256:a2c3fb113bdd9368bc6b9687e2b4cad61b64226dc773a6fdf4fa60f0f24d3d93:pdf-pages:96,101",
+        "coursebook-analysis:a2-course-09-03"
+      ],
+      "source_pdf_pages": [
+        96,
+        101
+      ],
+      "source_scope": "Shopping and paying for clothes",
+      "deck": "Empower A2 · Unit 9 · Clothes and shopping",
+      "status": "review",
+      "author": "ai-coursebook-synthesis",
+      "reviewer": null,
+      "provenance_note": "Tình huống mới từ Unit 9 shopping language, PDF 96, 101."
+    },
+    {
+      "id": "coursebook-a2-course-09-04",
+      "node_id": "core-en-module-03",
+      "card_type": "application",
+      "prompt": "Khi mô tả trang phục đang mặc, vì sao 'a blue jeans' sai nhưng 'blue jeans' đúng?",
+      "model_answer": "Jeans thường là danh từ số nhiều nên không đi trực tiếp sau a. Nói blue jeans, hoặc a pair of blue jeans nếu cần đơn vị một chiếc/quần.",
+      "explanation": "Một số đồ vật gồm hai phần thường có hình thức plural trong tiếng Anh; lượng từ phải đi theo cách nhìn đó.",
+      "misconception": "Mọi danh từ chỉ một món mua được đều dùng a/an trực tiếp.",
+      "transfer_prompt": "Mô tả: hôm nay chị bạn đang mặc quần jeans xanh và một chiếc áo khoác vàng.",
+      "transfer_answer": "Today, my sister is wearing blue jeans and a yellow jacket.",
+      "glossary_terms": [
+        "jeans",
+        "plural",
+        "pair",
+        "jacket"
+      ],
+      "prerequisite_card_ids": [
+        "core-en-22",
+        "core-en-51"
+      ],
+      "prerequisite_node_ids": [
+        "core-en-module-03",
+        "core-en-module-07"
+      ],
+      "source_refs": [
+        "empower-a2-students-book:sha256:a2c3fb113bdd9368bc6b9687e2b4cad61b64226dc773a6fdf4fa60f0f24d3d93:pdf-pages:99,101",
+        "coursebook-analysis:a2-course-09-04"
+      ],
+      "source_pdf_pages": [
+        99,
+        101
+      ],
+      "source_scope": "Clothes vocabulary and joining words",
+      "deck": "Empower A2 · Unit 9 · Clothes and shopping",
+      "status": "review",
+      "author": "ai-coursebook-synthesis",
+      "reviewer": null,
+      "provenance_note": "Diễn đạt mới từ Unit 9B-9C clothes, PDF 99, 101."
+    },
+    {
+      "id": "coursebook-a2-course-10-01",
+      "node_id": "core-en-module-01",
+      "card_type": "application",
+      "prompt": "Khi so sánh hai thứ, khung nghĩa cơ bản là gì và than làm nhiệm vụ gì?",
+      "model_answer": "Dùng A + comparative + than + B để nói A có tính chất nhiều/ít hơn B: This phone is cheaper than that phone. Than giới thiệu mốc đem ra so sánh.",
+      "explanation": "So sánh không chỉ là thêm -er; luôn có hai đối tượng và một trục so sánh rõ ràng.",
+      "misconception": "Có thể nói 'This phone is cheaper that phone' mà không cần than.",
+      "transfer_prompt": "So sánh laptop của bạn với điện thoại về giá, dùng cheap.",
+      "transfer_answer": "My laptop is more expensive than my phone. My phone is cheaper than my laptop.",
+      "glossary_terms": [
+        "comparative",
+        "than",
+        "cheaper",
+        "more expensive"
+      ],
+      "prerequisite_card_ids": [
+        "core-en-06",
+        "core-en-51"
+      ],
+      "prerequisite_node_ids": [
+        "core-en-module-01",
+        "core-en-module-07"
+      ],
+      "source_refs": [
+        "empower-a2-students-book:sha256:a2c3fb113bdd9368bc6b9687e2b4cad61b64226dc773a6fdf4fa60f0f24d3d93:pdf-pages:106,107",
+        "coursebook-analysis:a2-course-10-01"
+      ],
+      "source_pdf_pages": [
+        106,
+        107
+      ],
+      "source_scope": "Comparative adjectives",
+      "deck": "Empower A2 · Unit 10 · Comparatives",
+      "status": "review",
+      "author": "ai-coursebook-synthesis",
+      "reviewer": null,
+      "provenance_note": "Diễn đạt mới từ Unit 10A comparative grammar, PDF 106-107."
+    },
+    {
+      "id": "coursebook-a2-course-10-02",
+      "node_id": "core-en-module-01",
+      "card_type": "production",
+      "prompt": "Hãy nêu quyết định theo ba nhánh để tạo comparative: adjective ngắn, adjective dài, và adjective tận cùng -y.",
+      "model_answer": "Adjective ngắn thường thêm -er (small → smaller); adjective dài dùng more (more expensive); -y đổi thành -ier (easy → easier).",
+      "explanation": "Quy tắc hình thức phục vụ nhịp âm của từ. Trước khi chọn, hãy nhìn cấu trúc/độ dài của adjective chứ không chỉ nhớ một ví dụ.",
+      "misconception": "Mọi adjective đều chỉ cần thêm -er, như expensiver.",
+      "transfer_prompt": "Tạo comparative đúng của happy, comfortable và big trong ba câu ngắn.",
+      "transfer_answer": "I am happier today. This chair is more comfortable. A bus is bigger than a scooter.",
+      "glossary_terms": [
+        "short adjective",
+        "long adjective",
+        "comparative",
+        "-ier"
+      ],
+      "prerequisite_card_ids": [
+        "core-en-06",
+        "core-en-35"
+      ],
+      "prerequisite_node_ids": [
+        "core-en-module-01",
+        "core-en-module-05"
+      ],
+      "source_refs": [
+        "empower-a2-students-book:sha256:a2c3fb113bdd9368bc6b9687e2b4cad61b64226dc773a6fdf4fa60f0f24d3d93:pdf-pages:107",
+        "coursebook-analysis:a2-course-10-02"
+      ],
+      "source_pdf_pages": [
+        107
+      ],
+      "source_scope": "Comparative formation",
+      "deck": "Empower A2 · Unit 10 · Comparatives",
+      "status": "review",
+      "author": "ai-coursebook-synthesis",
+      "reviewer": null,
+      "provenance_note": "Diễn đạt mới từ Unit 10A grammar rules, PDF 107."
+    },
+    {
+      "id": "coursebook-a2-course-10-03",
+      "node_id": "core-en-module-01",
+      "card_type": "application",
+      "prompt": "Vì sao good và bad không dùng gooder/badder trong bài này, và dạng cần nhớ là gì?",
+      "model_answer": "Đó là comparative bất quy tắc: good → better, bad → worse. Cần học cả cặp vì không suy hoàn toàn từ quy tắc -er.",
+      "explanation": "Một hệ thống có quy tắc vẫn giữ vài mục tần suất cao có hình thức lịch sử riêng; hãy gắn chúng vào cùng khái niệm 'so sánh hơn'.",
+      "misconception": "Bất quy tắc nghĩa là không liên quan đến comparative.",
+      "transfer_prompt": "So sánh kết quả bài kiểm tra hôm nay với tuần trước bằng good và bad.",
+      "transfer_answer": "My result today is better than last week's. Last week's result was worse.",
+      "glossary_terms": [
+        "irregular",
+        "better",
+        "worse",
+        "comparison"
+      ],
+      "prerequisite_card_ids": [
+        "core-en-06"
+      ],
+      "prerequisite_node_ids": [
+        "core-en-module-01"
+      ],
+      "source_refs": [
+        "empower-a2-students-book:sha256:a2c3fb113bdd9368bc6b9687e2b4cad61b64226dc773a6fdf4fa60f0f24d3d93:pdf-pages:107,114",
+        "coursebook-analysis:a2-course-10-03"
+      ],
+      "source_pdf_pages": [
+        107,
+        114
+      ],
+      "source_scope": "Irregular comparative and review",
+      "deck": "Empower A2 · Unit 10 · Comparatives",
+      "status": "review",
+      "author": "ai-coursebook-synthesis",
+      "reviewer": null,
+      "provenance_note": "Diễn đạt mới từ Unit 10A và review, PDF 107, 114."
+    },
+    {
+      "id": "coursebook-a2-course-10-04",
+      "node_id": "core-en-module-01",
+      "card_type": "application",
+      "prompt": "Khi nào dùng superlative thay vì comparative, và vì sao thường có the?",
+      "model_answer": "Dùng superlative khi chọn một đối tượng ở cực của cả một nhóm: Mai is the tallest student in the class. The chỉ vị trí duy nhất/cực đại trong nhóm đó.",
+      "explanation": "Comparative nối hai đối tượng; superlative đặt một đối tượng trong toàn bộ tập so sánh.",
+      "misconception": "The tallest chỉ là cách nói mạnh hơn taller, không cần một nhóm tham chiếu.",
+      "transfer_prompt": "Nói một môn học là môn khó nhất với bạn trong năm nay.",
+      "transfer_answer": "Maths is the most difficult subject for me this year.",
+      "glossary_terms": [
+        "superlative",
+        "the",
+        "group",
+        "most difficult"
+      ],
+      "prerequisite_card_ids": [
+        "core-en-06",
+        "core-en-51"
+      ],
+      "prerequisite_node_ids": [
+        "core-en-module-01",
+        "core-en-module-07"
+      ],
+      "source_refs": [
+        "empower-a2-students-book:sha256:a2c3fb113bdd9368bc6b9687e2b4cad61b64226dc773a6fdf4fa60f0f24d3d93:pdf-pages:108,109",
+        "coursebook-analysis:a2-course-10-04"
+      ],
+      "source_pdf_pages": [
+        108,
+        109
+      ],
+      "source_scope": "Superlative adjectives",
+      "deck": "Empower A2 · Unit 10 · Superlatives",
+      "status": "review",
+      "author": "ai-coursebook-synthesis",
+      "reviewer": null,
+      "provenance_note": "Diễn đạt mới từ Unit 10B superlatives, PDF 108-109."
+    },
+    {
+      "id": "coursebook-a2-course-10-05",
+      "node_id": "core-en-module-01",
+      "card_type": "application",
+      "prompt": "Từ comparative sang superlative, ba nhánh hình thức quen thuộc thay đổi thế nào?",
+      "model_answer": "Adjective ngắn thường thêm -est (smallest), adjective dài dùng most (most musical), và bất quy tắc đổi riêng: good → best, bad → worst.",
+      "explanation": "Hãy ghép mỗi cặp vào cùng trục: smaller/smallest, more expensive/most expensive, better/best.",
+      "misconception": "Most + adjective luôn đúng, kể cả most small.",
+      "transfer_prompt": "Tạo ba superlative với small, interesting và good.",
+      "transfer_answer": "This is the smallest room. It is the most interesting book. She is the best singer.",
+      "glossary_terms": [
+        "-est",
+        "most",
+        "best",
+        "worst"
+      ],
+      "prerequisite_card_ids": [
+        "core-en-06",
+        "core-en-35"
+      ],
+      "prerequisite_node_ids": [
+        "core-en-module-01",
+        "core-en-module-05"
+      ],
+      "source_refs": [
+        "empower-a2-students-book:sha256:a2c3fb113bdd9368bc6b9687e2b4cad61b64226dc773a6fdf4fa60f0f24d3d93:pdf-pages:108",
+        "coursebook-analysis:a2-course-10-05"
+      ],
+      "source_pdf_pages": [
+        108
+      ],
+      "source_scope": "Superlative formation and irregular forms",
+      "deck": "Empower A2 · Unit 10 · Superlatives",
+      "status": "review",
+      "author": "ai-coursebook-synthesis",
+      "reviewer": null,
+      "provenance_note": "Diễn đạt mới từ Unit 10B grammar, PDF 108."
+    },
+    {
+      "id": "coursebook-a2-course-10-06",
+      "node_id": "core-en-module-04",
+      "card_type": "application",
+      "prompt": "Một lời nhờ giúp đỡ lịch sự thường gồm vấn đề gì và yêu cầu gì?",
+      "model_answer": "Nêu ngắn vấn đề rồi dùng modal lịch sự: I don't understand this word. Could you explain it to me? Sau đó có thể kiểm tra lại: So first I click here, is that right?",
+      "explanation": "Người nghe cần biết vừa mục tiêu giúp đỡ vừa chi tiết nào đang vướng; câu kiểm tra giúp tránh làm sai tiếp.",
+      "misconception": "Chỉ cần nói 'Help me' là đủ rõ và lịch sự trong mọi tình huống.",
+      "transfer_prompt": "Bạn không biết nộp bài trên trang web. Hãy nhờ bạn hướng dẫn và kiểm tra bước đầu tiên.",
+      "transfer_answer": "I don't know how to submit my homework. Could you show me? So first I click this button, is that right?",
+      "glossary_terms": [
+        "could",
+        "explain",
+        "instruction",
+        "is that right"
+      ],
+      "prerequisite_card_ids": [
+        "core-en-30",
+        "core-en-65"
+      ],
+      "prerequisite_node_ids": [
+        "core-en-module-04",
+        "core-en-module-09"
+      ],
+      "source_refs": [
+        "empower-a2-students-book:sha256:a2c3fb113bdd9368bc6b9687e2b4cad61b64226dc773a6fdf4fa60f0f24d3d93:pdf-pages:110,111",
+        "coursebook-analysis:a2-course-10-06"
+      ],
+      "source_pdf_pages": [
+        110,
+        111
+      ],
+      "source_scope": "Asking for help and checking instructions",
+      "deck": "Empower A2 · Unit 10 · Communication",
+      "status": "review",
+      "author": "ai-coursebook-synthesis",
+      "reviewer": null,
+      "provenance_note": "Tình huống mới từ Unit 10C, PDF 110-111."
+    },
+    {
+      "id": "coursebook-a2-course-10-07",
+      "node_id": "core-en-module-05",
+      "card_type": "application",
+      "prompt": "Ba từ also, too và as well đều thêm ý; khác biệt chính trong vị trí câu là gì?",
+      "model_answer": "Also thường đứng trước main verb hoặc sau be; too và as well thường đứng cuối câu. Ví dụ: I also use email. I use email too. I use email as well.",
+      "explanation": "Ý nghĩa thêm vào tương tự nhưng vị trí là một phần của mẫu câu; học theo slot giúp sinh câu mới đúng hơn.",
+      "misconception": "Có thể đặt too trước động từ chính như 'I too use email' trong mọi câu trung tính.",
+      "transfer_prompt": "Viết ba cách nói rằng bạn cũng thích phim, mỗi cách dùng một từ nối.",
+      "transfer_answer": "I also like films. I like films too. I like films as well.",
+      "glossary_terms": [
+        "also",
+        "too",
+        "as well",
+        "main verb"
+      ],
+      "prerequisite_card_ids": [
+        "core-en-35",
+        "core-en-65"
+      ],
+      "prerequisite_node_ids": [
+        "core-en-module-05",
+        "core-en-module-09"
+      ],
+      "source_refs": [
+        "empower-a2-students-book:sha256:a2c3fb113bdd9368bc6b9687e2b4cad61b64226dc773a6fdf4fa60f0f24d3d93:pdf-pages:112,113",
+        "coursebook-analysis:a2-course-10-07"
+      ],
+      "source_pdf_pages": [
+        112,
+        113
+      ],
+      "source_scope": "Also, too and as well",
+      "deck": "Empower A2 · Unit 10 · Communication",
+      "status": "review",
+      "author": "ai-coursebook-synthesis",
+      "reviewer": null,
+      "provenance_note": "Diễn đạt mới từ Unit 10D writing skills, PDF 112-113."
+    },
+    {
+      "id": "coursebook-a2-course-11-01",
+      "node_id": "core-en-module-03",
+      "card_type": "application",
+      "prompt": "Present perfect với have/has + past participle cho người nghe biết điều gì mà quá khứ đơn không tự nhấn mạnh?",
+      "model_answer": "Nó nối một trải nghiệm/kết quả quá khứ với hiện tại mà không nói thời điểm cụ thể: I've seen that film. Quá khứ đơn thường neo việc đó vào một thời điểm đã xác định.",
+      "explanation": "Đừng hỏi 'việc có ở quá khứ không?' vì cả hai đều có; hãy hỏi 'thời điểm đã được đóng khung chưa?'.",
+      "misconception": "Have seen chỉ là cách nói dài hơn của saw, dùng thay nhau bất kể ngữ cảnh.",
+      "transfer_prompt": "Nói rằng bạn đã xem một bộ phim đó nhưng không nói khi nào.",
+      "transfer_answer": "I've seen that film.",
+      "glossary_terms": [
+        "present perfect",
+        "past participle",
+        "experience",
+        "have"
+      ],
+      "prerequisite_card_ids": [
+        "core-en-18",
+        "core-en-19"
+      ],
+      "prerequisite_node_ids": [
+        "core-en-module-03"
+      ],
+      "source_refs": [
+        "empower-a2-students-book:sha256:a2c3fb113bdd9368bc6b9687e2b4cad61b64226dc773a6fdf4fa60f0f24d3d93:pdf-pages:116,117",
+        "coursebook-analysis:a2-course-11-01"
+      ],
+      "source_pdf_pages": [
+        116,
+        117
+      ],
+      "source_scope": "Present perfect positive",
+      "deck": "Empower A2 · Unit 11 · Entertainment",
+      "status": "review",
+      "author": "ai-coursebook-synthesis",
+      "reviewer": null,
+      "provenance_note": "Diễn đạt mới từ Unit 11A, PDF 116-117."
+    },
+    {
+      "id": "coursebook-a2-course-11-02",
+      "node_id": "core-en-module-03",
+      "card_type": "application",
+      "prompt": "Khung câu hỏi và phủ định của present perfect là gì, và ever/never đi vào câu để làm gì?",
+      "model_answer": "Have/Has + subject + ever + past participle? và subject + haven't/hasn't + past participle. Ever hỏi 'đã từng chưa'; never khẳng định trải nghiệm chưa từng xảy ra: Have you ever been there? I've never been there.",
+      "explanation": "Have/has mang ngữ pháp; past participle mang hành động. Ever/never hướng câu vào trải nghiệm trong đời đến hiện tại.",
+      "misconception": "Nói 'Did you ever been there?' hoặc 'I never went there' trong mọi tình huống đều giống nhau.",
+      "transfer_prompt": "Hỏi bạn đã từng đi Đà Nẵng chưa rồi trả lời rằng bạn chưa từng đi.",
+      "transfer_answer": "Have you ever been to Da Nang? No, I've never been there.",
+      "glossary_terms": [
+        "ever",
+        "never",
+        "past participle",
+        "been"
+      ],
+      "prerequisite_card_ids": [
+        "core-en-19",
+        "core-en-21"
+      ],
+      "prerequisite_node_ids": [
+        "core-en-module-03"
+      ],
+      "source_refs": [
+        "empower-a2-students-book:sha256:a2c3fb113bdd9368bc6b9687e2b4cad61b64226dc773a6fdf4fa60f0f24d3d93:pdf-pages:117",
+        "coursebook-analysis:a2-course-11-02"
+      ],
+      "source_pdf_pages": [
+        117
+      ],
+      "source_scope": "Present perfect negative and questions",
+      "deck": "Empower A2 · Unit 11 · Entertainment",
+      "status": "review",
+      "author": "ai-coursebook-synthesis",
+      "reviewer": null,
+      "provenance_note": "Diễn đạt mới từ Unit 11A grammar, PDF 117."
+    },
+    {
+      "id": "coursebook-a2-course-11-03",
+      "node_id": "core-en-module-03",
+      "card_type": "application",
+      "prompt": "Một câu có 'last weekend' nên nghiêng về thì nào, còn 'ever' không kèm thời điểm cụ thể nên nghiêng về thì nào? Vì sao?",
+      "model_answer": "Last weekend đóng khung thời điểm nên dùng past simple: I went there last weekend. Ever hỏi trải nghiệm chưa neo thời điểm nên dùng present perfect: Have you ever been there?",
+      "explanation": "Từ thời gian không chỉ là dấu hiệu để khoanh; nó cho biết người nói đang kể một sự kiện đã định vị hay mở hồ sơ trải nghiệm đến nay.",
+      "misconception": "Hễ nội dung từng xảy ra thì luôn dùng present perfect.",
+      "transfer_prompt": "Trả lời hai câu: 'Have you ever seen this band?' và 'When did you see them?'.",
+      "transfer_answer": "Yes, I have. I saw them last month.",
+      "glossary_terms": [
+        "time expression",
+        "last weekend",
+        "ever",
+        "past simple"
+      ],
+      "prerequisite_card_ids": [
+        "core-en-18",
+        "core-en-19",
+        "core-en-20"
+      ],
+      "prerequisite_node_ids": [
+        "core-en-module-03"
+      ],
+      "source_refs": [
+        "empower-a2-students-book:sha256:a2c3fb113bdd9368bc6b9687e2b4cad61b64226dc773a6fdf4fa60f0f24d3d93:pdf-pages:119",
+        "coursebook-analysis:a2-course-11-03"
+      ],
+      "source_pdf_pages": [
+        119
+      ],
+      "source_scope": "Present perfect or past simple",
+      "deck": "Empower A2 · Unit 11 · Entertainment",
+      "status": "review",
+      "author": "ai-coursebook-synthesis",
+      "reviewer": null,
+      "provenance_note": "Diễn đạt mới từ Unit 11B grammar, PDF 119."
+    },
+    {
+      "id": "coursebook-a2-course-11-04",
+      "node_id": "core-en-module-03",
+      "card_type": "application",
+      "prompt": "Vì sao 'I have saw' sai nhưng 'I have seen' đúng, dù saw và seen đều liên quan đến see?",
+      "model_answer": "Sau have/has, present perfect cần past participle. Với see, past simple là saw nhưng past participle là seen: I saw it yesterday; I have seen it.",
+      "explanation": "Động từ bất quy tắc có thể có ba slot: base, past simple, past participle. Cần chọn slot theo cấu trúc xung quanh.",
+      "misconception": "Dạng quá khứ nào của động từ cũng đi được sau have.",
+      "transfer_prompt": "Dùng write để nói một lần bạn viết hôm qua và một kinh nghiệm đến giờ.",
+      "transfer_answer": "I wrote an email yesterday. I have written many emails.",
+      "glossary_terms": [
+        "past participle",
+        "irregular verb",
+        "saw",
+        "seen"
+      ],
+      "prerequisite_card_ids": [
+        "core-en-19",
+        "core-en-27"
+      ],
+      "prerequisite_node_ids": [
+        "core-en-module-03",
+        "core-en-module-04"
+      ],
+      "source_refs": [
+        "empower-a2-students-book:sha256:a2c3fb113bdd9368bc6b9687e2b4cad61b64226dc773a6fdf4fa60f0f24d3d93:pdf-pages:117,118",
+        "coursebook-analysis:a2-course-11-04"
+      ],
+      "source_pdf_pages": [
+        117,
+        118
+      ],
+      "source_scope": "Irregular past participles and music vocabulary",
+      "deck": "Empower A2 · Unit 11 · Entertainment",
+      "status": "review",
+      "author": "ai-coursebook-synthesis",
+      "reviewer": null,
+      "provenance_note": "Diễn đạt mới từ Unit 11A irregular participles, PDF 117-118."
+    },
+    {
+      "id": "coursebook-a2-course-11-05",
+      "node_id": "core-en-module-01",
+      "card_type": "application",
+      "prompt": "Một mini-hội thoại xin và nêu ý kiến về buổi hòa nhạc cần có ba lượt ý nghĩa nào?",
+      "model_answer": "Mời ý kiến, nêu đánh giá, rồi có thể hỏi lại: What did you think of it? — I thought it was quite good. — Really? I didn't like the first band much.",
+      "explanation": "Ý kiến không phải chỉ là 'good/bad'; hội thoại cần cho người kia chỗ để đáp lại hoặc khác ý một cách tự nhiên.",
+      "misconception": "Hỏi ý kiến chỉ có thể dùng 'Do you like it?' và luôn phải đồng ý.",
+      "transfer_prompt": "Hỏi một bạn về bộ phim mới, nêu ý kiến của bạn và hỏi lại ý kiến của họ.",
+      "transfer_answer": "What did you think of the new film? I thought it was really good. How about you?",
+      "glossary_terms": [
+        "opinion",
+        "think of",
+        "quite",
+        "how about you"
+      ],
+      "prerequisite_card_ids": [
+        "core-en-01",
+        "core-en-65"
+      ],
+      "prerequisite_node_ids": [
+        "core-en-module-01",
+        "core-en-module-09"
+      ],
+      "source_refs": [
+        "empower-a2-students-book:sha256:a2c3fb113bdd9368bc6b9687e2b4cad61b64226dc773a6fdf4fa60f0f24d3d93:pdf-pages:120",
+        "coursebook-analysis:a2-course-11-05"
+      ],
+      "source_pdf_pages": [
+        120
+      ],
+      "source_scope": "Asking for and expressing opinions",
+      "deck": "Empower A2 · Unit 11 · Entertainment",
+      "status": "review",
+      "author": "ai-coursebook-synthesis",
+      "reviewer": null,
+      "provenance_note": "Tình huống mới từ Unit 11C useful language, PDF 120."
+    },
+    {
+      "id": "coursebook-a2-course-11-06",
+      "node_id": "core-en-module-03",
+      "card_type": "application",
+      "prompt": "Một review ngắn có ích cần cho người đọc biết những mảnh thông tin nào ngoài việc bạn thích hay không thích?",
+      "model_answer": "Nêu đối tượng, một hoặc hai lý do/chi tiết, rồi kết luận hoặc gợi ý. Ví dụ: phim thú vị vì câu chuyện rõ và diễn viên tốt, nên đáng xem.",
+      "explanation": "Lý do biến ý kiến thành thông tin có thể kiểm tra; cấu trúc giúp người đọc theo dõi đánh giá.",
+      "misconception": "Review chỉ cần một từ good hoặc bad.",
+      "transfer_prompt": "Viết ba câu review về một bộ phim bạn đã xem.",
+      "transfer_answer": "I watched this film last week. I thought it was exciting because the story was funny. I recommend it to my friends.",
+      "glossary_terms": [
+        "review",
+        "recommend",
+        "because",
+        "opinion"
+      ],
+      "prerequisite_card_ids": [
+        "core-en-19",
+        "core-en-65"
+      ],
+      "prerequisite_node_ids": [
+        "core-en-module-03",
+        "core-en-module-09"
+      ],
+      "source_refs": [
+        "empower-a2-students-book:sha256:a2c3fb113bdd9368bc6b9687e2b4cad61b64226dc773a6fdf4fa60f0f24d3d93:pdf-pages:121,122,124",
+        "coursebook-analysis:a2-course-11-06"
+      ],
+      "source_pdf_pages": [
+        121,
+        122,
+        124
+      ],
+      "source_scope": "Review structure and responding to an opinion",
+      "deck": "Empower A2 · Unit 11 · Reviews",
+      "status": "review",
+      "author": "ai-coursebook-synthesis",
+      "reviewer": null,
+      "provenance_note": "Diễn đạt mới từ Unit 11D/Review, PDF 121-124."
+    },
+    {
+      "id": "coursebook-a2-course-12-01",
+      "node_id": "core-en-module-03",
+      "card_type": "application",
+      "prompt": "Be going to khác present continuous ở ý định trọng tâm nào trong bài này?",
+      "model_answer": "Be going to nêu kế hoạch/ý định tương lai: I'm going to visit Hue. Present continuous chủ yếu nhìn hành động đang diễn ra: I'm visiting a museum now.",
+      "explanation": "Cả hai có thể nói về tương lai trong vài ngữ cảnh, nhưng bài này đặt be going to làm khung rõ cho plan.",
+      "misconception": "Going to chỉ nghĩa là đang di chuyển đến một nơi.",
+      "transfer_prompt": "Nói kế hoạch cuối tuần: thăm ông bà và không ở nhà.",
+      "transfer_answer": "I'm going to visit my grandparents this weekend. I'm not going to stay at home.",
+      "glossary_terms": [
+        "plan",
+        "future",
+        "going to",
+        "infinitive"
+      ],
+      "prerequisite_card_ids": [
+        "core-en-18",
+        "core-en-21"
+      ],
+      "prerequisite_node_ids": [
+        "core-en-module-03"
+      ],
+      "source_refs": [
+        "empower-a2-students-book:sha256:a2c3fb113bdd9368bc6b9687e2b4cad61b64226dc773a6fdf4fa60f0f24d3d93:pdf-pages:127,134,167",
+        "coursebook-analysis:a2-course-12-01"
+      ],
+      "source_pdf_pages": [
+        127,
+        134,
+        167
+      ],
+      "source_scope": "be going to for plans",
+      "deck": "Empower A2 · Unit 12 · Plans",
+      "status": "review",
+      "author": "ai-coursebook-synthesis",
+      "reviewer": null,
+      "provenance_note": "Diễn đạt mới từ Unit 12A và Grammar Focus, PDF 127,134,167."
+    },
+    {
+      "id": "coursebook-a2-course-12-02",
+      "node_id": "core-en-module-03",
+      "card_type": "application",
+      "prompt": "Khung phủ định và câu hỏi của be going to là gì, và vì sao verb sau to không đổi?",
+      "model_answer": "Subject + be not + going to + base verb; Be + subject + going to + base verb? Be mang ngữ pháp nên verb giữ base form: Are you going to travel?",
+      "explanation": "Đừng để hai thành phần cùng mang thì; be đã thay đổi theo subject và thì hiện tại.",
+      "misconception": "Did you going to travel? hoặc Are you going to travelled?",
+      "transfer_prompt": "Hỏi bạn có định đi biển không, rồi phủ định về kế hoạch của bạn.",
+      "transfer_answer": "Are you going to go to the beach? No, I'm not going to go this weekend.",
+      "glossary_terms": [
+        "negative",
+        "question",
+        "base verb",
+        "auxiliary"
+      ],
+      "prerequisite_card_ids": [
+        "core-en-21",
+        "core-en-30"
+      ],
+      "prerequisite_node_ids": [
+        "core-en-module-03",
+        "core-en-module-04"
+      ],
+      "source_refs": [
+        "empower-a2-students-book:sha256:a2c3fb113bdd9368bc6b9687e2b4cad61b64226dc773a6fdf4fa60f0f24d3d93:pdf-pages:127,167",
+        "coursebook-analysis:a2-course-12-02"
+      ],
+      "source_pdf_pages": [
+        127,
+        167
+      ],
+      "source_scope": "be going to question and negative",
+      "deck": "Empower A2 · Unit 12 · Plans",
+      "status": "review",
+      "author": "ai-coursebook-synthesis",
+      "reviewer": null,
+      "provenance_note": "Diễn đạt mới từ Unit 12A, PDF 127,167."
+    },
+    {
+      "id": "coursebook-a2-course-12-03",
+      "node_id": "core-en-module-04",
+      "card_type": "application",
+      "prompt": "Should khác have to ở mức độ ý nghĩa nào?",
+      "model_answer": "Should đưa lời khuyên/ý hay; have to nói điều cần thiết hoặc bắt buộc. You should try local food không có nghĩa bạn bắt buộc phải ăn nó.",
+      "explanation": "Modal thể hiện thái độ của người nói với hành động, không chỉ là bản dịch 'nên'.",
+      "misconception": "Should và have to dùng thay thế tự do.",
+      "transfer_prompt": "Khuyên một bạn mới đến Hà Nội làm hai điều và tránh một điều.",
+      "transfer_answer": "You should visit the Old Quarter and try local food. You shouldn't stay in your hotel all day.",
+      "glossary_terms": [
+        "advice",
+        "should",
+        "shouldn't",
+        "necessary"
+      ],
+      "prerequisite_card_ids": [
+        "core-en-30",
+        "core-en-31"
+      ],
+      "prerequisite_node_ids": [
+        "core-en-module-04"
+      ],
+      "source_refs": [
+        "empower-a2-students-book:sha256:a2c3fb113bdd9368bc6b9687e2b4cad61b64226dc773a6fdf4fa60f0f24d3d93:pdf-pages:128,134,167",
+        "coursebook-analysis:a2-course-12-03"
+      ],
+      "source_pdf_pages": [
+        128,
+        134,
+        167
+      ],
+      "source_scope": "should and shouldn't",
+      "deck": "Empower A2 · Unit 12 · Advice",
+      "status": "review",
+      "author": "ai-coursebook-synthesis",
+      "reviewer": null,
+      "provenance_note": "Diễn đạt mới từ Unit 12B/Review/Grammar Focus, PDF 128,134,167."
+    },
+    {
+      "id": "coursebook-a2-course-12-04",
+      "node_id": "core-en-module-03",
+      "card_type": "application",
+      "prompt": "Tại sao sau should/shouldn't không thêm to hoặc -s vào verb?",
+      "model_answer": "Modal đã mang phần ngữ pháp, nên verb sau nó ở base form: You should go, not should to go hoặc should goes.",
+      "explanation": "Đây cùng nguyên lý với can và do-support: một cụm chỉ cần một nơi mang thông tin ngữ pháp chính.",
+      "misconception": "He should goes because he là ngôi thứ ba.",
+      "transfer_prompt": "Sửa câu: 'She shouldn't to eat so late.'",
+      "transfer_answer": "She shouldn't eat so late.",
+      "glossary_terms": [
+        "modal",
+        "base form",
+        "should",
+        "third person"
+      ],
+      "prerequisite_card_ids": [
+        "core-en-20",
+        "core-en-30"
+      ],
+      "prerequisite_node_ids": [
+        "core-en-module-03",
+        "core-en-module-04"
+      ],
+      "source_refs": [
+        "empower-a2-students-book:sha256:a2c3fb113bdd9368bc6b9687e2b4cad61b64226dc773a6fdf4fa60f0f24d3d93:pdf-pages:128,167",
+        "coursebook-analysis:a2-course-12-04"
+      ],
+      "source_pdf_pages": [
+        128,
+        167
+      ],
+      "source_scope": "modal plus base verb",
+      "deck": "Empower A2 · Unit 12 · Advice",
+      "status": "review",
+      "author": "ai-coursebook-synthesis",
+      "reviewer": null,
+      "provenance_note": "Diễn đạt mới từ Unit 12B và Grammar Focus, PDF 128,167."
+    },
+    {
+      "id": "coursebook-a2-course-12-05",
+      "node_id": "core-en-module-02",
+      "card_type": "application",
+      "prompt": "Vì sao học travel bằng cụm như catch a train, miss a train, get on/off quan trọng hơn chỉ học train?",
+      "model_answer": "Danh từ cho biết vật/sự việc; cụm động từ cho biết hành động có thể làm với nó. Catch a train là kịp lên chuyến; miss a train là lỡ chuyến.",
+      "explanation": "Collocation là một phần của cách tiếng Anh đóng gói ý; đổi verb có thể đổi hẳn ý.",
+      "misconception": "Có thể ghép bất kỳ verb nào với train nếu nghĩa tiếng Việt gần đúng.",
+      "transfer_prompt": "Nói bạn đến ga muộn nên lỡ tàu và phải chờ chuyến sau.",
+      "transfer_answer": "I arrived at the station late, so I missed the train and waited for the next one.",
+      "glossary_terms": [
+        "catch",
+        "miss",
+        "get on",
+        "get off",
+        "collocation"
+      ],
+      "prerequisite_card_ids": [
+        "core-en-09",
+        "core-en-51"
+      ],
+      "prerequisite_node_ids": [
+        "core-en-module-02",
+        "core-en-module-07"
+      ],
+      "source_refs": [
+        "empower-a2-students-book:sha256:a2c3fb113bdd9368bc6b9687e2b4cad61b64226dc773a6fdf4fa60f0f24d3d93:pdf-pages:129,134,173",
+        "coursebook-analysis:a2-course-12-05"
+      ],
+      "source_pdf_pages": [
+        129,
+        134,
+        173
+      ],
+      "source_scope": "travel collocations",
+      "deck": "Empower A2 · Unit 12 · Travel language",
+      "status": "review",
+      "author": "ai-coursebook-synthesis",
+      "reviewer": null,
+      "provenance_note": "Diễn đạt mới từ Unit 12 vocabulary và Vocabulary Focus, PDF 129,134,173."
+    },
+    {
+      "id": "coursebook-a2-course-12-06",
+      "node_id": "core-en-module-01",
+      "card_type": "application",
+      "prompt": "Khi check-in khách sạn, bốn thông tin thực dụng nào thường cần xác nhận?",
+      "model_answer": "Tên/đặt phòng, loại phòng và số đêm, thời gian/dịch vụ như breakfast, và giờ checkout. Các câu hỏi này giúp biến một booking thành kế hoạch ở được.",
+      "explanation": "Học theo mục tiêu giao tiếp giúp tự thay đổi chi tiết mà vẫn giữ đúng mẫu câu.",
+      "misconception": "Chỉ cần nói reservation là đủ, không cần hỏi thêm gì.",
+      "transfer_prompt": "Bạn có booking hai đêm và muốn biết breakfast có gồm không. Hãy nói với lễ tân.",
+      "transfer_answer": "Hello, I've got a reservation for two nights. Is breakfast included?",
+      "glossary_terms": [
+        "reservation",
+        "double room",
+        "included",
+        "checkout"
+      ],
+      "prerequisite_card_ids": [
+        "core-en-01",
+        "core-en-65"
+      ],
+      "prerequisite_node_ids": [
+        "core-en-module-01",
+        "core-en-module-09"
+      ],
+      "source_refs": [
+        "empower-a2-students-book:sha256:a2c3fb113bdd9368bc6b9687e2b4cad61b64226dc773a6fdf4fa60f0f24d3d93:pdf-pages:131",
+        "coursebook-analysis:a2-course-12-06"
+      ],
+      "source_pdf_pages": [
+        131
+      ],
+      "source_scope": "hotel check-in",
+      "deck": "Empower A2 · Unit 12 · Travel language",
+      "status": "review",
+      "author": "ai-coursebook-synthesis",
+      "reviewer": null,
+      "provenance_note": "Tình huống mới từ Unit 12C useful language, PDF 131."
+    },
+    {
+      "id": "coursebook-a2-course-12-07",
+      "node_id": "core-en-module-01",
+      "card_type": "application",
+      "prompt": "Hai khung câu nào giúp hỏi thông tin du lịch mà vẫn mở được câu trả lời hữu ích?",
+      "model_answer": "Dùng Is there + noun...? để hỏi có dịch vụ/địa điểm, và Can I + base verb...? để xin phép/mua. Ví dụ: Is there a city bus tour? Can I buy tickets here?",
+      "explanation": "Mỗi khung hỏi một loại thông tin khác nhau: sự tồn tại và khả năng/cho phép của người nói.",
+      "misconception": "Can I there a bus tour? hoặc Is there buy tickets?",
+      "transfer_prompt": "Hỏi ở quầy du lịch xem có bảo tàng gần đây và bạn có mua vé ở đây được không.",
+      "transfer_answer": "Is there a museum near here? Can I buy tickets here?",
+      "glossary_terms": [
+        "tourist information",
+        "ticket",
+        "near here",
+        "city bus tour"
+      ],
+      "prerequisite_card_ids": [
+        "core-en-01",
+        "core-en-51"
+      ],
+      "prerequisite_node_ids": [
+        "core-en-module-01",
+        "core-en-module-07"
+      ],
+      "source_refs": [
+        "empower-a2-students-book:sha256:a2c3fb113bdd9368bc6b9687e2b4cad61b64226dc773a6fdf4fa60f0f24d3d93:pdf-pages:131",
+        "coursebook-analysis:a2-course-12-07"
+      ],
+      "source_pdf_pages": [
+        131
+      ],
+      "source_scope": "asking tourist information",
+      "deck": "Empower A2 · Unit 12 · Travel language",
+      "status": "review",
+      "author": "ai-coursebook-synthesis",
+      "reviewer": null,
+      "provenance_note": "Tình huống mới từ Unit 12C, PDF 131."
+    },
+    {
+      "id": "coursebook-a2-course-12-08",
+      "node_id": "core-en-module-05",
+      "card_type": "application",
+      "prompt": "Vì sao email gợi ý du lịch nên chia đoạn và dùng firstly/secondly/finally?",
+      "model_answer": "Mỗi đoạn gói một ý hoặc một nơi; linking words báo thứ tự, để người đọc không phải đoán ý nào thuộc lý do nào. Mở đầu trả lời người nhận, thân bài là các gợi ý, cuối thư kết thân thiện.",
+      "explanation": "Paragraph là đơn vị tổ chức ý, không chỉ là xuống dòng cho đẹp.",
+      "misconception": "Cứ liệt kê thật nhiều địa điểm trong một đoạn dài là rõ ràng.",
+      "transfer_prompt": "Lập dàn ý ba đoạn cho email giới thiệu thành phố của bạn.",
+      "transfer_answer": "Đoạn 1: chào và nói chung về thành phố. Đoạn 2: firstly/secondly nêu hai nơi nên đến. Đoạn 3: thời tiết hoặc lời kết thân thiện.",
+      "glossary_terms": [
+        "paragraph",
+        "firstly",
+        "secondly",
+        "finally",
+        "linking word"
+      ],
+      "prerequisite_card_ids": [
+        "core-en-35",
+        "core-en-65"
+      ],
+      "prerequisite_node_ids": [
+        "core-en-module-05",
+        "core-en-module-09"
+      ],
+      "source_refs": [
+        "empower-a2-students-book:sha256:a2c3fb113bdd9368bc6b9687e2b4cad61b64226dc773a6fdf4fa60f0f24d3d93:pdf-pages:132,133",
+        "coursebook-analysis:a2-course-12-08"
+      ],
+      "source_pdf_pages": [
+        132,
+        133
+      ],
+      "source_scope": "travel-advice email and paragraph order",
+      "deck": "Empower A2 · Unit 12 · Writing",
+      "status": "review",
+      "author": "ai-coursebook-synthesis",
+      "reviewer": null,
+      "provenance_note": "Diễn đạt mới từ Unit 12D writing skills, PDF 132-133."
+    },
+    {
+      "id": "coursebook-a2-focus-01",
+      "node_id": "core-en-module-03",
+      "card_type": "production",
+      "prompt": "Câu hỏi với be được tạo bằng thao tác nào, và short answer giữ lại gì?",
+      "model_answer": "Đảo be lên trước subject: Are they ready? Câu trả lời ngắn giữ be: Yes, they are. / No, they aren't.",
+      "explanation": "Be vừa là động từ chính vừa làm trợ động từ trong cấu trúc này.",
+      "misconception": "Do they be ready? hoặc Yes, they ready.",
+      "transfer_prompt": "Hỏi 'Nam có ở nhà không?' và trả lời phủ định ngắn.",
+      "transfer_answer": "Is Nam at home? No, he isn't.",
+      "glossary_terms": [
+        "be",
+        "short answer",
+        "subject",
+        "question"
+      ],
+      "prerequisite_card_ids": [
+        "core-en-18",
+        "core-en-21"
+      ],
+      "prerequisite_node_ids": [
+        "core-en-module-03"
+      ],
+      "source_refs": [
+        "empower-a2-students-book:sha256:a2c3fb113bdd9368bc6b9687e2b4cad61b64226dc773a6fdf4fa60f0f24d3d93:pdf-pages:145",
+        "coursebook-analysis:a2-focus-01"
+      ],
+      "source_pdf_pages": [
+        145
+      ],
+      "source_scope": "be questions and short answers",
+      "deck": "Empower A2 · Grammar Focus",
+      "status": "review",
+      "author": "ai-coursebook-synthesis",
+      "reviewer": null,
+      "provenance_note": "Diễn đạt mới từ Grammar Focus 1A-1B, PDF 145."
+    },
+    {
+      "id": "coursebook-a2-focus-02",
+      "node_id": "core-en-module-03",
+      "card_type": "application",
+      "prompt": "Trong present simple, khi nào verb có -s và khi nào dùng does?",
+      "model_answer": "Ở câu khẳng định, he/she/it làm lexical verb thêm -s: Lan works. Khi hỏi/phủ định, does mang ngữ pháp nên verb về base form: Does Lan work?",
+      "explanation": "Không đặt -s ở cả does lẫn verb; đó là hai lần mã hoá cùng một thông tin.",
+      "misconception": "Does Lan works?",
+      "transfer_prompt": "Đổi 'My brother plays football' thành câu hỏi.",
+      "transfer_answer": "Does your brother play football?",
+      "glossary_terms": [
+        "third person",
+        "does",
+        "base form",
+        "present simple"
+      ],
+      "prerequisite_card_ids": [
+        "core-en-20",
+        "core-en-21"
+      ],
+      "prerequisite_node_ids": [
+        "core-en-module-03"
+      ],
+      "source_refs": [
+        "empower-a2-students-book:sha256:a2c3fb113bdd9368bc6b9687e2b4cad61b64226dc773a6fdf4fa60f0f24d3d93:pdf-pages:147",
+        "coursebook-analysis:a2-focus-02"
+      ],
+      "source_pdf_pages": [
+        147
+      ],
+      "source_scope": "present simple and do-support",
+      "deck": "Empower A2 · Grammar Focus",
+      "status": "review",
+      "author": "ai-coursebook-synthesis",
+      "reviewer": null,
+      "provenance_note": "Diễn đạt mới từ Grammar Focus 2A-2B, PDF 147."
+    },
+    {
+      "id": "coursebook-a2-focus-03",
+      "node_id": "core-en-module-02",
+      "card_type": "application",
+      "prompt": "Adverb tần suất thường đứng ở đâu với main verb và với be?",
+      "model_answer": "Thường đứng trước main verb: I usually walk. Với be, đứng sau be: She is always late.",
+      "explanation": "Vị trí của adverb cho thấy nó bổ nghĩa cho thói quen/trạng thái, không phải là một mệnh đề mới.",
+      "misconception": "I walk usually to school trong câu trung tính; She always is late.",
+      "transfer_prompt": "Nói bạn thường ăn sáng nhưng đôi khi đến trường muộn.",
+      "transfer_answer": "I usually have breakfast, but I am sometimes late for school.",
+      "glossary_terms": [
+        "usually",
+        "sometimes",
+        "frequency adverb",
+        "main verb"
+      ],
+      "prerequisite_card_ids": [
+        "core-en-16",
+        "core-en-35"
+      ],
+      "prerequisite_node_ids": [
+        "core-en-module-02",
+        "core-en-module-05"
+      ],
+      "source_refs": [
+        "empower-a2-students-book:sha256:a2c3fb113bdd9368bc6b9687e2b4cad61b64226dc773a6fdf4fa60f0f24d3d93:pdf-pages:149",
+        "coursebook-analysis:a2-focus-03"
+      ],
+      "source_pdf_pages": [
+        149
+      ],
+      "source_scope": "frequency adverbs",
+      "deck": "Empower A2 · Grammar Focus",
+      "status": "review",
+      "author": "ai-coursebook-synthesis",
+      "reviewer": null,
+      "provenance_note": "Diễn đạt mới từ Grammar Focus 3A, PDF 149."
+    },
+    {
+      "id": "coursebook-a2-focus-04",
+      "node_id": "core-en-module-07",
+      "card_type": "application",
+      "prompt": "Quyết định a/an, some hay any phải bắt đầu từ câu hỏi nào về noun?",
+      "model_answer": "Hỏi noun có đếm được số ít hay không. A/an đi với countable singular; some hay dùng trong khẳng định; any thường trong phủ định/câu hỏi. Uncountable không đi trực tiếp với a/an.",
+      "explanation": "Số lượng và loại noun điều khiển determiner; đừng chọn chỉ theo nghĩa tiếng Việt 'một/vài'.",
+      "misconception": "a bread hoặc any milk trong câu khẳng định bình thường.",
+      "transfer_prompt": "Xin mua hai đồ: một quả táo và một ít nước.",
+      "transfer_answer": "I'd like an apple and some water, please.",
+      "glossary_terms": [
+        "countable",
+        "uncountable",
+        "some",
+        "any",
+        "determiner"
+      ],
+      "prerequisite_card_ids": [
+        "core-en-51"
+      ],
+      "prerequisite_node_ids": [
+        "core-en-module-07"
+      ],
+      "source_refs": [
+        "empower-a2-students-book:sha256:a2c3fb113bdd9368bc6b9687e2b4cad61b64226dc773a6fdf4fa60f0f24d3d93:pdf-pages:151",
+        "coursebook-analysis:a2-focus-04"
+      ],
+      "source_pdf_pages": [
+        151
+      ],
+      "source_scope": "countable and uncountable nouns",
+      "deck": "Empower A2 · Grammar Focus",
+      "status": "review",
+      "author": "ai-coursebook-synthesis",
+      "reviewer": null,
+      "provenance_note": "Diễn đạt mới từ Grammar Focus 4A, PDF 151."
+    },
+    {
+      "id": "coursebook-a2-focus-05",
+      "node_id": "core-en-module-07",
+      "card_type": "application",
+      "prompt": "Much và many khác nhau theo loại noun ra sao, còn a lot of có lợi thế gì?",
+      "model_answer": "Many đi với countable plural, much với uncountable; a lot of dùng được với cả hai. How many books? How much water? A lot of books/water.",
+      "explanation": "Điểm gốc vẫn là đếm được hay không đếm được.",
+      "misconception": "How much apples? hoặc many water.",
+      "transfer_prompt": "Hỏi một bạn có bao nhiêu bài tập và cần bao nhiêu thời gian.",
+      "transfer_answer": "How much homework have you got? How much time do you need?",
+      "glossary_terms": [
+        "much",
+        "many",
+        "a lot of",
+        "plural",
+        "uncountable"
+      ],
+      "prerequisite_card_ids": [
+        "core-en-51"
+      ],
+      "prerequisite_node_ids": [
+        "core-en-module-07"
+      ],
+      "source_refs": [
+        "empower-a2-students-book:sha256:a2c3fb113bdd9368bc6b9687e2b4cad61b64226dc773a6fdf4fa60f0f24d3d93:pdf-pages:151",
+        "coursebook-analysis:a2-focus-05"
+      ],
+      "source_pdf_pages": [
+        151
+      ],
+      "source_scope": "much, many and a lot of",
+      "deck": "Empower A2 · Grammar Focus",
+      "status": "review",
+      "author": "ai-coursebook-synthesis",
+      "reviewer": null,
+      "provenance_note": "Diễn đạt mới từ Grammar Focus 4B, PDF 151."
+    },
+    {
+      "id": "coursebook-a2-focus-06",
+      "node_id": "core-en-module-03",
+      "card_type": "application",
+      "prompt": "Khi giới thiệu sự tồn tại của thứ gì ở một nơi, chọn there is hay there are theo điều gì?",
+      "model_answer": "Chọn theo noun sau đó: there is + singular/uncountable; there are + plural. There is a park. There are two cafés.",
+      "explanation": "There không phải subject mang nghĩa địa điểm; noun phía sau quyết định số của be.",
+      "misconception": "There are a park hoặc There is two cafés.",
+      "transfer_prompt": "Mô tả khu phố có một thư viện và ba cửa hàng.",
+      "transfer_answer": "There is a library and there are three shops in my neighbourhood.",
+      "glossary_terms": [
+        "there is",
+        "there are",
+        "singular",
+        "plural"
+      ],
+      "prerequisite_card_ids": [
+        "core-en-18",
+        "core-en-51"
+      ],
+      "prerequisite_node_ids": [
+        "core-en-module-03",
+        "core-en-module-07"
+      ],
+      "source_refs": [
+        "empower-a2-students-book:sha256:a2c3fb113bdd9368bc6b9687e2b4cad61b64226dc773a6fdf4fa60f0f24d3d93:pdf-pages:153",
+        "coursebook-analysis:a2-focus-06"
+      ],
+      "source_pdf_pages": [
+        153
+      ],
+      "source_scope": "there is and there are",
+      "deck": "Empower A2 · Grammar Focus",
+      "status": "review",
+      "author": "ai-coursebook-synthesis",
+      "reviewer": null,
+      "provenance_note": "Diễn đạt mới từ Grammar Focus 5A, PDF 153."
+    },
+    {
+      "id": "coursebook-a2-focus-07",
+      "node_id": "core-en-module-01",
+      "card_type": "application",
+      "prompt": "Phân biệt my/mine bằng câu hỏi: sau từ đó còn noun hay không?",
+      "model_answer": "My là possessive determiner nên cần noun sau: my pen. Mine là possessive pronoun nên tự đứng: The pen is mine.",
+      "explanation": "Cả hai nói sở hữu, nhưng một cái mở noun phrase còn một cái thay cả noun phrase.",
+      "misconception": "This is my hoặc This is mine pen.",
+      "transfer_prompt": "Nói chiếc áo này là của bạn, còn chiếc kia là của em bạn.",
+      "transfer_answer": "This jacket is mine, and that one is my brother's.",
+      "glossary_terms": [
+        "possessive",
+        "determiner",
+        "pronoun",
+        "mine"
+      ],
+      "prerequisite_card_ids": [
+        "core-en-05",
+        "core-en-51"
+      ],
+      "prerequisite_node_ids": [
+        "core-en-module-01",
+        "core-en-module-07"
+      ],
+      "source_refs": [
+        "empower-a2-students-book:sha256:a2c3fb113bdd9368bc6b9687e2b4cad61b64226dc773a6fdf4fa60f0f24d3d93:pdf-pages:153",
+        "coursebook-analysis:a2-focus-07"
+      ],
+      "source_pdf_pages": [
+        153
+      ],
+      "source_scope": "possessive determiners and pronouns",
+      "deck": "Empower A2 · Grammar Focus",
+      "status": "review",
+      "author": "ai-coursebook-synthesis",
+      "reviewer": null,
+      "provenance_note": "Diễn đạt mới từ Grammar Focus 5B, PDF 153."
+    },
+    {
+      "id": "coursebook-a2-focus-08",
+      "node_id": "core-en-module-03",
+      "card_type": "application",
+      "prompt": "Cùng một nguyên lý nào giải thích cả didn't go và Did you go?",
+      "model_answer": "Did/didn't mang past tense, nên go là base form trong cả phủ định và câu hỏi. We didn't go. Did you go?",
+      "explanation": "Nhớ một cơ chế trợ động từ sẽ sinh được cả hai dạng thay vì học hai công thức rời.",
+      "misconception": "Didn't went và Did you went.",
+      "transfer_prompt": "Hỏi bạn có xem phim tối qua không, rồi trả lời không.",
+      "transfer_answer": "Did you watch a film last night? No, I didn't.",
+      "glossary_terms": [
+        "did",
+        "didn't",
+        "past simple",
+        "base form"
+      ],
+      "prerequisite_card_ids": [
+        "core-en-20",
+        "core-en-21"
+      ],
+      "prerequisite_node_ids": [
+        "core-en-module-03"
+      ],
+      "source_refs": [
+        "empower-a2-students-book:sha256:a2c3fb113bdd9368bc6b9687e2b4cad61b64226dc773a6fdf4fa60f0f24d3d93:pdf-pages:155",
+        "coursebook-analysis:a2-focus-08"
+      ],
+      "source_pdf_pages": [
+        155
+      ],
+      "source_scope": "past simple negative and questions",
+      "deck": "Empower A2 · Grammar Focus",
+      "status": "review",
+      "author": "ai-coursebook-synthesis",
+      "reviewer": null,
+      "provenance_note": "Diễn đạt mới từ Grammar Focus 7A, PDF 155."
+    },
+    {
+      "id": "coursebook-a2-focus-09",
+      "node_id": "core-en-module-01",
+      "card_type": "production",
+      "prompt": "Hãy dùng một cách kiểm tra để chọn comparative hay superlative trước khi chọn -er/more/-est/most.",
+      "model_answer": "Hỏi có đang so hai đối tượng hay chọn một cực trong cả nhóm. Hai đối tượng: cheaper than. Cả nhóm: the cheapest in the class.",
+      "explanation": "Ý nghĩa quan hệ đi trước hình thức adjective; nếu thiếu nhóm hay mốc so sánh, câu dễ mơ hồ.",
+      "misconception": "Most cheap dùng để so hai món, hoặc cheaper dùng để chọn một món trong cả lớp.",
+      "transfer_prompt": "So sánh hai điện thoại rồi chọn chiếc tốt nhất trong ba chiếc.",
+      "transfer_answer": "This phone is cheaper than that one. Of the three phones, this one is the best.",
+      "glossary_terms": [
+        "comparative",
+        "superlative",
+        "than",
+        "the best"
+      ],
+      "prerequisite_card_ids": [
+        "core-en-06",
+        "core-en-35"
+      ],
+      "prerequisite_node_ids": [
+        "core-en-module-01",
+        "core-en-module-05"
+      ],
+      "source_refs": [
+        "empower-a2-students-book:sha256:a2c3fb113bdd9368bc6b9687e2b4cad61b64226dc773a6fdf4fa60f0f24d3d93:pdf-pages:157",
+        "coursebook-analysis:a2-focus-09"
+      ],
+      "source_pdf_pages": [
+        157
+      ],
+      "source_scope": "comparative and superlative review",
+      "deck": "Empower A2 · Grammar Focus",
+      "status": "review",
+      "author": "ai-coursebook-synthesis",
+      "reviewer": null,
+      "provenance_note": "Diễn đạt mới từ Grammar Focus 10A-10B, PDF 157."
+    },
+    {
+      "id": "coursebook-a2-focus-10",
+      "node_id": "core-en-module-03",
+      "card_type": "application",
+      "prompt": "Dấu hiệu quyết định lớn nhất giữa present perfect và past simple là 'thời điểm đã đóng khung chưa' nghĩa là gì?",
+      "model_answer": "Nếu nói when/last year/yesterday, dùng past simple. Nếu nói trải nghiệm đến hiện tại không nêu thời điểm, dùng present perfect: I saw it yesterday; I've seen it before.",
+      "explanation": "Không dùng present perfect chỉ vì sự việc xảy ra trước đây; cách người nói đóng khung thời gian mới quyết định.",
+      "misconception": "I've seen it yesterday.",
+      "transfer_prompt": "Trả lời: 'Have you ever been to Hue?' rồi nói thời điểm bạn đi.",
+      "transfer_answer": "Yes, I have. I went there last summer.",
+      "glossary_terms": [
+        "present perfect",
+        "past simple",
+        "ever",
+        "time expression"
+      ],
+      "prerequisite_card_ids": [
+        "core-en-18",
+        "core-en-19",
+        "core-en-20"
+      ],
+      "prerequisite_node_ids": [
+        "core-en-module-03"
+      ],
+      "source_refs": [
+        "empower-a2-students-book:sha256:a2c3fb113bdd9368bc6b9687e2b4cad61b64226dc773a6fdf4fa60f0f24d3d93:pdf-pages:159",
+        "coursebook-analysis:a2-focus-10"
+      ],
+      "source_pdf_pages": [
+        159
+      ],
+      "source_scope": "present perfect versus past simple",
+      "deck": "Empower A2 · Grammar Focus",
+      "status": "review",
+      "author": "ai-coursebook-synthesis",
+      "reviewer": null,
+      "provenance_note": "Diễn đạt mới từ Grammar Focus 11A-11B, PDF 159."
+    },
+    {
+      "id": "coursebook-a2-vocab-01",
+      "node_id": "core-en-module-03",
+      "card_type": "application",
+      "prompt": "Khi học irregular verb, vì sao nên học theo ba slot base-past-participle thay vì một danh sách dịch nghĩa?",
+      "model_answer": "Vì mỗi cấu trúc gọi một slot khác: go/went/gone; I went yesterday nhưng I have gone home. Ba dạng gắn trực tiếp với cách tạo câu.",
+      "explanation": "Bảng verb trở thành công cụ sinh câu khi mỗi dạng có nhiệm vụ rõ.",
+      "misconception": "Chỉ cần nhớ went là quá khứ của go là đủ cho mọi câu.",
+      "transfer_prompt": "Dùng take để viết một câu quá khứ đơn và một câu hiện tại hoàn thành.",
+      "transfer_answer": "I took the bus yesterday. I have taken this bus before.",
+      "glossary_terms": [
+        "base form",
+        "past form",
+        "past participle",
+        "irregular verb"
+      ],
+      "prerequisite_card_ids": [
+        "core-en-19",
+        "core-en-27"
+      ],
+      "prerequisite_node_ids": [
+        "core-en-module-03",
+        "core-en-module-04"
+      ],
+      "source_refs": [
+        "empower-a2-students-book:sha256:a2c3fb113bdd9368bc6b9687e2b4cad61b64226dc773a6fdf4fa60f0f24d3d93:pdf-pages:171",
+        "coursebook-analysis:a2-vocab-01"
+      ],
+      "source_pdf_pages": [
+        171
+      ],
+      "source_scope": "common verbs and past forms",
+      "deck": "Empower A2 · Vocabulary Focus",
+      "status": "review",
+      "author": "ai-coursebook-synthesis",
+      "reviewer": null,
+      "provenance_note": "Diễn đạt mới từ Vocabulary Focus common/irregular verbs, PDF 171."
+    },
+    {
+      "id": "coursebook-a2-vocab-02",
+      "node_id": "core-en-module-01",
+      "card_type": "production",
+      "prompt": "Vì sao nói in 2012 nhưng on 12 April?",
+      "model_answer": "In dùng với khoảng thời gian rộng như năm/tháng; on dùng với ngày cụ thể. We travelled in 2012, but the meeting is on 12 April.",
+      "explanation": "Giới từ thời gian phản ánh mức độ cụ thể của mốc, không phải bản dịch từng từ.",
+      "misconception": "On 2012 hoặc in Monday.",
+      "transfer_prompt": "Nói sinh nhật bạn vào tháng Năm và một chuyến đi vào ngày 5 tháng 6.",
+      "transfer_answer": "My birthday is in May. I went on holiday on 5 June.",
+      "glossary_terms": [
+        "in",
+        "on",
+        "year",
+        "month",
+        "date"
+      ],
+      "prerequisite_card_ids": [
+        "core-en-06",
+        "core-en-51"
+      ],
+      "prerequisite_node_ids": [
+        "core-en-module-01",
+        "core-en-module-07"
+      ],
+      "source_refs": [
+        "empower-a2-students-book:sha256:a2c3fb113bdd9368bc6b9687e2b4cad61b64226dc773a6fdf4fa60f0f24d3d93:pdf-pages:171",
+        "coursebook-analysis:a2-vocab-02"
+      ],
+      "source_pdf_pages": [
+        171
+      ],
+      "source_scope": "dates and prepositions",
+      "deck": "Empower A2 · Vocabulary Focus",
+      "status": "review",
+      "author": "ai-coursebook-synthesis",
+      "reviewer": null,
+      "provenance_note": "Diễn đạt mới từ Vocabulary Focus years and dates, PDF 171."
+    },
+    {
+      "id": "coursebook-a2-vocab-03",
+      "node_id": "core-en-module-02",
+      "card_type": "production",
+      "prompt": "Vì sao nói play football, go running nhưng do judo?",
+      "model_answer": "English dùng các collocation khác nhau theo loại hoạt động: play cho game/sport như football, go cho hoạt động -ing như running, do cho activity như judo/exercise.",
+      "explanation": "Không có một verb Việt-Anh chung cho mọi 'chơi/tập'; hãy học verb cùng partner của nó.",
+      "misconception": "Do football hoặc play running.",
+      "transfer_prompt": "Nói ba hoạt động bạn làm mỗi tuần, mỗi hoạt động dùng một verb khác.",
+      "transfer_answer": "I play football, go running and do yoga every week.",
+      "glossary_terms": [
+        "play",
+        "go",
+        "do",
+        "collocation",
+        "activity"
+      ],
+      "prerequisite_card_ids": [
+        "core-en-09",
+        "core-en-51"
+      ],
+      "prerequisite_node_ids": [
+        "core-en-module-02",
+        "core-en-module-07"
+      ],
+      "source_refs": [
+        "empower-a2-students-book:sha256:a2c3fb113bdd9368bc6b9687e2b4cad61b64226dc773a6fdf4fa60f0f24d3d93:pdf-pages:173",
+        "coursebook-analysis:a2-vocab-03"
+      ],
+      "source_pdf_pages": [
+        173
+      ],
+      "source_scope": "sport collocations",
+      "deck": "Empower A2 · Vocabulary Focus",
+      "status": "review",
+      "author": "ai-coursebook-synthesis",
+      "reviewer": null,
+      "provenance_note": "Diễn đạt mới từ Vocabulary Focus 8A, PDF 173."
+    },
+    {
+      "id": "coursebook-a2-vocab-04",
+      "node_id": "core-en-module-07",
+      "card_type": "application",
+      "prompt": "Khi đọc giá tiền bằng tiếng Anh, vì sao 4.50 không nên đọc như một số thập phân thông thường?",
+      "model_answer": "Giá thường đọc theo đơn vị tiền và phần nhỏ: four pounds fifty hoặc four pounds and fifty pence, không đọc four point five zero pounds.",
+      "explanation": "Ngữ cảnh tiền có quy ước nói riêng để người nghe hiểu ngay số tiền và đơn vị.",
+      "misconception": "Four point five zero pounds trong mọi tình huống mua bán.",
+      "transfer_prompt": "Đọc £12.75 như một giá tiền.",
+      "transfer_answer": "Twelve pounds seventy-five.",
+      "glossary_terms": [
+        "pound",
+        "pence",
+        "price",
+        "currency"
+      ],
+      "prerequisite_card_ids": [
+        "core-en-51"
+      ],
+      "prerequisite_node_ids": [
+        "core-en-module-07"
+      ],
+      "source_refs": [
+        "empower-a2-students-book:sha256:a2c3fb113bdd9368bc6b9687e2b4cad61b64226dc773a6fdf4fa60f0f24d3d93:pdf-pages:175",
+        "coursebook-analysis:a2-vocab-04"
+      ],
+      "source_pdf_pages": [
+        175
+      ],
+      "source_scope": "money and prices",
+      "deck": "Empower A2 · Vocabulary Focus",
+      "status": "review",
+      "author": "ai-coursebook-synthesis",
+      "reviewer": null,
+      "provenance_note": "Diễn đạt mới từ Vocabulary Focus 9A, PDF 175."
+    },
+    {
+      "id": "coursebook-a2-vocab-05",
+      "node_id": "core-en-module-07",
+      "card_type": "application",
+      "prompt": "Khi đọc số lớn, cách chia thành nhóm nào giúp không đảo thứ tự thousand và million?",
+      "model_answer": "Đọc từ nhóm lớn xuống: million rồi thousand rồi hundred rồi phần còn lại. 1,300,000 là one million three hundred thousand.",
+      "explanation": "Hãy nhìn dấu phẩy như ranh giới nhóm ba chữ số, không đọc từng chữ số rời.",
+      "misconception": "One thousand three hundred million cho 1,300,000.",
+      "transfer_prompt": "Đọc 2,045,000.",
+      "transfer_answer": "Two million forty-five thousand.",
+      "glossary_terms": [
+        "million",
+        "thousand",
+        "hundred",
+        "number group"
+      ],
+      "prerequisite_card_ids": [
+        "core-en-51"
+      ],
+      "prerequisite_node_ids": [
+        "core-en-module-07"
+      ],
+      "source_refs": [
+        "empower-a2-students-book:sha256:a2c3fb113bdd9368bc6b9687e2b4cad61b64226dc773a6fdf4fa60f0f24d3d93:pdf-pages:175",
+        "coursebook-analysis:a2-vocab-05"
+      ],
+      "source_pdf_pages": [
+        175
+      ],
+      "source_scope": "high numbers",
+      "deck": "Empower A2 · Vocabulary Focus",
+      "status": "review",
+      "author": "ai-coursebook-synthesis",
+      "reviewer": null,
+      "provenance_note": "Diễn đạt mới từ Vocabulary Focus 10B, PDF 175."
+    },
+    {
+      "id": "coursebook-a2-vocab-06",
+      "node_id": "core-en-module-02",
+      "card_type": "production",
+      "prompt": "Một cặp adjective đối lập giúp bạn mô tả chính xác hơn như thế nào thay vì chỉ nói good/bad?",
+      "model_answer": "Chọn trục nghĩa phù hợp: old/new, rich/poor, wonderful/terrible. Ví dụ: My old phone is slow, but my new phone is modern.",
+      "explanation": "Từ vựng mạnh là mạng các đối lập và collocation, giúp người học chọn theo nghĩa cần phân biệt.",
+      "misconception": "Mọi đánh giá chỉ cần very good hoặc very bad.",
+      "transfer_prompt": "So sánh một đồ cũ và một đồ mới bằng hai adjective đối lập.",
+      "transfer_answer": "My old bag is small and ugly, but my new bag is big and beautiful.",
+      "glossary_terms": [
+        "opposite",
+        "adjective",
+        "old",
+        "modern"
+      ],
+      "prerequisite_card_ids": [
+        "core-en-09",
+        "core-en-35"
+      ],
+      "prerequisite_node_ids": [
+        "core-en-module-02",
+        "core-en-module-05"
+      ],
+      "source_refs": [
+        "empower-a2-students-book:sha256:a2c3fb113bdd9368bc6b9687e2b4cad61b64226dc773a6fdf4fa60f0f24d3d93:pdf-pages:169,171",
+        "coursebook-analysis:a2-vocab-06"
+      ],
+      "source_pdf_pages": [
+        169,
+        171
+      ],
+      "source_scope": "adjectives as contrasting choices",
+      "deck": "Empower A2 · Vocabulary Focus",
+      "status": "review",
+      "author": "ai-coursebook-synthesis",
+      "reviewer": null,
+      "provenance_note": "Diễn đạt mới từ Vocabulary Focus 1B, PDF 169,171."
+    },
+    {
+      "id": "coursebook-a2-vocab-07",
+      "node_id": "core-en-module-07",
+      "card_type": "application",
+      "prompt": "Vì sao danh từ food đôi khi cần một 'container word' như a bottle of hoặc a bowl of?",
+      "model_answer": "Nhiều food/drink là uncountable nên container cho đơn vị đếm được: a bottle of water, a bowl of soup. Nó trả lời 'một phần/đơn vị nào' chứ không đổi bản chất food.",
+      "explanation": "Container nối hệ lượng từ với thế giới thật: ta mua/đưa một đơn vị cụ thể của chất liệu/đồ ăn.",
+      "misconception": "A water hoặc two soups luôn đúng trong mọi bối cảnh.",
+      "transfer_prompt": "Gọi một chai nước và một bát súp ở quán.",
+      "transfer_answer": "I'd like a bottle of water and a bowl of soup, please.",
+      "glossary_terms": [
+        "container",
+        "bottle",
+        "bowl",
+        "uncountable"
+      ],
+      "prerequisite_card_ids": [
+        "core-en-51"
+      ],
+      "prerequisite_node_ids": [
+        "core-en-module-07"
+      ],
+      "source_refs": [
+        "empower-a2-students-book:sha256:a2c3fb113bdd9368bc6b9687e2b4cad61b64226dc773a6fdf4fa60f0f24d3d93:pdf-pages:170,172",
+        "coursebook-analysis:a2-vocab-07"
+      ],
+      "source_pdf_pages": [
+        170,
+        172
+      ],
+      "source_scope": "places and food containers",
+      "deck": "Empower A2 · Vocabulary Focus",
+      "status": "review",
+      "author": "ai-coursebook-synthesis",
+      "reviewer": null,
+      "provenance_note": "Diễn đạt mới từ Vocabulary Focus food and containers, PDF 170,172."
+    }
+  ]
+}

@@ -74,3 +74,10 @@ Raw logs and future screenshots belong under dated evidence subfolders; do not r
 - `50-Evidence/learning-support-map-and-sync-review-2026-08-31.md` records the 80-record AI-draft support overlay, 25-term structured glossary, React Flow map viewport, stale-streak correction, external repo/license review, and the still-proposed cross-device pairing design.
 - ADR-0013 accepts the scaffold/glossary shell while keeping exact support wording unreviewed; ADR-0014 accepts the lazy `@xyflow/react@12.11.5` renderer; ADR-0015 keeps remote pairing/RLS/streak activation behind a separate Human identity choice.
 - Final cumulative receipt `20260831T154931Z-083172f9` passed 12/12; 25/25 unit tests, 11/11 Chrome tests, production build, and dependency audit also passed.
+
+## Transfer answers, paired-sync implementation, and Empower A2 — 2026-09-01
+
+- `50-Evidence/paired-sync-and-transfer-answers-2026-09-01.md` records the 80 worked transfer answers, anonymous device-pairing implementation, server-derived streak design, exact 80-card Supabase seed, safe local import and unresolved remote DNS blocker.
+- `50-Evidence/empower-a2-coursebook-review-2026-09-01.md` records visual inspection of 176/176 coursebook pages, the 81-card review packet, Human checkbox/merge boundary and durable English Core anchoring.
+- ADR-0016 replaces active secondary questions with worked transfer answers. ADR-0017 records Empower A2 as a long-term FSRS branch, not a disposable exam deck.
+- Final cumulative receipt `20260901T052017Z-936f280c` passed 14/14; unit tests 26/26, Playwright/Chrome 12/12 and production build passed.

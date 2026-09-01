@@ -1,6 +1,6 @@
 # ADR-0013 — Scaffold questions and a structured glossary
 
-- Status: accepted for implementation; AI support content remains review-only until Human sign-off
+- Status: superseded in part by ADR-0016; glossary remains accepted, secondary questions are inactive
 - Date: 2026-08-31
 - Decision owner: Hiệp approved continued implementation on 2026-08-31; exact support wording still awaits Human review
 
@@ -21,3 +21,7 @@ The strongest objection is that a secondary answer can reveal the retrieval targ
 ## Gates and rollback
 
 Focused tests cover support packet cardinality/references, packet round-trip, scaffold-before-main-reveal, glossary keyboard/dialog behavior, and legacy cards without support. Cumulative gates remain required. Rollback removes the optional UI and support overlay without changing card IDs, review events, or the approved source packet.
+
+## Supersession note — 2026-09-01
+
+Hiệp clarified that the missing support is not a second question. It is a worked answer for `THỬ CHUYỂN SANG TÌNH HUỐNG MỚI`. The runtime no longer renders the scaffold question/answer fields. Their old provenance packet remains historical evidence only; the structured glossary remains active.

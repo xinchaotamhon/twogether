@@ -1,22 +1,28 @@
 # Supabase setup for Twogether
 
-The current P0 intentionally uses a simple shared-device profile picker. The home screen chooses **Hiệp** or **Hoàng**; there is no email, password, PIN, or Supabase Auth login. Review state is stored by the local adapter in the browser. `.env.local` does not activate remote mode in this release.
+Twogether uses Supabase Free as the shared source of truth for review events, FSRS state and streak. Daily use has no email or PIN: every browser profile signs in anonymously once and is paired to exactly one learner. A shared computer should use two browser profiles, one for Hiệp and one for Hoàng.
 
-The files in this folder preserve a future, owner-operated Supabase sync path. Do not provision it just to use the current profile-only app, and do not put credentials in this repository or in an AI prompt. Do not put their passwords in this repository or in a prompt; a service-role key may not be placed in React or a `VITE_*` variable.
+Never put a service-role key, learner password or pairing code in this repository. The browser needs only `VITE_SUPABASE_URL`, `VITE_SUPABASE_ANON_KEY` and `VITE_SYNC_MODE=cloud`.
 
-`202608310001_card_support.sql` is an additive content-schema migration for optional scaffold/glossary fields. Applying it does not activate remote sync and does not approve the AI support packet. ADR-0015 owns the proposed no-daily-login path: anonymous device identity, one-time short-lived pairing, `auth.uid()` → learner membership RLS, append-only qualifications, and server-derived streak. That design is not yet implemented or authorized on the remote project.
+## Owner-operated activation
 
-## Future owner-only provisioning
+1. In Supabase Auth settings, enable Anonymous Sign-Ins.
+2. In SQL Editor, apply every file in `supabase/migrations/` in timestamp order. Existing projects must be backed up first; repair the schema only with additive migrations.
+3. Run `supabase/seed.sql`. It is generated from the exact owner-approved English Core manifest and contains 80 cards, not the historical 12 fixtures.
+4. Run `supabase/bootstrap_pairing_codes.sql` once. Copy the returned code for Hiệp and the returned code for Hoàng; plaintext codes are not stored and expire after 24 hours.
+5. Open the deployed PWA in Hiệp's browser profile and enter Hiệp's code. Repeat with Hoàng's code in Hoàng's browser profile.
+6. A paired device can create a 10-minute, one-use code from its avatar to pair another phone or browser profile.
 
-Only continue this section after Hiệp explicitly chooses cloud synchronization and records the identity UX as a new decision:
+On first pairing, the app keeps a local backup and imports that learner's existing local FSRS/history only if the remote history is empty. It never deletes the local copy after import. Review writes are online-first and idempotent; the UI reports success only after the server confirms the event.
 
-1. Create a Supabase Free project while signed in as the owner.
-2. Apply migrations in timestamp order, after backup and dry-run. The support migration is additive; the future pairing/RLS migration must be written and reviewed before persistence authority changes.
-3. The existing schema assumes authenticated learner identities for server-side RLS. Do not create Auth users or email mappings for the current P0 unless the owner re-enables that path.
-4. Regenerate a production seed from the exact owner-approved 80-card manifest before remote activation. The historical 12-card seed is foundation evidence only and must not be treated as the active curriculum. Never seed AI support or future branches as approved content without a Human approval manifest.
-5. Keep only the public project URL and publishable/anon key in local or hosting environment configuration. A service-role key may not be placed in React or a `VITE_*` variable.
-6. Run the focused Supabase contract and real positive/negative RLS checks only after the remote identity flow has been deliberately restored.
+## Authority and limitations
+
+- RLS resolves `auth.uid()` through `learner_devices`; a browser cannot select an arbitrary learner ID.
+- Review events and daily qualifications are source truth. The client cannot write a streak counter.
+- A run qualifies a day only after every required card was attempted and the bounded repair loop ended.
+- Two devices reviewing the same card at the same time produce an explicit state conflict; the app reloads the accepted server state. Full offline multi-device merge is deliberately outside this release.
+- An anonymous session cannot be recovered after signing out or clearing browser data. Pair a replacement device before clearing data, or use a fresh owner bootstrap code.
 
 ## Rollback
 
-Keep the local adapter as the active fallback. If a future remote pilot is unsafe, remove the remote integration, redeploy the profile-only frontend, and preserve any remote review events. Do not delete review history to repair a scheduler conflict.
+Set `VITE_SYNC_MODE=local` and redeploy. This returns runtime authority to the preserved browser data without deleting remote events. Do not drop tables or delete review history to repair a conflict.

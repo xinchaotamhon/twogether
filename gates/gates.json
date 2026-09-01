@@ -112,7 +112,7 @@
     },
     {
       "id": "content.learning-support-contract",
-      "description": "English support remains exact, opt-in, provenance-bearing, glossary-resolved, and separate from main-answer reveal",
+      "description": "English support keeps exact glossary refs and worked transfer answers behind attempt-before-reveal",
       "tier": "smoke",
       "command": ["{python}", "tools/check_learning_support.py"],
       "cwd": ".",
@@ -121,9 +121,24 @@
       "required": true,
       "enabled": true,
       "introduced_by": "learning-support-2026-08-31",
-      "invariant": "AI scaffold content cannot silently become approved or bypass attempt-before-main-reveal",
+      "invariant": "Worked transfer examples retain provenance and cannot bypass attempt-before-main-reveal",
       "owner": "hiep",
       "evidence": "50-Evidence/learning-support-map-and-sync-review-2026-08-31.md"
+    },
+    {
+      "id": "content.empower-a2-review-contract",
+      "description": "The fully inspected coursebook yields 81 source-linked long-term cards that remain review-only until owner merge",
+      "tier": "smoke",
+      "command": ["{python}", "tools/check_coursebook_review.py"],
+      "cwd": ".",
+      "timeout_seconds": 20,
+      "expected_exit_code": 0,
+      "required": true,
+      "enabled": true,
+      "introduced_by": "empower-a2-long-term-branch-2026-09-01",
+      "invariant": "No AI coursebook card is silently approved and every card stays anchored to English Core with page provenance",
+      "owner": "hiep",
+      "evidence": "50-Evidence/empower-a2-coursebook-review-2026-09-01.md"
     },
     {
       "id": "deployment.free-tier-contract",
@@ -154,6 +169,21 @@
       "invariant": "Remote persistence can be provisioned without weakening learner isolation or committing secrets",
       "owner": "hiep",
       "evidence": "50-Evidence/supabase-foundation-2026-08-20.md"
+    },
+    {
+      "id": "backend.device-sync-contract",
+      "description": "Anonymous device pairing, idempotent FSRS writes, server-derived streak and safe local import are present",
+      "tier": "smoke",
+      "command": ["{python}", "tools/check_device_sync_contract.py"],
+      "cwd": ".",
+      "timeout_seconds": 20,
+      "expected_exit_code": 0,
+      "required": true,
+      "enabled": true,
+      "introduced_by": "paired-sync-2026-09-01",
+      "invariant": "Unpaired browsers cannot choose a learner identity and streak cannot be written as a client counter",
+      "owner": "hiep",
+      "evidence": "50-Evidence/paired-sync-and-transfer-answers-2026-09-01.md"
     },
     {
       "id": "browser.p0-contract",

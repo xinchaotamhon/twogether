@@ -51,6 +51,7 @@ export interface RecordReviewInput {
   occurredAt: Date;
   idempotencyKey: string;
   oldStateHash: string;
+  runId?: string;
 }
 
 export interface RecordReviewResult {
@@ -63,7 +64,10 @@ export interface DataAdapter {
   listCards(): Card[];
   listNodes(): ConceptNode[];
   listEdges(): ConceptEdge[];
-  readLearner(requestedLearnerId: LearnerId, sessionLearnerId: LearnerId): LearnerSnapshot;
+  readLearner(
+    requestedLearnerId: LearnerId,
+    sessionLearnerId: LearnerId,
+  ): LearnerSnapshot;
   recordReview(input: RecordReviewInput): RecordReviewResult;
   clearLocalData(): void;
 }
@@ -92,7 +96,8 @@ export function createMemoryStorage(): StorageLike {
 }
 
 function defaultStorage(): StorageLike {
-  if (typeof window !== "undefined" && window.localStorage) return window.localStorage;
+  if (typeof window !== "undefined" && window.localStorage)
+    return window.localStorage;
   return createMemoryStorage();
 }
 
@@ -126,11 +131,19 @@ function defaultStore(cards: Card[]): LocalStore {
   };
 }
 
-function migrateLearner(value: unknown, learnerId: LearnerId, cards: Card[]): LearnerSnapshot {
-  const candidate = value && typeof value === "object" ? value as Partial<LearnerSnapshot> : {};
-  const existingStates: Record<string, LearnerCardState> = candidate.cardStates && typeof candidate.cardStates === "object"
-    ? clone(candidate.cardStates)
-    : {};
+function migrateLearner(
+  value: unknown,
+  learnerId: LearnerId,
+  cards: Card[],
+): LearnerSnapshot {
+  const candidate =
+    value && typeof value === "object"
+      ? (value as Partial<LearnerSnapshot>)
+      : {};
+  const existingStates: Record<string, LearnerCardState> =
+    candidate.cardStates && typeof candidate.cardStates === "object"
+      ? clone(candidate.cardStates)
+      : {};
   for (const card of cards) {
     if (!existingStates[card.id]) {
       existingStates[card.id] = {
@@ -144,8 +157,13 @@ function migrateLearner(value: unknown, learnerId: LearnerId, cards: Card[]): Le
   return {
     learnerId,
     cardStates: existingStates,
-    reviewEvents: Array.isArray(candidate.reviewEvents) ? clone(candidate.reviewEvents) : [],
-    dailyGoalMinutes: typeof candidate.dailyGoalMinutes === "number" ? candidate.dailyGoalMinutes : 15,
+    reviewEvents: Array.isArray(candidate.reviewEvents)
+      ? clone(candidate.reviewEvents)
+      : [],
+    dailyGoalMinutes:
+      typeof candidate.dailyGoalMinutes === "number"
+        ? candidate.dailyGoalMinutes
+        : 15,
   };
 }
 
@@ -163,7 +181,9 @@ function migrateStore(value: unknown, cards: Card[]): LocalStore | null {
   };
 }
 
-export function createLocalDataAdapter(storage: StorageLike = defaultStorage()): DataAdapter {
+export function createLocalDataAdapter(
+  storage: StorageLike = defaultStorage(),
+): DataAdapter {
   const cards = APPROVED_ENGLISH_CARDS;
   const nodes = APPROVED_ENGLISH_NODES;
   const edges = APPROVED_ENGLISH_EDGES;
@@ -190,27 +210,37 @@ export function createLocalDataAdapter(storage: StorageLike = defaultStorage()):
     return fresh;
   };
 
-  const save = (store: LocalStore): void => storage.setItem(LOCAL_DATA_STORAGE_KEY, JSON.stringify(store));
+  const save = (store: LocalStore): void =>
+    storage.setItem(LOCAL_DATA_STORAGE_KEY, JSON.stringify(store));
 
   return {
     listCards: () => clone(cards),
     listNodes: () => clone(nodes),
     listEdges: () => clone(edges),
     readLearner: (requestedLearnerId, sessionLearnerId) => {
-      if (requestedLearnerId !== sessionLearnerId) throw new AuthorizationError();
+      if (requestedLearnerId !== sessionLearnerId)
+        throw new AuthorizationError();
       const store = load();
       return clone(store.learners[sessionLearnerId]);
     },
     recordReview: (input) => {
-      if (input.sessionLearnerId !== input.requestedLearnerId) throw new AuthorizationError();
+      if (input.sessionLearnerId !== input.requestedLearnerId)
+        throw new AuthorizationError();
       const store = load();
       const learner = store.learners[input.sessionLearnerId];
-      const duplicate = learner.reviewEvents.find((event) => event.idempotencyKey === input.idempotencyKey);
+      const duplicate = learner.reviewEvents.find(
+        (event) => event.idempotencyKey === input.idempotencyKey,
+      );
       if (duplicate) {
-        return { event: clone(duplicate), snapshot: clone(learner), intervalLabel: "đã ghi trước đó" };
+        return {
+          event: clone(duplicate),
+          snapshot: clone(learner),
+          intervalLabel: "đã ghi trước đó",
+        };
       }
       const current = learner.cardStates[input.cardId];
-      if (!current || hashCardState(current) !== input.oldStateHash) throw new ReviewConflictError();
+      if (!current || hashCardState(current) !== input.oldStateHash)
+        throw new ReviewConflictError();
       const next = applyRating(current.fsrs, input.rating, input.occurredAt);
       const nextState: LearnerCardState = {
         ...current,
@@ -234,7 +264,11 @@ export function createLocalDataAdapter(storage: StorageLike = defaultStorage()):
       learner.cardStates[input.cardId] = nextState;
       learner.reviewEvents.push(event);
       save(store);
-      return { event: clone(event), snapshot: clone(learner), intervalLabel: next.intervalLabel };
+      return {
+        event: clone(event),
+        snapshot: clone(learner),
+        intervalLabel: next.intervalLabel,
+      };
     },
     clearLocalData: () => storage.removeItem(LOCAL_DATA_STORAGE_KEY),
   };

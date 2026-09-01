@@ -1,11 +1,22 @@
 export type LearnerId = "hiep" | "hoang";
 
-export const LEARNERS: ReadonlyArray<{ id: LearnerId; name: string; initial: string; tone: string }> = [
+export const LEARNERS: ReadonlyArray<{
+  id: LearnerId;
+  name: string;
+  initial: string;
+  tone: string;
+}> = [
   { id: "hiep", name: "Hiệp", initial: "H", tone: "coral" },
   { id: "hoang", name: "Hoàng", initial: "H", tone: "blue" },
 ];
 
-export type CardType = "core_recall" | "mechanism" | "contrast" | "boundary" | "application" | "production";
+export type CardType =
+  | "core_recall"
+  | "mechanism"
+  | "contrast"
+  | "boundary"
+  | "application"
+  | "production";
 export type CardStatus = "draft" | "review" | "published" | "archived";
 export type ReviewRating = "Again" | "Good";
 export type AttemptKind = "mental" | "spoken" | "typed" | "written";
@@ -19,7 +30,10 @@ export interface Card {
   explanation: string;
   misconception: string;
   transfer_prompt: string;
+  transfer_answer?: string;
+  /** @deprecated Historical draft field; the study UI no longer renders secondary questions. */
   scaffold_prompt?: string;
+  /** @deprecated Historical draft field; the study UI no longer renders secondary answers. */
   scaffold_answer?: string;
   glossary_refs?: string[];
   prerequisite_node_ids: string[];
@@ -44,7 +58,12 @@ export interface ConceptNode {
 export interface ConceptEdge {
   from: string;
   to: string;
-  type: "prerequisite" | "part_of" | "contrasts_with" | "applies_to" | "example_of";
+  type:
+    | "prerequisite"
+    | "part_of"
+    | "contrasts_with"
+    | "applies_to"
+    | "example_of";
 }
 
 export interface PersistedFsrsCard {

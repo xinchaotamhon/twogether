@@ -33,12 +33,12 @@ if (/supabase[_-]service[_-]role|sb_secret|password\s*=|access[_-]?token\s*=/.te
   throw new Error(".env.example contains a forbidden secret-looking value");
 }
 
-if (!setup.includes("Do not put their passwords") || !setup.includes("service-role key may not")) {
+if (!setup.includes("Never put a service-role key") || !setup.includes("learner password")) {
   throw new Error("setup guide must keep passwords and service-role keys outside the repository");
 }
 
-if (!seed.includes("fixture-recall-01") || !seed.includes("fixture-transfer-03") || seed.includes("core-en-01") || seed.includes("core-react-01")) {
-  throw new Error("seed must contain only the published fixture set, never draft curriculum cards");
+if (!seed.includes("core-en-01") || !seed.includes("core-en-80") || seed.includes("fixture-recall-01") || seed.includes("core-react-01")) {
+  throw new Error("seed must contain the owner-approved 80-card English Core set only");
 }
 
 console.log("Supabase contract: migration, RLS, idempotent review RPC, env boundary, and secret hygiene present");
