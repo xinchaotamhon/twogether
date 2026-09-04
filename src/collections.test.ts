@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { COLLECTION_FIXTURES, cardsInCollection, createRunPlan, dueCardIdsForCollection, qualifyRun, wouldCreatePrerequisiteCycle } from "./collections";
-import { APPROVED_ENGLISH_CARDS, APPROVED_ENGLISH_EDGES } from "./approvedCurriculum";
+import { APPROVED_ENGLISH_CARDS, APPROVED_ENGLISH_COLLECTIONS, APPROVED_ENGLISH_EDGES } from "./approvedCurriculum";
+import { EMPOWER_KNOWLEDGE_CARDS, EMPOWER_KNOWLEDGE_COLLECTIONS, EMPOWER_VOCABULARY_COLLECTION } from "./empowerCurriculum";
 import { createInitialFsrsCard } from "./scheduler";
 import type { LearnerSnapshot } from "./types";
 
@@ -9,10 +10,18 @@ const snapshot: LearnerSnapshot = { learnerId: "hiep", dailyGoalMinutes: 15, rev
 
 describe("collection domain", () => {
   it("publishes ten compact, non-duplicated English Core collections", () => {
-    expect(COLLECTION_FIXTURES).toHaveLength(10);
-    expect(COLLECTION_FIXTURES.every((collection) => collection.status === "published" && collection.cardIds.length >= 8 && collection.cardIds.length <= 9)).toBe(true);
-    expect(new Set(COLLECTION_FIXTURES.flatMap((collection) => collection.cardIds)).size).toBe(89);
+    expect(APPROVED_ENGLISH_COLLECTIONS).toHaveLength(10);
+    expect(APPROVED_ENGLISH_COLLECTIONS.every((collection) => collection.status === "published" && collection.cardIds.length >= 8 && collection.cardIds.length <= 9)).toBe(true);
+    expect(new Set(APPROVED_ENGLISH_COLLECTIONS.flatMap((collection) => collection.cardIds)).size).toBe(89);
     expect(cardsInCollection(cards, COLLECTION_FIXTURES[0])).toHaveLength(8);
+  });
+
+  it("adds 74 coursebook knowledge cards while keeping seven vocabulary cards in review", () => {
+    expect(EMPOWER_KNOWLEDGE_CARDS).toHaveLength(74);
+    expect(EMPOWER_KNOWLEDGE_COLLECTIONS).toHaveLength(7);
+    expect(EMPOWER_KNOWLEDGE_COLLECTIONS.flatMap((collection) => collection.cardIds)).toHaveLength(74);
+    expect(EMPOWER_VOCABULARY_COLLECTION.status).toBe("review");
+    expect(EMPOWER_VOCABULARY_COLLECTION.cardIds).toHaveLength(7);
   });
 
   it("scopes due work to the selected collection", () => {

@@ -1,6 +1,7 @@
 import curriculumGraph from "../content/drafts/core-curriculum-drafts-v2.json";
 import beginnerCurriculum from "../content/drafts/english-core-beginner-revision-v2.json";
 import ownerApproval from "../content/reviews/english-generative-core-v2-owner-approval-2026-09-01.json";
+import transferRevision from "../content/revisions/english-core-transfer-novelty-v3.json";
 import type { CardCollection } from "./featureTypes";
 import type { Card, ConceptEdge, ConceptNode } from "./types";
 
@@ -63,7 +64,7 @@ function assertApproval(): void {
 
 assertApproval();
 
-export const APPROVED_CONTENT_VERSION = "english-generative-core-v2-owner-approved-2026-09-01";
+export const APPROVED_CONTENT_VERSION = "english-tree-core-v2-plus-empower-knowledge-2026-09-04";
 export const LEGACY_FIXTURE_COLLECTION_IDS = new Set(["english-foundations", "english-mechanism-lab"]);
 export const LEGACY_FIXTURE_CARD_IDS = new Set([
   "fixture-recall-01", "fixture-recall-02", "fixture-recall-03",
@@ -72,9 +73,16 @@ export const LEGACY_FIXTURE_CARD_IDS = new Set([
   "fixture-foundation-01", "fixture-foundation-02", "fixture-foundation-03",
 ]);
 
+const transferOverrides = new Map(transferRevision.overrides.map(({ card_id, ...fields }) => [card_id, fields]));
+
 export const APPROVED_ENGLISH_CARDS: Card[] = packet.cards
   .filter((card) => card.track === "english" && approvedCardIds.has(card.id))
-  .map(({ track: _track, revision_of: _revisionOf, revision_reason: _revisionReason, ...card }) => ({ ...card, status: "published", reviewer: "hiep" }));
+  .map(({ track: _track, revision_of: _revisionOf, revision_reason: _revisionReason, ...card }) => ({
+    ...card,
+    ...transferOverrides.get(card.id),
+    status: "published",
+    reviewer: "hiep",
+  }));
 
 export const APPROVED_ENGLISH_CARD_IDS = new Set(APPROVED_ENGLISH_CARDS.map((card) => card.id));
 

@@ -1,5 +1,9 @@
 # Architecture and Data Boundaries
 
+## Active runtime switch — 2026-09-04
+
+The shipped default is temporarily `VITE_STUDY_MODE=session`. In this mode the app does not construct the Supabase client and does not read or write FSRS, review events, runs or streak. It keeps only wrong-card IDs in tab-scoped `sessionStorage`. This is an owner-requested reversible presentation/content phase, not a replacement backend decision. `VITE_STUDY_MODE=fsrs` restores the durable adapter path; cloud additionally requires an additive migration for the newly approved coursebook content and real security tests, because its prepared seed is still the older Core checkpoint. Do not delete old local/cloud history during either transition.
+
 ## Proposed MVP stack
 
 - React + TypeScript + Vite (phone-first SPA/PWA).

@@ -4,6 +4,12 @@ import {
   APPROVED_ENGLISH_EDGES,
   APPROVED_ENGLISH_NODES,
 } from "./approvedCurriculum";
+import {
+  EMPOWER_KNOWLEDGE_CARDS,
+  EMPOWER_VOCABULARY_DRAFT_CARDS,
+  EMPOWER_VOCABULARY_REVIEW_EDGE,
+  EMPOWER_VOCABULARY_REVIEW_NODE,
+} from "./empowerCurriculum";
 import { applyRating, createInitialFsrsCard } from "./scheduler";
 import type {
   AttemptKind,
@@ -69,6 +75,7 @@ export interface DataAdapter {
     sessionLearnerId: LearnerId,
   ): LearnerSnapshot;
   recordReview(input: RecordReviewInput): RecordReviewResult;
+  ensurePublishedCards?(cards: readonly Card[]): void;
   clearLocalData(): void;
 }
 
@@ -102,10 +109,11 @@ function defaultStorage(): StorageLike {
 }
 
 function emptyLearner(learnerId: LearnerId, cards: Card[]): LearnerSnapshot {
+  const publishedCards = cards.filter((card) => card.status === "published");
   return {
     learnerId,
     cardStates: Object.fromEntries(
-      cards.map((card) => [
+      publishedCards.map((card) => [
         card.id,
         {
           learnerId,
@@ -144,7 +152,7 @@ function migrateLearner(
     candidate.cardStates && typeof candidate.cardStates === "object"
       ? clone(candidate.cardStates)
       : {};
-  for (const card of cards) {
+  for (const card of cards.filter((candidate) => candidate.status === "published")) {
     if (!existingStates[card.id]) {
       existingStates[card.id] = {
         learnerId,
@@ -184,9 +192,13 @@ function migrateStore(value: unknown, cards: Card[]): LocalStore | null {
 export function createLocalDataAdapter(
   storage: StorageLike = defaultStorage(),
 ): DataAdapter {
-  const cards = APPROVED_ENGLISH_CARDS;
-  const nodes = APPROVED_ENGLISH_NODES;
-  const edges = APPROVED_ENGLISH_EDGES;
+  const cards = [
+    ...APPROVED_ENGLISH_CARDS,
+    ...EMPOWER_KNOWLEDGE_CARDS,
+    ...EMPOWER_VOCABULARY_DRAFT_CARDS,
+  ];
+  const nodes = [...APPROVED_ENGLISH_NODES, EMPOWER_VOCABULARY_REVIEW_NODE];
+  const edges = [...APPROVED_ENGLISH_EDGES, EMPOWER_VOCABULARY_REVIEW_EDGE];
 
   const load = (): LocalStore => {
     const raw = storage.getItem(LOCAL_DATA_STORAGE_KEY);
@@ -269,6 +281,19 @@ export function createLocalDataAdapter(
         snapshot: clone(learner),
         intervalLabel: next.intervalLabel,
       };
+    },
+    ensurePublishedCards: (nextCards) => {
+      const raw = storage.getItem(LOCAL_DATA_STORAGE_KEY);
+      if (!raw) {
+        save(defaultStore([...nextCards]));
+        return;
+      }
+      try {
+        const migrated = migrateStore(JSON.parse(raw), [...nextCards]);
+        if (migrated) save(migrated);
+      } catch {
+        // Leave malformed storage untouched here; the normal load path owns recovery.
+      }
     },
     clearLocalData: () => storage.removeItem(LOCAL_DATA_STORAGE_KEY),
   };

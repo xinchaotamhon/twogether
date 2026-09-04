@@ -1,6 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { COLLECTION_FIXTURES } from "./collections";
-import { APPROVED_ENGLISH_CARDS } from "./approvedCurriculum";
+import { APPROVED_ENGLISH_CARDS, APPROVED_ENGLISH_COLLECTIONS } from "./approvedCurriculum";
 import {
   ENGLISH_CORE_DRAFT_CARD_IDS,
   ENGLISH_CORE_DRAFT_CARDS,
@@ -22,9 +21,9 @@ describe("English Generative Core v1 source and approval boundary", () => {
   });
 
   it("publishes exactly the 80 owner-approved cards without mutating their source", () => {
-    const studyIds = new Set(COLLECTION_FIXTURES.flatMap((collection) => collection.cardIds));
-    expect(COLLECTION_FIXTURES).toHaveLength(10);
-    expect(COLLECTION_FIXTURES.every((collection) => collection.status === "published")).toBe(true);
+    const studyIds = new Set(APPROVED_ENGLISH_COLLECTIONS.flatMap((collection) => collection.cardIds));
+    expect(APPROVED_ENGLISH_COLLECTIONS).toHaveLength(10);
+    expect(APPROVED_ENGLISH_COLLECTIONS.every((collection) => collection.status === "published")).toBe(true);
     expect([...ENGLISH_CORE_DRAFT_CARD_IDS].every((id) => studyIds.has(id))).toBe(true);
     expect(APPROVED_ENGLISH_CARDS.every((card) => card.status === "published" && card.reviewer === "hiep")).toBe(true);
   });

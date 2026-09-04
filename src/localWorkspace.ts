@@ -5,6 +5,7 @@ import type { CardCollection, CollectionRunPlan, DailyQualification, CardDraft, 
 import { recordDailyQualification } from "./streak";
 
 export const WORKSPACE_STORAGE_KEY = "twogether.workspace.p0.v1";
+const RETIRED_SYSTEM_COLLECTION_IDS = new Set(["collection-empower-a2-learning-v1"]);
 type StorageLike = Pick<Storage, "getItem" | "setItem" | "removeItem">;
 export interface WorkspaceRun { plan: CollectionRunPlan; attempts: { cardId: string; attemptConfirmed: boolean }[]; status: "active" | "qualified" | "ended_incomplete" }
 export interface WorkspaceStore {
@@ -44,7 +45,9 @@ function migrateWorkspace(value: unknown): WorkspaceStore | null {
   if (!Array.isArray(parsed.collections) || !Array.isArray(parsed.dailyQualifications) || !parsed.runs || !Array.isArray(parsed.cards) || !Array.isArray(parsed.revisions)) return null;
   const currentIds = new Set(COLLECTION_FIXTURES.map((collection) => collection.id));
   const learnerCollections = parsed.collections.filter((collection) =>
-    !LEGACY_FIXTURE_COLLECTION_IDS.has(collection.id) && !currentIds.has(collection.id),
+    !LEGACY_FIXTURE_COLLECTION_IDS.has(collection.id) &&
+    !RETIRED_SYSTEM_COLLECTION_IDS.has(collection.id) &&
+    !currentIds.has(collection.id),
   );
   return {
     version: 2,

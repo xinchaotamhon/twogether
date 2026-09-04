@@ -1,5 +1,9 @@
 # Learning Algorithm Decision
 
+## Temporary session override — 2026-09-04
+
+`VITE_STUDY_MODE=session` is currently the default. It does not call the FSRS scheduler, persist review/run events, calculate streak or initialize Supabase. `Quên` adds the current card ID to `twogether.session.forgotten.<learner>.<collection>` and `Nhớ` removes it; this list survives refresh in the same tab only. After one pass, `Ôn lại … câu Quên` creates a finite pass over only that list; remembered cards leave the next repair pass. Free navigation and shuffle are exploration controls and never manufacture completion. The FSRS design below is retained intact for explicit later reactivation with `VITE_STUDY_MODE=fsrs`.
+
 ## Decision
 
 Use FSRS-6 through the TypeScript `ts-fsrs` scheduler once its exact package version and lockfile are pinned. Set an initial desired retention of `0.90`, keep the value configurable per learner, and record review events so parameters can be revisited only after enough history. The official Anki guidance describes 90% as a workload/retention balance and warns that workload rises sharply above 90–97% ([Anki deck options](https://docs.ankiweb.net/deck-options)); FSRS models difficulty, stability, and retrievability ([FSRS algorithm](https://github.com/open-spaced-repetition/awesome-fsrs/wiki/The-Algorithm)).

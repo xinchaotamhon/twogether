@@ -1,3 +1,6 @@
+import empowerGlossary from "../content/revisions/empower-a2-glossary-v1.json";
+import coreTerminology from "../content/revisions/english-core-terminology-v1.json";
+
 export interface GlossaryTerm {
   id: string;
   label: string;
@@ -11,7 +14,7 @@ export interface GlossaryTerm {
 
 const sourceRefs = ["project:english-generative-core-v1", "ai-support-review:2026-08-31"];
 
-export const GLOSSARY_TERMS: readonly GlossaryTerm[] = [
+const CORE_GLOSSARY_TERMS: readonly GlossaryTerm[] = [
   { id: "finite-verb", label: "finite verb", meaningVi: "động từ hữu hạn", explanation: "Dạng động từ đang gánh thông tin ngữ pháp trung tâm của mệnh đề, thường là tense và agreement. Một auxiliary cũng có thể là finite verb.", example: "She walks: walks là finite. She is walking: is là finite.", whyItMatters: "Tìm đúng finite verb giúp suy ra câu hỏi, phủ định và cấu trúc auxiliary.", sourceRefs, status: "draft" },
   { id: "non-finite-verb", label: "non-finite verb", meaningVi: "dạng động từ không hữu hạn", explanation: "Dạng động từ không tự gánh tense/agreement của mệnh đề, như to-infinitive, -ing form hoặc participle trong nhiều cấu trúc.", example: "She is walking: walking là non-finite; is mới là finite.", whyItMatters: "Nó giúp tách nghĩa từ vựng của verb khỏi phần đang gánh ngữ pháp.", sourceRefs, status: "draft" },
   { id: "clause", label: "clause", meaningVi: "mệnh đề", explanation: "Một đơn vị tổ chức một sự việc hoặc trạng thái quanh predicate và các vai trò liên quan; thường có một finite carrier.", example: "The child opened the door là một clause.", whyItMatters: "Clause là khung gốc để phân tích và tự tạo câu.", sourceRefs, status: "draft" },
@@ -39,12 +42,74 @@ export const GLOSSARY_TERMS: readonly GlossaryTerm[] = [
   { id: "morpheme", label: "morpheme", meaningVi: "hình vị", explanation: "Đơn vị nhỏ nhất mang nghĩa hoặc chức năng ngữ pháp, có thể là một từ hoặc một phần của từ.", example: "walked gồm walk và morpheme past -ed.", whyItMatters: "Morpheme nối cấu tạo từ với tense, number và các pattern sinh từ.", sourceRefs, status: "draft" },
 ];
 
+const coreLabels = new Set(CORE_GLOSSARY_TERMS.map((term) => term.label.toLocaleLowerCase("en")));
+const coursebookTerms: GlossaryTerm[] = empowerGlossary.terms
+  .filter((term) => !coreLabels.has(term.label.toLocaleLowerCase("en")))
+  .map((term) => ({
+    id: `a2-${encodeURIComponent(term.label.toLocaleLowerCase("en"))}`,
+    label: term.label,
+    meaningVi: term.meaning_vi,
+    explanation: term.explanation,
+    example: term.example,
+    whyItMatters: term.why_it_matters,
+    sourceRefs: [empowerGlossary.revision_id, ...empowerGlossary.source_refs],
+    status: "draft",
+  }));
+
+const supplementalCoreTerms: GlossaryTerm[] = coreTerminology.terms.map((term) => ({
+  id: `core-${encodeURIComponent(term.label)}`,
+  label: term.label,
+  meaningVi: term.meaning_vi,
+  explanation: term.explanation,
+  example: term.example,
+  whyItMatters: term.why_it_matters,
+  sourceRefs: [coreTerminology.revision_id, ...coreTerminology.source_refs],
+  status: "draft",
+}));
+export const GLOSSARY_TERMS: readonly GlossaryTerm[] = [...CORE_GLOSSARY_TERMS, ...coursebookTerms, ...supplementalCoreTerms];
+
+// Detect grammar labels across old cards, but do not underline every everyday word.
+// Common vocabulary remains clickable wherever that card explicitly declares it.
+const automaticLabels = new Set([
+  ...CORE_GLOSSARY_TERMS.map((term) => term.label),
+  ...supplementalCoreTerms.map((term) => term.label),
+  "adjective", "adverb", "adverb of frequency", "article", "base form", "base verb",
+  "comparative", "superlative", "countable", "countable noun", "uncountable",
+  "frequency adverb", "infinitive", "intonation", "inversion", "irregular verb",
+  "main verb", "modal", "past form", "past participle", "past simple", "plural",
+  "possessive determiner", "possessive pronoun", "predicate adjective", "preposition",
+  "present continuous", "present perfect", "present simple", "pronoun", "proper noun",
+  "quantifier", "regular verb", "short answer", "singular", "syllable",
+  "third person", "third-person singular", "time expression", "wh-question", "yes/no question",
+]);
 const glossaryById = new Map(GLOSSARY_TERMS.map((term) => [term.id, term]));
+const glossaryIdByLabel = new Map(
+  GLOSSARY_TERMS.flatMap((term) => [
+    [term.label.toLocaleLowerCase("en"), term.id] as const,
+    [term.meaningVi.toLocaleLowerCase("vi"), term.id] as const,
+  ]),
+);
 
 export function glossaryTermsFor(ids: readonly string[] | undefined): GlossaryTerm[] {
   return [...new Set(ids ?? [])].map((id) => glossaryById.get(id)).filter((term): term is GlossaryTerm => Boolean(term));
 }
 
+function containsWholeTerm(text: string, candidate: string): boolean {
+  const escaped = candidate.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  return new RegExp(`(^|[^\\p{L}\\p{N}-])${escaped}(?=$|[^\\p{L}\\p{N}-])`, "iu").test(text);
+}
+
+/** Finds every known term that is literally present, even when an old card omitted its glossary ref. */
+export function glossaryTermsInText(text: string): GlossaryTerm[] {
+  return GLOSSARY_TERMS.filter(
+    (term) => automaticLabels.has(term.label) && (containsWholeTerm(text, term.label) || containsWholeTerm(text, term.meaningVi)),
+  );
+}
+
 export function hasGlossaryTerm(id: string): boolean {
   return glossaryById.has(id);
+}
+
+export function glossaryIdForLabel(label: string): string | null {
+  return glossaryIdByLabel.get(label.trim().toLocaleLowerCase("en")) ?? null;
 }

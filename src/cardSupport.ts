@@ -1,5 +1,6 @@
 import supportBundle from "../content/drafts/english-core-support-v1.json";
 import transferAnswerBundle from "../content/drafts/english-core-transfer-answers-v1.json";
+import transferNoveltyRevision from "../content/revisions/english-core-transfer-novelty-v3.json";
 import { hasGlossaryTerm } from "./glossary";
 import type { Card } from "./types";
 
@@ -47,6 +48,9 @@ const transferAnswerByCardId = new Map(
     record.transfer_answer,
   ]),
 );
+const transferNoveltyByCardId = new Map(
+  transferNoveltyRevision.overrides.map((record) => [record.card_id, record]),
+);
 
 function assertSupportBundle(): void {
   const ids = bundle.support_records.map((record) => record.card_id);
@@ -81,21 +85,31 @@ export const CARD_SUPPORT_REVIEW_STATUS = bundle.provenance.review_status;
 
 export function supportForCard(
   cardId: string,
-): Pick<
+): Partial<Pick<
   Card,
   | "transfer_answer"
+  | "transfer_prompt"
   | "scaffold_prompt"
   | "scaffold_answer"
   | "glossary_refs"
-> | null {
+>> | null {
   const support = supportByCardId.get(cardId);
   const transferAnswer = transferAnswerByCardId.get(cardId);
-  return support && transferAnswer
-    ? {
-        transfer_answer: transferAnswer,
-        scaffold_prompt: support.scaffold_prompt,
-        scaffold_answer: support.scaffold_answer,
-        glossary_refs: [...support.glossary_refs],
-      }
-    : null;
+  const novelty = transferNoveltyByCardId.get(cardId);
+  if (!support && !transferAnswer && !novelty) return null;
+  return {
+    ...(novelty?.transfer_prompt ? { transfer_prompt: novelty.transfer_prompt } : {}),
+    ...(novelty?.transfer_answer
+      ? { transfer_answer: novelty.transfer_answer }
+      : transferAnswer
+        ? { transfer_answer: transferAnswer }
+        : {}),
+    ...(support
+      ? {
+          scaffold_prompt: support.scaffold_prompt,
+          scaffold_answer: support.scaffold_answer,
+          glossary_refs: [...support.glossary_refs],
+        }
+      : {}),
+  };
 }

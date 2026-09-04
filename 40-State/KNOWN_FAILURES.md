@@ -1,6 +1,6 @@
 ---
-last_verified: 2026-09-01
-verified_by: Codex beginner-core/map-home implementation
+last_verified: 2026-09-04
+verified_by: Codex session-study/content audit
 status: active
 ---
 
@@ -82,3 +82,45 @@ status: active
 - Root cause: both overlays used the same bottom anchor without collision ownership.
 - Disposition: fixed by moving the legend to the top-left canvas corner and keeping the mastery summary top-right. The flashcard loop now opens in a separate overlay layer above the map and above neither navigation nor legend.
 - Regression gate: `browser.p0-contract` compares legend and navigation bounding boxes on a phone viewport.
+
+## UI-004 — Right-side study panel and toast blocked focused study
+
+- Symptom: on desktop the flashcard sat against the right edge, required internal scrolling and a fixed black status bar crossed the answer controls.
+- Disposition: fixed by ADR-0021. Study is now one centered, fixed-height flip-card overlay with a dimmed/blurred tree and inline status; front/back overflow and centering are browser-gated.
+- Regression gates: `app.session-study-contract` and `browser.p0-contract`.
+
+## R-006 — Session mode deliberately has no durable progress
+
+- Risk: learners may expect `Quên`, FSRS or streak to follow another tab/device even though the owner temporarily disabled that path.
+- Truthful boundary: only wrong-card IDs use `sessionStorage`; refresh in the same tab survives, closing the tab clears it, and Supabase/FSRS/streak are dormant.
+- Rollback/exit: set `VITE_STUDY_MODE=fsrs`; use cloud authority only after the documented two-profile RLS tests. Never delete preserved local/cloud history.
+
+## CONTENT-003 — Transfer prompt repeated the main situation
+
+- Symptom: several `Thử chuyển sang tình huống mới` prompts repeated or lightly rephrased the main task, so they did not test transfer.
+- Disposition: 30 audited Core cards use paired versioned base-card revisions with changed situations. One Empower directions answer is corrected separately. The durable authoring rule rejects repeated scenarios.
+- Regression gates: `content.learning-support-contract` and `browser.p0-contract`.
+
+## R-007 — Dormant Supabase seed trails the session English tree
+
+- Risk: the prepared cloud seed still represents the last verified 89-card Core checkpoint, while the active session/local tree has 74 additional approved Empower knowledge cards and may gain approved vocabulary cards.
+- Control: Supabase is not initialized in current session mode, so no false cloud write occurs. Before any `VITE_STUDY_MODE=fsrs` + `VITE_SYNC_MODE=cloud` deployment, create an additive, provenance-preserving seed/migration for the then-current approved content and rerun two-profile RLS/conflict tests.
+- Do not overwrite remote cards or review history merely to make counts match.
+
+## CONTENT-004 — Declared glossary terms were silently dropped
+
+- Symptom: present simple, comparative and other A2 labels had no clickable help because the mapper filtered unknown labels out.
+- Disposition: a 238-term source-matched glossary supplies definitions/examples; unresolved labels now fail loudly. Thirty-three supplemental Core labels and automatic grammar-label detection cover missing old references. Common vocabulary is linked only when declared to avoid noisy or contextually false annotations.
+- Regression: `content.empower-a2-review-contract`, `src/empowerCurriculum.test.ts`, `src/glossary.test.ts`, and whole-word rendering tests in `src/GlossaryHelp.test.tsx`.
+
+## CONTENT-005 — Historical support overwrote current answers
+
+- Symptom: study spread the old v1 support record over each current card, potentially replacing the approved v2 transfer answer or a Human edit.
+- Disposition: audited paired revisions now enter at the base-card boundary; workspace edits take precedence and study renders that merged card unchanged.
+- Regression: `src/approvedCurriculum.test.ts` and `content.learning-support-contract` preserve v2/revision authority and prohibit the old current-card overlay.
+
+## UI-005 — Initial tree fit clipped branches on small phones
+
+- Reproduction: at 360×640, the old fit minimum of 0.46 placed Time, Aspect & Modality outside the viewport even before pan/zoom.
+- Disposition: lower both fit and viewport minimum to 0.08 with padded overview; retain explicit zoom/pan. Content-fit tests open multiple distant branches at this size with real pointer clicks.
+- Regression: `e2e/card-content-fit.spec.ts` through the required browser gate.

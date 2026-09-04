@@ -21,4 +21,10 @@ describe("English Core support review packet", () => {
       expect(glossaryTermsFor(ids)).toHaveLength(new Set(ids).size);
     }
   });
+
+  it("uses a genuinely different situation for an audited transfer task", () => {
+    const support = supportForCard("core-en-03");
+    expect(support?.transfer_prompt).toContain("The nurse helped the patient");
+    expect(support?.transfer_answer).toContain("The patient helped the nurse");
+  });
 });

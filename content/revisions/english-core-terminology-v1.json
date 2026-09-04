@@ -1,0 +1,241 @@
+{
+  "schema_version": 1,
+  "revision_id": "english-core-terminology-v1-2026-09-04",
+  "status": "owner_directed_learning_scaffold",
+  "source_refs": [
+    "project:english-generative-core-v2"
+  ],
+  "terms": [
+    {
+      "label": "finite",
+      "meaning_vi": "hữu hạn",
+      "explanation": "Cách gọi ngắn của finite verb: dạng gánh vai trò ngữ pháp trung tâm của mệnh đề.",
+      "example": "She is working: is là finite.",
+      "why_it_matters": "Giúp phân biệt hữu hạn với những vai trò/hình thức gần nó khi tự phân tích câu."
+    },
+    {
+      "label": "non-finite",
+      "meaning_vi": "không hữu hạn",
+      "explanation": "Cách gọi ngắn của non-finite verb: dạng không tự gánh thì/ngôi của mệnh đề.",
+      "example": "She is working: working là non-finite.",
+      "why_it_matters": "Giúp phân biệt không hữu hạn với những vai trò/hình thức gần nó khi tự phân tích câu."
+    },
+    {
+      "label": "agreement",
+      "meaning_vi": "sự hòa hợp ngữ pháp",
+      "explanation": "Một hình thức thay đổi theo thành phần liên quan, như động từ theo chủ ngữ.",
+      "example": "She works; they work.",
+      "why_it_matters": "Giúp phân biệt sự hòa hợp ngữ pháp với những vai trò/hình thức gần nó khi tự phân tích câu."
+    },
+    {
+      "label": "head",
+      "meaning_vi": "thành phần trung tâm của cụm",
+      "explanation": "Từ quyết định loại và cấu trúc chính của cụm.",
+      "example": "the small robot: robot là head.",
+      "why_it_matters": "Giúp phân biệt thành phần trung tâm của cụm với những vai trò/hình thức gần nó khi tự phân tích câu."
+    },
+    {
+      "label": "referent",
+      "meaning_vi": "đối tượng được nói tới",
+      "explanation": "Người, vật hoặc ý mà một biểu thức đang chỉ trong ngữ cảnh.",
+      "example": "Mai has a bike. It is red: it chỉ chiếc xe.",
+      "why_it_matters": "Giúp phân biệt đối tượng được nói tới với những vai trò/hình thức gần nó khi tự phân tích câu."
+    },
+    {
+      "label": "focus",
+      "meaning_vi": "trọng tâm thông tin",
+      "explanation": "Phần đang được hỏi, bổ sung hoặc đối chiếu, không nhất thiết luôn là cuối câu.",
+      "example": "MAI called, not Nam.",
+      "why_it_matters": "Giúp phân biệt trọng tâm thông tin với những vai trò/hình thức gần nó khi tự phân tích câu."
+    },
+    {
+      "label": "topic",
+      "meaning_vi": "chủ đề đang nói tới",
+      "explanation": "Điểm mà lời nói lấy làm đề tài để cung cấp thêm thông tin.",
+      "example": "As for the bike, it is broken.",
+      "why_it_matters": "Giúp phân biệt chủ đề đang nói tới với những vai trò/hình thức gần nó khi tự phân tích câu."
+    },
+    {
+      "label": "active",
+      "meaning_vi": "thể chủ động",
+      "explanation": "Cách tổ chức câu như The chef cooked dinner; đối lập với passive ở cách phân bố vai trò.",
+      "example": "The chef cooked dinner.",
+      "why_it_matters": "Giúp phân biệt thể chủ động với những vai trò/hình thức gần nó khi tự phân tích câu."
+    },
+    {
+      "label": "passive",
+      "meaning_vi": "thể bị động",
+      "explanation": "Thường dùng be + past participle để đưa người/vật chịu tác động thành subject; tác nhân có thể không nêu.",
+      "example": "The door was opened.",
+      "why_it_matters": "Giúp phân biệt thể bị động với những vai trò/hình thức gần nó khi tự phân tích câu."
+    },
+    {
+      "label": "voice",
+      "meaning_vi": "thể chủ động/bị động",
+      "explanation": "Cách cấu trúc ngữ pháp phân bố các vai như người làm và người chịu tác động.",
+      "example": "Mai wrote it. → It was written by Mai.",
+      "why_it_matters": "Giúp phân biệt thể chủ động/bị động với những vai trò/hình thức gần nó khi tự phân tích câu."
+    },
+    {
+      "label": "patient",
+      "meaning_vi": "vai chịu tác động",
+      "explanation": "Trong ngữ nghĩa, đối tượng bị tác động hoặc thay đổi; khác subject là vai ngữ pháp.",
+      "example": "The window was broken: window là patient và subject.",
+      "why_it_matters": "Giúp phân biệt vai chịu tác động với những vai trò/hình thức gần nó khi tự phân tích câu."
+    },
+    {
+      "label": "cleft",
+      "meaning_vi": "cấu trúc chẻ để nhấn mạnh",
+      "explanation": "Tách thông tin thành khung như It was X who… để đặt trọng tâm đối chiếu vào X.",
+      "example": "It was Mai who called.",
+      "why_it_matters": "Giúp phân biệt cấu trúc chẻ để nhấn mạnh với những vai trò/hình thức gần nó khi tự phân tích câu."
+    },
+    {
+      "label": "contrastive focus",
+      "meaning_vi": "trọng tâm đối chiếu",
+      "explanation": "Làm nổi bật một lựa chọn so với lựa chọn khác đang được nghĩ đến.",
+      "example": "MAI called, not Hoàng.",
+      "why_it_matters": "Giúp phân biệt trọng tâm đối chiếu với những vai trò/hình thức gần nó khi tự phân tích câu."
+    },
+    {
+      "label": "prominence",
+      "meaning_vi": "độ nổi bật khi nói",
+      "explanation": "Một phần nghe nổi hơn nhờ cao độ, độ dài, cường độ hoặc phối hợp các tín hiệu.",
+      "example": "Nhấn LAPTOP khi sửa vật được mượn.",
+      "why_it_matters": "Giúp phân biệt độ nổi bật khi nói với những vai trò/hình thức gần nó khi tự phân tích câu."
+    },
+    {
+      "label": "rhythm",
+      "meaning_vi": "nhịp điệu lời nói",
+      "explanation": "Cách phân bố các phần nổi và nhẹ trong thời gian; không đòi các khoảng đều tuyệt đối.",
+      "example": "Các từ nhẹ có thể rút ngắn trong câu nói nhanh.",
+      "why_it_matters": "Giúp phân biệt nhịp điệu lời nói với những vai trò/hình thức gần nó khi tự phân tích câu."
+    },
+    {
+      "label": "segmental words",
+      "meaning_vi": "chuỗi từ xét theo các âm thành phần",
+      "explanation": "Trong thẻ này, chỉ phần từ/âm giữ nguyên khi đổi ngữ điệu, không phải một loại từ mới.",
+      "example": "You're coming có thể giữ từ nhưng đổi đường giọng.",
+      "why_it_matters": "Giúp phân biệt chuỗi từ xét theo các âm thành phần với những vai trò/hình thức gần nó khi tự phân tích câu."
+    },
+    {
+      "label": "segment",
+      "meaning_vi": "âm đoạn",
+      "explanation": "Một đơn vị âm trong chuỗi lời nói; khác lớp ngữ điệu trải trên cả cụm.",
+      "example": "/k/, /æ/, /t/ trong cat",
+      "why_it_matters": "Giúp phân biệt âm đoạn với những vai trò/hình thức gần nó khi tự phân tích câu."
+    },
+    {
+      "label": "progressive",
+      "meaning_vi": "thể tiếp diễn",
+      "explanation": "Be + -ing trình bày sự việc như đang diễn tiến tại một mốc.",
+      "example": "She was reading at eight.",
+      "why_it_matters": "Giúp phân biệt thể tiếp diễn với những vai trò/hình thức gần nó khi tự phân tích câu."
+    },
+    {
+      "label": "perfect",
+      "meaning_vi": "thể hoàn thành",
+      "explanation": "Have + past participle nhìn lại việc trước một mốc, thường với liên hệ đến mốc ấy.",
+      "example": "She has left; she had left.",
+      "why_it_matters": "Giúp phân biệt thể hoàn thành với những vai trò/hình thức gần nó khi tự phân tích câu."
+    },
+    {
+      "label": "sense",
+      "meaning_vi": "nghĩa cụ thể của từ",
+      "explanation": "Một từ có thể có nhiều nghĩa; chọn nghĩa từ ngữ cảnh và cách kết hợp.",
+      "example": "charge a phone khác charge a fee",
+      "why_it_matters": "Giúp phân biệt nghĩa cụ thể của từ với những vai trò/hình thức gần nó khi tự phân tích câu."
+    },
+    {
+      "label": "pattern",
+      "meaning_vi": "mẫu cấu trúc/kết hợp",
+      "explanation": "Cách các vị trí quanh từ hoặc trong câu được tổ chức; không chỉ một bản dịch.",
+      "example": "give someone something",
+      "why_it_matters": "Giúp phân biệt mẫu cấu trúc/kết hợp với những vai trò/hình thức gần nó khi tự phân tích câu."
+    },
+    {
+      "label": "category",
+      "meaning_vi": "loại ngữ pháp",
+      "explanation": "Nhóm như noun, verb, adjective, dựa vào cách hoạt động trong cấu trúc.",
+      "example": "legal là adjective; legality là noun.",
+      "why_it_matters": "Giúp phân biệt loại ngữ pháp với những vai trò/hình thức gần nó khi tự phân tích câu."
+    },
+    {
+      "label": "prefix",
+      "meaning_vi": "tiền tố",
+      "explanation": "Phần đứng trước gốc từ để đổi nghĩa hoặc tạo từ; không phải mọi tiền tố dùng với mọi gốc.",
+      "example": "un- trong unhappy",
+      "why_it_matters": "Giúp phân biệt tiền tố với những vai trò/hình thức gần nó khi tự phân tích câu."
+    },
+    {
+      "label": "suffix",
+      "meaning_vi": "hậu tố",
+      "explanation": "Phần đứng sau gốc từ; có thể đổi loại từ hoặc mang thông tin ngữ pháp.",
+      "example": "-ness trong kindness",
+      "why_it_matters": "Giúp phân biệt hậu tố với những vai trò/hình thức gần nó khi tự phân tích câu."
+    },
+    {
+      "label": "polarity",
+      "meaning_vi": "tính khẳng định/phủ định",
+      "explanation": "Sự đối lập có/không trong câu; trong cấu tạo từ đôi khi nói hướng nghĩa đối lập.",
+      "example": "is ready / is not ready",
+      "why_it_matters": "Giúp phân biệt tính khẳng định/phủ định với những vai trò/hình thức gần nó khi tự phân tích câu."
+    },
+    {
+      "label": "corpus",
+      "meaning_vi": "kho ngữ liệu",
+      "explanation": "Tập văn bản/lời nói được tập hợp để quan sát cách dùng thực tế; phải xem cả ngữ cảnh.",
+      "example": "Tra các ví dụ take a photo trong corpus.",
+      "why_it_matters": "Giúp phân biệt kho ngữ liệu với những vai trò/hình thức gần nó khi tự phân tích câu."
+    },
+    {
+      "label": "chunk",
+      "meaning_vi": "cụm ngôn ngữ quen dùng",
+      "explanation": "Một nhóm từ thường được học/xử lý cùng nhau, vẫn có thể thay đổi vài vị trí.",
+      "example": "Would you like…?",
+      "why_it_matters": "Giúp phân biệt cụm ngôn ngữ quen dùng với những vai trò/hình thức gần nó khi tự phân tích câu."
+    },
+    {
+      "label": "slot",
+      "meaning_vi": "vị trí cần điền trong mẫu",
+      "explanation": "Một chỗ dành cho loại hình thức/thành phần phù hợp, không phải từ cố định.",
+      "example": "Sau did, slot động từ dùng dạng gốc.",
+      "why_it_matters": "Giúp phân biệt vị trí cần điền trong mẫu với những vai trò/hình thức gần nó khi tự phân tích câu."
+    },
+    {
+      "label": "coordination",
+      "meaning_vi": "quan hệ đẳng lập",
+      "explanation": "Nối các thành phần cùng cấp bằng and, but, or…",
+      "example": "Mai cooked and Nam washed up.",
+      "why_it_matters": "Giúp phân biệt quan hệ đẳng lập với những vai trò/hình thức gần nó khi tự phân tích câu."
+    },
+    {
+      "label": "weak form",
+      "meaning_vi": "dạng phát âm nhẹ",
+      "explanation": "Một số từ chức năng có dạng rút gọn khi không được nhấn; không phải phát âm sai.",
+      "example": "can thường có dạng nhẹ /kən/",
+      "why_it_matters": "Giúp phân biệt dạng phát âm nhẹ với những vai trò/hình thức gần nó khi tự phân tích câu."
+    },
+    {
+      "label": "noun",
+      "meaning_vi": "danh từ",
+      "explanation": "Loại từ thường chỉ người, vật, chất hoặc khái niệm và có thể làm trung tâm noun phrase.",
+      "example": "teacher; water; happiness",
+      "why_it_matters": "Giúp phân biệt danh từ với những vai trò/hình thức gần nó khi tự phân tích câu."
+    },
+    {
+      "label": "verb",
+      "meaning_vi": "động từ",
+      "explanation": "Loại từ tổ chức sự việc/trạng thái; các mẫu quanh nó quyết định câu cần những thành phần nào.",
+      "example": "sleep; give; know",
+      "why_it_matters": "Giúp phân biệt động từ với những vai trò/hình thức gần nó khi tự phân tích câu."
+    },
+    {
+      "label": "agent",
+      "meaning_vi": "vai tác nhân",
+      "explanation": "Người/vật chủ động gây ra sự việc trong phân tích ngữ nghĩa; không đồng nhất subject.",
+      "example": "The door was opened by Mai: Mai là agent.",
+      "why_it_matters": "Giúp phân biệt vai tác nhân với những vai trò/hình thức gần nó khi tự phân tích câu."
+    }
+  ]
+}

@@ -8,14 +8,10 @@ test.describe("Twogether local learning features", () => {
     await page.getByTestId("learner-choice-hiep").click();
     await expect(page.getByTestId("nav-study")).toHaveCount(0);
     await page.getByRole("button", { name: "Học bộ Meaning → Clause, 8 thẻ" }).click();
-    await expect(page.getByTestId("study-progress").locator("i")).toHaveText(
-      "/ 08",
-    );
+    await expect(page.getByTestId("card-jump-range")).toHaveAttribute("max", "8");
     await page.getByRole("button", { name: "Đóng flashcard và trở lại cây" }).click();
     await page.getByRole("button", { name: "Học bộ Verb Architecture, 9 thẻ" }).click();
-    await expect(page.getByTestId("study-progress").locator("i")).toHaveText(
-      "/ 09",
-    );
+    await expect(page.getByTestId("card-jump-range")).toHaveAttribute("max", "9");
   });
 
   test("opens the local authoring view and keeps new content as draft", async ({
@@ -54,10 +50,11 @@ test.describe("Twogether local learning features", () => {
     await page.getByTestId("nav-cards").click();
     await expect(page.getByText("English Core v2 · 89 thẻ chính thức")).toBeVisible();
     await page.getByTestId("nav-map").click({ force: true });
-    await page.getByRole("button", { name: "Học bộ Meaning → Clause, 8 thẻ" }).click();
+    await page.getByRole("button", { name: "Học bộ Expanding the Clause, 9 thẻ" }).click();
+    await page.getByTestId("card-jump-range").fill("4");
     await expect(page.getByTestId("reveal-panel")).toHaveCount(0);
 
-    await page.locator(".glossary-chip").first().click();
+    await page.locator(".study-face-front .glossary-inline").first().click();
     await expect(page.getByTestId("glossary-dialog")).toBeVisible();
     await expect(page.getByTestId("glossary-dialog")).toContainText(
       "VÌ SAO CẦN BIẾT",
@@ -67,29 +64,41 @@ test.describe("Twogether local learning features", () => {
       .click({ force: true });
     await page.getByRole("button", { name: /Đã thử/ }).click({ force: true });
     await expect(page.getByTestId("reveal-panel")).toBeVisible();
-    await expect(page.getByTestId("transfer-answer")).not.toBeVisible();
-    await page.locator("details.transfer-answer summary").click({ force: true });
+    await expect(page.getByText("DỄ NHẦM")).toHaveCount(0);
+    await expect(page.locator(".answer-block .glossary-inline").first()).toBeVisible();
+    await expect(page.locator(".why-block .glossary-inline").first()).toBeVisible();
+    await page.getByRole("tab", { name: "Tình huống mới" }).click();
+    await expect(page.locator(".transfer-page .glossary-inline").first()).toBeVisible();
     await expect(page.getByTestId("transfer-answer")).toBeVisible();
+    await page.getByTestId("transfer-answer").locator(".glossary-inline").first().click();
+    await expect(page.getByTestId("glossary-dialog")).toBeVisible();
   });
 
-  test("lets the owner flag weak textbook cards and merges only the unflagged cards", async ({
+  test("publishes coursebook knowledge directly and keeps only vocabulary cards for review", async ({
     page,
   }) => {
     await page.goto("/");
     await page.getByTestId("learner-choice-hiep").click();
     await page.getByTestId("nav-cards").click();
     const empowerPanel = page.locator("details.coursebook-review").filter({ hasText: "Empower A2" });
-    await expect(
-      page.getByText("Empower A2 · 81 thẻ chờ bạn duyệt"),
-    ).toBeVisible();
+    await expect(page.getByText("Empower A2 · 7 thẻ Vocabulary Focus")).toBeVisible();
     await empowerPanel.locator(":scope > summary").click();
-    await empowerPanel.locator(".coursebook-flag input").first().check();
-    await expect(empowerPanel.getByText("1 cần sửa/bỏ")).toBeVisible();
-    await empowerPanel.getByRole("button", { name: "Gộp 80 thẻ đạt yêu cầu" }).click();
-    await expect(page.getByText("Đã gộp 80 thẻ đạt yêu cầu")).toBeVisible();
+    await expect(empowerPanel.getByRole("button", { name: "Duyệt và đưa vào cây" })).toHaveCount(7);
+    await expect(page.locator(".card-library-list .library-card")).toHaveCount(74);
+    await page.locator(".card-library-list .library-card").first().getByRole("button", { name: "Sửa" }).click();
+    await expect(page.locator(".editor-card")).toBeVisible();
+    await page.locator(".editor-card").getByRole("button", { name: "Đóng" }).click();
+    await empowerPanel.getByRole("button", { name: "Duyệt và đưa vào cây" }).nth(2).click();
+    await expect(empowerPanel.getByText("1/7 đã duyệt")).toBeVisible();
+    expect(await page.evaluate(() => {
+      const raw = localStorage.getItem("twogether.workspace.p0.v1");
+      if (!raw) return [];
+      const workspace = JSON.parse(raw) as { cards?: Array<{ id: string; glossary_refs?: string[] }> };
+      return workspace.cards?.find((card) => card.id === "coursebook-a2-vocab-03")?.glossary_refs ?? [];
+    })).toContain("collocation");
     await page.getByTestId("nav-map").click();
-    await page.getByRole("button", { name: "Học bộ Empower A2 · Học bền vững, 80 thẻ" }).click();
-    await expect(page.getByTestId("map-study-overlay")).toContainText("Empower A2 · Học bền vững");
+    await page.getByRole("button", { name: "Học bộ Empower · Từ mới, 1 thẻ" }).click();
+    await expect(page.getByTestId("map-study-overlay")).toContainText("Empower · Từ mới");
   });
 
   test("shows the owner-approved beginner Core as the official editable curriculum", async ({ page }) => {

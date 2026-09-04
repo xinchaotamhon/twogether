@@ -1,212 +1,183 @@
-import { GlossaryHelp } from "./GlossaryHelp";
-import type { RepairItem } from "./studyPolicy";
+import { useEffect, useRef, useState } from "react";
+import { GlossaryText } from "./GlossaryHelp";
 import type { Card, ReviewRating } from "./types";
 
 export interface StudyViewProps {
   dueCount: number;
+  currentIndex: number;
   currentCard: Card | null;
   cardNodeTitle: string;
-  repairQueue: RepairItem[];
+  forgottenCount: number;
   completedReviews: number;
   revealed: boolean;
   attemptText: string;
   setAttemptText: (value: string) => void;
   handleAttempt: () => void;
+  onFlipToQuestion: () => void;
   handleGrade: (rating: ReviewRating) => void;
   restartSession: () => void;
+  onPrevious: () => void;
+  onNext: () => void;
+  onShuffle: () => void;
+  onJumpTo: (index: number) => void;
   message: string | null;
-  lastInterval: string | null;
   savingReview: boolean;
 }
 
 export function StudyView({
   dueCount,
+  currentIndex,
   currentCard,
   cardNodeTitle,
-  repairQueue,
+  forgottenCount,
   completedReviews,
   revealed,
   attemptText,
   setAttemptText,
   handleAttempt,
+  onFlipToQuestion,
   handleGrade,
   restartSession,
+  onPrevious,
+  onNext,
+  onShuffle,
+  onJumpTo,
   message,
-  lastInterval,
   savingReview,
 }: StudyViewProps) {
+  const [backPage, setBackPage] = useState<"answer" | "transfer">("answer");
+  const pointerStartX = useRef<number | null>(null);
+
+  useEffect(() => setBackPage("answer"), [currentCard?.id, revealed]);
+
   if (!currentCard)
     return (
-      <section className="empty-state surface" aria-live="polite">
+      <section className="session-finished" aria-live="polite">
         <div className="empty-symbol">✦</div>
-        <span className="eyebrow">PHIÊN ĐÃ XONG</span>
-        <h1>Một phiên học vừa đủ.</h1>
-        <p>
-          Hoàn thành bộ là một cam kết quay lại, không phải tuyên bố đã nhớ hết
-          mọi thứ.
-        </p>
-        <div className="empty-actions">
-          <button className="button button-primary" onClick={restartSession}>
-            Học lại bộ này
-          </button>
-          <span className="helper-text">
-            {completedReviews}/{dueCount} card đã được gọi ý
-          </span>
-        </div>
+        <span className="eyebrow">ĐÃ ĐI QUA CẢ BỘ</span>
+        <h1>Xong một vòng.</h1>
+        <p>{forgottenCount ? `${forgottenCount} câu Quên đang được giữ tạm trong phiên này.` : "Không còn câu nào trong danh sách Quên của phiên này."}</p>
+        <button className="button button-primary" onClick={restartSession}>
+          {forgottenCount ? `Ôn lại ${forgottenCount} câu Quên` : "Học lại bộ này"}
+        </button>
       </section>
     );
-  const progress = Math.min(
-    100,
-    Math.round((completedReviews / Math.max(1, dueCount)) * 100),
-  );
+
+  const progress = Math.min(100, Math.round((completedReviews / Math.max(1, dueCount)) * 100));
+  const glossaryRefs = currentCard.glossary_refs;
+  const changeCard = (direction: "previous" | "next") => {
+    if (direction === "previous") onPrevious();
+    else onNext();
+  };
+
   return (
-    <>
-      <section className="study-intro">
-        <div>
-          <h1>
-            Chậm một nhịp,
-            <br />
-            <em>nhớ thêm một chút.</em>
-          </h1>
-        </div>
-        <div
-          data-testid="study-progress"
-          className="study-progress"
-          aria-label={`${progress}% phiên học`}
-        >
-          <span>
-            {String(Math.min(dueCount, completedReviews)).padStart(2, "0")}
-          </span>
-          <i>/ {String(Math.max(dueCount, 1)).padStart(2, "0")}</i>
-          <small>đã gọi ý</small>
-        </div>
-      </section>
-      <div className="progress-track" aria-hidden="true">
-        <span style={{ width: `${progress}%` }} />
+    <section className="session-study" data-testid="session-study">
+      <div className="session-navigation" aria-label="Điều hướng trong bộ thẻ">
+        <button type="button" aria-label="Thẻ trước" onClick={onPrevious}>←</button>
+        <label>
+          <span>{currentIndex + 1}/{dueCount}</span>
+          <input
+            data-testid="card-jump-range"
+            type="range"
+            min="1"
+            max={Math.max(1, dueCount)}
+            value={Math.min(dueCount, currentIndex + 1)}
+            onChange={(event) => onJumpTo(Number(event.target.value) - 1)}
+            aria-label="Chuyển đến thẻ bất kỳ"
+          />
+        </label>
+        <button type="button" className="shuffle-button" onClick={onShuffle}>Xáo ↝</button>
+        <button type="button" aria-label="Thẻ sau" onClick={onNext}>→</button>
       </div>
-      <section className="study-layout">
-        <div className="study-side-note">
-          <span className="side-note-number">01</span>
-          <span className="side-note-copy">
-            Gọi ý<br />
-            trước phản hồi
-          </span>
-        </div>
+
+      <div
+        className="flip-card-stage"
+        onPointerDown={(event) => { pointerStartX.current = event.clientX; }}
+        onPointerUp={(event) => {
+          if (pointerStartX.current === null) return;
+          const distance = event.clientX - pointerStartX.current;
+          pointerStartX.current = null;
+          if (Math.abs(distance) < 60) return;
+          changeCard(distance > 0 ? "previous" : "next");
+        }}
+      >
         <article
           data-testid="study-card"
-          className={`study-card surface ${revealed ? "is-revealed" : ""}`}
+          className={`study-flip-card ${revealed ? "is-revealed" : ""}`}
           aria-labelledby="card-prompt"
         >
-          <div className="card-meta">
-            <span className="card-node">{cardNodeTitle}</span>
-          </div>
-          <div className="card-question">
-            <span className="question-mark" aria-hidden="true">
-              ?
-            </span>
-            <h2 id="card-prompt">{currentCard.prompt}</h2>
-          </div>
-          {!revealed ? (
-            <div className="attempt-panel">
-              <GlossaryHelp termIds={currentCard.glossary_refs} />
+          <section className="study-face study-face-front" aria-hidden={revealed} inert={revealed}>
+            <div className="card-meta">
+              <span className="card-node">{cardNodeTitle}</span>
+              <span>MẶT CÂU HỎI</span>
+            </div>
+            <div className="flip-question">
+              <span className="question-mark" aria-hidden="true">?</span>
+              <h2 id="card-prompt"><GlossaryText text={currentCard.prompt} termIds={glossaryRefs} /></h2>
+            </div>
+            <div className="flip-attempt">
               <textarea
                 value={attemptText}
                 onChange={(event) => setAttemptText(event.target.value)}
                 placeholder="Viết thứ gì đó vào đây"
                 aria-label="Câu trả lời riêng, không được lưu"
-                rows={3}
+                rows={2}
               />
-              <div className="attempt-actions">
-                <span className="attempt-reminder">
-                  Tự nghĩ trước khi xem lời giải chính.
-                </span>
-                <button className="button button-dark" onClick={handleAttempt}>
-                  Đã thử — xem đáp án <span aria-hidden="true">↗</span>
-                </button>
-              </div>
+              <button className="button button-dark" onClick={handleAttempt}>Đã thử — lật thẻ <span aria-hidden="true">↻</span></button>
             </div>
-          ) : (
-            <div
-              data-testid="reveal-panel"
-              className="reveal-panel"
-              aria-live="polite"
-            >
-              <div className="answer-block">
-                <span className="section-label">LỜI GIẢI NGẮN</span>
-                <p className="model-answer">{currentCard.model_answer}</p>
-              </div>
-              <GlossaryHelp termIds={currentCard.glossary_refs} />
-              <div className="explanation-grid">
-                <div>
+          </section>
+
+          <section data-testid={revealed ? "reveal-panel" : undefined} className="study-face study-face-back" aria-hidden={!revealed} inert={!revealed}>
+            <div className="card-meta">
+              <span className="card-node">{cardNodeTitle}</span>
+              <button type="button" className="flip-back-button" onClick={onFlipToQuestion}>↻ Xem câu hỏi</button>
+            </div>
+            <div className="back-page-tabs" role="tablist" aria-label="Nội dung mặt đáp án">
+              <button type="button" role="tab" aria-selected={backPage === "answer"} onClick={() => setBackPage("answer")}>Đáp án & vì sao</button>
+              <button type="button" role="tab" aria-selected={backPage === "transfer"} onClick={() => setBackPage("transfer")}>Tình huống mới</button>
+            </div>
+            {backPage === "answer" ? (
+              <div className="back-page" role="tabpanel">
+                <div className="answer-block">
+                  <span className="section-label">LỜI GIẢI NGẮN</span>
+                  <p className="model-answer"><GlossaryText text={currentCard.model_answer} termIds={glossaryRefs} /></p>
+                </div>
+                <div className="why-block">
                   <span className="section-label">VÌ SAO</span>
-                  <p>{currentCard.explanation}</p>
-                </div>
-                <div className="misconception">
-                  <span className="section-label">DỄ NHẦM</span>
-                  <p>{currentCard.misconception}</p>
+                  <p><GlossaryText text={currentCard.explanation} termIds={glossaryRefs} /></p>
                 </div>
               </div>
-              <div className="transfer-block">
-                <span className="section-label">
-                  THỬ CHUYỂN SANG TÌNH HUỐNG MỚI
-                </span>
-                <p>{currentCard.transfer_prompt}</p>
+            ) : (
+              <div className="back-page transfer-page" role="tabpanel">
+                <div>
+                  <span className="section-label">THỬ CHUYỂN SANG TÌNH HUỐNG MỚI</span>
+                  <p className="transfer-question"><GlossaryText text={currentCard.transfer_prompt} termIds={glossaryRefs} /></p>
+                </div>
                 {currentCard.transfer_answer && (
-                  <details className="transfer-answer">
-                    <summary>Xem lời giải gợi ý</summary>
-                    <p data-testid="transfer-answer">
-                      {currentCard.transfer_answer}
-                    </p>
-                    <small>
-                      Một cách làm mẫu; cách diễn đạt khác vẫn có thể đúng.
-                    </small>
-                  </details>
+                  <div className="transfer-solution">
+                    <span className="section-label">MỘT CÁCH LÀM</span>
+                    <p data-testid="transfer-answer"><GlossaryText text={currentCard.transfer_answer} termIds={glossaryRefs} /></p>
+                  </div>
                 )}
               </div>
-              <div className="grade-actions">
-                <button
-                  className="button button-forgot"
-                  disabled={savingReview}
-                  onClick={() => handleGrade("Again")}
-                >
-                  <span className="grade-icon">↺</span>
-                  <span>
-                    <strong>Quên</strong>
-                    <small>Cần gặp lại sau vài card</small>
-                  </span>
-                </button>
-                <button
-                  className="button button-remember"
-                  disabled={savingReview}
-                  onClick={() => handleGrade("Good")}
-                >
-                  <span className="grade-icon">✦</span>
-                  <span>
-                    <strong>Nhớ</strong>
-                    <small>
-                      {savingReview
-                        ? "Đang ghi…"
-                        : (lastInterval ?? "Đưa vào lịch FSRS")}
-                    </small>
-                  </span>
-                </button>
-              </div>
+            )}
+            <div className="grade-actions">
+              <button className="button button-forgot" disabled={savingReview} onClick={() => handleGrade("Again")}>
+                <span className="grade-icon">↺</span><span><strong>Quên</strong><small>Lưu tạm trong phiên</small></span>
+              </button>
+              <button className="button button-remember" disabled={savingReview} onClick={() => handleGrade("Good")}>
+                <span className="grade-icon">✦</span><span><strong>Nhớ</strong><small>Gỡ khỏi danh sách sai</small></span>
+              </button>
             </div>
-          )}
-          {repairQueue.length > 0 && (
-            <footer className="card-footer">
-              <span className="repair-badge">
-                ↺ {repairQueue.length} đang củng cố
-              </span>
-            </footer>
-          )}
+          </section>
         </article>
-      </section>
-      {message && (
-        <p className="toast" role="status">
-          {message}
-        </p>
-      )}
-    </>
+      </div>
+
+      <div className="session-status" aria-live="polite">
+        <span>{progress}% đã tự kiểm tra</span>
+        <span>↺ {forgottenCount} câu Quên</span>
+        {message && <strong>{message}</strong>}
+      </div>
+    </section>
   );
 }

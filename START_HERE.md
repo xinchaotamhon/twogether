@@ -36,7 +36,7 @@ Routine continuation is self-contained here; the Vault is only needed to discove
 - Card content is shared project knowledge; each learner owns a separate review history.
 - The default study interaction is open-ended recall followed by self-grading. Do not turn the core path into multiple-choice.
 - A concept map is a prerequisite DAG rendered as a tree-like map. It is a learning aid, not a claim that English or principles have one perfect taxonomy.
-- FSRS-6 schedules durable reviews. A lapse enters a short repair loop, then returns to FSRS; it does not erase history by blindly resetting a card.
+- In durable mode, FSRS-6 schedules reviews. A lapse enters a short repair loop, then returns to FSRS; it does not erase history by blindly resetting a card. Temporary runtime overrides (including a session-only mode) live in `40-State/CURRENT_STATE.md` and must preserve this history for rollback.
 - PWA/offline shell is part of the MVP. Push notifications are opt-in Phase 2, after the study loop works and HTTPS/backend delivery is verified.
 - Never claim the two Claude share URLs were read unless their text is actually captured and checked. Their current status is owned by `docs/CLAUDE_SOURCE_STATUS.md`.
 

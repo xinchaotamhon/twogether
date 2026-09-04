@@ -13,6 +13,14 @@ ALLOWED_TERMS = {
     "lexical-verb", "determiner", "noun-phrase", "reference", "valency", "subordination",
     "relative-clause", "discourse", "collocation", "prosody", "phoneme", "morpheme",
 }
+EXPECTED_TRANSFER_REVISION_IDS = {
+    "core-en-03", "core-en-05", "core-en-25", "core-en-26", "core-en-39",
+    "core-en-40", "core-en-46", "core-en-47", "core-en-48", "core-en-49",
+    "core-en-50", "core-en-51", "core-en-52", "core-en-54", "core-en-56",
+    "core-en-57", "core-en-58", "core-en-59", "core-en-60", "core-en-61",
+    "core-en-62", "core-en-65", "core-en-67", "core-en-69", "core-en-70",
+    "core-en-73", "core-en-74", "core-en-75", "core-en-76", "core-en-78",
+}
 
 
 def main() -> int:
@@ -31,19 +39,38 @@ def main() -> int:
         errors.append("every transfer answer must be non-empty")
 
     study = Path("src/StudyView.tsx").read_text(encoding="utf-8")
-    for literal in ["Đã thử — xem đáp án", "Xem lời giải gợi ý", 'data-testid="transfer-answer"', "GlossaryHelp"]:
+    for literal in ["Đã thử — lật thẻ", "Tình huống mới", 'data-testid="transfer-answer"', "GlossaryText"]:
         if literal not in study:
             errors.append(f"StudyView lacks {literal!r}")
     for removed in ["Chưa hiểu câu hỏi?", "Xem lời giải câu phụ"]:
         if removed in study:
             errors.append(f"active StudyView still renders removed secondary-question control {removed!r}")
+    app = Path("src/App.tsx").read_text(encoding="utf-8")
+    if "supportForCard(rawCurrentCard.id)" in app:
+        errors.append("study must not overwrite current v2 or Human-edited answers with legacy support")
+    approved = Path("src/approvedCurriculum.ts").read_text(encoding="utf-8")
+    if "transferOverrides.get(card.id)" not in approved:
+        errors.append("paired transfer revisions must be applied at the base-card boundary")
 
     if errors:
         print(f"[FAIL] learning support contract: {len(errors)} error(s)")
         for error in errors:
             print(f" - {error}")
         return 1
-    print("[PASS] 89 worked transfer answers + glossary + attempt-before-reveal boundary")
+    revisions = json.loads(Path("content/revisions/english-core-transfer-novelty-v3.json").read_text(encoding="utf-8"))
+    revision_ids = {record.get("card_id") for record in revisions.get("overrides", [])}
+    if revision_ids != EXPECTED_TRANSFER_REVISION_IDS or len(revisions.get("overrides", [])) != len(EXPECTED_TRANSFER_REVISION_IDS):
+        errors.append("transfer novelty revision must contain the exact 30 audited scenarios")
+    for record in revisions.get("overrides", []):
+        if not str(record.get("transfer_prompt", "")).strip() or not str(record.get("transfer_answer", "")).strip():
+            errors.append(f"{record.get('card_id')}: revised transfer prompt/answer must stay paired")
+
+    if errors:
+        print(f"[FAIL] learning support contract: {len(errors)} error(s)")
+        for error in errors:
+            print(f" - {error}")
+        return 1
+    print("[PASS] 89 worked transfer answers + inline glossary + 30 novel transfer revisions + reveal boundary")
     return 0
 
 

@@ -127,7 +127,7 @@
     },
     {
       "id": "content.empower-a2-review-contract",
-      "description": "The fully inspected coursebook yields 81 source-linked long-term cards that remain review-only until owner merge",
+      "description": "The inspected coursebook keeps immutable provenance while publishing Hiệp-approved knowledge and reviewing vocabulary only",
       "tier": "smoke",
       "command": ["{python}", "tools/check_coursebook_review.py"],
       "cwd": ".",
@@ -136,9 +136,24 @@
       "required": true,
       "enabled": true,
       "introduced_by": "empower-a2-long-term-branch-2026-09-01",
-      "invariant": "No AI coursebook card is silently approved and every card stays anchored to English Core with page provenance",
+      "invariant": "Exactly 74 owner-approved knowledge cards publish and seven vocabulary cards remain review-only, all anchored with page provenance",
       "owner": "hiep",
-      "evidence": "50-Evidence/empower-a2-coursebook-review-2026-09-01.md"
+      "evidence": "50-Evidence/session-study-english-tree-2026-09-04.md"
+    },
+    {
+      "id": "app.session-study-contract",
+      "description": "Temporary session study disables persistence authority while preserving focused flip-card learning",
+      "tier": "smoke",
+      "command": ["{python}", "tools/check_session_study_contract.py"],
+      "cwd": ".",
+      "timeout_seconds": 20,
+      "expected_exit_code": 0,
+      "required": true,
+      "enabled": true,
+      "introduced_by": "session-study-english-tree-2026-09-04",
+      "invariant": "Default runtime writes neither Supabase nor FSRS/streak; only forgotten IDs persist for the active browser tab",
+      "owner": "hiep",
+      "evidence": "50-Evidence/session-study-english-tree-2026-09-04.md"
     },
     {
       "id": "content.personal-style-contract",
@@ -202,7 +217,7 @@
     },
     {
       "id": "browser.p0-contract",
-      "description": "Production preview passes inline map study, learner isolation, history migration, responsive non-overlap, and PWA cache checks",
+      "description": "Production preview passes centered session flip study, glossary help, learner isolation, tree layout, responsive non-overlap, and PWA cache checks",
       "tier": "smoke",
       "command": ["node", "tools/run_browser_gate.mjs"],
       "cwd": ".",
@@ -213,7 +228,7 @@
       "introduced_by": "browser-p0-contract",
       "invariant": "Existing browsers gain the approved content without losing history and the critical learner path remains accessible",
       "owner": "hiep",
-      "evidence": "50-Evidence/english-core-published-migration-2026-08-26.md"
+      "evidence": "50-Evidence/session-study-english-tree-2026-09-04.md"
     }
   ]
 }

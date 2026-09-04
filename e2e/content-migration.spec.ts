@@ -20,13 +20,13 @@ test("migrates a legacy browser shelf without deleting streak, runs, or local co
 
   await page.goto("/");
   await expect(page.getByTestId("nav-study")).toHaveCount(0);
-  await expect(page.getByRole("button", { name: "Học bộ So sánh của tôi, 0 thẻ" })).toBeAttached();
+  await expect(page.getByTestId("tree-node-twogether-collection-my-comparisons")).toContainText("So sánh của tôi");
   await page.getByRole("button", { name: "Học bộ Meaning → Clause, 8 thẻ" }).click();
-  await expect(page.getByTestId("study-progress").locator("i")).toHaveText("/ 08");
+  await expect(page.getByTestId("card-jump-range")).toHaveAttribute("max", "8");
 
   const migrated = await page.evaluate(() => JSON.parse(localStorage.getItem("twogether.workspace.p0.v1") ?? "{}"));
   expect(migrated.version).toBe(2);
-  expect(migrated.collections).toHaveLength(11);
+  expect(migrated.collections).toHaveLength(19);
   expect(migrated.dailyQualifications).toHaveLength(1);
   expect(migrated.runs["legacy-run"].status).toBe("qualified");
 });

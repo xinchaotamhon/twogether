@@ -1,0 +1,159 @@
+{
+  "schema_version": 1,
+  "revision_id": "english-core-transfer-novelty-v3-2026-09-04",
+  "status": "owner_directed_runtime_revision",
+  "decided_by": "hiep",
+  "reason": "A transfer task must use a genuinely different but structurally comparable situation instead of repeating the main prompt.",
+  "overrides": [
+    {
+      "card_id": "core-en-39",
+      "transfer_prompt": "Bạn nhờ Hoàng lấy sách trong hai hoàn cảnh: cả hai đã nói về một cuốn sách cụ thể; hoặc trên bàn có nhiều cuốn và cuốn nào cũng được. Hãy chọn determiner tự nhiên cho mỗi câu.",
+      "transfer_answer": "Cuốn đã biết: ‘Please bring me the book we discussed.’ Cuốn nào cũng được: ‘Please bring me any book from the table.’ Determiner đổi theo việc người nghe cần nhận đúng một cuốn hay có thể chọn tự do."
+    },
+    {
+      "card_id": "core-en-49",
+      "transfer_prompt": "Viết hai câu về một chiếc xe đạp mới: câu đầu giới thiệu nó, câu sau dùng một điểm bám cũ để thêm thông tin về màu sắc.",
+      "transfer_answer": "‘I bought a bicycle yesterday. It is bright blue.’ A bicycle giới thiệu đối tượng; It nối lại chiếc xe đã biết rồi bright blue đưa thông tin mới."
+    },
+    {
+      "card_id": "core-en-73",
+      "transfer_prompt": "Từ ý ‘Lan có lẽ đã gửi báo cáo’, hãy xác định sự việc, vai trò, mức chắc chắn và quan hệ thời gian rồi tạo một câu tiếng Anh.",
+      "transfer_answer": "Sự việc là gửi; Lan là subject và the report là object. Might biểu thị khả năng, còn have sent đặt việc gửi trước mốc nói: ‘Lan might have sent the report.’"
+    },
+    {
+      "card_id": "core-en-74",
+      "transfer_prompt": "Giữ sự việc ‘The chef prepared the meal’ rồi tạo một câu hỏi, một câu bị động và một câu nói khả năng việc đó đã xảy ra; giải thích lớp nghĩa mới.",
+      "transfer_answer": "Question: ‘Did the chef prepare the meal?’ Passive: ‘The meal was prepared by the chef.’ Khả năng trước mốc nói: ‘The chef may have prepared the meal.’ Ba phiên bản lần lượt hỏi, đổi điểm xuất phát và thêm mức chắc chắn."
+    },
+    {
+      "card_id": "core-en-75",
+      "transfer_prompt": "Bạn nghe ‘We could have missed the last bus’ nhưng bỏ sót have. Hãy ghi dự đoán ban đầu, bằng chứng sửa lỗi và tạo một câu mới cùng cấu trúc.",
+      "transfer_answer": "Ban đầu có thể chỉ nghe could + miss. Bằng chứng là could have missed nói về một khả năng trong quá khứ. Câu chuyển giao: ‘They could have taken the wrong train.’"
+    },
+    {
+      "card_id": "core-en-76",
+      "transfer_prompt": "Bạn muốn xin thêm một ngày làm bài. Hãy nói với bạn cùng nhóm và với giáo viên theo hai cách phù hợp, rồi chỉ ra lựa chọn ngôn ngữ đã đổi.",
+      "transfer_answer": "Với bạn cùng nhóm: ‘Can we finish it tomorrow?’ Với giáo viên: ‘Could I have one more day to finish the assignment, please?’ Modal, mức trực tiếp và lượng thông tin đổi theo quan hệ và mục tiêu."
+    },
+    {
+      "card_id": "core-en-03",
+      "transfer_prompt": "Trong ‘The nurse helped the patient’, hãy đổi chỗ hai noun phrase rồi giải thích vì sao nghĩa đổi.",
+      "transfer_answer": "‘The patient helped the nurse’ đổi người giúp thành the patient và người nhận giúp thành the nurse. Trật tự noun phrase quanh verb đang mã hoá hai vai trò khác nhau."
+    },
+    {
+      "card_id": "core-en-05",
+      "transfer_prompt": "So sánh ‘The door opened’ và ‘Nam opened the door’: câu nào nêu người gây ra sự việc, câu nào có object?",
+      "transfer_answer": "‘The door opened’ chỉ trình bày sự thay đổi của the door, không có object. ‘Nam opened the door’ có Nam là subject/người gây ra và the door là object."
+    },
+    {
+      "card_id": "core-en-25",
+      "transfer_prompt": "Phân tích ‘She may be waiting outside’ thành sự việc, cách nhìn diễn tiến và mức chắc chắn.",
+      "transfer_answer": "Wait là sự việc; be waiting tạo progressive aspect; may biểu thị modality với mức chắc chắn chưa cao. Các lớp đóng góp những phần nghĩa khác nhau."
+    },
+    {
+      "card_id": "core-en-26",
+      "transfer_prompt": "Trong tình huống hiện tại, vì sao ‘I wish I lived nearer’ dùng lived dù người nói đang nói về nơi ở bây giờ?",
+      "transfer_answer": "Lived không khẳng định một nơi ở đã kết thúc trong quá khứ; past form giúp đặt ý ‘ở gần hơn’ xa thực tế hiện tại, tức một mong muốn trái với điều đang có."
+    },
+    {
+      "card_id": "core-en-40",
+      "transfer_prompt": "Viết hai câu có một bác sĩ và một y tá, rồi viết câu thứ ba nói một người đã gọi lại. Hãy sửa câu thứ ba để người đọc biết chắc ai gọi.",
+      "transfer_answer": "Ví dụ: ‘A doctor spoke to a nurse. The nurse took the message. The nurse called back later.’ Lặp noun phrase cần thiết rõ hơn dùng she khi có hai referent cùng phù hợp."
+    },
+    {
+      "card_id": "core-en-46",
+      "transfer_prompt": "Từ ‘The scientist examined the sample’, hãy thêm một mô tả cho scientist, một nơi chốn và một mốc thời gian; sau đó chỉ ra lõi còn lại.",
+      "transfer_answer": "Ví dụ: ‘The careful scientist examined the sample in the lab after lunch.’ Lõi là ‘The scientist examined the sample’; careful, in the lab và after lunch lần lượt thêm đặc điểm, nơi và thời gian."
+    },
+    {
+      "card_id": "core-en-47",
+      "transfer_prompt": "Ba ý mới là ‘The power failed’, ‘The room went dark’, ‘The class stopped’. Hãy ghép chúng để làm rõ ít nhất một quan hệ nguyên nhân hoặc thời gian.",
+      "transfer_answer": "Ví dụ: ‘When the power failed, the room went dark, so the class stopped.’ When thêm quan hệ thời gian; so trình bày kết quả."
+    },
+    {
+      "card_id": "core-en-48",
+      "transfer_prompt": "Trong ‘The cyclist who wore a red helmet arrived after noon’, hãy bỏ từng phần mở rộng và nói chính xác thông tin nào mất.",
+      "transfer_answer": "Bỏ ‘who wore a red helmet’ thì vẫn còn sự việc đến nhưng mất dấu hiệu nhận diện cyclist. Bỏ ‘after noon’ chỉ mất mốc thời gian. Lõi là ‘The cyclist arrived’."
+    },
+    {
+      "card_id": "core-en-50",
+      "transfer_prompt": "Với ‘Linh repaired the old bicycle’, hãy tạo một câu hỏi hỏi người sửa và một câu hỏi hỏi vật được sửa; phần focus của mỗi câu là gì?",
+      "transfer_answer": "‘Who repaired the old bicycle?’ đặt focus vào Linh. ‘What did Linh repair?’ đặt focus vào the old bicycle."
+    },
+    {
+      "card_id": "core-en-51",
+      "transfer_prompt": "Đoạn đang theo dõi một bưu kiện bị thất lạc. Hãy chọn active hoặc passive để nói nhân viên kho vừa tìm thấy nó và giải thích điểm xuất phát.",
+      "transfer_answer": "‘The package was found by a warehouse worker’ giữ the package làm điểm xuất phát, nên passive hợp với mạch đang theo dõi bưu kiện."
+    },
+    {
+      "card_id": "core-en-52",
+      "transfer_prompt": "Mọi người tưởng Hoàng đặt phòng, nhưng thực ra Mai đặt. Hãy dùng cleft để sửa hiểu lầm.",
+      "transfer_answer": "‘It was Mai who booked the room.’ Cleft đặt contrastive focus vào Mai và bác phỏng đoán rằng Hoàng là người đặt."
+    },
+    {
+      "card_id": "core-en-54",
+      "transfer_prompt": "Đoạn văn đang theo dõi một cửa sổ bị vỡ. Hãy chọn active hoặc passive để thêm thông tin công nhân đã sửa nó sáng nay.",
+      "transfer_answer": "‘The window was repaired by a worker this morning’ giữ the window làm điểm bám cũ; active ‘A worker repaired the window…’ sẽ chuyển điểm xuất phát sang worker."
+    },
+    {
+      "card_id": "core-en-56",
+      "transfer_prompt": "Giới thiệu một máy ảnh và một ống kính, rồi viết hai câu nhắc lại sao cho ‘it’ không làm người đọc nhầm vật nào bị hỏng.",
+      "transfer_answer": "Ví dụ: ‘I bought a camera and a lens. The lens was cheap, but the camera was damaged.’ Lặp noun phrase loại bỏ mơ hồ mà hai lần dùng it có thể tạo ra."
+    },
+    {
+      "card_id": "core-en-57",
+      "transfer_prompt": "Với dòng nói nhanh ‘Did Lan call him?’, hãy dự đoán ranh giới từ và nêu một tín hiệu cấu trúc giúp kiểm tra.",
+      "transfer_answer": "Có thể chia did | Lan | call | him. Mẫu did + subject + base verb + object và nghĩa câu hỏi giúp phục hồi các biên dù did/him bị nói nhẹ hoặc nối âm."
+    },
+    {
+      "card_id": "core-en-58",
+      "transfer_prompt": "Tạo hai ngữ cảnh cho ‘Nam borrowed the laptop’: một ngữ cảnh sửa người mượn, một ngữ cảnh sửa vật được mượn; đánh dấu từ nổi bật.",
+      "transfer_answer": "Sửa người: ‘NAM borrowed the laptop.’ Sửa vật: ‘Nam borrowed the LAPTOP.’ Prominence đổi theo thông tin đang được đối chiếu."
+    },
+    {
+      "card_id": "core-en-59",
+      "transfer_prompt": "So sánh ‘You CAN stay’ và ‘You can STAY’ trong hai ngữ cảnh; khi nào modal can cần nổi bật?",
+      "transfer_answer": "‘You CAN stay’ đối chiếu với ý không được phép hoặc không thể ở. ‘You can STAY’ làm hành động stay thành thông tin chính, nên can thường nhẹ hơn."
+    },
+    {
+      "card_id": "core-en-60",
+      "transfer_prompt": "Đọc ‘You’re coming’ như một lời khẳng định rồi như một câu kiểm tra ngạc nhiên. Phần nào đổi dù segmental words giữ nguyên?",
+      "transfer_answer": "Bản khẳng định thường có đường giọng kết thúc đi xuống; bản kiểm tra/ngạc nhiên thường đi lên. Prosody đổi chức năng giao tiếp mà chuỗi từ không đổi."
+    },
+    {
+      "card_id": "core-en-61",
+      "transfer_prompt": "Đọc ‘I can meet you after class’ chậm rồi nhanh nhưng vẫn giữ MEET là focus; quan sát các âm tiết nhẹ.",
+      "transfer_answer": "Khi nhanh hơn, can/you/after có thể rút ngắn hoặc nối mạnh hơn, còn MEET vẫn nổi bật. Nhịp không đòi mọi khoảng cách giữa âm tiết đều bằng nhau."
+    },
+    {
+      "card_id": "core-en-62",
+      "transfer_prompt": "Trước khi nghe ‘Would you turn it down?’, hãy dự đoán các nhóm từ và focus; sau đó nói nhanh câu ấy và kiểm tra dự đoán.",
+      "transfer_answer": "Dự đoán would you | turn it down, với TURN/DOWN dễ nổi bật còn would you và it thường nhẹ/nối. Cấu trúc request giúp khôi phục từ không nghe rõ."
+    },
+    {
+      "card_id": "core-en-65",
+      "transfer_prompt": "Vẽ mạng nhỏ quanh ‘charge’: chọn một sense, một pattern câu và hai collocation; chỉ ra phần nào không thể suy chắc từ bản dịch.",
+      "transfer_answer": "Ví dụ sense ‘nạp điện’: charge + object, ‘charge a phone’, ‘fully charged’. Sense ‘tính phí’ trong ‘charge a fee’ phải học qua context/collocation, không suy chắc từ một nghĩa tiếng Việt."
+    },
+    {
+      "card_id": "core-en-67",
+      "transfer_prompt": "Từ ‘legal’, hãy tạo một từ nghĩa ngược và một danh từ liên quan; kiểm tra category và đặt mỗi từ vào câu.",
+      "transfer_answer": "Illegal là adjective nghĩa ngược: ‘That action is illegal.’ Legality là noun: ‘They questioned the legality of the rule.’ Prefix đổi polarity; suffix đổi category."
+    },
+    {
+      "card_id": "core-en-69",
+      "transfer_prompt": "Vì sao ‘take a photo’ tự nhiên hơn ‘make a photo’ trong tiếng Anh thông dụng? Bạn sẽ dùng nguồn nào để kiểm chứng?",
+      "transfer_answer": "Take a photo là collocation thông dụng. Có thể kiểm bằng từ điển có ví dụ hoặc corpus, so tần suất và context của take/make + photo thay vì tin bản dịch từng từ."
+    },
+    {
+      "card_id": "core-en-70",
+      "transfer_prompt": "Với ‘pay attention to’, hãy thay phần sau to bằng một người và một vấn đề; rồi dùng cả quá khứ lẫn tương lai.",
+      "transfer_answer": "‘She paid attention to the customer.’ ‘They will pay attention to the safety issue.’ Tense đổi trên pay, còn collocational pattern pay attention to + noun phrase được giữ."
+    },
+    {
+      "card_id": "core-en-78",
+      "transfer_prompt": "Phân tích ‘The booking may have been cancelled’ theo vai trò đầu câu, mức chắc chắn, thời điểm và passive; rồi viết một bản active.",
+      "transfer_answer": "The booking là subject/patient; may biểu thị khả năng; have đặt việc trước mốc nói; been + cancelled tạo passive. Active: ‘The hotel may have cancelled the booking.’"
+    }
+  ]
+}

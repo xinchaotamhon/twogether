@@ -43,7 +43,7 @@ def main() -> int:
         "src/collections.ts": ["APPROVED_ENGLISH_COLLECTIONS"],
         "src/dataAdapter.ts": ["APPROVED_ENGLISH_CARDS", "APPROVED_ENGLISH_NODES", "APPROVED_ENGLISH_EDGES", "migrateStore"],
         "src/localWorkspace.ts": ["APPROVED_CONTENT_VERSION", "LEGACY_FIXTURE_COLLECTION_IDS", "migrateWorkspace"],
-        "public/sw.js": ["twogether-shell-v2"],
+        "public/sw.js": ["twogether-shell-v3"],
     }
     for filename, literals in required_literals.items():
         text = Path(filename).read_text(encoding="utf-8")

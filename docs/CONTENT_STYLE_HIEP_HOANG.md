@@ -17,12 +17,15 @@ This document owns the durable content preferences for Twogether. Every AI must 
 5. Use natural, everyday English. An intentionally unusual sentence must be marked as a counterexample or diagnostic, not presented as the normal model.
 6. A model answer demonstrates an answer the learner can imitate. A grading rubric alone is not a model answer.
 7. The learner's wording need not match the model. The model is one sound route, not the only accepted sentence.
+8. Do not remove a precise keyword merely because it may be unfamiliar. Keep the concise technical wording and attach an on-demand glossary explanation; apply this to the prompt, main answer, mechanism explanation, transfer prompt, and transfer answer.
+9. Do not make surrounding prose longer just to explain terminology. The glossary carries the optional expansion; the card keeps one bounded retrieval target.
 
 ## Main answer and transfer answer are separate
 
 - `model_answer` answers the main `prompt`.
 - `transfer_prompt` is always displayed before `transfer_answer`.
-- `transfer_answer` must answer that exact transfer prompt, use the same people/objects/context unless the prompt asks for a change, and explain why the example works.
+- `transfer_answer` must answer that exact transfer prompt and explain why the example works.
+- A transfer task must be structurally comparable but genuinely different from the main task: change the people, objects, wording or situation while preserving the principle being transferred. Repeating or lightly paraphrasing the main prompt is not transfer.
 - Never render a transfer answer immediately under the main prompt without its transfer prompt. That makes a correct answer appear unrelated.
 - Transfer help remains behind the attempt/reveal boundary and never creates a review event.
 
@@ -54,6 +57,8 @@ When Hiệp says content is unsuitable:
 5. Ask at least two independent review stances before the next Human approval: a fresh beginner and a skeptical language/content reviewer.
 6. Publication still requires Hiệp's explicit approval. AI review, local visibility, and passing tests are not Human approval.
 
+An explicit Human scope decision may approve a mechanically identifiable class of cards rather than every ID. The approval record must fingerprint the immutable packet, state the exact inclusion rule and expected counts, and leave excluded material in review. Current example: Hiệp approved all 74 non-vocabulary Empower A2 cards; seven `coursebook-a2-vocab-*` cards remain individually reviewable.
+
 ## Accepted corrections — 2026-09-01
 
 - English Core must teach Hoàng even though he never read the source discussion.
@@ -64,3 +69,11 @@ When Hiệp says content is unsuitable:
 - A generated reason such as `because he felt ill` must be labeled as one invented example, not information contained in the prompt.
 - Model answers for integration/production cards must show a worked answer, not only state a rubric.
 
+## Accepted corrections — 2026-09-04
+
+- Preserve important grammar keywords such as `finite`, `non-finite`, `clause`, `aspect`, and `modality`; make them clickable everywhere they appear instead of deleting or expanding the surrounding card.
+- Do not display a separate `Dễ nhầm` region during study. Preserve its source field for later editing and evidence.
+- `Thử chuyển sang tình huống mới` must contain a new analogous situation and its matching worked answer, never the same question repeated.
+- Only new-vocabulary material needs advance item-by-item review for the current Empower import. Other source-linked knowledge may publish under Hiệp's exact scope approval and be corrected through versioned edits during real study.
+- A declared glossary term must resolve to a real explanation and example; never silently drop missing terms. Link whole labels, not fragments inside longer words. Keep common vocabulary contextual instead of underlining every everyday word automatically.
+- Apply paired transfer corrections before user edits. Never spread an older support packet over the active card: the question, answer and library preview must describe the same revision.

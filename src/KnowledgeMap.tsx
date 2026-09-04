@@ -21,11 +21,13 @@ type DisplayNode = Pick<ConceptNode, "id" | "title" | "purpose" | "status"> & {
   kind: ConceptNode["kind"] | "universal";
   virtual?: boolean;
 };
-interface Progress { count: number; stable: number; percent: number }
+interface Progress { count: number; published: number; stable: number; percent: number }
 interface KnowledgeNodeData extends Record<string, unknown> {
   displayNode: DisplayNode;
   progress: Progress;
   collection?: CardCollection;
+  availableCount: number;
+  sessionOnly: boolean;
   onStartCollection: (collection: CardCollection) => void;
 }
 type KnowledgeFlowNode = FlowNode<KnowledgeNodeData, "knowledge">;
@@ -64,7 +66,11 @@ function addDomainBranches(nodes: ConceptNode[], edges: ConceptEdge[]) {
     const memberIds = new Set(members.map((node) => node.id));
     const hasParentInDomain = new Set(
       edges
-        .filter((edge) => edge.type === "part_of" && memberIds.has(edge.from) && memberIds.has(edge.to))
+        .filter((edge) =>
+          (edge.type === "part_of" || edge.type === "prerequisite") &&
+          memberIds.has(edge.from) &&
+          memberIds.has(edge.to),
+        )
         .map((edge) => edge.to),
     );
     projectedNodes.push({
@@ -123,20 +129,26 @@ const treeKindLabels: Record<DisplayNode["kind"], string> = {
 };
 
 function KnowledgeNode({ data }: NodeProps<KnowledgeFlowNode>) {
-  const { displayNode: node, progress, collection, onStartCollection } = data;
+  const { displayNode: node, progress, collection, availableCount, sessionOnly, onStartCollection } = data;
   const content = <>
     <span className="node-kind">{treeKindLabels[node.kind]}</span>
     <strong>{node.title}</strong>
-    <span className="tree-node-meter" aria-hidden="true"><i style={{ width: `${progress.percent}%` }} /></span>
+    {!sessionOnly && <span className="tree-node-meter" aria-hidden="true"><i style={{ width: `${progress.percent}%` }} /></span>}
     <span className="tree-node-progress">
-      {collection ? `Bấm để học · ${collection.cardIds.length} thẻ` : progress.count ? `${progress.stable}/${progress.count} thẻ đã bền` : "Nơi kiến thức mới có thể bám vào"}
+      {collection && availableCount
+        ? `Bấm để học · ${availableCount} thẻ`
+        : collection
+          ? `${progress.count} thẻ từ mới đang chờ duyệt`
+          : progress.count
+            ? sessionOnly ? `${progress.published} thẻ học ngay` : `${progress.stable}/${progress.count} thẻ đã bền`
+            : "Nơi kiến thức mới có thể bám vào"}
     </span>
   </>;
 
   return <div data-testid={`tree-node-${node.id}`} className={`flow-knowledge-node ${node.kind}${collection ? " is-studyable" : ""}`}>
     <Handle type="source" position={Position.Top} isConnectable={false} className="knowledge-handle" />
-    {collection
-      ? <button type="button" className="flow-knowledge-node-action nodrag nopan" onClick={() => onStartCollection(collection)} aria-label={`Học bộ ${collection.title}, ${collection.cardIds.length} thẻ`}>{content}</button>
+    {collection && availableCount > 0
+      ? <button type="button" className="flow-knowledge-node-action nodrag nopan" onClick={() => onStartCollection(collection)} aria-label={`Học bộ ${collection.title}, ${availableCount} thẻ`}>{content}</button>
       : <div className="flow-knowledge-node-static">{content}</div>}
     <Handle type="target" position={Position.Bottom} isConnectable={false} className="knowledge-handle" />
   </div>;
@@ -155,6 +167,7 @@ export function KnowledgeMap({
   cards,
   collections,
   snapshot,
+  sessionOnly = false,
   onStartCollection,
 }: {
   nodes: ConceptNode[];
@@ -162,6 +175,7 @@ export function KnowledgeMap({
   cards: Card[];
   collections: CardCollection[];
   snapshot: LearnerSnapshot;
+  sessionOnly?: boolean;
   onStartCollection: (collection: CardCollection) => void;
 }) {
   const domainProjection = useMemo(() => addDomainBranches(nodes, edges), [nodes, edges]);
@@ -194,29 +208,33 @@ export function KnowledgeMap({
       const cardIds = collection
         ? new Set(collection.cardIds)
         : new Set(cards.filter((card) => ids.has(card.node_id)).map((card) => card.id));
+      const published = [...cardIds].filter((id) => cards.some((card) => card.id === id && card.status === "published")).length;
       const stable = [...cardIds].filter((id) => (snapshot.cardStates[id]?.fsrs.stability ?? 0) > 2).length;
-      result.set(node.id, { count: cardIds.size, stable, percent: cardIds.size ? Math.round((stable / cardIds.size) * 100) : 0 });
+      result.set(node.id, { count: cardIds.size, published, stable, percent: cardIds.size ? Math.round((stable / cardIds.size) * 100) : 0 });
     });
     return result;
   }, [cards, collectionByRootNode, displayNodes, snapshot, visualChildren]);
-  const progressFor = (id: string) => progressByNodeId.get(id) ?? { count: 0, stable: 0, percent: 0 };
+  const progressFor = (id: string) => progressByNodeId.get(id) ?? { count: 0, published: 0, stable: 0, percent: 0 };
   const mapProgress = progressFor(UNIVERSAL_ROOT_ID);
 
   const flowNodes: KnowledgeFlowNode[] = useMemo(() => displayNodes.map((node) => {
     const position = layout.positions.get(node.id)!;
     const progress = progressFor(node.id);
     const collection = collectionByRootNode.get(node.id);
+    const availableCount = collection
+      ? collection.cardIds.filter((id) => cards.some((card) => card.id === id && card.status === "published")).length
+      : 0;
     return {
       id: node.id,
       type: "knowledge",
       position: { x: position.x - 112, y: position.y - 70 },
-      data: { displayNode: node, progress, collection, onStartCollection },
+      data: { displayNode: node, progress, collection, availableCount, sessionOnly, onStartCollection },
       draggable: false,
       connectable: false,
       selectable: false,
-      ariaLabel: collection ? `${node.title}. Bấm để học ${collection.cardIds.length} thẻ.` : `${node.title}. ${progress.stable}/${progress.count} thẻ đã bền.`,
+      ariaLabel: collection && availableCount ? `${node.title}. Bấm để học ${availableCount} thẻ.` : `${node.title}. ${progress.published} thẻ học ngay.`,
     };
-  }), [collectionByRootNode, displayNodes, layout.positions, onStartCollection, progressByNodeId]);
+  }), [cards, collectionByRootNode, displayNodes, layout.positions, onStartCollection, progressByNodeId, sessionOnly]);
   const projectedEdges = [...layout.skeletonEdges, ...layout.overlayEdges];
   const flowEdges: KnowledgeFlowEdge[] = useMemo(() => projectedEdges.map((edge, index) => ({
     id: `${edge.from}-${edge.to}-${edge.type}-${index}`,
@@ -231,16 +249,19 @@ export function KnowledgeMap({
     <div className="map-home-stage">
       <div className="knowledge-flow" data-testid="knowledge-tree">
         <div className="knowledge-flow-canvas" data-testid="tree-map">
-          <ReactFlow nodes={flowNodes} edges={flowEdges} nodeTypes={nodeTypes} edgeTypes={edgeTypes} fitView fitViewOptions={{ padding: 0.12, minZoom: 0.46, maxZoom: 1.08 }} minZoom={0.2} maxZoom={2.2} nodesDraggable={false} nodesConnectable={false} elementsSelectable={false} deleteKeyCode={null} panOnDrag zoomOnPinch zoomOnScroll zoomOnDoubleClick ariaLabelConfig={{ "node.a11yDescription.default": "Nhánh có dòng Bấm để học sẽ mở ngay bộ thẻ tương ứng." }}>
+          <ReactFlow nodes={flowNodes} edges={flowEdges} nodeTypes={nodeTypes} edgeTypes={edgeTypes} fitView fitViewOptions={{ padding: 0.18, minZoom: 0.08, maxZoom: 1.08 }} minZoom={0.08} maxZoom={2.2} nodesDraggable={false} nodesConnectable={false} elementsSelectable={false} deleteKeyCode={null} panOnDrag zoomOnPinch zoomOnScroll zoomOnDoubleClick ariaLabelConfig={{ "node.a11yDescription.default": "Nhánh có dòng Bấm để học sẽ mở ngay bộ thẻ tương ứng." }}>
             <Background color="#d9d0c3" gap={28} size={1} />
             <MiniMap pannable zoomable nodeColor={(node) => node.id === UNIVERSAL_ROOT_ID ? "#ef6d4d" : "#94b8b7"} maskColor="rgba(247, 242, 233, .72)" />
             <Controls showInteractive={false} />
           </ReactFlow>
         </div>
-        <div className="map-canvas-summary" aria-label={`Toàn cây có ${mapProgress.stable} trên ${mapProgress.count} thẻ đã bền`}><strong>{mapProgress.stable}/{mapProgress.count}</strong><span>thẻ đã bền</span></div>
+        <div className="map-canvas-summary" aria-label={sessionOnly ? `Toàn cây có ${mapProgress.published} thẻ học ngay và ${mapProgress.count - mapProgress.published} thẻ chờ duyệt` : `Toàn cây có ${mapProgress.stable} trên ${mapProgress.count} thẻ đã bền`}>
+          <strong>{sessionOnly ? mapProgress.published : `${mapProgress.stable}/${mapProgress.count}`}</strong>
+          <span>{sessionOnly ? `${mapProgress.count - mapProgress.published} chờ duyệt` : "thẻ đã bền"}</span>
+        </div>
         <div className="tree-legend" aria-label="Hướng dẫn bản đồ"><span>Bấm một nhánh có thẻ để học · kéo để đi quanh · dùng +/− để phóng to</span><span><i className="legend-line-solid" aria-hidden="true" /> cùng một cành</span><span><i className="legend-line-dashed" aria-hidden="true" /> cần học trước</span></div>
       </div>
     </div>
-    <table className="map-accessible-table sr-only"><caption>Bản đồ tri thức và các bộ thẻ có thể học</caption><thead><tr><th>Nút</th><th>Loại</th><th>Tiến độ</th><th>Học</th></tr></thead><tbody>{displayNodes.map((node) => { const progress = progressFor(node.id); const collection = collectionByRootNode.get(node.id); return <tr key={node.id}><th scope="row">{node.title}</th><td>{treeKindLabels[node.kind]}</td><td>{progress.stable}/{progress.count} thẻ đã bền</td><td>{collection ? <button type="button" onClick={() => onStartCollection(collection)}>Học {collection.title}</button> : "Chưa có bộ thẻ"}</td></tr>; })}</tbody></table>
+    <table className="map-accessible-table sr-only"><caption>Bản đồ tri thức và các bộ thẻ có thể học</caption><thead><tr><th>Nút</th><th>Loại</th><th>Tiến độ</th><th>Học</th></tr></thead><tbody>{displayNodes.map((node) => { const progress = progressFor(node.id); const collection = collectionByRootNode.get(node.id); const availableCount = collection?.cardIds.filter((id) => cards.some((card) => card.id === id && card.status === "published")).length ?? 0; return <tr key={node.id}><th scope="row">{node.title}</th><td>{treeKindLabels[node.kind]}</td><td>{sessionOnly ? `${progress.published} thẻ học ngay` : `${progress.stable}/${progress.count} thẻ đã bền`}</td><td>{collection && availableCount ? <button type="button" onClick={() => onStartCollection(collection)}>Học {collection.title}</button> : "Chưa có bộ thẻ đã duyệt"}</td></tr>; })}</tbody></table>
   </section>;
 }

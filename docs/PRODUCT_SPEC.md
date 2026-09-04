@@ -1,5 +1,11 @@
 # Product Contract
 
+## Temporary active study override — 2026-09-04
+
+The current default build is intentionally simpler than the durable target below. A deck opens as one centered, non-scrolling flip-card frame over a dimmed tree. Learners can go backward/forward, drag or swipe, jump to any position and shuffle. `Nhớ`/`Quên` update only a per-learner, per-deck wrong-card list in `sessionStorage`; Supabase, FSRS, streak, durable runs and the Progress page are inactive. Existing history and implementation remain preserved behind `VITE_STUDY_MODE=fsrs`.
+
+The answer face has two compact pages: main answer plus mechanism, and a genuinely new but structurally related transfer situation plus its worked answer. Known technical words remain in the text and are clickable in every section. The misconception field remains in data but `Dễ nhầm` is not displayed.
+
 ## Intended outcome
 
 Hiệp and Hoàng should build durable English understanding from first principles, then expand into branches. A successful first slice lets either learner answer a fresh prompt in their own words, explain why, identify a boundary or counterexample, and apply the idea to a new situation more reliably after a week—not merely finish a lesson or recognize a choice.
@@ -32,7 +38,7 @@ The owner-pasted Claude captures supply two source layers: English foundations a
 1. Select a due card from the learner’s queue, prioritizing overdue reviews before new cards.
 2. Show the prompt and concept breadcrumb. Clickable glossary terms may explain essential vocabulary without counting as an attempt or revealing the main answer.
 3. Require an attempt action (`Đã thử`) before reveal. The attempt may be mental, spoken, typed, or written privately; the app records only the attempt kind by default.
-4. Reveal a concise model answer, why it works, a common misconception, then the transfer prompt with its own collapsed worked answer.
+4. Reveal a concise model answer and why it works, then the transfer prompt with its own worked answer on the second answer-face tab. Keep misconceptions in source/revision data, but do not render a separate `Dễ nhầm` block in the active session UI.
 5. Learner presses `Nhớ` or `Quên`.
 6. `Quên` moves to the repair queue and is shown again after intervening cards, with a bounded cap per session. `Nhớ` passes the result to FSRS.
 7. Show the next due interval in plain language, never as a promise of certainty.

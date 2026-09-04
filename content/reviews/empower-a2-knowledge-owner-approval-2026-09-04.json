@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "decision_id": "empower-a2-non-vocabulary-owner-approval-2026-09-04",
+  "decided_at": "2026-09-04",
+  "decided_by": "hiep",
+  "decision": "approved_for_published_study_by_scope",
+  "source_packet": "content/drafts/empower-a2-coursebook-final-review-v1.json",
+  "source_sha256": "d6488abe34c4416e32ca1cd3ce9a16e97765d22a8cbdc5e31349c4dcf41e1af5",
+  "approved_scope": {
+    "rule": "all cards except IDs beginning coursebook-a2-vocab-",
+    "expected_count": 74
+  },
+  "retained_for_vocabulary_review": {
+    "id_prefix": "coursebook-a2-vocab-",
+    "expected_count": 7
+  },
+  "owner_note": "Only new-vocabulary cards require advance review; other coursebook knowledge should enter the English tree now and can be revised during learning."
+}

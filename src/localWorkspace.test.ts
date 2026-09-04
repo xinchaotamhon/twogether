@@ -15,6 +15,7 @@ describe("workspace content migration", () => {
       collections: [
         { id: "english-foundations", title: "English foundations", description: "fixture", rootNodeId: "english-fixture-root", status: "published", cardIds: ["fixture-recall-01"] },
         { id: "english-mechanism-lab", title: "Mechanism lab", description: "fixture", rootNodeId: "english-fixture-mechanism", status: "published", cardIds: ["fixture-mechanism-01"] },
+        { id: "collection-empower-a2-learning-v1", title: "Empower cũ", description: "system", rootNodeId: "core-en-module-01", status: "published", cardIds: [] },
         customCollection,
       ],
       dailyQualifications: [dailyQualification],
@@ -26,8 +27,9 @@ describe("workspace content migration", () => {
     const migrated = readWorkspace(storage);
     expect(migrated.version).toBe(2);
     expect(migrated.contentVersion).toBe(APPROVED_CONTENT_VERSION);
-    expect(migrated.collections).toHaveLength(11);
+    expect(migrated.collections).toHaveLength(19);
     expect(migrated.collections.some((collection) => LEGACY_FIXTURE_COLLECTION_IDS.has(collection.id))).toBe(false);
+    expect(migrated.collections.some((collection) => collection.id === "collection-empower-a2-learning-v1")).toBe(false);
     expect(migrated.collections.some((collection) => collection.id === customCollection.id)).toBe(true);
     expect(migrated.dailyQualifications).toEqual([dailyQualification]);
     expect(migrated.runs["legacy-run"]).toEqual(legacyRun);

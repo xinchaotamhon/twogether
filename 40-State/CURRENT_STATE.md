@@ -1,33 +1,44 @@
 ---
-last_verified: 2026-09-01
-verified_by: Codex owner-approved v2/fullscreen-direct-map implementation
-status: active — local behavior verified; remote Supabase activation awaits owner dashboard gestures
+last_verified: 2026-09-04
+verified_by: Codex session-study and completed-English integration
+status: active — session-only study; durable cloud path dormant
 ---
 
 # Current State
 
-## Verified facts
+## Active product behavior
 
-- Twogether is a phone-first React/TypeScript/Vite PWA for Hiệp and Hoàng. The study loop remains open recall → required `Đã thử` → reveal → only `Nhớ`/`Quên`, mapped to FSRS `Good`/`Again`, with bounded repair.
-- Hiệp explicitly approved all 89 cards in `content/drafts/english-core-beginner-revision-v2.json`. The separate Human approval manifest is `content/reviews/english-generative-core-v2-owner-approval-2026-09-01.json`; the source review packet remains immutable provenance.
-- English Core v2 is now the official runtime backbone: 80 rewritten cards retain stable IDs and therefore retain existing per-learner FSRS state; nine bridge cards use new IDs and start fresh. The ten collection sizes are 8/9/9/9/9/9/9/9/9/9. Historical 12-card fixtures remain absent from active study without erasing old events.
-- Durable authoring preferences live in `docs/CONTENT_STYLE_HIEP_HOANG.md`. Content assumes first exposure, begins with plain Vietnamese and examples, pairs every transfer task with its matching worked answer, explains glossary terms on demand and never imposes a fixed card quota.
-- The map is the fixed-height home and study workspace on desktop and phone. There is no sidebar, focus checkbox, separate `Tiếp tục` page or vertical page scroll. A collection node opens the flashcard loop in an internal scroll panel over the tree; closing it returns to the unchanged map. Extra collections sharing a root receive their own virtual collection nodes. The tree still grows upward from `Bản chất chung`, uses `part_of` for layout and dashed prerequisite overlays, and retains a screen-reader table.
-- The `Thẻ` screen shows English Core v2 once as the official editable curriculum; its obsolete second-review panel and duplicate support banner are no longer rendered. Editing creates a local draft and does not erase the published card or review history.
-- Empower A2 remains a separate 81-card long-term review packet derived from visual inspection of all 176 pages. Its checkbox means `Đánh dấu cần bỏ/sửa`; only a Human merge action publishes unflagged cards.
-- Supabase cloud implementation includes anonymous session, hashed expiring device pairing, `auth.uid()` membership RLS, idempotent FSRS review RPC, server-validated collection completion, immutable daily qualification, server-derived streak and safe one-time local import.
-- `supabase/seed.sql` is regenerated from the exact owner-approved 89-card v2 manifest. `CONNECT_SUPABASE.bat` safely prepares ordered migration/seed/bootstrap SQL from the existing `.env.local`, copies it to the clipboard and opens Auth Providers plus SQL Editor without printing keys.
-- Remote activation is not yet complete. A read-only 2026-09-01 probe returns `200` from `/auth/v1/health` but `404` from `/rest/v1/cards`, proving the URL/public key work while the Twogether schema is still absent. The owner must enable Anonymous Sign-Ins and run the prepared SQL, then real cross-learner RLS/conflict checks must pass.
-- Safe rollback is `VITE_SYNC_MODE=local`; local FSRS, runs and streak inputs remain preserved. Never clear localStorage or delete remote review events to repair sync.
-- The previous published checkpoint is commit `516b677`. The current inline-study artifact passed 29/29 unit tests, 14/14 Playwright/Chrome tests, production build, dependency audit and cumulative smoke receipt `20260901T142935Z-3cb2e09a` (15/15); publication commit is recorded after push.
+- Twogether remains a phone-first React/TypeScript/Vite PWA for Hiệp and Hoàng. The mandatory learning boundary is open recall → `Đã thử` → reveal → only `Nhớ`/`Quên`.
+- The deployment now defaults to `VITE_STUDY_MODE=session`. It does not initialize Supabase, call FSRS, persist review/run events, calculate streak or show `Tiến độ`. Existing local/cloud history and the durable implementation remain untouched behind `VITE_STUDY_MODE=fsrs`.
+- `Quên` adds a card ID to `twogether.session.forgotten.<learner>.<collection>`; `Nhớ` removes it. At the end of a pass, `Ôn lại … câu Quên` starts a finite repair pass containing only those IDs. This is `sessionStorage`: refresh in the same tab survives, closing the tab/window clears it, and nothing follows another device.
+- The tree is the full-screen home. Its visual skeleton branches upward from one bottom root using a deterministic spanning-tree projection of the full DAG. Non-selected legitimate relations remain overlays and remain in the accessible table.
+- A deck node opens one centered, fixed-height flip card above a darkened/blurred tree. There is no `Tiếp tục` page, sidebar, checkbox list, card/body scroll or fixed black toast. Previous/next, swipe/drag, range jump and shuffle are available.
+- The answer face has `Đáp án & vì sao` and `Tình huống mới`. Known keywords remain intact and clickable in prompt, answer, explanation, transfer prompt and transfer answer. `Dễ nhầm` is hidden but its authored field is preserved.
+- `Thẻ` keeps CRUD available for the 74 published Empower cards and any approved vocabulary, so a problem found during study can become a local draft/edit/archive without mutating its source packet.
+
+## Content authority
+
+- English Core v2 remains exactly 89 owner-approved cards in ten variable-size collections. Eighty stable IDs preserve old FSRS state for later durable-mode use; nine bridge IDs remain fresh.
+- Empower A2 retains its immutable 81-card, 176-page source packet. Hiệp's fingerprinted 2026-09-04 scope approval publishes exactly 74 non-vocabulary cards into seven existing English principle branches. Seven `coursebook-a2-vocab-*` cards remain draft and appear in the only advance-review panel.
+- Total built-in English content is therefore 163 published/studyable cards plus seven vocabulary-review drafts. This is a completed teachable backbone and coursebook layer, not a claim to contain all English.
+- Thirty audited Core transfer tasks now use paired runtime revisions with a new analogous situation. One Empower directions answer now matches its school-to-library prompt. These revisions apply at the base-card boundary; historical v1 support cannot overwrite v2 answers or Human edits. Immutable source/approval packets remain unchanged.
+- All 238 unique declared Empower terms resolve to structured Vietnamese glossary support, alongside the 25 original Core entries and 33 supplemental Core labels. Precise grammar terms are discovered across all five card regions; everyday vocabulary is linked when declared for that card. Whole-word matching prevents partial-word links. These definitions are AI-authored support, not approval of vocabulary cards.
+- Durable content preferences are in `docs/CONTENT_STYLE_HIEP_HOANG.md`; future AIs must preserve technical terms, attach glossary help, keep prose compact and vary transfer situations.
+
+## Dormant cloud path and rollback
+
+- Supabase migrations, device pairing, RLS, idempotent review writes, server-derived streak and import logic remain in the repository but are not active or claimed live in session mode.
+- Later reactivation is explicit: deploy with `VITE_STUDY_MODE=fsrs`, choose `VITE_SYNC_MODE=local` for same-browser durable data. Cloud first needs an additive content migration for the 74 Empower cards and approved vocabulary, then `CONNECT_SUPABASE.bat` and real two-profile security tests; its current seed still contains only the older 89-Core checkpoint.
+- Never clear localStorage, delete Supabase events or mutate old FSRS state when switching modes.
 - Budget remains USD 0/month; Cloudflare Free + Supabase Free only, with no paid upgrade authorized.
 
-## Remaining gates
+## Immediate Human path
 
-- Owner dashboard gesture: run `CONNECT_SUPABASE.bat`, sign in to Supabase, enable anonymous sign-ins and run the clipboard SQL once. Keep returned pairing codes private.
-- Pair one browser profile for Hiệp and one for Hoàng, then run real negative RLS tests: unpaired denial, cross-learner denial, invite expiry/reuse, idempotent retry, same-card conflict and direct streak-write denial.
-- Hiệp still reviews the 81 Empower cards. Ten React cards remain source history only; React Generative Core needs its own source/review/approval cycle.
+1. Deploy and study the 163 published cards in session mode.
+2. In `Thẻ`, approve only vocabulary cards that are suitable; each approval makes the pending vocabulary deck studyable.
+3. Record confusing wording during real use as a versioned correction; do not change immutable source packets.
+4. Reactivate FSRS/Supabase/streak only when Hiệp explicitly wants durable cross-device progress again.
 
-## Evidence
+## Evidence boundary
 
-Read `50-Evidence/inline-map-study-2026-09-01.md`, `50-Evidence/owner-approved-v2-fullscreen-map-and-supabase-activation-2026-09-01.md`, ADR-0020, ADR-0019, the paired-sync evidence and the Empower coursebook evidence. Green local/static gates prove the artifact contract, not live remote RLS until owner activation and two-profile tests occur.
+Read `60-Decisions/ADR-0021-session-study-and-english-tree.md` and `50-Evidence/session-study-english-tree-2026-09-04.md`. Green local/static tests prove the current artifact contract, not live remote Supabase security or language mastery.

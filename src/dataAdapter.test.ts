@@ -11,7 +11,8 @@ describe("local development data adapter", () => {
     const hoang = adapter.readLearner("hoang", "hoang");
     expect(hiep.reviewEvents).toHaveLength(0);
     expect(hoang.reviewEvents).toHaveLength(0);
-    expect(Object.keys(hiep.cardStates)).toHaveLength(89);
+    expect(adapter.listCards()).toHaveLength(170);
+    expect(Object.keys(hiep.cardStates)).toHaveLength(163);
   });
 
   it("makes a duplicate review write idempotent", () => {
@@ -48,6 +49,18 @@ describe("local development data adapter", () => {
     expect(snapshot.cardStates["fixture-recall-01"].reviewCount).toBe(3);
     expect(snapshot.reviewEvents).toHaveLength(1);
     expect(snapshot.dailyGoalMinutes).toBe(20);
-    expect(Object.keys(snapshot.cardStates)).toHaveLength(90);
+    expect(Object.keys(snapshot.cardStates)).toHaveLength(164);
+  });
+
+  it("adds FSRS state for a vocabulary card published later without deleting history", () => {
+    const adapter = createLocalDataAdapter(createMemoryStorage());
+    const before = adapter.readLearner("hiep", "hiep");
+    const vocabulary = adapter.listCards().find((card) => card.id === "coursebook-a2-vocab-01")!;
+    adapter.ensurePublishedCards?.([{ ...vocabulary, status: "published", reviewer: "hiep" }]);
+    const after = adapter.readLearner("hiep", "hiep");
+
+    expect(before.cardStates[vocabulary.id]).toBeUndefined();
+    expect(after.cardStates[vocabulary.id]?.reviewCount).toBe(0);
+    expect(after.reviewEvents).toEqual(before.reviewEvents);
   });
 });

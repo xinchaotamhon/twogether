@@ -1,167 +1,86 @@
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import packetJson from "../content/drafts/empower-a2-coursebook-final-review-v1.json";
-import { createCollection } from "./collectionWorkspace";
+import { EMPOWER_VOCABULARY_CARD_IDS } from "./empowerCurriculum";
 import { publishCardDraft, saveCardDraft } from "./localWorkspace";
 import type { Card } from "./types";
 
 interface CoursebookCandidate extends Card {
-  deck: string;
-  source_pdf_pages: number[];
-  source_scope: string;
   glossary_terms: string[];
+  source_pdf_pages: number[];
+  deck: string;
+  source_scope: string;
   prerequisite_card_ids: string[];
   provenance_note: string;
 }
 
-const packet = packetJson as unknown as {
-  packet_id: string;
-  status: "review";
-  source: { sha256: string; pdf_pages: number };
-  provenance: { review_status: string };
-  cards: CoursebookCandidate[];
-};
-const FLAG_KEY = "twogether.coursebook.empower-a2.review-flags.v1";
-const COLLECTION_ID = "collection-empower-a2-learning-v1";
+const sourceCards = (packetJson as unknown as { cards: CoursebookCandidate[] }).cards.filter(
+  (card) => EMPOWER_VOCABULARY_CARD_IDS.has(card.id),
+);
 
-function readFlags(): Set<string> {
-  try {
-    const value = JSON.parse(window.localStorage.getItem(FLAG_KEY) ?? "[]");
-    return new Set(Array.isArray(value) ? value.map(String) : []);
-  } catch {
-    return new Set();
-  }
-}
-
-export function CoursebookReviewPanel({
-  onChanged,
-}: {
-  onChanged: () => void;
-}) {
-  const [expanded, setExpanded] = useState(false);
-  const [flagged, setFlagged] = useState<Set<string>>(readFlags);
-  const [deck, setDeck] = useState("all");
+export function CoursebookReviewPanel({ cards, onChanged }: { cards: Card[]; onChanged: () => void }) {
   const [notice, setNotice] = useState<string | null>(null);
-  const decks = useMemo(
-    () => [...new Set(packet.cards.map((card) => card.deck))],
-    [],
-  );
-  const visibleCards =
-    deck === "all"
-      ? packet.cards
-      : packet.cards.filter((card) => card.deck === deck);
-  const eligible = packet.cards.filter((card) => !flagged.has(card.id));
+  const publishedIds = new Set(cards.filter((card) => card.status === "published").map((card) => card.id));
+  const approvedCount = sourceCards.filter((card) => publishedIds.has(card.id)).length;
 
-  const toggle = (cardId: string) => {
-    const next = new Set(flagged);
-    if (next.has(cardId)) next.delete(cardId);
-    else next.add(cardId);
-    window.localStorage.setItem(FLAG_KEY, JSON.stringify([...next]));
-    setFlagged(next);
-  };
-
-  const mergeEligible = () => {
-    for (const candidate of eligible) {
-      const {
-        deck: _deck,
-        source_pdf_pages: _pages,
-        source_scope: _scope,
-        glossary_terms: _terms,
-        prerequisite_card_ids: _prerequisites,
-        provenance_note: _note,
-        ...card
-      } = candidate;
-      saveCardDraft({ ...card, status: "draft", reviewer: null });
-      publishCardDraft(card.id);
-    }
-    createCollection({
-      id: COLLECTION_ID,
-      title: "Empower A2 · Học bền vững",
-      description: `${eligible.length} thẻ đã được Hiệp chọn từ 176 trang sách để học lâu dài bằng FSRS; kỳ thi chỉ quyết định thứ tự ưu tiên.`,
-      rootNodeId: "core-en-module-10",
-      cardIds: eligible.map((card) => card.id),
-    });
-    setNotice(
-      `Đã gộp ${eligible.length} thẻ đạt yêu cầu; giữ lại ${flagged.size} thẻ cần sửa/bỏ.`,
-    );
+  const approve = (candidate: CoursebookCandidate) => {
+    const runtimeCard = cards.find((card) => card.id === candidate.id);
+    if (!runtimeCard) return;
+    saveCardDraft({ ...runtimeCard, status: "draft", reviewer: null });
+    publishCardDraft(runtimeCard.id);
+    setNotice(`Đã duyệt “${candidate.glossary_terms.join(", ")}” và đưa thẻ vào cây.`);
     onChanged();
   };
 
   return (
-    <details className="coursebook-review surface" onToggle={(event) => setExpanded(event.currentTarget.open)}>
+    <details className="coursebook-review surface">
       <summary>
         <span>
-          <span className="eyebrow">SÁCH ĐANG HỌC · AI DRAFT</span>
-          <strong>Empower A2 · 81 thẻ chờ bạn duyệt</strong>
+          <span className="eyebrow">CHỈ DUYỆT TỪ MỚI</span>
+          <strong>Empower A2 · 7 thẻ Vocabulary Focus</strong>
         </span>
-        <span>{flagged.size} cần sửa/bỏ</span>
+        <span>{approvedCount}/7 đã duyệt</span>
       </summary>
-      {expanded && <><div className="coursebook-review-intro">
+      <div className="coursebook-review-intro">
         <p>
-          Ba agent đã xem đủ 176/176 trang. Đây là nhánh học lâu dài nối vào
-          English Core và đi theo FSRS; kỳ thi chỉ giúp ưu tiên phần cần học
-          sớm. Tích <strong>Đánh dấu cần bỏ/sửa</strong> cho thẻ không đạt; nút
-          gộp chỉ lấy các thẻ không bị tích.
+          74 thẻ kiến thức khác đã vào cây. Bảy thẻ dưới đây được giữ riêng để
+          bạn kiểm tra từ/cụm từ mới; duyệt thẻ nào thì thẻ đó xuất hiện trong
+          bộ <strong>Empower · Từ mới</strong> trên cây.
         </p>
-        <div>
-          <label>
-            Lọc theo bài
-            <select
-              value={deck}
-              onChange={(event) => setDeck(event.target.value)}
-            >
-              <option value="all">Tất cả 81 thẻ</option>
-              {decks.map((name) => (
-                <option key={name} value={name}>
-                  {name}
-                </option>
-              ))}
-            </select>
-          </label>
-          <button className="button button-primary" onClick={mergeEligible}>
-            Gộp {eligible.length} thẻ đạt yêu cầu
-          </button>
-        </div>
       </div>
       <div className="coursebook-review-grid">
-        {visibleCards.map((card) => (
-          <article
-            key={card.id}
-            className={`coursebook-review-card ${flagged.has(card.id) ? "is-flagged" : ""}`}
-          >
-            <div className="coursebook-card-meta">
-              <span>PDF {card.source_pdf_pages.join(", ")}</span>
-              <span>{card.deck}</span>
-            </div>
-            <h3>{card.prompt}</h3>
-            <details>
-              <summary>Xem nội dung thẻ</summary>
-              <div>
-                <span className="section-label">LỜI GIẢI</span>
-                <p>{card.model_answer}</p>
-                <span className="section-label">VÌ SAO</span>
-                <p>{card.explanation}</p>
-                <span className="section-label">THỬ CHUYỂN</span>
-                <p>{card.transfer_prompt}</p>
-                <span className="section-label">LỜI GIẢI GỢI Ý</span>
-                <p>{card.transfer_answer}</p>
+        {sourceCards.map((candidate) => {
+          const approved = publishedIds.has(candidate.id);
+          return (
+            <article className={`coursebook-review-card ${approved ? "is-approved" : ""}`} key={candidate.id}>
+              <div className="coursebook-card-meta">
+                <span>PDF {candidate.source_pdf_pages.join(", ")}</span>
+                <span>{approved ? "đã duyệt" : "chờ duyệt"}</span>
               </div>
-            </details>
-            <label className="coursebook-flag">
-              <input
-                type="checkbox"
-                checked={flagged.has(card.id)}
-                onChange={() => toggle(card.id)}
-              />
-              <span>Đánh dấu cần bỏ/sửa</span>
-            </label>
-          </article>
-        ))}
+              <div className="vocabulary-term-list" aria-label="Từ mới trong thẻ">
+                {candidate.glossary_terms.map((term) => <span key={term}>{term}</span>)}
+              </div>
+              <h3>{candidate.prompt}</h3>
+              <details>
+                <summary>Xem nội dung trước khi duyệt</summary>
+                <div>
+                  <span className="section-label">LỜI GIẢI</span>
+                  <p>{candidate.model_answer}</p>
+                  <span className="section-label">VÌ SAO</span>
+                  <p>{candidate.explanation}</p>
+                  <span className="section-label">TÌNH HUỐNG MỚI</span>
+                  <p>{candidate.transfer_prompt}</p>
+                  <span className="section-label">MỘT CÁCH LÀM</span>
+                  <p>{candidate.transfer_answer}</p>
+                </div>
+              </details>
+              <button type="button" className="button button-primary" disabled={approved} onClick={() => approve(candidate)}>
+                {approved ? "Đã có trong cây" : "Duyệt và đưa vào cây"}
+              </button>
+            </article>
+          );
+        })}
       </div>
-      {notice && (
-        <p className="toast" role="status">
-          {notice}
-        </p>
-      )}</>}
+      {notice && <p className="inline-notice" role="status">{notice}</p>}
     </details>
   );
 }

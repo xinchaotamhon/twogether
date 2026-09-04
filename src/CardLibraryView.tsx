@@ -7,6 +7,9 @@ import { exportCardPacket, importPacketAsDraft } from "./contentPacket";
 import { archiveCard, publishCardDraft, saveCardDraft } from "./localWorkspace";
 import { CoursebookReviewPanel } from "./CoursebookReviewPanel";
 import { GraphBranchAuthoring } from "./GraphBranchAuthoring";
+import {
+  EMPOWER_VOCABULARY_CARD_IDS,
+} from "./empowerCurriculum";
 import type { Card, ConceptEdge, ConceptNode, LearnerId } from "./types";
 
 interface CardLibraryViewProps {
@@ -40,7 +43,9 @@ export function CardLibraryView({
         .filter((card): card is Card => Boolean(card))
     : [];
   const regularCards = cards.filter(
-    (card) => !APPROVED_ENGLISH_CARD_IDS.has(card.id),
+    (card) =>
+      !APPROVED_ENGLISH_CARD_IDS.has(card.id) &&
+      !(EMPOWER_VOCABULARY_CARD_IDS.has(card.id) && card.status !== "published"),
   );
 
   const blank = (): Card => ({
@@ -152,7 +157,7 @@ export function CardLibraryView({
           Xoá vùng packet
         </button>
       </div>
-      <CoursebookReviewPanel onChanged={onChanged} />
+      <CoursebookReviewPanel cards={cards} onChanged={onChanged} />
       <GraphBranchAuthoring nodes={nodes} edges={edges} learnerId={learnerId} onChanged={onChanged} />
       <section
         className="draft-core-library surface"
@@ -163,8 +168,8 @@ export function CardLibraryView({
             <span className="eyebrow">CURRICULUM · ĐÃ DUYỆT</span>
             <h2 id="english-core-title">English Core v2 · 89 thẻ chính thức</h2>
             <p>
-              Mười bộ nguyên lý đang nằm trong lịch học. Chỉnh một thẻ sẽ tạo
-              bản nháp mới, không làm mất bản đã duyệt hay lịch sử ôn.
+              Mười bộ nguyên lý đang nằm trong cây học. Chỉnh một thẻ sẽ tạo
+              bản nháp mới và không xoá lịch sử cũ khi chế độ bền được bật lại.
             </p>
           </div>
           <span className="draft-core-count">
@@ -288,26 +293,14 @@ export function CardLibraryView({
               rows={2}
             />
           </label>
-          <div className="editor-grid">
-            <label>
-              Vì sao
-              <textarea
-                value={editing.explanation}
-                onChange={(event) => update("explanation", event.target.value)}
-                rows={3}
-              />
-            </label>
-            <label>
-              Dễ nhầm
-              <textarea
-                value={editing.misconception}
-                onChange={(event) =>
-                  update("misconception", event.target.value)
-                }
-                rows={3}
-              />
-            </label>
-          </div>
+          <label>
+            Vì sao
+            <textarea
+              value={editing.explanation}
+              onChange={(event) => update("explanation", event.target.value)}
+              rows={3}
+            />
+          </label>
           <label>
             Thử chuyển sang tình huống mới
             <textarea
@@ -333,6 +326,12 @@ export function CardLibraryView({
             Lưu bản nháp
           </button>
         </section>
+      )}
+      {regularCards.length > 0 && (
+        <div className="library-list-heading">
+          <span className="eyebrow">THẺ CÓ THỂ CHỈNH SỬA</span>
+          <p>Empower đã duyệt và thẻ tự tạo vẫn dùng chung thao tác sửa, xuất bản hoặc archive.</p>
+        </div>
       )}
       <div className="card-library-list">
         {regularCards.map((card) => (

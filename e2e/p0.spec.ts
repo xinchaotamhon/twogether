@@ -11,6 +11,17 @@ test.describe("Twogether P0 browser contract", () => {
     await expect(page.getByTestId("supabase-email")).toHaveCount(0);
     await expect(page.getByTestId("supabase-password")).toHaveCount(0);
   });
+
+  test("does not contact Supabase while the temporary session mode is active", async ({ page }) => {
+    const supabaseRequests: string[] = [];
+    page.on("request", (request) => {
+      if (request.url().includes(".supabase.co")) supabaseRequests.push(request.url());
+    });
+    await page.reload();
+    await page.getByTestId("learner-choice-hiep").click();
+    await expect(page.getByTestId("map-home")).toBeVisible();
+    expect(supabaseRequests).toEqual([]);
+  });
   test("requires an attempt before revealing the answer and keeps focus keyboardable", async ({ page }) => {
     await page.getByTestId("learner-choice-hiep").click();
     await expect(page.getByTestId("nav-study")).toHaveCount(0);
@@ -34,17 +45,45 @@ test.describe("Twogether P0 browser contract", () => {
     await expect(page.getByRole("button", { name: /Quên/ })).toBeVisible();
   });
 
-  test("keeps learner review state separate in the local adapter", async ({ page }) => {
+  test("stores only forgotten cards in sessionStorage and keeps learners separate", async ({ page }) => {
+    await page.evaluate(() => sessionStorage.setItem(
+      "twogether.session.forgotten.hiep.collection-english-core-01",
+      JSON.stringify(["retired-card"]),
+    ));
     await page.getByTestId("learner-choice-hiep").click();
     await page.getByRole("button", { name: "Học bộ Meaning → Clause, 8 thẻ" }).click();
+    expect(await page.evaluate(() => JSON.parse(sessionStorage.getItem("twogether.session.forgotten.hiep.collection-english-core-01") ?? "[]"))).toEqual([]);
+    await page.getByRole("button", { name: /Đã thử/ }).click();
+    await page.getByRole("button", { name: /Quên/ }).click();
+    expect(await page.evaluate(() => JSON.parse(sessionStorage.getItem("twogether.session.forgotten.hiep.collection-english-core-01") ?? "[]").length)).toBe(1);
+    expect(await page.evaluate(() => localStorage.getItem("twogether.local.p0.v1"))).toBeNull();
+    await page.getByTestId("card-jump-range").fill("1");
     await page.getByRole("button", { name: /Đã thử/ }).click();
     await page.getByRole("button", { name: /Nhớ/ }).click();
+    expect(await page.evaluate(() => JSON.parse(sessionStorage.getItem("twogether.session.forgotten.hiep.collection-english-core-01") ?? "[]").length)).toBe(0);
+    await page.getByRole("button", { name: "Đóng flashcard và trở lại cây" }).click();
     await page.getByRole("button", { name: "Mở bộ chọn hồ sơ" }).click();
     await page.getByTestId("learner-choice-hoang").click();
     await page.getByRole("button", { name: "Học bộ Meaning → Clause, 8 thẻ" }).click();
-
-    await expect(page.getByTestId("study-progress").locator("i")).toHaveText("/ 08");
+    expect(await page.evaluate(() => sessionStorage.getItem("twogether.session.forgotten.hoang.collection-english-core-01"))).toBeNull();
+    await expect(page.getByTestId("card-jump-range")).toHaveAttribute("max", "8");
     await expect(page.getByTestId("study-card")).toBeVisible();
+  });
+
+  test("turns the session wrong list into a bounded repair round", async ({ page }) => {
+    await page.getByTestId("learner-choice-hiep").click();
+    await page.getByRole("button", { name: "Học bộ Meaning → Clause, 8 thẻ" }).click();
+    for (let index = 0; index < 8; index += 1) {
+      await page.getByRole("button", { name: /Đã thử/ }).click();
+      await page.getByRole("button", { name: index === 0 ? /Quên/ : /Nhớ/ }).click();
+    }
+    await expect(page.getByRole("button", { name: "Ôn lại 1 câu Quên" })).toBeVisible();
+    await page.getByRole("button", { name: "Ôn lại 1 câu Quên" }).click();
+    await expect(page.getByTestId("card-jump-range")).toHaveAttribute("max", "1");
+    await page.getByRole("button", { name: /Đã thử/ }).click();
+    await page.getByRole("button", { name: /Nhớ/ }).click();
+    await expect(page.getByRole("button", { name: "Học lại bộ này" })).toBeVisible();
+    expect(await page.evaluate(() => JSON.parse(sessionStorage.getItem("twogether.session.forgotten.hiep.collection-english-core-01") ?? "[]"))).toEqual([]);
   });
 
   test("uses the full-screen map and opens a deck directly from its branch", async ({ page }) => {
@@ -57,7 +96,8 @@ test.describe("Twogether P0 browser contract", () => {
     await expect(page.getByText("KNOWLEDGE MAP · DAG")).toHaveCount(0);
     await expect(page.getByText("shared content")).toHaveCount(0);
     await expect(page.getByText("Đây là một lối đi gợi ý, không phải chiếc cây hoàn hảo của tiếng Anh.")).toHaveCount(0);
-    await expect(page.getByTestId("tree-node-twogether-universal-root")).toContainText("0/89 thẻ đã bền");
+    await expect(page.getByTestId("tree-node-twogether-universal-root")).toContainText("163 thẻ học ngay");
+    await expect(page.getByTestId("nav-progress")).toHaveCount(0);
     await expect(page.getByTestId("tree-map")).toBeVisible();
     expect(await page.getByTestId("tree-link").count()).toBeGreaterThan(0);
     await expect(page.getByTestId("tree-link").first()).toHaveAttribute("d", /M.+C/);
@@ -70,10 +110,43 @@ test.describe("Twogether P0 browser contract", () => {
     await expect(page.getByTestId("map-study-overlay")).toBeVisible();
     await expect(page.getByTestId("study-card")).toBeVisible();
     await expect(page.getByTestId("map-study-overlay")).toContainText("Verb Architecture");
-    await expect(page.getByTestId("study-progress").locator("i")).toHaveText("/ 09");
+    await expect(page.getByTestId("card-jump-range")).toHaveAttribute("max", "9");
     await page.getByRole("button", { name: "Đóng flashcard và trở lại cây" }).click();
     await expect(page.getByTestId("map-study-overlay")).toHaveCount(0);
     await expect(page.getByTestId("tree-map")).toBeVisible();
+  });
+
+  test("centers one non-scrolling flip card and supports jump plus shuffle", async ({ page }) => {
+    await page.getByTestId("learner-choice-hiep").click();
+    await page.getByRole("button", { name: "Học bộ Meaning → Clause, 8 thẻ" }).click();
+    const overlay = page.getByTestId("map-study-overlay");
+    const card = page.getByTestId("study-card");
+    const cardBox = await card.boundingBox();
+    expect(cardBox).not.toBeNull();
+    expect(Math.abs((cardBox!.x + cardBox!.width / 2) - (await page.evaluate(() => innerWidth / 2)))).toBeLessThan(12);
+    expect(await page.locator(".study-face-front").evaluate((element) => element.scrollHeight <= element.clientHeight + 1)).toBe(true);
+    expect(await overlay.evaluate((element) => getComputedStyle(element).backdropFilter)).not.toBe("none");
+    const metaParts = page.locator(".study-face-front .card-meta > span");
+    const metaLeft = await metaParts.nth(0).boundingBox();
+    const metaRight = await metaParts.nth(1).boundingBox();
+    expect(metaLeft).not.toBeNull();
+    expect(metaRight).not.toBeNull();
+    expect(metaLeft!.x + metaLeft!.width).toBeLessThan(metaRight!.x);
+
+    await page.getByTestId("card-jump-range").fill("5");
+    await expect(page.locator(".session-navigation label span")).toHaveText("5/8");
+    const stageBox = await page.locator(".flip-card-stage").boundingBox();
+    expect(stageBox).not.toBeNull();
+    await page.mouse.move(stageBox!.x + stageBox!.width * 0.75, stageBox!.y + stageBox!.height * 0.5);
+    await page.mouse.down();
+    await page.mouse.move(stageBox!.x + stageBox!.width * 0.25, stageBox!.y + stageBox!.height * 0.5, { steps: 6 });
+    await page.mouse.up();
+    await expect(page.locator(".session-navigation label span")).toHaveText("6/8");
+    await page.getByRole("button", { name: /Xáo/ }).click();
+    await expect(page.locator(".session-status")).toContainText("Đã xáo thứ tự thẻ");
+    await page.getByRole("button", { name: /Đã thử/ }).click();
+    await expect(card).toHaveClass(/is-revealed/);
+    expect(await page.locator(".study-face-back").evaluate((element) => element.scrollHeight <= element.clientHeight + 1)).toBe(true);
   });
 
   test("keeps the map inside one phone screen without vertical page scrolling", async ({ page }) => {
@@ -91,6 +164,13 @@ test.describe("Twogether P0 browser contract", () => {
     expect(legendBox).not.toBeNull();
     expect(navBox).not.toBeNull();
     expect(legendBox!.y + legendBox!.height).toBeLessThan(navBox!.y);
+
+    await page.getByRole("button", { name: "Học bộ Meaning → Clause, 8 thẻ" }).click();
+    await expect(page.getByTestId("map-study-overlay")).toBeVisible();
+    expect(await page.evaluate(() => document.scrollingElement!.scrollHeight <= window.innerHeight + 1)).toBe(true);
+    expect(await page.locator(".study-face-front").evaluate((element) => element.scrollHeight <= element.clientHeight + 1)).toBe(true);
+    await page.getByRole("button", { name: /Đã thử/ }).click();
+    expect(await page.locator(".study-face-back").evaluate((element) => element.scrollHeight <= element.clientHeight + 1)).toBe(true);
   });
 
   test("serves an installable shell without private data in the service worker", async ({ page, request }) => {
@@ -104,7 +184,7 @@ test.describe("Twogether P0 browser contract", () => {
     const serviceWorkerResponse = await request.get("/sw.js");
     const serviceWorker = await serviceWorkerResponse.text();
     expect(serviceWorkerResponse.ok()).toBe(true);
-    expect(serviceWorker).toContain("twogether-shell-v2");
+    expect(serviceWorker).toContain("twogether-shell-v3");
     expect(serviceWorker).not.toContain("private_notes");
     expect(serviceWorker).not.toContain("review_events");
 

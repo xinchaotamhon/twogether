@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "revision_id": "empower-a2-transfer-corrections-v1-2026-09-04",
+  "status": "owner_directed_runtime_revision",
+  "reason": "The transfer answer must answer the exact new situation shown on the card while preserving the immutable coursebook-derived source packet.",
+  "overrides": [
+    {
+      "card_id": "coursebook-a2-course-05-01",
+      "transfer_answer": "Go straight from the school gate, turn left at the office. The library is next to the science building."
+    }
+  ]
+}

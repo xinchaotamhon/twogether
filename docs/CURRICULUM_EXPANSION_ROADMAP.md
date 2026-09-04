@@ -1,6 +1,6 @@
 ---
-last_verified: 2026-08-26
-verified_by: Codex publication and expansion design
+last_verified: 2026-09-04
+verified_by: Codex session-study and Empower integration
 status: active design — future cards still require Human approval
 ---
 
@@ -22,13 +22,15 @@ Use this maturity ladder when describing coverage:
 
 English Core v2 deliberately targets levels 1–3. A seven-day pilot must decide which level-4/5 branch comes next.
 
+Current English runtime coverage is 163 published cards: 89 owner-approved English Core cards plus 74 owner-scope-approved, source-linked Empower A2 knowledge cards. Seven Empower vocabulary cards remain in review. This increases teachable examples and coursebook coverage; it does not change the honest claim that the Core is a backbone rather than “all English.”
+
 ## How the knowledge DAG grows
 
 - “Bản chất chung” is a virtual universal root. Every subject with no prerequisite parent becomes an entry branch automatically.
 - A node may have several prerequisites. Never force one irreversible parent merely to make the picture look like a tree.
 - Layout depth is derived from prerequisite/part-of edges, not from a fixed `root/trunk/branch/leaf` label. Adding or moving an edge may therefore reposition a whole branch without changing card history.
 - Cross-subject analogy uses `applies_to` or `contrasts_with`; it must not create a fake prerequisite. React does not require English, even though both may share general ideas such as state, identity, boundary, and transformation.
-- New AI-generated content enters as draft with source references. Human approval publishes a version; editing it later creates a new draft revision and never erases review events.
+- New AI-generated content enters as draft with source references. Human approval publishes a version; editing it later creates a new draft revision and never erases review events. A Human may approve an exact, fingerprinted scope (as with the 74 non-vocabulary Empower cards), but exclusions and counts must remain machine-checkable.
 
 ## Pronunciation and IPA: integrate first, isolate only the minimum
 
@@ -92,6 +94,8 @@ React cards should ask for predictions, explanations, bug diagnosis, state owner
 ## Cross-browser progress and identity
 
 The safe fallback adapter remains `localStorage`: it survives a deploy in one browser but does not follow the learner elsewhere. The Supabase adapter and pairing schema are implemented; remote authority still requires owner dashboard activation and real two-profile RLS tests.
+
+The current temporary session mode is intentionally even shorter-lived: only wrong-card IDs use `sessionStorage`, refresh in the same tab preserves them, and closing the tab clears them. It is not cross-browser persistence and does not use FSRS or streak. This temporary override ends only when Hiệp explicitly switches the deployment to `VITE_STUDY_MODE=fsrs`.
 
 Supabase provides shared content plus per-learner remote progress only after remote activation and security gates. Choosing “Hiệp” or “Hoàng” alone is not secure authentication; anyone with the URL could impersonate either learner. The implemented compromise keeps daily use simple:
 

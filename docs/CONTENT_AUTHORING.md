@@ -59,6 +59,10 @@ Capture the source separately, hash it, and write a transformation note. Do not 
 
 `content/drafts/english-core-beginner-revision-v2.json` is the immutable beginner-first source/review packet. Hiệp approved its exact 89 English IDs on 2026-09-01 in `content/reviews/english-generative-core-v2-owner-approval-2026-09-01.json`; `src/approvedCurriculum.ts` derives the ten published variable-size collections with reviewer `hiep`. The earlier 80-card packet and approval remain historical provenance, not runtime authority. The ten React cards remain draft history.
 
+The immutable Empower A2 packet remains `review` provenance. Hiệp's 2026-09-04 scope manifest publishes exactly its 74 non-vocabulary IDs through `src/empowerCurriculum.ts`; seven `coursebook-a2-vocab-*` records remain draft and enter the tree one at a time only after Human approval. A scope approval is valid only when it fingerprints the source file and locks both included and excluded counts.
+
 Editing an approved runtime card must create a new local draft revision. Do not rewrite the source packet, delete its published version, reset FSRS state, or erase review events. Future pronunciation, vocabulary, comparison, React, or other-subject branches follow `docs/CURRICULUM_EXPANSION_ROADMAP.md` and require their own bounded Human approval.
 
 The published 89-card packet includes matching worked transfer answers and glossary references. Older support packets remain provenance; do not restore a duplicate preview layer or treat visibility as Human approval for future changes.
+
+Preserve precise keywords and attach glossary IDs instead of erasing them. A transfer prompt must vary the concrete situation while testing the same mechanism; its answer must respond to that new prompt. Keep `misconception` in authored data, but the current study surface intentionally does not render a `Dễ nhầm` section.

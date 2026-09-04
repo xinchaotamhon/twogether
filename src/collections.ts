@@ -1,9 +1,17 @@
 import type { Card, ConceptEdge, LearnerId, LearnerSnapshot } from "./types";
 import type { CardCollection, CollectionRunPlan, RunAttempt } from "./featureTypes";
 import { APPROVED_ENGLISH_COLLECTIONS } from "./approvedCurriculum";
+import {
+  EMPOWER_KNOWLEDGE_COLLECTIONS,
+  EMPOWER_VOCABULARY_COLLECTION,
+} from "./empowerCurriculum";
 
 /** Built-in collections are content-versioned; learner-created collections live in localWorkspace. */
-export const COLLECTION_FIXTURES: readonly CardCollection[] = APPROVED_ENGLISH_COLLECTIONS;
+export const COLLECTION_FIXTURES: readonly CardCollection[] = [
+  ...APPROVED_ENGLISH_COLLECTIONS,
+  ...EMPOWER_KNOWLEDGE_COLLECTIONS,
+  EMPOWER_VOCABULARY_COLLECTION,
+];
 
 export function cardsInCollection(cards: readonly Card[], collection: CardCollection): Card[] {
   const allowed = new Set(collection.cardIds);

@@ -98,3 +98,10 @@ Raw logs and future screenshots belong under dated evidence subfolders; do not r
 
 - `50-Evidence/inline-map-study-2026-09-01.md` records removal of the separate `Tiếp tục` page, inline flashcard open/close behavior, virtual nodes for extra collections and the legend collision repair.
 - ADR-0020 owns the one-surface navigation decision and explicitly preserves FSRS/run/streak behavior.
+
+## Session study and completed English tree — 2026-09-04
+
+- `50-Evidence/session-study-english-tree-2026-09-04.md` records the owner-requested temporary shutdown of Supabase/FSRS/streak, tab-scoped wrong-card storage, centered non-scrolling flip study, free navigation/shuffle, bottom-root branching projection and service-worker cache bump.
+- `content/reviews/empower-a2-knowledge-owner-approval-2026-09-04.json` fingerprints the immutable 81-card packet and publishes exactly 74 non-vocabulary cards; seven vocabulary cards remain draft for individual review.
+- `content/revisions/english-core-transfer-novelty-v3.json` corrects 30 audited transfer situations without rewriting the approved Core packet. Separate revision files supply the Empower directions correction, 238 declared A2 glossary terms and 33 supplemental Core labels.
+- ADR-0021 owns the reversible runtime/content/layout decision. Final unit, Chrome, build, audit and cumulative receipts are recorded in the evidence packet.

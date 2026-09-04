@@ -1,0 +1,1677 @@
+{
+  "schema_version": 1,
+  "revision_id": "empower-a2-glossary-v1-2026-09-04",
+  "status": "owner_directed_learning_scaffold",
+  "reason": "Concise original Vietnamese definitions for all declared terms in the immutable Empower A2 packet. Definitions are AI-authored support, not publication of the seven vocabulary cards.",
+  "source_refs": [
+    "project:empower-a2-long-term-learning-review-v1"
+  ],
+  "terms": [
+    {
+      "label": "-est",
+      "meaning_vi": "đuôi so sánh nhất",
+      "explanation": "Gắn với nhiều tính từ ngắn để chọn mức cao nhất trong một nhóm; chính tả có thể đổi.",
+      "example": "small → the smallest",
+      "why_it_matters": "Nhận đúng nghĩa “đuôi so sánh nhất” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "-ier",
+      "meaning_vi": "dạng so sánh hơn của nhiều tính từ tận cùng -y",
+      "explanation": "Sau phụ âm, y thường đổi thành i trước -er; không phải quy tắc cho mọi từ có y.",
+      "example": "happy → happier",
+      "why_it_matters": "Nhận đúng nghĩa “dạng so sánh hơn của nhiều tính từ tận cùng -y” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "-ing",
+      "meaning_vi": "đuôi tạo dạng -ing",
+      "explanation": "Có thể tham gia cấu trúc tiếp diễn hoặc làm thành phần giống danh từ; phải xem cả cấu trúc.",
+      "example": "She is reading. Reading helps.",
+      "why_it_matters": "Nhận đúng nghĩa “đuôi tạo dạng -ing” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "-ing form",
+      "meaning_vi": "dạng động từ đuôi -ing",
+      "explanation": "Không tự xác định thì; chức năng phụ thuộc từ và cấu trúc đi kèm.",
+      "example": "I enjoy swimming.",
+      "why_it_matters": "Nhận đúng nghĩa “dạng động từ đuôi -ing” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "a lot of",
+      "meaning_vi": "nhiều",
+      "explanation": "Dùng trước danh từ đếm được số nhiều hoặc không đếm được.",
+      "example": "a lot of books; a lot of water",
+      "why_it_matters": "Nhận đúng nghĩa “nhiều” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "ability",
+      "meaning_vi": "khả năng làm việc gì",
+      "explanation": "Nói người nào làm được việc gì, không đồng nghĩa với được phép.",
+      "example": "She can swim.",
+      "why_it_matters": "Nhận đúng nghĩa “khả năng làm việc gì” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "accept",
+      "meaning_vi": "chấp nhận",
+      "explanation": "Đồng ý với lời mời, đề nghị hoặc điều được đưa ra.",
+      "example": "Thanks. I'd love to come.",
+      "why_it_matters": "Nhận đúng nghĩa “chấp nhận” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "activity",
+      "meaning_vi": "hoạt động",
+      "explanation": "Việc người ta làm; động từ đi cùng phụ thuộc thói quen kết hợp từ.",
+      "example": "Reading is my favourite activity.",
+      "why_it_matters": "Nhận đúng nghĩa “hoạt động” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "actually",
+      "meaning_vi": "thực ra",
+      "explanation": "Thường dùng để sửa hoặc làm rõ điều vừa nói; không có nghĩa là hiện tại.",
+      "example": "Actually, I'd like tea.",
+      "why_it_matters": "Nhận đúng nghĩa “thực ra” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "adjective",
+      "meaning_vi": "tính từ",
+      "explanation": "Nêu đặc điểm hoặc đánh giá của người/vật; thường bổ nghĩa danh từ hoặc đứng sau be.",
+      "example": "a quiet room; The room is quiet.",
+      "why_it_matters": "Nhận đúng nghĩa “tính từ” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "adverb",
+      "meaning_vi": "trạng từ",
+      "explanation": "Bổ sung cách thức, thời gian, mức độ hoặc góc nhìn cho động từ, tính từ hay cả câu.",
+      "example": "She spoke slowly.",
+      "why_it_matters": "Nhận đúng nghĩa “trạng từ” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "adverb of frequency",
+      "meaning_vi": "trạng từ tần suất",
+      "explanation": "Cho biết việc lặp lại thường xuyên đến đâu.",
+      "example": "I usually walk to school.",
+      "why_it_matters": "Nhận đúng nghĩa “trạng từ tần suất” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "advice",
+      "meaning_vi": "lời khuyên",
+      "explanation": "Danh từ không đếm được trong cách dùng thông thường; nói a piece of advice nếu cần đếm.",
+      "example": "That's useful advice.",
+      "why_it_matters": "Nhận đúng nghĩa “lời khuyên” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "all right",
+      "meaning_vi": "ổn; được",
+      "explanation": "Trong hỏi sức khỏe, nghĩa là ổn; trong đáp lời, có thể là đồng ý.",
+      "example": "Are you all right?",
+      "why_it_matters": "Nhận đúng nghĩa “ổn; được” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "also",
+      "meaning_vi": "cũng",
+      "explanation": "Thêm một ý; thường đứng trước động từ chính nhưng sau be.",
+      "example": "She also works here.",
+      "why_it_matters": "Nhận đúng nghĩa “cũng” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "any",
+      "meaning_vi": "một chút/nào/bất kỳ tùy câu",
+      "explanation": "Hay dùng trong câu hỏi/phủ định; trong khẳng định có thể mang nghĩa chọn tự do.",
+      "example": "Do you have any water? Choose any seat.",
+      "why_it_matters": "Nhận đúng nghĩa “một chút/nào/bất kỳ tùy câu” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "apologise",
+      "meaning_vi": "xin lỗi",
+      "explanation": "Thừa nhận lỗi hoặc thể hiện tiếc vì làm phiền.",
+      "example": "I apologise for being late.",
+      "why_it_matters": "Nhận đúng nghĩa “xin lỗi” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "arrangement",
+      "meaning_vi": "sự sắp xếp đã hẹn",
+      "explanation": "Kế hoạch đã có người, thời gian hoặc địa điểm được thống nhất.",
+      "example": "We're meeting at six.",
+      "why_it_matters": "Nhận đúng nghĩa “sự sắp xếp đã hẹn” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "article",
+      "meaning_vi": "mạo từ",
+      "explanation": "A/an và the là loại từ hạn định: a/an giới thiệu một thành viên; the giúp nhận diện đối tượng.",
+      "example": "a book; the book on the desk",
+      "why_it_matters": "Nhận đúng nghĩa “mạo từ” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "as well",
+      "meaning_vi": "cũng; thêm nữa",
+      "explanation": "Thường ở cuối câu khi bổ sung thông tin.",
+      "example": "I'm going as well.",
+      "why_it_matters": "Nhận đúng nghĩa “cũng; thêm nữa” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "assistant",
+      "meaning_vi": "người trợ giúp/nhân viên bán hàng",
+      "explanation": "Trong cửa hàng, shop assistant giúp khách chọn hoặc mua đồ.",
+      "example": "The assistant found my size.",
+      "why_it_matters": "Nhận đúng nghĩa “người trợ giúp/nhân viên bán hàng” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "at",
+      "meaning_vi": "ở/tại/vào một điểm",
+      "explanation": "Thường nhìn địa điểm hay thời gian như một điểm; có nhiều kết hợp cố định.",
+      "example": "at school; at six",
+      "why_it_matters": "Nhận đúng nghĩa “ở/tại/vào một điểm” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "attention",
+      "meaning_vi": "sự chú ý",
+      "explanation": "Dùng pay attention to để nói chú ý đến người hoặc việc.",
+      "example": "Pay attention to the signs.",
+      "why_it_matters": "Nhận đúng nghĩa “sự chú ý” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "auxiliary",
+      "meaning_vi": "trợ động từ",
+      "explanation": "Giúp mang thông tin ngữ pháp như câu hỏi, phủ định, thể hoặc tình thái.",
+      "example": "Has she arrived?",
+      "why_it_matters": "Nhận đúng nghĩa “trợ động từ” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "bank",
+      "meaning_vi": "ngân hàng; bờ sông",
+      "explanation": "Một từ có nhiều nghĩa; trong chỉ đường ở thị trấn thường là ngân hàng.",
+      "example": "The bank is opposite the café.",
+      "why_it_matters": "Nhận đúng nghĩa “ngân hàng; bờ sông” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "base form",
+      "meaning_vi": "dạng gốc của động từ",
+      "explanation": "Dạng không có to, -s, -ed; dùng sau do/did và nhiều modal.",
+      "example": "Did she go? She can go.",
+      "why_it_matters": "Nhận đúng nghĩa “dạng gốc của động từ” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "base verb",
+      "meaning_vi": "động từ ở dạng gốc",
+      "explanation": "Ở các thẻ này, chỉ dạng như go, work, be, chưa thêm đuôi chia.",
+      "example": "He doesn't work here.",
+      "why_it_matters": "Nhận đúng nghĩa “động từ ở dạng gốc” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "be",
+      "meaning_vi": "động từ be",
+      "explanation": "Có các dạng am/is/are/was/were/been/being; có thể nối đặc điểm hoặc làm trợ động từ.",
+      "example": "She is tired. She is working.",
+      "why_it_matters": "Nhận đúng nghĩa “động từ be” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "because",
+      "meaning_vi": "bởi vì",
+      "explanation": "Nối mệnh đề nêu lý do với điều cần giải thích.",
+      "example": "I stayed home because I was tired.",
+      "why_it_matters": "Nhận đúng nghĩa “bởi vì” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "been",
+      "meaning_vi": "quá khứ phân từ của be",
+      "explanation": "Dùng sau have/has/had; been to thường nói đã đến và quay về.",
+      "example": "I've been to Hue.",
+      "why_it_matters": "Nhận đúng nghĩa “quá khứ phân từ của be” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "best",
+      "meaning_vi": "tốt nhất",
+      "explanation": "Dạng so sánh nhất bất quy tắc của good; dùng theo tập so sánh trong ngữ cảnh.",
+      "example": "This is the best route.",
+      "why_it_matters": "Nhận đúng nghĩa “tốt nhất” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "better",
+      "meaning_vi": "tốt hơn",
+      "explanation": "Dạng so sánh hơn bất quy tắc của good; trạng từ well cũng có dạng better.",
+      "example": "This route is better.",
+      "why_it_matters": "Nhận đúng nghĩa “tốt hơn” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "borrow",
+      "meaning_vi": "mượn",
+      "explanation": "Nhận thứ gì để dùng tạm rồi trả; người cho mượn dùng lend.",
+      "example": "Can I borrow your pen?",
+      "why_it_matters": "Nhận đúng nghĩa “mượn” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "bottle",
+      "meaning_vi": "chai",
+      "explanation": "Danh từ đếm được; a bottle of đặt đơn vị chai cho đồ chứa bên trong.",
+      "example": "a bottle of water",
+      "why_it_matters": "Nhận đúng nghĩa “chai” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "bowl",
+      "meaning_vi": "bát/tô",
+      "explanation": "Danh từ đếm được; a bowl of đặt đơn vị bát cho đồ ăn.",
+      "example": "a bowl of soup",
+      "why_it_matters": "Nhận đúng nghĩa “bát/tô” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "busy",
+      "meaning_vi": "bận",
+      "explanation": "Tính từ mô tả đang có việc; trong điện thoại có thể nói người đang không rảnh.",
+      "example": "She's busy right now.",
+      "why_it_matters": "Nhận đúng nghĩa “bận” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "call back",
+      "meaning_vi": "gọi lại",
+      "explanation": "Gọi điện sau hoặc đáp lại cuộc gọi trước.",
+      "example": "I'll call back later.",
+      "why_it_matters": "Nhận đúng nghĩa “gọi lại” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "can",
+      "meaning_vi": "có thể",
+      "explanation": "Modal thường nói khả năng, cho phép hoặc yêu cầu; theo sau là dạng gốc.",
+      "example": "Can you help me?",
+      "why_it_matters": "Nhận đúng nghĩa “có thể” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "capital letter",
+      "meaning_vi": "chữ hoa",
+      "explanation": "Dùng đầu câu, tên riêng và một số tên nhóm như ngôn ngữ/quốc tịch.",
+      "example": "Mai speaks English.",
+      "why_it_matters": "Nhận đúng nghĩa “chữ hoa” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "catch",
+      "meaning_vi": "bắt/kịp chuyến",
+      "explanation": "Với bus/train, nói lên kịp chuyến; không dịch mọi nghĩa thành bắt.",
+      "example": "We caught the early bus.",
+      "why_it_matters": "Nhận đúng nghĩa “bắt/kịp chuyến” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "certainty",
+      "meaning_vi": "mức chắc chắn",
+      "explanation": "Mức người nói tin một điều; modal và trạng từ có thể biểu thị mức này.",
+      "example": "She may be home.",
+      "why_it_matters": "Nhận đúng nghĩa “mức chắc chắn” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "change an order",
+      "meaning_vi": "đổi món/đổi yêu cầu đã đặt",
+      "explanation": "Trong quán ăn, sửa lại món mình vừa gọi.",
+      "example": "Could I change my order?",
+      "why_it_matters": "Nhận đúng nghĩa “đổi món/đổi yêu cầu đã đặt” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "cheaper",
+      "meaning_vi": "rẻ hơn",
+      "explanation": "Cheap thêm -er để so giá với một mốc khác.",
+      "example": "This bag is cheaper than that one.",
+      "why_it_matters": "Nhận đúng nghĩa “rẻ hơn” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "check information",
+      "meaning_vi": "kiểm tra lại thông tin",
+      "explanation": "Hỏi lại để xác nhận điều mình nghe hoặc hiểu có đúng không.",
+      "example": "The train leaves at six, right?",
+      "why_it_matters": "Nhận đúng nghĩa “kiểm tra lại thông tin” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "check understanding",
+      "meaning_vi": "kiểm tra mình hiểu đúng",
+      "explanation": "Nhắc hoặc hỏi lại ý chính, không chỉ yêu cầu lặp nguyên câu.",
+      "example": "Do you mean the blue door?",
+      "why_it_matters": "Nhận đúng nghĩa “kiểm tra mình hiểu đúng” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "checkout",
+      "meaning_vi": "việc/giờ trả phòng; quầy thanh toán",
+      "explanation": "Danh từ; động từ tương ứng viết tách check out.",
+      "example": "What time is checkout?",
+      "why_it_matters": "Nhận đúng nghĩa “việc/giờ trả phòng; quầy thanh toán” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "choice",
+      "meaning_vi": "sự lựa chọn",
+      "explanation": "Một phương án được chọn hoặc quyền chọn giữa các phương án.",
+      "example": "You have two choices.",
+      "why_it_matters": "Nhận đúng nghĩa “sự lựa chọn” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "city bus tour",
+      "meaning_vi": "chuyến tham quan thành phố bằng xe buýt",
+      "explanation": "Cụm danh từ gọi một dịch vụ; city và bus làm rõ loại tour.",
+      "example": "Where does the city bus tour start?",
+      "why_it_matters": "Nhận đúng nghĩa “chuyến tham quan thành phố bằng xe buýt” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "collocation",
+      "meaning_vi": "kết hợp từ quen dùng",
+      "explanation": "Từ thường đi cùng nhau theo cách dùng của ngôn ngữ, không chỉ theo bản dịch.",
+      "example": "take a photo",
+      "why_it_matters": "Nhận đúng nghĩa “kết hợp từ quen dùng” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "comparative",
+      "meaning_vi": "dạng so sánh hơn",
+      "explanation": "Đặt mức độ của một đối tượng cạnh một mốc so sánh, thường với than.",
+      "example": "This box is heavier than that one.",
+      "why_it_matters": "Nhận đúng nghĩa “dạng so sánh hơn” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "comparison",
+      "meaning_vi": "sự so sánh",
+      "explanation": "Đối chiếu các đối tượng trên một tiêu chí như giá, kích cỡ hoặc chất lượng.",
+      "example": "A is taller than B.",
+      "why_it_matters": "Nhận đúng nghĩa “sự so sánh” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "consonant cluster",
+      "meaning_vi": "cụm phụ âm",
+      "explanation": "Hai hay nhiều phụ âm đứng sát nhau trong một âm tiết; không tự chèn thêm nguyên âm.",
+      "example": "/str/ trong street",
+      "why_it_matters": "Nhận đúng nghĩa “cụm phụ âm” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "container",
+      "meaning_vi": "vật chứa/đơn vị chứa",
+      "explanation": "Cho biết phần đếm được của chất hoặc đồ ăn không đếm trực tiếp.",
+      "example": "two cups of tea",
+      "why_it_matters": "Nhận đúng nghĩa “vật chứa/đơn vị chứa” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "contrast",
+      "meaning_vi": "sự tương phản",
+      "explanation": "Đặt hai ý khác nhau cạnh nhau để thấy điểm đối lập.",
+      "example": "It's small, but it's comfortable.",
+      "why_it_matters": "Nhận đúng nghĩa “sự tương phản” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "could",
+      "meaning_vi": "có thể/đã có thể",
+      "explanation": "Modal dùng cho khả năng quá khứ, khả năng giả định hoặc lời yêu cầu lịch sự.",
+      "example": "Could you open the window?",
+      "why_it_matters": "Nhận đúng nghĩa “có thể/đã có thể” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "countable",
+      "meaning_vi": "đếm được",
+      "explanation": "Một cách dùng danh từ có đơn vị riêng và có thể chia số ít/số nhiều.",
+      "example": "one chair; two chairs",
+      "why_it_matters": "Nhận đúng nghĩa “đếm được” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "countable noun",
+      "meaning_vi": "danh từ đếm được",
+      "explanation": "Danh từ có thể dùng với số đếm trong nghĩa đang xét.",
+      "example": "a book; three books",
+      "why_it_matters": "Nhận đúng nghĩa “danh từ đếm được” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "country",
+      "meaning_vi": "quốc gia",
+      "explanation": "Tên đất nước; khác từ chỉ quốc tịch của người.",
+      "example": "Vietnam is a country.",
+      "why_it_matters": "Nhận đúng nghĩa “quốc gia” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "currency",
+      "meaning_vi": "đơn vị/hệ tiền tệ",
+      "explanation": "Loại tiền được dùng tại một nơi, như pound hoặc dong.",
+      "example": "The price is in pounds.",
+      "why_it_matters": "Nhận đúng nghĩa “đơn vị/hệ tiền tệ” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "customer",
+      "meaning_vi": "khách hàng",
+      "explanation": "Người mua hàng hoặc dịch vụ; khác assistant là người phục vụ/bán hàng.",
+      "example": "The customer asked for a smaller size.",
+      "why_it_matters": "Nhận đúng nghĩa “khách hàng” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "date",
+      "meaning_vi": "ngày tháng",
+      "explanation": "Một mốc lịch cụ thể; không chỉ ngày trong tuần.",
+      "example": "The date is 5 June.",
+      "why_it_matters": "Nhận đúng nghĩa “ngày tháng” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "decline",
+      "meaning_vi": "từ chối lịch sự",
+      "explanation": "Không nhận lời mời hoặc đề nghị; thường kèm lời cảm ơn/lý do ngắn.",
+      "example": "Thanks, but I can't come.",
+      "why_it_matters": "Nhận đúng nghĩa “từ chối lịch sự” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "details",
+      "meaning_vi": "chi tiết",
+      "explanation": "Thông tin cụ thể như khi nào, ở đâu, với ai.",
+      "example": "Please send me the meeting details.",
+      "why_it_matters": "Nhận đúng nghĩa “chi tiết” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "determiner",
+      "meaning_vi": "từ hạn định",
+      "explanation": "Giúp xác định danh từ đang chỉ đối tượng nào, bao nhiêu hay của ai.",
+      "example": "the book; my book",
+      "why_it_matters": "Nhận đúng nghĩa “từ hạn định” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "did",
+      "meaning_vi": "dạng quá khứ của do",
+      "explanation": "Làm trợ động từ cho nhiều câu hỏi/phủ định quá khứ; động từ chính dùng dạng gốc.",
+      "example": "Did you watch it?",
+      "why_it_matters": "Nhận đúng nghĩa “dạng quá khứ của do” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "didn't",
+      "meaning_vi": "did not viết gọn",
+      "explanation": "Phủ định quá khứ với trợ động từ did; không chia quá khứ thêm ở động từ chính.",
+      "example": "She didn't go.",
+      "why_it_matters": "Nhận đúng nghĩa “did not viết gọn” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "directions",
+      "meaning_vi": "lời chỉ đường",
+      "explanation": "Các bước giúp đi từ nơi này tới nơi khác; thường dùng mệnh lệnh và mốc vị trí.",
+      "example": "Go straight and turn left.",
+      "why_it_matters": "Nhận đúng nghĩa “lời chỉ đường” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "do",
+      "meaning_vi": "làm; trợ động từ do",
+      "explanation": "Có thể là động từ chính hoặc trợ động từ; vai trò phụ thuộc cấu trúc.",
+      "example": "I do yoga. Do you swim?",
+      "why_it_matters": "Nhận đúng nghĩa “làm; trợ động từ do” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "does",
+      "meaning_vi": "do ở hiện tại ngôi ba số ít",
+      "explanation": "Khi does làm trợ động từ, động từ chính trở về dạng gốc.",
+      "example": "Does she work here?",
+      "why_it_matters": "Nhận đúng nghĩa “do ở hiện tại ngôi ba số ít” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "don't have to",
+      "meaning_vi": "không bắt buộc",
+      "explanation": "Không cần làm, nhưng vẫn được làm nếu muốn; khác mustn't là cấm.",
+      "example": "You don't have to come early.",
+      "why_it_matters": "Nhận đúng nghĩa “không bắt buộc” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "don't mind",
+      "meaning_vi": "không ngại",
+      "explanation": "Thường đi với dạng -ing để nói chấp nhận một hoạt động.",
+      "example": "I don't mind waiting.",
+      "why_it_matters": "Nhận đúng nghĩa “không ngại” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "double room",
+      "meaning_vi": "phòng có giường đôi",
+      "explanation": "Thường là phòng có một giường đôi; twin room thường có hai giường đơn.",
+      "example": "I'd like a double room.",
+      "why_it_matters": "Nhận đúng nghĩa “phòng có giường đôi” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "ending",
+      "meaning_vi": "phần đuôi",
+      "explanation": "Âm/chữ ở cuối từ, có thể mang chức năng ngữ pháp.",
+      "example": "-ed in walked",
+      "why_it_matters": "Nhận đúng nghĩa “phần đuôi” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "event",
+      "meaning_vi": "sự kiện",
+      "explanation": "Việc xảy ra hoặc buổi được tổ chức; trong lời mời cần nêu sự kiện rõ.",
+      "example": "The event starts at seven.",
+      "why_it_matters": "Nhận đúng nghĩa “sự kiện” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "ever",
+      "meaning_vi": "đã từng/bất cứ lúc nào",
+      "explanation": "Trong hỏi trải nghiệm, bao quát khoảng thời gian đến mốc hiện tại.",
+      "example": "Have you ever flown?",
+      "why_it_matters": "Nhận đúng nghĩa “đã từng/bất cứ lúc nào” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "existence",
+      "meaning_vi": "sự tồn tại/hiện diện",
+      "explanation": "Nêu có thứ gì ở một nơi, thay vì mô tả đặc điểm của thứ đã biết.",
+      "example": "There is a park nearby.",
+      "why_it_matters": "Nhận đúng nghĩa “sự tồn tại/hiện diện” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "experience",
+      "meaning_vi": "trải nghiệm",
+      "explanation": "Điều đã làm hoặc đã gặp; hỏi trải nghiệm đến nay thường không chốt ngày quá khứ.",
+      "example": "I've tried sushi.",
+      "why_it_matters": "Nhận đúng nghĩa “trải nghiệm” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "explain",
+      "meaning_vi": "giải thích",
+      "explanation": "Làm rõ ý/cách hoạt động; thường explain something to someone.",
+      "example": "Please explain the rule to me.",
+      "why_it_matters": "Nhận đúng nghĩa “giải thích” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "feel well",
+      "meaning_vi": "cảm thấy khỏe",
+      "explanation": "Well ở đây mô tả tình trạng sức khỏe.",
+      "example": "I don't feel well today.",
+      "why_it_matters": "Nhận đúng nghĩa “cảm thấy khỏe” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "field",
+      "meaning_vi": "ô/mục thông tin",
+      "explanation": "Trong biểu mẫu, nơi nhập một loại dữ liệu cụ thể.",
+      "example": "Write your surname in this field.",
+      "why_it_matters": "Nhận đúng nghĩa “ô/mục thông tin” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "finally",
+      "meaning_vi": "cuối cùng",
+      "explanation": "Đánh dấu bước/ý cuối hoặc việc rốt cuộc xảy ra.",
+      "example": "Finally, serve the soup.",
+      "why_it_matters": "Nhận đúng nghĩa “cuối cùng” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "finite verb",
+      "meaning_vi": "động từ hữu hạn",
+      "explanation": "Dạng gánh vai trò ngữ pháp trung tâm của mệnh đề, thường gồm thì và hòa hợp.",
+      "example": "She is working: is là finite.",
+      "why_it_matters": "Nhận đúng nghĩa “động từ hữu hạn” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "first",
+      "meaning_vi": "đầu tiên/thứ nhất",
+      "explanation": "Nêu vị trí đầu trong một thứ tự; trong hướng dẫn dùng để mở bước đầu.",
+      "example": "First, wash the rice.",
+      "why_it_matters": "Nhận đúng nghĩa “đầu tiên/thứ nhất” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "firstly",
+      "meaning_vi": "thứ nhất",
+      "explanation": "Dùng tổ chức ý hoặc lý do theo thứ tự.",
+      "example": "Firstly, the room is quiet.",
+      "why_it_matters": "Nhận đúng nghĩa “thứ nhất” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "form",
+      "meaning_vi": "biểu mẫu; hình thức từ",
+      "explanation": "Trong đăng ký là tờ/khung điền thông tin; trong ngữ pháp là dạng của từ.",
+      "example": "Fill in this form.",
+      "why_it_matters": "Nhận đúng nghĩa “biểu mẫu; hình thức từ” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "frequency adverb",
+      "meaning_vi": "trạng từ tần suất",
+      "explanation": "Cùng nghĩa với adverb of frequency; nêu mức thường xuyên.",
+      "example": "She sometimes cooks.",
+      "why_it_matters": "Nhận đúng nghĩa “trạng từ tần suất” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "future",
+      "meaning_vi": "tương lai",
+      "explanation": "Thời gian sau mốc nói; tiếng Anh diễn đạt bằng nhiều cấu trúc, không chỉ will.",
+      "example": "We're leaving tomorrow.",
+      "why_it_matters": "Nhận đúng nghĩa “tương lai” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "get off",
+      "meaning_vi": "xuống xe/tàu",
+      "explanation": "Rời phương tiện như bus/train; với ô tô thường dùng get out of.",
+      "example": "Get off at the next stop.",
+      "why_it_matters": "Nhận đúng nghĩa “xuống xe/tàu” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "get on",
+      "meaning_vi": "lên xe/tàu",
+      "explanation": "Bước lên phương tiện như bus/train; với ô tô thường dùng get in.",
+      "example": "Let's get on the bus.",
+      "why_it_matters": "Nhận đúng nghĩa “lên xe/tàu” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "get past",
+      "meaning_vi": "đi qua/chỗ vượt qua",
+      "explanation": "Di chuyển qua người hoặc vật đang chắn đường.",
+      "example": "Excuse me, can I get past?",
+      "why_it_matters": "Nhận đúng nghĩa “đi qua/chỗ vượt qua” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "go",
+      "meaning_vi": "đi",
+      "explanation": "Dùng riêng để nói di chuyển; go + -ing là kết hợp thường gặp cho một số hoạt động.",
+      "example": "We go running on Sundays.",
+      "why_it_matters": "Nhận đúng nghĩa “đi” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "going to",
+      "meaning_vi": "cấu trúc be going to",
+      "explanation": "Be going to + dạng gốc thường diễn đạt dự định hoặc dự đoán có căn cứ hiện tại.",
+      "example": "I'm going to study tonight.",
+      "why_it_matters": "Nhận đúng nghĩa “cấu trúc be going to” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "group",
+      "meaning_vi": "nhóm",
+      "explanation": "Tập các thành viên dùng làm phạm vi khi chọn hơn nhất.",
+      "example": "She's the tallest in the group.",
+      "why_it_matters": "Nhận đúng nghĩa “nhóm” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "have",
+      "meaning_vi": "có; trợ động từ have",
+      "explanation": "Có thể nói sở hữu hoặc kết hợp quá khứ phân từ để tạo perfect.",
+      "example": "I have a bike. I have finished.",
+      "why_it_matters": "Nhận đúng nghĩa “có; trợ động từ have” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "have got",
+      "meaning_vi": "có/sở hữu",
+      "explanation": "Cách nói sở hữu hay gặp trong tiếng Anh Anh; câu hỏi đảo have/has.",
+      "example": "Have you got a pen?",
+      "why_it_matters": "Nhận đúng nghĩa “có/sở hữu” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "have to",
+      "meaning_vi": "phải/cần làm",
+      "explanation": "Diễn đạt sự cần thiết hoặc nghĩa vụ; have thay đổi theo thì/ngôi.",
+      "example": "She has to leave.",
+      "why_it_matters": "Nhận đúng nghĩa “phải/cần làm” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "headache",
+      "meaning_vi": "đau đầu",
+      "explanation": "Danh từ thường dùng với have a.",
+      "example": "I have a headache.",
+      "why_it_matters": "Nhận đúng nghĩa “đau đầu” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "headphones",
+      "meaning_vi": "tai nghe",
+      "explanation": "Thường dùng dạng số nhiều; a pair of headphones là một chiếc/bộ tai nghe.",
+      "example": "These headphones are new.",
+      "why_it_matters": "Nhận đúng nghĩa “tai nghe” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "how about you",
+      "meaning_vi": "còn bạn thì sao",
+      "explanation": "Hỏi lại cùng chủ đề để người kia chia sẻ.",
+      "example": "I liked it. How about you?",
+      "why_it_matters": "Nhận đúng nghĩa “còn bạn thì sao” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "however",
+      "meaning_vi": "tuy nhiên",
+      "explanation": "Nối hai ý tương phản; thường cần dấu câu tách khỏi hai mệnh đề độc lập.",
+      "example": "It was cold. However, we went out.",
+      "why_it_matters": "Nhận đúng nghĩa “tuy nhiên” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "hundred",
+      "meaning_vi": "trăm",
+      "explanation": "Sau số cụ thể không thêm -s; hundreds of diễn đạt hàng trăm.",
+      "example": "three hundred people",
+      "why_it_matters": "Nhận đúng nghĩa “trăm” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "in",
+      "meaning_vi": "trong/vào một khoảng",
+      "explanation": "Với thời gian thường dùng tháng, năm hoặc buổi; các kết hợp có ngoại lệ.",
+      "example": "in May; in 2024",
+      "why_it_matters": "Nhận đúng nghĩa “trong/vào một khoảng” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "in progress",
+      "meaning_vi": "đang diễn ra",
+      "explanation": "Sự việc chưa hoàn tất tại mốc được xét.",
+      "example": "The work is in progress.",
+      "why_it_matters": "Nhận đúng nghĩa “đang diễn ra” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "included",
+      "meaning_vi": "được bao gồm",
+      "explanation": "Giá hoặc gói đã có một hạng mục, không cần trả riêng cho nó.",
+      "example": "Breakfast is included.",
+      "why_it_matters": "Nhận đúng nghĩa “được bao gồm” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "infinitive",
+      "meaning_vi": "dạng nguyên mẫu",
+      "explanation": "Có dạng có to và dạng không to; cách dùng phụ thuộc từ/cấu trúc đứng trước.",
+      "example": "want to leave; can leave",
+      "why_it_matters": "Nhận đúng nghĩa “dạng nguyên mẫu” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "instruction",
+      "meaning_vi": "chỉ dẫn",
+      "explanation": "Nói cách thực hiện một việc; thường dùng dạng mệnh lệnh.",
+      "example": "Press this button.",
+      "why_it_matters": "Nhận đúng nghĩa “chỉ dẫn” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "intonation",
+      "meaning_vi": "ngữ điệu",
+      "explanation": "Sự lên xuống của cao độ trong lời nói, góp phần biểu thị thái độ và chức năng.",
+      "example": "Really? với giọng lên để kiểm tra",
+      "why_it_matters": "Nhận đúng nghĩa “ngữ điệu” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "inversion",
+      "meaning_vi": "đảo vị trí",
+      "explanation": "Ở câu hỏi cơ bản, trợ động từ hoặc be đứng trước chủ ngữ.",
+      "example": "She is ready. → Is she ready?",
+      "why_it_matters": "Nhận đúng nghĩa “đảo vị trí” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "invitation",
+      "meaning_vi": "lời mời",
+      "explanation": "Mời người khác tham gia; nên cho biết hoạt động và thời gian.",
+      "example": "Would you like to come to dinner?",
+      "why_it_matters": "Nhận đúng nghĩa “lời mời” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "irregular",
+      "meaning_vi": "bất quy tắc",
+      "explanation": "Không theo mẫu biến đổi thông thường trong nhóm đang xét.",
+      "example": "good → better",
+      "why_it_matters": "Nhận đúng nghĩa “bất quy tắc” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "irregular verb",
+      "meaning_vi": "động từ bất quy tắc",
+      "explanation": "Quá khứ/quá khứ phân từ không chỉ tạo bằng thêm -ed.",
+      "example": "go → went → gone",
+      "why_it_matters": "Nhận đúng nghĩa “động từ bất quy tắc” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "is that right",
+      "meaning_vi": "có đúng vậy không",
+      "explanation": "Câu ngắn để xác nhận thông tin vừa nhận.",
+      "example": "The class starts at nine. Is that right?",
+      "why_it_matters": "Nhận đúng nghĩa “có đúng vậy không” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "jacket",
+      "meaning_vi": "áo khoác",
+      "explanation": "Danh từ đếm được chỉ loại áo mặc ngoài.",
+      "example": "I'm wearing a blue jacket.",
+      "why_it_matters": "Nhận đúng nghĩa “áo khoác” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "jeans",
+      "meaning_vi": "quần bò/quần jean",
+      "explanation": "Danh từ dạng số nhiều; một chiếc thường nói a pair of jeans.",
+      "example": "These jeans are too long.",
+      "why_it_matters": "Nhận đúng nghĩa “quần bò/quần jean” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "last weekend",
+      "meaning_vi": "cuối tuần trước",
+      "explanation": "Mốc thời gian quá khứ đã kết thúc; thường đi với past simple.",
+      "example": "We met last weekend.",
+      "why_it_matters": "Nhận đúng nghĩa “cuối tuần trước” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "lexical verb",
+      "meaning_vi": "động từ mang nghĩa chính",
+      "explanation": "Nêu sự việc/trạng thái, khác trợ động từ đang mang chức năng ngữ pháp.",
+      "example": "She has eaten: eaten mang nghĩa chính.",
+      "why_it_matters": "Nhận đúng nghĩa “động từ mang nghĩa chính” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "linking word",
+      "meaning_vi": "từ nối",
+      "explanation": "Làm rõ quan hệ giữa các ý, như thêm, lý do, tương phản hoặc thứ tự.",
+      "example": "and; because; however",
+      "why_it_matters": "Nhận đúng nghĩa “từ nối” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "long adjective",
+      "meaning_vi": "tính từ dài",
+      "explanation": "Nhãn học cơ bản cho tính từ nhiều âm tiết thường dùng more/most; có ngoại lệ.",
+      "example": "more expensive",
+      "why_it_matters": "Nhận đúng nghĩa “tính từ dài” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "main course",
+      "meaning_vi": "món chính",
+      "explanation": "Phần chính của bữa ăn, sau món khai vị nếu bữa ăn chia món.",
+      "example": "I'd like fish for my main course.",
+      "why_it_matters": "Nhận đúng nghĩa “món chính” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "main verb",
+      "meaning_vi": "động từ chính",
+      "explanation": "Động từ nêu nghĩa sự việc trong cụm động từ, không phải trợ động từ.",
+      "example": "She can dance: dance là main verb.",
+      "why_it_matters": "Nhận đúng nghĩa “động từ chính” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "manner",
+      "meaning_vi": "cách thức",
+      "explanation": "Cách một hành động được thực hiện, không phải nó xảy ra khi nào.",
+      "example": "She answered politely.",
+      "why_it_matters": "Nhận đúng nghĩa “cách thức” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "many",
+      "meaning_vi": "nhiều với danh từ đếm được",
+      "explanation": "Dùng với danh từ số nhiều.",
+      "example": "How many books?",
+      "why_it_matters": "Nhận đúng nghĩa “nhiều với danh từ đếm được” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "million",
+      "meaning_vi": "triệu",
+      "explanation": "Sau số cụ thể không thêm -s; millions of nghĩa là hàng triệu.",
+      "example": "two million people",
+      "why_it_matters": "Nhận đúng nghĩa “triệu” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "mine",
+      "meaning_vi": "của tôi",
+      "explanation": "Đại từ sở hữu đứng thay cả cụm danh từ; không đặt thêm danh từ ngay sau.",
+      "example": "This pen is mine.",
+      "why_it_matters": "Nhận đúng nghĩa “của tôi” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "miss",
+      "meaning_vi": "lỡ/không kịp; nhớ ai",
+      "explanation": "Với phương tiện là không kịp chuyến; trong ngữ cảnh khác có thể là nhớ.",
+      "example": "I missed the bus.",
+      "why_it_matters": "Nhận đúng nghĩa “lỡ/không kịp; nhớ ai” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "modal",
+      "meaning_vi": "động từ tình thái",
+      "explanation": "Nhóm như can, may, must, should; modal trung tâm đi với dạng gốc không to.",
+      "example": "She should rest.",
+      "why_it_matters": "Nhận đúng nghĩa “động từ tình thái” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "modern",
+      "meaning_vi": "hiện đại",
+      "explanation": "Mô tả phong cách/công nghệ thời nay; không luôn đồng nghĩa mới mua.",
+      "example": "a modern building",
+      "why_it_matters": "Nhận đúng nghĩa “hiện đại” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "month",
+      "meaning_vi": "tháng",
+      "explanation": "Một trong 12 phần của năm; tên tháng viết hoa trong tiếng Anh.",
+      "example": "May is a month.",
+      "why_it_matters": "Nhận đúng nghĩa “tháng” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "more expensive",
+      "meaning_vi": "đắt hơn",
+      "explanation": "Dùng more với expensive để so giá cao hơn một mốc.",
+      "example": "This coat is more expensive.",
+      "why_it_matters": "Nhận đúng nghĩa “đắt hơn” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "most",
+      "meaning_vi": "nhất/phần lớn tùy cấu trúc",
+      "explanation": "Với tính từ dài tạo so sánh nhất; trước danh từ có thể là phần lớn.",
+      "example": "the most useful book; most people",
+      "why_it_matters": "Nhận đúng nghĩa “nhất/phần lớn tùy cấu trúc” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "most difficult",
+      "meaning_vi": "khó nhất",
+      "explanation": "Thường dùng the most difficult để chọn mức khó cao nhất trong nhóm.",
+      "example": "the most difficult question",
+      "why_it_matters": "Nhận đúng nghĩa “khó nhất” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "much",
+      "meaning_vi": "nhiều với danh từ không đếm được",
+      "explanation": "Dùng hỏi lượng hoặc phủ định; câu khẳng định đời thường hay dùng a lot of.",
+      "example": "How much time?",
+      "why_it_matters": "Nhận đúng nghĩa “nhiều với danh từ không đếm được” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "nationality",
+      "meaning_vi": "quốc tịch",
+      "explanation": "Chỉ sự thuộc về một quốc gia; khác tên country.",
+      "example": "She's Vietnamese.",
+      "why_it_matters": "Nhận đúng nghĩa “quốc tịch” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "near here",
+      "meaning_vi": "gần đây/gần chỗ này",
+      "explanation": "Here chỉ vị trí người nói; không phải gần về thời gian.",
+      "example": "Is there a café near here?",
+      "why_it_matters": "Nhận đúng nghĩa “gần đây/gần chỗ này” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "necessary",
+      "meaning_vi": "cần thiết",
+      "explanation": "Tính từ nói điều phải có/làm để đạt mục đích.",
+      "example": "Is a ticket necessary?",
+      "why_it_matters": "Nhận đúng nghĩa “cần thiết” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "necessity",
+      "meaning_vi": "sự cần thiết",
+      "explanation": "Ý nghĩa cần hoặc buộc phải làm; có thể dùng have to để diễn đạt.",
+      "example": "We have to wear helmets.",
+      "why_it_matters": "Nhận đúng nghĩa “sự cần thiết” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "negative",
+      "meaning_vi": "phủ định",
+      "explanation": "Cấu trúc bác bỏ một ý; not thường gắn với be, auxiliary hoặc modal.",
+      "example": "She isn't here.",
+      "why_it_matters": "Nhận đúng nghĩa “phủ định” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "neighbourhood",
+      "meaning_vi": "khu phố/khu vực quanh nhà",
+      "explanation": "Danh từ chỉ khu vực sống hoặc vùng lân cận.",
+      "example": "It's a quiet neighbourhood.",
+      "why_it_matters": "Nhận đúng nghĩa “khu phố/khu vực quanh nhà” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "never",
+      "meaning_vi": "không bao giờ/chưa từng",
+      "explanation": "Tự mang nghĩa phủ định; không thêm not trong câu chuẩn chỉ cùng một ý.",
+      "example": "I've never flown.",
+      "why_it_matters": "Nhận đúng nghĩa “không bao giờ/chưa từng” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "next to",
+      "meaning_vi": "bên cạnh",
+      "explanation": "Giới từ/cụm chỉ vị trí sát bên.",
+      "example": "The bank is next to the café.",
+      "why_it_matters": "Nhận đúng nghĩa “bên cạnh” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "now",
+      "meaning_vi": "bây giờ",
+      "explanation": "Chỉ hiện tại; chọn dạng động từ còn phụ thuộc loại sự việc.",
+      "example": "I'm studying now.",
+      "why_it_matters": "Nhận đúng nghĩa “bây giờ” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "number group",
+      "meaning_vi": "nhóm chữ số",
+      "explanation": "Khi đọc số lớn, chia từ phải sang từng nhóm ba chữ số.",
+      "example": "2,045,000 = 2 million + 45 thousand",
+      "why_it_matters": "Nhận đúng nghĩa “nhóm chữ số” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "old",
+      "meaning_vi": "cũ/già hoặc tuổi",
+      "explanation": "Đặc điểm tuổi/độ mới; nghĩa cụ thể phụ thuộc danh từ.",
+      "example": "an old bag; ten years old",
+      "why_it_matters": "Nhận đúng nghĩa “cũ/già hoặc tuổi” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "on",
+      "meaning_vi": "trên/vào ngày",
+      "explanation": "Với thời gian thường dùng ngày trong tuần và ngày tháng.",
+      "example": "on Monday; on 5 June",
+      "why_it_matters": "Nhận đúng nghĩa “trên/vào ngày” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "opinion",
+      "meaning_vi": "ý kiến",
+      "explanation": "Nhận định cá nhân, có thể cần lý do chứ không phải sự thật chắc chắn.",
+      "example": "I think the film is good.",
+      "why_it_matters": "Nhận đúng nghĩa “ý kiến” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "opposite",
+      "meaning_vi": "đối diện; đối lập",
+      "explanation": "Chỉ vị trí ở phía bên kia hoặc ý nghĩa trái ngược.",
+      "example": "The bank is opposite the school.",
+      "why_it_matters": "Nhận đúng nghĩa “đối diện; đối lập” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "order",
+      "meaning_vi": "gọi/đặt món; thứ tự",
+      "explanation": "Trong nhà hàng là yêu cầu món; nghĩa khác phụ thuộc ngữ cảnh.",
+      "example": "I'd like to order soup.",
+      "why_it_matters": "Nhận đúng nghĩa “gọi/đặt món; thứ tự” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "pair",
+      "meaning_vi": "một đôi/một bộ hai phần",
+      "explanation": "Đơn vị đếm cho một số vật thường dùng tên số nhiều.",
+      "example": "a pair of jeans",
+      "why_it_matters": "Nhận đúng nghĩa “một đôi/một bộ hai phần” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "paragraph",
+      "meaning_vi": "đoạn văn",
+      "explanation": "Một nhóm câu xoay quanh một ý chính.",
+      "example": "Start a new paragraph for the next idea.",
+      "why_it_matters": "Nhận đúng nghĩa “đoạn văn” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "past",
+      "meaning_vi": "quá khứ; qua khỏi",
+      "explanation": "Trong ngữ pháp chỉ quá khứ; trong chỉ đường có thể là đi qua một mốc.",
+      "example": "walk past the bank; past simple",
+      "why_it_matters": "Nhận đúng nghĩa “quá khứ; qua khỏi” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "past form",
+      "meaning_vi": "dạng quá khứ",
+      "explanation": "Dạng như worked/went; khác quá khứ phân từ trong nhiều động từ bất quy tắc.",
+      "example": "She went home.",
+      "why_it_matters": "Nhận đúng nghĩa “dạng quá khứ” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "past participle",
+      "meaning_vi": "quá khứ phân từ",
+      "explanation": "Dạng dùng sau have để tạo perfect và sau be trong nhiều câu bị động; không tự là quá khứ đơn.",
+      "example": "see/saw/seen; I've seen it.",
+      "why_it_matters": "Nhận đúng nghĩa “quá khứ phân từ” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "past simple",
+      "meaning_vi": "quá khứ đơn",
+      "explanation": "Thường trình bày sự việc/trạng thái ở một thời gian quá khứ đã xác định hoặc ngầm hiểu.",
+      "example": "I visited Hue last year.",
+      "why_it_matters": "Nhận đúng nghĩa “quá khứ đơn” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "pence",
+      "meaning_vi": "đồng xu pence",
+      "explanation": "Dạng số nhiều của penny khi nói tiền; 100 pence bằng một pound Anh.",
+      "example": "fifty pence",
+      "why_it_matters": "Nhận đúng nghĩa “đồng xu pence” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "plan",
+      "meaning_vi": "kế hoạch/dự định",
+      "explanation": "Điều dự kiến sẽ làm; mức thống nhất khác với một cuộc hẹn đã sắp xếp.",
+      "example": "My plan is to study tonight.",
+      "why_it_matters": "Nhận đúng nghĩa “kế hoạch/dự định” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "play",
+      "meaning_vi": "chơi",
+      "explanation": "Đi với nhiều trò chơi và môn thể thao; không dùng cho mọi hoạt động.",
+      "example": "play chess; play football",
+      "why_it_matters": "Nhận đúng nghĩa “chơi” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "plural",
+      "meaning_vi": "số nhiều",
+      "explanation": "Dạng thường chỉ hơn một; nhiều danh từ thêm -s nhưng có bất quy tắc.",
+      "example": "books; children",
+      "why_it_matters": "Nhận đúng nghĩa “số nhiều” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "polite",
+      "meaning_vi": "lịch sự",
+      "explanation": "Lựa chọn lời nói phù hợp người nghe và tình huống, không chỉ thêm please.",
+      "example": "Could you help me, please?",
+      "why_it_matters": "Nhận đúng nghĩa “lịch sự” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "possession",
+      "meaning_vi": "sự sở hữu",
+      "explanation": "Quan hệ có/thuộc về ai, diễn đạt bằng have hoặc từ/cấu trúc sở hữu.",
+      "example": "Mai has a bicycle.",
+      "why_it_matters": "Nhận đúng nghĩa “sự sở hữu” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "possessive",
+      "meaning_vi": "dạng/nghĩa sở hữu",
+      "explanation": "Nhóm cách chỉ vật liên quan hoặc thuộc về ai.",
+      "example": "my bag; Mai's bag",
+      "why_it_matters": "Nhận đúng nghĩa “dạng/nghĩa sở hữu” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "possessive 's",
+      "meaning_vi": "đuôi sở hữu 's",
+      "explanation": "Gắn vào người/cụm danh từ sở hữu; với nhiều danh từ số nhiều có s chỉ thêm dấu nháy.",
+      "example": "Mai's bag; the students' room",
+      "why_it_matters": "Nhận đúng nghĩa “đuôi sở hữu 's” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "possessive determiner",
+      "meaning_vi": "từ hạn định sở hữu",
+      "explanation": "My/your/his/her/its/our/their đứng trước danh từ.",
+      "example": "my pen; their house",
+      "why_it_matters": "Nhận đúng nghĩa “từ hạn định sở hữu” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "possessive pronoun",
+      "meaning_vi": "đại từ sở hữu",
+      "explanation": "Mine/yours/his/hers/ours/theirs thay cả cụm danh từ sở hữu.",
+      "example": "That bag is hers.",
+      "why_it_matters": "Nhận đúng nghĩa “đại từ sở hữu” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "pound",
+      "meaning_vi": "bảng Anh; đơn vị cân",
+      "explanation": "Trong giá £ là bảng Anh; nghĩa cân nặng phải dựa ngữ cảnh.",
+      "example": "twelve pounds fifty",
+      "why_it_matters": "Nhận đúng nghĩa “bảng Anh; đơn vị cân” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "predicate adjective",
+      "meaning_vi": "tính từ làm bổ ngữ vị ngữ",
+      "explanation": "Tính từ sau linking verb để mô tả subject, không phải object.",
+      "example": "The room is quiet.",
+      "why_it_matters": "Nhận đúng nghĩa “tính từ làm bổ ngữ vị ngữ” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "preference",
+      "meaning_vi": "sở thích/sự thích hơn",
+      "explanation": "Lựa chọn mình thích trong các hoạt động/phương án.",
+      "example": "I prefer tea to coffee.",
+      "why_it_matters": "Nhận đúng nghĩa “sở thích/sự thích hơn” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "preposition",
+      "meaning_vi": "giới từ",
+      "explanation": "Liên kết cụm theo quan hệ thời gian, nơi chốn hoặc quan hệ khác.",
+      "example": "in the room; after lunch",
+      "why_it_matters": "Nhận đúng nghĩa “giới từ” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "present",
+      "meaning_vi": "hiện tại",
+      "explanation": "Nhãn thời gian/hình thức; present form không chỉ dùng cho khoảnh khắc bây giờ.",
+      "example": "I work here.",
+      "why_it_matters": "Nhận đúng nghĩa “hiện tại” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "present continuous",
+      "meaning_vi": "hiện tại tiếp diễn",
+      "explanation": "Am/is/are + -ing; thường nhìn việc đang diễn tiến hoặc tình trạng tạm thời.",
+      "example": "She is reading now.",
+      "why_it_matters": "Nhận đúng nghĩa “hiện tại tiếp diễn” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "present perfect",
+      "meaning_vi": "hiện tại hoàn thành",
+      "explanation": "Have/has + past participle nhìn việc trước hiện tại qua liên hệ với hiện tại.",
+      "example": "I've lost my key.",
+      "why_it_matters": "Nhận đúng nghĩa “hiện tại hoàn thành” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "present simple",
+      "meaning_vi": "hiện tại đơn",
+      "explanation": "Thường dùng cho thói quen, sự thật hoặc trạng thái; he/she/it thường thêm -s ở khẳng định.",
+      "example": "She walks to school.",
+      "why_it_matters": "Nhận đúng nghĩa “hiện tại đơn” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "price",
+      "meaning_vi": "giá tiền",
+      "explanation": "Số tiền cần trả để mua hàng/dịch vụ.",
+      "example": "What's the price?",
+      "why_it_matters": "Nhận đúng nghĩa “giá tiền” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "pronoun",
+      "meaning_vi": "đại từ",
+      "explanation": "Từ như I, she, it, mine giúp chỉ đối tượng mà không lặp danh từ đầy đủ.",
+      "example": "Mai arrived. She sat down.",
+      "why_it_matters": "Nhận đúng nghĩa “đại từ” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "proper noun",
+      "meaning_vi": "danh từ riêng",
+      "explanation": "Tên cụ thể của người/nơi/tổ chức; thường viết hoa.",
+      "example": "Mai; Hanoi",
+      "why_it_matters": "Nhận đúng nghĩa “danh từ riêng” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "punctuation",
+      "meaning_vi": "dấu câu",
+      "explanation": "Các dấu giúp chia câu và làm rõ quan hệ khi viết.",
+      "example": "full stop .; question mark ?",
+      "why_it_matters": "Nhận đúng nghĩa “dấu câu” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "purpose",
+      "meaning_vi": "mục đích",
+      "explanation": "Điều muốn đạt khi nói, viết hoặc làm việc gì.",
+      "example": "I called to book a room.",
+      "why_it_matters": "Nhận đúng nghĩa “mục đích” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "quantifier",
+      "meaning_vi": "từ chỉ lượng",
+      "explanation": "Nêu số/lượng; chọn theo cách dùng đếm được hay không đếm được của danh từ.",
+      "example": "many books; much water",
+      "why_it_matters": "Nhận đúng nghĩa “từ chỉ lượng” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "question",
+      "meaning_vi": "câu hỏi",
+      "explanation": "Cách yêu cầu thông tin; hình thức phụ thuộc be/auxiliary/modal và điều cần hỏi.",
+      "example": "Where do you live?",
+      "why_it_matters": "Nhận đúng nghĩa “câu hỏi” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "question word",
+      "meaning_vi": "từ hỏi",
+      "explanation": "Who/what/where/when/why/how chỉ loại thông tin muốn biết.",
+      "example": "Where asks about place.",
+      "why_it_matters": "Nhận đúng nghĩa “từ hỏi” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "quite",
+      "meaning_vi": "khá/hoàn toàn tùy từ đi cùng",
+      "explanation": "Mức độ phụ thuộc tính từ và ngữ cảnh, không dịch bằng một mức cố định.",
+      "example": "quite good; quite sure",
+      "why_it_matters": "Nhận đúng nghĩa “khá/hoàn toàn tùy từ đi cùng” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "recommend",
+      "meaning_vi": "gợi ý/khuyên dùng",
+      "explanation": "Nêu một lựa chọn đáng thử và thường kèm lý do.",
+      "example": "I recommend this book.",
+      "why_it_matters": "Nhận đúng nghĩa “gợi ý/khuyên dùng” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "regular verb",
+      "meaning_vi": "động từ có quy tắc",
+      "explanation": "Quá khứ và quá khứ phân từ thường tạo bằng -ed với điều chỉnh chính tả.",
+      "example": "work → worked",
+      "why_it_matters": "Nhận đúng nghĩa “động từ có quy tắc” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "reply",
+      "meaning_vi": "câu trả lời/đáp lại",
+      "explanation": "Phản hồi câu hỏi, tin nhắn hoặc lời mời.",
+      "example": "Thanks for your reply.",
+      "why_it_matters": "Nhận đúng nghĩa “câu trả lời/đáp lại” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "request",
+      "meaning_vi": "lời yêu cầu/nhờ",
+      "explanation": "Muốn người khác làm hoặc đưa điều gì; mức trực tiếp tùy tình huống.",
+      "example": "Could I borrow a pen?",
+      "why_it_matters": "Nhận đúng nghĩa “lời yêu cầu/nhờ” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "reservation",
+      "meaning_vi": "sự đặt chỗ",
+      "explanation": "Chỗ/phòng được giữ trước cho khách.",
+      "example": "I have a reservation.",
+      "why_it_matters": "Nhận đúng nghĩa “sự đặt chỗ” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "review",
+      "meaning_vi": "bài đánh giá; ôn lại",
+      "explanation": "Trong viết về nhà hàng/phim là bài nhận xét, thường nêu trải nghiệm và ý kiến.",
+      "example": "a restaurant review",
+      "why_it_matters": "Nhận đúng nghĩa “bài đánh giá; ôn lại” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "right now",
+      "meaning_vi": "ngay bây giờ",
+      "explanation": "Nhấn mạnh thời điểm hiện tại.",
+      "example": "She's busy right now.",
+      "why_it_matters": "Nhận đúng nghĩa “ngay bây giờ” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "routine",
+      "meaning_vi": "thói quen/lịch sinh hoạt",
+      "explanation": "Chuỗi việc thường lặp lại; hay dùng present simple.",
+      "example": "I get up at seven.",
+      "why_it_matters": "Nhận đúng nghĩa “thói quen/lịch sinh hoạt” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "saw",
+      "meaning_vi": "quá khứ của see",
+      "explanation": "Dùng cho quá khứ đơn; sau have cần seen.",
+      "example": "I saw her yesterday.",
+      "why_it_matters": "Nhận đúng nghĩa “quá khứ của see” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "secondly",
+      "meaning_vi": "thứ hai",
+      "explanation": "Đánh dấu ý hoặc lý do thứ hai.",
+      "example": "Secondly, it's affordable.",
+      "why_it_matters": "Nhận đúng nghĩa “thứ hai” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "seen",
+      "meaning_vi": "quá khứ phân từ của see",
+      "explanation": "Dùng sau have/has/had hoặc trong bị động; không dùng độc lập như past simple.",
+      "example": "I've seen that film.",
+      "why_it_matters": "Nhận đúng nghĩa “quá khứ phân từ của see” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "sequence",
+      "meaning_vi": "trình tự",
+      "explanation": "Thứ tự các bước/sự kiện; dùng từ nối để người đọc làm theo.",
+      "example": "first → then → finally",
+      "why_it_matters": "Nhận đúng nghĩa “trình tự” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "short adjective",
+      "meaning_vi": "tính từ ngắn",
+      "explanation": "Nhiều tính từ một âm tiết dùng -er/-est; đây là hướng dẫn hình thức, không luật tuyệt đối.",
+      "example": "small → smaller → smallest",
+      "why_it_matters": "Nhận đúng nghĩa “tính từ ngắn” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "short answer",
+      "meaning_vi": "câu trả lời ngắn",
+      "explanation": "Lặp đại từ chủ ngữ và be/auxiliary/modal thích hợp, không lặp cả phần còn lại.",
+      "example": "Are you ready? Yes, I am.",
+      "why_it_matters": "Nhận đúng nghĩa “câu trả lời ngắn” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "should",
+      "meaning_vi": "nên",
+      "explanation": "Modal thường đưa lời khuyên; theo sau dạng gốc.",
+      "example": "You should rest.",
+      "why_it_matters": "Nhận đúng nghĩa “nên” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "shouldn't",
+      "meaning_vi": "không nên",
+      "explanation": "Should not viết gọn; thường khuyên tránh một việc.",
+      "example": "You shouldn't stay up late.",
+      "why_it_matters": "Nhận đúng nghĩa “không nên” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "singular",
+      "meaning_vi": "số ít",
+      "explanation": "Dạng thường chỉ một đối tượng.",
+      "example": "one book",
+      "why_it_matters": "Nhận đúng nghĩa “số ít” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "some",
+      "meaning_vi": "một ít/một số",
+      "explanation": "Thường dùng trong khẳng định, và câu mời/yêu cầu khi mong có hoặc muốn cung cấp.",
+      "example": "some water; Would you like some tea?",
+      "why_it_matters": "Nhận đúng nghĩa “một ít/một số” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "sometimes",
+      "meaning_vi": "thỉnh thoảng",
+      "explanation": "Trạng từ nêu việc có lặp nhưng không thường xuyên.",
+      "example": "I sometimes cycle to work.",
+      "why_it_matters": "Nhận đúng nghĩa “thỉnh thoảng” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "sound",
+      "meaning_vi": "âm thanh/âm lời nói",
+      "explanation": "Âm nghe được khác chữ viết; cùng một chữ có thể có nhiều âm.",
+      "example": "a trong cat và cake khác âm",
+      "why_it_matters": "Nhận đúng nghĩa “âm thanh/âm lời nói” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "speak to",
+      "meaning_vi": "nói chuyện với",
+      "explanation": "Cụm thường dùng khi xin gặp một người qua điện thoại.",
+      "example": "Can I speak to Mai?",
+      "why_it_matters": "Nhận đúng nghĩa “nói chuyện với” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "spell",
+      "meaning_vi": "đánh vần",
+      "explanation": "Nêu từng chữ cái của từ; khác phát âm cả từ.",
+      "example": "How do you spell your name?",
+      "why_it_matters": "Nhận đúng nghĩa “đánh vần” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "spelling",
+      "meaning_vi": "cách viết đúng chữ",
+      "explanation": "Thứ tự chữ cái tạo từ; không luôn đoán chính xác từ âm.",
+      "example": "The spelling is different.",
+      "why_it_matters": "Nhận đúng nghĩa “cách viết đúng chữ” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "starter",
+      "meaning_vi": "món khai vị",
+      "explanation": "Món nhỏ ăn trước món chính.",
+      "example": "I'd like soup as a starter.",
+      "why_it_matters": "Nhận đúng nghĩa “món khai vị” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "state",
+      "meaning_vi": "trạng thái",
+      "explanation": "Điều đang đúng/tồn tại, không nhất thiết là hành động có chủ ý.",
+      "example": "She knows the answer.",
+      "why_it_matters": "Nhận đúng nghĩa “trạng thái” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "subject",
+      "meaning_vi": "chủ ngữ",
+      "explanation": "Vai trò ngữ pháp mà mệnh đề nói về; không luôn là người gây hành động.",
+      "example": "The door was opened: the door là subject.",
+      "why_it_matters": "Nhận đúng nghĩa “chủ ngữ” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "suggestion",
+      "meaning_vi": "lời đề xuất",
+      "explanation": "Đưa một ý để cùng cân nhắc, chưa chắc đã thành kế hoạch.",
+      "example": "Let's meet at six.",
+      "why_it_matters": "Nhận đúng nghĩa “lời đề xuất” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "superlative",
+      "meaning_vi": "dạng so sánh nhất",
+      "explanation": "Chọn thành viên ở cực cao/thấp trong tập so sánh được nêu hoặc hiểu từ ngữ cảnh.",
+      "example": "the tallest student in the class",
+      "why_it_matters": "Nhận đúng nghĩa “dạng so sánh nhất” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "surname",
+      "meaning_vi": "họ",
+      "explanation": "Phần họ của tên; trong biểu mẫu khác first/given name.",
+      "example": "Nguyen is a surname.",
+      "why_it_matters": "Nhận đúng nghĩa “họ” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "syllable",
+      "meaning_vi": "âm tiết",
+      "explanation": "Một nhịp âm có hạt nhân thường là nguyên âm; số âm tiết không bằng số chữ cái nguyên âm.",
+      "example": "teacher có hai âm tiết",
+      "why_it_matters": "Nhận đúng nghĩa “âm tiết” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "sympathy",
+      "meaning_vi": "sự cảm thông",
+      "explanation": "Thể hiện quan tâm trước khó khăn hoặc tin không vui của người khác.",
+      "example": "I'm sorry to hear that.",
+      "why_it_matters": "Nhận đúng nghĩa “sự cảm thông” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "than",
+      "meaning_vi": "hơn/so với",
+      "explanation": "Nối với mốc trong nhiều cấu trúc so sánh hơn.",
+      "example": "taller than me",
+      "why_it_matters": "Nhận đúng nghĩa “hơn/so với” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "the",
+      "meaning_vi": "mạo từ xác định",
+      "explanation": "Giúp người nghe nhận ra đối tượng/tập đang nói tới theo ngữ cảnh.",
+      "example": "the book we discussed",
+      "why_it_matters": "Nhận đúng nghĩa “mạo từ xác định” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "the best",
+      "meaning_vi": "tốt nhất trong tập đang xét",
+      "explanation": "The + best thường chọn cực tốt nhất; tập có thể được ngầm hiểu.",
+      "example": "the best of the three",
+      "why_it_matters": "Nhận đúng nghĩa “tốt nhất trong tập đang xét” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "then",
+      "meaning_vi": "sau đó",
+      "explanation": "Chỉ bước tiếp hoặc thời điểm tiếp trong mạch kể.",
+      "example": "Mix it, then cook it.",
+      "why_it_matters": "Nhận đúng nghĩa “sau đó” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "there are",
+      "meaning_vi": "có với danh từ số nhiều",
+      "explanation": "Cấu trúc giới thiệu sự hiện diện, không dịch there thành ở đó một cách máy móc.",
+      "example": "There are two shops.",
+      "why_it_matters": "Nhận đúng nghĩa “có với danh từ số nhiều” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "there is",
+      "meaning_vi": "có với danh từ số ít/không đếm được",
+      "explanation": "Cấu trúc giới thiệu sự hiện diện của thứ gì.",
+      "example": "There is a park.",
+      "why_it_matters": "Nhận đúng nghĩa “có với danh từ số ít/không đếm được” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "these",
+      "meaning_vi": "những cái/người này",
+      "explanation": "Dạng số nhiều của this, dùng với hoặc thay danh từ số nhiều.",
+      "example": "These shoes are new.",
+      "why_it_matters": "Nhận đúng nghĩa “những cái/người này” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "think of",
+      "meaning_vi": "nghĩ về/đánh giá",
+      "explanation": "Trong What do you think of…? hỏi ý kiến về điều gì.",
+      "example": "What do you think of the film?",
+      "why_it_matters": "Nhận đúng nghĩa “nghĩ về/đánh giá” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "third person",
+      "meaning_vi": "ngôi thứ ba",
+      "explanation": "Người/vật không phải người nói I/we hay người nghe you.",
+      "example": "he; she; it; they",
+      "why_it_matters": "Nhận đúng nghĩa “ngôi thứ ba” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "third-person singular",
+      "meaning_vi": "ngôi ba số ít",
+      "explanation": "He/she/it hoặc một người/vật; present simple thường thêm -s vào động từ khẳng định.",
+      "example": "Mai works here.",
+      "why_it_matters": "Nhận đúng nghĩa “ngôi ba số ít” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "thousand",
+      "meaning_vi": "nghìn",
+      "explanation": "Sau số cụ thể không thêm -s; thousands of nghĩa là hàng nghìn.",
+      "example": "three thousand people",
+      "why_it_matters": "Nhận đúng nghĩa “nghìn” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "ticket",
+      "meaning_vi": "vé",
+      "explanation": "Giấy/mã cho phép vào hoặc dùng dịch vụ.",
+      "example": "a bus ticket",
+      "why_it_matters": "Nhận đúng nghĩa “vé” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "time expression",
+      "meaning_vi": "cụm chỉ thời gian",
+      "explanation": "Cho biết mốc, khoảng hoặc tần suất; dùng cả ngữ cảnh để chọn cấu trúc động từ.",
+      "example": "yesterday; for two years",
+      "why_it_matters": "Nhận đúng nghĩa “cụm chỉ thời gian” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "too",
+      "meaning_vi": "cũng/quá",
+      "explanation": "Cuối câu thường là cũng; trước tính từ thường là quá mức.",
+      "example": "Me too. It's too hot.",
+      "why_it_matters": "Nhận đúng nghĩa “cũng/quá” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "tourist information",
+      "meaning_vi": "thông tin du lịch",
+      "explanation": "Thông tin giúp khách tìm đường, điểm đến, vé và dịch vụ.",
+      "example": "Where is the tourist information centre?",
+      "why_it_matters": "Nhận đúng nghĩa “thông tin du lịch” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "try on",
+      "meaning_vi": "mặc/thử đồ",
+      "explanation": "Thử quần áo xem có vừa/phù hợp; đại từ đứng giữa try và on.",
+      "example": "Can I try it on?",
+      "why_it_matters": "Nhận đúng nghĩa “mặc/thử đồ” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "turn",
+      "meaning_vi": "rẽ/quay",
+      "explanation": "Trong chỉ đường dùng với hướng; không cần thêm to trước left/right.",
+      "example": "Turn left at the bank.",
+      "why_it_matters": "Nhận đúng nghĩa “rẽ/quay” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "uncountable",
+      "meaning_vi": "không đếm trực tiếp",
+      "explanation": "Cách dùng danh từ như chất/khối/khái niệm; cần đơn vị nếu muốn đếm.",
+      "example": "water; two bottles of water",
+      "why_it_matters": "Nhận đúng nghĩa “không đếm trực tiếp” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "usually",
+      "meaning_vi": "thường thường",
+      "explanation": "Trạng từ tần suất, mức thường gặp nhưng không phải luôn luôn.",
+      "example": "She usually walks.",
+      "why_it_matters": "Nhận đúng nghĩa “thường thường” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "was",
+      "meaning_vi": "quá khứ be với I/he/she/it",
+      "explanation": "Dùng trong quá khứ thông thường; có ngoại lệ như were trong giả định.",
+      "example": "She was tired yesterday.",
+      "why_it_matters": "Nhận đúng nghĩa “quá khứ be với I/he/she/it” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "were",
+      "meaning_vi": "quá khứ be với you/we/they",
+      "explanation": "Dùng cho các chủ ngữ này trong quá khứ thông thường.",
+      "example": "They were at home.",
+      "why_it_matters": "Nhận đúng nghĩa “quá khứ be với you/we/they” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "wh-question",
+      "meaning_vi": "câu hỏi có từ hỏi",
+      "explanation": "Hỏi một loại thông tin bằng who/what/where/when/why/how; câu hỏi chủ ngữ có mẫu riêng.",
+      "example": "Where do you work?",
+      "why_it_matters": "Nhận đúng nghĩa “câu hỏi có từ hỏi” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "word group",
+      "meaning_vi": "nhóm từ khi nói",
+      "explanation": "Các từ được nói như một cụm nghĩa/nhịp thay vì tách đều từng từ.",
+      "example": "at the end of the street",
+      "why_it_matters": "Nhận đúng nghĩa “nhóm từ khi nói” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "worse",
+      "meaning_vi": "tệ hơn",
+      "explanation": "Dạng so sánh hơn bất quy tắc của bad; badly cũng có worse.",
+      "example": "The weather is worse today.",
+      "why_it_matters": "Nhận đúng nghĩa “tệ hơn” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "worst",
+      "meaning_vi": "tệ nhất",
+      "explanation": "Dạng so sánh nhất bất quy tắc của bad.",
+      "example": "the worst result",
+      "why_it_matters": "Nhận đúng nghĩa “tệ nhất” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "year",
+      "meaning_vi": "năm",
+      "explanation": "Đơn vị lịch gồm 12 tháng; thường dùng in trước năm.",
+      "example": "in 2025",
+      "why_it_matters": "Nhận đúng nghĩa “năm” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    },
+    {
+      "label": "yes/no question",
+      "meaning_vi": "câu hỏi có/không",
+      "explanation": "Câu hỏi thường nhận yes/no làm phần mở đầu đáp lời.",
+      "example": "Do you work here?",
+      "why_it_matters": "Nhận đúng nghĩa “câu hỏi có/không” trong ngữ cảnh trước khi áp dụng vào câu mới."
+    }
+  ]
+}

@@ -1,5 +1,7 @@
 # Supabase setup for Twogether
 
+> **Temporarily dormant (2026-09-04):** the default `VITE_STUDY_MODE=session` deliberately does not initialize or write Supabase, FSRS or streak. Nothing below is required to deploy and use the current session-only study UI. Existing `.env.local` values can remain; session mode ignores them. The prepared seed below is still the verified 89-Core checkpoint; before cloud reactivation, add the 74 approved Empower knowledge records and any individually approved vocabulary through an additive, provenance-preserving migration. Then set `VITE_STUDY_MODE=fsrs` and complete this activation and its two-profile security tests.
+
 Twogether uses Supabase Free as the shared source of truth for review events, FSRS state and streak. Daily use has no email or PIN: every browser profile signs in anonymously once and is paired to exactly one learner. A shared computer should use two browser profiles, one for Hiệp and one for Hoàng.
 
 Never put a service-role key, learner password or pairing code in this repository. The browser needs only `VITE_SUPABASE_URL`, `VITE_SUPABASE_ANON_KEY` and `VITE_SYNC_MODE=cloud`.

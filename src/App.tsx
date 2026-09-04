@@ -63,6 +63,9 @@ import {
 import "./curriculumDrafts.css";
 
 type View = "map" | "progress" | "cards";
+const SESSION_ONLY_MODE = String(
+  import.meta.env.VITE_STUDY_MODE ?? "session",
+).toLowerCase() !== "fsrs";
 const TIMEZONE =
   Intl.DateTimeFormat().resolvedOptions().timeZone || "Asia/Ho_Chi_Minh";
 const KnowledgeMap = lazy(() =>
@@ -88,13 +91,55 @@ function dueIds(
   );
 }
 
+function sessionForgottenKey(learnerId: LearnerId, collectionId: string): string {
+  return `twogether.session.forgotten.${learnerId}.${collectionId}`;
+}
+
+function readSessionForgotten(
+  learnerId: LearnerId,
+  collectionId: string,
+  allowedCardIds?: readonly string[],
+): Set<string> {
+  try {
+    const raw = window.sessionStorage.getItem(sessionForgottenKey(learnerId, collectionId));
+    const value: unknown = JSON.parse(raw ?? "[]");
+    const allowed = allowedCardIds ? new Set(allowedCardIds) : null;
+    const ids = Array.isArray(value)
+      ? value.map(String).filter((id) => !allowed || allowed.has(id))
+      : [];
+    const result = new Set(ids);
+    if (allowed && Array.isArray(value) && result.size !== value.length)
+      writeSessionForgotten(learnerId, collectionId, result);
+    return result;
+  } catch {
+    return new Set();
+  }
+}
+
+function writeSessionForgotten(learnerId: LearnerId, collectionId: string, ids: Set<string>): void {
+  window.sessionStorage.setItem(sessionForgottenKey(learnerId, collectionId), JSON.stringify([...ids]));
+}
+
+function shuffled<T>(values: readonly T[]): T[] {
+  const result = [...values];
+  for (let index = result.length - 1; index > 0; index -= 1) {
+    const swapIndex = Math.floor(Math.random() * (index + 1));
+    [result[index], result[swapIndex]] = [result[swapIndex], result[index]];
+  }
+  return result;
+}
+
 function App() {
-  const client = useMemo(() => createSupabaseBrowserClient(), []);
+  const client = useMemo(
+    () => (SESSION_ONLY_MODE ? null : createSupabaseBrowserClient()),
+    [],
+  );
   const [useLocalFallback, setUseLocalFallback] = useState(false);
   const syncMode = String(
     import.meta.env.VITE_SYNC_MODE ?? "cloud",
   ).toLowerCase();
-  if (!client || syncMode === "local" || useLocalFallback) return <LocalApp />;
+  if (SESSION_ONLY_MODE || !client || syncMode === "local" || useLocalFallback)
+    return <LocalApp />;
   return (
     <PairedSupabaseApp
       client={client}
@@ -474,14 +519,24 @@ function LearningApp({
     () => readGraph(baseNodes, baseEdges),
     [baseNodes, baseEdges, workspaceVersion],
   );
-  const [snapshot, setSnapshot] = useState(() =>
-    adapter.readLearner(learnerId, learnerId),
-  );
+  const [snapshot, setSnapshot] = useState<LearnerSnapshot>(() => {
+    if (SESSION_ONLY_MODE)
+      return { learnerId, cardStates: {}, reviewEvents: [], dailyGoalMinutes: 15 };
+    adapter.ensurePublishedCards?.(cards);
+    return adapter.readLearner(learnerId, learnerId);
+  });
+  useEffect(() => {
+    if (SESSION_ONLY_MODE || !adapter.ensurePublishedCards) return;
+    adapter.ensurePublishedCards(cards);
+    setSnapshot(adapter.readLearner(learnerId, learnerId));
+  }, [adapter, cards, learnerId]);
   const [view, setView] = useState<View>("map");
   const [studyOpen, setStudyOpen] = useState(false);
   const [selectedCollectionId, setSelectedCollectionId] = useState(
     () =>
-      window.localStorage.getItem(`twogether.collection.${learnerId}`) ??
+      (SESSION_ONLY_MODE
+        ? window.sessionStorage.getItem(`twogether.collection.${learnerId}`)
+        : window.localStorage.getItem(`twogether.collection.${learnerId}`)) ??
       COLLECTION_FIXTURES[0].id,
   );
   const collections = useMemo(() => listCollections(), [workspaceVersion]);
@@ -493,6 +548,18 @@ function LearningApp({
     [cards],
   );
   const initialPlan = useMemo(() => {
+    if (SESSION_ONLY_MODE) {
+      return createRunPlan({
+        id: `session-${learnerId}-${selectedCollection.id}-${Date.now()}`,
+        learnerId,
+        collectionId: selectedCollection.id,
+        requiredCardIds: selectedCollection.cardIds.filter((id) =>
+          publishedCards.some((card) => card.id === id),
+        ),
+        createdAt: new Date(),
+        timezone: TIMEZONE,
+      });
+    }
     const savedId = window.localStorage.getItem(
       `twogether.run.${learnerId}.${selectedCollection.id}`,
     );
@@ -517,7 +584,7 @@ function LearningApp({
     );
     return plan;
   }, [learnerId]);
-  const savedInitialRun = loadRun(initialPlan.id);
+  const savedInitialRun = SESSION_ONLY_MODE ? null : loadRun(initialPlan.id);
   const [runPlan, setRunPlan] = useState<CollectionRunPlan>(initialPlan);
   const [runAttempts, setRunAttempts] = useState<RunAttempt[]>(
     () => savedInitialRun?.attempts ?? [],
@@ -533,6 +600,10 @@ function LearningApp({
   );
   const [currentCardId, setCurrentCardId] = useState<string | null>(
     initialRemaining[0] ?? null,
+  );
+  const [sessionOrder, setSessionOrder] = useState<string[]>(initialPlan.requiredCardIds);
+  const [forgottenIds, setForgottenIds] = useState<Set<string>>(() =>
+    readSessionForgotten(learnerId, selectedCollection.id, selectedCollection.cardIds),
   );
   const [repairQueue, setRepairQueue] = useState<RepairItem[]>([]);
   const [reviewActions, setReviewActions] = useState(0);
@@ -550,9 +621,9 @@ function LearningApp({
   const learner = LEARNERS.find((item) => item.id === learnerId)!;
   const rawCurrentCard =
     cards.find((card) => card.id === currentCardId) ?? null;
-  const currentCard = rawCurrentCard
-    ? { ...rawCurrentCard, ...(supportForCard(rawCurrentCard.id) ?? {}) }
-    : rawCurrentCard;
+  // Base cards already include the audited revisions; never overwrite a learner's
+  // published edit (or v2 answers) with the historical v1 support packet here.
+  const currentCard = rawCurrentCard;
   const currentState = currentCard ? snapshot.cardStates[currentCard.id] : null;
   const currentCardNodeTitle = currentCard
     ? (graph.nodes.find((node) => node.id === currentCard.node_id)?.title ??
@@ -564,11 +635,14 @@ function LearningApp({
       .map((attempt) => attempt.cardId),
   ).size;
   const dueCount = runPlan.requiredCardIds.length;
+  const currentIndex = Math.max(0, sessionOrder.indexOf(currentCardId ?? ""));
   const [streak, setStreak] = useState<StreakProjection>(() =>
-    deriveStreak(readDailyQualifications(), learnerId),
+    SESSION_ONLY_MODE
+      ? { currentDays: 0, bestDays: 0, lastQualifiedDate: null }
+      : deriveStreak(readDailyQualifications(), learnerId),
   );
   useEffect(() => {
-    if (!adapter.readStreak) return;
+    if (SESSION_ONLY_MODE || !adapter.readStreak) return;
     void adapter
       .readStreak()
       .then(setStreak)
@@ -577,7 +651,7 @@ function LearningApp({
       );
   }, [adapter, learnerId]);
   useEffect(() => {
-    if (!adapter.startRun) return;
+    if (SESSION_ONLY_MODE || !adapter.startRun) return;
     void adapter
       .startRun(runPlan)
       .catch((error) =>
@@ -592,6 +666,7 @@ function LearningApp({
   const resetStudy = (plan: CollectionRunPlan, attempts: RunAttempt[] = []) => {
     setRunPlan(plan);
     setRunAttempts(attempts);
+    setSessionOrder(plan.requiredCardIds);
     const untouched = plan.requiredCardIds.filter(
       (id) =>
         !attempts.some(
@@ -607,8 +682,9 @@ function LearningApp({
     setPendingReview(null);
     setMessage(null);
   };
-  const startCollection = (collection: CardCollection) => {
-    window.localStorage.setItem(
+  const startCollection = (collection: CardCollection, sessionCardIds?: readonly string[]) => {
+    const selectionStorage = SESSION_ONLY_MODE ? window.sessionStorage : window.localStorage;
+    selectionStorage.setItem(
       `twogether.collection.${learnerId}`,
       collection.id,
     );
@@ -616,16 +692,29 @@ function LearningApp({
       id: `${learnerId}-${collection.id}-${Date.now()}`,
       learnerId,
       collectionId: collection.id,
-      requiredCardIds: dueIds(publishedCards, snapshot, collection),
+      requiredCardIds: SESSION_ONLY_MODE
+        ? (sessionCardIds ?? collection.cardIds).filter((id) =>
+            publishedCards.some((card) => card.id === id),
+          )
+        : dueIds(publishedCards, snapshot, collection),
       createdAt: new Date(),
       timezone: TIMEZONE,
     });
-    saveRun({ plan, attempts: [], status: "active" });
-    window.localStorage.setItem(
-      `twogether.run.${learnerId}.${collection.id}`,
-      plan.id,
-    );
+    if (!SESSION_ONLY_MODE) {
+      saveRun({ plan, attempts: [], status: "active" });
+      window.localStorage.setItem(
+        `twogether.run.${learnerId}.${collection.id}`,
+        plan.id,
+      );
+    }
     setSelectedCollectionId(collection.id);
+    setForgottenIds(
+      readSessionForgotten(
+        learnerId,
+        collection.id,
+        collection.cardIds.filter((id) => publishedCards.some((card) => card.id === id)),
+      ),
+    );
     resetStudy(plan);
     setStudyOpen(true);
     setView("map");
@@ -653,8 +742,50 @@ function LearningApp({
     setAttemptKind(attemptText.trim() ? "typed" : "mental");
     setRevealed(true);
   };
+  const showSessionCard = (index: number) => {
+    if (!sessionOrder.length) return;
+    const normalized = (index + sessionOrder.length) % sessionOrder.length;
+    setCurrentCardId(sessionOrder[normalized]);
+    setRevealed(false);
+    setAttemptText("");
+    setMessage(null);
+  };
+  const shuffleSession = () => {
+    const next = shuffled(sessionOrder);
+    setSessionOrder(next);
+    setCurrentCardId(next[0] ?? null);
+    setRevealed(false);
+    setAttemptText("");
+    setMessage("Đã xáo thứ tự thẻ trong phiên này.");
+  };
   const handleGrade = async (rating: ReviewRating) => {
-    if (!currentCard || !currentState || !revealed || savingReview) return;
+    if (!currentCard || !revealed || savingReview) return;
+    if (SESSION_ONLY_MODE) {
+      const nextForgotten = new Set(forgottenIds);
+      if (rating === "Again") nextForgotten.add(currentCard.id);
+      else nextForgotten.delete(currentCard.id);
+      writeSessionForgotten(learnerId, selectedCollection.id, nextForgotten);
+      setForgottenIds(nextForgotten);
+      const nextAttempts = runAttempts.some((attempt) => attempt.cardId === currentCard.id)
+        ? runAttempts
+        : [...runAttempts, { cardId: currentCard.id, attemptConfirmed: true }];
+      setRunAttempts(nextAttempts);
+      const attemptedIds = new Set(nextAttempts.map((attempt) => attempt.cardId));
+      let nextId: string | null = null;
+      for (let offset = 1; offset <= sessionOrder.length; offset += 1) {
+        const candidate = sessionOrder[(currentIndex + offset) % sessionOrder.length];
+        if (!attemptedIds.has(candidate)) {
+          nextId = candidate;
+          break;
+        }
+      }
+      setCurrentCardId(nextId);
+      setRevealed(false);
+      setAttemptText("");
+      setMessage(rating === "Again" ? "Đã lưu tạm câu này vào danh sách Quên." : "Đã gỡ câu này khỏi danh sách Quên.");
+      return;
+    }
+    if (!currentState) return;
     setSavingReview(true);
     const retry =
       pendingReview?.cardId === currentCard.id ? pendingReview : null;
@@ -757,7 +888,7 @@ function LearningApp({
       <AppHeader
         learner={learner}
         onLogout={onLogout}
-        streak={streak.currentDays}
+        streak={SESSION_ONLY_MODE ? null : streak.currentDays}
       />
       <main className={`main-content${view === "map" ? " map-main-content" : ""}`}>
         {view === "map" && (
@@ -772,9 +903,10 @@ function LearningApp({
               <KnowledgeMap
                 nodes={graph.nodes}
                 edges={graph.edges}
-                cards={publishedCards}
+                cards={cards}
                 collections={collections}
                 snapshot={snapshot}
+                sessionOnly={SESSION_ONLY_MODE}
                 onStartCollection={startCollection}
               />
             </Suspense>
@@ -787,18 +919,30 @@ function LearningApp({
                 <div className="map-study-scroll">
                   <StudyView
                     dueCount={dueCount}
+                    currentIndex={currentIndex}
                     currentCard={currentCard}
                     cardNodeTitle={currentCardNodeTitle}
-                    repairQueue={repairQueue}
+                    forgottenCount={forgottenIds.size}
                     completedReviews={completedUnique}
                     revealed={revealed}
                     attemptText={attemptText}
                     setAttemptText={setAttemptText}
                     handleAttempt={handleAttempt}
+                    onFlipToQuestion={() => setRevealed(false)}
                     handleGrade={handleGrade}
-                    restartSession={() => startCollection(selectedCollection)}
+                    restartSession={() =>
+                      startCollection(
+                        selectedCollection,
+                        forgottenIds.size
+                          ? selectedCollection.cardIds.filter((id) => forgottenIds.has(id))
+                          : undefined,
+                      )
+                    }
+                    onPrevious={() => showSessionCard(currentIndex - 1)}
+                    onNext={() => showSessionCard(currentIndex + 1)}
+                    onShuffle={shuffleSession}
+                    onJumpTo={showSessionCard}
                     message={message}
-                    lastInterval={lastInterval}
                     savingReview={savingReview}
                   />
                 </div>
@@ -833,7 +977,7 @@ function LearningApp({
           </Suspense>
         )}
       </main>
-      <BottomNav view={view} setView={(nextView) => { setStudyOpen(false); setView(nextView); }} />
+      <BottomNav view={view} showProgress={!SESSION_ONLY_MODE} setView={(nextView) => { setStudyOpen(false); setView(nextView); }} />
     </div>
   );
 }
@@ -845,7 +989,7 @@ function AppHeader({
 }: {
   learner: (typeof LEARNERS)[number];
   onLogout: () => void;
-  streak: number;
+  streak: number | null;
 }) {
   return (
     <header className="app-header">
@@ -856,9 +1000,7 @@ function AppHeader({
         <span className="brand-note">learn for keeps</span>
       </div>
       <div className="header-user">
-        <span className="header-streak" aria-label={`${streak} ngày streak`}>
-          🔥 {streak}
-        </span>
+        {streak !== null && <span className="header-streak" aria-label={`${streak} ngày streak`}>🔥 {streak}</span>}
         <button
           className={`avatar avatar-small ${learner.tone} learner-switch`}
           onClick={onLogout}
@@ -2050,9 +2192,11 @@ function LegacyCardLibraryView({
 function BottomNav({
   view,
   setView,
+  showProgress = true,
 }: {
   view: View;
   setView: (view: View) => void;
+  showProgress?: boolean;
 }) {
   return (
     <nav className="bottom-nav" aria-label="Điều hướng chính">
@@ -2064,14 +2208,9 @@ function BottomNav({
         <span aria-hidden="true">⌘</span>
         <small>Cây</small>
       </button>
-      <button
-        data-testid="nav-progress"
-        className={view === "progress" ? "active" : ""}
-        onClick={() => setView("progress")}
-      >
-        <span aria-hidden="true">◒</span>
-        <small>Tiến độ</small>
-      </button>
+      {showProgress && <button data-testid="nav-progress" className={view === "progress" ? "active" : ""} onClick={() => setView("progress")}>
+        <span aria-hidden="true">◒</span><small>Tiến độ</small>
+      </button>}
       <button
         data-testid="nav-cards"
         className={view === "cards" ? "active" : ""}
